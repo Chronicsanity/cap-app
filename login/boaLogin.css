@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+    font-family: Lato;
+    font-size: 16px;
+}
+body {
+    background-color: #404150;
+}
+.login {
+    width: 500px;
+    margin: 100px auto;
+}
+.login h1 {
+    text-align: center;
+    color: #E4A46D;
+    font-size: 150px;
+    padding: 20px 0 20px 0;
+    font-family: handScript;  
+    margin: -50px auto;
+    text-shadow: 0 0 10px rgba(33, 34, 34, 0.5);
+}
+.login h2 {
+  text-align: center;
+  color: #D6D6D6; 
+  font-size: 16px; 
+}
+.login form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+    background-color: #404150;
+}
+.login form input[type="password"], .login form input[type="text"] {
+    width: 410px;
+    height: 50px;
+    margin-bottom: 20px;
+    padding: 0 15px;
+    background-color: rgba(35, 34, 34, 0.3);
+    border-color: rgb(34, 34, 34, 0.1);
+    color: #D6D6D6;
+}
+.login form input[type="submit"] {
+    width: 100%;
+    padding: 5px;
+    background-color: #404150;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #6491C5;
+    transition: background-color 0.2s;
+    text-decoration: underline;
+}
+.login form input[type="submit"]:hover {
+    transition: background-color 0.2s;
+}

@@ -1,0 +1,17 @@
+{
+    "name": "boa-app",
+    "version": "0.0.0",
+    "description": "Class project.",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js",
+      "test": "No test specified."
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/Rmhenderson3/boa-app.git"
+  },
+    "license": "ISC"
+    
+  }
+  
