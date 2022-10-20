@@ -29,7 +29,7 @@ app.post('/auth', function(request, response) {
 	let username = request.body.username;
 	let password = request.body.password;
 	if (username && password) {
-		connection.query('SELECT * FROM boa_user WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
+		connection.query('SELECT * FROM boa-user WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
 			if (error) throw error;
 			if (results.length > 0) {
 				request.session.loggedin = true;
