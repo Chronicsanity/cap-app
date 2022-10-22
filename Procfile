@@ -1,1 +1,1 @@
-web: node src/boa-boh.js
+web: node src/index.js
