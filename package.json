@@ -1,0 +1,27 @@
+{
+    "name": "boa-app",
+    "version": "0.0.0",
+    "description": "Class project.",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js",
+      "test": "No test specified."
+    },
+    "engines": {
+      "node": "16.x"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Rmhenderson3/boa-app.git"
+    },
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/Rmhenderson3/boa-app/issues"
+    },
+    "homepage": "https://github.com/Rmhenderson3/boa-app#readme",
+    "keywords": [
+      "Schedule",
+      "UALR"
+    ],
+    "author": "Team C.A.P"
+  }
