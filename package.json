@@ -2,26 +2,29 @@
     "name": "boa-app",
     "version": "0.0.0",
     "description": "Class project.",
-    "main": "index.js",
+    "main": "login.js",
     "scripts": {
-      "start": "node index.js",
-      "test": "No test specified."
+        "start": "node login.js",
+        "test": "No test specified."
     },
     "engines": {
-      "node": "16.x"
+        "node": "16.x"
     },
     "repository": {
-      "type": "git",
-      "url": "git+https://github.com/Rmhenderson3/boa-app.git"
+        "type": "git",
+        "url": "git+https://github.com/Chronicsanity/boa-app.git"
     },
     "license": "ISC",
     "bugs": {
-      "url": "https://github.com/Rmhenderson3/boa-app/issues"
+        "url": "https://github.com/Rmhenderson3/boa-app/issues"
     },
     "homepage": "https://github.com/Rmhenderson3/boa-app#readme",
     "keywords": [
-      "Schedule",
-      "UALR"
+        "Schedule",
+        "UALR"
     ],
-    "author": "Team C.A.P"
-  }
+    "author": "Cameron Harcum",
+    "dependencies": {
+        "cors": "^2.8.5"
+    }
+}
