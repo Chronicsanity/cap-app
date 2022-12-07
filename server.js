@@ -1,57 +1,65 @@
-const express = require('express');
-const ejs = require('ejs');
-const path = require('path');
+const express = require("express");
+const cors = require("cors");
+const cookieSession = require("cookie-session");
+
 const app = express();
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
-const session = require('express-session');
-const MongoStore = require('connect-mongo')(session);
 
-const MongoDBURI = process.env.MONGO_URI || 'mongodb://localhost/ManualAuth';
+app.use(cors());
 
-mongoose.connect(MongoDBURI, {
-  useUnifiedTopology: true,
-  useNewUrlParser: true
-});
+// parse requests of content-type - application/json
+app.use(express.json());
 
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', () => {
-});
+// parse requests of content-type - application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }));
 
-app.use(session({
-  secret: 'work hard',
-  resave: true,
-  saveUninitialized: false,
-  store: new MongoStore({
-    mongooseConnection: db
+app.use(
+  cookieSession({
+    name: "cap-session",
+    secret: "COOKIE_SECRET", // should use as secret environment variable
+    httpOnly: true,
+    sameSite: 'strict'
   })
-}));
+);
 
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+// database
+const db = require("./app/models");
+const Role = db.role;
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+db.sequelize.sync();
+// force: true will drop the table if it already exists
+// db.sequelize.sync({force: true}).then(() => {
+//   console.log('Drop and Resync Database with { force: true }');
+//   initial();
+// });
 
-app.use(express.static(__dirname + '/views'));
-
-const index = require('./routes/index');
-app.use('/', index);
-
-
-app.use((req, res, next) => {
-  const err = new Error('File Not Found');
-  err.status = 404;
-  next(err);
+// simple route
+app.get("/", (req, res) => {
+  res.json({ message: "Welcome to scheduling application." });
 });
 
-app.use((err, req, res, next) => {
-  res.status(err.status || 500);
-  res.send(err.message);
+// routes
+require("./app/routes/auth.routes")(app);
+require("./app/routes/user.routes")(app);
+
+// set port, listen for requests
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}.`);
 });
 
+function initial() {
+  Role.create({
+    id: 1,
+    name: "user",
+  });
 
-app.listen(process.env.PORT || 3000, () => {
-  console.log('Express app listening on port 3000');
-});
+  Role.create({
+    id: 2,
+    name: "moderator",
+  });
+
+  Role.create({
+    id: 3,
+    name: "admin",
+  });
+}
