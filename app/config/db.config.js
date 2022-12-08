@@ -16,8 +16,8 @@ module.exports = {
         Dialect: "mysql",
         PORT: "8889",
         logging: true,
-        }
-    },
+        },
+
     production: { 
         HOST: "ip-10-0-13-151",
         USER: "b68ec5f8aea53b",
@@ -32,7 +32,7 @@ module.exports = {
             acquire: 30000,
             idle: 10000
         }
-      },
+      }
    /* pool: {
         max: 5,
         min: 0,
