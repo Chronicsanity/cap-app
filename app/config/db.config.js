@@ -4,7 +4,6 @@ module.exports = {
     PASSWORD: "16f4d23b2",
     DB: "us-cdbr-east-06.cleardb.net",
     dialect: "mysql",
-    protocol: 'mysql',
     PORT: "8889",
     logging: true,
     pool: {

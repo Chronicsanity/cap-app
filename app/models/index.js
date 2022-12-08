@@ -5,10 +5,10 @@ const sequelize = new Sequelize(
   config.DB,
   config.USER,
   config.PASSWORD,
-  config.dialect,
   config.PORT,
   {
     host: config.HOST,
+    dialect: config.dialect,
     operatorsAliases: false,
 
     pool: {
