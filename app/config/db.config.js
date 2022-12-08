@@ -5,7 +5,7 @@ module.exports = {
     DB: "us-cdbr-east-06.cleardb.net",
     dialect: "mysql",
     protocol: 'mysql',
-    port: "3306",
+    port: "55736",
     logging: true,
     pool: {
       max: 5,
