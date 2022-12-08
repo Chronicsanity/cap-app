@@ -7,12 +7,6 @@ module.exports = {
         Dialect: "mysql",
         PORT: "8889",
         logging: true,
-        pool: {
-            max: 5,
-            min: 0,
-            acquire: 30000,
-            idle: 10000
-        }
         },
     test: { 
         HOST: "ip-10-0-13-151",
