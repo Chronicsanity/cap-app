@@ -1,8 +1,8 @@
 const config = require("../config/db.config.js");
 
 const Sequelize = require("sequelize");
-const sequelize = new Sequelize(
-  config.DB,
+const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06.cleardb.net/heroku_a26e4a307a3f41f?reconnect=true")
+  /*config.DB,
   config.USER,
   config.PASSWORD,
   {
@@ -11,14 +11,14 @@ const sequelize = new Sequelize(
     PORT: config.PORT,
     operatorsAliases: false,
 
-    /*pool: {
+    pool: {
       max: config.pool.max,
       min: config.pool.min,
       acquire: config.pool.acquire,
       idle: config.pool.idle
-    }*/
+    }
   }
-);
+)*/;
 
 const db = {};
 
