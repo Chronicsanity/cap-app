@@ -34,7 +34,7 @@ db.sequelize.sync();
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to scheduling application." });
+  res.sendFile(path.join(_dirname + '/public/boaLogin.html'))
 });
 
 // routes
