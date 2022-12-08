@@ -16,12 +16,13 @@
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Rmhenderson3/boa-app/issues"
+    "url": "https://github.com/Chronicsanity/boa-app/issues"
   },
-  "homepage": "https://github.com/Rmhenderson3/boa-app#readme",
+  "homepage": "https://github.com/Chronicsanity/boa-app.git",
   "keywords": [
     "Schedule",
-    "UALR"
+    "UALR",
+    "mysql"
   ],
   "author": "Cameron Harcum",
   "dependencies": {
