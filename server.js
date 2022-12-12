@@ -37,7 +37,7 @@ db.sequelize.sync();
 
 // simple route
 app.get("/", (req, res) => {
-  res.render('base', {title: "Login"});
+  res.render('login', {title: "Login"});
 });
 
 // routes
