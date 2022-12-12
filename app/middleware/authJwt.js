@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken");
 const config = require("../config/auth.config.js");
+const role = require("../models")
 const db = require("../models");
 const User = db.user;
 
@@ -26,7 +27,7 @@ verifyToken = (req, res, next) => {
 isAdmin = async (req, res, next) => {
   try {
     const user = await User.findByPk(req.userId);
-    const roles = await user.get(roles);
+    const roles = await user.get(role);
 
     for (let i = 0; i < roles.length; i++) {
       if (roles[i].name === "admin") {
@@ -47,7 +48,7 @@ isAdmin = async (req, res, next) => {
 isModerator = async (req, res, next) => {
   try {
     const user = await User.findByPk(req.userId);
-    const roles = await user.get(roles);
+    const roles = await user.get(role);
 
     for (let i = 0; i < roles.length; i++) {
       if (roles[i].name === "moderator") {
