@@ -62,7 +62,7 @@ exports.signin = async (req, res) => {
       });
     }
 
-    const token = jwt.sign({ id: users.id }, config.secret, {
+    const token = jwt.sign({ id: user.id }, config.secret, {
       expiresIn: 86400, // 24 hours
     });
 
