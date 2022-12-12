@@ -23,7 +23,7 @@ verifyToken = (req, res, next) => {
   });
 };
 
-isAdmin = async (req, res, next) => {
+/*isAdmin = async (req, res, next) => {
   try {
     const user = await User.findByPk(req.userId);
     const roles = await user.get(db.role);
@@ -88,7 +88,7 @@ isModeratorOrAdmin = async (req, res, next) => {
       message: "Unable to validate Moderator or Admin role!",
     });
   }
-};
+};*/
 
 const authJwt = {
   verifyToken,
