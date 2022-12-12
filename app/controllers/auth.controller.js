@@ -1,7 +1,7 @@
 const db = require("../models");
 const config = require("../config/auth.config");
-const User = db.users;
-const Role = db.roles;
+const User = db.user;
+const Role = db.role;
 
 const Op = db.Sequelize.Op;
 
@@ -18,7 +18,7 @@ exports.signup = async (req, res) => {
     });
 
     if (req.body.roles) {
-      const roles = await Role.findAll({
+      const role = await Role.findAll({
         where: {
           name: {
             [Op.or]: req.body.roles,
@@ -26,11 +26,11 @@ exports.signup = async (req, res) => {
         },
       });
 
-      const result = User.setRoles(roles);
+      const result = User.setRoles(role);
       if (result) res.send({ message: "User registered successfully!" });
     } else {
       // user has role = 1
-      const result = User.setRoles([1]);
+      const result = user.setRoles([1]);
       if (result) res.send({ message: "User registered successfully!" });
     }
   } catch (error) {
@@ -40,19 +40,19 @@ exports.signup = async (req, res) => {
 
 exports.signin = async (req, res) => {
   try {
-    const users = await User.findOne({
+    const user = await User.findOne({
       where: {
         username: req.body.username,
       },
     });
 
-    if (!users) {
+    if (!user) {
       return res.status(404).send({ message: "User Not found." });
     }
 
     const passwordIsValid = bcrypt.compareSync(
       req.body.password,
-      users.password
+      user.password
     );
 
     if (!passwordIsValid) {
