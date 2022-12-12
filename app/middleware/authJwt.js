@@ -2,6 +2,7 @@ const jwt = require("jsonwebtoken");
 const config = require("../config/auth.config.js");
 const db = require("../models");
 const User = db.user;
+const Role = db.role;
 
 verifyToken = (req, res, next) => {
   let token = req.session.token;
@@ -23,10 +24,10 @@ verifyToken = (req, res, next) => {
   });
 };
 
-/*isAdmin = async (req, res, next) => {
+isAdmin = async (req, res, next) => {
   try {
     const user = await User.findByPk(req.userId);
-    const roles = await user.get(db.role);
+    const roles = await user.get(Role);
 
     for (let i = 0; i < roles.length; i++) {
       if (roles[i].name === "admin") {
@@ -47,7 +48,7 @@ verifyToken = (req, res, next) => {
 isModerator = async (req, res, next) => {
   try {
     const user = await User.findByPk(req.userId);
-    const roles = await user.get(db.role);
+    const roles = await user.get(Role);
 
     for (let i = 0; i < roles.length; i++) {
       if (roles[i].name === "moderator") {
@@ -68,7 +69,7 @@ isModerator = async (req, res, next) => {
 isModeratorOrAdmin = async (req, res, next) => {
   try {
     const user = await User.findByPk(req.userId);
-    const roles = await user.get (db.role);
+    const roles = await user.get (Role);
 
     for (let i = 0; i < roles.length; i++) {
       if (roles[i].name === "moderator") {
@@ -88,7 +89,7 @@ isModeratorOrAdmin = async (req, res, next) => {
       message: "Unable to validate Moderator or Admin role!",
     });
   }
-};*/
+};
 
 const authJwt = {
   verifyToken,
