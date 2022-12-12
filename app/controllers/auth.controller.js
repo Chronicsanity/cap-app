@@ -8,7 +8,6 @@ const Op = db.Sequelize.Op;
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 
-const userPassword = db.user.password;
 exports.signup = async (req, res) => {
   // Save User to Database
   try {
@@ -51,10 +50,9 @@ exports.signin = async (req, res) => {
       return res.status(404).send({ message: "User Not found." });
     }
 
-    const passwordIsValid = await bcrypt.compareSync(
-      userPassword, req.body.password,
-       
-    );
+    let passwordIsValid = bcrypt.compareSync(
+      User.password, req.body.password,
+       );
 
     if (!passwordIsValid) {
       return res.status(401).send({
