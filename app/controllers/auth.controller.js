@@ -14,7 +14,7 @@ exports.signup = async (req, res) => {
     const user = await User.create({
       username: req.body.username,
       email: req.body.email,
-      password: bcrypt.hashSync(req.body.password, 8),
+      password: bcrypt.hashSync(req.body.password1, 8),
     });
 
     if (req.body.roles) {
@@ -51,7 +51,7 @@ exports.signin = async (req, res) => {
     }
 
     const passwordIsValid = bcrypt.compareSync(
-      req.body.password,
+      req.body.password1,
       user.password
     );
 
