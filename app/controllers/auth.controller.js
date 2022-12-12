@@ -1,5 +1,5 @@
 const db = require("../models");
-const config = require("../config/auth.config");
+const config = require("../config/db.config");
 const User = db.user;
 const Role = db.role;
 
@@ -14,7 +14,7 @@ exports.signup = async (req, res) => {
     const user = await User.create({
       username: req.body.username,
       email: req.body.email,
-      password: bcrypt.hashSync(req.body.password1, 7),
+      password: bcrypt.hashSync(req.body.password1, 8),
       userPassword: db.user.password
     });
 
