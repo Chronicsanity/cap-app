@@ -26,7 +26,7 @@ verifyToken = (req, res, next) => {
 isAdmin = async (req, res, next) => {
   try {
     const user = await User.findByPk(req.userId);
-    const roles = await user.getRoles();
+    const roles = await user.get(roles);
 
     for (let i = 0; i < roles.length; i++) {
       if (roles[i].name === "admin") {
@@ -47,7 +47,7 @@ isAdmin = async (req, res, next) => {
 isModerator = async (req, res, next) => {
   try {
     const user = await User.findByPk(req.userId);
-    const roles = await user.getRoles();
+    const roles = await user.get(roles);
 
     for (let i = 0; i < roles.length; i++) {
       if (roles[i].name === "moderator") {
@@ -68,7 +68,7 @@ isModerator = async (req, res, next) => {
 isModeratorOrAdmin = async (req, res, next) => {
   try {
     const user = await User.findByPk(req.userId);
-    const roles = await user.getRoles();
+    const roles = await user.get (roles);
 
     for (let i = 0; i < roles.length; i++) {
       if (roles[i].name === "moderator") {
