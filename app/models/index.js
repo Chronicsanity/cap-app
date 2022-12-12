@@ -11,12 +11,12 @@ const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06
     PORT: config.PORT,
     operatorsAliases: false,
 
-    pool: {
+   /* pool: {
       max: config.pool.max,
       min: config.pool.min,
       acquire: config.pool.acquire,
       idle: config.pool.idle
-    }
+    }*/
   };
 
 const db = {};
