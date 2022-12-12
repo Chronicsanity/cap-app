@@ -26,7 +26,7 @@ exports.signup = async (req, res) => {
         },
       });
 
-      const result = User.setRoles(role);
+      const result = User.setRoles(Role);
       if (result) res.send({ message: "User registered successfully!" });
     } else {
       // user has role = 1
@@ -65,7 +65,7 @@ exports.signin = async (req, res) => {
     });
 
     let authorities = [];
-    const roles = await User.get(role);
+    const roles = await User.get(Role);
     for (let i = 0; i < roles.length; i++) {
       authorities.push("ROLE_" + roles[i].name.toUpperCase());
     }
