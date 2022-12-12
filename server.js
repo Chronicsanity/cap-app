@@ -37,7 +37,7 @@ db.sequelize.sync();
 
 // simple route
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname + '/public/boaLogin.html'))
+  res.render('base', {title: "Login"});
 });
 
 // routes
