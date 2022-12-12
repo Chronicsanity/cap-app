@@ -1,7 +1,7 @@
 const db = require("../models");
 const config = require("../config/auth.config");
-const User = db.user;
-const Role = db.role;
+const User = db.users;
+const Role = db.roles;
 
 const Op = db.Sequelize.Op;
 
@@ -26,11 +26,11 @@ exports.signup = async (req, res) => {
         },
       });
 
-      const result = user.setRoles(roles);
+      const result = User.setRoles(roles);
       if (result) res.send({ message: "User registered successfully!" });
     } else {
       // user has role = 1
-      const result = user.setRoles([1]);
+      const result = User.setRoles([1]);
       if (result) res.send({ message: "User registered successfully!" });
     }
   } catch (error) {
@@ -40,19 +40,19 @@ exports.signup = async (req, res) => {
 
 exports.signin = async (req, res) => {
   try {
-    const user = await User.findOne({
+    const users = await User.findOne({
       where: {
         username: req.body.username,
       },
     });
 
-    if (!user) {
+    if (!users) {
       return res.status(404).send({ message: "User Not found." });
     }
 
     const passwordIsValid = bcrypt.compareSync(
       req.body.password,
-      user.password
+      users.password
     );
 
     if (!passwordIsValid) {
@@ -61,12 +61,12 @@ exports.signin = async (req, res) => {
       });
     }
 
-    const token = jwt.sign({ id: user.id }, config.secret, {
+    const token = jwt.sign({ id: users.id }, config.secret, {
       expiresIn: 86400, // 24 hours
     });
 
     let authorities = [];
-    const roles = await user.getRoles();
+    const roles = await User.getRoles();
     for (let i = 0; i < roles.length; i++) {
       authorities.push("ROLE_" + roles[i].name.toUpperCase());
     }
@@ -74,9 +74,9 @@ exports.signin = async (req, res) => {
     req.session.token = token;
 
     return res.status(200).send({
-      id: user.id,
-      username: user.username,
-      email: user.email,
+      id: users.id,
+      username: users.username,
+      email: users.email,
       roles: authorities,
     });
   } catch (error) {
