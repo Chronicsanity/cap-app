@@ -53,7 +53,7 @@ exports.signin = async (req, res) => {
 
     const passwordIsValid = bcrypt.compareSync(
       req.body.password1,
-      userPassword
+      db.user.password
     );
 
     if (!passwordIsValid) {
