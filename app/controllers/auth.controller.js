@@ -51,7 +51,7 @@ exports.signin = async (req, res) => {
     }
 
     const passwordIsValid = bcrypt.compareSync(
-      req.body.password1,
+      password1,
       user.password
     );
 
@@ -74,9 +74,9 @@ exports.signin = async (req, res) => {
     req.session.token = token;
 
     return res.status(200).send({
-      id: users.id,
-      username: users.username,
-      email: users.email,
+      id: user.id,
+      username: user.username,
+      email: user.email,
       roles: authorities,
     });
   } catch (error) {
