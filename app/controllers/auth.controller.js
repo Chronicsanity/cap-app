@@ -17,7 +17,7 @@ exports.signup = async (req, res) => {
     });
 
     if (req.body.roles) {
-      const role = await Role.findAll({
+      const role = await role.findAll({
         where: {
           name: {
             [Op.or]: req.body.roles,
@@ -50,7 +50,7 @@ exports.signin = async (req, res) => {
     }
 
     let passwordIsValid = bcrypt.compare(req.body.password, user.password);
-    
+
     if (!passwordIsValid) {
       return res.status(401).send({
         message: "Invalid Password!",
