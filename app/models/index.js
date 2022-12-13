@@ -22,6 +22,24 @@ logging: false
     }*/
   };
 
+  'use strict'
+
+class NoTimestamp {
+  register (Model) {
+    Object.defineProperties(Model, {
+      createdAtColumn: {
+        get: () => null,
+      },
+      updatedAtColumn: {
+        get: () => null,
+      },
+    })
+  }
+}
+
+module.exports = NoTimestamp
+
+
 const db = {};
 
 db.Sequelize = Sequelize;
@@ -45,19 +63,3 @@ db.ROLES = ["user", "admin", "moderator"];
 
 module.exports = db;
 
-'use strict'
-
-class NoTimestamp {
-  register (Model) {
-    Object.defineProperties(Model, {
-      createdAtColumn: {
-        get: () => null,
-      },
-      updatedAtColumn: {
-        get: () => null,
-      },
-    })
-  }
-}
-
-module.exports = NoTimestamp
