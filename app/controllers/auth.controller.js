@@ -43,6 +43,7 @@ exports.signin = async (req, res) => {
     const user = await User.findOne({
       where: {
         username: req.body.username,
+        role: req.body.role,
       },
     });
 
