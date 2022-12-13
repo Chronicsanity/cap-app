@@ -24,21 +24,23 @@ logging: false
 
   'use strict'
 
-class NoTimestamp {
-  register (Model) {
-    Object.defineProperties(Model, {
-      createdAtColumn: {
-        get: () => null,
-      },
-      updatedAtColumn: {
-        get: () => null,
-      },
-    })
+  class NoTimestamp {
+    register (Model) {
+      Object.defineProperties(Model, {
+        usernameColumn: {
+          get: () => null,
+        },
+        passwordColumn: {
+          get: () => null,
+        },
+        rolesColumn: {
+          get: () => null,
+        },
+      })
+    }
   }
-}
-
-module.exports = NoTimestamp
-
+  
+  module.exports = NoTimestamp
 
 const db = {};
 
