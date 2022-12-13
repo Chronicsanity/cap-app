@@ -6,7 +6,7 @@ module.exports = {
         DB: "us-cdbr-east-06.cleardb.net",
         dialect: "mysql",
         PORT: "8889",
-        logging: true,
+        logging: false,
         },
     test: { 
         HOST: "ip-10-0-13-151",
@@ -15,7 +15,7 @@ module.exports = {
         DB: "us-cdbr-east-06.cleardb.net",
         dialect: "mysql",
         PORT: "8889",
-        logging: true,
+        logging: false,
         },
 
     production: { 
@@ -25,7 +25,7 @@ module.exports = {
         DB: "us-cdbr-east-06.cleardb.net",
         dialect: "mysql",
         PORT: "8889",
-        logging: true,
+        logging: false,
       }
    /* pool: {
         max: 5,
