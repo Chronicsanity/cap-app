@@ -77,6 +77,23 @@ exports.signin = async (req, res) => {
   }
 };
 
+'use strict'
+
+class NoTimestamp {
+  register (Model) {
+    Object.defineProperties(Model, {
+      createdAtColumn: {
+        get: () => null,
+      },
+      updatedAtColumn: {
+        get: () => null,
+      },
+    })
+  }
+}
+
+module.exports = NoTimestamp
+
 exports.signout = async (req, res) => {
   try {
     req.session = null;
