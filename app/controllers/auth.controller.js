@@ -65,7 +65,7 @@ exports.signin = async (req, res) => {
     });
 
     let authorities = [];
-    const roles = await get(Role);
+    const roles = await sequelize.get(Role);
     for (let i = 0; i < roles.length; i++) {
       authorities.push("ROLE_" + roles[i].name.toUpperCase());
     }
