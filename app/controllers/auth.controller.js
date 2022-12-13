@@ -49,10 +49,8 @@ exports.signin = async (req, res) => {
       return res.status(404).send({ message: "User Not found." });
     }
 
-    let passwordIsValid = bcrypt.compare(
-      User.password, req.body.password,
-       );
-
+    let passwordIsValid = bcrypt.compare(req.body.password, user.password);
+    
     if (!passwordIsValid) {
       return res.status(401).send({
         message: "Invalid Password!",
