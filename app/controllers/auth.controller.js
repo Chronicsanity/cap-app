@@ -1,12 +1,11 @@
 const db = require("../models");
 const authConfig = require("../config/auth.config");
 const User = db.user;
-const Password = db.user.password;
-
 const Op = db.Sequelize.Op;
 
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
+const { user } = require("../models");
 
 
 exports.signup = async (req, res) => {
@@ -53,11 +52,20 @@ exports.signin = async (req, res) => {
 
     const userPassword = await User.findOne({
       where: {
+        username: req.body.username,
         password: req.body.password,
     
       },});
+
+      router.post("/login", (req,res)=> {
+
+        const possUser = req.body;
+        const hash = bcrypt.hashSync(possUser.password, 8);
+        possUser.password = hash;
+        
+        });
   
-    let passwordIsValid = bcrypt.compareSync(Password, userPassword);
+    let passwordIsValid = bcrypt.compareSync(possUser.password, userPassword);
       
 
     if (!passwordIsValid) {
