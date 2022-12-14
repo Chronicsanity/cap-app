@@ -1,5 +1,5 @@
 const config = require("../config/db.config.js");
-import Sequelize from "sequelize";
+const Sequelize = require("sequelize");
 const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06.cleardb.net/heroku_a26e4a307a3f41f?reconnect=true", {
 
 logging: false
