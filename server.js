@@ -2,7 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const cookieSession = require("cookie-session");
 const path = require('path');
-const sequelize = new sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06.cleardb.net/heroku_a26e4a307a3f41f?reconnect=true", {
+const Sequelize = require("sequelize");
+const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06.cleardb.net/heroku_a26e4a307a3f41f?reconnect=true", {
 
 logging: false
 });
