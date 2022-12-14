@@ -52,7 +52,7 @@ exports.signin = async (req, res) => {
 
     const userPassword = await User.findOne({
       where: {
-        password1: req.body.password,
+        password: req.body.password,
     
       },});
   
