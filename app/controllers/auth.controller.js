@@ -2,7 +2,6 @@ const db = require("../models");
 const express = require("express");
 const authConfig = require("../config/auth.config");
 const User = db.user;
-const app = express();
 
 const Op = db.Sequelize.Op;
 
@@ -49,26 +48,17 @@ exports.signin = async (req, res) => {
     });
 
     if (!user) {
-      return res.status(404).send({ message: 'req.body.password' });
+      return res.status(404).send({ message: "User Not found." });
     }
-    app.post('/api/auth/signin', async(req, res) => {
-        
-      const { username } = req.body;
-      let post = {username: username};
+   
 
-      let sql = 'SELECT password FROM users WHERE username= ?';
+    let passwordIsValid = bcrypt.compareSync(givenPassword, req.body.password);
 
-      const queryResult = await new Promise(resolve => db.query(sql, post, (error, result) => resolve(result)));
-      const passwordIsValid = await new Promise(resolve => bcrypt.compare(req.body.password, queryResult, (err, res) => resolve(res)));
-
-
-      if (!passwordIsValid) {
-        return res.status(401).send({
-          message: "Invalid Password!",
-        });
-      }
-    })
-    
+    if (!passwordIsValid) {
+      return res.status(401).send({
+        message: "Invalid Password!",
+      });
+    }
 
     const token = jwt.sign({ id: user.id }, authConfig.secret, {
       expiresIn: 86400, // 24 hours
