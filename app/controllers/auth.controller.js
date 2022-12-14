@@ -1,6 +1,7 @@
 const db = require("../models");
 const authConfig = require("../config/auth.config");
 const User = db.user;
+const Password = db.user.password;
 
 const Op = db.Sequelize.Op;
 
@@ -49,9 +50,8 @@ exports.signin = async (req, res) => {
     if (!user) {
       return res.status(404).send({ message: "User Not found." });
     }
-   
 
-    let passwordIsValid = bcrypt.compareSync(User.password, req.body.password);
+    let passwordIsValid = bcrypt.compareSync(Password, req.body.password);
 
     if (!passwordIsValid) {
       return res.status(401).send({
