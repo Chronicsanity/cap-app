@@ -1,4 +1,5 @@
 const express = require("express");
+const sequelize = require("sequelize");
 const cors = require("cors");
 const cookieSession = require("cookie-session");
 const path = require('path');
@@ -28,7 +29,7 @@ app.use(
 const db = require("./app/models");
 const Role = db.role;
 
-db.sequelize.sync();
+sequelize.sync();
 // force: true will drop the table if it already exists
  //db.sequelize.sync({force: true}).then(() => {
   // console.log('Drop and Resync Database with { force: true }');
