@@ -48,7 +48,7 @@ exports.signin = async (req, res) => {
     });
 
     if (!user) {
-      return res.status(404).send({ message: "User Not found." });
+      return res.status(404).send({ print: console.log(User) });
     }
 
    else {
