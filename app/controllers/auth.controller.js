@@ -1,7 +1,11 @@
 const db = require("../models");
 const authConfig = require("../config/auth.config");
 const User = db.user;
-const Password = db.user.password;
+const userPassword = await User.findOne({
+  where: {
+    password1: req.body.password,
+
+  },});
 
 const Op = db.Sequelize.Op;
 
@@ -48,32 +52,20 @@ exports.signin = async (req, res) => {
     });
 
     if (!user) {
-      return res.status(404).send({ print: console.log(User) });
+      return res.status(404).send({ message: "User Not found." });
     }
 
-   else {
-    const userPass = await Password.findOne({
-      where: {
-        password1: req.body.password,
-
-      },
-
-    
-
-
-   });
-
    
-
-    let passwordIsValid = bcrypt.compareSync(Password, userPass);
+  
+    let passwordIsValid = bcrypt.compareSync(User.password, userPassword);
       
 
     if (!passwordIsValid) {
       return res.status(401).send({
         message: "Invalid Password!",
       });
-    }}
-
+    }
+  
     const token = jwt.sign({ id: user.id }, authConfig.secret, {
       expiresIn: 86400, // 24 hours
     });
@@ -89,10 +81,11 @@ exports.signin = async (req, res) => {
       email: user.email,
       roles: authorities,
     });
-  } 
+  }
   catch (error) {
     return res.status(500).send({ message: error.message });
   }
+
 };
 
 exports.signout = async (req, res) => {
