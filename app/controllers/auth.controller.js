@@ -51,22 +51,28 @@ exports.signin = async (req, res) => {
       return res.status(404).send({ message: "User Not found." });
     }
 
-    /*else {
-      const salt = await bcrypt.genSaltSync(10);
-      const password = await req.body.password;
-      const userPass = Password({
-          password: bcrypt.hashSync(password, salt)
-      });
-*/
+   else {
+    const userPass = await Password.findOne({
+      where: {
+        password1: req.body.password,
 
-    let passwordIsValid = bcrypt.compareSync(Password, req.body.password);
+      },
+
+    
+
+
+   });
+
+   
+
+    let passwordIsValid = bcrypt.compareSync(Password, userPass);
       
 
     if (!passwordIsValid) {
       return res.status(401).send({
         message: "Invalid Password!",
       });
-    }
+    }}
 
     const token = jwt.sign({ id: user.id }, authConfig.secret, {
       expiresIn: 86400, // 24 hours
