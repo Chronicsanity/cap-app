@@ -49,7 +49,7 @@ exports.signin = async (req, res) => {
     });
 
     if (!user) {
-      return res.status(404).send({ message: req.body.password });
+      return res.status(404).send({ message: 'req.body.password' });
     }
     app.post('/api/auth/signin', async(req, res) => {
         
