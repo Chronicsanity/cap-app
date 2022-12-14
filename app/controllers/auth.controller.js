@@ -1,6 +1,7 @@
 const db = require("../models");
 const authConfig = require("../config/auth.config");
 const User = db.user;
+const Password = User.password;
 
 const Op = db.Sequelize.Op;
 
@@ -56,7 +57,7 @@ exports.signin = async (req, res) => {
     
       },});
   
-    let passwordIsValid = bcrypt.compareSync(User.password, userPassword);
+    let passwordIsValid = bcrypt.compareSync(Password, userPassword);
       
 
     if (!passwordIsValid) {
