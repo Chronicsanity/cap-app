@@ -1,11 +1,6 @@
 const db = require("../models");
 const authConfig = require("../config/auth.config");
 const User = db.user;
-const userPassword = await User.findOne({
-  where: {
-    password1: req.body.password,
-
-  },});
 
 const Op = db.Sequelize.Op;
 
@@ -55,7 +50,11 @@ exports.signin = async (req, res) => {
       return res.status(404).send({ message: "User Not found." });
     }
 
-   
+    const userPassword = await User.findOne({
+      where: {
+        password1: req.body.password,
+    
+      },});
   
     let passwordIsValid = bcrypt.compareSync(User.password, userPassword);
       
