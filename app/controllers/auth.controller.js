@@ -1,5 +1,4 @@
 const db = require("../models");
-const express = require("express");
 const authConfig = require("../config/auth.config");
 const User = db.user;
 
@@ -52,7 +51,7 @@ exports.signin = async (req, res) => {
     }
    
 
-    let passwordIsValid = bcrypt.compareSync(givenPassword, req.body.password);
+    let passwordIsValid = bcrypt.compareSync(User.password, req.body.password);
 
     if (!passwordIsValid) {
       return res.status(401).send({
