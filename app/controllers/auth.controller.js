@@ -54,10 +54,9 @@ exports.signin = async (req, res) => {
    
     router.post('/login', (req, res) => {
       let password = req.body.password1;
-      console.log(password);
     });
     const passwordIsValid = bcrypt.compareSync(
-      password,
+      req.body.password1,
       user.password
     );
       
