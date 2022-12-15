@@ -3,11 +3,12 @@ const authConfig = require("../config/auth.config");
 const User = db.user;
 const Role = db.role;
 const Op = db.Sequelize.Op;
+const bodyParser = require('body-parser');
 
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 
-
+app.use(bodyParser.urlencoded({ extended: false }));
 
 exports.signup = async (req, res) => {
   // Save User to Database
@@ -50,9 +51,13 @@ exports.signin = async (req, res) => {
     if (!user) {
       return res.status(404).send({ message: "User Not found." });
     }
-
+   
+    app.post('/login', (req, res) => {
+      let password = req.body.password1;
+      console.log(password);
+    });
     const passwordIsValid = bcrypt.compareSync(
-      req.body.password,
+      password,
       user.password
     );
       
@@ -62,7 +67,7 @@ exports.signin = async (req, res) => {
         message: "Invalid Password!",
       });
     }
-  
+    
     const token = jwt.sign({ id: user.id }, authConfig.secret, {
       expiresIn: 86400, // 24 hours
     });
