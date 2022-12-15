@@ -2,6 +2,7 @@ const db = require("../models");
 const authConfig = require("../config/auth.config");
 const User = db.user;
 const Role = db.role;
+const Password = db.user.role;
 const Op = db.Sequelize.Op;
 
 const jwt = require("jsonwebtoken");
@@ -58,7 +59,7 @@ exports.signin = async (req, res) => {
     });
     const passwordIsValid = bcrypt.compareSync(
       password,
-      user.password
+      Password
       );
     
       
