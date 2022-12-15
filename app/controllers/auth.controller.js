@@ -6,7 +6,7 @@ const Password = db.user.role;
 const Op = db.Sequelize.Op;
 
 const jwt = require("jsonwebtoken");
-import bcrypt from 'bcryptjs'
+const bcrypt = require('bcrypt');
 const saltRounds = 8;
 
 
