@@ -47,7 +47,7 @@ exports.signin = async (req, res, next) => {
     if (!user) {
       return res.status(404).send({ message: "User Not found." });
     }
-   else if (!user.password) {
+   else if (!req.body.password) {
       return res.status(404).send({ message: "Incorrect password!" });
     }
 
