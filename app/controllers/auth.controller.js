@@ -72,7 +72,8 @@ exports.signin = async (req, res, next) => {
     Password = req.body.password;
     hashPassword(Password) 
 
-    comparePassword(Password, db.user.password)
+    const result = bcrypt.compare(Password, db.password);
+   
 
     if (result == false)
     {
