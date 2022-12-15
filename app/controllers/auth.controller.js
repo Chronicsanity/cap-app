@@ -2,7 +2,6 @@ const db = require("../models");
 const authConfig = require("../config/auth.config");
 const User = db.user;
 const Role = db.role;
-const Password = db.user.role;
 const Op = db.Sequelize.Op;
 
 const jwt = require("jsonwebtoken");
@@ -48,7 +47,10 @@ exports.signin = async (req, res, next) => {
   })
   .catch(err => console.error(err.message));
   try {
-    const user = await User.findOne({ username });
+    const user = await User.findOne({ 
+      username: username
+
+    });
 
     if (!user) {
       return res.status(404).send({ message: "User Not found." });
