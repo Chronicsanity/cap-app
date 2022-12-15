@@ -42,7 +42,8 @@ exports.signin = async (req, res) => {
   try {
     const user = await User.findOne({
       where: {
-        username: req.body.username1,
+        username: req.body.username,
+        password: req.body.password,
     
       },
     });
@@ -52,7 +53,7 @@ exports.signin = async (req, res) => {
     }
    
     const passwordIsValid = bcrypt.compareSync(
-      req.body.password1,
+      req.body.password,
       user.password
     );
       
