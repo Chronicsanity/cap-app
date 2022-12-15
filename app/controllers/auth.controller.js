@@ -54,6 +54,7 @@ exports.signin = async (req, res) => {
    else {
     const password = await User.findOne({
       where: {
+        username: req.body.username,
         password: req.body.password,
       },
     });
