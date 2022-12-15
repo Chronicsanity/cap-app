@@ -41,13 +41,19 @@ exports.signup = async (req, res) => {
 
 exports.signin = async (req, res, next) => {
   const { username, password } = req.body
+  bcrypt
+  .hash(password, saltRounds)
+  .then(hash => {
+    console.log('Hash ', hash)
+  })
+  .catch(err => console.error(err.message));
   try {
     const user = await User.findOne({ username, password });
 
     if (!user) {
       return res.status(404).send({ message: "User Not found." });
     }
-   else if (bcrypt.compare(req.body.password,user.password)) {
+   else if (bcrypt.compare(password, hash)) {
       return res.status(404).send({ message: "Incorrect password!" });
     }
 
