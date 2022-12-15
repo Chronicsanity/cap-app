@@ -43,7 +43,6 @@ exports.signin = async (req, res) => {
     const user = await User.findOne({
       where: {
         username: req.body.username,
-        password: req.body.password,
     
       },
     });
@@ -51,11 +50,17 @@ exports.signin = async (req, res) => {
     if (!user) {
       return res.status(404).send({ message: "User Not found." });
     }
-   
+   else {
+    const password = await User.findOne({
+      where: {
+        password: req.body.password,
+      },
+    });
     const passwordIsValid = bcrypt.compareSync(
-      req.body.password,
+      password,
       user.password
-    );
+      );
+    
       
 
     if (!passwordIsValid) {
@@ -63,6 +68,7 @@ exports.signin = async (req, res) => {
         message: "Invalid Password!",
       });
     }
+  }
     
     const token = jwt.sign({ id: user.id }, authConfig.secret, {
       expiresIn: 86400, // 24 hours
