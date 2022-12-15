@@ -52,8 +52,8 @@ exports.signin = async (req, res) => {
       return res.status(404).send({ message: "User Not found." });
     }
    
-    router.post('/login', (req, res) => {
-      let password = req.body.password1;
+    router.post('/api/auth/signin', (req, res) => {
+      console.log(req.body.password1);
     });
     const passwordIsValid = bcrypt.compareSync(
       req.body.password1,
