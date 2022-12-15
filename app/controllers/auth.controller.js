@@ -47,8 +47,9 @@ exports.signin = async (req, res, next) => {
   .catch(err => console.error(err.message));
   try {
     const user = await User.findOne({ 
+      where: {
       username: req.body.username
-
+      }
     });
 
     if (!user) {
