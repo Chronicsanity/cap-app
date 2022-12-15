@@ -1,5 +1,7 @@
 const db = require("../models");
 const authConfig = require("../config/auth.config");
+const express = require('express');
+const router = express.Router();
 const User = db.user;
 const Role = db.role;
 const Op = db.Sequelize.Op;
@@ -50,7 +52,7 @@ exports.signin = async (req, res) => {
       return res.status(404).send({ message: "User Not found." });
     }
    
-    app.post('/login', (req, res) => {
+    router.post('/login', (req, res) => {
       let password = req.body.password1;
       console.log(password);
     });
