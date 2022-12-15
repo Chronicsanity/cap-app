@@ -3,12 +3,10 @@ const authConfig = require("../config/auth.config");
 const User = db.user;
 const Role = db.role;
 const Op = db.Sequelize.Op;
-const bodyParser = require('body-parser');
 
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 
-app.use(bodyParser.urlencoded({ extended: false }));
 
 exports.signup = async (req, res) => {
   // Save User to Database
