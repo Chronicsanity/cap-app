@@ -3,10 +3,26 @@ const authConfig = require("../config/auth.config");
 const User = db.user;
 const Role = db.role;
 const Op = db.Sequelize.Op;
-
+const express = require('express');
 const jwt = require("jsonwebtoken");
 const bcrypt = require('bcryptjs');
+const app = express();
+const bodyParser = require('body-parser');
 const saltRounds = 8;
+
+async function hashPassword(password) 
+  {
+    const hash = await bcrypt.hash(password, saltRounds);
+    console.log(hash)
+  } 
+  app.use(bodyParser.urlencoded({ extended: true }));
+
+async function comparePassword(password, hash)
+   {
+    const result = await bcrypt.compare(password, hash);
+    return result;
+  }
+
 
 
 exports.signup = async (req, res) => {
@@ -40,11 +56,7 @@ exports.signup = async (req, res) => {
 };
 
 exports.signin = async (req, res, next) => {
-  const { password } = req.body
-  bcrypt.hash(password, saltRounds).then(hash => {
-    console.log('Hash ', hash)
-  })
-  .catch(err => console.error(err.message));
+    
   try {
     const user = await User.findOne({ 
       where: {
@@ -52,14 +64,24 @@ exports.signin = async (req, res, next) => {
       }
     });
 
-    if (!user) {
+  if (!user) {
       return res.status(404).send({ message: "User Not found." });
     }
-   else if (bcrypt.compare(password, hash)) {
-      return res.status(404).send({ message: "Incorrect password!" });
-    }
+   if (app.get('/api/auth/signin', (req, res) => {
+    console.log(req.body.password)
+    Password = req.body.password;
+    hashPassword(Password) 
 
-    else {
+    comparePassword(Password, db.user.password)
+
+    if (result == false)
+    {
+      return res.status(404).send({ message: "User Not found." });
+    }
+   }));
+
+else
+  {
       res.status(200).json({
         message: "Login successful",
         user,
