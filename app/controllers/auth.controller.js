@@ -40,7 +40,6 @@ exports.signup = async (req, res) => {
 };
 
 exports.signin = async (req, res, next) => {
-  const { username } = req.body
   const { password } = req.body
   bcrypt.hash(password, saltRounds).then(hash => {
     console.log('Hash ', hash)
@@ -48,7 +47,7 @@ exports.signin = async (req, res, next) => {
   .catch(err => console.error(err.message));
   try {
     const user = await User.findOne({ 
-      username: username
+      username: req.body.username
 
     });
 
