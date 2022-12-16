@@ -72,10 +72,10 @@ exports.signin = async (req, res, next) => {
     Password = req.body.password;
     hashPassword(Password) 
 
-    bcrypt.hash('Password', 10, function(err, hash) {
+    bcrypt.hash(Password, 10, function(err, hash) {
       if (err) { throw (err); }
   
-      bcrypt.compare('Password', hash, function(err, result) {
+      bcrypt.compare(Password, hash, function(err, result) {
           if (err) { throw (err); }
           console.log(result);
       });
