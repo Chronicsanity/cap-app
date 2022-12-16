@@ -72,13 +72,18 @@ exports.signin = async (req, res, next) => {
     Password = req.body.password;
     hashPassword(Password) 
 
-    const result = bcrypt.compare(Password, db.password);
-   
-
-    if (result == false)
+    bcrypt.hash('Password', 10, function(err, hash) {
+      if (err) { throw (err); }
+  
+      bcrypt.compare('Password', hash, function(err, result) {
+          if (err) { throw (err); }
+          console.log(result);
+      });
+    if (result = false)
     {
       return res.status(404).send({ message: "User Not found." });
     }
+  });
    }));
 
 else
