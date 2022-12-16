@@ -70,21 +70,16 @@ exports.signin = async (req, res, next) => {
    if (app.get('/api/auth/signin', (req, res) => {
     console.log(req.body.password)
     Password = req.body.password;
-    hashPassword(Password) 
 
-    bcrypt.hash(Password, 10, function(err, hash) {
-      if (err) { throw (err); }
+    let passwordHash = bcrypt.hash(Password, salt);
+    const boolResult = bcrypt.compare(User.password, passwordHash)
   
-      bcrypt.compare(Password, hash, function(err, result) {
-          if (err) { throw (err); }
-          console.log(result);
-      });
-    if (result = false)
+     
+    if (boolResult = false)
     {
       return res.status(404).send({ message: "User Not found." });
     }
-  });
-   }));
+  }));
 
 else
   {
