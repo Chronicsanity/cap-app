@@ -1,8 +1,10 @@
+require('rootpath')();
 const express = require("express");
 const cors = require("cors");
 const cookieSession = require("cookie-session");
 const path = require('path');
 const Sequelize = require("sequelize");
+const errorHandler = require('_middleware/error-handler');
 const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06.cleardb.net/heroku_a26e4a307a3f41f?reconnect=true", {
 
 logging: false
@@ -20,6 +22,9 @@ app.use(express.urlencoded({ extended: true }));
 
 app.set('view engine','ejs')
 
+app.use('/controllers', require('./controllers/user.controller'));
+
+app.use(errorHandler);
 app.use(
   cookieSession({
     name: "cap-session",
