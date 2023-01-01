@@ -67,32 +67,28 @@ exports.signin = async (req, res, next) => {
   if (!user) {
       return res.status(404).send({ message: "User Not found." });
     }
-   if (app.get('/api/auth/signin', (req, res) => {
+  /* else if (app.get('/api/auth/signin', (req, res) => {
     console.log(req.body.password)
     Password = req.body.password;
-
-    let passwordHash = bcrypt.hash(Password, salt);
-    const boolResult = bcrypt.compare(User.password, passwordHash)
+*/
   
-     
-    if (boolResult = false)
     {
       return res.status(404).send({ message: "User Not found." });
     }
-  }));
+  
 
-else
+ /* else
   {
       res.status(200).json({
         message: "Login successful",
         user,
       })
-    
+    }};
   }
     
     const token = jwt.sign({ id: user.id }, authConfig.secret, {
       expiresIn: 86400, // 24 hours
-    });
+    })} */
   
     let authorities = [];
    
