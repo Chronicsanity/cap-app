@@ -89,6 +89,11 @@ app.post('/', (req, res) => {
     
 );});
 
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}.`);
+});
+
 /*app.use(cors());
 
 // parse requests of content-type - application/json
