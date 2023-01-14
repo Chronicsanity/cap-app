@@ -62,7 +62,7 @@ app.use(cors(
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.post('/login', (req, res) => {
+app.post('/', (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
 
