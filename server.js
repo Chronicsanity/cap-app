@@ -27,6 +27,9 @@ app.use (
       },
   })
 );
+app.get("/login", (req, res) => {
+  res.render('login', {title: "Login"});
+});
 app.post('/register', (req, res)=> {
   const username = req.body.username;
   const password = req.body.password;
@@ -44,7 +47,7 @@ app.post('/register', (req, res)=> {
   );
     }
   );})
-  app.get("/login", (req, res) => {
+  app.get("/", (req, res) => {
     if (req.session.user) {
       res.send({ loggedIn: true, user: req.session.user });
     } else{
@@ -88,7 +91,7 @@ app.post('/login', (req, res) => {
             }
         });
             }
-            else({message: "Wrong username/password comination!"});
+            else({message: "Wrong username/password combination!"});
         }
     
 );});
