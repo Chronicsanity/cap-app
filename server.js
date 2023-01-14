@@ -11,7 +11,7 @@ const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06
 
 logging: false
 });
-
+app.use(express.urlencoded({ extended: true }));
 const app = express();
 const db = require("./app/models");
 
