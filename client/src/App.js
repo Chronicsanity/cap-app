@@ -15,7 +15,7 @@ function App() {
   Axios.defaults.withCredentials = true;
 
   const register = () => {
-    Axios.post("http://localhost:3001/register", {
+    Axios.post("https://cap-capstone.herokuapp.com/register", {
       username: usernameReg,
       password: passwordReg,
      }).then((response) => {
@@ -24,7 +24,7 @@ function App() {
    };
  
    const login = () => {
-    Axios.post("http://localhost:3001/login", {
+    Axios.post("https://cap-capstone.herokuapp.com/login", {
        username: username,
        password: password,
     }).then((response) => {
@@ -36,7 +36,7 @@ function App() {
     });
     };
     useEffect(() => {
-      Axios.get("http://localhost:3001/login").then((response) => {
+      Axios.get("https://cap-capstone.herokuapp.com/login").then((response) => {
         if (response.data.loggedIn === true) {
           setRole(response.data.user[0].role);
         }
