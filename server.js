@@ -50,7 +50,7 @@ app.post('/register', (req, res)=> {
       res.send({ loggedIn: true, user: req.session.user });
     } else {
       res.send({ loggedIn: false });
-      return <Redirect to='/dashboard' />
+      return <Redirect to='/login' />
 
 
     }
