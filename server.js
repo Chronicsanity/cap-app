@@ -1,4 +1,3 @@
-const Redirect = require("react-router-dom");
 const express = require("express");
 const session = require("express-session");
 const cors = require("cors");
@@ -50,7 +49,7 @@ app.post('/register', (req, res)=> {
       res.send({ loggedIn: true, user: req.session.user });
     } else {
       res.send({ loggedIn: false });
-      return <Redirect to='/login' />
+      res.redirect("/login");
 
 
     }
