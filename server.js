@@ -1,4 +1,4 @@
-
+import {Redirect} from 'react-router-dom';
 const express = require("express");
 const session = require("express-session");
 const cors = require("cors");
@@ -50,6 +50,9 @@ app.post('/register', (req, res)=> {
       res.send({ loggedIn: true, user: req.session.user });
     } else {
       res.send({ loggedIn: false });
+      return <Redirect to='/dashboard' />
+
+
     }
   });
 app.use(cors(
@@ -62,7 +65,7 @@ app.use(cors(
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.post('/', (req, res) => {
+app.post('/login', (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
 
