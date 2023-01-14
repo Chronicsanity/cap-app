@@ -49,15 +49,12 @@ app.post('/register', (req, res)=> {
       res.send({ loggedIn: true, user: req.session.user });
     } else{
    
-      res.send({ loggedIn: false });
+      res.redirect('/login');
       
 
 
     }
-    if ( loggedIn == false )
-    {
-       res.redirect('/login');
-  }
+   
   });
 app.use(cors(
 
