@@ -55,9 +55,8 @@ app.get("/")
 require("./app/routes/auth.routes")(app);
 require("./app/routes/user.routes")(app);
 
-app.get("/forgetpass", (req, res) => {
-  res.render('/forgetpass', {title: "Forgot Password?"});
-});
+app.get("/forgetpass")
+require("./app/routes/user.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
