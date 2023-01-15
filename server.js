@@ -23,7 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.set('view engine','ejs')
 
-app.use('/controllers', require('./controllers/user.controller'));
+//app.use('/controllers', require('./controllers/user.controller'));
 
 app.use(errorHandler);
 app.use(
