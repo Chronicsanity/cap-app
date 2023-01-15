@@ -13,3 +13,7 @@ exports.allAccess = (req, res) => {
   exports.moderatorBoard = (req, res) => {
     res.status(200).send("Moderator Content.");
   };
+
+  exports.forgetPass = (req, res) => {
+    res.status(200).send("Forgot Password.");
+  };
