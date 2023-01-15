@@ -4,7 +4,7 @@ const cors = require("cors");
 const cookieSession = require("cookie-session");
 const path = require('path');
 const Sequelize = require("sequelize");
-//const errorHandler = require('_middleware/error-handler');
+const errorHandler = require('_middleware/error-handler');
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06.cleardb.net/heroku_a26e4a307a3f41f?reconnect=true", {
@@ -12,96 +12,7 @@ const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06
 logging: false
 });
 
-const app = express();
-const db = require("./app/models");
-app.set('view engine','js');
-app.use(express.urlencoded({ extended: true }));
-app.use (
-  session ({
-      key: "userId",
-      secret: "Secret",
-      resave: false,
-      saveUninitialized: false,
-      cookie: {
-          expires: 60 * 60 * 24,
-      },
-  })
-);
-app.get("/login", (req, res) => {
-  res.render('login', {title: "Login"});
-});
-app.post('/register', (req, res)=> {
-  const username = req.body.username;
-  const password = req.body.password;
-
-  bcrypt.hash(password,saltRound, (err, hash) => {
-    if (err) {
-             console.log(err)
-         }
-  db.execute(
-    "INSERT INTO users (username, password) VALUES (?,?)"
-    [username, password],
-    (err, result)=> {
-      console.log(err);
-      }
-  );
-    }
-  );})
-  app.get("/", (req, res) => {
-    if (req.session.user) {
-      res.send({ loggedIn: true, user: req.session.user });
-    } else{
-   
-      res.redirect('/login');
-      
-
-
-    }
-   
-  });
-app.use(cors(
-
- { origin: ["*"],
- methods: ["GET", "POST"],
- credentials: true,
- }
-));
-app.use(cookieParser());
-app.use(bodyParser.urlencoded({ extended: true }));
-
-app.post('/login', (req, res) => {
-  const username = req.body.username;
-  const password = req.body.password;
-
-  db.execute(
-    "SELECT * FROM users WHERE username = ?;",
-    [username], 
-    (err, result)=> {
-        if (err) {
-            res.send({err: err});
-        }
-
-        if (result.length > 0) {
-          bcrypt.compare(password, result[0].password, (error, response) => {
-            if (response) {
-              req.session.user = result;
-              console.log(req.session.user);
-            } else{
-                res.send({message: "User doesn't exist!"}); 
-            }
-        });
-            }
-            else({message: "Wrong username/password combination!"});
-        }
-    
-);});
-
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}.`);
-});
-
-/*app.use(cors());
+ app.use(cors());
 
 // parse requests of content-type - application/json
 app.use(express.json());
@@ -148,4 +59,4 @@ require("./app/routes/user.routes")(app);
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
-});*/
+});
