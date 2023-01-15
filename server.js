@@ -25,7 +25,6 @@ app.set('view engine','ejs')
 
 //app.use('/controllers', require('./controllers/user.controller'));
 
-app.use(errorHandler);
 app.use(
   cookieSession({
     name: "cap-session",
