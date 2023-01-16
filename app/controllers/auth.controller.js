@@ -70,7 +70,7 @@ exports.signin = async (req, res, next) => {
    else if (app.get('/api/auth/signin'), (req, res) => {
     const inputPass = console.log(req.body.password)
     Password = inputPass;
-   
+    res.render('dashboard.ejs');
 
    });
     const token = jwt.sign({ id: user.id }, authConfig.secret, {
