@@ -66,13 +66,14 @@ exports.signin = async (req, res, next) => {
 
   if (!user) {
       return res.status(404).send({ message: "User Not found." },
-      res.render('/login') );
+      res.render('login') );
     }
    else if (app.get('/api/auth/signin'), (req, res) => {
     const inputPass = console.log(req.body.password)
     Password != inputPass;
 
-    return res.status(404).send({ message: "User Not found."}
+    return res.status(404).send({ message: "User Not found."}, 
+
 
    )});
     const token = jwt.sign({ id: user.id }, authConfig.secret, {
@@ -83,7 +84,7 @@ exports.signin = async (req, res, next) => {
    
 
     req.session.token = token;
-    return res.render('/dashboard')
+    return res.render('dashboard')
    /* return res.status(200).send({
       id: user.id,
       username: user.username,
