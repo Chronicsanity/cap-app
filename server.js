@@ -66,7 +66,7 @@ app.get('/index', (req, res) =>{
 });
 
 const obj = {};
-router.get('/data', function(req, res){
+app.get('/dashboard', function(req, res){
 
     connection.query('SELECT * FROM users', function(err, result) {
 
