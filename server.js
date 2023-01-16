@@ -65,6 +65,21 @@ app.get('/index', (req, res) =>{
 
 });
 
+const obj = {};
+router.get('/data', function(req, res){
+
+    connection.query('SELECT * FROM users', function(err, result) {
+
+        if(err){
+            throw err;
+        } else {
+            obj = {print: result};
+            res.render('print', obj);                
+        }
+    });
+
+});
+
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
