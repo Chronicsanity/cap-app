@@ -83,7 +83,7 @@ exports.signin = async (req, res, next) => {
    
 
     req.session.token = token;
-
+    return res.render('/dashboard')
    /* return res.status(200).send({
       id: user.id,
       username: user.username,
