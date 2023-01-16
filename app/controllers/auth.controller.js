@@ -70,7 +70,7 @@ exports.signin = async (req, res, next) => {
         await new Promise(resolve => setTimeout(resolve, 5000)),
       res.redirect('login');
     }
-   else if (app.get('/api/auth/signin'), (req, res) => {
+   else if (app.post('/api/auth/signin'), (req, res) => {
     const inputPass = console.log(req.body.password)
     Password != inputPass;
 
