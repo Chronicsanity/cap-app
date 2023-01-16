@@ -58,8 +58,13 @@ require("./app/routes/user.routes")(app);
 app.post('/forgetpass');
 app.get( '/forgetpass', (req, res) =>{
   res.render('forgetpass.ejs');
+});
+app.post('/index');
+app.get('/index', (req, res) =>{
+  res.render('index.ejs');
 
 });
+
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
