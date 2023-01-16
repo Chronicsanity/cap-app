@@ -46,11 +46,11 @@ sequelize.sync();
  //});
 
 // simple route
-app.get("/", (req, res) => {
+app.get("/signin", (req, res) => {
   res.render('login', {title: "Login"});
 });
 
-app.get("/")
+app.get("/signin")
 // routes
 require("./app/routes/auth.routes")(app);
 require("./app/routes/user.routes")(app);
