@@ -46,7 +46,7 @@ sequelize.sync();
  //});
 
 // simple route
-app.get("/", (req, res) => {
+app.get("/*", (req, res) => {
   res.render('login', {title: "Login"});
 });
 
