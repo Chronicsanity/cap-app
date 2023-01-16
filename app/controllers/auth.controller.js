@@ -65,7 +65,7 @@ exports.signin = async (req, res, next) => {
     });
 
   if (!user) {
-      return req.flash("User not found"),
+      return res.flash("User not found"),
         await new Promise(resolve => setTimeout(resolve, 5000)),
       res.redirect('login');
     }
