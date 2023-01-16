@@ -67,28 +67,15 @@ exports.signin = async (req, res, next) => {
   if (!user) {
       return res.status(404).send({ message: "User Not found." });
     }
-  /* else if (app.get('/api/auth/signin', (req, res) => {
-    console.log(req.body.password)
-    Password = req.body.password;
-*/
-  
-    {
-      return res.status(404).send({ message: "User Not found." });
-    }
-  
+   else if (app.get('/api/auth/signin'), (req, res) => {
+    const inputPass = console.log(req.body.password)
+    Password = inputPass;
+   
 
- /* else
-  {
-      res.status(200).json({
-        message: "Login successful",
-        user,
-      })
-    }};
-  }
-    
+   });
     const token = jwt.sign({ id: user.id }, authConfig.secret, {
       expiresIn: 86400, // 24 hours
-    })} */
+    });
   
     let authorities = [];
    
@@ -101,12 +88,14 @@ exports.signin = async (req, res, next) => {
       email: user.email,
       roles: authorities,
     });
-  }
+  
+}
   catch (error) {
     return res.status(500).send({ message: error.message });
   }
 
 };
+
 
 exports.signout = async (req, res) => {
   try {
