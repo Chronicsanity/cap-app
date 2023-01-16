@@ -55,7 +55,11 @@ app.get("/")
 require("./app/routes/auth.routes")(app);
 require("./app/routes/user.routes")(app);
 
+app.post('/forgetpass');
+app.get( '/forgetpass', (req, res) =>{
+  res.render('views/forgetpass.ejs');
 
+});
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
