@@ -57,11 +57,12 @@ exports.signup = async (req, res) => {
 };
 
 exports.signin = async (req, res, next) => {
-    
+
   try {
     const user = await User.findOne({ 
       where: {
-      username: req.body.username
+      username: req.body.username,
+      password: req.body.password
       }
     });
 
@@ -71,9 +72,7 @@ exports.signin = async (req, res, next) => {
       res.redirect('login');
     }
    else if (app.get('/signin'), (req, res) => {
-    const inputPass = console.log(req.body.password)
-    Password != inputPass;
-
+    comparePassword (user.password, db.password)
     return res.status(404).send({ message: "User Not found."}, 
 
 
