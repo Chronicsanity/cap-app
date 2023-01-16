@@ -69,11 +69,11 @@ exports.signin = async (req, res, next) => {
     }
    else if (app.get('/api/auth/signin'), (req, res) => {
     const inputPass = console.log(req.body.password)
-    Password = inputPass;
+    Password != inputPass;
 
-    return res.render('dashboard.ejs');
+    return res.status(404).send({ message: "User Not found."}
 
-   });
+   )});
     const token = jwt.sign({ id: user.id }, authConfig.secret, {
       expiresIn: 86400, // 24 hours
     });
