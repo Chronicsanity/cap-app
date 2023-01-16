@@ -22,6 +22,12 @@
             </html>
         </body>
         
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var obj = $("#obj").html(); 
+                alert(obj);  // now JS variable 'x' has the uid that's passed from the node backend.
+            });
+        </script>
 
         <h5><%= locals.user ? user : "User" %></h5>
         <a href="/controllers/auth.controller">Logout</a>
