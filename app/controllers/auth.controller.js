@@ -65,7 +65,7 @@ exports.signin = async (req, res, next) => {
     });
 
   if (!user) {
-      return res.status(404).ejs({username : false },
+      return res.status(404).send({message : "User not found" },
         await new Promise(resolve => setTimeout(resolve, 5000)),
       res.render('login') );
     }
