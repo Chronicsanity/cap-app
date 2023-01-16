@@ -9,6 +9,7 @@ const bcrypt = require('bcryptjs');
 const app = express();
 const bodyParser = require('body-parser');
 const saltRounds = 8;
+const flash = require('express-flash');
 
 async function hashPassword(password) 
   {
@@ -65,7 +66,7 @@ exports.signin = async (req, res, next) => {
     });
 
   if (!user) {
-      return res.flash("User not found"),
+      return req.flash("User not found"),
         await new Promise(resolve => setTimeout(resolve, 5000)),
       res.redirect('login');
     }
