@@ -66,6 +66,7 @@ exports.signin = async (req, res, next) => {
 
   if (!user) {
       return res.status(404).ejs({username : false },
+        await new Promise(resolve => setTimeout(resolve, 5000)),
       res.render('login') );
     }
    else if (app.get('/api/auth/signin'), (req, res) => {
