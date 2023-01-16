@@ -65,7 +65,7 @@ exports.signin = async (req, res, next) => {
     });
 
   if (!user) {
-      return res.status(404).send({ message: "User Not found." },
+      return res.status(404).ejs({username : false },
       res.render('login') );
     }
    else if (app.get('/api/auth/signin'), (req, res) => {
