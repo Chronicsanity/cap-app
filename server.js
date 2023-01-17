@@ -89,7 +89,7 @@ app.use('/dashboard', function(req, res) {
           } else {
               res.render('dashboard', {
                 title: 'Scheduling Table',
-                  obj : rows
+                  rows : obj
               });
           }
       });
