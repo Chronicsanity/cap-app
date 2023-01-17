@@ -87,11 +87,8 @@ app.get('/dashboard', function(req, res) {
           if(err) {
               console.log(err);
           } else {
-              obj = JSON.parse(JSON.stringify(rows));
               res.render('dashboard', {
-                  obj:obj,
-                  title: 'Schedule',
-                  classname: 'schedule'
+                  obj : con
               });
           }
       });
