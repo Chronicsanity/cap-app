@@ -66,8 +66,7 @@ app.get('/index', (req, res) =>{
 });
 
 app.use(express.static(__dirname + '/views'));
-
-const obj = {};
+/*
 app.get('/dashboard', function(req, res){
 
     connection.query('SELECT * FROM users', function(err, result) {
@@ -80,8 +79,24 @@ app.get('/dashboard', function(req, res){
         }
     });
 
+});*/
+app.get('/dashboard', function(req, res) {
+  connection.acquire(function (err, con) {
+      con.query('SELECT * FROM user', function (err, rows) {
+          con.release();
+          if(err) {
+              console.log(err);
+          } else {
+              obj = JSON.parse(JSON.stringify(rows));
+              res.render('dashboard', {
+                  obj:obj,
+                  title: 'Schedule',
+                  classname: 'schedule'
+              });
+          }
+      });
+  });
 });
-
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {

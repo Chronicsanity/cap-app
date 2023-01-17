@@ -24,9 +24,9 @@
                 </thead>  
                  <tbody>  
                     <tr>
-                    <% data.forEach(entry => {  %>
-                        <td><%=entry.Username %></td> 
-                        <td><%=entry.Password %></td>      
+                    <% data.forEach(obj => {  %>
+                        <td><%=obj.Username %></td> 
+                        <td><%=obj.Password %></td>      
                  </tr>
                    <% }) %>
                  </tbody>
