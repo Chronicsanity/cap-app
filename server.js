@@ -88,7 +88,7 @@ app.get('/dashboard', function(req, res) {
               console.log(err);
           } else {
               res.render('dashboard', {
-                  obj : con
+                  obj : rows
               });
           }
       });
