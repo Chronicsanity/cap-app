@@ -65,6 +65,8 @@ app.get('/index', (req, res) =>{
 
 });
 
+app.use(express.static(__dirname + '/views'));
+
 const obj = {};
 app.get('/dashboard', function(req, res){
 
