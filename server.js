@@ -80,7 +80,7 @@ app.get('/dashboard', function(req, res){
     });
 
 });*/
-app.get('/dashboard', function(req, res) {
+app.use('/dashboard', function(req, res) {
   connection.acquire(function (err, con) {
       con.query('SELECT * FROM user', function (err, rows) {
           con.release();
@@ -88,6 +88,7 @@ app.get('/dashboard', function(req, res) {
               console.log(err);
           } else {
               res.render('dashboard', {
+                title: 'Scheduling Table',
                   obj : rows
               });
           }
