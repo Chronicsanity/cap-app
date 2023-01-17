@@ -80,22 +80,22 @@ app.get('/dashboard', function(req, res){
     });
 
 });*/
-app.get('/dashboard', function(req, res) {
-  app.acquire(function (err, app) {
-      app.query('SELECT * FROM user', function (err, rows) {
-          app.release();
+var obj = {};
+app.get('/dashboard', function(req, res) 
+ {
+      app.query('SELECT * FROM user', function (err, result) {
           if(err) {
               console.log(err);
           } else {
+            obj = {print: result};
               res.render('dashboard', {
                 title: 'Scheduling Table',
-                  obj: rows
+                  obj: obj
               });
               console.log(obj);
           }
       });
   });
-});
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {

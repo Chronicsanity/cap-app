@@ -14,7 +14,7 @@
         <body>
 
             <script type='text/javascript'>
-                var obj = <%-JSON.stringify(obj[i])%>
+               // var obj = <%-JSON.stringify(obj[i])%>
               </script>
         <div class="schedule-table">
             
@@ -27,11 +27,11 @@
                 </thead>  
                  <tbody>  
                     <tr>
-                    <% obj.forEach(rows => {  %>
-                        <td><%=obj.Username %></td> 
-                        <td><%=obj.Password %></td>      
+                    <% obj.print.forEach(user) => {  %>
+                        <td><%=user.Username %></td> 
+                        <td><%=user.Password %></td>      
                  </tr>
-                   <% }) %>
+                   <% } %>
                  </tbody>
             </table>   
             </div>
