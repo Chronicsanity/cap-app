@@ -73,8 +73,7 @@ app.get('/dashboard', function(req, res){
         if(err){
             throw err;
         } else {
-            obj = {print: result};
-            res.render('dashboard.ejs', obj); 
+            res.render('dashboard.ejs', {obj : result}); 
             console.log(obj);               
         }
     });
