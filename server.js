@@ -81,15 +81,15 @@ app.get('/dashboard', function(req, res){
 
 });*/
 app.use('/dashboard', function(req, res) {
-  connection.acquire(function (err, con) {
-      con.query('SELECT * FROM user', function (err, rows) {
-          con.release();
+  app.acquire(function (err, app) {
+      app.query('SELECT * FROM user', function (err, rows) {
+          app.release();
           if(err) {
               console.log(err);
           } else {
               res.render('dashboard', {
                 title: 'Scheduling Table',
-                  rows : obj
+                  obj: rows
               });
           }
       });
