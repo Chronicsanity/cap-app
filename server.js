@@ -80,7 +80,7 @@ app.get('/dashboard', function(req, res){
     });
 
 });*/
-app.use('/dashboard', function(req, res) {
+app.get('/dashboard', function(req, res) {
   app.acquire(function (err, app) {
       app.query('SELECT * FROM user', function (err, rows) {
           app.release();
@@ -91,6 +91,7 @@ app.use('/dashboard', function(req, res) {
                 title: 'Scheduling Table',
                   obj: rows
               });
+              console.log(obj);
           }
       });
   });
