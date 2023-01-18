@@ -83,12 +83,12 @@ app.get('/dashboard', function(req, res){
 var obj = {};
 app.get('/dashboard', function(req, res) 
  {
-      app.query('SELECT * FROM user', function (err, result) {
+      db.query('SELECT * FROM user', function (err, result) {
           if(err) {
               console.log(err);
           } else {
             obj = {print: result};
-              res.render('dashboard', {
+              res.render('dashboard.ejs', {
                 title: 'Scheduling Table',
                   obj: obj
               });
