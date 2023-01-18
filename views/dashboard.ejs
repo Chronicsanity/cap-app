@@ -14,9 +14,9 @@
         <body>
 
          <%
-          {var obj = [
+          var obj = [
          {title: "Scheduling Table" obj: obj}]
-         }
+         
          %>
         <div class="schedule-table">
             
@@ -29,7 +29,7 @@
                 </thead>  
                  <tbody>  
                     <tr>
-                    <%- obj.print.forEach(user) => {  -%>
+                    <%- obj.print.forEach(users) => {  -%>
                         <td><%- user.Username -%></td> 
                         <td><%- user.Password -%></td>      
                         <td> <%- } -%> </td>
