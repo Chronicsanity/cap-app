@@ -14,7 +14,7 @@ const app = express();
 const ejs = require('ejs');
 
 async function tableFunction () {
-const  html = await ejs.forEach(view, obj, {async: true});
+const  html = await ejs.forEach(obj, {async: true});
 res.send(html);
 }
 tableFunction();
