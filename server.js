@@ -83,7 +83,7 @@ app.get('/dashboard', function(req, res){
 var obj = {};
 app.get('/dashboard', function(req, res) 
  {
-      db.query('SELECT * FROM user', function (err, result) {
+      db.query('SELECT * FROM users', function (err, result) {
           if(err) {
               console.log(err);
           } else {
