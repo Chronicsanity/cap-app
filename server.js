@@ -11,6 +11,7 @@ const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06
 logging: false
 });
 const app = express();
+const ejs = require('ejs');
 
 async function tableFunction () {
 const  html = await ejs.forEach(view, obj, {async: true});
