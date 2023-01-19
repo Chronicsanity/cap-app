@@ -95,7 +95,7 @@ app.get('/dashboard', function(req, res)
                 title: 'Scheduling Table',
                   obj: obj,
                   async: true
-              });
+              }, obj);
               console.log(obj);
           }
       });
