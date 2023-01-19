@@ -13,11 +13,7 @@ logging: false
 const app = express();
 const ejs = require('ejs');
 
-async function tableFunction () {
-const  html = await ejs.forEach(obj, {async: true});
-res.send(html);
-}
-tableFunction();
+
  app.use(cors());
 
 // parse requests of content-type - application/json
@@ -97,7 +93,8 @@ app.get('/dashboard', function(req, res)
             obj = {print: result};
               res.render('dashboard.ejs', {
                 title: 'Scheduling Table',
-                  obj: obj
+                  obj: obj,
+                  async: true
               });
               console.log(obj);
           }
