@@ -16,6 +16,7 @@ async function tableFunction () {
 const  html = await ejs.forEach(view, obj, {async: true});
 res.send(html);
 }
+tableFunction();
  app.use(cors());
 
 // parse requests of content-type - application/json
