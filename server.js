@@ -90,13 +90,11 @@ app.get('/dashboard', function(req, res)
           if(err) {
               console.log(err);
           } else {
-            obj = {print: result};
+          data = result;
               res.render('dashboard.ejs', {
-                title: 'Scheduling Table',
-                  obj: obj,
-                  async: true
-              }, obj);
-              console.log(obj);
+                async: true
+              }, data);
+              console.log(data);
           }
       });
   });
