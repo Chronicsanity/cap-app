@@ -10,7 +10,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const saltRounds = 8;
 const flash = require('express-flash');
-const scheduleTable = require ("server.js");
+const scheduleTable = require ("/server.js");
 
 async function hashPassword(password) 
   {
