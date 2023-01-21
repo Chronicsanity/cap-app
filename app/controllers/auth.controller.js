@@ -12,16 +12,8 @@ const saltRounds = 8;
 const flash = require('express-flash');
 const mysql = require('mysql');
 
-//const scheduleTable = require ("../server.js");
-const connection = mysql.createConnection({
-  HOST: "ip-10-0-13-151",
-  USER: "b68ec5f8aea53b",
-  PASSWORD: "16f4d23b2",
-  DB: "us-cdbr-east-06.cleardb.net",
-  dialect: "mysql",
-  PORT: "8889",
-  logging: false,
-});
+const scheduleTable = require ("../models");
+
 async function hashPassword(password) 
   {
     const hash = await bcrypt.hash(password, saltRounds);
@@ -93,23 +85,6 @@ exports.signin = async (req, res, next) => {
     });
   
     let authorities = [];
-    function scheduleTable(req, res, next) 
-    {
-        connection.connect(function(err) {
-        // if (err) {throw err}; 
-          console.log("connected!")
-        
-         connection.query('SELECT * FROM users', function (err, result) {
-             if(err) {
-                 console.log(err);
-             } else {
-               console.log(result);
-               res.render('dashboard', {data : result})
-               connection.release();
-             }
-         });
-        })
-     };
 
     req.session.token = token;
     return res.render('dashboard', scheduleTable)

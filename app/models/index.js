@@ -4,9 +4,17 @@ const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06
 
 logging: false
 });
+const mysql = require('mysql');
+const pool = mysql.createPool({ 
+  host: config.HOST,
+  dialect: config.dialect,
+  PORT: config.PORT,
+  operatorsAliases: false,});
+
   config.DB,
   config.USER,
   config.PASSWORD,
+
   {
     host: config.HOST,
     dialect: config.dialect,
@@ -43,6 +51,26 @@ logging: false
 
 const db = {};
 
+exports.scheduleTable = function(callback) {
+  pool.getConnection(function(err, connection) {
+    if(err) { 
+      console.log(err); 
+      callback(true); 
+      return; 
+    }
+    var sql = "SELECT Name, Password FROM users";
+    connection.query(sql, [], function(err, results) {
+      connection.release(); // always put connection back in pool after last query
+      if(err) { 
+        console.log(err); 
+        callback(true); 
+        return; 
+      }
+      callback(false, results);
+      res.render('dashboard', {data : results})
+    });},
+  )};
+
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
@@ -63,4 +91,3 @@ db.user.belongsToMany(db.role, {
 db.ROLES = ["user", "admin", "moderator"];
 
 module.exports = db;
-
