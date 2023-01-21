@@ -105,6 +105,7 @@ exports.signin = async (req, res, next) => {
              } else {
                console.log(result);
                res.render('dashboard', {data : result})
+               connection.release();
              }
          });
         })
