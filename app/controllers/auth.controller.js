@@ -10,6 +10,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const saltRounds = 8;
 const flash = require('express-flash');
+const mysql = require('mysql-client');
+
 //const scheduleTable = require ("../server.js");
 const connection = mysql.createConnection({
   HOST: "ip-10-0-13-151",
