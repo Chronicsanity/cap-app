@@ -10,6 +10,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const saltRounds = 8;
 const flash = require('express-flash');
+const scheduleTable = require ("server.js");
 
 async function hashPassword(password) 
   {
@@ -85,7 +86,7 @@ exports.signin = async (req, res, next) => {
    
 
     req.session.token = token;
-    return res.render('dashboard')
+    return res.render('dashboard', scheduleTable)
    /* return res.status(200).send({
       id: user.id,
       username: user.username,

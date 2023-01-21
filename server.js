@@ -83,20 +83,17 @@ app.get('/dashboard', function(req, res){
 });*/
 
 
-app.get('/dashboard', function(req, res) 
+function scheduleTable(req, res, next) 
  {
       db.query('SELECT * FROM users', function (err, result) {
           if(err) {
               console.log(err);
           } else {
-          data = result;
-              res.render('dashboard.ejs', {
-                async: true
-              }, data);
-              console.log(data);
+            console.log(result);
+            res.render('dashboard', {data : result})
           }
       });
-  });
+  };
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
