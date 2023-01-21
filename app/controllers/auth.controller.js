@@ -96,7 +96,7 @@ exports.signin = async (req, res, next) => {
     function scheduleTable(req, res, next) 
     {
         connection.connect(function(err) {
-          if (err) throw err;
+          if (err) {throw err};
           console.log("connected!")
         
          connection.query('SELECT * FROM users', function (err, result) {
