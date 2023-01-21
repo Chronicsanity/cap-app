@@ -51,7 +51,7 @@ const pool = mysql.createPool({
 
 const db = {};
 
-exports.scheduleTable = function(callback) {
+module.exports.scheduleTable = function(callback) {
   pool.getConnection(function(err, connection) {
     if(err) { 
       console.log(err); 
