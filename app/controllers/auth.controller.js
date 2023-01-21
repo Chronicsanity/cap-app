@@ -10,7 +10,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const saltRounds = 8;
 const flash = require('express-flash');
-const mysql = require('mysql-client');
+const mysql = require('mysql');
 
 //const scheduleTable = require ("../server.js");
 const connection = mysql.createConnection({
@@ -95,6 +95,10 @@ exports.signin = async (req, res, next) => {
     let authorities = [];
     function scheduleTable(req, res, next) 
     {
+        con.connect(function(err) {
+          if (err) throw err;
+          console.log("connected!")
+        
          connection.query('SELECT * FROM users', function (err, result) {
              if(err) {
                  console.log(err);
@@ -103,6 +107,7 @@ exports.signin = async (req, res, next) => {
                res.render('dashboard', {data : result})
              }
          });
+        })
      };
 
     req.session.token = token;
