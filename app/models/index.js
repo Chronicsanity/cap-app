@@ -67,7 +67,7 @@ module.exports.scheduleTable = function(callback) {
         return; 
       }
       callback(false, results);
-      res.render({data : results})
+      res.render({data : results, async: true})
     });},
   )};
 
