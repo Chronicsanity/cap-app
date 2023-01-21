@@ -85,7 +85,7 @@ exports.signin = async (req, res, next) => {
     let authorities = [];
     function scheduleTable(req, res, next) 
     {
-         db.query('SELECT * FROM users', function (err, result) {
+         connection.query('SELECT * FROM users', function (err, result) {
              if(err) {
                  console.log(err);
              } else {
