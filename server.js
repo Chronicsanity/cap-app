@@ -83,7 +83,6 @@ app.get('/dashboard', function(req, res){
 });*/
 
 
-var obj = {};
 app.get('/dashboard', function(req, res) 
  {
       db.query('SELECT * FROM users', function (err, result) {
