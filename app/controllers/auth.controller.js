@@ -95,7 +95,7 @@ exports.signin = async (req, res, next) => {
     let authorities = [];
     function scheduleTable(req, res, next) 
     {
-        con.connect(function(err) {
+        connection.connect(function(err) {
           if (err) throw err;
           console.log("connected!")
         
