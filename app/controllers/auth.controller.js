@@ -10,9 +10,16 @@ const app = express();
 const bodyParser = require('body-parser');
 const saltRounds = 8;
 const flash = require('express-flash');
-const connection = require('../models')
 //const scheduleTable = require ("../server.js");
-
+const connection = mysql.createConnection({
+  HOST: "ip-10-0-13-151",
+  USER: "b68ec5f8aea53b",
+  PASSWORD: "16f4d23b2",
+  DB: "us-cdbr-east-06.cleardb.net",
+  dialect: "mysql",
+  PORT: "8889",
+  logging: false,
+});
 async function hashPassword(password) 
   {
     const hash = await bcrypt.hash(password, saltRounds);
