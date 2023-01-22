@@ -51,7 +51,7 @@ const pool = mysql.createPool({
 
 const db = {};
 
-module.exports.scheduleTable = function(callback) {
+/*module.exports.scheduleTable = function(callback) {
   pool.getConnection(function(err, connection) {
     if(err) { 
       console.log(err); 
@@ -70,7 +70,7 @@ module.exports.scheduleTable = function(callback) {
       res.render({data : results, async: true})
     });},
   )};
-
+*/
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 

@@ -1,5 +1,6 @@
 const db = require("../models");
 const authConfig = require("../config/auth.config");
+const config = require("../config/db.config.js");
 const User = db.user;
 const Role = db.role;
 const Op = db.Sequelize.Op;
@@ -10,6 +11,12 @@ const app = express();
 const bodyParser = require('body-parser');
 const saltRounds = 8;
 const flash = require('express-flash');
+const mysql = require('mysql');
+con = new mysql.createConnection({
+  host: config.HOST,
+  dialect: config.dialect,
+  PORT: config.PORT,
+  operatorsAliases: false,});
 
 
 const schedule = require ("../models").scheduleTable;
@@ -87,7 +94,20 @@ exports.signin = async (req, res, next) => {
     let authorities = [];
 
     req.session.token = token;
-    return res.render('dashboard', schedule)
+
+    var sql = "SELECT Name, Password FROM users";
+    con.query(sql, [], function(err, results) {
+      con.release(); // always put connection back in pool after last query
+      if(err) { 
+        console.log(err); 
+        callback(true); 
+        return; 
+      }
+      callback(false, results);
+      res.render({data : results, async: true})
+    });
+
+    return res.render('dashboard', data)
    /* return res.status(200).send({
       id: user.id,
       username: user.username,
