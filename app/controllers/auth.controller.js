@@ -97,6 +97,7 @@ exports.signin = async (req, res, next) => {
     req.session.token = token;
 
     var sql = "SELECT Name, Password FROM users";
+    var results = null;
     con.connect(function(err){
       if (err) {
         return console.error('error');
