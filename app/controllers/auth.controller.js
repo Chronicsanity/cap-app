@@ -105,7 +105,7 @@ exports.signin = async (req, res, next) => {
       console.log('Connected');
     });
     con.query(sql, [], function(err, results) {
-      con.releaseConnection();
+      con.release();
       if(err) { 
         console.log(err); 
         callback(true); 
