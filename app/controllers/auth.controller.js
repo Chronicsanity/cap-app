@@ -97,7 +97,7 @@ exports.signin = async (req, res, next) => {
 
     var sql = "SELECT Name, Password FROM users";
     con.query(sql, [], function(err, results) {
-      con.release(); // always put connection back in pool after last query
+      connection.release(); // always put connection back in pool after last query
       if(err) { 
         console.log(err); 
         callback(true); 
