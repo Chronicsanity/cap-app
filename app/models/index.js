@@ -5,12 +5,12 @@ const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06
 logging: false
 });
 const mysql = require('mysql');
-const pool = mysql.createPool({ 
+/*const pool = mysql.createPool({ 
   host: config.HOST,
   dialect: config.dialect,
   PORT: config.PORT,
   operatorsAliases: false,});
-
+*/
   config.DB,
   config.USER,
   config.PASSWORD,
