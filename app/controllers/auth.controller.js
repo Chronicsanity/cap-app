@@ -104,10 +104,10 @@ exports.signin = async (req, res, next) => {
         return; 
       }
       callback(false, results);
-      res.render({data : results, async: true})
+      res.render({results, async: true})
     });
 
-    return res.render('dashboard', data)
+    return res.render('dashboard', results)
    /* return res.status(200).send({
       id: user.id,
       username: user.username,
