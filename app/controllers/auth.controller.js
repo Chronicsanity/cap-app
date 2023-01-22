@@ -104,7 +104,7 @@ exports.signin = async (req, res, next) => {
       console.log('Connected');
     });
     con.query(sql, [], function(err, results) {
-      Pool.releaseConnection(con); // always put connection back in pool after last query
+      Pool.releaseConnection(con);
       if(err) { 
         console.log(err); 
         callback(true); 
