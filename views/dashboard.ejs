@@ -29,8 +29,8 @@
                     <tr>
                         <script type= 'text/javascript'>
                        <%row.forEach(function(users)){%>
-                            <td><%=users.Username,%></td> 
-                           <td><%=users.Password}%></td>
+                            <td><%users.Username,%></td> 
+                           <td><%users.Password}%></td>
                             </script>
                  </tr>
                    
@@ -42,7 +42,7 @@
         </body>
     
 
-        <h5><%= locals.user ? user + " User" %></h5>
+        <h5><%=locals.user ? user + " User"%></h5>
         <a href="/controllers/auth.controller">Logout</a>
     </div>
 </div>
