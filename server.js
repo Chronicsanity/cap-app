@@ -83,7 +83,7 @@ app.get('/dashboard', function(req, res){
 });*/
 
 
-function scheduleTable(req, res, next) 
+/*function scheduleTable(req, res, next) 
  {
       db.query('SELECT * FROM users', function (err, result) {
           if(err) {
@@ -98,4 +98,4 @@ function scheduleTable(req, res, next)
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
-});
+});*/
