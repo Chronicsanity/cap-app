@@ -14,7 +14,7 @@
         <body>
           
           <script type= 'text/javascript'>
-            var row = {<%-JSON.stringify(data)%>}
+            var row = <%-JSON.stringify(data)%>
           </script>
         <div class="schedule-table">
             
@@ -28,9 +28,9 @@
                  <tbody>  
                     <tr>
                         <script type= 'text/javascript'>
-                       <%=row.forEach(function(users))  {%>
+                       <%=row.forEach(function(users)){%>
                             <td><%=users.Username,%></td> 
-                           <td><%=users.Password} %></td>
+                           <td><%=users.Password}%></td>
                             </script>
                  </tr>
                    
