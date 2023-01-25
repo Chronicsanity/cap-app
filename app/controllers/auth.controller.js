@@ -95,6 +95,7 @@ exports.signin = async (req, res, next) => {
     let authorities = [];
 
     req.session.token = token;
+    
      function scheduleTable(req, res, next) {
     var sql = "SELECT Name, Password FROM users";
     con.connect(function(err){
@@ -111,10 +112,11 @@ exports.signin = async (req, res, next) => {
         return; 
       }
       callback(false, result);
+      console.log(result + JSON.stringify(result));
       res.render('dashboard',{ result: data, async: true})
     });};
 
-    return res.render('dashboard', data)
+    return res.render('dashboard')
    /* return res.status(200).send({
       id: user.id,
       username: user.username,
