@@ -12,7 +12,7 @@
     <div class="container w-25 border py-5 mt-5">
         <h3>Welcome to Express Dashboard</h3>
         <body>
-          <%- include('../app/controllers') %>
+          
           <script type= 'text/javascript'>
             var row = <%- JSON.stringify(data) %>
           </script>
@@ -27,7 +27,7 @@
                 </thead>  
                  <tbody>  
                     <tr>
-                       <%= await (row.forEach(function(users)) => {  %> 
+                       <%= await row.forEach(function(users) => {  %> 
                             <td><%= users.Username, %></td> 
                             <td><%= users.Password }; %></td>
                  </tr>
