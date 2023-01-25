@@ -103,18 +103,18 @@ exports.signin = async (req, res, next) => {
       }
       console.log('Connected');
     });
-    con.query(sql, [], function(err, results) {
+    con.query(sql, [], function(err, result) {
       con.release();
       if(err) { 
         console.log(err); 
         callback(true); 
         return; 
       }
-      callback(false, results);
-      res.render({results, async: true})
+      callback(false, result);
+      res.render('dashboard',{ result, async: true})
     });
 
-    return res.render('dashboard', results)
+    return res.render('dashboard', result)
    /* return res.status(200).send({
       id: user.id,
       username: user.username,
