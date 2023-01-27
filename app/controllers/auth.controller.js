@@ -102,10 +102,11 @@ exports.signin = async (req, res, next) => {
       if (err) {
         return console.error('error');
       }
+      connection.release();
       console.log('Connected');
     });
     con.query(sql, [], function(err, result) {
-      connection.release();
+      
       if(err) { 
         console.log(err); 
         callback(true); 
