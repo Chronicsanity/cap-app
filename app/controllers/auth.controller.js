@@ -18,7 +18,7 @@ con = new mysql.createConnection({
   dialect: config.dialect,
   PORT: config.PORT,
   operatorsAliases: false,});
-const connection = await mysql.getConnection;
+//const connection = await mysql.getConnection;
 
 const schedule = require ("../models").scheduleTable;
 
