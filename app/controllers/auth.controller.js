@@ -96,7 +96,7 @@ exports.signin = async (req, res, next) => {
 
     req.session.token = token;
     
-     function scheduleTable(req, res) {
+     function scheduleTable(req, res, callback) {
     var sql = "SELECT Name, Password FROM users";
     con.connect(function(err){
       if (err) {
