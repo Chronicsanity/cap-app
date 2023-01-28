@@ -18,6 +18,7 @@ con = new mysql.createConnection({
   USER:config.USER,
   DIALECT: config.dialect,
   PASSWORD: config.PASSWORD,
+  DB: config.DB,
   PORT: config.PORT,
   operatorsAliases: false,});
 //const connection = await mysql.getConnection;
