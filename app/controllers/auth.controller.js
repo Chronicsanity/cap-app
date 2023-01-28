@@ -67,7 +67,7 @@ exports.signup = async (req, res) => {
   }
 };
 
-exports.signin = async (req, res, next) => {
+exports.signin = async (req, res) => {
 
   try {
     const user = await User.findOne({ 
@@ -148,6 +148,6 @@ exports.signout = async (req, res) => {
       message: "You've been signed out!"
     });
   } catch (err) {
-    this.next(err);
+    return (err);
   }
 };
