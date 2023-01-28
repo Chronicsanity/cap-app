@@ -14,8 +14,10 @@ const flash = require('express-flash');
 const mysql = require('mysql');
 const { Pool } = require("pg");
 con = new mysql.createConnection({
-  host: config.HOST,
-  dialect: config.dialect,
+  HOST: config.HOST,
+  USER:config.USER,
+  DIALECT: config.dialect,
+  PASSWORD: config.PASSWORD,
   PORT: config.PORT,
   operatorsAliases: false,});
 //const connection = await mysql.getConnection;
