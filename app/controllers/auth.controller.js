@@ -98,6 +98,7 @@ exports.signin = async (req, res) => {
     
     async function scheduleTable(req, res) {
     var sql = "SELECT Name, Password FROM users";
+    var data;
     await con.connect(function(err){
       if (err) {
         return console.error('error');
@@ -121,10 +122,10 @@ exports.signin = async (req, res) => {
         }
     }
       console.log(result + JSON.stringify(result));
-      
+      res.render('dashboard',{ result: data, async: true})
     });};
 
-    return res.render('dashboard', scheduleTable(req, res))
+    return res.render(scheduleTable(req, res))
    /* return res.status(200).send({
       id: user.id,
       username: user.username,
