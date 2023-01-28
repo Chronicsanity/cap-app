@@ -103,8 +103,8 @@ exports.signin = async (req, res) => {
       if (err) {
         return console.error('error');
       }
-      connection.release();
       console.log('Connected');
+      
     });
     await con.query(sql, [], function(err, result) {
       
@@ -114,10 +114,12 @@ exports.signin = async (req, res) => {
       else {
 
         if (result <= null) {
+          connection.release();
         return; 
       
         }
         else  {
+          connection.release();
          return result;
         }
     }
