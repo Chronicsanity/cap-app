@@ -13,14 +13,14 @@ const saltRounds = 8;
 const flash = require('express-flash');
 const mysql = require('mysql');
 const { Pool } = require("pg");
-con = new mysql.createConnection({
+/*con = new mysql.createConnection({
   HOST: config.HOST,
   USER:config.USER,
   DIALECT: config.dialect,
   PASSWORD: config.PASSWORD,
   DB: config.DB,
   PORT: config.PORT,
-  operatorsAliases: false,});
+  operatorsAliases: false,});*/
 //const connection = await mysql.getConnection;
 
 const schedule = require ("../models").scheduleTable;
@@ -102,14 +102,14 @@ exports.signin = async (req, res) => {
     async function scheduleTable(req, res) {
     var sql = "SELECT Name, Password FROM users";
     var data;
-    await con.connect(function(err){
+    await db.connect(function(err){
       if (err) {
         return console.error('error');
       }
       console.log('Connected');
       
     });
-    await con.query(sql, [], function(err, result) {
+    await db.query(sql, [], function(err, result) {
       
       if(err) { 
         console.log(err); 
