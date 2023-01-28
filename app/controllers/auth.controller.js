@@ -125,7 +125,7 @@ exports.signin = async (req, res) => {
       res.render('dashboard',{ result: data, async: true})
     });};
 
-    return res.render(scheduleTable(req, res))
+    return scheduleTable(req, res);
    /* return res.status(200).send({
       id: user.id,
       username: user.username,
