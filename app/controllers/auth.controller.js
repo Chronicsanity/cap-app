@@ -110,11 +110,16 @@ exports.signin = async (req, res, next) => {
       if(err) { 
         console.log(err); 
       }
-      else if (true) {
+      else {
+
+        if (result <= null) {
         return; 
       
-      }
-      callback(false, result);
+        }
+        else  {
+         return result;
+        }
+    }
       console.log(result + JSON.stringify(result));
       res.render('dashboard',{ result: data, async: true})
     });};
