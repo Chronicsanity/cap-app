@@ -96,21 +96,23 @@ exports.signin = async (req, res, next) => {
 
     req.session.token = token;
     
-     function scheduleTable(req, res, callback) {
+    async function scheduleTable(req, res) {
     var sql = "SELECT Name, Password FROM users";
-    con.connect(function(err){
+    await con.connect(function(err){
       if (err) {
         return console.error('error');
       }
       connection.release();
       console.log('Connected');
     });
-    con.query(sql, [], function(err, result) {
+    await con.query(sql, [], function(err, result) {
       
       if(err) { 
         console.log(err); 
-        callback(true); 
+      }
+      else if (true) {
         return; 
+      
       }
       callback(false, result);
       console.log(result + JSON.stringify(result));
