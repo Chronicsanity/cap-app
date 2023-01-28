@@ -122,7 +122,7 @@ exports.signin = async (req, res) => {
         }
     }
       console.log(result + JSON.stringify(result));
-      res.render('dashboard',{ result: data, async: true})
+      
     });};
 
     return res.render('dashboard', scheduleTable(req, res))
