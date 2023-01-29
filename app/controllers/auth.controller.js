@@ -99,7 +99,7 @@ exports.signin = async (req, res) => {
 
     req.session.token = token;
     
-    async function scheduleTable(sql, callback)
+    async function scheduleTable()
     {
     var sql = "SELECT Name, Password FROM users";
     var data;
@@ -129,7 +129,7 @@ exports.signin = async (req, res) => {
       console.log(result + JSON.stringify(result));
       return ({ result})
     });}
-res.render (('dashboard'),scheduleTable(sql, result));
+res.render (('dashboard'),scheduleTable());
     //return scheduleTable(req, res);
    /* return res.status(200).send({
       id: user.id,
