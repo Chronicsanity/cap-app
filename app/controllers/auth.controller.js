@@ -1,6 +1,6 @@
 const db = require("../models");
 const authConfig = require("../config/auth.config");
-const pool = require("../config/db.config.js");
+const pool = require("../config/db.config.js").pool;
 const User = db.user;
 const Role = db.role;
 const Op = db.Sequelize.Op;
