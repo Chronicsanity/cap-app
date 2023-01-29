@@ -11,17 +11,19 @@ const mysql = require('mysql');
   PORT: config.PORT,
   operatorsAliases: false,});
 */
+//module.exports = pool;
+
   config.DB,
   config.USER,
   config.PASSWORD,
 
   {
-    host: config.HOST,
+    /*host: config.HOST,
     dialect: config.dialect,
     PORT: config.PORT,
     operatorsAliases: false,
 
-   /* pool: {
+    pool: {
       max: config.pool.max,
       min: config.pool.min,
       acquire: config.pool.acquire,

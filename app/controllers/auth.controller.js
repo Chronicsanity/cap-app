@@ -1,6 +1,6 @@
 const db = require("../models");
 const authConfig = require("../config/auth.config");
-const config = require("../config/db.config.js");
+const pool = require("../config/db.config.js");
 const User = db.user;
 const Role = db.role;
 const Op = db.Sequelize.Op;
@@ -12,7 +12,7 @@ const bodyParser = require('body-parser');
 const saltRounds = 8;
 const flash = require('express-flash');
 const mysql = require('mysql');
-const { Pool } = require("pg");
+
 /*con = new mysql.createConnection({
   HOST: config.HOST,
   USER:config.USER,
@@ -99,18 +99,20 @@ exports.signin = async (req, res) => {
 
     req.session.token = token;
     
-    async function scheduleTable(req, res) {
+    exports.scheduleTable=(function(sql,callback)
+    {
     var sql = "SELECT Name, Password FROM users";
     var data;
-    await db.connect(function(err){
+     pool.getConnection(function(err, connection){
       if (err) {
-        return console.error('error');
+        connection.release();
+       throw err;
       }
-      console.log('Connected');
+     
       
     });
-    await db.query(sql, [], function(err, result) {
-      
+    connection.query(sql, function(err, result) {
+      connection.release();
       if(err) { 
         console.log(err); 
       }
@@ -123,12 +125,12 @@ exports.signin = async (req, res) => {
         }
         else  {
           connection.release();
-         return result;
+         callback({result});
         }
     }
       console.log(result + JSON.stringify(result));
       res.render('dashboard',{ result: data, async: true})
-    });};
+    });})
 
     return scheduleTable(req, res);
    /* return res.status(200).send({
