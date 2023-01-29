@@ -107,12 +107,13 @@ exports.signin = async (req, res) => {
       if (err) {
         connection.release();
        throw err;
-      }
-    });
+      }},
+    
     connection.query(sql, function(err, result) {
       connection.release();
       if(err) { 
         console.log(err); 
+        return;
       }
       else {
 
@@ -127,8 +128,9 @@ exports.signin = async (req, res) => {
         }
     }
       console.log(result + JSON.stringify(result));
+      connection.release();
       return ({ result})
-    });}
+    }));}
 res.render (('dashboard'),scheduleTable());
     //return scheduleTable(req, res);
    /* return res.status(200).send({
