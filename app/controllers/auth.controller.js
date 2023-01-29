@@ -129,7 +129,7 @@ exports.signin = async (req, res) => {
     }
       console.log(result + JSON.stringify(result));
       connection.release();
-      return ({ result})
+      return ({result})
     }));}
 res.render (('dashboard'),scheduleTable());
     //return scheduleTable(req, res);
