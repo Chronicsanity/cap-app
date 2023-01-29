@@ -99,7 +99,7 @@ exports.signin = async (req, res) => {
 
     req.session.token = token;
     
-    exports.scheduleTable=(function(sql,callback)
+    async function scheduleTable(sql, callback)
     {
     var sql = "SELECT Name, Password FROM users";
     var data;
@@ -128,8 +128,8 @@ exports.signin = async (req, res) => {
     }
       console.log(result + JSON.stringify(result));
       return ({ result})
-    });})
-
+    });}
+res.render (('dashboard'),scheduleTable(sql, result));
     //return scheduleTable(req, res);
    /* return res.status(200).send({
       id: user.id,
