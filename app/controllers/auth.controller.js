@@ -108,8 +108,6 @@ exports.signin = async (req, res) => {
         connection.release();
        throw err;
       }
-     
-      
     });
     connection.query(sql, function(err, result) {
       connection.release();
@@ -129,7 +127,7 @@ exports.signin = async (req, res) => {
         }
     }
       console.log(result + JSON.stringify(result));
-      return ({ result: data, async: true})
+      return ({ result})
     });})
 
     //return scheduleTable(req, res);

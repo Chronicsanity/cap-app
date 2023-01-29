@@ -15,6 +15,7 @@
           
           <script type= 'text/javascript'>
             var scheduleTable = require('/cap-capstone/app/controllers/auth.controller.js')
+            var row = scheduleTable(result)
            
           </script>
         <div class="schedule-table">
@@ -29,7 +30,7 @@
                  <tbody>  
                     <tr>
                         <script type= 'text/javascript'>
-                       <%scheduleTable.forEach(function(users)) =>%>
+                       <%row.forEach(function(users)) =>%>
                        <td> <%={users.Username, users.Password}%> </td> 
                             </script>
                  </tr>
