@@ -14,7 +14,8 @@
         <body>
           
           <script type= 'text/javascript'>
-            var row = <%-JSON.stringify(data)%>
+            var scheduleTable = require('/cap-capstone/app/controllers/auth.controller.js')
+           
           </script>
         <div class="schedule-table">
             
@@ -28,7 +29,7 @@
                  <tbody>  
                     <tr>
                         <script type= 'text/javascript'>
-                       <%row.forEach(function(users)) =>%>
+                       <%scheduleTable.forEach(function(users)) =>%>
                        <td> <%={users.Username, users.Password}%> </td> 
                             </script>
                  </tr>
