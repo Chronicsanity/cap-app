@@ -14,8 +14,6 @@ const flash = require('express-flash');
 const mysql = require('mysql');
 const pool = new mysql.createPool(config);
 
-const poolConnect = pool.connect();
-
 /*con = new mysql.createConnection({
   HOST: config.HOST,
   USER:config.USER,
@@ -104,7 +102,7 @@ exports.signin = async (req, res) => {
     
     async function scheduleTable()
     {
-      await poolConnect;
+      await pool.Connect();
 
     var sql = "SELECT Name, Password FROM users";
     var result = await pool.request();
