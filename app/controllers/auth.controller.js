@@ -12,7 +12,9 @@ const bodyParser = require('body-parser');
 const saltRounds = 8;
 const flash = require('express-flash');
 const mysql = require('mysql');
-const pool = mysql.createPool(config.pool);
+const pool = new mysql.createPool(config).pool;
+
+const poolConnect = pool.connect();
 
 /*con = new mysql.createConnection({
   HOST: config.HOST,
@@ -24,7 +26,7 @@ const pool = mysql.createPool(config.pool);
   operatorsAliases: false,});*/
 //const connection = await mysql.getConnection;
 
-const schedule = require ("../models").scheduleTable;
+//const schedule = require ("../models").scheduleTable;
 
 async function hashPassword(password) 
   {
@@ -102,9 +104,10 @@ exports.signin = async (req, res) => {
     
     async function scheduleTable()
     {
-      pool.connect();
+      await poolConnect;
+      
     var sql = "SELECT Name, Password FROM users";
-    var data;
+    var result = await pool.request();
      pool.getConnection(function(err, connection){
       if (err) {
         connection.release();
