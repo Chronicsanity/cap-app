@@ -1,5 +1,5 @@
 const mysql = require('mysql');
-var pool  = mysql.createPool({
+/*var pool  = mysql.createPool({
 HOST: "ip-10-0-13-151",
 USER: "b68ec5f8aea53b",
 PASSWORD: "16f4d23b2",
@@ -12,7 +12,7 @@ min: 0,
 acquire: 30000,
 idle: 10000
 });
-module.exports = {pool};
+module.exports = {pool};*/
 module.exports = {
     development: {
         HOST: "ip-10-0-13-151",
