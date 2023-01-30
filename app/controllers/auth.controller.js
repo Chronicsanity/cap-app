@@ -1,7 +1,6 @@
 const db = require("../models");
 const authConfig = require("../config/auth.config");
 const config = require("../config/db.config.js");
-const connection = mysql.createPool(config).pool;
 const User = db.user;
 const Role = db.role;
 const Op = db.Sequelize.Op;
@@ -13,6 +12,7 @@ const bodyParser = require('body-parser');
 const saltRounds = 8;
 const flash = require('express-flash');
 const mysql = require('mysql');
+const connection = mysql.createPool(config).pool;
 
 /*con = new mysql.createConnection({
   HOST: config.HOST,
