@@ -20,7 +20,7 @@ module.exports = {
         PASSWORD: "16f4d23b2",
         DB: "us-cdbr-east-06.cleardb.net",
         dialect: "mysql",
-        PORT: "8889",
+        PORT: "process.env.PORT || 8080",
         logging: false,
         },
     test: { 
@@ -29,7 +29,7 @@ module.exports = {
         PASSWORD: "16f4d23b2",
         DB: "us-cdbr-east-06.cleardb.net",
         dialect: "mysql",
-        PORT: "8889",
+        PORT: "process.env.PORT || 8080",
         logging: false,
         },
 
@@ -39,7 +39,7 @@ module.exports = {
         PASSWORD: "16f4d23b2",
         DB: "us-cdbr-east-06.cleardb.net",
         dialect: "mysql",
-        PORT: "8889",
+        PORT: "process.env.PORT || 8080",
         logging: false,
       },
     pool: {
