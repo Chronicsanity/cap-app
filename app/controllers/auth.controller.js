@@ -138,7 +138,8 @@ exports.signin = async (req, res) => {
       connection.release();
       return ({result})
     
-    });};
+    });
+  return ({result})};
 res.render (('dashboard'),scheduleTable());
     //return scheduleTable(req, res);
    /* return res.status(200).send({
