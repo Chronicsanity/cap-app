@@ -105,14 +105,14 @@ exports.signin = async (req, res) => {
       
 
     var sql = "SELECT Name, Password FROM users";
-    var pool = await new Pool(config);
-     var connection = pool.getConnection(function(err, connection){
+    //var pool = await new Pool(config);
+     Pool.getConnection(function(err, connection){
       if (err) {
         connection.release();
        throw err;
       }},
     
-    pool.query(sql, function(err, result) {
+    Pool.query(sql, function(err, result) {
       connection.release();
       if(err) { 
         console.log(err); 
