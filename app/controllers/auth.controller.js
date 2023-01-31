@@ -12,7 +12,7 @@ const bodyParser = require('body-parser');
 const saltRounds = 8;
 const flash = require('express-flash');
 const mysql = require('mysql');
-const Pool = require('pg');
+const { Pool } = require('pg');
 
 /*con = new mysql.createConnection({
   HOST: config.HOST,
