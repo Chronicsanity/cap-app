@@ -136,11 +136,12 @@ exports.signin = async (req, res) => {
     }
    console.log(result + JSON.stringify(result));
       connection.release();
-      return ({result})
+
+      return (res.render ('dashboard',result))
     
     });
-  return ({result})};
-res.render (('dashboard'),scheduleTable());
+  };
+res.render (('dashboard'));
     //return scheduleTable(req, res);
    /* return res.status(200).send({
       id: user.id,
