@@ -12,7 +12,7 @@ const bodyParser = require('body-parser');
 const saltRounds = 8;
 const flash = require('express-flash');
 const mysql = require('mysql');
-const pool = new mysql.createPool(config);
+const Pool = require('pg');
 
 /*con = new mysql.createConnection({
   HOST: config.HOST,
@@ -105,7 +105,7 @@ exports.signin = async (req, res) => {
       
 
     var sql = "SELECT Name, Password FROM users";
-    var connection = await pool.connect();
+    var pool = await new Pool(config);
      pool.getConnection(function(err, connection){
       if (err) {
         connection.release();
