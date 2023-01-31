@@ -112,7 +112,7 @@ exports.signin = async (req, res) => {
        throw err;
       }},
     
-    connection.query(sql, function(err, result) {
+    pool.query(sql, function(err, result) {
       connection.release();
       if(err) { 
         console.log(err); 
