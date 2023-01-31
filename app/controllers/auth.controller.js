@@ -137,11 +137,11 @@ exports.signin = async (req, res) => {
    console.log(result + JSON.stringify(result));
       connection.release();
 
-      return (res.render ('dashboard',result))
+      return (res.render ('dashboard', result))
     
     });
   };
-res.render (('dashboard'));
+//res.render (('dashboard'));
     //return scheduleTable(req, res);
    /* return res.status(200).send({
       id: user.id,
