@@ -102,7 +102,7 @@ exports.signin = async (req, res) => {
     
     async function scheduleTable()
     {
-      await pool.Connect();
+      pool.Connect();
 
     var sql = "SELECT Name, Password FROM users";
     var result = await pool.request();
