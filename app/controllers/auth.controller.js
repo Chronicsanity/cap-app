@@ -107,13 +107,13 @@ exports.signin = async (req, res) => {
     var sql = "SELECT Name, Password FROM users";
     var pool = await new Pool(config);
     connection = config;
-      pool.getConnection(function(err, connection){
+      /*pool.getConnection(function(err, connection){
       if (err) {
         connection.release();
        throw err;
       }
     
-    },
+    },*/
       
     
      pool.query(sql, function(err, result) {
@@ -138,7 +138,7 @@ exports.signin = async (req, res) => {
       connection.release();
       return ({result})
     
-    }));};
+    });};
 res.render (('dashboard'),scheduleTable());
     //return scheduleTable(req, res);
    /* return res.status(200).send({
