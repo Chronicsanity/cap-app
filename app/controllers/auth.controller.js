@@ -105,7 +105,7 @@ exports.signin = async (req, res) => {
     async function scheduleTable()
     {
      // var sql = "SELECT username, password FROM users";
-     app.get('/dashboard', function (req, res, next)  {
+     //app.get('/dashboard', function (req, res, next)  {
 
 
     
@@ -118,7 +118,7 @@ exports.signin = async (req, res) => {
       }).catch(function(err) {
         console.log (err);
       });
-    });
+   // });
    
       
     };
