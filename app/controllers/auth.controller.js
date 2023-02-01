@@ -107,7 +107,7 @@ exports.signin = async (req, res) => {
      // var sql = "SELECT username, password FROM users";
      //app.get('/dashboard', function (req, res, next)  {
 
-      data = [];
+     const data = ' ';
     
       User.findAll({
         attributes: ['username', 'password'],
