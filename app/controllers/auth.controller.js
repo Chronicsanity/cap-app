@@ -106,11 +106,19 @@ exports.signin = async (req, res) => {
      // var sql = "SELECT username, password FROM users";
       var password, username = [];
       var data = {username, password};
-      User.forEach(function(users) {users.username, users.password})
-      console.log(data);
-      res.render( {data:data});
+      User.findAll({
+        attributes: ['username', 'password'],
+        limit: 10
+      }).then(function(users,fields){
+        console.log(users);
+        res.render ({data:users});
+      }).catch(function(err) {
+        console.log (err);
+      });
+
+   
       
-      
+    };
 
     /*var sql = "SELECT Name, Password FROM users";
     var pool = await new Pool(config);
@@ -148,7 +156,7 @@ exports.signin = async (req, res) => {
       return (res.render ('dashboard', result))
     
     });*/
-  };
+  
 res.render (('dashboard', scheduleTable()));
     //return scheduleTable(req, res);
    /* return res.status(200).send({
