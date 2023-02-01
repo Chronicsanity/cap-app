@@ -104,7 +104,8 @@ exports.signin = async (req, res) => {
     async function scheduleTable()
     {
       var sql = "SELECT username, password FROM users";
-      var data = {username, password}
+      var password, username;
+      var data = {username, password};
       sql.forEach(function(users) {users.username, users.password})
       console.log(data);
       res.render( {data:data});
