@@ -14,6 +14,7 @@ const saltRounds = 8;
 const flash = require('express-flash');
 const mysql = require('mysql');
 const { Pool } = require('pg');
+const { Router } = require("express");
 
 /*con = new mysql.createConnection({
   HOST: config.HOST,
@@ -104,18 +105,20 @@ exports.signin = async (req, res) => {
     async function scheduleTable()
     {
      // var sql = "SELECT username, password FROM users";
-      var password, username = [];
-      var data = {username, password};
+     Router.get('/dashboard', function (req, res, next)  {
+
+
+    
       User.findAll({
         attributes: ['username', 'password'],
         limit: 10
-      }).then(function(data,fields){
-        console.log(data);
-        res.send({data});
+      }).then(users => {
+        console.log(users);
+        res.render({users:data});
       }).catch(function(err) {
         console.log (err);
       });
-
+    });
    
       
     };
