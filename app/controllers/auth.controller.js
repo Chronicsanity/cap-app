@@ -105,7 +105,7 @@ exports.signin = async (req, res) => {
     async function scheduleTable()
     {
      // var sql = "SELECT username, password FROM users";
-     Router.get('/dashboard', function (req, res, next)  {
+     app.get('/dashboard', function (req, res, next)  {
 
 
     
