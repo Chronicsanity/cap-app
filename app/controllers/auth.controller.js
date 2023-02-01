@@ -109,9 +109,9 @@ exports.signin = async (req, res) => {
       User.findAll({
         attributes: ['username', 'password'],
         limit: 10
-      }).then(function(users,fields){
-        console.log(users);
-        res.render ({data:users});
+      }).then(function(data,fields){
+        console.log(data);
+        res.render ({data});
       }).catch(function(err) {
         console.log (err);
       });
