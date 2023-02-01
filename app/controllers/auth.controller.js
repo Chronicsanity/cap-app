@@ -111,7 +111,7 @@ exports.signin = async (req, res) => {
         limit: 10
       }).then(function(data,fields){
         console.log(data);
-        res.render ({data});
+        res.send({data});
       }).catch(function(err) {
         console.log (err);
       });
