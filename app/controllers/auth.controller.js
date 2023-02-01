@@ -1,6 +1,7 @@
 const db = require("../models");
 const authConfig = require("../config/auth.config");
 const config = require("../config/db.config.js");
+const Sequelize = require("sequelize");
 const User = db.user;
 const Role = db.role;
 const Op = db.Sequelize.Op;
@@ -102,9 +103,15 @@ exports.signin = async (req, res) => {
     
     async function scheduleTable()
     {
+      var sql = "SELECT Name, Password FROM users";
+      var data = {Username: rowUser, Password: rowPassword}
+      sql.forEach(function(users) {users.Username, users.Password})
+      console.log(data);
+      res.render( {data:data});
+      
       
 
-    var sql = "SELECT Name, Password FROM users";
+    /*var sql = "SELECT Name, Password FROM users";
     var pool = await new Pool(config);
     connection = config;
       /*pool.getConnection(function(err, connection){
@@ -113,7 +120,7 @@ exports.signin = async (req, res) => {
        throw err;
       }
     
-    },*/
+    },
       
     
      pool.query(sql, function(err, result) {
@@ -139,9 +146,9 @@ exports.signin = async (req, res) => {
 
       return (res.render ('dashboard', result))
     
-    });
+    });*/
   };
-//res.render (('dashboard'));
+res.render (('dashboard', scheduleTable()));
     //return scheduleTable(req, res);
    /* return res.status(200).send({
       id: user.id,
