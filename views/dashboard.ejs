@@ -12,12 +12,8 @@
     <div class="container w-25 border py-5 mt-5">
         <h3>Welcome to Express Dashboard</h3>
         <body>
-          
-          <script type= 'text/javascript'>
-            var scheduleTable = require('/cap-capstone/app/controllers/auth.controller.js');
-            var row = scheduleTable();
            
-          </script>
+          
         <div class="schedule-table">
             
             <table id="table" >  
@@ -29,10 +25,12 @@
                 </thead>  
                  <tbody>  
                     <tr>
-                        <%print.forEach(function (user){%>
+                        <script type= 'text/javascript'>
+                        <%print.forEach(function (obj){%>
                             <tr>  
                                 <td><%= print.username[0] %></td>  
                                 <td><%= print.password[0])} %> </td>
+                            </script>
                  </tr>
                    
                  </tbody>
