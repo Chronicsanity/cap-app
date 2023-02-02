@@ -158,7 +158,7 @@ exports.signin = async (req, res) => {
 
       return (res.render ('dashboard', result))
     
-    });*/
+    });
   var obj = {};
   app.get('dashboard', function(req, res) {
     connection.query('SELECT * FROM users', function(err, result) {
@@ -172,8 +172,21 @@ exports.signin = async (req, res) => {
     }
 });
 
-});
+});*/
 res.render (('dashboard'));
+var obj = {};
+app.get('dashboard', function(req, res) {
+  connection.query('SELECT * FROM users', function(err, result) {
+
+    if(err){
+      throw err;
+  } else {
+      obj = {print: result};
+      res.render('print', obj);    
+      console.log(obj);            
+  }
+});
+}
     //return scheduleTable(req, res);
    /* return res.status(200).send({
       id: user.id,
@@ -182,7 +195,7 @@ res.render (('dashboard'));
       roles: authorities,
     });*/
   
-}
+)}
   catch (error) {
     return res.status(500).send({ message: error.message });
   }
