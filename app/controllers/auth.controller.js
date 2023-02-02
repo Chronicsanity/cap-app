@@ -102,7 +102,7 @@ exports.signin = async (req, res) => {
 
     req.session.token = token;
     
-    async function scheduleTable()
+   /* async function scheduleTable()
     {
      // var sql = "SELECT username, password FROM users";
      //app.get('/dashboard', function (req, res, next)  {
@@ -159,8 +159,20 @@ exports.signin = async (req, res) => {
       return (res.render ('dashboard', result))
     
     });*/
-  
-res.render (('dashboard', scheduleTable()));
+  var obj = {};
+  Router.get('dashboard', function(req, res) {
+    connection.query('SELECT * FROM users', function(err, result) {
+
+      if(err){
+        throw err;
+    } else {
+        obj = {print: result};
+        res.render('print', obj);                
+    }
+});
+
+});
+res.render (('dashboard'));
     //return scheduleTable(req, res);
    /* return res.status(200).send({
       id: user.id,
