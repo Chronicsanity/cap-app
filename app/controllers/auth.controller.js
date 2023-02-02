@@ -175,7 +175,7 @@ exports.signin = async (req, res) => {
 });*/
 res.render (('dashboard'));
 var obj = {};
-app.get('dashboard', function(req, res) {
+app.get('/dashboard', function(req, res) {
   connection.query('SELECT * FROM users', function(err, result) {
 
     if(err){
