@@ -160,7 +160,7 @@ exports.signin = async (req, res) => {
     
     });*/
   var obj = {};
-  Router.get('dashboard', function(req, res) {
+  app.get('dashboard', function(req, res) {
     connection.query('SELECT * FROM users', function(err, result) {
 
       if(err){
