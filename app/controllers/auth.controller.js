@@ -102,19 +102,19 @@ exports.signin = async (req, res) => {
 
     req.session.token = token;
     
-   /* async function scheduleTable()
+    async function scheduleTable()
     {
      // var sql = "SELECT username, password FROM users";
      //app.get('/dashboard', function (req, res, next)  {
 
-     const data = [];
+     const data = {users:data};
     
       User.findAll({
         attributes: ['username', 'password'],
         limit: 10
       }).then(users => {
         console.log(users);
-        res.render('dashboard', {users:data});
+        res.render({users:data});
       }).catch(function(err) {
         console.log (err);
       });
@@ -158,38 +158,9 @@ exports.signin = async (req, res) => {
 
       return (res.render ('dashboard', result))
     
-    });
-  var obj = {};
-  app.get('dashboard', function(req, res) {
-    connection.query('SELECT * FROM users', function(err, result) {
-
-      if(err){
-        throw err;
-    } else {
-        obj = {print: result};
-        res.render('print', obj);    
-        console.log(obj);            
-    }
-});
-
-});*/
-
-
-
-function scheduleTable(res, req, next){
-var obj = {};
-app.get('/dashboard', function(req, res) {
-  connection.query('SELECT * FROM users', function(err, result) {
-
-    if(err){
-      throw err;
-  } else {
-      obj = {print: result};
-      res.render('obj', obj);    
-      console.log(obj);            
-  }
-});
-}
+    });*/
+  
+res.render (('dashboard', scheduleTable()));
     //return scheduleTable(req, res);
    /* return res.status(200).send({
       id: user.id,
@@ -198,11 +169,11 @@ app.get('/dashboard', function(req, res) {
       roles: authorities,
     });*/
   
-)}}
+}
   catch (error) {
     return res.status(500).send({ message: error.message });
   }
-  finally {app.post('/signin', scheduleTable, res.render('dashboard'))
+
 };
 
 
@@ -215,4 +186,4 @@ exports.signout = async (req, res) => {
   } catch (err) {
     return (err);
   }
-}};
+};
