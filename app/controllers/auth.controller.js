@@ -173,7 +173,10 @@ exports.signin = async (req, res) => {
 });
 
 });*/
-res.render (('dashboard'));
+
+
+
+function scheduleTable(res, req, next){
 var obj = {};
 app.get('/dashboard', function(req, res) {
   connection.query('SELECT * FROM users', function(err, result) {
@@ -195,11 +198,11 @@ app.get('/dashboard', function(req, res) {
       roles: authorities,
     });*/
   
-)}
+)}}
   catch (error) {
     return res.status(500).send({ message: error.message });
   }
-
+  finally {app.post('/signin', scheduleTable, res.redirect('dashboard'))
 };
 
 
@@ -212,4 +215,4 @@ exports.signout = async (req, res) => {
   } catch (err) {
     return (err);
   }
-};
+}};
