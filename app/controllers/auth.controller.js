@@ -202,7 +202,7 @@ app.get('/dashboard', function(req, res) {
   catch (error) {
     return res.status(500).send({ message: error.message });
   }
-  finally {app.post('/signin', scheduleTable, res.redirect('dashboard'))
+  finally {app.post('/signin', scheduleTable, res.render('dashboard'))
 };
 
 
