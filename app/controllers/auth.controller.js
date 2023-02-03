@@ -174,7 +174,6 @@ exports.signin = async (req, res) => {
 
 });*/
 //res.render (('dashboard'));
-res.redirect(('dashboard'));
 var obj = {};
 app.get('/dashboard', function(req, res) {
   connection.query('SELECT * FROM users', function(err, result) {
@@ -183,7 +182,7 @@ app.get('/dashboard', function(req, res) {
       throw err;
   } else {
       obj = {print: result};
-      res.render('/dashboard', obj);    
+      res.render('obj', obj);    
       console.log(obj);            
   }
 });
