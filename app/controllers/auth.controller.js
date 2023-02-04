@@ -160,6 +160,21 @@ exports.signin = async (req, res) => {
     });*/
   
 res.render('dashboard');
+
+app.get('/populatetable', (res, req) => {
+
+  var sql = "SELECT username, password FROM users";
+  const data = {users:data};
+  User.findAll({
+    attributes: ['username', 'password'],
+    limit: 10
+  }).then(users => {
+    console.log(users);
+    res.render({users:data});
+  }).catch(function(err) {
+    console.log (err);
+  });
+})
     //return scheduleTable(req, res);
    /* return res.status(200).send({
       id: user.id,
