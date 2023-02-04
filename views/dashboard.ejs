@@ -15,7 +15,35 @@
             <form action="/populatetable" method="get">
                 <input class="button" type="submit" value="Populate Table">
             </form>
+            <table class="table table-hover">
+                <thead class="thead-light">
+         
+                    <tr>  
+                        <th>Username</th>  
+                        <th>Password</th>  
+                    </tr>  
+                </thead>  
+                 <tbody>  
+                    <%print.forEach(function (obj){%>
+                    <tr>
+                        <script type= 'text/javascript'>
+
+                            <tr>  
+                                <td><%= print.username[0] %></td>  
+                                <td><%= print.password[0])} %> </td>
+                            </script>
+                 </tr>
+                   
+                 </tbody>
+            </table>   
+            </div>
+        </script>
+            
+        </body>
     
+
+       
+        <a href="/controllers/auth.controller">Logout</a>
     </div>
 </div>
-</DOCTYPE>
+</
