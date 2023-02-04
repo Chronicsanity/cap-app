@@ -102,14 +102,14 @@ exports.signin = async (req, res) => {
 
     req.session.token = token;
     
-    async function scheduleTable()
+    /*async function scheduleTable()
     {
      // var sql = "SELECT username, password FROM users";
      //app.get('/dashboard', function (req, res, next)  {
 
      const data = {users:data};
     
-     /* User.findAll({
+      User.findAll({
         attributes: ['username', 'password'],
         limit: 10
       }).then(users => {
@@ -119,10 +119,9 @@ exports.signin = async (req, res) => {
         console.log (err);
       });
    // });
-   */
       
     };
-
+*/
     /*var sql = "SELECT Name, Password FROM users";
     var pool = await new Pool(config);
     connection = config;
