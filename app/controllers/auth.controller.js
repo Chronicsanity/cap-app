@@ -109,7 +109,7 @@ exports.signin = async (req, res) => {
 
      const data = {users:data};
     
-      User.findAll({
+     /* User.findAll({
         attributes: ['username', 'password'],
         limit: 10
       }).then(users => {
@@ -119,7 +119,7 @@ exports.signin = async (req, res) => {
         console.log (err);
       });
    // });
-   
+   */
       
     };
 
