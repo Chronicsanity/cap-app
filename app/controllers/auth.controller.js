@@ -159,7 +159,7 @@ exports.signin = async (req, res) => {
     
     });*/
   
-res.redirect('/dashboard');
+res.render('/dashboard');
     //return scheduleTable(req, res);
    /* return res.status(200).send({
       id: user.id,
