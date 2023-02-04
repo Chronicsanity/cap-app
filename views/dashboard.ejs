@@ -1,6 +1,41 @@
+<DOCTYPE html>
 
-<DOCTYPE html> 
-    <div><span>Do you forgot password? </span><a href="/forgetpass">click here</a>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+
+<div class="text-center center-div mt-5" id="dashboard">
+    <div class="container w-25 border py-5 mt-5">
+        <h3>Welcome to Express Dashboard</h3>
+        <body>
+            <form action="/populatetable" method="get">
+                <input class="button" type="submit" value="Populate Table">
+            </form>
+            <table class="table table-hover">
+                <thead class="thead-light">
+         
+                    <tr>  
+                        <th>Username</th>  
+                        <th>Password</th>  
+                    </tr>  
+                </thead>  
+                 <tbody>  
+                   <tr>
+                 </tr>
+                   
+                 </tbody>
+            </table>   
+            </div>
+        </script>
+            
+        </body>
+    
+
+        <h5><%=locals.user ? user + " User"%></h5>
+        <a href="/controllers/auth.controller">Logout</a>
     </div>
-
+</div>
 </DOCTYPE>
