@@ -164,16 +164,21 @@ res.render('dashboard');
 app.get('/populatetable', (res, req) => {
 
   var sql = "SELECT username, password FROM users";
-  const data = {users:data};
-  User.findAll({
-    attributes: ['username', 'password'],
-    limit: 10
-  }).then(users => {
-    console.log(users);
-    res.render({users:data});
-  }).catch(function(err) {
-    console.log (err);
-  });
+ db.query(sql, function(err, rows) {
+if (err) {
+
+    var message = err.message;
+    console.log(message)
+    return res.status(500).send(message);
+}
+else {
+var data = rows;
+res.render('dashboard', {data:data});
+
+}
+
+
+ })
 })
     //return scheduleTable(req, res);
    /* return res.status(200).send({
