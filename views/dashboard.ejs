@@ -6,6 +6,20 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
+        <div class="row">
+            <div class="col-md-2">
+               <div class="form-group">
+                  <label for="dataPrimayID">Username</label>
+                  <input type="text" class="form-control datepickerDefault" id="dataPrimayID" name="dataPrimary" maxlength="250">
+               </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="form-group">
+                   <label for="dataFinalID">Date Final</label>
+                   <input type="text" class="form-control datepickerDefault" id="dataFinalID" name="dataFinal" maxlength="250">
+                </div>
+             </div>
     </head>
 
 <div class="text-center center-div mt-5" id="dashboard">
@@ -15,7 +29,7 @@
             <form action="/populatetable" method="get">
                 
             
-            <table class="table table-hover">
+            <table id="scheduleTable" class="table table-striped" cellspacing="0" cellpadding="0">
                 <thead class="thead-light">
          
                     <tr>  
@@ -26,12 +40,24 @@
                  <tbody>  
                     
                     <tr>
+                          <script>
+                        $.post(url, (result) => {
+                            let data = JSON.parse(result);
+                            let innerHTML = '';
+                            for (let users of data) {
+                                innerHTML += `<tr>
+                                     <td>
+                                        ${users.username}
+                                     </td>
+                                     <td>
+                                        ${users.password}
+                                     </td>
+                                  </tr>`;
+                            }
+                            $('#scheduleTable tbody').html(innerHTML)
                         
-
-                            <tr>  
-                                <td><%= "Attempt 1" %></td>  
-                                <td> <%= "Attempt 2" %> </td>
-                           
+                        };)
+                        </script>
                  </tr>
                    
                  </tbody>

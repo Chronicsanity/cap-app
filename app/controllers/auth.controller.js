@@ -164,7 +164,7 @@ res.render('dashboard');
 app.get('/populatetable', (res, req) => {
 
   var sql = "SELECT username, password FROM users";
- db.query(sql, function(err, rows) {
+ db.query(sql, function(err, result) {
 if (err) {
 
     var message = err.message;
@@ -172,8 +172,8 @@ if (err) {
     return res.status(500).send(message);
 }
 else {
-var data = rows;
-res.render('dashboard', {data:data});
+JSON.parse(result);
+res.render('dashboard', {result});
 
 }
 
