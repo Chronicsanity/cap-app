@@ -161,9 +161,43 @@ exports.signin = async (req, res) => {
   
 res.render('dashboard');
 
+function results() {
+  var sql = "SELECT username, password FROM users";
+  db.query(sql, function(err, result) {
+ if (err) {
+ 
+     var message = err.message;
+     console.log(message)
+     return res.status(500).send(message);
+ }
+ else {
+ JSON.parse(result);
+ return result;
+ 
+ }
+ 
+ 
+  })
+ }
+
+ }
+   catch (error) {
+     return res.status(500).send({ message: error.message });
+   }
+ 
+ };
+
+
 app.get('/dashboard', (res, req) => {
 
-  var sql = "SELECT username, password FROM users";
+res.render('dashboard', {data: results})
+});
+
+
+
+
+
+/*  var sql = "SELECT username, password FROM users";
  db.query(sql, function(err, result) {
 if (err) {
 
@@ -180,20 +214,7 @@ res.render('dashboard', {data: result});
 
  })
 })
-    //return scheduleTable(req, res);
-   /* return res.status(200).send({
-      id: user.id,
-      username: user.username,
-      email: user.email,
-      roles: authorities,
-    });*/
-  
-}
-  catch (error) {
-    return res.status(500).send({ message: error.message });
-  }
-
-};
+ */
 
 
 exports.signout = async (req, res) => {
