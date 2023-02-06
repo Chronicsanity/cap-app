@@ -45,14 +45,14 @@
                             let data = JSON.parse(result);
                             let innerHTML = '';
                             for (let users of data) {
-                                innerHTML += `<tr>
+                                 <tr>
                                      <td>
                                         ${users.username}
                                      </td>
                                      <td>
                                         ${users.password}
                                      </td>
-                                  </tr>`;
+                                  </tr>
                             }
                             $('#scheduleTable tbody').html(innerHTML)
                         
