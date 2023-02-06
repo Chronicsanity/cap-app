@@ -161,7 +161,7 @@ exports.signin = async (req, res) => {
   
 res.render('dashboard');
 
-app.get('/populatetable', (res, req) => {
+app.get('populatetable', (res, req) => {
 
   var sql = "SELECT username, password FROM users";
  db.query(sql, function(err, result) {
@@ -173,7 +173,7 @@ if (err) {
 }
 else {
 JSON.parse(result);
-res.render('dashboard', {result});
+res.render({result});
 
 }
 
