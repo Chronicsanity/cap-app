@@ -185,14 +185,15 @@ function results() {
      return res.status(500).send({ message: error.message });
    }
  
- };
+ 
 
 
-app.get('/dashboard', (res, req) => {
-  const data = {};
-res.render('dashboard', {data: results})
-});
 
+ app.get('/dashboard', (res, req) => {
+  
+  res.render('dashboard', results)
+ });
+};
 
 
 
