@@ -173,7 +173,7 @@ if (err) {
 }
 else {
 JSON.parse(result);
-res.render({result});
+res.render('dashboard', {data: result});
 
 }
 
