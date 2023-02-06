@@ -161,7 +161,7 @@ exports.signin = async (req, res) => {
   
 res.render('dashboard');
 
-app.post('/populatetable', (res, req) => {
+app.get('/populatetable', (res, req) => {
 
   var sql = "SELECT username, password FROM users";
  db.query(sql, function(err, result) {
