@@ -28,8 +28,9 @@
         <body>
          
                 <script>
-                    const data = require("/cap-capstone/app/controllers/auth.controller.js")
-                </script>
+                    const obj = require("/cap-capstone/app/controllers/auth.controller.js");
+                    const data = obj.results;
+                
             <button class = 'btn btn-primary' onclick = "<%=data %>">Populate Table</button>
             <table id="scheduleTable" class="table table-striped" cellspacing="0" cellpadding="0">
                 <thead class="thead-light">
@@ -42,7 +43,7 @@
                  <tbody>  
                     
                     <tr>
-                          <script>
+                        
                             <td><%= data.username[0] %></td>
                         </script>
                  </tr>
