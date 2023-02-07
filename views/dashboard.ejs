@@ -34,7 +34,7 @@
             <button class = 'btn btn-primary' onclick = '<%= data %>' >Populate Table</button>
             <table id="scheduleTable" class="table table-striped" cellspacing="0" cellpadding="0">
                 <thead class="thead-light">
-         
+         </script>
                     <tr>  
                         <th>Username</th>  
                         <th>Password</th>  
@@ -43,7 +43,8 @@
                  <tbody>  
                     
                     <tr>
-                        
+                        <script>
+                        <% data.forEach(function(data))%>
                             <td><%= data.username[0] %></td>
                         </script>
                  </tr>
