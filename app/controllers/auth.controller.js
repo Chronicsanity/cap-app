@@ -191,7 +191,7 @@ function results() {
 
  app.get('/dashboard', (res, req) => {
   
-  res.render('dashboard', results)
+  res.render('dashboard', {x: results})
  });
 };
 
