@@ -163,7 +163,7 @@ res.render('dashboard');
 
 app.get('/dashboard', (res, req) => {
   var sql = "SELECT * FROM users";
-  mysqlConnection.query(sql,function(err,result){
+  mysql_connection.query(sql,function(err,result){
     if (err) {throw err}
     else {
       res.render('dashboard', {data:result})
