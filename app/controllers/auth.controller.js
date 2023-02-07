@@ -161,7 +161,7 @@ exports.signin = async (req, res) => {
   
 res.render('dashboard');
 
-app.get('submit', (res, req) => {
+app.get('/dashboard', (res, req) => {
   //var sql = "SELECT * FROM users";
  // mysql_connection.query(sql,function(err,result){
     if (err) {throw err}
