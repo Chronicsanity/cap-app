@@ -31,7 +31,8 @@
                    
                   
                 
-            <button class = 'btn btn-primary' onclick= <%= data %> >Populate Table</button>
+            <form action = "/dashboard" method="get">
+                <button name="submit" type="submit">Checking</button> 
             <table id="scheduleTable" class="table table-striped" cellspacing="0" cellpadding="0">
                 <thead class="thead-light">
          </script>
@@ -41,15 +42,7 @@
                     </tr>  
                 </thead>  
                  <tbody>  
-                    <% for(var i=0; i < data.length; i++) { %>
-                    <tr>
-                       
-                        
-                            <td><%= i+1 %></td> 
-                            <td><%= data[i].username%></td>
-                        
-                 </tr>
-                   <%}%>
+                
                  </tbody>
             </table>   
             

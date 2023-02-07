@@ -162,14 +162,14 @@ exports.signin = async (req, res) => {
 res.render('dashboard');
 
 app.get('/dashboard', (res, req) => {
-  var sql = "SELECT * FROM users";
-  mysql_connection.query(sql,function(err,result){
+  //var sql = "SELECT * FROM users";
+ // mysql_connection.query(sql,function(err,result){
     if (err) {throw err}
     else {
-      res.render('dashboard', {data:result})
-      console.log(result.length)
-    }})})
-  }
+      res.message ("Button pressed!")
+      //console.log(result.length)
+    }})}//)
+ // }
 
 
 
