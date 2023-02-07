@@ -28,7 +28,7 @@
         <body>
          
                 <script>
-                    const x = require("/cap-capstone/app/controllers/auth.controller.js");
+                   
                   
                 
             <button class = 'btn btn-primary' onclick= <%= x %> >Populate Table</button>
@@ -41,15 +41,15 @@
                     </tr>  
                 </thead>  
                  <tbody>  
-                    <% for(var i=0; i < x.length; i++) { %>
+                    <% for(var i=0; i < data.length; i++) { %>
                     <tr>
-                        <script>
+                       
                         
                             <td><%= i+1 %></td> 
-                            <td><%= x.username[0]}%></td>
-                        </script>
+                            <td><%= data[i].username%></td>
+                        
                  </tr>
-                   
+                   <%}%>
                  </tbody>
             </table>   
             
