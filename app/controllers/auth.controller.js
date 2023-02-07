@@ -197,7 +197,7 @@ app.get('/dashboard', (res, req) => {
      return res.status(500).send({ message: error.message });
    }
  
- 
+  }
 
 
 
@@ -230,4 +230,4 @@ exports.signout = async (req, res) => {
     });
   } catch (err) {
     return (err);
-  }}}
+  }}
