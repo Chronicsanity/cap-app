@@ -27,33 +27,19 @@
         <h3>Welcome to Express Dashboard</h3>
         <body>
          
-          
-                   
+          <button id="ScheduleTable" class="float-left submit-button" >Build Table</button>
+                 
+          <script type="text/javascript">
+            document.getElementById("ScheduleTable").onclick = function () {
+                location.href = "/cap-capstone/views/data.ejs";
+            };
+        </script>
                   
-                
-            <form method="get">
-                <button name="submit" type="submit" value="/dashboard">Checking</button> 
-        </form>
-            <table id="scheduleTable" class="table table-striped" cellspacing="0" cellpadding="0">
-                <thead class="thead-light">
-
-                    <tr>  
-                        <th>Username</th>  
-                        <th>Password</th>  
-                    </tr>  
-                </thead>  
-                 <tbody>  
-                
-                 </tbody>
-            </table>   
-            
-            </div>
-       
-    </form>
         </body>
     
 
        
         <a href="/controllers/auth.controller">Logout</a>
+
     </div>
 </div>
