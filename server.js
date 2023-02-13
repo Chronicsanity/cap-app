@@ -68,7 +68,7 @@ app.get('/index', (req, res) =>{
 
 app.get("/data", (req, res) => {
   var testData = [
-    {users: db.users},
+    {users: db.user},
     {password: db.password}
   ];
   res.render('data', {
