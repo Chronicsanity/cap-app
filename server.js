@@ -67,7 +67,6 @@ app.get('/index', (req, res) =>{
 });
 
 app.get("/data", (req, res) => {
-  res.render('data', {title:"Schedule"});
   var testData = [
     {users: db.users},
     {password: db.password}
