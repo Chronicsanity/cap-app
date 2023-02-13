@@ -6,13 +6,30 @@ const path = require('path');
 const Sequelize = require("sequelize");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
+const mysql = require('mysql');
 const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06.cleardb.net/heroku_a26e4a307a3f41f?reconnect=true", {
 
 logging: false
 });
 const app = express();
 const ejs = require('ejs');
+const config = require("../config/db.config.js");
+con = new mysql.createConnection({
+  HOST: config.HOST,
+  USER:config.USER,
+  DIALECT: config.dialect,
+  PASSWORD: config.PASSWORD,
+  DB: config.DB,
+  PORT: config.PORT,
+  operatorsAliases: false,});
 
+  con.connect(function(err) {
+    if (err) {
+      return console.error('error: ' + err.message);
+    }
+  
+    console.log('Connected to the MySQL server.');
+  });
 
  app.use(cors());
 
@@ -67,15 +84,24 @@ app.get('/index', (req, res) =>{
 });
 
 app.get("/data", (req, res) => {
-  var testData = [
-    {users: db.user},
-    {password: db.password}
-  ];
+  
+  var sql = "SELECT username, password FROM users";
+  con.query(sql, function(err, result) {
+    if(err) { 
+    console.log(err); 
+    return;
+  }
+  else {
+    var testData = result;
+    con.release();
+    return testData;
+  }}
+  )
   res.render('data', {
     testData: testData
-
-  });
+  })
 });
+
 
 app.use(express.static(__dirname + '/views'));
 /*
