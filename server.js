@@ -72,7 +72,7 @@ app.get("/data", (req, res) => {
     {users: db.users},
     {password: db.password}
   ];
-  res.render('./app/views/data', {
+  res.render('/data', {
     testData: testData
 
   });
