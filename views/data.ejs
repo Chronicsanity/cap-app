@@ -6,9 +6,14 @@
 </head>
 
 <body>
-	<div class="col-md-4 col-md-offset-4 form-card">
-		<div>
-	
+<ul>
+    <% testData.forEach(function(testData) { %>
+        <li>
+            <%= testData.users %>
+            <%= testData.password %>
+        </li>
+        <%});%>
+</ul>
 </body>
 
 </html>
