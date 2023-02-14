@@ -79,7 +79,7 @@ app.get('/index', (req, res) =>{
 app.get("/data", (req, res) => {
   var sql = "SELECT username, password FROM users";
   
-    exports.pool.getConnection(function(err,connection) {
+    pool.getConnection(function(err,connection) {
       if(err) { 
         console.log(err);
         connection.destroy;
