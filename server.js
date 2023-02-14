@@ -82,7 +82,6 @@ app.get("/data", (req, res) => {
     pool.getConnection(function(err,connection) {
       if(err) { 
         console.log(err);
-        connection.destroy;//1
         throw err;
       }
     connection.query(sql, function(err, result) {
