@@ -24,13 +24,7 @@ con = new mysql.createConnection({
   PORT: config.PORT,
   operatorsAliases: false,});
 
-  con.connect(function(err) {
-    if (err) {
-      return console.error('error: ' + err.message);
-    }
-  
-    console.log('Connected to the MySQL server.');
-  });
+
 
  app.use(cors());
 
@@ -87,7 +81,7 @@ app.get("/data", (req, res) => {
   
   var sql = "SELECT username, password FROM users";
   var data = 1;
-  con.connect(function(err) {
+  con.connect();
   con.query(sql, function(err, result) {
     if(err) { 
     console.log(err);
@@ -101,8 +95,7 @@ app.get("/data", (req, res) => {
     })
   }
   )}
-  )
-});
+  );
 
 
 app.use(express.static(__dirname + '/views'));
