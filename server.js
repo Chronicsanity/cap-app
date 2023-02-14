@@ -86,6 +86,7 @@ app.get('/index', (req, res) =>{
 app.get("/data", (req, res) => {
   
   var sql = "SELECT username, password FROM users";
+  var data = 1;
   con.connect(function(err) {
   con.query(sql, function(err, result) {
     if(err) { 
@@ -96,7 +97,7 @@ app.get("/data", (req, res) => {
     
 
     res.render('data', {
-      testData: testData
+      data: data
     })
   }
   )}
