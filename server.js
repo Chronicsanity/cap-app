@@ -80,21 +80,19 @@ app.get('/index', (req, res) =>{
 app.get("/data", (req, res) => {
   
   var sql = "SELECT username, password FROM users";
-  con.connect(console.log("Connected!"),
+  con.connect(console.log("Connected!"));
   con.query(sql, function(err, result) {
     if(err) { 
     console.log(err);
   }
     const testData = result;
     console.log (testData);
+    
 
     res.render('data', {
       testData: testData
     })
-  },
-  con.end(function(){
-    console.log("The Connection has been closed")
-  }))
+  }
   )}
   );
 
@@ -128,6 +126,10 @@ app.get('/dashboard', function(req, res){
       });
   };*/
 // set port, listen for requests
+
+con.end(function(){
+  console.log("The Connection has been closed")
+});
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
