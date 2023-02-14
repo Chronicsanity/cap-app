@@ -99,7 +99,6 @@ app.get("/data", (req, res) => {
     res.render('data', {
       testData: testData
     });
-    connection.destroy;
     })
   connection.destroy;})
 });
