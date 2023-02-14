@@ -95,13 +95,12 @@ app.get("/data", (req, res) => {
     const testData = result;
     console.log (testData);
     con.release();
-    return testData;
-  
+    res.render('data', {
+      testData: testData
+    })
   }}
   )
-  res.render('data', {
-    testData: testData
-  })
+ 
 });
 
 
