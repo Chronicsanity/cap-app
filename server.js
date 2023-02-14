@@ -93,10 +93,11 @@ app.get("/data", (req, res) => {
   }
     const testData = result;
     console.log (testData);
+    con.release();
+    
     res.render('data', {
       testData: testData
     })
-    con.release();
   }
   )
 });
