@@ -93,8 +93,8 @@ app.get("/data", (req, res) => {
   }
     const testData = result;
     console.log (testData);
-    con.release();
-    
+    connection.release();
+
     res.render('data', {
       testData: testData
     })
