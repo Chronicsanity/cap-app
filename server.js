@@ -92,7 +92,9 @@ app.get("/data", (req, res) => {
     res.render('data', {
       testData: testData
     })
-    con.connect(console.log("Connected!"));
+    con.end(function(){
+      console.log("The Connection has been closed")
+    });
   }
   )}
   );
