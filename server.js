@@ -24,7 +24,7 @@ con = new mysql.createConnection({
   PORT: config.PORT,
   operatorsAliases: false,});
 
-
+  con.connect(console.log("Connected!"));
 
  app.use(cors());
 
@@ -80,7 +80,7 @@ app.get('/index', (req, res) =>{
 app.get("/data", (req, res) => {
   
   var sql = "SELECT username, password FROM users";
-  con.connect(console.log("Connected!"));
+  
   con.query(sql, function(err, result) {
     if(err) { 
     console.log(err);
