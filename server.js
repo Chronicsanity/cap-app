@@ -15,7 +15,7 @@ logging: false
 const app = express();
 const ejs = require('ejs');
 const config = require("./app/config/db.config");
-/*con = new mysql.createConnection({
+con = new mysql.createConnection({
   HOST: config.HOST,
   USER:config.USER,
   DIALECT: config.dialect,
@@ -23,7 +23,7 @@ const config = require("./app/config/db.config");
   DB: config.DB,
   PORT: config.PORT,
   operatorsAliases: false,});
-*/
+
   con.connect(function(err) {
     if (err) {
       return console.error('error: ' + err.message);
@@ -86,7 +86,6 @@ app.get('/index', (req, res) =>{
 app.get("/data", (req, res) => {
   
   var sql = "SELECT username, password FROM users";
-  console.log("con: " + con);
   con.getConnection(function(err, con) {
   con.query(sql, function(err, result) {
     if(err) { 
