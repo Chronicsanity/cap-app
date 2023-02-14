@@ -42,7 +42,7 @@ module.exports = {
         PORT: "process.env.PORT || 8080",
         logging: false,
       },
-    pool: {
+    /*pool: {
         HOST: "ip-10-0-13-151",
         USER: "b68ec5f8aea53b",
         PASSWORD: "16f4d23b2",
@@ -54,5 +54,19 @@ module.exports = {
         min: 0,
         acquire: 30000,
         idle: 10000
-    }
+    }*/
   };
+  var pool = mysql.createPool({
+    HOST: "ip-10-0-13-151",
+    USER: "b68ec5f8aea53b",
+  PASSWORD: "16f4d23b2",
+  DB: "us-cdbr-east-06.cleardb.net",
+  dialect: "mysql",
+  PORT: "process.env.PORT || 8080",
+  logging: false,
+  max: 5,
+  min: 0,
+  acquire: 30000,
+  idle: 10000
+  });
+  module.exports = pool;

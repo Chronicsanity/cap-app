@@ -14,8 +14,8 @@ logging: false
 });
 const app = express();
 const ejs = require('ejs');
-const config = require("./app/config/db.config");
-con = new mysql.createConnection({
+const pool = require("./app/config/db.config");
+/*con = new mysql.createConnection({
   HOST: config.HOST,
   USER:config.USER,
   DIALECT: config.dialect,
@@ -24,7 +24,7 @@ con = new mysql.createConnection({
   PORT: config.PORT,
   operatorsAliases: false,});
 
- 
+ */
 
  app.use(cors());
 
@@ -78,14 +78,18 @@ app.get('/index', (req, res) =>{
 });
 
 app.get("/data", (req, res) => {
-  con.connect(console.log("Connected!"));
   var sql = "SELECT username, password FROM users";
-  
-  con.query(sql, function(err, result) {
-    if(err) { 
-    console.log(err);
-    throw err;
-  }
+  exports.executeQuery = function(sql, callback) {
+    pool.getConnection(function(err,connection) {
+      if(err) { 
+        console.log(err);
+        connection.release;
+        throw err;
+      }
+    connection.query(sql, function(err, result) {
+      if(!err) { 
+        callback(null, {result: result});
+    }
     const testData = result;
     con.end(function(){
       console.log("The Connection has been closed")
@@ -96,9 +100,9 @@ app.get("/data", (req, res) => {
     res.render('data', {
       testData: testData
     })
-    
-  }
-  )
+    })
+  })
+}
 });
   
   
