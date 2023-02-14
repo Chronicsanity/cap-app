@@ -100,7 +100,7 @@ app.get("/data", (req, res) => {
       testData: testData
     })
     })
-  })
+  connection.destroy;})
 }
 });
   
