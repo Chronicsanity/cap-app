@@ -82,7 +82,7 @@ app.get("/data", (req, res) => {
     pool.getConnection(function(err,connection) {
       if(err) { 
         console.log(err);
-        connection.destroy;
+        connection.destroy//1;
         throw err;
       }
     connection.query(sql, function(err, result) {
@@ -90,7 +90,7 @@ app.get("/data", (req, res) => {
         callback(null, {result: result});
     }
     const testData = result;
-    connection.destroy(function(){
+    connection.destroy(function(){//2
       console.log("The Connection has been closed")
     });
     console.log (testData);
