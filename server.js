@@ -80,7 +80,7 @@ app.get('/index', (req, res) =>{
 app.get("/data", (req, res) => {
   
   var sql = "SELECT username, password FROM users";
-  con.connect();
+  con.connect(console.log("Connected!"));
   con.query(sql, function(err, result) {
     if(err) { 
     console.log(err);
