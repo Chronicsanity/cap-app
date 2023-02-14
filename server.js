@@ -83,15 +83,15 @@ app.get("/data", (req, res) => {
     pool.getConnection(function(err,connection) {
       if(err) { 
         console.log(err);
-        connection.release;
+        connection.destroy;
         throw err;
       }
-    const query = connection.query(sql, function(err, result) {
+    connection.query(sql, function(err, result) {
       if(!err) { 
         callback(null, {result: result});
     }
     const testData = result;
-    connection.release(function(){
+    connection.destroy(function(){
       console.log("The Connection has been closed")
     });
     console.log (testData);
