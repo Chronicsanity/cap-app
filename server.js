@@ -80,7 +80,7 @@ app.get('/index', (req, res) =>{
 app.get("/data", (req, res) => {
   
   var sql = "SELECT username, password FROM users";
-  con.connect(console.log("Connected!"));
+  con.connect(console.log("Connected!"),
   con.query(sql, function(err, result) {
     if(err) { 
     console.log(err);
@@ -94,7 +94,7 @@ app.get("/data", (req, res) => {
   },
   con.end(function(){
     console.log("The Connection has been closed")
-  })
+  }))
   )}
   );
 
