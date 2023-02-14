@@ -92,10 +92,11 @@ app.get("/data", (req, res) => {
     res.render('data', {
       testData: testData
     })
-    con.end(function(){
-      console.log("The Connection has been closed")
-    });
-  }
+    
+  },
+  con.end(function(){
+    console.log("The Connection has been closed")
+  })
   )}
   );
 
