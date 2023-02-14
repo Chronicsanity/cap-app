@@ -56,7 +56,7 @@ module.exports = {
         idle: 10000
     }*/
   };
-  const pool = await mysql.createPool({
+  const pool = mysql.createPool({
     HOST: "ip-10-0-13-151",
     USER: "b68ec5f8aea53b",
   PASSWORD: "16f4d23b2",
