@@ -87,20 +87,19 @@ app.get("/data", (req, res) => {
     connection.query(sql, function(err, result) {
       if(!err) { 
         callback(null, {result: result});
+        connection.destroy(function(){//2
+          console.log("The Connection has been closed")
+        });
     }
-    const testData = result;
-    connection.destroy(function(){//2
-      console.log("The Connection has been closed")
-    });
-    console.log (testData);
+   
+    })
+    console.log (result);
     
-
     res.render('data', {
-      testData: testData
+      result: testData
     });
     })
-  })
-});
+  });
   
   
 
