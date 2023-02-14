@@ -93,8 +93,10 @@ app.get("/data", (req, res) => {
   }
   else {
     const testData = result;
+    console.log (testData);
     con.release();
     return testData;
+  
   }}
   )
   res.render('data', {
