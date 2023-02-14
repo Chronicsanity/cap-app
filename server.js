@@ -127,9 +127,9 @@ app.get('/dashboard', function(req, res){
   };*/
 // set port, listen for requests
 
-con.end(function(){
+/*con.end(function(){
   console.log("The Connection has been closed")
-});
+});*/
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
