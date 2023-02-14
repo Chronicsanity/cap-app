@@ -86,12 +86,12 @@ app.get('/index', (req, res) =>{
 app.get("/data", (req, res) => {
   
   var sql = "SELECT username, password FROM users";
+  console.log("con: " + con);
   con.getConnection(function(err, con) {
   con.query(sql, function(err, result) {
     if(err) { 
     console.log(err);
   }
-  console.log("con: " + con);
     const testData = result;
     console.log (testData);
     res.render('data', {
