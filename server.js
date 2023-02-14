@@ -87,12 +87,13 @@ app.get("/data", (req, res) => {
     connection.query(sql, function(err, result) {
       if(!err) { 
         res.render('data', {result: testData});
+      
+        };
         connection.destroy(function(){//2
           console.log("The Connection has been closed")
-        });
     }
-   
-    })
+        )}
+    )
     console.log (result);
     })
   });
