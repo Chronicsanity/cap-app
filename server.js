@@ -14,7 +14,7 @@ logging: false
 });
 const app = express();
 const ejs = require('ejs');
-const config = require("./app/config");
+const config = require("./app/config/db.config");
 con = new mysql.createConnection({
   HOST: config.HOST,
   USER:config.USER,
