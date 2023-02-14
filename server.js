@@ -92,7 +92,7 @@ app.get("/data", (req, res) => {
     return;
   }
   else {
-    var testData = result;
+    const testData = result;
     con.release();
     return testData;
   }}
