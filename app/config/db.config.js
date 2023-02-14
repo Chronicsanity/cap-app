@@ -70,6 +70,7 @@ module.exports = {
   idle: 10000,
   connectionLimit: 15,
   queueLimit: 30,
-  acquireTimeout: 1000000
+  acquireTimeout: 1000000,
+  connectTimeout: 30000
   });
   module.exports = pool;
