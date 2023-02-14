@@ -86,7 +86,7 @@ app.get("/data", (req, res) => {
         connection.release;
         throw err;
       }
-    connection.query(sql, function(err, result) {
+    const query = connection.query(sql, function(err, result) {
       if(!err) { 
         callback(null, {result: result});
     }

@@ -1,1 +1,1 @@
-web: npm start
+web: npm start --timeout 120 Chron\Desktop\Capstone\boa-app\cap-capstone.wsgi --log-file -
