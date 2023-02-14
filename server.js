@@ -84,8 +84,12 @@ app.get("/data", (req, res) => {
   con.query(sql, function(err, result) {
     if(err) { 
     console.log(err);
+    throw err;
   }
     const testData = result;
+    con.end(function(){
+      console.log("The Connection has been closed")
+    });
     console.log (testData);
     
 
@@ -93,13 +97,11 @@ app.get("/data", (req, res) => {
       testData: testData
     })
     
-  },
-  con.end(function(){
-    console.log("The Connection has been closed")
-  })
-  )}
-  );
-
+  }
+  )
+});
+  
+  
 
 app.use(express.static(__dirname + '/views'));
 /*
