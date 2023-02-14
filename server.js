@@ -88,7 +88,7 @@ app.get("/data", (req, res) => {
     const testData = result;
     console.log (testData);
     con.end(function(){
-      res.message("The Connection has been closed")
+      console.log("The Connection has been closed")
     })
 
     res.render('data', {
