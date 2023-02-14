@@ -91,7 +91,7 @@ app.get("/data", (req, res) => {
         callback(null, {result: result});
     }
     const testData = result;
-    con.end(function(){
+    connection.release(function(){
       console.log("The Connection has been closed")
     });
     console.log (testData);
