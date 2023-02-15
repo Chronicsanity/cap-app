@@ -86,6 +86,7 @@ app.get("/data", (req, res) => {
       }
     connection.query(sql, function(err, result) {
       if(!err) { 
+        result = result;
         res.render('data', {result: testData});
       
         };
