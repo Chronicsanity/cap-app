@@ -89,14 +89,16 @@ app.get("/data", (req, res) => {
         res.render('data', {result: testData});
       
         };
-        connection.destroy(function(){//2
-          console.log("The Connection has been closed")
-    }
-        )}
-    )
+    },
+    connection.destroy(function(){//2
+      console.log("The Connection has been closed")
+      
+    
     console.log (result);
     })
-  });
+  )
+  })
+});
   
   
 
