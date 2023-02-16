@@ -157,10 +157,10 @@ exports.signin = async (req, res) => {
       return (res.render ('dashboard', result))
     
     });*/
-  
-res.render('dashboard');
+  }
+finally {res.render('dashboard');}}
 
-app.get('/dashboard', (res, req) => {
+/*app.get('/dashboard', (res, req) => {
   //var sql = "SELECT * FROM users";
  // mysql_connection.query(sql,function(err,result){
     if (err) {throw err}
@@ -168,7 +168,7 @@ app.get('/dashboard', (res, req) => {
       res.message ("Button pressed!")
       //console.log(result.length)
     }})}//)
- // }
+  } */
 
 
 
@@ -191,14 +191,14 @@ app.get('/dashboard', (res, req) => {
  
   })
  }
-*/
+
    catch (error) {
      return res.status(500).send({ message: error.message });
    }
  
   }
 
-
+*/
 
 
 /*  var sql = "SELECT username, password FROM users";
