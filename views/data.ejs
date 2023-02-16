@@ -7,10 +7,10 @@
 
 <body>
 <ul>
-   <script> <% testData.forEach(function(testData) { %>
+   <script> <% testData.forEach(function(user, password) { %>
         <li>
-            <%= testData.users %>
-            <%= testData.password %>
+            <%= user.users %>
+            <%= password.password %>
         </li>
         <%});%>
         </script>

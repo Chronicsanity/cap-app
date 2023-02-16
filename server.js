@@ -11,6 +11,8 @@ const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06
 
 logging: false
 });
+const User = db.user;
+const Password = db.password;
 const app = express();
 const ejs = require('ejs');
 const connection = require("./app/config/db.config");
@@ -76,7 +78,7 @@ app.get('/index', (req, res) =>{
 
 });
 
-app.get("/data", (req, res) => {
+/*app.get("/data", (req, res) => {
   var sql = "SELECT username, password FROM users";
   
     connection.getConnection(function(err,connection) {
@@ -99,7 +101,27 @@ app.get("/data", (req, res) => {
     })
   
   });
-  
+  */
+  app.get("/data", (req, res) => {
+    const user = User.findall(
+       req.body.users
+    );
+    
+    const password =  Password.findall(
+        req.body.password);
+    
+   
+
+        sql.forEach(function(result) {
+            result = user;
+
+        }),
+        sql.forEach(function(result2) {
+            result2 = password;
+
+        })
+          res.render('data', {user: result, password: result2});
+    });
   
 
 app.use(express.static(__dirname + '/views'));
