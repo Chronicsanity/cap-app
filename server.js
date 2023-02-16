@@ -13,7 +13,7 @@ logging: false
 });
 const app = express();
 const ejs = require('ejs');
-const pool = require("./app/config/db.config");
+const connection = require("./app/config/db.config");
 /*con = new mysql.createConnection({
   HOST: config.HOST,
   USER:config.USER,
@@ -79,7 +79,7 @@ app.get('/index', (req, res) =>{
 app.get("/data", (req, res) => {
   var sql = "SELECT username, password FROM users";
   
-    pool.getConnection(function(err,connection) {
+    connection.getConnection(function(err,connection) {
       if(err) { 
         console.log(err);
         throw err;
@@ -91,13 +91,14 @@ app.get("/data", (req, res) => {
       
         };
     },
+    
+    
+    console.log (result));
     connection.destroy(function(){//2
       console.log("The Connection has been closed")
       
-    
-    console.log (result);
     })
-  )
+  
   })
 });
   

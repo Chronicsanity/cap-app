@@ -56,7 +56,7 @@ module.exports = {
         idle: 10000
     }*/
   };
-  const pool = mysql.createPool({
+  const connection = mysql.createPool({
     HOST: "us-cdbr-east-06.cleardb.net",
     USER: "b68ec5f8aea53b",
   PASSWORD: "16f4d23b2",
@@ -73,4 +73,4 @@ module.exports = {
   acquireTimeout: 1000000,
   connectTimeout: 30000
   });
-  module.exports = pool;
+  module.exports = connection;
