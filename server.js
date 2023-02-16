@@ -11,8 +11,9 @@ const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06
 
 logging: false
 });
-const User = db.user;
-const Password = db.password;
+const userInfo = require("./app/models/user")(sequelize, User);
+const Password = userInfo.password;
+const userName = userInfo.username;
 const app = express();
 const ejs = require('ejs');
 const connection = require("./app/config/db.config");
@@ -103,7 +104,7 @@ app.get('/index', (req, res) =>{
   });
   */
   app.get("/data", (req, res) => {
-    const user = User.findall(
+    const user = userName.findall(
        req.body.users
     );
     
@@ -112,11 +113,11 @@ app.get('/index', (req, res) =>{
     
    
 
-        sql.forEach(function(result) {
+        user.forEach(function(result) {
             result = user;
 
         }),
-        sql.forEach(function(result2) {
+        password.forEach(function(result2) {
             result2 = password;
 
         })
