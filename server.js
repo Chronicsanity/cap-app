@@ -11,7 +11,7 @@ const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06
 
 logging: false
 });
-const userInfo = require("./app/models/user")(sequelize, User);
+const userInfo = require("./app/models/user");
 const Password = userInfo.password;
 const userName = userInfo.username;
 const app = express();
