@@ -104,11 +104,11 @@ app.get('/index', (req, res) =>{
   });
   */
   app.get("/data", (req, res) => {
-    const user = userName.findall(
+    const user = db.userName.findall(
        req.body.users
     );
     
-    const password =  Password.findall(
+    const password =  db.Password.findall(
         req.body.password);
     
    
