@@ -26,7 +26,7 @@ const connection = require("./app/config/db.config");
  */
 
  app.use(cors());
-
+ app.enable('trust proxy');
 // parse requests of content-type - application/json
 app.use(express.json());
 
