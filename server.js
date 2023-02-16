@@ -94,13 +94,11 @@ app.get("/data", (req, res) => {
     
     
     console.log (result));
-    connection.destroy(function(){//2
-      console.log("The Connection has been closed")
+
       
     })
   
-  })
-});
+  });
   
   
 
