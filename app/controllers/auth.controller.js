@@ -158,14 +158,11 @@ exports.signin = async (req, res) => {
     
     });*/
   }
-finally {res.render('dashboard');}}
+finally {res.render('dashboard');}};
 
-module.exports = async scheduleTable => {
-  const userSchedule = await User.findall(
-    console.log(JSON.stringify(userSchedule,null,2))
-  )
-  return (userSchedule);
-
+const userSchedule = await (User.findAll());
+exports.scheduleTable = {
+ userSchedule
 };
 
 /*app.get('/dashboard', (res, req) => {
