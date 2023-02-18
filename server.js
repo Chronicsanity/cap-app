@@ -8,7 +8,7 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const db = require("./app/models");
 const User = db.user;
-const user = await User.create({
+const user = User.create({
   username: req.body.username,
   email: req.body.email,
   password: req.body.password
