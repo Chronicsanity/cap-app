@@ -104,8 +104,7 @@ app.get('/index', (req, res) =>{
   app.get("/data", function(req, res) {
 
     const scheduleTable = require('./app/controllers/auth.controller');
-    scheduleTable ();
-  
+    scheduleTable;
           res.render('data', {user: userSchedule});
   });
   
