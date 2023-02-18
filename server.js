@@ -12,7 +12,7 @@ const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06
 
 logging: false
 });
-const connection = require("./app/config");
+
 const app = express();
 const ejs = require('ejs');
 /*con = new mysql.createConnection({

@@ -14,6 +14,7 @@ const flash = require('express-flash');
 const mysql = require('mysql');
 const { Pool } = require('pg');
 const router = express.Router;
+const connection = require("./app/config/db.config");
 
 /*con = new mysql.createConnection({
   HOST: config.HOST,
