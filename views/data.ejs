@@ -3,22 +3,39 @@
     <div class="text-center center-div" id="login">
         <div class="container w-25 border py-5">
             <div class="title pb-5">
+                <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
                 
 <head>
 	
 </head>
 
 <body>
-<ul>
-   <script> 
-        <li>
-            <script>
-             <%- user %>
-      </script>
-        </li>
-        
-        </script>
-</ul>
+    <table class="table">
+        <thead>
+          <tr>
+           
+            <th>Name</th>
+           
+            <th>Password</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% if(data.length){ for(var i = 0; i< data.length; i++) {%>
+            <tr>
+              <th scope="row"><%= (i+1) %></th>
+              <td><%= data[i].name%></td>
+              <td><%= data[i].email%></td>
+            </tr>
+            <% } }else{ %>
+            <tr>
+              <td>No data ever existed.</td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+
+
 </body>
             </div>
         </div>

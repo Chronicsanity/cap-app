@@ -12,10 +12,9 @@ const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06
 
 logging: false
 });
-
+const connection = require("./app/config");
 const app = express();
 const ejs = require('ejs');
-const connection = require("./app/config/db.config");
 /*con = new mysql.createConnection({
   HOST: config.HOST,
   USER:config.USER,
@@ -78,42 +77,6 @@ app.get('/index', (req, res) =>{
 
 });
 
-/*app.get("/data", (req, res) => {
-  var sql = "SELECT username, password FROM users";
-  
-    connection.getConnection(function(err,connection) {
-      if(err) { 
-        console.log(err);
-        throw err;
-      }
-    connection.query(sql, function(err, result) {
-      if(!err) { 
-        result = result;
-        res.render('data', {result: testData});
-      
-        };
-    },
-    
-    
-    console.log (result));
-
-      
-    })
-  
-  });
-  */
-  app.get("/data", function(req, res) {
-    const user = User.create({
-      username: req.body.username,
-      email: req.body.email,
-      password: req.body.password
-    });
-const Schedule = user.findAll(username, password)
-   const testing = console.log(Schedule);
-          res.render('data', {user: testing});
-  });
-  
-  
 
 app.use(express.static(__dirname + '/views'));
 /*

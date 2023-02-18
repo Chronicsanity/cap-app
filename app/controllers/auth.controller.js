@@ -225,6 +225,19 @@ res.render('dashboard', {data: result});
 })
  */
 
+app.get("/data", (req, res, next) => {
+
+  connection.query('SELECT * FROM users ORDER BY id', function (err, rows) {
+  if (err) {
+    console.log(err);
+  }
+  else {
+    res.render('data', {data: rows})
+  }
+  })
+  })
+  module.exports = Something;
+  
 
 exports.signout = async (req, res) => {
   try {
