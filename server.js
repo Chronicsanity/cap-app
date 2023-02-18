@@ -103,7 +103,7 @@ app.get('/index', (req, res) =>{
   */
   app.get("/data", function(req, res) {
 
-   const testing = "Interesting"
+   const testing = window.print("Interesting");
           res.render('data', {user: testing});
   });
   
