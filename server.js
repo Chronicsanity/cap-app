@@ -11,9 +11,7 @@ const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06
 
 logging: false
 });
-const userInfo = require("./app/models/user");
-const Password = userInfo.password;
-const userName = userInfo.username;
+
 const app = express();
 const ejs = require('ejs');
 const connection = require("./app/config/db.config");
@@ -104,25 +102,12 @@ app.get('/index', (req, res) =>{
   });
   */
   app.get("/data", (req, res) => {
-    const user = db.userName.findall(
-       req.body.users
-    );
-    
-    const password =  db.Password.findall(
-        req.body.password);
-    
-   
 
-        user.forEach(function(result) {
-            result = user;
-
-        }),
-        password.forEach(function(result2) {
-            result2 = password;
-
-        })
-          res.render('data', {user: result, password: result2});
-    });
+    scheduleTable();
+  
+          res.render('data', {user: userSchedule});
+  });
+  
   
 
 app.use(express.static(__dirname + '/views'));

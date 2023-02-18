@@ -160,6 +160,14 @@ exports.signin = async (req, res) => {
   }
 finally {res.render('dashboard');}}
 
+module.exports = async scheduleTable => {
+  const userSchedule = await User.findall(
+    console.log(JSON.stringify(userSchedule,null,2))
+  )
+  return (userSchedule);
+
+};
+
 /*app.get('/dashboard', (res, req) => {
   //var sql = "SELECT * FROM users";
  // mysql_connection.query(sql,function(err,result){
