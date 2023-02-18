@@ -13,7 +13,7 @@ const saltRounds = 8;
 const flash = require('express-flash');
 const mysql = require('mysql');
 const { Pool } = require('pg');
-const { Router } = require("express");
+const router = express.Router;
 
 /*con = new mysql.createConnection({
   HOST: config.HOST,
@@ -225,7 +225,7 @@ res.render('dashboard', {data: result});
 })
  */
 
-app.get("/data", (req, res, next) => {
+router.get("/data", (req, res, next) => {
 
   connection.query('SELECT * FROM users ORDER BY id', function (err, rows) {
   if (err) {
