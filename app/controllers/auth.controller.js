@@ -160,10 +160,10 @@ exports.signin = async (req, res) => {
   }
 finally {res.render('dashboard');}};
 
-const userSchedule = await (User.findAll());
+/*const userSchedule = await (User.findAll());
 exports.scheduleTable = {
  userSchedule
-};
+};*/
 
 /*app.get('/dashboard', (res, req) => {
   //var sql = "SELECT * FROM users";
