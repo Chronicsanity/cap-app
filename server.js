@@ -8,11 +8,6 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const db = require("./app/models");
 const User = db.user;
-const user = User.create({
-  username: req.body.username,
-  email: req.body.email,
-  password: req.body.password
-});
 const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06.cleardb.net/heroku_a26e4a307a3f41f?reconnect=true", {
 
 logging: false
@@ -108,6 +103,11 @@ app.get('/index', (req, res) =>{
   });
   */
   app.get("/data", function(req, res) {
+    const user = User.create({
+      username: req.body.username,
+      email: req.body.email,
+      password: req.body.password
+    });
 const Schedule = user.findAll(username, password)
    const testing = console.log(Schedule);
           res.render('data', {user: testing});
