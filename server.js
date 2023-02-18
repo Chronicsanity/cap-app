@@ -103,7 +103,7 @@ app.get('/index', (req, res) =>{
   });
   */
   app.get("/data", function(req, res) {
-const Schedule = User.findAll(users, password)
+const Schedule = User.findAll(username, password)
    const testing = console.log(Schedule);
           res.render('data', {user: testing});
   });
