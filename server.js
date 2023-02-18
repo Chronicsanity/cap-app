@@ -101,7 +101,7 @@ app.get('/index', (req, res) =>{
   
   });
   */
-  app.get("/data", (req, res) => {
+  app.get("/data", function(req, res) {
 
     scheduleTable();
   
