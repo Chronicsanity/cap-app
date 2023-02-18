@@ -103,7 +103,8 @@ app.get('/index', (req, res) =>{
   */
   app.get("/data", function(req, res) {
 
-    scheduleTable();
+    const scheduleTable = require('./app/controllers/auth.controller');
+    scheduleTable ();
   
           res.render('data', {user: userSchedule});
   });
