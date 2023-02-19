@@ -237,7 +237,7 @@ router.get("/data", (req, res, next) => {
   }
   })
   })
-  module.exports = Something;
+  module.exports = router;
   
 
 exports.signout = async (req, res) => {
