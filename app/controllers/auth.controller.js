@@ -13,7 +13,7 @@ const saltRounds = 8;
 const flash = require('express-flash');
 const mysql = require('mysql');
 const { Pool } = require('pg');
-const router = ('express').Router();
+const router = require('express').Router();
 const connection = require("../config/db.config");
 
 /*con = new mysql.createConnection({
