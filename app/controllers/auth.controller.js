@@ -236,9 +236,9 @@ router.get("/data", (req, res, next) => {
     res.render('data', {data: rows})
   }
   })
-  })
-  module.exports = router;
   
+  module.exports = router;
+})
 
 exports.signout = async (req, res) => {
   try {
