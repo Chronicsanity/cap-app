@@ -226,12 +226,14 @@ res.render('dashboard', {data: result});
 })
  */
 
-router.post("data", (req, res, next) => {
+router.get("data", (req, res, next) => {
 
   connection.query('SELECT * FROM users ORDER BY id', function (err, rows) {
-  if (err) {
-    console.log(err);
-  }
+
+    if (err) return res.status(400).send({ success: false, err });
+
+   
+  
   else {
     res.render('data', {data: rows})
   }
