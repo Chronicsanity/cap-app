@@ -225,9 +225,9 @@ res.render('dashboard', {data: result});
  })
 })
  */
-const data = (req.body.username, req.body.password);
+
 app.get("data", (req, res, next) => {
-  
+  const data = (req.body.username, req.body.password);
   res.render('/data', {data:data})
  /* app.query('SELECT * FROM users', function (err, data) {
 
