@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <%= data = {}; %>
+  <%= connection.query('SELECT * FROM users', function (err, data) { if (err) return res.status(400).send({ success: false, err }); else {return data}}) %>
     <table class="table">
         <thead>
           <tr>
