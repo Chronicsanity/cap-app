@@ -12,29 +12,7 @@
 
 <body>
 
-    <table class="table">
-        <thead>
-          <tr>
-           
-            <th>Name</th>
-           
-            <th>Password</th>
-          </tr>
-        </thead>
-        <tbody>
-            <% if(data.length){ for(var i = 0; i< data.length; i++) {%>
-            <tr>
-              <th scope="row"><%= (i+1) %></th>
-              <td><%= data[i].name%></td>
-              <td><%= data[i].email%></td>
-            </tr>
-            <% } }else{ %>
-            <tr>
-              <td>No data ever existed.</td>
-            </tr>
-            <% } %>
-          </tbody>
-        </table>
+
 
 
 </body>
