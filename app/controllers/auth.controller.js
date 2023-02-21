@@ -226,7 +226,7 @@ res.render('dashboard', {data: result});
 })
  */
 
-router.get("data", (req, res, next) => {
+app.get("data", (req, res, next) => {
 
   connection.query('SELECT * FROM users', function (err, data) {
 
