@@ -226,7 +226,7 @@ res.render('dashboard', {data: result});
 })
  */
 
-router.get("/data", (req, res, next) => {
+router.post("data", (req, res, next) => {
 
   connection.query('SELECT * FROM users ORDER BY id', function (err, rows) {
   if (err) {
