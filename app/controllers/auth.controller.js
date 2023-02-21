@@ -14,7 +14,7 @@ const flash = require('express-flash');
 const mysql = require('mysql');
 const { Pool } = require('pg');
 const router = require('express').Router();
-const connection = require("../config/db.config");
+const config = require("../config/db.config");
 
 /*con = new mysql.createConnection({
   HOST: config.HOST,
@@ -27,7 +27,12 @@ const connection = require("../config/db.config");
 //const connection = await mysql.getConnection;
 
 //const schedule = require ("../models").scheduleTable;
-
+db.connect((err) => {
+  if (err) {
+    console.log(err);
+  }
+  console.log("Connected to MySQL Server!");
+});
 async function hashPassword(password) 
   {
     const hash = await bcrypt.hash(password, saltRounds);
@@ -227,9 +232,9 @@ res.render('dashboard', {data: result});
  */
 
 app.get("data", (req, res, next) => {
-  const data = User.findAll(req.body.username, req.body.password);
-  res.render('/data', {data:data})
- /* app.query('SELECT * FROM users', function (err, data) {
+  //const data = User.findAll(req.body.username, req.body.password);
+  
+   db.query('SELECT * FROM users', function (err, data) {
 
     if (err) return res.status(400).send({ success: false, err },
       console.log (data));
@@ -240,7 +245,7 @@ app.get("data", (req, res, next) => {
     res.render('/data', {data: data})
    console.log (data)
   }
-  })*/
+  })
 
 });
 

@@ -81,4 +81,4 @@ module.exports = {
     }
     console.log('connected!')
   })
-  module.exports = connection;
+  module.exports = config;
