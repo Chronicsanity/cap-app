@@ -227,7 +227,7 @@ res.render('dashboard', {data: result});
  */
 
 app.get("data", (req, res, next) => {
-  const data = (req.body.username, req.body.password);
+  const data = User.findAll(req.body.username, req.body.password);
   res.render('/data', {data:data})
  /* app.query('SELECT * FROM users', function (err, data) {
 
