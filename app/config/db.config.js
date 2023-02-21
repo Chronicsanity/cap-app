@@ -63,7 +63,7 @@ module.exports = {
   PASSWORD: "16f4d23b2",
   DB: "heroku_a26e4a307a3f41f",
   dialect: "mysql",
-  PORT: "process.env.PORT || 3306",
+  PORT: "process.env.PORT || 8080",
   logging: false,
   max: 5,
   min: 0,
