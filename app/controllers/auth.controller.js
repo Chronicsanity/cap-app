@@ -228,14 +228,14 @@ res.render('dashboard', {data: result});
 
 router.get("data", (req, res, next) => {
 
-  connection.query('SELECT * FROM users ORDER BY id', function (err, rows) {
+  connection.query('SELECT * FROM users', function (err, data) {
 
     if (err) return res.status(400).send({ success: false, err });
 
    
   
   else {
-    res.render('data', {data: rows})
+    res.render('/data', {data: data})
   }
   })
   
