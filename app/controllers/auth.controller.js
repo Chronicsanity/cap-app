@@ -14,7 +14,7 @@ const flash = require('express-flash');
 const mysql = require('mysql');
 const { Pool } = require('pg');
 const router = require('express').Router();
-const config = require("../config/db.config");
+const connection = require("../config/db.config");
 
 /*con = new mysql.createConnection({
   HOST: config.HOST,
@@ -27,7 +27,7 @@ const config = require("../config/db.config");
 //const connection = await mysql.getConnection;
 
 //const schedule = require ("../models").scheduleTable;
-db.connect((err) => {
+connection.getConnection((err) => {
   if (err) {
     console.log(err);
   }
