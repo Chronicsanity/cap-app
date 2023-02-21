@@ -230,7 +230,8 @@ app.get("data", (req, res, next) => {
 
   connection.query('SELECT * FROM users', function (err, data) {
 
-    if (err) return res.status(400).send({ success: false, err });
+    if (err) return res.status(400).send({ success: false, err },
+      console.log (data));
 
    
   
