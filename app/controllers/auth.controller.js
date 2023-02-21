@@ -228,7 +228,7 @@ res.render('dashboard', {data: result});
 
 app.get("data", (req, res, next) => {
   //const data = User.findAll(req.body.username, req.body.password);
-  
+  connection.getConnection();
    connection.query('SELECT * FROM users', function (err, data) {
 
     if (err) return res.status(400).send({ success: false, err },
