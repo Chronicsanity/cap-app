@@ -27,6 +27,7 @@ const connection = require("../config/db.config");
 //const connection = await mysql.getConnection;
 
 //const schedule = require ("../models").scheduleTable;
+connection.end;
 connection.connect((err) => {
   if (err) {
     console.log(err);
@@ -244,6 +245,7 @@ app.get("data", (req, res, next) => {
   else {
     res.render('/data', {data: data})
    console.log (data)
+   connection.end;
   }
   })
 
