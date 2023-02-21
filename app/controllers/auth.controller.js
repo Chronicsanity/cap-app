@@ -236,7 +236,7 @@ app.get("data", (req, res, next) => {
    
   
   else {
-   // res.render('/data', {data: data})
+    res.render('/data', {data: data})
    console.log (data)
   }
   })
