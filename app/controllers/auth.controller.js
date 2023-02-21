@@ -238,8 +238,7 @@ router.get("data", (req, res, next) => {
     res.render('/data', {data: data})
   }
   })
-  
-  module.exports = router;
+
 })
 
 exports.signout = async (req, res) => {
