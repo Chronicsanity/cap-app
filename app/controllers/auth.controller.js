@@ -225,10 +225,11 @@ res.render('dashboard', {data: result});
  })
 })
  */
-
+const data = (req.body.username, req.body.password);
 app.get("data", (req, res, next) => {
-
-  app.query('SELECT * FROM users', function (err, data) {
+  
+  res.render('/data', {data:data})
+ /* app.query('SELECT * FROM users', function (err, data) {
 
     if (err) return res.status(400).send({ success: false, err },
       console.log (data));
@@ -239,9 +240,9 @@ app.get("data", (req, res, next) => {
     res.render('/data', {data: data})
    console.log (data)
   }
-  })
+  })*/
 
-})
+});
 
 exports.signout = async (req, res) => {
   try {
