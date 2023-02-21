@@ -28,12 +28,6 @@ const connection = require("../config/db.config");
 
 //const schedule = require ("../models").scheduleTable;
 connection.end;
-connection.connect((err) => {
-  if (err) {
-    console.log(err);
-  }
-  console.log("Connected to MySQL Server!");
-});
 async function hashPassword(password) 
   {
     const hash = await bcrypt.hash(password, saltRounds);
@@ -235,7 +229,7 @@ res.render('dashboard', {data: result});
 app.get("data", (req, res, next) => {
   //const data = User.findAll(req.body.username, req.body.password);
   
-   db.query('SELECT * FROM users', function (err, data) {
+   connection.query('SELECT * FROM users', function (err, data) {
 
     if (err) return res.status(400).send({ success: false, err },
       console.log (data));
