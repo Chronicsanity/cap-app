@@ -76,7 +76,10 @@ app.get('/index', (req, res) =>{
   res.render('index.ejs');
 
 });
-
+app.post('/data');
+app.get('/data', (req, res) =>{
+  res.render('data.ejs');
+});
 
 app.use(express.static(__dirname + '/views'));
 /*
