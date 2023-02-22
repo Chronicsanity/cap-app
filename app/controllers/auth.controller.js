@@ -27,7 +27,6 @@ const connection = require("../config/db.config");
 //const connection = await mysql.getConnection;
 
 //const schedule = require ("../models").scheduleTable;
-connection.end;
 async function hashPassword(password) 
   {
     const hash = await bcrypt.hash(password, saltRounds);
