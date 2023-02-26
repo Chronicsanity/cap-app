@@ -226,9 +226,10 @@ res.render('dashboard', {data: result});
  */
 
 app.get("data", async (req, res, next) => {
-  //const data = User.findAll(req.body.username, req.body.password);
+  const data1 = await User.findAll(req.body.username, req.body.password);
    await db.connection.query('SELECT * FROM users', function (err, data) {
-    JSON.stringify(data); 
+    JSON.stringify(data1); 
+    JSON.stringify(data)
     console.log (data);
     connection.end;
     if (err) return res.status(400).send({ success: false, err },
@@ -238,7 +239,7 @@ app.get("data", async (req, res, next) => {
   
   else {
     JSON.stringify(data); 
-    res.render('/data', {data: data})
+    res.render('/data', {data: data1})
    console.log (data)
   }
   })

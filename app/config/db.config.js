@@ -74,7 +74,7 @@ module.exports = {pool};*/
   acquireTimeout: 1000000,
   connectTimeout: 30000
   })
-  connection.connect((err) => {
+   connection.connect((err) => {
     if (err){
       console.log(err)
       return;
