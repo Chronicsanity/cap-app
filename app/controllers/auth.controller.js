@@ -225,9 +225,9 @@ res.render('dashboard', {data: result});
 })
  */
 
-db.get("data", async (req, res, next) => {
+app.get("data", async (req, res, next) => {
   //const data = User.findAll(req.body.username, req.body.password);
-   connection.query('SELECT * FROM users', function (err, data) {
+   db.connection.query('SELECT * FROM users', function (err, data) {
     JSON.stringify(data); 
     console.log (data);
     connection.end;
