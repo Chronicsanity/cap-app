@@ -13,7 +13,7 @@ acquire: 30000,
 idle: 10000
 });
 module.exports = {pool};*/
-module.exports = {
+/*module.exports = {
     development: {
         HOST: "ip-10-0-13-151",
         USER: "b68ec5f8aea53b",
@@ -54,13 +54,13 @@ module.exports = {
         min: 0,
         acquire: 30000,
         idle: 10000
-    }*/
+    }
   };
-
+*/
   var connection = mysql.createConnection({
     HOST: "us-cdbr-east-06.cleardb.net",
     USER: "b68ec5f8aea53b",
-  PASSWORD: "16f4d23b2",
+  PASSWORD: "6f4d23b2",
   DB: "heroku_a26e4a307a3f41f",
   dialect: "mysql",
   PORT: "process.env.PORT || 43488",
@@ -82,3 +82,4 @@ module.exports = {
     console.log('connected!')
   })
   module.exports = connection;
+
