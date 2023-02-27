@@ -85,8 +85,7 @@ exports.signin = async (req, res) => {
   if (!user) {
       return app.use(flash("User not found")),
         await new Promise(resolve => setTimeout(resolve, 5000)),
-      res.redirect('login'),
-       res.status(404).send({ message: user});
+      res.redirect('login');
     }
    else if (app.get('/signin'), (req, res) => {
     comparePassword (user.password, db.password)
@@ -227,6 +226,7 @@ res.render('dashboard', {data: result});
  */
 
 app.get("data", async (req, res, next) => {
+  connection.getConnection();
   const data1 = await User.findAll(req.body.username, req.body.password);
    await db.connection.query('SELECT * FROM users', function (err, data) {
     JSON.stringify(data1); 
