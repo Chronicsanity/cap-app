@@ -8,6 +8,8 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const db = require("./app/models");
 const User = db.user;
+const mysql = require('mysql');
+const connection = require("../config/db.config");
 const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06.cleardb.net/heroku_a26e4a307a3f41f?reconnect=true", {
 
 logging: false
