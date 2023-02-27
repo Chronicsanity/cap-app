@@ -15,7 +15,7 @@ const mysql = require('mysql');
 const { Pool } = require('pg');
 const router = require('express').Router();
 const connection = require("../config/db.config");
-
+db.Sequelize.sync();
 /*con = new mysql.createConnection({
   HOST: config.HOST,
   USER:config.USER,
