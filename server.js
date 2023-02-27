@@ -80,7 +80,15 @@ app.get('/index', (req, res) =>{
 });
 app.post('/data');
 app.get('/data', (req, res) =>{
-  res.render('data.ejs');
+  db.connection.query('SELECT * FROM users', function (err, data) {
+    JSON.stringify(data);
+    console.log ('data');
+    connection.end;
+    res.render('/data', {data: data})
+    if (err) return res.status(400).send({ success: false, err },
+      console.log (data));
+    });
+  res.render('data.ejs', {data:data});
 });
 
 app.use(express.static(__dirname + '/views'));
@@ -117,14 +125,7 @@ app.get('/dashboard', function(req, res){
   console.log("The Connection has been closed")
 });*/
 
-db.connection.query('SELECT * FROM users', function (err, data) {
-  JSON.stringify(data);
-  console.log ('data');
-  connection.end;
-  res.render('/data', {data: data})
-  if (err) return res.status(400).send({ success: false, err },
-    console.log (data));
-  });
+
 
 const PORT = process.env.PORT || 43488;
 app.listen(PORT, () => {
