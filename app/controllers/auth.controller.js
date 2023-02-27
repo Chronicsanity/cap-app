@@ -248,7 +248,7 @@ app.get("data", async (req, res, next) => {
   
   else {
     JSON.stringify(data); 
-    res.render('/data', {data: data}, {data1:data1})
+    //res.render('/data', {data: data}, {data1:data1})
    
   }
   })
