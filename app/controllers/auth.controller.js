@@ -85,7 +85,8 @@ exports.signin = async (req, res) => {
   if (!user) {
       return app.use(flash("User not found")),
         await new Promise(resolve => setTimeout(resolve, 5000)),
-      res.redirect('login');
+      res.redirect('login'),
+      console.log (user);
     }
    else if (app.get('/signin'), (req, res) => {
     comparePassword (user.password, db.password)
