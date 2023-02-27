@@ -237,8 +237,8 @@ app.get("data", async (req, res, next) => {
    await db.connection.query('SELECT * FROM users', function (err, data) {
     JSON.stringify(data1); 
     JSON.stringify(data);
-    console.log (data);
-    console.log (data1);
+    console.log ('data');
+    console.log ('data1');
     connection.end;
     res.render('/data', {data: data}, {data1:data1})
     if (err) return res.status(400).send({ success: false, err },
