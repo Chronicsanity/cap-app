@@ -73,13 +73,13 @@ module.exports = {pool};*/
   queueLimit: 30,
   acquireTimeout: 1000000,
   connectTimeout: 30000
-  })
-   connection.connect((err) => {
+  });
+   /*connection.connect((err) => {
     if (err){
       console.log(err)
       return;
     }
     console.log('connected!')
-  })
+  })*/
   module.exports = connection;
 
