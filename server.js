@@ -115,7 +115,7 @@ app.get('/dashboard', function(req, res){
   console.log("The Connection has been closed")
 });*/
 
-await db.connection.query('SELECT * FROM users', function (err, data) {
+db.connection.query('SELECT * FROM users', function (err, data) {
   JSON.stringify(data);
   console.log ('data');
   connection.end;
