@@ -114,6 +114,16 @@ app.get('/dashboard', function(req, res){
 /*con.end(function(){
   console.log("The Connection has been closed")
 });*/
+
+await db.connection.query('SELECT * FROM users', function (err, data) {
+  JSON.stringify(data);
+  console.log ('data');
+  connection.end;
+  res.render('/data', {data: data})
+  if (err) return res.status(400).send({ success: false, err },
+    console.log (data));
+  });
+
 const PORT = process.env.PORT || 43488;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);

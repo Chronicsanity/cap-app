@@ -233,7 +233,6 @@ app.get("data", async (req, res, next) => {
     }
     console.log('connected!')
   });
-  const data1 = await User.findAll(req.body.username, req.body.password);
    await db.connection.query('SELECT * FROM users', function (err, data) {
     JSON.stringify(data1); 
     JSON.stringify(data);
