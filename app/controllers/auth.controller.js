@@ -236,12 +236,12 @@ app.get("data", async (req, res, next) => {
   const data1 = await User.findAll(req.body.username, req.body.password);
    await db.connection.query('SELECT * FROM users', function (err, data) {
     JSON.stringify(data1); 
-    JSON.stringify(data)
+    JSON.stringify(data);
     console.log (data);
-    console.log (data1)
+    console.log (data1);
     connection.end;
     if (err) return res.status(400).send({ success: false, err },
-      console.log (data))
+      console.log (data));
       
    
   
