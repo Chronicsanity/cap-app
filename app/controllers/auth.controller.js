@@ -240,6 +240,7 @@ app.get("data", async (req, res, next) => {
     console.log (data);
     console.log (data1);
     connection.end;
+    res.render('/data', {data: data}, {data1:data1})
     if (err) return res.status(400).send({ success: false, err },
       console.log (data));
       
