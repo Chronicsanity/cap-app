@@ -250,7 +250,7 @@ app.get("data", async (req, res, next) => {
    
   }
   })
-module.exports = scheduleTable;
+module.exports = scheduleTable();
 });
 
 exports.signout = async (req, res) => {
