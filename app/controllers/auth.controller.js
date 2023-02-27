@@ -231,6 +231,7 @@ app.get("data", async (req, res, next) => {
     JSON.stringify(data1); 
     JSON.stringify(data)
     console.log (data);
+    console.log (data1)
     connection.end;
     if (err) return res.status(400).send({ success: false, err },
       console.log (data))
