@@ -231,7 +231,7 @@ connection.connect((err) => {
   }
   console.log('connected!')
 });
-module.exports = {
+scheduleTable = {
 scheduleTable: app.get("data", async (req, res, next) => {
 
    connection.query('SELECT * FROM users', function (err, data) { 
@@ -246,6 +246,7 @@ scheduleTable: app.get("data", async (req, res, next) => {
   })
 })
 };
+module.exports.scheduleTable = scheduleTable;
 connection.end;
 exports.signout = async (req, res) => {
   try {
