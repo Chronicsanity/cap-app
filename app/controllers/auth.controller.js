@@ -247,9 +247,10 @@ scheduleTable: app.get("data", async (req, res, next) => {
   }
   })
 })
-};});
+};
 module.exports.scheduleTable = scheduleTable;
 connection.end;
+});
 exports.signout = async (req, res) => {
   try {
     req.session = null;
