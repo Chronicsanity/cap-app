@@ -235,22 +235,16 @@ scheduleTable: app.get("data", async (req, res, next) => {
   }),
 
    connection.query('SELECT * FROM users', function (err, data) { 
-    JSON.stringify(data);
     console.log ('data');
     connection.end;
     
     if (err) return res.status(400).send({ success: false, err },
       console.log (data));
-      
-   
-  
   else {
     JSON.stringify(data); 
-    
-   
   }
   })
-}),
+})
 };
 exports.signout = async (req, res) => {
   try {
