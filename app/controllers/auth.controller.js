@@ -233,7 +233,7 @@ connection.connect((err) => {
   console.log('connected!')
 });
 
-app.get("/data", async (req, res, next) => {
+app.get("data", async (req, res, next) => {
 
    connection.query('SELECT * FROM users', function (err, results) { 
     JSON.stringify(results)
