@@ -224,7 +224,7 @@ res.render('dashboard', {data: result});
  })
 })
  */
-app.get('/signin', function(req, res){
+app.get('/data', function(req, res){
 connection.connect((err) => {
   if (err){
     console.log(err)
