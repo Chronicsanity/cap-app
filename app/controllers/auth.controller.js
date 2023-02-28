@@ -225,7 +225,7 @@ res.render('dashboard', {data: result});
 })
  */
 module.exports = {
-scheduleTable: await app.get("data", async (req, res, next) => {
+scheduleTable: app.get("data", async (req, res, next) => {
   connection.connect((err) => {
     if (err){
       console.log(err)
