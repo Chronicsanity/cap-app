@@ -232,23 +232,22 @@ connection.connect((err) => {
   }
   console.log('connected!')
 });
-scheduleTable = {
+
 scheduleTable: app.get("data", async (req, res, next) => {
 
-   connection.query('SELECT * FROM users', function (err, data) { 
-    JSON.stringify(data)
+   connection.query('SELECT * FROM users WHERE id = ?', [req.body.id], function (err, results) { 
+    JSON.stringify(results)
     connection.end;
     
     if (err) return res.status(400).send({ success: false, err })
-  else {
-    console.log(data);
-    return data
-
+    else if (results.length > 0) {
+    console.log(results);
+    res.render('/data', {data : results});
+      next();
   }
   })
 })
-};
-module.exports.scheduleTable = scheduleTable;
+
 connection.end;
 });
 exports.signout = async (req, res) => {
