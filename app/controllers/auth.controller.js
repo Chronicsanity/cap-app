@@ -224,7 +224,7 @@ res.render('dashboard', {data: result});
  })
 })
  */
-app.get('/data', function(req, res){
+
 connection.connect((err) => {
   if (err){
     console.log(err)
@@ -233,7 +233,7 @@ connection.connect((err) => {
   console.log('connected!')
 });
 
-scheduleTable: app.get("data", async (req, res, next) => {
+app.get("/data", async (req, res, next) => {
 
    connection.query('SELECT * FROM users', function (err, results) { 
     JSON.stringify(results)
@@ -246,9 +246,7 @@ scheduleTable: app.get("data", async (req, res, next) => {
       next();
   }
   })
-})
-
-connection.end;
+  connection.end;
 });
 exports.signout = async (req, res) => {
   try {
