@@ -241,9 +241,8 @@ scheduleTable: app.get("data", async (req, res, next) => {
     if (err) return res.status(400).send({ success: false, err },
       console.log (data));
   else {
-    JSON.stringify(data); 
-    res.render('/data', {data:data});
-    
+    return data
+
   }
   })
 })
