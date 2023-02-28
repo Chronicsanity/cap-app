@@ -225,7 +225,7 @@ res.render('dashboard', {data: result});
 })
  */
 module.exports = {
-scheduleTable: app.get("data", async (req, res, next) => {
+scheduleTable: await app.get("data", async (req, res, next) => {
   connection.connect((err) => {
     if (err){
       console.log(err)
@@ -235,11 +235,9 @@ scheduleTable: app.get("data", async (req, res, next) => {
   }),
 
    connection.query('SELECT * FROM users', function (err, data) { 
-    console.log ('data');
     connection.end;
     
-    if (err) return res.status(400).send({ success: false, err },
-      console.log (data));
+    if (err) return res.status(400).send({ success: false, err })
   else {
     return data
 
