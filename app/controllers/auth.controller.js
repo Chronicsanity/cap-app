@@ -224,6 +224,7 @@ res.render('dashboard', {data: result});
  })
 })
  */
+app.get('/signin', function(req, res){
 connection.connect((err) => {
   if (err){
     console.log(err)
@@ -240,12 +241,13 @@ scheduleTable: app.get("data", async (req, res, next) => {
     
     if (err) return res.status(400).send({ success: false, err })
   else {
+    console.log(data);
     return data
 
   }
   })
 })
-};
+};});
 module.exports.scheduleTable = scheduleTable;
 connection.end;
 exports.signout = async (req, res) => {
