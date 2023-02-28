@@ -80,10 +80,8 @@ app.get('/index', (req, res) =>{
 
 });
 app.post('/data');
-app.get('/data', (req, res) =>{
 tableData.scheduleTable;
-res.render('/data', {data:data})
-});
+res.render('/data', {data:data});
 
 app.use(express.static(__dirname + '/views'));
 /*
