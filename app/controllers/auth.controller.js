@@ -242,7 +242,8 @@ scheduleTable: app.get("data", async (req, res, next) => {
       console.log (data));
   else {
     JSON.stringify(data); 
-    return data;
+    res.render('/data', {data:data});
+    
   }
   })
 })
