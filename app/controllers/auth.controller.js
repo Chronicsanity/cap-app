@@ -235,14 +235,14 @@ connection.connect((err) => {
 
 scheduleTable: app.get("data", async (req, res, next) => {
 
-   connection.query('SELECT * FROM users WHERE id = ?', [req.body.id], function (err, results) { 
+   connection.query('SELECT * FROM users', function (err, results) { 
     JSON.stringify(results)
     connection.end;
     
     if (err) return res.status(400).send({ success: false, err })
     else if (results.length > 0) {
     console.log(results);
-    res.render('data', {data : results});
+    res.render('data.ejs', {data : results});
       next();
   }
   })
