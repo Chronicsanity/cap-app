@@ -80,7 +80,7 @@ app.get('/index', (req, res) =>{
 
 });
 app.post('/data');
-app.get('/data', function(req, res)
+app.get('/data', async function(req, res)
 {
   tableData.scheduleTable;
 

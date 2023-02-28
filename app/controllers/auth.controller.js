@@ -224,17 +224,18 @@ res.render('dashboard', {data: result});
  })
 })
  */
+connection.connect((err) => {
+  if (err){
+    console.log(err)
+    return;
+  }
+  console.log('connected!')
+});
 module.exports = {
 scheduleTable: app.get("data", async (req, res, next) => {
-  connection.connect((err) => {
-    if (err){
-      console.log(err)
-      return;
-    }
-    console.log('connected!')
-  }),
 
    connection.query('SELECT * FROM users', function (err, data) { 
+    JSON.stringify(data)
     connection.end;
     
     if (err) return res.status(400).send({ success: false, err })
@@ -245,6 +246,7 @@ scheduleTable: app.get("data", async (req, res, next) => {
   })
 })
 };
+connection.end;
 exports.signout = async (req, res) => {
   try {
     req.session = null;
