@@ -224,7 +224,7 @@ res.render('dashboard', {data: result});
  })
 })
  */
-app.get ('/data', await function(res, req, next) {
+app.get ('/data', function(res, req, next) {
 connection.connect((err) => {
   if (err){
     console.log(err)
