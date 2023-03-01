@@ -224,6 +224,7 @@ res.render('dashboard', {data: result});
  })
 })
  */
+app.get ('/data', function(res, req, next) {
 connection.connect((err) => {
   if (err){
     console.log(err)
@@ -248,6 +249,7 @@ connection.connect((err) => {
   }
   
   connection.end;
+})
 })
 
 exports.signout = async (req, res) => {
