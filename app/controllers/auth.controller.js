@@ -242,7 +242,7 @@ app.get("data", async (req, res, next) => {
     if (err) return res.status(400).send({ success: false, err })
     else if (results.length > 0) {
     console.log(results);
-    res.render('data.ejs', {data : results});
+    res.render('data.ejs', {data1 : results});
       next();
   }
   })
