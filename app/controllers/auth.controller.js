@@ -231,22 +231,25 @@ connection.connect((err) => {
   }
   console.log('connected!')
 })
-module.exports = {
 
-   scheduleTable: connection.query('SELECT * FROM users', function (err, results) { 
+
+    connection.query('SELECT * FROM users', function (err, results) { 
     connection.end;
     
     if (err) return res.status(400).send({ success: false, err })
     else if (results.length > 0) {
     console.log(results);
+    data = JSON.stringify(results)
    
       next();
-      return JSON.stringify(results);
+
+      module.exports = {data}
+
   }
   
   connection.end;
 })
-}
+
 exports.signout = async (req, res) => {
   try {
     req.session = null;
