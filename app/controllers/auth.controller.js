@@ -224,7 +224,7 @@ res.render('dashboard', {data: result});
  })
 })
  */
-app.get ('/data', function(res, req, next) {
+app.get ('/data', await function(res, req, next) {
 connection.connect((err) => {
   if (err){
     console.log(err)
@@ -234,7 +234,7 @@ connection.connect((err) => {
 })
 
 
-    connection.query('SELECT * FROM users', function (err, results) { 
+    connection.query('SELECT * FROM users',  function  (err, results) { 
     connection.end;
     
     if (err) return res.status(400).send({ success: false, err })
@@ -245,7 +245,7 @@ connection.connect((err) => {
    
       next();
 
-      module.exports = {username, password}
+       module.exports = {username, password}
 
   }
   
