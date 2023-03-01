@@ -82,6 +82,7 @@ app.get('/index', (req, res) =>{
 app.post('/data');
 app.get('/data', (req, res) =>{
   data = 1;
+
   res.render('data.ejs', {data: data});
 });
 

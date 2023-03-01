@@ -22,6 +22,9 @@
           </tr>
         </thead>
         <tbody>
+          <script> 
+          var data = <%-JSON.stringify(data) %> 
+          </script>
             <% if(data.length){ for(var i = 0; i< data.length; i++) {%>
             <tr>
               <th scope="row"><%= (i+1) %></th>
