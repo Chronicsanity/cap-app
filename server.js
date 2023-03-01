@@ -83,7 +83,7 @@ app.post('/data');
 app.get('/data', (req, res) =>{
   data = 1;
 
-  res.render('data.ejs', {data: data});
+  res.render('data.ejs', {data: JSON.stringify(data)});
 });
 
 
