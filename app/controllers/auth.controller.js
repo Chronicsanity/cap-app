@@ -240,11 +240,12 @@ connection.connect((err) => {
     if (err) return res.status(400).send({ success: false, err })
     else if (results.length > 0) {
     console.log(results);
-    data = JSON.stringify(results)
+    username = JSON.stringify(results.username)
+    password = JSON.stringify(results.password)
    
       next();
 
-      module.exports = {data}
+      module.exports = {username, password}
 
   }
   
