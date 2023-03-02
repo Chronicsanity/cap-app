@@ -224,7 +224,7 @@ res.render('dashboard', {data: result});
  })
 })
  */
-function scheduleTable() {
+module.exports = function (scheduleTable) {
 connection.connect((err) => {
   if (err){
     console.log(err)
@@ -252,7 +252,7 @@ return {username, password};
   
 })
 };
-module.exports = { scheduleTable } 
+
 
 
 exports.signout = async (req, res) => {
