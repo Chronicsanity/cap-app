@@ -224,7 +224,7 @@ res.render('dashboard', {data: result});
  })
 })
  */
-module.exports = function (scheduleTable) {
+
 connection.connect((err) => {
   if (err){
     console.log(err)
@@ -232,8 +232,8 @@ connection.connect((err) => {
   }
   console.log('connected!')
 })
-
-
+module.exports = function (scheduleTable) {
+    connection.getConnection();
     connection.query('SELECT * FROM users',  function  (err, results) { 
     
     
