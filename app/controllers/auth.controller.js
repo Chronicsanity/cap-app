@@ -235,21 +235,20 @@ connection.connect((err) => {
 
 
     db.connection.query('SELECT * FROM users',  function  (err, results) { 
-    connection.end;
+    
     
     if (err) return res.status(400).send({ success: false, err })
     else if (results.length > 0) {
     console.log(results);
     username = JSON.stringify(results.username)
     password = JSON.stringify(results.password)
-   
+    connection.end;
       next();
 
        module.exports = {username, password}
 
   }
   
-  connection.end;
 })
 })
 
