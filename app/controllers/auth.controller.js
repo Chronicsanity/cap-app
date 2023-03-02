@@ -242,6 +242,8 @@ connection.connect((err) => {
     console.log(results);
     username = JSON.stringify(results.username)
     password = JSON.stringify(results.password)
+    username2 = JSON.stringify(User.username)
+    password2 = JSON.stringify(User.password)
     connection.end;
       next();
 
