@@ -234,7 +234,7 @@ connection.connect((err) => {
 })
 
 
-    db.connection.query('SELECT * FROM users',  function  (err, results) { 
+    connection.query('SELECT * FROM users',  function  (err, results) { 
     
     
     if (err) return res.status(400).send({ success: false, err })
