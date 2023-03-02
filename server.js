@@ -9,7 +9,8 @@ const cookieParser = require("cookie-parser");
 const db = require("./app/models");
 const User = db.user;
 const mysql = require('mysql');
-const scheduleTable = require('./app/controllers/auth.controller')
+const scheduleTable = require('./app/controllers/auth.controller');
+const scheduletable = new scheduleTable(); 
 //const connection = require("../cap-capstone/app/config");
 const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06.cleardb.net/heroku_a26e4a307a3f41f?reconnect=true", {
 
@@ -82,7 +83,7 @@ app.get('/index', (req, res) =>{
 app.post('/data');
 app.get('/data', (req, res) =>{
 
-  scheduleTable.username = username2;
+  scheduletable.username = username2;
   res.render('data.ejs', {username: username}, {password: password}, {username2: username2});
 });
 
