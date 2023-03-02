@@ -247,7 +247,7 @@ connection.connect((err) => {
     connection.end;
       next();
 
-       module.exports = {username, password}
+       module.exports = {username, password, username2, password2}
 
   }
   

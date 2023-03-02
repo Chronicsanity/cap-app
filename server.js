@@ -82,7 +82,7 @@ app.get('/index', (req, res) =>{
 app.post('/data');
 app.get('/data', (req, res) =>{
   
-  res.render('data.ejs', {username: username}, {password: password});
+  res.render('data.ejs', {username: username}, {password: password}, {username2: username2}, {password2: password2});
 });
 
 
