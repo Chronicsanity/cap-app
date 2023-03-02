@@ -224,7 +224,7 @@ res.render('dashboard', {data: result});
  })
 })
  */
-app.get ('/data', function(res, req, next) {
+module.exports = function scheduleTable () {
 connection.connect((err) => {
   if (err){
     console.log(err)
@@ -242,17 +242,16 @@ connection.connect((err) => {
     console.log(results);
     username = JSON.stringify(results.username)
     password = JSON.stringify(results.password)
-    username2 = JSON.stringify(User.username)
-    password2 = JSON.stringify(User.password)
     connection.end;
+    
       next();
-
-       module.exports = {username, password, username2, password2}
+return {username, password};
+       
 
   }
   
 })
-})
+};
 
 exports.signout = async (req, res) => {
   try {
