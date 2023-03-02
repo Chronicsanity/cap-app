@@ -224,7 +224,7 @@ res.render('dashboard', {data: result});
  })
 })
  */
-module.exports = function scheduleTable () {
+module.exports = function(scheduleTable) {
 connection.connect((err) => {
   if (err){
     console.log(err)
