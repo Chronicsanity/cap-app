@@ -234,7 +234,7 @@ exports.scheduleTable = async (req, res, next) => {
     }
     console.log('connected!')
   });
-    connection.query('SELECT * FROM users',  function  (err, results) { 
+    db.query('SELECT * FROM users',  function  (err, results) { 
     
     
     if (err) return console.log({ success: false, err })
