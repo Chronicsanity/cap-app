@@ -224,14 +224,7 @@ res.render('dashboard', {data: result});
  })
 })
  */
-  connection.connect((err) => {
-    if (err){
-      console.log(err)
-      return;
-    }
-    console.log('connected!')
-  });
-
+  
 
 exports.scheduleTable = async (req, res, next) => {
 
