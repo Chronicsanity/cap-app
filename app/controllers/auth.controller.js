@@ -252,7 +252,7 @@ return {username, password};
   
 })
 };
-module.exports = {scheduleTable}
+module.exports = scheduleTable
 
 
 exports.signout = async (req, res) => {
