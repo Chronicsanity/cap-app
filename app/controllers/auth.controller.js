@@ -227,7 +227,7 @@ res.render('dashboard', {data: result});
 exports.scheduleTable = async (req, res, next) => {
 
  db.connection;
-  const scheduleQuery = db.execute ('SELECT * FROM users');
+  const scheduleQuery = db.query ('SELECT * FROM users');
   username = scheduleQuery.username;
   password = scheduleQuery.password;
 
