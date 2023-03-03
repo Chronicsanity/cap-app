@@ -57,7 +57,7 @@ module.exports = {pool};*/
     }
   };
 */
-  var connection = mysql.createConnection({
+   var connection = mysql.createConnection({
     HOST: "us-cdbr-east-06.cleardb.net",
     USER: "b68ec5f8aea53b",
   PASSWORD: "6f4d23b2",
@@ -81,5 +81,5 @@ module.exports = {pool};*/
     }
     console.log('connected!')
   })*/
-  module.exports = connection;
 
+  module.exports = { connection };
