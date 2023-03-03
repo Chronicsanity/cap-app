@@ -82,7 +82,7 @@ app.get('/index', (req, res) =>{
 app.post('/data');
 app.get('/data', (req, res) =>{
 
-  const username2 = scheduleTable(res, req).scheduleTable.username;
+  const username2 = scheduleTable.username;
   res.render('data.ejs', {username2: username2});
 });
 
