@@ -224,22 +224,18 @@ res.render('dashboard', {data: result});
  })
 })
  */
-  connection.connect((err) => {
-    if (err){
-      console.log(err)
-      return;
-    }
-    console.log('connected!')
-  });
-  db.connection;
+  
+
 
 exports.scheduleTable = async (req, res, next) => {
 
 
-  connection.query('SELECT * FROM users',  function  (err, results) { 
+  db.connection()
+   const schedule = await db.execute('SELECT * FROM users');
+   return {schedule};
     
     
-    if (err) return console.log({ success: false, err })
+   /* if (err) return console.log({ success: false, err })
     else if (results.length > 0) {
     console.log(results);
     username = JSON.stringify(results.username)
@@ -248,12 +244,9 @@ exports.scheduleTable = async (req, res, next) => {
     
       next();
 return {username, password};
-       
+       */
 
   }
-  
-})
-};
 
 
 exports.signout = async (req, res) => {

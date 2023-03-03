@@ -1,4 +1,4 @@
-const mysql = require('mysql');
+const mysql = require('mysql2');
 /*var pool  = mysql.createPool({
 HOST: "ip-10-0-13-151",
 USER: "b68ec5f8aea53b",
@@ -57,7 +57,8 @@ module.exports = {pool};*/
     }
   };
 */
-   var connection = mysql.createConnection({
+   const pool = function(){
+    var mydb = mysql.createPool({
     HOST: "us-cdbr-east-06.cleardb.net",
     USER: "b68ec5f8aea53b",
   PASSWORD: "6f4d23b2",
@@ -73,7 +74,13 @@ module.exports = {pool};*/
   queueLimit: 30,
   acquireTimeout: 1000000,
   connectTimeout: 30000
-  });
+  }
+    );
+    return mydb;
+};
+const promisePool = function (){
+  return pool().promise();
+}
    /*connection.connect((err) => {
     if (err){
       console.log(err)
@@ -82,4 +89,4 @@ module.exports = {pool};*/
     console.log('connected!')
   })*/
 
-  module.exports = { connection };
+  module.exports = { connection: async () => promisePool().getConnection()};
