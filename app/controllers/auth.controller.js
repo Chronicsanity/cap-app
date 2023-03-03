@@ -228,7 +228,7 @@ exports.scheduleTable = async (req, res, next) => {
 
  
   
-  pool.query('SELECT * FROM users',  function  (err, results) { 
+  connection.query('SELECT * FROM users',  function  (err, results) { 
     
     
     if (err) return console.log({ success: false, err })
