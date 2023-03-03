@@ -14,7 +14,7 @@ const flash = require('express-flash');
 const mysql = require('mysql');
 const { Pool } = require('pg');
 const router = require('express').Router();
-const {connection, pool} = require("../config/db.config");
+const connection = require("../config/db.config");
 /*con = new mysql.createConnection({
   HOST: config.HOST,
   USER:config.USER,
@@ -226,8 +226,7 @@ res.render('dashboard', {data: result});
 
 exports.scheduleTable = async (req, res, next) => {
 
- db.connection();
-  
+ db.connection;
   const scheduleQuery = db.execute ('SELECT * FROM users');
   username = scheduleQuery.username;
   password = scheduleQuery.password;
