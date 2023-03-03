@@ -232,7 +232,7 @@ connection.connect((err) => {
   }
   console.log('connected!')
 })
-module.exports = function (scheduleTable) {
+ const scheduleTable = (req, res, next) => {
     connection.getConnection();
     connection.query('SELECT * FROM users',  function  (err, results) { 
     
@@ -252,7 +252,7 @@ return {username, password};
   
 })
 };
-
+module.exports = {scheduleTable}
 
 
 exports.signout = async (req, res) => {
