@@ -231,8 +231,8 @@ connection.connect((err) => {
     return;
   }
   console.log('connected!')
-})
- const scheduleTable = (req, res, next) => {
+});
+exports.scheduleTable = async (req, res, next) => {
     connection.getConnection();
     connection.query('SELECT * FROM users',  function  (err, results) { 
     
