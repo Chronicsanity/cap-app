@@ -239,13 +239,13 @@ scheduleTable = async (req, res, next) => {
     connection.end;
     
       next();
-return {username, password};
+return {scheduleQuery};
        
 
   }
   
 })
-module.exports = {scheduleQuery}
+module.exports = {scheduleTable}
 };
 
 
