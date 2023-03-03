@@ -237,7 +237,7 @@ exports.scheduleTable = async (req, res, next) => {
     connection.query('SELECT * FROM users',  function  (err, results) { 
     
     
-    if (err) return res.status(400).send({ success: false, err })
+    if (err) return console.log({ success: false, err })
     else if (results.length > 0) {
     console.log(results);
     username = JSON.stringify(results.username)
