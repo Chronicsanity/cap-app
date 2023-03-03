@@ -226,26 +226,15 @@ res.render('dashboard', {data: result});
 
 exports.scheduleTable = async (req, res, next) => {
 
- 
+ db.connection();
   
-  connection.query('SELECT * FROM users',  function  (err, results) { 
-    
-    
-    if (err) return console.log({ success: false, err })
-    else if (results.length > 0) {
-    console.log(results);
-    username = JSON.stringify(results.username)
-    password = JSON.stringify(results.password)
-    connection.end;
-    
-      next();
-return {username, password};
-       
+  const scheduleQuery = db.execute ('SELECT * FROM users');
+  username = scheduleQuery.username;
+  password = scheduleQuery.password;
 
-  }
-  
-})
-};
+}
+
+
 
 
 exports.signout = async (req, res) => {
