@@ -225,15 +225,15 @@ res.render('dashboard', {data: result});
 })
  */
 
-connection.connect((err) => {
-  if (err){
-    console.log(err)
-    return;
-  }
-  console.log('connected!')
-});
+
 exports.scheduleTable = async (req, res, next) => {
-    connection.getConnection();
+  connection.connect((err) => {
+    if (err){
+      console.log(err)
+      return;
+    }
+    console.log('connected!')
+  });
     connection.query('SELECT * FROM users',  function  (err, results) { 
     
     
