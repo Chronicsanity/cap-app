@@ -88,5 +88,4 @@ const promisePool = function (){
     }
     console.log('connected!')
   })*/
-const conn = pool.getConnection();
-  module.exports = { connection: async () => promisePool().getConnection(), conn: conn };
+  module.exports = { connection: async () => promisePool().getConnection(), pool: pool };
