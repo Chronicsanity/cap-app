@@ -83,7 +83,7 @@ app.post('/data');
 app.get('/data', (req, res) =>{
 
   const username2 = scheduleTable(res, req).username;
-  res.render('data.ejs', {username: username}, {password: password}, {username2: username2});
+  res.render('data.ejs', {username2: username2});
 });
 
 
