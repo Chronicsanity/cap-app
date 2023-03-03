@@ -234,8 +234,8 @@ scheduleTable = async (req, res, next) => {
     if (err) return console.log({ success: false, err })
     else if (results.length > 0) {
     console.log(results);
-    username = JSON.stringify(results.username)
-    password = JSON.stringify(results.password)
+    const username = JSON.stringify(results.username)
+    const password = JSON.stringify(results.password)
     connection.end;
     
       next();
