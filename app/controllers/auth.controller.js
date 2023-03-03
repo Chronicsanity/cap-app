@@ -247,7 +247,7 @@ return {username, password};
 })
 
 };
-module.exports = { username, password }
+module.exports = { scheduleTable }
 
 exports.signout = async (req, res) => {
   try {
