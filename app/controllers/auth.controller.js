@@ -228,7 +228,7 @@ scheduleTable = async (req, res, next) => {
 
  db.connection();
   
-  const scheduleQuery = db.execute ('SELECT * FROM users',  function  (err, results) { 
+ db.execute ('SELECT * FROM users',  function  (err, results) { 
     
     
     if (err) return console.log({ success: false, err })
@@ -239,15 +239,15 @@ scheduleTable = async (req, res, next) => {
     connection.end;
     
       next();
-return {scheduleQuery};
+return {username, password};
        
 
   }
   
 })
-module.exports = {scheduleTable}
-};
 
+};
+module.exports = { scheduleTable }
 
 exports.signout = async (req, res) => {
   try {
