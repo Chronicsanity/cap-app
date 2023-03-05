@@ -236,14 +236,15 @@ const scheduleTable = async (req, res, next) => {
     console.log(results);
     connection.end;
     }
-    module.exports = { results}
+  
 return {results};
       
 
   
 })
-};
 module.exports = { scheduleTable }
+};
+
 exports.Test = function () {
   console.log("test!")
 }
