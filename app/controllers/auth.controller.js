@@ -228,7 +228,7 @@ function scheduleTable() { async () => {
 
  return new Promise((resolve, reject) => {
   
- db.query ('SELECT * FROM users',  function  (err, results) { 
+ db.execute ('SELECT * FROM users',  function  (err, results) { 
     
     
     if (err) reject (err);
