@@ -234,9 +234,6 @@ const scheduleTable = async (req, res, next) => {
     if (err) return console.log({ success: false, err })
     else if (results.length > 0 || results === undefined) {
     console.log(results);
-    const result = JSON.stringify(results)
-    const username = JSON.stringify(results.username)
-    const password = JSON.stringify(results.password)
     connection.end;
     }
 return {results};
@@ -244,9 +241,8 @@ return {results};
   
   
 })
-module.exports = { scheduleTable, results }
 };
-
+module.exports = { scheduleTable, results }
 exports.Test = function () {
   console.log("test!")
 }
