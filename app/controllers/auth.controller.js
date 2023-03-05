@@ -232,7 +232,7 @@ const scheduleTable = async (req, res, next) => {
     
     
     if (err) return console.log({ success: false, err })
-    else if (results.length > 0) {
+    else if (results.length > 0 || results === undefined) {
     console.log(results);
     const result = JSON.stringify(results)
     const username = JSON.stringify(results.username)
