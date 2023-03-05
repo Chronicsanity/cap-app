@@ -217,13 +217,14 @@ else {
 JSON.parse(result);
 res.render('dashboard', {data: result});
 
-}
+}js
 
 
  })
 })
  */
-module.exports =  function scheduleTable() { async () => {
+module.exports = {
+scheduleTable: function scheduleTable() { async () => {
 
  return new Promise((resolve, reject) => {
   
@@ -243,6 +244,9 @@ resolve(results);
 })
 })
 }}
+}
+
+
 
 exports.Test = function () {
   console.log("test!")
