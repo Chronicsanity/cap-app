@@ -224,7 +224,7 @@ res.render('dashboard', {data: result});
 })
  */
 
-scheduleTable = async (req, res, next) => {
+const scheduleTable = async (req, res, next) => {
 
  db.connection();
   
@@ -238,7 +238,7 @@ scheduleTable = async (req, res, next) => {
     const password = JSON.stringify(results.password)
     connection.end;
     
-      next();
+    
 return {username, password};
        
 
