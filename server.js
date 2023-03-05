@@ -75,12 +75,15 @@ app.get( '/forgetpass', (req, res) =>{
 });
 app.post('/index');
 app.get('/index', (req, res) =>{
-  console.log(results)
+  
   res.render('index.ejs');
 
 });
 app.post('/data');
-app.get('/data', results);
+app.get('/data', (req, res) => {
+  console.log(results)
+  res.render('data.ejs')
+});
 
 
 app.use(express.static(__dirname + '/views'));
