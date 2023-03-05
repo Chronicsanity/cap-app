@@ -226,24 +226,24 @@ res.render('dashboard', {data: result});
 exports.scheduleTable = {
  scheduleInfo: scheduleInfo = async (callback) => {
 
- db.connection();
+ return new Promise((resolve, reject) => {
   
- db.execute ('SELECT * FROM users',  function  (err, results) { 
+ db.query ('SELECT * FROM users',  function  (err, results) { 
     
     
-    if (err) return console.log({ success: false, err })
+    if (err) reject (err);
     else if (results.length > 0 || results === undefined) {
     username = results.username;
     connection.end;
     }
   
-return callback (results, username);
+resolve(results);
       
 
   
 })
-}
-}
+})
+}}
 exports.Test = function () {
   console.log("test!")
 }
