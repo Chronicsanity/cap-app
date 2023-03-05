@@ -233,10 +233,9 @@ function scheduleTable() { async () => {
     
     if (err) reject (err);
     else if (results.length > 0 || results === undefined) {
-    connection.end;
     
-  
 resolve(results);
+connection.end;
     }
 
 
