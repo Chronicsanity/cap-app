@@ -224,7 +224,7 @@ res.render('dashboard', {data: result});
 })
  */
 exports.scheduleTable = {
- scheduleInfo: scheduleInfo = async (req, res, next) => {
+ scheduleInfo: scheduleInfo = async (callback) => {
 
  db.connection();
   
@@ -237,7 +237,7 @@ exports.scheduleTable = {
     connection.end;
     }
   
-return {results, username};
+return callback (results, username);
       
 
   
