@@ -226,7 +226,7 @@ res.render('dashboard', {data: result});
 
 function scheduleTable() { async () => {
 
- return new Promise((resolve, reject) => {
+ return await new Promise((resolve, reject) => {
   var sql = "SELECT * FROM users";
  db.execute (sql,  function  (err, results) { 
     
