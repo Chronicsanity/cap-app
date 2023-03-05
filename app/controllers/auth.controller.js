@@ -233,11 +233,11 @@ exports.scheduleTable = {
     
     if (err) return console.log({ success: false, err })
     else if (results.length > 0 || results === undefined) {
-    console.log(results);
+    username = results.username;
     connection.end;
     }
   
-return {results};
+return {results, username};
       
 
   
