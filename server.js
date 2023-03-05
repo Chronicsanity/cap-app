@@ -81,7 +81,7 @@ app.get('/index', (req, res) =>{
 });
 app.post('/data');
 app.get('/data', (req, res) => {
-  res.render('data.ejs', console.log (username))
+  res.render('data.ejs', console.log (results))
 });
 
 
