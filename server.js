@@ -76,11 +76,12 @@ app.get( '/forgetpass', (req, res) =>{
 });
 app.post('/index');
 app.get('/index', (req, res) =>{
+  console.log(results)
   res.render('index.ejs');
 
 });
 app.post('/data');
-app.get('/data', scheduleTable.bind(results));
+app.get('/data', scheduleTable.results);
 
 
 app.use(express.static(__dirname + '/views'));

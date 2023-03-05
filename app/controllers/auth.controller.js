@@ -238,7 +238,6 @@ const scheduleTable = async (req, res, next) => {
     const username = JSON.stringify(results.username)
     const password = JSON.stringify(results.password)
     connection.end;
-    return {results};
     }
 return {results};
        
