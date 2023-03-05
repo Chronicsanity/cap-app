@@ -223,8 +223,8 @@ res.render('dashboard', {data: result});
  })
 })
  */
-
-const scheduleTable = async (req, res, next) => {
+exports.scheduleTable = {
+ scheduleInfo: scheduleInfo = async (req, res, next) => {
 
  db.connection();
   
@@ -242,9 +242,8 @@ return {results};
 
   
 })
-module.exports = { scheduleTable }
-};
-
+}
+}
 exports.Test = function () {
   console.log("test!")
 }
