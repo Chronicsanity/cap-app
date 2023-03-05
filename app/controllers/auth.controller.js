@@ -224,7 +224,7 @@ res.render('dashboard', {data: result});
 })
  */
 exports.scheduleTable = {
- scheduleInfo: scheduleInfo = async (callback) => {
+ scheduleInfo: function scheduleInfo() { async (callback) => {
 
  return new Promise((resolve, reject) => {
   
@@ -240,10 +240,10 @@ exports.scheduleTable = {
 resolve(results);
       
 
-  
+ 
 })
 })
-}}
+}}}
 exports.Test = function () {
   console.log("test!")
 }

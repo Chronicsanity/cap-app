@@ -80,8 +80,9 @@ app.get('/index', (req, res) =>{
 
 });
 app.post('/data');
-app.get('/data', (req, res) => {
-  res.render('data.ejs', console.log (results))
+app.get('/data', async function (req, res) {
+  const result = await scheduleInfo();
+  res.render('data.ejs', console.log (result))
 });
 
 
