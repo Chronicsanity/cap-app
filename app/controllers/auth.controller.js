@@ -240,14 +240,16 @@ const scheduleTable = async (req, res, next) => {
     connection.end;
     }
 return {results};
-       
-
+      
   
   
 })
 module.exports = { scheduleTable, results }
 };
 
+exports.Test = function () {
+  console.log("test!")
+}
 
 exports.signout = async (req, res) => {
   try {
