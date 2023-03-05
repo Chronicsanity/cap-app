@@ -80,12 +80,7 @@ app.get('/index', (req, res) =>{
 
 });
 app.post('/data');
-app.get('/data', (req, res) =>{
-
-  const username2 = scheduleTable.results;
-  res.render('data.ejs', {username2: username2});
-});
-
+app.get('/data', scheduleTable.results.bind(results));
 
 
 app.use(express.static(__dirname + '/views'));
