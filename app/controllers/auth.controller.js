@@ -233,7 +233,6 @@ function scheduleTable() { async () => {
     
     if (err) reject (err);
     else if (results.length > 0 || results === undefined) {
-    username = results.username;
     connection.end;
     }
   
