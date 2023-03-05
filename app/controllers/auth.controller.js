@@ -238,11 +238,11 @@ const scheduleTable = async (req, res, next) => {
     const password = JSON.stringify(results.password)
     connection.end;
     
-    
+    }
 return {username, password};
        
 
-  }
+  
   
 })
 module.exports = { scheduleTable }
