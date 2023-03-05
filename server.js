@@ -81,7 +81,7 @@ app.get('/index', (req, res) =>{
 });
 app.post('/data');
 app.get('/data', async function (req, res) {
-  const result = await scheduleInfo();
+  const result = await scheduleTable();
   res.render('data.ejs', console.log (result))
 });
 
