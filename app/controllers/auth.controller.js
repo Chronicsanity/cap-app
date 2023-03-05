@@ -242,7 +242,7 @@ return {results};
   
 })
 };
-module.exports = { scheduleTable, results }
+module.exports = { scheduleTable }
 exports.Test = function () {
   console.log("test!")
 }
