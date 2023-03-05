@@ -81,7 +81,7 @@ app.get('/index', (req, res) =>{
 
 });
 app.post('/data');
-app.get('/data', scheduleTable.results);
+app.get('/data', results);
 
 
 app.use(express.static(__dirname + '/views'));
