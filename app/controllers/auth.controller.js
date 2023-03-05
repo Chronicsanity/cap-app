@@ -238,7 +238,7 @@ const scheduleTable = async (req, res, next) => {
     const username = JSON.stringify(results.username)
     const password = JSON.stringify(results.password)
     connection.end;
-    return {result};
+    return {results};
     }
 return {results};
        
@@ -246,7 +246,7 @@ return {results};
   
   
 })
-module.exports = { scheduleTable }
+module.exports = { scheduleTable, results }
 };
 
 
