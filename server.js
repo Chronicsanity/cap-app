@@ -81,7 +81,7 @@ app.get('/index', (req, res) =>{
 });
 app.post('/data');
 app.get('/data', (req, res) => {
-  res.render('data.ejs', Test)
+  res.render('data.ejs', scheduleTable)
 });
 
 
