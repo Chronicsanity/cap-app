@@ -1,4 +1,4 @@
-const db = require("../models");
+const db = require("../models/index");
 const authConfig = require("../config/auth.config");
 const Sequelize = require("sequelize");
 const User = db.user;
@@ -93,25 +93,20 @@ exports.signin = async (req, res) => {
 finally {res.render('dashboard');}};
 
 
-function scheduleTable() { async () => {
+exports.scheduleTable = function() {
 
- return await new Promise((resolve, reject) => {
-  var sql = "SELECT * FROM users";
- db.execute (sql,  function  (err, results) { 
+  db.sequelize.sync().then(() => {
+
+    User.findAll().then(res => {
+    console.log(res)
+    }).catch((error) => {
+    console.error('Failed to retrieve data : ', error);
+    });
     
-    
-    if (err) reject (err);
-    else if (results.length > 0 || results === undefined) {
-    
-resolve(results);
-connection.end;
+    }).catch((error) => {
+    console.error('Unable to create table : ', error);
+    });
     }
-
-
-})
-})
-}}
-module.exports = {scheduleTable}
 
 
 

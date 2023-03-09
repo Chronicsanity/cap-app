@@ -63,10 +63,10 @@ app.get('/index', (req, res) =>{
   res.render('index.ejs');
 
 });
-app.post('/data');
 app.get('/data', async function (req, res) {
-  res.render('data.ejs', console.log (scheduleTable))
-});
+  scheduleTable();
+  res.render('data.ejs')
+  });
 
 
 app.use(express.static(__dirname + '/views'));
