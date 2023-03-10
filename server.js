@@ -64,7 +64,7 @@ app.get('/index', (req, res) =>{
 
 });
 app.get('/data', async function (req, res) {
-  const username2 = scheduleTable().username;
+  const username2 = scheduleTable();
   res.render('data.ejs', {username2: username2} )
   });
 
