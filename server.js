@@ -6,7 +6,7 @@ const path = require('path');
 const Sequelize = require("sequelize");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
-const db = require("./app/models");
+const db = require("./app/models/index");
 const User = db.user;
 const mysql = require('mysql');
 const {scheduleTable}  = require('./app/controllers/auth.controller.js');
@@ -64,7 +64,7 @@ app.get('/index', (req, res) =>{
 
 });
 app.get('/data', async function (req, res) {
-  const username2 = scheduleTable();
+  const username2 = scheduleTable().username;
   res.render('data.ejs', {username2: username2} )
   });
 
