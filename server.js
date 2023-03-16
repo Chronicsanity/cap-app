@@ -67,7 +67,7 @@ app.get('/data', async function (req, res) {
   /*const username = scheduleTable().data;
   console.log(username)
   res.render('data.ejs', {username: username} )*/
-  scheduleTable = async function() {
+  
 
     db.sequelize.sync().then(() => {
   
@@ -84,8 +84,7 @@ app.get('/data', async function (req, res) {
       }).catch((error) => {
       console.error('Unable to create table : ', error);
       });
-      }
-  });
+      });
 
 
 app.use(express.static(__dirname + '/views'));
