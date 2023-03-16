@@ -76,7 +76,7 @@ app.get('/data', async function (req, res) {
       const result = res;
       const data = JSON.stringify(result);
       console.log(data)
-      return data
+      return result
       //console.log(result)
       }).catch((error) => {
       console.error('Failed to retrieve data : ', error);
