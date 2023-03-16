@@ -64,29 +64,14 @@ app.get('/index', (req, res) =>{
 
 });
 app.get('/data', async function (req, res) {
-  /*const username = scheduleTable().data;
-  console.log(username)
-  res.render('data.ejs', {username: username} )*/
+   scheduleTable(err, data)
+   {if (err)
+  {throw err;}
+console.log(data)
+};
   
-  scheduleTable = async function(result) {
-
-    db.sequelize.sync().then(() => {
-  
-      User.findAll().then(res => {
-      const result = res;
-      const data = JSON.stringify(result);
-      console.log(data)
-      return result
-      //console.log(result)
-      }).catch((error) => {
-      console.error('Failed to retrieve data : ', error);
-      });
-      
-      }).catch((error) => {
-      console.error('Unable to create table : ', error);
-      });
-    };
-  res.render('data.ejs', {username: scheduleTable(result)})})
+  res.render('data.ejs', {username: username} )
+});
 
     
 app.use(express.static(__dirname + '/views'));

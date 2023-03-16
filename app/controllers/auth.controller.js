@@ -93,7 +93,7 @@ exports.signin = async (req, res) => {
 finally {res.render('dashboard');}};
 
 
-/*exports.scheduleTable = async function() {
+exports.scheduleTable = async function(callback) {
 
   db.sequelize.sync().then(() => {
 
@@ -102,7 +102,8 @@ finally {res.render('dashboard');}};
     const data = JSON.stringify(result);
     //console.log(data)
     //console.log(result)
-      return data;
+      if (callback)
+      {callback(null, {data:data})}
      
     }).catch((error) => {
     console.error('Failed to retrieve data : ', error);
@@ -112,7 +113,7 @@ finally {res.render('dashboard');}};
     console.error('Unable to create table : ', error);
     });
     }
-*/
+
 
 
 
