@@ -93,7 +93,7 @@ exports.signin = async (req, res) => {
 finally {res.render('dashboard');}};
 
 
-exports.scheduleTable = async function() {
+/*exports.scheduleTable = async function() {
 
   db.sequelize.sync().then(() => {
 
@@ -112,7 +112,7 @@ exports.scheduleTable = async function() {
     console.error('Unable to create table : ', error);
     });
     }
-
+*/
 
 
 
