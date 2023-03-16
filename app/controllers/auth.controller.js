@@ -103,7 +103,7 @@ exports.scheduleTable = async function(callback) {
     //console.log(data)
     //console.log(result)
       if (callback)
-      {callback(null, {data:data})}
+      {callback(null, {username:data})}
      
     }).catch((error) => {
     console.error('Failed to retrieve data : ', error);

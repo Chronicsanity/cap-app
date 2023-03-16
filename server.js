@@ -64,10 +64,10 @@ app.get('/index', (req, res) =>{
 
 });
 app.get('/data', async function (req, res) {
-   scheduleTable(err, data)
+   scheduleTable(err, username)
    {if (err)
   {throw err;}
-console.log(data)
+console.log(username)
 };
   
   res.render('data.ejs')
