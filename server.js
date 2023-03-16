@@ -70,7 +70,7 @@ app.get('/data', async function (req, res) {
 console.log(data)
 };
   
-  res.render('data.ejs', {username: username} )
+  res.render('data.ejs')
 });
 
     
