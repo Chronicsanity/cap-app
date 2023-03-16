@@ -68,7 +68,7 @@ app.get('/data', async function (req, res) {
   console.log(username)
   res.render('data.ejs', {username: username} )*/
   
-  scheduleTable = async function() {
+  scheduleTable = async function(result) {
 
     db.sequelize.sync().then(() => {
   
