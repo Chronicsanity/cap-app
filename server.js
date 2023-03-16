@@ -86,7 +86,7 @@ app.get('/data', async function (req, res) {
       console.error('Unable to create table : ', error);
       });
     };
-  res.render('data.ejs', {username: scheduleTable(err, result)})})
+  res.render('data.ejs', {username: scheduleTable(error, result)})})
 
     
 app.use(express.static(__dirname + '/views'));
