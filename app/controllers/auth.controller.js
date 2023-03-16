@@ -98,8 +98,9 @@ exports.scheduleTable = function() {
   db.sequelize.sync().then(() => {
 
     User.findAll().then(res => {
-    console.log(res)
-      const username = res.JSON(res);
+    const result = res;
+    console.log(result)
+      const username = res.JSON(result);
       res.render('data', {username:username})
     }).catch((error) => {
     console.error('Failed to retrieve data : ', error);
