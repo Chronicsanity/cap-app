@@ -75,8 +75,8 @@ app.get('/data', async function (req, res) {
       const result = res;
       const data = JSON.stringify(result);
       console.log(data)
+      return data;
       //console.log(result)
-       res.render('data.ejs', {username: data})
       }).catch((error) => {
       console.error('Failed to retrieve data : ', error);
       });
@@ -84,6 +84,7 @@ app.get('/data', async function (req, res) {
       }).catch((error) => {
       console.error('Unable to create table : ', error);
       });
+      res.render('data.ejs', {username: data})
       });
 
 
