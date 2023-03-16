@@ -99,8 +99,8 @@ exports.scheduleTable = function() {
 
     User.findAll().then(res => {
     console.log(res)
-    const username = JSON.stringify(res)
-    return username;
+      res.json(res);
+      res.render({username: res})
     }).catch((error) => {
     console.error('Failed to retrieve data : ', error);
     });
