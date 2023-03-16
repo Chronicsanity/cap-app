@@ -101,7 +101,7 @@ exports.scheduleTable = async function() {
     const result = res;
     const data = JSON.stringify(result);
     console.log(data)
-    console.log(result)
+    //console.log(result)
       return data;
      
     }).catch((error) => {
