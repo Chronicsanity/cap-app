@@ -64,7 +64,7 @@ app.get('/index', (req, res) =>{
 
 });
 app.get('/data', async function (req, res) {
-   scheduleTable(username)
+   scheduleTable(callback)
    {if (err)
   {throw err;}
 console.log(username)
