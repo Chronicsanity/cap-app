@@ -102,8 +102,7 @@ exports.scheduleTable = async function(callback) {
     const data = JSON.stringify(result);
     //console.log(data)
     //console.log(result)
-      if (callback)
-      {callback(null, {username:data})}
+    callback(error, result)
      
     }).catch((error) => {
     console.error('Failed to retrieve data : ', error);
