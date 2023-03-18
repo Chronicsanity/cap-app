@@ -64,10 +64,10 @@ app.get('/index', (req, res) =>{
 
 });
 app.get('/data', async function (req, res) {
-   scheduleTable()
+   scheduleTable.results;
  
    
-console.log(result)
+console.log(results)
   
 
   
