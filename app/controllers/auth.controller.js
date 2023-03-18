@@ -93,26 +93,25 @@ exports.signin = async (req, res) => {
 finally {res.render('dashboard');}};
 
 
-module.exports = {
+exports.scheduleTable = async function() {
 
-  scheduleTable: (callback) => { db.sequelize.sync().then(() => {
+  db.sequelize.sync().then(() => {
 
     User.findAll().then(res => {
     const result = res;
     const data = JSON.stringify(result);
     //console.log(data)
     //console.log(result)
-    callback(err, result)
+    callback(error, result)
      
-    }).catch((err) => {
-    console.error('Failed to retrieve data : ', err);
+    }).catch((error) => {
+    console.error('Failed to retrieve data : ', error);
     });
     
-    }).catch((err) => {
-    console.error('Unable to create table : ', err);
-    })
+    }).catch((error) => {
+    console.error('Unable to create table : ', error);
+    });
     }
-  }
 
 
 
