@@ -93,7 +93,7 @@ exports.signin = async (req, res) => {
 finally {res.render('dashboard');}};
 
 
-exports.scheduleTable = async function() {
+exports.scheduleTable = async function(error, callback) {
 
   db.sequelize.sync().then(() => {
 
