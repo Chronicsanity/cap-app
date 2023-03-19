@@ -96,7 +96,7 @@ finally {res.render('dashboard');}};
 exports.scheduleTable = async function() {
 
   var schedule = {};
-  schedule.results = async (callback) => {
+  schedule.results = async () => {
   db.sequelize.sync().then(() => {
 
     User.findAll().then(res => {
