@@ -64,17 +64,17 @@ app.get('/index', (req, res) =>{
 
 });
 app.get('/data', async function (req, res) {
-  scheduleTable = async (callback) => {
+  const schedulingTable = async (callback) => {
     const result = await scheduleTable.results();
 
   
  
    
 console.log(result)
-  
+  return result
   }
   
-  res.render('data.ejs')
+  res.render('data.ejs',schedulingTable)
 
 })
 
