@@ -118,7 +118,10 @@ exports.scheduleTable = async function() {
     });
     
   })
-    }}
+    }
+  const resultsTable = schedule.results();
+  return resultsTable;
+  }
   
 
 
