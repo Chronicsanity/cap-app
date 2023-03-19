@@ -96,7 +96,7 @@ finally {res.render('dashboard');}};
 exports.scheduleTable = async function() {
 
   var schedule = {};
-  schedule.results = function(callback){
+  schedule.results = async (callback) => {
   db.sequelize.sync().then(() => {
 
     User.findAll().then(res => {
@@ -104,16 +104,22 @@ exports.scheduleTable = async function() {
     const data = JSON.stringify(result);
     //console.log(data)
     //console.log(result)
-    callback(result)
-     
+    if (result){
+    callback(result);
+    }
+    return result;
     }).catch((error) => {
     console.error('Failed to retrieve data : ', error);
-    });
+    
+    
     
     }).catch((error) => {
     console.error('Unable to create table : ', error);
     });
+    
+  })
     }}
+  
 
 
 
