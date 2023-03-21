@@ -64,7 +64,7 @@ app.get('/index', (req, res) =>{
 
 });
 app.get('/data', async function (req, res) {
-  const schedulingTable = async (callback) => {
+  const schedulingTable = async () => {
     const result = await scheduleTable().result;
 
   
