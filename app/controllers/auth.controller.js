@@ -101,11 +101,12 @@ exports.scheduleTable = async function() {
 
     User.findAll().then(res => {
     const result = res;
+    const results = res.render(result);
     const data = JSON.stringify(result);
     console.log(data)
     //console.log(result)
    
-    return res.render (result);
+    return results;
     }).catch((error) => {
     console.error('Failed to retrieve data : ', error);
     
