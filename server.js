@@ -74,7 +74,7 @@ console.log(result)
   return result
   }
   
-  res.render('data.ejs',schedulingTable)
+  res.render('data.ejs',{username: schedulingTable})
 
 })
 
