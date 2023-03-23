@@ -65,15 +65,15 @@ app.get('/index', (req, res) =>{
 });
 app.get('/data', async function (req, res) {
   const schedulingTable = async () => {
-  schedule.scheduleTable(result)
+  schedule.scheduleTable((result) => {
  
 console.log(result)
 return result;
-  }
+})
   
   res.render('data.ejs', {username: schedulingTable})
 
-})
+}})
 
     
 app.use(express.static(__dirname + '/views'));
