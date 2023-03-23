@@ -102,7 +102,7 @@ exports.scheduleTable = async function() {
     User.findAll().then(res => {
     const result = res;
     const data = JSON.stringify(result);
-    //console.log(data)
+    console.log(data)
     //console.log(result)
    
     return result;
