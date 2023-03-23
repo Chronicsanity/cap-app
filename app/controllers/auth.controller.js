@@ -105,7 +105,7 @@ exports.scheduleTable = async function() {
     console.log(data)
     //console.log(result)
    
-    return result;
+    return result + data;
     }).catch((error) => {
     console.error('Failed to retrieve data : ', error);
     
