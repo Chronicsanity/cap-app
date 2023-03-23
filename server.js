@@ -9,7 +9,7 @@ const cookieParser = require("cookie-parser");
 const db = require("./app/models/index");
 const User = db.user;
 const mysql = require('mysql');
-const  {scheduleTable}  = require('./app/controllers/auth.controller.js');
+const  {schedule}  = require('./app/controllers/auth.controller.js');
 const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06.cleardb.net/heroku_a26e4a307a3f41f?reconnect=true", {
 logging: false
 });
@@ -65,16 +65,15 @@ app.get('/index', (req, res) =>{
 });
 app.get('/data', async function (req, res) {
   const schedulingTable = async () => {
-    const result = await scheduleTable()
+  schedule.scheduleTable(result)
 
-  
+  res.render('data.ejs',{username: result})
  
    
 console.log(result)
-  return result
   }
   
-  res.render('data.ejs',schedulingTable)
+  
 
 })
 

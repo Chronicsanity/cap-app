@@ -93,10 +93,9 @@ exports.signin = async (req, res) => {
 finally {res.render('dashboard');}};
 
 
-exports.scheduleTable = async function() {
+exports.scheduleTable = async function(callback) {
 
-  var schedule = {};
-  schedule.results = async () => {
+  
   db.sequelize.sync().then(() => {
 
     User.findAll().then(res => {
@@ -105,7 +104,7 @@ exports.scheduleTable = async function() {
     console.log(data)
     //console.log(result)
    
-    return result;
+    callback (result);
     }).catch((error) => {
     console.error('Failed to retrieve data : ', error);
     
@@ -116,10 +115,8 @@ exports.scheduleTable = async function() {
     });
     
   })
-    }
-  const resultsTable = schedule.results();
-  return resultsTable;
-  }
+  
+}
   
 
 
