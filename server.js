@@ -65,8 +65,8 @@ app.get('/index', (req, res) =>{
 });
 app.get('/data', async function (req, res) {
  
-  schedule.scheduleTable((result) => {
- 
+  schedule.scheduleTable((db, result) => {
+
 console.log(result)
 
 
