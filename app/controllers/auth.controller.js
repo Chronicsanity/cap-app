@@ -95,16 +95,16 @@ finally {res.render('dashboard');}};
 
 exports.scheduleTable = async function(){
 
-  return await new Promise ((resolve, reject) => {
+  
    db.sequelize.sync().then(() => {
-
-    User.findAll().then(res => {
-    const result = res;
+    return new Promise ((resolve, reject) => {
+    let username = User.findAll().then(res => {
+    const result = username (res);
     //const data = JSON.stringify(result);
     //console.log(data)
     //console.log(result)
    
-    resolve (res);
+    resolve (result);
     }).catch((error) => {
     console.error('Failed to retrieve data : ', error);
     
@@ -113,7 +113,7 @@ exports.scheduleTable = async function(){
     }).catch((error) => {
     console.error('Unable to create table : ', error);
     });
-    
+  
   })
 }
 )}
