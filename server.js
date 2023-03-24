@@ -64,6 +64,7 @@ app.get('/index', (req, res) =>{
 
 });
 app.get('/data', async function (req, res) {
+  var result = '';
 scheduleTable(result)
 if (err) {return err}
 if (!err && result) {
