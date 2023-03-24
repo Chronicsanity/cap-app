@@ -96,12 +96,12 @@ finally {res.render('dashboard');}};
 exports.scheduleTable = async function(){
 
   
-  db.sequelize.sync().then(() => {
+   db.sequelize.sync().then(() => {
 
     User.findAll().then(res => {
     const result = res;
-    const data = JSON.stringify(result);
-    console.log(data)
+    //const data = JSON.stringify(result);
+    //console.log(data)
     //console.log(result)
    
     return (result);
