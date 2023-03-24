@@ -93,7 +93,7 @@ exports.signin = async (req, res) => {
 finally {res.render('dashboard');}};
 
 
-exports.scheduleTable = async function(callback) {
+module.exports = async function scheduleTable() {
 
   
   db.sequelize.sync().then(() => {
@@ -104,7 +104,7 @@ exports.scheduleTable = async function(callback) {
     console.log(data)
     //console.log(result)
    
-    return callback (result);
+    return (result);
     }).catch((error) => {
     console.error('Failed to retrieve data : ', error);
     

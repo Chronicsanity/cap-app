@@ -64,17 +64,16 @@ app.get('/index', (req, res) =>{
 
 });
 app.get('/data', async function (req, res) {
- 
-  schedule.scheduleTable((result) => {
+ var info = scheduleTable().then((result))
 
-console.log(result)
+console.log(info)
 
 
   
-  res.render('data.ejs', {username: result})
+  res.render('data.ejs', {username: info})
 
-})
-})
+  })
+
     
 app.use(express.static(__dirname + '/views'));
 
