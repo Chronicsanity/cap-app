@@ -95,7 +95,7 @@ finally {res.render('dashboard');}};
 
 exports.scheduleTable = async function(){
 
-  
+  return new Promise ((resolve, reject) => {
    db.sequelize.sync().then(() => {
 
     User.findAll().then(res => {
@@ -104,7 +104,7 @@ exports.scheduleTable = async function(){
     //console.log(data)
     //console.log(result)
    
-    return res;
+    resolve (res);
     }).catch((error) => {
     console.error('Failed to retrieve data : ', error);
     
@@ -115,8 +115,8 @@ exports.scheduleTable = async function(){
     });
     
   })
-  
 }
+)}
 
 
 
