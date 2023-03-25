@@ -96,11 +96,11 @@ if (result) {
   return info
 }
 console.log(info)
- 
+res.render('data.ejs', {username: info})
  })
 
   
-  res.render('data.ejs', {username: info})
+  
 
 })
 
