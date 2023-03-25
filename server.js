@@ -72,7 +72,7 @@ async function scheduleTable() {
    return new Promise ((resolve, reject) => {
    User.findAll().then(res => {
    const result = res
-   return resolve (result);
+   return  (result);
  
  
    }).catch((error) => {
@@ -91,10 +91,10 @@ app.get('/data', async function (req, res) {
   
   var result = '';
  var info = scheduleTable().then(function(result){
-console.log(result)
+console.log(info)
  
 if (result) {
-  return result
+  return infoa
 }
 console.log(info)
  
