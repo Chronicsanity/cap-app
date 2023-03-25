@@ -63,7 +63,31 @@ app.get('/index', (req, res) =>{
   res.render('index.ejs');
 
 });
-/*app.get('/data', async function (req, res) {
+
+
+async function scheduleTable() { 
+
+  
+  await db.sequelize.sync().then(() => {
+   return new Promise ((resolve, reject) => {
+   User.findAll().then(res => {
+   const result = res
+   return resolve (result);
+ 
+ 
+   }).catch((error) => {
+   console.error('Failed to retrieve data : ', error);
+   
+   
+   
+   }).catch((error) => {
+   console.error('Unable to create table : ', error);
+   });
+ })
+}
+)}
+
+app.get('/data', async function (req, res) {
   
   var result = '';
  var info = scheduleTable().then(function(result){
@@ -81,7 +105,7 @@ console.log(info)
 
 })
 
-    */
+    
 app.use(express.static(__dirname + '/views'));
 
 
