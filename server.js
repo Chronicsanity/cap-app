@@ -68,12 +68,14 @@ app.get('/index', (req, res) =>{
 
 app.get('/data', async function (req, res) {
   
- const info = () => {  db.sequelize.sync().then(() => {
+ const info = () => {  
+  return new Promise ((resolve, reject) => {
+  db.sequelize.sync().then(() => {
   
   User.findAll().then(res => {
     const result = res;
     console.log(result)
-    return info;
+    return resolve (info);
 
   
   }).catch((error) => {
@@ -83,7 +85,8 @@ app.get('/data', async function (req, res) {
   
   }).catch((error) => {
   console.error('Unable to create table : ', error);
-  })});
+  })})
+})
  }
 
 info().then(result => {
