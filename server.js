@@ -89,20 +89,19 @@ async function scheduleTable() {
 
 app.get('/data', async function (req, res) {
   
- var info = scheduleTable().then(function(result){
+ var info = scheduleTable();
 console.log(info)
  
 if (result) {
   return info
 }
+
 console.log(info)
- 
+
+res.render('data.ejs', {username: info})
  })
 
-  
-  res.render('data.ejs', {username: info})
 
-})
 
     
 app.use(express.static(__dirname + '/views'));
