@@ -102,7 +102,7 @@ exports.scheduleTable = async function(){
     const result =  res;
     //const data = JSON.stringify(result);
     //console.log(data)
-    //console.log(result)
+    console.log(result)
    
     resolve (result);
     }).catch((error) => {
@@ -113,7 +113,7 @@ exports.scheduleTable = async function(){
     }).catch((error) => {
     console.error('Unable to create table : ', error);
     });
-  reject (error);
+  
   })
 }
 )}
