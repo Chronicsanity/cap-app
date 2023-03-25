@@ -84,12 +84,11 @@ app.get('/data', async function (req, res) {
   }).catch((error) => {
   console.error('Unable to create table : ', error);
   })});
-  info().then(result => {
-    console.log(result);
-  res.render('data.ejs', {username: result})})
-};
+ }
 
-
+info().then(result => {
+  console.log(result);
+res.render('data.ejs', {username: result})})
 })
 
 
