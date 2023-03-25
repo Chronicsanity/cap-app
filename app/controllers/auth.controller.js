@@ -100,7 +100,7 @@ exports.scheduleTable = async function(){
     return new Promise ((resolve, reject) => {
     User.findAll().then(res => {
     const result = res;
-    return result;
+    return resolve (result);
   
   
     }).catch((error) => {
