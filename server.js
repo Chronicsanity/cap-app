@@ -68,11 +68,10 @@ app.get('/index', (req, res) =>{
 
 app.get('/data', async function (req, res) {
   
- var info = db.sequelize.sync().then(() => {
+ var info = await db.sequelize.sync().then(() => {
   
   User.findAll().then(res => {
-  const result = res
-  return (result);
+  return (res);
 
 
   }).catch((error) => {
