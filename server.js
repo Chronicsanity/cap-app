@@ -72,7 +72,7 @@ const scheduleTable = async () => {
   
    User.findAll().then(res => {
    const result = res
-   return resolve (result);
+   return (result);
  
  
    }).catch((error) => {
