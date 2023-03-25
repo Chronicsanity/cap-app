@@ -89,7 +89,6 @@ async function scheduleTable() {
 
 app.get('/data', async function (req, res) {
   
-  var result = '';
  var info = scheduleTable().then(function(result){
 console.log(info)
  
