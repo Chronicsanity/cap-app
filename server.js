@@ -72,7 +72,7 @@ async function scheduleTable() {
    return new Promise ((resolve, reject) => {
    User.findAll().then(res => {
    const result = res
-   return  (result);
+   return resolve (result);
  
  
    }).catch((error) => {
