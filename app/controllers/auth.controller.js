@@ -99,7 +99,7 @@ exports.scheduleTable = async function(){
    await db.sequelize.sync().then(() => {
     return new Promise ((resolve, reject) => {
     User.findAll().then(res => {
-    const result = res;
+    const result =  res;
     //const data = JSON.stringify(result);
     //console.log(data)
     //console.log(result)
@@ -113,7 +113,7 @@ exports.scheduleTable = async function(){
     }).catch((error) => {
     console.error('Unable to create table : ', error);
     });
-  
+  reject (error);
   })
 }
 )}
