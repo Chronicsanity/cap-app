@@ -91,12 +91,7 @@ app.get('/data', async function (req, res) {
   
  var info = scheduleTable();
 console.log(info)
- 
-if (result) {
-  return info
-}
 
-console.log(info)
 
 res.render('data.ejs', {username: info})
  })
