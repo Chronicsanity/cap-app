@@ -69,7 +69,7 @@ const scheduleTable = async () => {
 
   
   await db.sequelize.sync().then(() => {
-   return new Promise ((resolve, reject) => {
+  
    User.findAll().then(res => {
    const result = res
    return resolve (result);
@@ -85,7 +85,7 @@ const scheduleTable = async () => {
    });
  })
 }
-)}
+
 
 app.get('/data', async function (req, res) {
   
