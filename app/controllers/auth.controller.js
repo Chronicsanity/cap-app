@@ -99,8 +99,8 @@ exports.scheduleTable = async function(){
    await db.sequelize.sync().then(() => {
     return new Promise ((resolve, reject) => {
     User.findAll().then(res => {
-    const result = res;
-    console.log(result.username)
+    const result = res
+    console.log(result)
     return resolve (result);
   
   
