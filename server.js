@@ -64,23 +64,6 @@ app.get('/index', (req, res) =>{
 
 });
 
-  await db.sequelize.sync().then(() => {
-  
-   User.findAll().then(res => {
-   const result = res
-   return (result);
- 
- 
-   }).catch((error) => {
-   console.error('Failed to retrieve data : ', error);
-   
-   
-   
-   }).catch((error) => {
-   console.error('Unable to create table : ', error);
-   });
- })
-
 
 
 app.get('/data', async function (req, res) {
