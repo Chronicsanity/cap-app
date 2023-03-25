@@ -73,9 +73,11 @@ app.get('/data', async function (req, res) {
   db.sequelize.sync().then(() => {
   
   User.findAll().then(res => {
-    const result = res;
-    //console.log(result)
-    return resolve (info, result);
+    const result = res.json();
+    console.log(result)
+    const username = result.username;
+    console.log(username)
+    return resolve (info);
 
   
   }).catch((error) => {
