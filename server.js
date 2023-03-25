@@ -65,12 +65,13 @@ app.get('/index', (req, res) =>{
 });
 app.get('/data', async function (req, res) {
   var result = '';
- var info = await scheduleTable()
+ var info = await scheduleTable(result)
 
 if (result) {
   return result
 }
 console.log(info)
+
 
 
   
