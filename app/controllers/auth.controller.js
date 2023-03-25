@@ -15,6 +15,7 @@ const mysql = require('mysql');
 const router = require('express').Router();
 const {connection, pool} = require("../config/db.config");
 
+
 async function hashPassword(password) 
   {
     const hash = await bcrypt.hash(password, saltRounds);
@@ -93,7 +94,7 @@ exports.signin = async (req, res) => {
 finally {res.render('dashboard');}};
 
 
-exports.scheduleTable = async function(){
+async function scheduleTable() { 
 
   
    await db.sequelize.sync().then(() => {
@@ -115,9 +116,14 @@ exports.scheduleTable = async function(){
 }
 )}
 
+app.get('/data', async function (req, res) {
 
+const info = scheduleTable();
 
+  
+  res.render('data.ejs', {username: info})
 
+})
 
 exports.Test = function () {
   console.log("test!")

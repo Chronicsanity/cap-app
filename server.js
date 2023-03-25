@@ -63,7 +63,7 @@ app.get('/index', (req, res) =>{
   res.render('index.ejs');
 
 });
-app.get('/data', async function (req, res) {
+/*app.get('/data', async function (req, res) {
   
   var result = '';
  var info = scheduleTable().then(function(result){
@@ -81,7 +81,7 @@ console.log(info)
 
 })
 
-    
+    */
 app.use(express.static(__dirname + '/views'));
 
 
