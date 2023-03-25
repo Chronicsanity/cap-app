@@ -97,7 +97,7 @@ exports.scheduleTable = async function(){
 
   
    await db.sequelize.sync().then(() => {
-    return new Promise ((resolve, reject) => {
+    return new Promise.all ((resolve, reject) => {
     User.findAll().then(res => {
     const result =  res;
     //const data = JSON.stringify(result);
