@@ -74,7 +74,7 @@ app.get('/data', async function (req, res) {
   
   User.findAll().then(res => {
     const result = res;
-    console.log(result)
+    //console.log(result)
     return resolve (info);
 
   
