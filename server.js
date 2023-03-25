@@ -90,8 +90,9 @@ app.get('/data', async function (req, res) {
  }
 
 info().then(result => {
+  const username = result.username;
   console.log(result);
-res.render('data.ejs', {username: result})})
+res.render('data.ejs', {username: username})})
 })
 
 
