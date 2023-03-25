@@ -94,7 +94,7 @@ app.get('/data', async function (req, res) {
 console.log(info)
  
 if (result) {
-  return infoa
+  return info
 }
 console.log(info)
  
