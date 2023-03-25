@@ -64,10 +64,6 @@ app.get('/index', (req, res) =>{
 
 });
 
-
-const scheduleTable = async () => { 
-
-  
   await db.sequelize.sync().then(() => {
   
    User.findAll().then(res => {
@@ -84,15 +80,27 @@ const scheduleTable = async () => {
    console.error('Unable to create table : ', error);
    });
  })
-}
+
 
 
 app.get('/data', async function (req, res) {
   
- var info = await scheduleTable().then(function(result) {
-console.log(result)
-return info;
- })
+ var info = await db.sequelize.sync().then(() => {
+  
+  User.findAll().then(res => {
+  const result = res
+  return (result);
+
+
+  }).catch((error) => {
+  console.error('Failed to retrieve data : ', error);
+  
+  
+  
+  }).catch((error) => {
+  console.error('Unable to create table : ', error);
+  });
+})
 res.render('data.ejs', {username: info})
  
 })
