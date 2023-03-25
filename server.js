@@ -73,7 +73,7 @@ app.get('/data', async function (req, res) {
   User.findAll().then(res => {
     const result = res;
     console.log(result)
- 
+    return result;
 
   
   }).catch((error) => {
@@ -84,7 +84,7 @@ app.get('/data', async function (req, res) {
   }).catch((error) => {
   console.error('Unable to create table : ', error);
   });
-  res.render('data.ejs', {username: info})})
+  res.render('data.ejs', {username: result})})
 console.log(info)
 
  
