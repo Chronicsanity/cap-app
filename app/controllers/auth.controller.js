@@ -111,7 +111,6 @@ exports.scheduleTable = async function(){
     }).catch((error) => {
     console.error('Unable to create table : ', error);
     });
-  schedule().then((res)=>console.log(res))
   })
 }
 )}
