@@ -85,7 +85,7 @@ app.get('/index', (req, res) =>{
 
 app.get('/data', async function (req, res) {
   
- var info = await db.sequelize.sync().then(() => {
+ var info = db.sequelize.sync().then(() => {
   
   User.findAll().then(res => {
   const result = res
