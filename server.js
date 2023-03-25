@@ -73,9 +73,9 @@ app.get('/data', async function (req, res) {
   User.findAll().then(res => {
     const result = res;
     console.log(result)
-  return (result);
+ 
 
-
+  res.render('data.ejs', {username: result})
   }).catch((error) => {
   console.error('Failed to retrieve data : ', error);
   
@@ -86,7 +86,7 @@ app.get('/data', async function (req, res) {
   });
 })
 console.log(info)
-res.render('data.ejs', {username: info})
+
  
 })
 
