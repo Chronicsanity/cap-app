@@ -97,15 +97,12 @@ exports.scheduleTable = async function(){
 
   
    await db.sequelize.sync().then(() => {
-    return new Promise.all ((resolve, reject) => {
-    User.findAll().then(res => {
-    const result =  res;
-    //const data = JSON.stringify(result);
-    //console.log(data)
-    console.log(result)
-   
-    return resolve (result);
-    //return (result)
+    return new Promise ((resolve, reject) => {
+    const schedule = User.findAll().then(res => {
+    const result = res;
+    return result;
+  
+  
     }).catch((error) => {
     console.error('Failed to retrieve data : ', error);
     
@@ -114,7 +111,7 @@ exports.scheduleTable = async function(){
     }).catch((error) => {
     console.error('Unable to create table : ', error);
     });
-  
+  schedule().then((res)=>console.log(res))
   })
 }
 )}
