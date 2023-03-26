@@ -68,7 +68,7 @@ app.get('/index', (req, res) =>{
 
 app.get('/data', async function (req, res) {
   
- function scheduleTable (callback) {
+ scheduleTable = function(callback) {
   
   db.sequelize.sync().then(() => {
   
@@ -77,7 +77,7 @@ app.get('/data', async function (req, res) {
     console.log(result)
     const username = result.username;
     console.log(username)
-    callback (result);
+    return callback (result);
 
   
   }).catch((error) => {
