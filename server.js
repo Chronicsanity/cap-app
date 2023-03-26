@@ -69,7 +69,7 @@ app.get('/index', (req, res) =>{
 app.get('/data', async function (req, res) {
   
  
-  const scheduleTable = async function (result) {
+  const scheduleTable = async function (result, callback) {
 
     db.sequelize.sync().then(() => {
   
@@ -91,7 +91,7 @@ app.get('/data', async function (req, res) {
     console.error('Unable to create table : ', error);
     })
   
-return result;
+return callback (result);
   })}
   
 
