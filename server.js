@@ -69,10 +69,10 @@ app.get('/index', (req, res) =>{
 app.get('/data', async function (req, res) {
   
  
-  
+  scheduleTable = async function (callback) {
   db.sequelize.sync().then(() => {
   
-  scheduleTable = async function (callback) {
+  
     User.findAll().then(res => {
     const result = res;
     console.log(result)
@@ -95,7 +95,7 @@ var result = [];
 var results = scheduleTable(result);
 
   console.log(results);
-res.render('data.ejs', {username: results})};})})
+res.render('data.ejs', {username: results})})}})
 
 
 
