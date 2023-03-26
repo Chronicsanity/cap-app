@@ -91,7 +91,7 @@ app.get('/data', async function (req, res) {
     console.error('Unable to create table : ', error);
     })
   
-callback (result);
+return (result);
   })}
   
 
