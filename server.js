@@ -77,7 +77,7 @@ app.get('/data', async function (req, res) {
     console.log(result)
     const username = result.username;
     console.log(username)
-    return callback (result);
+    
 
   
   }).catch((error) => {
@@ -88,6 +88,7 @@ app.get('/data', async function (req, res) {
   }).catch((error) => {
   console.error('Unable to create table : ', error);
   })})
+  return callback (result);
 }
 var result = [];
 var results = scheduleTable(result);
