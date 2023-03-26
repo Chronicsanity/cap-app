@@ -78,7 +78,7 @@ app.get('/data', async function (req, res) {
     console.log(result)
     const username = result.username;
     console.log(username)
-    return callback (result);
+    callback (result);
 
   
   }).catch((error) => {
