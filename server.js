@@ -69,17 +69,16 @@ app.get('/index', (req, res) =>{
 app.get('/data', async function (req, res) {
   
  
-  function scheduleTable(callback) {
+  
 
     db.sequelize.sync().then(() => {
   
-  
-      User.findAll().then(res => {
+      var username = req.query.username;
+      User.find(username).then(res => {
       const result = res;
       console.log(result)
-      const username = result.username;
       console.log(username)
-      
+      res.render('/data', {username: username})
   
     
     }).catch((error) => {
@@ -92,16 +91,7 @@ app.get('/data', async function (req, res) {
     })
   
 return (result);
-  })}
-  
-
-var result = [];
-var results = scheduleTable(result);
-
-  console.log(results);
-res.render('data.ejs', {username: results})
-
-})
+  })})
 
     
 app.use(express.static(__dirname + '/views'));
