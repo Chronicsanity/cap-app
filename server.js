@@ -70,34 +70,40 @@ app.get('/data', async function (req, res) {
   
  
   const scheduleTable = async function () {
-  db.sequelize.sync().then(() => {
+
+    db.sequelize.sync().then(() => {
   
   
-    User.findAll().then(res => {
-    const result = res;
-    console.log(result)
-    const username = result.username;
-    console.log(username)
-    return (result)
+      User.findAll().then(res => {
+      const result = res;
+      console.log(result)
+      const username = result.username;
+      console.log(username)
+      
+  
+    
+    }).catch((error) => {
+    console.error('Failed to retrieve data : ', error);
+    
+    
+    
+    }).catch((error) => {
+    console.error('Unable to create table : ', error);
+    })
+  
 
   
-  }).catch((error) => {
-  console.error('Failed to retrieve data : ', error);
+return result;
+  })}
   
-  
-  
-  }).catch((error) => {
-  console.error('Unable to create table : ', error);
-  })
- 
 
 var result = [];
 var results = scheduleTable(result);
 
   console.log(results);
-res.render('data.ejs', {username: results})})}})
+res.render('data.ejs', {username: results})
 
-
+})
 
     
 app.use(express.static(__dirname + '/views'));
