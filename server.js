@@ -72,7 +72,7 @@ app.get('/data', async function (req, res) {
   
   db.sequelize.sync().then(() => {
   
-  scheduleTable = function (callback) {
+  scheduleTable = async function (callback) {
     User.findAll().then(res => {
     const result = res;
     console.log(result)
