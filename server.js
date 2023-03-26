@@ -69,7 +69,7 @@ app.get('/index', (req, res) =>{
 app.get('/data', async function (req, res) {
   
  
-  scheduleTable = async function () {
+  const scheduleTable = async function () {
   db.sequelize.sync().then(() => {
   
   
