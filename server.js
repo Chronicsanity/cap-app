@@ -76,19 +76,16 @@ return new Promise (function(resolve, reject){
   
   
      User.findAll().then(res => {
-      const result = JSON.stringify(res) ;
+      const result = JSON.stringify(res);
       console.log(result)
-      const username = result.username;
-      console.log(username)
+    
+     
       //return resolve (result)
   
      })
     }).then((res) => {
-      console.log(res)
-
-    })
-    
-    .catch((error) => {
+    console.log(res)
+  }).catch((error) => {
     console.error('Failed to retrieve data : ', error);
     
     
