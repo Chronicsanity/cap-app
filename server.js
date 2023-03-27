@@ -75,11 +75,11 @@ app.get('/data', async function (req, res) {
   
   
       User.findAll().then(res => {
-      const result = res;
+      const result = JSON.stringify(res) ;
       console.log(result)
       const username = result.username;
       console.log(username)
-      
+      return (result)
   
     
     }).catch((error) => {
