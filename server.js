@@ -83,8 +83,8 @@ return new Promise (function(resolve, reject){
       //return resolve (result)
   
      })
-    }).then((result) => {
-      console.log(result)
+    }).then((res) => {
+      console.log(res)
 
     })
     
