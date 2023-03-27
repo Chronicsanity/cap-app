@@ -70,7 +70,7 @@ app.get('/data', async function (req, res) {
   
  
   function scheduleTable() {
-
+return new promise (function(resolve, reject){
     db.sequelize.sync().then(() => {
   
   
@@ -79,9 +79,9 @@ app.get('/data', async function (req, res) {
       console.log(result)
       const username = result.username;
       console.log(username)
-      return (result)
+      return resolve (result)
   
-    
+     })
     }).catch((error) => {
     console.error('Failed to retrieve data : ', error);
     
@@ -97,7 +97,7 @@ var results = scheduleTable();
 
   console.log(results);
 res.render('data.ejs', {username: results})
-
+  
 })
 
     
