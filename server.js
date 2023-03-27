@@ -82,7 +82,7 @@ return new Promise (function(resolve, reject){
       console.log(username)
       return resolve (result)
   
-     })
+     }).then(res => res.json())
     }).catch((error) => {
     console.error('Failed to retrieve data : ', error);
     
