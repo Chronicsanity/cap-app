@@ -80,7 +80,7 @@ app.get('/data', async function (req, res) {
       //console.log(result)
     
      
-      //return resolve (result)
+      return resolve (res)
   
      })
     }).then((res) => {
