@@ -71,7 +71,7 @@ app.get('/data', async function (req, res) {
   
  
    function scheduleTable() {
-return new Promise (function(resolve, reject){
+return new Promise (function(){
     db.sequelize.sync().then(() => {
   
   
@@ -85,6 +85,7 @@ return new Promise (function(resolve, reject){
      })
     }).then((res) => {
     console.log(res)
+    
   }).catch((error) => {
     console.error('Failed to retrieve data : ', error);
     
