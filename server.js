@@ -77,7 +77,7 @@ return new Promise (function(){
   
      User.findAll().then(res => {
       const result = JSON.stringify(res);
-      console.log(result)
+      //console.log(result)
     
      
       //return resolve (result)
