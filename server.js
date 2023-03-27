@@ -80,12 +80,12 @@ app.get('/data', async function (req, res) {
       //console.log(result)
     
      
-      return (res)
+      return (result)
   
      })
-    }).then((res) => {
-    console.log(res)
-    return res;
+    }).then((result) => {
+    console.log(result)
+    return result;
   }).catch((error) => {
     console.error('Failed to retrieve data : ', error);
     
@@ -96,12 +96,12 @@ app.get('/data', async function (req, res) {
     })}
 
    scheduleTable() 
-        if (!res){
-          return console.log('No Results!')
+        if (!result){
+          return console.log("No Results!")
         }
         else{
-          console.log(res);
-          res.render('data.ejs', {username: res})
+          console.log(result);
+          res.render('data.ejs', {username: result})
         }
       });
   
