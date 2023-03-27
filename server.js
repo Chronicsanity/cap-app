@@ -70,7 +70,7 @@ app.get('/index', (req, res) =>{
 app.get('/data', async function (req, res) {
   
  
-  function scheduleTable() {
+  async function scheduleTable() {
 return new Promise (function(resolve, reject){
     db.sequelize.sync().then(() => {
   
@@ -82,7 +82,7 @@ return new Promise (function(resolve, reject){
       console.log(username)
       return resolve (result)
   
-     }).then(res => res.json())
+     })
     }).catch((error) => {
     console.error('Failed to retrieve data : ', error);
     
