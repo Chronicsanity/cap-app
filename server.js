@@ -80,7 +80,7 @@ return new Promise (function(resolve, reject){
       console.log(result)
       const username = result.username;
       console.log(username)
-      return resolve (result)
+      //return resolve (result)
   
      })
     }).then((res) => {
