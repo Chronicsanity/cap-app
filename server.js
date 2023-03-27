@@ -94,7 +94,7 @@ app.get('/data', async function (req, res) {
     }).catch((error) => {
     console.error('Unable to create table : ', error);
     })}
-
+var result = [];
    scheduleTable() 
         if (!result){
           return console.log("No Results!")
