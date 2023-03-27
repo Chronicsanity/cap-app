@@ -70,7 +70,7 @@ app.get('/index', (req, res) =>{
 app.get('/data', async function (req, res) {
   
  
-   function scheduleTable() {
+   async function scheduleTable() {
 
     db.sequelize.sync().then(() => {
   
@@ -95,16 +95,10 @@ app.get('/data', async function (req, res) {
     console.error('Unable to create table : ', error);
     })}
 
-scheduleTable().then((result) => {
-
-  console.log(result);
-  res.render('data.ejs', {username: result})
-
+    
 });
 
   
-  
-})
 
     
 app.use(express.static(__dirname + '/views'));
