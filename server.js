@@ -84,7 +84,7 @@ return new Promise (function(resolve, reject){
   
      })
     }).then((result) => {
-      console.log(result.json())
+      console.log(result)
 
     })
     
