@@ -95,7 +95,7 @@ app.get('/data', async function (req, res) {
     console.error('Unable to create table : ', error);
     })}
 
-var results = scheduleTable();
+const results = await scheduleTable();
 
   console.log(results);
 res.render('data.ejs', {username: results})
