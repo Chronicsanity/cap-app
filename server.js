@@ -82,11 +82,7 @@ app.get('/data', async function (req, res) {
      
       //return (result)
   
-     }).then((result) => {
-      console.log(result)
-      return result;
-     
-  }).catch((error) => {
+     }).catch((error) => {
     console.error('Failed to retrieve data : ', error);
     
     
@@ -95,7 +91,11 @@ app.get('/data', async function (req, res) {
     console.error('Unable to create table : ', error);
     })})}
 
-   const result = await scheduleTable() 
+   const result = await scheduleTable().then((result) => {
+    console.log(result)
+    return result;
+   
+}) 
         if (!result){
           return console.log("No Results!")
         }
