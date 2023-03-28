@@ -77,7 +77,7 @@ app.get('/data', async function (req, res) {
   
       const result = User.findAll().then(res => {
       const info = JSON.stringify(res)
-      console.log(result)
+      console.log(info)
     
      return info;
       
@@ -92,7 +92,7 @@ app.get('/data', async function (req, res) {
     console.error('Unable to create table : ', error);
     })})}
 
-   await scheduleTable().then((results) => {
+   await scheduleTable().then(results => {
     console.log(results)
     res.render('data.ejs', {username: results})
 }) 
