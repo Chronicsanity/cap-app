@@ -94,10 +94,9 @@ app.get('/data', async function (req, res) {
 
    const results = await scheduleTable().then((result) => {
     console.log(result)
-    return result;
+    res.render('data.ejs', {username: result})
 }) 
-          console.log(results);
-          res.render('data.ejs', {username: results})
+        
         })
     
   
