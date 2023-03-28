@@ -75,14 +75,15 @@ app.get('/data', async function (req, res) {
     db.sequelize.sync().then(() => {
   
   
-     User.findAll().then(res => {
-      const result = JSON.stringify(res);
-      //console.log(result)
+      const result = User.findAll().then(res => {
+      const info = JSON.stringify(res)
+      console.log(info)
     
      
-      return (result)
+      
   
-     }).catch((error) => {
+     }).then(result => console.log(result))
+     .catch((error) => {
     console.error('Failed to retrieve data : ', error);
     
     
