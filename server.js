@@ -82,10 +82,10 @@ app.get('/data', async function (req, res) {
      
       //return (result)
   
-     })
-    }).then((result) => {
-    console.log(result)
-    return result;
+     }).then((result) => {
+      console.log(result)
+      return result;
+     
   }).catch((error) => {
     console.error('Failed to retrieve data : ', error);
     
@@ -93,7 +93,7 @@ app.get('/data', async function (req, res) {
     
     }).catch((error) => {
     console.error('Unable to create table : ', error);
-    })}
+    })})}
 
    const result = await scheduleTable() 
         if (!result){
@@ -103,7 +103,8 @@ app.get('/data', async function (req, res) {
           console.log(result);
           res.render('data.ejs', {username: result})
         }
-      });
+      })
+    
   
 
     
