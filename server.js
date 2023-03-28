@@ -82,7 +82,7 @@ app.get('/data', async function (req, res) {
      
       
   
-     }).then(result => console.log(result))
+     .then(result => console.log(result))})
      .catch((error) => {
     console.error('Failed to retrieve data : ', error);
     
@@ -93,8 +93,8 @@ app.get('/data', async function (req, res) {
     })})}
 
    const results = await scheduleTable().then((result) => {
-    console.log(results)
-    res.render('data.ejs', {username: results})
+    console.log(result)
+    res.render('data.ejs', {username: result})
 }) 
         
         })
