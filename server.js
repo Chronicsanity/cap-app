@@ -79,10 +79,10 @@ app.get('/data', async function (req, res) {
       const info = JSON.stringify(res)
       console.log(info)
     
-     
+     return info;
       
   
-     .then(result => console.log(result))})
+      })
      .catch((error) => {
     console.error('Failed to retrieve data : ', error);
     
@@ -92,9 +92,9 @@ app.get('/data', async function (req, res) {
     console.error('Unable to create table : ', error);
     })})}
 
-   const results = await scheduleTable().then((result) => {
-    console.log(result)
-    res.render('data.ejs', {username: result})
+   await scheduleTable().then((results) => {
+    console.log(results)
+    res.render('data.ejs', {username: results})
 }) 
         
         })
