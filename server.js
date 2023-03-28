@@ -95,7 +95,7 @@ app.get('/data', async function (req, res) {
     console.error('Unable to create table : ', error);
     })}
 
-   const result = scheduleTable(result) 
+   const result = await scheduleTable() 
         if (!result){
           return console.log("No Results!")
         }
