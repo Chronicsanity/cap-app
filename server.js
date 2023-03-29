@@ -96,7 +96,7 @@ app.get('/data', async function (req, res) {
  
   
 
-   await scheduleTable().then(info => {
+    scheduleTable().then(info => {
     console.log(info)
     res.render('data.ejs', {username: info})
 }) 
