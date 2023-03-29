@@ -71,15 +71,15 @@ app.get('/data', async function (req, res) {
   
  
     async function scheduleTable() {
-
+return promise = new Promise(function(resolve, reject){
     db.sequelize.sync().then(() => {
   
   
       User.findAll().then(res => {
       
      const object = JSON.stringify(res)
-      console.log(object)
-     return object;
+      //console.log(object)
+     return resolve (object);
       
 
       
@@ -91,9 +91,9 @@ app.get('/data', async function (req, res) {
     }).catch((error) => {
     console.error('Unable to create table : ', error);
       })
-   
     })
-  }
+    })
+  } 
   
 
     scheduleTable().then(info => {
