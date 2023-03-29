@@ -78,7 +78,7 @@ app.get('/data', async function (req, res) {
       User.findAll().then(res => {
       
      const object = JSON.stringify(res)
-      
+      console.log(object)
      return object;
       
 
