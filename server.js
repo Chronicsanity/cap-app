@@ -77,7 +77,7 @@ app.get('/data', async function (req, res) {
   
       User.findAll().then(res => {
       
-      console.log(res)
+     
       
      return res;
       
@@ -91,6 +91,7 @@ app.get('/data', async function (req, res) {
     }).catch((error) => {
     console.error('Unable to create table : ', error);
       })
+      console.log(res)
       return res;
     })
   }
