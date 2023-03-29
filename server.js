@@ -90,17 +90,17 @@ app.get('/data', async function (req, res) {
     
     }).catch((error) => {
     console.error('Unable to create table : ', error);
-      })}  )}
+      })
       return result();
     })
- 
+  }
   
 
     scheduleTable().then(info => {
     console.log(info)
     res.render('data.ejs', {username: info})
-}) 
-        
+    
+}) })
 
     
   
