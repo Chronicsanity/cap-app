@@ -18,12 +18,18 @@
            
             <th>Name</th>
            
-            <th>Password <%=JSON.stringify(username)%></th> //Trying to test pulling the information from the SQL database to the client side.
+            <th>Password </th>
           </tr>
         </thead>
         <tbody>
           <script> 
-     
+      <%=for (let i=0; i < username.length; i++) {
+username.push({
+  Name: username[i].username,
+  password: username[i].password
+});
+
+      }
           </script>
           </tbody>
         </table>
