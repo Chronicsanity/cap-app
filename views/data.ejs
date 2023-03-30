@@ -22,13 +22,18 @@
           </tr>
         </thead>
         <tbody>
-        <script> 
-     <% for (let i = 0; i < username.length; i++) {%>
-  <% username.push({ %>
- <% Name: username[i].username, %>
- <% password: username[i].password %>
+     
+     <% username.forEach(function(username){%>
+            <% for (let i = 0; i < username.length; i++) { %>
+                <tr>
+                    <td>Tier </td>
+                    <td><%= username.username[i] %></td>
+                    <td><%= username.password[i] %></td>
+                </tr>
+            <%  } %>
+        <%})%>
 <% })} %>
-</script>  
+
           </tbody>
         </table>
 
