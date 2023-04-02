@@ -77,7 +77,7 @@ return promise = new Promise(function(resolve, reject){
   
       User.findAll().then(res => {
       
-     const object = JSON.parse(res)
+     const object = res
       //console.log(object)
      return resolve (object);
       
