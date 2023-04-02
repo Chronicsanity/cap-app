@@ -23,12 +23,11 @@
         </thead>
         <tbody>
      
-     <% username.forEach(function(username){%>
-            <% for (let i = 0; i < username.length; i++) { %>
+            <% for (var i = 0; i < result.length; i++) { %>
+            
                 <tr>
                     <td>Tier </td>
-                    <td><%= username.username[i] %></td>
-                    <td><%= username.password[i] %></td>
+                    <td><%= result[i].username %> </td>
                 </tr>
             <%  } %>
         <%})%>
