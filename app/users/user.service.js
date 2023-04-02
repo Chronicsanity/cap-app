@@ -36,7 +36,7 @@ app.post('/data', function (req,res) {
     newUser = create(res);
 
 
-    res.render('data', {newUser : newUser})
+    res.render('/data', {newUser : newUser})
 });
 async function update(id, params) {
     const user = await getUser(id);
