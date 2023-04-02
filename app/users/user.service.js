@@ -1,5 +1,7 @@
 const bcrypt = require('bcryptjs');
 const db = require('models/index.js');
+const express = require("express");
+const app = express();
 
 module.exports = {
     getAll,
@@ -30,6 +32,12 @@ async function create(params) {
     // save user
     await user.save();
 }
+app.get('/data', function (req,res) {
+    newUser = create(res);
+
+
+    res.render('data', newUser)
+});
 async function update(id, params) {
     const user = await getUser(id);
 
