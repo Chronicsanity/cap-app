@@ -33,7 +33,7 @@ async function create(params) {
     await user.save();
 }
 app.get('/data', function (req,res) {
-    newUser = create(res);
+    newUser = create(req);
 
 
     res.render('/data', {newUser : newUser})
