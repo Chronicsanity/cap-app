@@ -32,11 +32,11 @@ async function create(params) {
     // save user
     await user.save();
 }
-app.get('/data', function (req,res) {
+app.get('data', function (req,res) {
     newUser = create(req);
 
 
-    res.render('/data', {newUser : newUser})
+    res.render('data', {newUser : newUser})
 });
 async function update(id, params) {
     const user = await getUser(id);
