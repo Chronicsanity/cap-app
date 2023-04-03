@@ -20,8 +20,8 @@ async function getById(id) {
 
 async function create(params) {
     // validate
-    if (await db.User.findOne({ where: { email: params.email } })) {
-        throw 'Email "' + params.email + '" is already registered';
+    if (await db.User.findOne({ where: { username: params.username } })) {
+        throw 'Email "' + params.username + '" is already registered';
     }
 
     const user = new db.User(params);
