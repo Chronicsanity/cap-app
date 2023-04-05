@@ -97,7 +97,7 @@ return promise = new Promise(function(resolve, reject){
   
 
     scheduleTable().then(info => {
-    console.log(info)
+    //console.log(info)
     res.render('data.ejs', {user: info})
     
 }) })

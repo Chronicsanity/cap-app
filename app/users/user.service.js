@@ -34,6 +34,7 @@ async function create(params) {
     // hash password
     user.password = await bcrypt.hash(params.password, 10);
     user.id = await generateID(2, 10);
+    console.log(user.id)
     if (await User.findOne({ where: {id: params.id} })) {
         await generateID(2, 20);
     };
