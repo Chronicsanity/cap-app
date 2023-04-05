@@ -2,6 +2,7 @@ const bcrypt = require('bcryptjs');
 const db = require('models/index.js');
 const express = require("express");
 const app = express();
+const User = db.user;
 
 module.exports = {
     getAll,
@@ -11,7 +12,7 @@ module.exports = {
     delete: _delete
 };
 async function getAll() {
-    return await db.User.findAll();
+    return await User.findAll();
 }
 
 async function getById(id) {
@@ -20,7 +21,7 @@ async function getById(id) {
 
 async function create(params) {
     // validate
-    if (await db.User.findOne({ where: { username: params.username } })) {
+    if (await User.findOne({ where: { username: params.username } })) {
         throw 'Email "' + params.username + '" is already registered';
     }
 
