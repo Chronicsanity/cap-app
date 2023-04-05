@@ -42,7 +42,7 @@ async function create(params) {
     await user.save();
 
 }
-app.get('data', function (req,res) {
+app.get('/data', function (req,res) {
     newUser = create(req);
 
 
