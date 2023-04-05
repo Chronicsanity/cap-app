@@ -18,20 +18,25 @@ async function getAll() {
 async function getById(id) {
     return await getUser(id);
 }
-
+async function generateID(min, max) {
+    return Math.floor(
+        Math.random() *(max - min) + min
+    )
+}
 async function create(params) {
     // validate
     if (await User.findOne({ where: { username: params.username } })) {
         throw 'Email "' + params.username + '" is already registered';
     }
 
-    const user = new db.User(params);
+    const user = new User(params);
     
     // hash password
-    user.passwordHash = await bcrypt.hash(params.password, 10);
-
+    user.password = await bcrypt.hash(params.password, 10);
+    user.id = await generateID(2, 10);
     // save user
     await user.save();
+
 }
 app.get('data', function (req,res) {
     newUser = create(req);
