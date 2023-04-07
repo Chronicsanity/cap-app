@@ -47,13 +47,13 @@ async function create(req) {
 
 }
 
-app.post("data.ejs");
-app.get("data.ejs", function (req,res) {
+//app.post("data.ejs");
+/*app.get("data.ejs", function (req,res) {
     const newUser = create(req);
 
 
     res.render('data.ejs', {newUser : newUser})
-});
+});*/
 module.exports = create(req);
 async function update(id, params) {
     const user = await getUser(id);
