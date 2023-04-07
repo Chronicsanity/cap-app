@@ -23,19 +23,20 @@ async function generateID(min, max) {
         Math.random() *(max - min) + min
     )
 }
-async function create(params) {
+async function create(req) {
     // validate
-    if (await User.findOne({ where: { username: params.username } })) {
-        throw 'Email "' + params.username + '" is already registered';
+    if (await User.findOne({ where: { username: req.username } })) {
+        throw 'Email "' + req.username + '" is already registered';
     }
-
-    const user = new User(params);
+    console.log(req.body.newName)
+    console.log(req.body.newPassword)
+    const user = new User(req);
     
     // hash password
-    user.password = await bcrypt.hash(params.password, 10);
+    user.password = await bcrypt.hash(req.password, 10);
     user.id = await generateID(2, 10);
     console.log(user.id)
-    if (await User.findOne({ where: {id: params.id} })) {
+    if (await User.findOne({ where: {id: req.id} })) {
         await generateID(2, 20);
     };
     // save user
@@ -43,7 +44,7 @@ async function create(params) {
 
 }
 app.get('/data', function (req,res) {
-    newUser = create(req.params);
+    newUser = create(req);
 
 
     res.render('data', {newUser : newUser})
