@@ -109,15 +109,18 @@ async function generateID(min, max) {
 }
 
 app.post('/data', (req, res) => {
-  
+
   async function create(req) {
     // validate
    // if (await User.findOne({ where: { newUser: req.newUser } })) {
    //   throw 'Email "' + req.newName + '" is already registered';
   //}
   const user = new User(req);
- user.username = await req.body.name;
- user.password = await req.body.pass;
+  const newUsername = [];
+  newUsername.push(req.body.name)
+  console.log(newUsername)
+ //user.username = await req.body.name;
+ //user.password = await req.body.pass;
   // hash password
   //user.password = await bcrypt.hash(req.password, 10);
     user.id = await generateID(2, 10);
