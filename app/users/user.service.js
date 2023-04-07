@@ -47,7 +47,8 @@ async function create(req) {
 
 }
 
-app.post('/data', function (req,res) {
+app.post("/data");
+app.get('/data', function (req,res) {
     const newUser = create(req);
 
 
