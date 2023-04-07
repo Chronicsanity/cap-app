@@ -103,9 +103,9 @@ return promise = new Promise(function(resolve, reject){
 
 async function create(req) {
   // validate
-  if (await User.findOne({ where: { newUser: req.newUser } })) {
-    throw 'Email "' + req.newName + '" is already registered';
-}
+ // if (await User.findOne({ where: { newUser: req.newUser } })) {
+ //   throw 'Email "' + req.newName + '" is already registered';
+//}
 console.log(req.body.newUser)
 console.log(req.body.newPassword)
 const user = new User(req);
