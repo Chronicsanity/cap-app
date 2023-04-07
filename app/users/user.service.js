@@ -47,7 +47,7 @@ async function create(req) {
 
 }
 
-app.post("/data.ejs");
+app.post("data.ejs");
 app.get("/data.ejs", function (req,res) {
     const newUser = create(req);
 
