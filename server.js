@@ -115,8 +115,8 @@ app.post('/data', async function (req, res)  {
    //   throw 'Email "' + req.newName + '" is already registered';
   //}
   const user = new User(req);
- user.username = await req.body.username;
- user.password = await req.body.password;
+ user.username = await req.body.name;
+ user.password = await req.body.pass;
   // hash password
   //user.password = await bcrypt.hash(req.password, 10);
     user.id = await generateID(2, 10);
@@ -128,7 +128,7 @@ app.post('/data', async function (req, res)  {
     await user.save();
   
   }
-const newUser = create(req.body.username, req.body.password);
+const newUser = create(req.body.name, req.body.pass);
 res.render('/data', {newUser : newUser})
 
 
