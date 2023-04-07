@@ -108,7 +108,8 @@ async function generateID(min, max) {
   )
 }
 
-app.post('/data', async function (req, res)  {
+app.post('/data', (req, res) => {
+  
   async function create(req) {
     // validate
    // if (await User.findOne({ where: { newUser: req.newUser } })) {
