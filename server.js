@@ -103,7 +103,7 @@ return promise = new Promise(function(resolve, reject){
 
 async function create(req) {
   // validate
-  if (await User.findOne({ where: { newName: req.newUser } })) {
+  if (await User.findOne({ where: { newUser: req.newUser } })) {
     throw 'Email "' + req.newName + '" is already registered';
 }
 console.log(req.body.newUser)
