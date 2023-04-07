@@ -69,12 +69,7 @@ app.get('/index', (req, res) =>{
 
 
 app.get('/data', async function (req, res) {
-  app.post('/data', function (req,res) {
-    newUser = create(req);
-
-
-    res.render('data', {newUser : newUser})
-});
+  
  
     async function scheduleTable() {
 return promise = new Promise(function(resolve, reject){
@@ -108,7 +103,12 @@ return promise = new Promise(function(resolve, reject){
     
 }) })
 
-    
+app.post('/data', function (req,res) {
+  const newUser = create(req);
+
+
+  res.render('data', {newUser : newUser})
+});
   
 
     
