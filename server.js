@@ -103,15 +103,15 @@ return promise = new Promise(function(resolve, reject){
 
 async function create(req) {
   // validate
-  if (await User.findOne({ where: { username: req.username } })) {
-      throw 'Email "' + req.username + '" is already registered';
-  }
-  console.log(req.body.newName)
-  console.log(req.body.newPassword)
-  const user = new User(req);
-  
-  // hash password
-  user.password = await bcrypt.hash(req.password, 10);
+  if (await User.findOne({ where: { username: req.newName } })) {
+    throw 'Email "' + req.newName + '" is already registered';
+}
+console.log(req.body.newName)
+console.log(req.body.newPassword)
+const user = new User(req);
+
+// hash password
+user.password = await bcrypt.hash(req.newPassword,
   user.id = await generateID(2, 10);
   console.log(user.id)
   if (await User.findOne({ where: {id: req.id} })) {
