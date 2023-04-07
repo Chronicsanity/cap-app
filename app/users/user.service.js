@@ -45,7 +45,7 @@ async function create(req) {
 }
 
 app.post('/data', function (req,res) {
-    newUser = create(req);
+    const newUser = create(req);
 
 
     res.render('data', {newUser : newUser})
