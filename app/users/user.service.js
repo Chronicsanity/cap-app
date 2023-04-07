@@ -47,7 +47,7 @@ async function create(req) {
 
 }
 
-app.post("create", function (req,res) {
+const post = await fetch("/create", function (req,res) {
     const newUser = create(req);
 
 
