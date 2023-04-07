@@ -110,14 +110,14 @@ async function generateID(min, max) {
 
 app.post('/data', (req, res) => {
 
-  async function create(req) {
+  async function create(res) {
     // validate
    // if (await User.findOne({ where: { newUser: req.newUser } })) {
    //   throw 'Email "' + req.newName + '" is already registered';
   //}
-  const user = new User(req);
+  const user = new User(res);
   const newUsername = [];
-  newUsername.push(req.body.name)
+  newUsername.push(res.body.name)
   console.log(newUsername)
  //user.username = await req.body.name;
  //user.password = await req.body.pass;
