@@ -28,15 +28,15 @@ async function generateID(min, max) {
 }
 async function create(req) {
     // validate
-    if (await User.findOne({ where: { username: req.username } })) {
-        throw 'Email "' + req.username + '" is already registered';
+    if (await User.findOne({ where: { username: req.newName } })) {
+        throw 'Email "' + req.newName + '" is already registered';
     }
     console.log(req.body.newName)
     console.log(req.body.newPassword)
     const user = new User(req);
     
     // hash password
-    user.password = await bcrypt.hash(req.password, 10);
+    user.password = await bcrypt.hash(req.newPassword, 10);
     user.id = await generateID(2, 10);
     console.log(user.id)
     if (await User.findOne({ where: {id: req.id} })) {
