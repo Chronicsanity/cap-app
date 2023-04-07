@@ -21,13 +21,14 @@ const ejs = require('ejs');
 
  app.use(cors());
  app.enable('trust proxy');
+ app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.json());
 
 
 app.use(express.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+
 
 app.set('view engine','ejs')
 
