@@ -26,6 +26,8 @@ app.use(express.json());
 
 
 app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.set('view engine','ejs')
 
@@ -110,14 +112,14 @@ async function generateID(min, max) {
 
 app.post('/data', (req, res) => {
 
-  async function create(res) {
+  async function create(req) {
     // validate
    // if (await User.findOne({ where: { newUser: req.newUser } })) {
    //   throw 'Email "' + req.newName + '" is already registered';
   //}
-  const user = new User(res);
+  const user = new User(req);
   const newUsername = [];
-  newUsername.push(res.body.name)
+  newUsername.push(req.body.name)
   console.log(newUsername)
  //user.username = await req.body.name;
  //user.password = await req.body.pass;
