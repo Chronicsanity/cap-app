@@ -3,6 +3,9 @@ const db = require('models/index.js');
 const express = require("express");
 const app = express();
 const User = db.user;
+const bodyParser = require("body-parser");
+
+app.use(bodyParser.urlencoded())
 
 module.exports = {
     getAll,
@@ -44,11 +47,11 @@ async function create(req) {
 
 }
 
-app.post('data', function (req,res) {
+app.post('/data', function (req,res) {
     const newUser = create(req);
 
 
-    res.render('data', {newUser : newUser})
+    res.render('/data', {newUser : newUser})
 });
 module.exports = create(req);
 async function update(id, params) {
