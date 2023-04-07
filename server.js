@@ -106,7 +106,7 @@ async function create(req) {
  // if (await User.findOne({ where: { newUser: req.newUser } })) {
  //   throw 'Email "' + req.newName + '" is already registered';
 //}
-console.log(req.body.newUser)
+console.log(req.body.newName)
 console.log(req.body.newPassword)
 const user = new User(req);
 
