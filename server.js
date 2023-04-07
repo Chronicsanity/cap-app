@@ -110,8 +110,7 @@ app.post('/data', async function (req, res) {
    //   throw 'Email "' + req.newName + '" is already registered';
   //}
   const user = new User(req);
-  console.log(req.body.username)
-  console.log(req.body.password)
+ 
   // hash password
   user.password = await bcrypt.hash(req.password, 10);
     user.id = await generateID(2, 10);
