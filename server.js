@@ -122,7 +122,7 @@ async function create(req) {
 
 }
 
-app.post('/create', async function (req, res) {
+app.post('/data', async function (req, res) {
 
 const newUser = create(req.body.newName, req.body.newPassword);
 res.render('/data', {newUser : newUser})
