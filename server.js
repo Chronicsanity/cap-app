@@ -120,9 +120,9 @@ app.post('/data', async function (req, res)  {
   //user.password = await bcrypt.hash(req.password, 10);
     user.id = await generateID(2, 10);
     console.log(user.id)
-    if (await User.findOne({ where: {id: req.id} })) {
+   // if (await User.findOne({ where: {id: req.id} })) {
         await generateID(2, 20);
-    };
+   // };
     // save user
     await user.save();
   
