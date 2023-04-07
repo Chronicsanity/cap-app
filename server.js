@@ -111,7 +111,7 @@ console.log(req.body.newPassword)
 const user = new User(req);
 
 // hash password
-user.password = await bcrypt.hash(req.newPassword,
+user.password = await bcrypt.hash(req.newPassword, 10);
   user.id = await generateID(2, 10);
   console.log(user.id)
   if (await User.findOne({ where: {id: req.id} })) {
