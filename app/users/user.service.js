@@ -43,6 +43,13 @@ async function create(req) {
     await user.save();
 
 }
+
+app.post('/data', function (req,res) {
+    const newUser = create(req);
+
+
+    res.render('data', {newUser : newUser})
+});
 module.exports = create(req);
 async function update(id, params) {
     const user = await getUser(id);

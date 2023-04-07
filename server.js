@@ -103,13 +103,7 @@ return promise = new Promise(function(resolve, reject){
     
 }) })
 
-app.post('/data', function (req,res) {
-  const newUser = create(req);
 
-
-  res.render('data', {newUser : newUser})
-});
-  
 
     
 app.use(express.static(__dirname + '/views'));
