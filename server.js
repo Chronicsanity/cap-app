@@ -113,7 +113,7 @@ app.post('/data', async function (req, res) {
   const user = new User(req);
  
   // hash password
-  user.password = await bcrypt.hash(req.password, 10);
+  user.password = await bcrypt.hash(req.body.password, 10);
     user.id = await generateID(2, 10);
     console.log(user.id)
     if (await User.findOne({ where: {id: req.id} })) {
