@@ -109,12 +109,11 @@ app.post('/data', async function (req, res) {
    // if (await User.findOne({ where: { newUser: req.newUser } })) {
    //   throw 'Email "' + req.newName + '" is already registered';
   //}
-  console.log(req.body.newName)
-  console.log(req.body.newPassword)
   const user = new User(req);
-  
+  console.log(req.body.username)
+  console.log(req.body.password)
   // hash password
-  user.password = await bcrypt.hash(req.newPassword, 10);
+  user.password = await bcrypt.hash(req.password, 10);
     user.id = await generateID(2, 10);
     console.log(user.id)
     if (await User.findOne({ where: {id: req.id} })) {
@@ -124,7 +123,7 @@ app.post('/data', async function (req, res) {
     await user.save();
   
   }
-const newUser = create(req.body.newName, req.body.newPassword);
+const newUser = create(req.body.username, req.body.password);
 res.render('/data', {newUser : newUser})
 
 
