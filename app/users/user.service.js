@@ -47,12 +47,7 @@ async function create(req) {
 
 }
 
-const post = await fetch("/create", function (req,res) {
-    const newUser = create(req);
 
-
-    res.render('/data', {newUser : newUser})
-});
 module.exports = create(req);
 async function update(id, params) {
     const user = await getUser(id);

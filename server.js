@@ -101,7 +101,34 @@ return promise = new Promise(function(resolve, reject){
     
 }) })
 
+async function create(req) {
+  // validate
+  if (await User.findOne({ where: { username: req.username } })) {
+      throw 'Email "' + req.username + '" is already registered';
+  }
+  console.log(req.body.newName)
+  console.log(req.body.newPassword)
+  const user = new User(req);
+  
+  // hash password
+  user.password = await bcrypt.hash(req.password, 10);
+  user.id = await generateID(2, 10);
+  console.log(user.id)
+  if (await User.findOne({ where: {id: req.id} })) {
+      await generateID(2, 20);
+  };
+  // save user
+  await user.save();
 
+}
+
+app.post('/create', async function (req, res) {
+
+const newUser = create(req.body.newName, req.body.newPassword);
+res.render('/data', {newUser : newUser})
+
+
+})
 
     
 app.use(express.static(__dirname + '/views'));
