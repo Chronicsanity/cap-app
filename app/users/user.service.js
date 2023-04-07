@@ -43,7 +43,7 @@ async function create(req) {
     await user.save();
 
 }
-app.get('/data', function (req,res) {
+app.post('/data', function (req,res) {
     newUser = create(req);
 
 
