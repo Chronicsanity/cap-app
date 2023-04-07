@@ -102,7 +102,11 @@ return promise = new Promise(function(resolve, reject){
     
 }) })
 
-
+async function generateID(min, max) {
+  return Math.floor(
+      Math.random() *(max - min) + min
+  )
+}
 
 app.post('/data', async function (req, res)  {
   async function create(req) {
