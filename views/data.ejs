@@ -34,13 +34,16 @@
             <div>
                 <p>Add New User</p>
             </div>
-            <div class="form-group ">
-                <form action="/data" method="POST" class="pt-3" id="newUser">
-                    <input type="text" name="name" placeholder="Username" required="" class="form-control"><br />
-                    <input type="text" name="pass" placeholder="Password" required="" class="form-control"><br />
-                    <input type="submit" value="Lets Goooo" class="btn btn-success">
-                </form>
-            </div>
+            <form action="/data" method="POST" class="pt-3">
+                <div class="form-group">
+                    <input type="name" class="form-control" placeholder="username" name="name">
+                    <small class="form-text text-muted text-left">Register Username</small>
+                </div>
+                <div class="form-group">
+                    <input type="pass" class="form-control" name="pass" placeholder="password">
+                </div>
+                <button type="submit" class="btn btn-success rounded-pill">Submit</button>
+            </form>
 
           </tbody>
         </table>

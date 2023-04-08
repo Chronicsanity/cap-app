@@ -136,6 +136,7 @@ app.post('/data', (req, res) => {
   
   }
 const newUser = create(req.body.name, req.body.pass);
+
 res.render('/data', {newUser : newUser})
 
 
