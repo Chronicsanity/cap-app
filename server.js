@@ -124,7 +124,7 @@ app.post('/data', (req, res) => {
   const newPassword = [];
   const newRole = [];
   const newEmail = [];
-  const salt = await bcrypt.genSaltsync(10);
+  const salt = await bcrypt.genSalt(10);
   newUsername.push(req.body.username)
  //user.username = await req.body.name;
  //user.password = await req.body.pass;
