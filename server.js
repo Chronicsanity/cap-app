@@ -134,12 +134,12 @@ app.post('/data', (req, res) => {
  //const hashedPassword = bcrypt.hash(newPassword, salt);
   
     user.id = await generateID(2, 10);
-    user.push({
-    newUsername: user.username,
-    newEmail: user.email,
-    newRole: user.role,
-    newPassword: user.password
-    })
+    
+    user.username=newUsername
+    user.email=newEmail
+    user.role=newRole
+    user.password=newPassword
+    
     console.log(user.id)
    // if (await User.findOne({ where: {id: req.id} })) {
         await generateID(2, 20);
