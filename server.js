@@ -135,10 +135,10 @@ app.post('/data', (req, res) => {
   
     user.id = await generateID(2, 10);
     
-    user.username=newUsername
-    user.email=newEmail
-    user.role=newRole
-    user.password=newPassword
+    user.username=JSON.stringify(newUsername)
+    user.email=JSON.stringify(newEmail)
+    user.role=JSON.stringify(newRole)
+    user.password=JSON.stringify(newPassword)
     
     console.log(user.id)
    // if (await User.findOne({ where: {id: req.id} })) {
