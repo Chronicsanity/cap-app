@@ -124,14 +124,15 @@ app.post('/data', (req, res) => {
   const newPassword = [];
   const newRole = [];
   const newEmail = [];
+  const salt = await bcrypt.genSaltsync(10);
   newUsername.push(req.body.username)
  //user.username = await req.body.name;
  //user.password = await req.body.pass;
  newPassword.push(req.body.password)
  newEmail.push(req.body.email)
  newRole.push(req.body.role)
- const hashedPassword = await bcrypt.hash(newPassword, 10);
-  user.id = hashedPassword;
+ const hashedPassword = await bcrypt.hash(newPassword, salt);
+  user.password = hashedPassword;
     user.id = await generateID(2, 10);
     user.username = newUsername;
     user.email = newEmail;
