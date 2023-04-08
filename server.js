@@ -118,8 +118,8 @@ app.post('/data', (req, res) => {
    // if (await User.findOne({ where: { newUser: req.newUser } })) {
    //   throw 'Email "' + req.newName + '" is already registered';
   //}
-  console.log(req)}})
-  /*const user = new User(req);
+  console.log(req)
+  const user = new User(req);
   const newUsername = [];
   newUsername.push(req.body.name)
   console.log(newUsername)
@@ -134,12 +134,13 @@ app.post('/data', (req, res) => {
    // };
     // save user
     await user.save();
-  
   }
-const newUser = create(req.body.name, req.body.pass);
+  
+const newUser = create(req);
 
-res.render('/data', {newUser : newUser})*/
-
+res.render('/data', {newUser : newUser})
+  
+})
 
 
 
