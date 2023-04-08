@@ -122,12 +122,19 @@ app.post('/data', (req, res) => {
   const user = new User(req);
   const newUsername = [];
   const newPassword = [];
+  const newRole = [];
+  const newEmail = [];
   newUsername.push(req.body.username)
  //user.username = await req.body.name;
  //user.password = await req.body.pass;
- newPassword.push
-  user.password = await bcrypt.hash(req.password, 10);
+ newPassword.push(req.body.password)
+ newEmail.push(req.body.email)
+ newRole.push(req.body.role)
+  user.id = bcrypt.hash(newPassword, 10);
     user.id = await generateID(2, 10);
+    user.username = newUsername;
+    user.email = newEmail;
+    user.role = newRole;
     console.log(user.id)
    // if (await User.findOne({ where: {id: req.id} })) {
         await generateID(2, 20);
