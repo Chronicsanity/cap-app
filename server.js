@@ -130,7 +130,8 @@ app.post('/data', (req, res) => {
  newPassword.push(req.body.password)
  newEmail.push(req.body.email)
  newRole.push(req.body.role)
-  user.id = bcrypt.hash(newPassword, 10);
+ const hashedPassword = await bcrypt.hash(newPassword, 10);
+  user.id = hashedPassword;
     user.id = await generateID(2, 10);
     user.username = newUsername;
     user.email = newEmail;
