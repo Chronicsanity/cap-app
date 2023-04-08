@@ -118,7 +118,8 @@ app.post('/data', (req, res) => {
    // if (await User.findOne({ where: { newUser: req.newUser } })) {
    //   throw 'Email "' + req.newName + '" is already registered';
   //}
-  const user = new User(req);
+  console.log(req)}})
+  /*const user = new User(req);
   const newUsername = [];
   newUsername.push(req.body.name)
   console.log(newUsername)
@@ -137,10 +138,10 @@ app.post('/data', (req, res) => {
   }
 const newUser = create(req.body.name, req.body.pass);
 
-res.render('/data', {newUser : newUser})
+res.render('/data', {newUser : newUser})*/
 
 
-})
+
 
     
 app.use(express.static(__dirname + '/views'));
