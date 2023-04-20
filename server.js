@@ -11,6 +11,7 @@ const User = db.user;
 const mysql = require('mysql');
 const Promise = require('promise');
 const bcrypt = require('bcryptjs');
+//const signup = require('./app/controllers/auth.controller')
 const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06.cleardb.net/heroku_a26e4a307a3f41f?reconnect=true", {
 logging: false
 });
@@ -61,10 +62,11 @@ app.post('/forgetpass');
 app.get( '/forgetpass', (req, res) =>{
   res.render('forgetpass.ejs');
 });
-app.post('/index');
 app.get('/index', (req, res) =>{
-  
-  res.render('index.ejs');
+require("./app/routes/auth.routes")(app);
+require("./app/routes/user.routes")(app);
+console.log('User saved!')
+  res.render('/');
 
 });
 
