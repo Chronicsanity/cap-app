@@ -162,7 +162,7 @@ if (submit === "deleteUser") {
 console.log ("User has been removed.");
   }
 const deleteUser = _delete(req)
-res.render('/data', {User: deleteUser})
+res.render('/data')
 
 }
 })
