@@ -70,8 +70,8 @@ exports.signin = async (req, res) => {
       password: req.body.password
       }
     });
-    const userPass = user.password
-    const savedPass = db.password 
+    const userPass = await user.password
+    const savedPass = await db.password 
 
   if (!user) {
       return app.use(flash("User not found")),
