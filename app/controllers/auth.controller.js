@@ -78,6 +78,7 @@ exports.signin = async (req, res) => {
     }
    else if (app.get('/signin'), (req, res) => {
     bcrypt.compare(user.password, db.password)
+    console.log(user.password, db.password)
     return res.status(404).send({ message: "User Not found."}, 
 
 
