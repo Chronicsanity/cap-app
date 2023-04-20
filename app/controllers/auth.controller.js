@@ -67,7 +67,7 @@ exports.signin = async (req, res) => {
     const user = await User.findOne({ 
       where: {
       username: req.body.username,
-      password: req.body.password
+      password: bcrypt.hashSync(req.body.password, 8)
       }
     });
 
