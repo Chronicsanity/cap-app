@@ -112,9 +112,9 @@ async function generateID(min, max) {
 }
 
 app.post('/data', (req, res) => {
-const submit = req.body.submit;
+//const submit = req.body.submit;
 
-if (submit === "newUser_button") {
+//if (submit === "newUser_button") {
   async function create(req) {
     // validate
    // if (await User.findOne({ where: { newUser: req.newUser } })) {
@@ -148,14 +148,14 @@ if (submit === "newUser_button") {
    };
     // save user
     await user.save();
-  }
+ // }
   
 const newUser = create(req);
 
 res.render('/data', {newUser : newUser})
   
 }
-if (submit === "deleteUser") {
+/*if (submit === "deleteUser") {
   async function _delete(req) {
   const user = await getUser(req.body.username)
   console.log (user)
@@ -165,7 +165,7 @@ console.log ("User has been removed.");
 _delete(req);
 res.render('/data')
 
-}
+}*/
 })
 
 
