@@ -64,25 +64,20 @@ exports.signup = async (req, res) => {
 exports.signin = async (req, res) => {
 
   try {
-    /*const user = await User.findOne({ 
+    const user = await User.findOne({ 
       where: {
       username: req.body.username,
-      password: req.body.password
       }
-    });*/
-    //const userPass = await user.password
-    const savedPass = await User.findOne({
-      where: {username: req.body.username}
-    })
-   // console.log(userPass)
-    console.log(savedPass.password)
-    console.log(req.body.password)
-  /*if (!user) {
+    });
+    const userPass = await req.body.password;
+    const savedPass = await user.password;
+
+  if (!user) {
       return app.use(flash("User not found")),
         await new Promise(resolve => setTimeout(resolve, 5000)),
       res.render('login');
     }
-   else if (bcrypt.compare(savedPass, userPass) === false)
+   else if (bcrypt.compare(userPass, savedPass) === false)
    {
     return res.render('login');
     };
@@ -92,7 +87,7 @@ exports.signin = async (req, res) => {
   
     let authorities = [];
 
-    req.session.token = token;*/
+    req.session.token = token;
   }
   
 finally {res.render('dashboard');}};
