@@ -63,9 +63,12 @@ app.get( '/forgetpass', (req, res) =>{
   res.render('forgetpass.ejs');
 });
 app.get('/index', (req, res) =>{
-controller.signup;
 res.render('index')
 });
+app.post('/index', (req, res) => {
+controller.signin;
+res.render('login')
+})
 
 
 
