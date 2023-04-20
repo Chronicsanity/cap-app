@@ -70,13 +70,15 @@ exports.signin = async (req, res) => {
       password: req.body.password
       }
     });
+    const userPass = user.password
+    const savedPass = db.password 
 
   if (!user) {
       return app.use(flash("User not found")),
         await new Promise(resolve => setTimeout(resolve, 5000)),
       res.render('login');
     }
-   else if (bcrypt.compare(user.password, db.password) === false)
+   else if (bcrypt.compare(userPass, savedPass) === false)
    {
     return res.render('login');
     };
