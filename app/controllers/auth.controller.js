@@ -74,7 +74,7 @@ exports.signin = async (req, res) => {
   if (!user) {
       return app.use(flash("User not found")),
         await new Promise(resolve => setTimeout(resolve, 5000)),
-      res.redirect('login');
+      res.render('login');
     }
    else if (app.get('/signin'), (req, res) => {
     bcrypt.compare(user.password, db.password)
