@@ -65,7 +65,7 @@ app.get( '/forgetpass', (req, res) =>{
 app.get('/index', (req, res) =>{
 res.render('index')
 });
-app.post('/index', (req, res) => {
+app.post('/', (req, res) => {
 controller.signin;
 res.render('login')
 })
