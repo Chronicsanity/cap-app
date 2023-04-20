@@ -154,7 +154,7 @@ const newUser = create(req);
 
 res.render('/data', {newUser : newUser})
   
-}
+
 /*if (submit === "deleteUser") {
   async function _delete(req) {
   const user = await getUser(req.body.username)
