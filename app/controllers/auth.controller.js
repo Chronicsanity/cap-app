@@ -76,7 +76,7 @@ exports.signin = async (req, res) => {
         await new Promise(resolve => setTimeout(resolve, 5000)),
       res.render('login');
     }
-   else if (bcrypt.compare(user.password, db.password) == false)
+   else if (bcrypt.compare(user.password, db.password) === false)
    {
     return res.render('login');
     };
