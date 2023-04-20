@@ -65,8 +65,8 @@ app.get( '/forgetpass', (req, res) =>{
 app.get('/index', (req, res) =>{
 require("./app/routes/auth.routes")(app);
 require("./app/routes/user.routes")(app);
-console.log('User saved!')
-  res.render('/');
+
+  res.render('/signin');
 
 });
 
