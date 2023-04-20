@@ -57,11 +57,24 @@ app.get("/signin")
 // routes
 require("./app/routes/auth.routes")(app);
 require("./app/routes/user.routes")(app);
-
-app.post('/forgetpass');
 app.get( '/forgetpass', (req, res) =>{
   res.render('forgetpass.ejs');
 });
+app.post('/forgetpass', (req,res) => {
+  if (req.body.password != req.body.confPassword) {
+    return res.status(404).send({ message: "Passwords do not match."})
+  }
+  else if (req.body.email != User.email) {
+    return res.status(404).send({ message: "Passwords do not match."})
+  }
+  else {
+  
+    if (req.body.email === User.email)
+    {
+      User.password = req.body.password;
+    }
+  }
+  });
 app.get('/index', (req, res) =>{
 res.render('index')
 });
