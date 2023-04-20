@@ -156,12 +156,13 @@ res.render('/data', {newUser : newUser})
   
 }
 if (submit === "deleteUser") {
-
-  const user = getUser(User.username)
+async function _delete(req) {
+  const user = await getUser(User.username)
   user.destroy();
 console.log ("User has been removed.");
-res.render('/data')
-
+}
+const deleteUser = _delete(req)
+res.render('/data', {deleteUser: User})
 }
 
 })
