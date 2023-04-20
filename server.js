@@ -71,7 +71,7 @@ app.post('/forgetpass', (req,res) => {
   
     if (req.body.email === User.email)
     {
-      User.password = req.body.password;
+      User.password = bcrypt.hashSync(req.body.password, 8);
     }
   }
   });
