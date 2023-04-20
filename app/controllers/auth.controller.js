@@ -64,13 +64,13 @@ exports.signup = async (req, res) => {
 exports.signin = async (req, res) => {
 
   try {
-    const user = await User.findOne({ 
+    /*const user = await User.findOne({ 
       where: {
       username: req.body.username,
       password: req.body.password
       }
-    });
-    const userPass = await user.password
+    });*/
+    //const userPass = await user.password
     const savedPass = await User.password 
     console.log(userPass)
     console.log(savedPass)
