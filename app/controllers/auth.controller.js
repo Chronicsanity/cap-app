@@ -71,7 +71,7 @@ exports.signin = async (req, res) => {
       }
     });
     const userPass = await user.password
-    const savedPass = await db.password 
+    const savedPass = await User.password 
     console.log(userPass)
     console.log(savedPass)
   if (!user) {
