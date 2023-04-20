@@ -71,10 +71,12 @@ exports.signin = async (req, res) => {
       }
     });*/
     //const userPass = await user.password
-    const savedPass = await User.password 
+    const savedPass = await User.findOne({
+      where: {password:req.body.password}
+    })
    // console.log(userPass)
     console.log(savedPass)
-    console.log(db.user)
+    console.log(req.body.password)
   /*if (!user) {
       return app.use(flash("User not found")),
         await new Promise(resolve => setTimeout(resolve, 5000)),
