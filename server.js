@@ -65,7 +65,7 @@ app.post('/forgetpass', (req,res) => {
     return res.status(404).send({ message: "Passwords do not match."})
   }
   else if (req.body.email != User.email) {
-    return res.status(404).send({ message: "Passwords do not match."})
+    return res.status(404).send({ message: "No such email."})
   }
   else {
   
