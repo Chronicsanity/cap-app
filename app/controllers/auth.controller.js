@@ -74,15 +74,12 @@ exports.signin = async (req, res) => {
   if (!user) {
       return app.use(flash("User not found")),
         await new Promise(resolve => setTimeout(resolve, 5000)),
-      res.render('login');
+      res.redirect('login');
     }
-   else if (app.get('/signin'), (req, res) => {
-    bcrypt.compare(user.password, db.password)
-    console.log(user.password, db.password)
+   else if (bcrypt.compare(user.password, db.password) == false)
+   {
     return res.status(404).send({ message: "User Not found."}, 
-
-
-   )});
+    )};
     const token = jwt.sign({ id: user.id }, authConfig.secret, {
       expiresIn: 86400, // 24 hours
     });
@@ -90,8 +87,8 @@ exports.signin = async (req, res) => {
     let authorities = [];
 
     req.session.token = token;
-    
   }
+  
 finally {res.render('dashboard');}};
 
 
