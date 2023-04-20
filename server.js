@@ -162,7 +162,7 @@ async function _delete(req) {
 console.log ("User has been removed.");
 }
 const deleteUser = _delete(req)
-res.render('/data', {deleteUser: User})
+res.render('/data', {User: deleteUser})
 }
 
 })
