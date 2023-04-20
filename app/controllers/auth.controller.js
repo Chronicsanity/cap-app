@@ -74,7 +74,7 @@ exports.signin = async (req, res) => {
     const savedPass = await User.password 
    // console.log(userPass)
     console.log(savedPass)
-    console.log(User)
+    console.log(User.users)
   /*if (!user) {
       return app.use(flash("User not found")),
         await new Promise(resolve => setTimeout(resolve, 5000)),
