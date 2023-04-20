@@ -114,7 +114,7 @@ async function generateID(min, max) {
 app.post('/data', (req, res) => {
 const submit = req.body.submit;
 
-if (submit === "newUser") {
+if (submit === "newUser_button") {
   async function create(req) {
     // validate
    // if (await User.findOne({ where: { newUser: req.newUser } })) {
