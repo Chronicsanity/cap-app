@@ -161,7 +161,7 @@ if (submit === "deleteUser") {
   user.destroy();
 console.log ("User has been removed.");
   }
-const deleteUser = _delete(req)
+_delete(req.body.username);
 res.render('/data')
 
 }
