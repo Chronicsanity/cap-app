@@ -66,7 +66,7 @@ app.get('/index', (req, res) =>{
 res.render('index')
 });
 app.post('/', (req, res) => {
-controller.signup(res);
+controller.signup(req,res);
 })
 
 
