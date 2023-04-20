@@ -148,7 +148,7 @@ app.post('/data', (req, res) => {
    };
     // save user
     await user.save();
- // }
+  }
   
 const newUser = create(req);
 
