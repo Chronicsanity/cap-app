@@ -48,7 +48,7 @@ async function create(req) {
 }
 
 
-module.exports = create(req);
+
 async function update(id, params) {
     const user = await getUser(id);
 

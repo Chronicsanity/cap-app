@@ -10,7 +10,8 @@ const db = require("./app/models/index");
 const User = db.user;
 const mysql = require('mysql');
 const Promise = require('promise');
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs');
+const _delete = require ('.app/users/user.service')
 const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06.cleardb.net/heroku_a26e4a307a3f41f?reconnect=true", {
 logging: false
 });
@@ -112,7 +113,9 @@ async function generateID(min, max) {
 }
 
 app.post('/data', (req, res) => {
+const submit = req.body.submit;
 
+if (submit === "newUser") {
   async function create(req) {
     // validate
    // if (await User.findOne({ where: { newUser: req.newUser } })) {
@@ -141,9 +144,9 @@ app.post('/data', (req, res) => {
     user.password=JSON.stringify(newPassword)
     
     console.log(user.id)
-   // if (await User.findOne({ where: {id: req.id} })) {
+    if (await User.findOne({ where: {id: req.id} })) {
         await generateID(2, 20);
-   // };
+   };
     // save user
     await user.save();
   }
@@ -152,6 +155,16 @@ const newUser = create(req);
 
 res.render('/data', {newUser : newUser})
   
+}
+if (submit === "deleteUser") {
+
+  const user = getUser(User.username)
+  user.destroy();
+console.log ("User has been removed.");
+res.render('/data')
+
+}
+
 })
 
 
