@@ -72,10 +72,10 @@ exports.signin = async (req, res) => {
     });*/
     //const userPass = await user.password
     const savedPass = await User.password 
-    console.log(userPass)
+   // console.log(userPass)
     console.log(savedPass)
     console.log(User.password)
-  if (!user) {
+  /*if (!user) {
       return app.use(flash("User not found")),
         await new Promise(resolve => setTimeout(resolve, 5000)),
       res.render('login');
@@ -90,7 +90,7 @@ exports.signin = async (req, res) => {
   
     let authorities = [];
 
-    req.session.token = token;
+    req.session.token = token;*/
   }
   
 finally {res.render('dashboard');}};
