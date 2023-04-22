@@ -57,7 +57,7 @@ exports.signup = async (req, res) => {
       transporter.sendMail({from: "sandbox.smtp.mailtrap.io", to: 'cameron_harcum@hotmail.com', subject: 'Testing', text: JSON.stringify(user) })
       
       
-      res.send("User created! Please wait while admin sets your role.")
+      res.send ({message : "User created! Please wait while admin sets your role."})
         
         
 
