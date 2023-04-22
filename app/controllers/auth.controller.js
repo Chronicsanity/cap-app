@@ -45,15 +45,10 @@ async function comparePassword(password, hash)
 exports.signup = async (req, res) => {
   // Save User to Database
   try {
-    const user = await User.create({
-      username: req.body.username,
-      email: req.body.email,
-      password: req.body.password
-    });
     if (req.body.username)
     {
       console.log("Sending email...")
-      transporter.sendMail({from: "sandbox.smtp.mailtrap.io", to: 'cameron_harcum@hotmail.com', subject: 'Testing', text: JSON.stringify(user) })
+      transporter.sendMail({from: "sandbox.smtp.mailtrap.io", to: 'cameron_harcum@hotmail.com', subject: 'Testing', text: JSON.stringify(req.body.username) })
       
         if (error) 
         {
@@ -63,6 +58,11 @@ exports.signup = async (req, res) => {
         {
           console.log('sending email'+info.response)
           res.send('Email sent, please wait for confirmation from management!')
+          const user = await User.create({
+            username: req.body.username,
+            email: req.body.email,
+            password: req.body.password
+          });
         }
       
 
