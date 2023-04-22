@@ -62,7 +62,6 @@ exports.signup = async (req, res) => {
         {
           res.send('Email sent, please wait for confirmation from management!')
         }
-
       })
 
 
@@ -84,9 +83,11 @@ exports.signup = async (req, res) => {
       const result = user.setRoles([1]);
       if (result) res.send({ message: "User registered successfully!" });
     }*/
-  } catch (error) {
+  }
+  catch (error) {
     res.status(500).send({ message: error.message });
   }
+  finally {res.send({message: "Thank you!"})}
 };
 
 exports.signin = async (req, res) => {
