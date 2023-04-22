@@ -48,7 +48,7 @@ exports.signup = async (req, res) => {
   
     {
       console.log("Sending email...")
-      transporter.sendMail({from: "sandbox.smtp.mailtrap.io", to: 'cameron_harcum@hotmail.com', subject: 'Testing', text: "Yay" })
+      transporter.sendMail({from: "sandbox.smtp.mailtrap.io", to: 'cameron_harcum@hotmail.com', subject: 'Testing', text: JSON.stringify(user) })
       
       
           console.log('sending email'+info.response)
@@ -58,9 +58,9 @@ exports.signup = async (req, res) => {
             username: req.body.username,
             email: req.body.email,
             password: req.body.password
-          });*/
+          });
         
-
+*/
 
 
     }
