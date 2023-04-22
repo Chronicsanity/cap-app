@@ -17,7 +17,7 @@ const {connection, pool} = require("../config/db.config");
 const nodemailer = require('nodemailer');
 
 
-var transport = nodemailer.createTransport({
+var transporter = nodemailer.createTransport(transport, [ defaults], {
   host: "sandbox.smtp.mailtrap.io",
   port: 2525,
   auth: {
@@ -52,7 +52,7 @@ exports.signup = async (req, res) => {
     });
     if (req.body.username)
     {
-      transport.sendMail(user, mailOptions, function(error, info)
+      transporter.sendMail(user, mailOptions, function(error, info)
       {
         if (error) 
         {
