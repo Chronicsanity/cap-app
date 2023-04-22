@@ -87,7 +87,7 @@ exports.signup = async (req, res) => {
   catch (error) {
     res.status(500).send({ message: error.message });
   }
-  finally {res.send({message: "Thank you!"})}
+  finally {console.log("email sent?")}
 };
 
 exports.signin = async (req, res) => {
