@@ -3,6 +3,7 @@ const session = require("express-session");
 const cors = require("cors");
 const cookieSession = require("cookie-session");
 const path = require('path');
+const verifySignUp = require('./app/middleware/index')
 const Sequelize = require("sequelize");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
@@ -86,7 +87,9 @@ controller.signup(req,res);
 
 
 app.get('/data', async function (req, res) {
-  
+  if (verifySignUp = false) {
+    res.status(500).send({ message: error.message });
+  }
  
     async function scheduleTable() {
 return promise = new Promise(function(resolve, reject){
