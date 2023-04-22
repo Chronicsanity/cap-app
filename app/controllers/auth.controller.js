@@ -50,7 +50,7 @@ exports.signup = async (req, res) => {
       email: req.body.email,
       password: req.body.password
     });
-    if (user)
+    if (user === true)
     {
       transport.sendMail(mailOptions, function(error, info)
       {
