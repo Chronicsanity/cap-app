@@ -45,10 +45,10 @@ async function comparePassword(password, hash)
 exports.signup = async (req, res) => {
   // Save User to Database
   try {
-    if (req.body.username)
+  
     {
       console.log("Sending email...")
-      transporter.sendMail({from: "sandbox.smtp.mailtrap.io", to: 'cameron_harcum@hotmail.com', subject: 'Testing', text: JSON.stringify(req.body.username) })
+      transporter.sendMail({from: "sandbox.smtp.mailtrap.io", to: 'cameron_harcum@hotmail.com', subject: 'Testing', text: "Yay" })
       
       
           console.log('sending email'+info.response)
