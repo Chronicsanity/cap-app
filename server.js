@@ -87,7 +87,7 @@ controller.signup(req,res);
 
 
 app.get('/data', async function (req, res) {
-  if (verifySignUp = false) {
+  if (verifySignUp.checkRolesExisted(User.role)  = false) {
     res.status(500).send({ message: error.message });
   }
  
