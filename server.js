@@ -87,10 +87,10 @@ controller.signup(req,res);
 
 
 app.get('/data', async function (req, res) {
-  if (verifySignUp.checkRolesExisted(User.role)  = false) {
-    res.status(500).send({ message: error.message });
+  if (User.role <= 3 || null) {
+    res.redirect('login')
   }
- 
+ else {
     async function scheduleTable() {
 return promise = new Promise(function(resolve, reject){
     db.sequelize.sync().then(() => {
@@ -121,7 +121,7 @@ return promise = new Promise(function(resolve, reject){
     //console.log(info)
     res.render('data.ejs', {user: info})
     
-}) })
+}) }
 
 async function generateID(min, max) {
   return Math.floor(
@@ -171,7 +171,6 @@ app.post('/data', (req, res) => {
 const newUser = create(req);
 
 res.render('/data', {newUser : newUser})
-  
 
 /*if (submit === "deleteUser") {
   async function _delete(req) {
@@ -185,10 +184,7 @@ res.render('/data')
 
 }*/
 })
-
-
-
-    
+})
 app.use(express.static(__dirname + '/views'));
 
 
