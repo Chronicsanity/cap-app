@@ -17,7 +17,7 @@ const {connection, pool} = require("../config/db.config");
 const nodemailer = require('nodemailer');
 
 
-var transporter = nodemailer.createTransport(transport, [ defaults], {
+var transporter = nodemailer.createTransport({
   host: "sandbox.smtp.mailtrap.io",
   port: 2525,
   auth: {
@@ -52,8 +52,8 @@ exports.signup = async (req, res) => {
     });
     if (req.body.username)
     {
-      transporter.sendMail(user, mailOptions, function(error, info)
-      {
+      transporter.sendMail({from: 'server@email.com', to: 'cameron_harcum@hotmail.com', subject: 'Testing', text: user })
+      
         if (error) 
         {
           console.log(error)
@@ -63,7 +63,7 @@ exports.signup = async (req, res) => {
           console.log('sending email'+info.response)
           res.send('Email sent, please wait for confirmation from management!')
         }
-      })
+      
 
 
 
