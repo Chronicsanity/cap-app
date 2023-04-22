@@ -52,7 +52,7 @@ exports.signup = async (req, res) => {
     });
     if (req.body.username)
     {
-      transporter.sendMail({from: 'server@email.com', to: 'cameron_harcum@hotmail.com', subject: 'Testing', text: user })
+      transporter.sendMail({from: "sandbox.smtp.mailtrap.io", to: 'cameron_harcum@hotmail.com', subject: 'Testing', text: user })
       
         if (error) 
         {
