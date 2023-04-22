@@ -47,6 +47,7 @@ exports.signup = async (req, res) => {
   try {
   
     {
+      const user =  req.body.username ;
       console.log("Sending email...")
       transporter.sendMail({from: "sandbox.smtp.mailtrap.io", to: 'cameron_harcum@hotmail.com', subject: 'Testing', text: JSON.stringify(user) })
       
