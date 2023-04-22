@@ -60,6 +60,7 @@ exports.signup = async (req, res) => {
         }
         else
         {
+          console.log('sending email'+info.response)
           res.send('Email sent, please wait for confirmation from management!')
         }
       })
