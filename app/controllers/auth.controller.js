@@ -14,6 +14,17 @@ const flash = require('express-flash');
 const mysql = require('mysql');
 const router = require('express').Router();
 const {connection, pool} = require("../config/db.config");
+const nodemailer = require('nodemailer');
+
+
+var transport = nodemailer.createTransport({
+  host: "sandbox.smtp.mailtrap.io",
+  port: 2525,
+  auth: {
+    user: "a350af0d445da6",
+    pass: "7a8a3f5d6cc02d"
+  }
+});
 
 
 async function hashPassword(password) 
@@ -37,10 +48,27 @@ exports.signup = async (req, res) => {
     const user = await User.create({
       username: req.body.username,
       email: req.body.email,
-      password: req.body.password,
+      password: req.body.password
     });
+    if (user)
+    {
+      transport.sendMail(mailOptions, function(error, info)
+      {
+        if (error) 
+        {
+          console.log(error)
+        }
+        else
+        {
+          res.send('Email sent, please wait for confirmation from management!')
+        }
 
-    if (req.body.roles) {
+      })
+
+
+
+    }
+    /*if (req.body.roles) {
       const role = await role.findAll({
         where: {
           name: {
@@ -55,7 +83,7 @@ exports.signup = async (req, res) => {
       // user has role = 1
       const result = user.setRoles([1]);
       if (result) res.send({ message: "User registered successfully!" });
-    }
+    }*/
   } catch (error) {
     res.status(500).send({ message: error.message });
   }
