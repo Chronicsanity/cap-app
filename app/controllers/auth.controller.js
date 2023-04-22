@@ -47,21 +47,20 @@ exports.signup = async (req, res) => {
   try {
   
     {
-      const user =  req.body.username ;
+      const user = await User.create({
+        username: req.body.username,
+        email: req.body.email,
+        password: req.body.password
+      });
+
       console.log("Sending email...")
       transporter.sendMail({from: "sandbox.smtp.mailtrap.io", to: 'cameron_harcum@hotmail.com', subject: 'Testing', text: JSON.stringify(user) })
       
       
-          console.log('sending email'+info.response)
-          res.send('Email sent, please wait for confirmation from management!')
-
-          /*const user = await User.create({
-            username: req.body.username,
-            email: req.body.email,
-            password: req.body.password
-          });
+      res.send({message: "User created! Please wait while admin sets your role."})
         
-*/
+        
+
 
 
     }
