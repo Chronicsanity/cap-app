@@ -87,7 +87,7 @@ controller.signup(req,res);
 
 
 app.get('/data', async function (req, res) {
- const result = verifySignUp(req, res, next);
+ const result = verifySignUp(req, res);
   console.log(result);
   if (User.roles === 1 || User.roles === 0) {
     res.redirect('login')
