@@ -87,7 +87,7 @@ controller.signup(req,res);
 
 
 app.get('/data', async function (req, res) {
-  const currUser = req.User
+  const currUser = req.body.username;
   console.log(currUser)
   if (User.roles === 1 || User.roles === 0) {
     res.redirect('login')
