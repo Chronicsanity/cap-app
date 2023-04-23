@@ -87,7 +87,7 @@ controller.signup(req,res);
 
 
 app.get('/data', async function (req, res) {
-  if (User.role <= 3 || null) {
+  if (User.role === 1 || User.role === 0) {
     res.redirect('login')
   }
  else {
