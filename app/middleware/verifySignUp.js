@@ -44,13 +44,15 @@ module.exports.checkRolesExisted = function(req, res, next) {
       if (!ROLES.includes(req.body.roles[i])) {
         res.status(400).send({
           message: "Failed! Role does not exist = " + req.body.roles[i]
+          
         });
-        return;
+        return false;
       }
     }
   }
   
   next();
+  return true;
 };
 
 
