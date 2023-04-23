@@ -87,7 +87,7 @@ controller.signup(req,res);
 
 
 app.get('/data', async function (req, res) {
-  console.log(db.username)
+  console.log(User.username)
   if (User.roles === 1 || User.roles === 0) {
     res.redirect('login')
   }
