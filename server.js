@@ -6,6 +6,7 @@ const path = require('path');
 const Sequelize = require("sequelize");
 const bodyParser = require("body-parser");
 const passport = require('passport');
+const { verifySignUp } = require("../middleware");
 const cookieParser = require("cookie-parser");
 const db = require("./app/models/index");
 const User = db.user;
@@ -56,7 +57,7 @@ app.get("/signin")
 // routes
 require("./app/routes/auth.routes")(app);
 require("./app/routes/user.routes")(app);
-/*
+
 app.get( '/forgetpass', (req, res) =>{
   res.render('forgetpass.ejs');
 });
@@ -86,9 +87,6 @@ controller.signup(req,res);
 
 app.get('/data', async function (req, res) {
   
-const user = req.user;
-console.log(user)
-
     async function scheduleTable() {
 return  new Promise(function(resolve, reject){
     db.sequelize.sync().then(() => {
@@ -181,9 +179,7 @@ console.log ("User has been removed.");
 _delete(req);
 res.render('/data')
 }
-
-
-}) */
+*/
 
 app.use(express.static(__dirname + '/views'));
 
