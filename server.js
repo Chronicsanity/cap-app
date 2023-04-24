@@ -191,9 +191,9 @@ res.render('/data')
 })
 app.use(express.static(__dirname + '/views'));
 
-
+*/
 
 const PORT = process.env.PORT || 43488;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
-});*/
+});
