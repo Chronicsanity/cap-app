@@ -3,7 +3,7 @@ const session = require("express-session");
 const cors = require("cors");
 const cookieSession = require("cookie-session");
 const path = require('path');
-const checkRolesExisted = require('./app/middleware/index').checkRolesExisted;
+const verifyRole = require('./app/middleware/index').checkRolesExisted;
 const Sequelize = require("sequelize");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
@@ -87,7 +87,7 @@ controller.signup(req,res);
 
 
 app.get('/data', async function (req, res) {
- const result = checkRolesExisted(req, res);
+ const result = verifyRole.checkRolesExisted(req, res);
   console.log(result);
   if (User.roles === 1 || User.roles === 0) {
     res.redirect('login')
