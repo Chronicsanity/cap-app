@@ -82,16 +82,15 @@ app.get('/index', (req, res) =>{
 res.render('index')
 });
 app.post('/', (req, res) => {
-//controller.signup(req,res);
+controller.signup(req,res);
 })
 
 
 
 app.get('/data', async function (req, res) {
   
-//const user = req.user;
-//console.log(user)
-// console.log(result);
+const user = req.user;
+console.log(user)
 
     async function scheduleTable() {
 return  new Promise(function(resolve, reject){
