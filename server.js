@@ -1,4 +1,4 @@
-/*const express = require("express");
+const express = require("express");
 const session = require("express-session");
 const cors = require("cors");
 const cookieSession = require("cookie-session");
@@ -81,15 +81,15 @@ app.get('/index', (req, res) =>{
 res.render('index')
 });
 app.post('/', (req, res) => {
-controller.signup(req,res);
+//controller.signup(req,res);
 })
 
 
 
 app.get('/data', async function (req, res) {
   
-const user = req.user;
-console.log(user)
+//const user = req.user;
+//console.log(user)
   console.log(result);
   if (User.roles === 1 || User.roles === 0) {
     res.redirect('login')
@@ -185,13 +185,14 @@ console.log ("User has been removed.");
   }
 _delete(req);
 res.render('/data')
-
 }
+*/
+
 })
 })
 app.use(express.static(__dirname + '/views'));
 
-*/
+
 
 const PORT = process.env.PORT || 43488;
 app.listen(PORT, () => {
