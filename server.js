@@ -5,14 +5,14 @@ const cookieSession = require("cookie-session");
 const path = require('path');
 const Sequelize = require("sequelize");
 const bodyParser = require("body-parser");
-const passport = require('passport');
+//const passport = require('passport');
 const cookieParser = require("cookie-parser");
 const db = require("./app/models/index");
 const User = db.user;
 const mysql = require('mysql');
 const Promise = require('promise');
 const bcrypt = require('bcryptjs');
-const controller = require("./app/controllers/auth.controller.js");
+//const controller = require("./app/controllers/auth.controller.js");
 const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06.cleardb.net/heroku_a26e4a307a3f41f?reconnect=true", {
 logging: false
 });
