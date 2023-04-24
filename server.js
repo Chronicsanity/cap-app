@@ -131,7 +131,7 @@ async function generateID(min, max) {
   )
 }
 */
-app.post('/data', (req, res) => {
+/*app.post('/data', (req, res) => {
 //const submit = req.body.submit;
 
 //if (submit === "newUser_button") {
@@ -184,10 +184,10 @@ console.log ("User has been removed.");
 _delete(req);
 res.render('/data')
 }
-*/
+
 
 })
-
+*/
 app.use(express.static(__dirname + '/views'));
 
 
