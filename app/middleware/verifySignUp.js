@@ -56,5 +56,5 @@ async function checkDuplicateUsernameOrEmail  (req, res, next) {
   next();
  
 }
-const verify = {checkDuplicateUsernameOrEmail, checkRolesExisted} 
+const verify = {checkDuplicateUsernameOrEmail: checkDuplicateUsernameOrEmail, checkRolesExisted: checkRolesExisted} 
 module.exports = { verify }
