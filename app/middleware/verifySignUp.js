@@ -49,7 +49,7 @@ async checkDuplicateUsernameOrEmail  (req, res, next) {
           message: "Failed! Role does not exist = " + req.body.roles[i]
           
         });
-        return;
+        return false;
       }
     }
   }
