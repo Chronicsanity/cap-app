@@ -38,7 +38,7 @@ async function checkDuplicateUsernameOrEmail  (req, res, next) {
   }
 };
 
-async function checkRolesExisted(req, res, next) {
+module.exports.checkRoleExists = async function (req, res, next) {
   if (req.body.roles) {
     for (let i = 0; i < req.body.roles.length; i++) {
       if (!ROLES.includes(req.body.roles[i])) {
@@ -54,5 +54,4 @@ async function checkRolesExisted(req, res, next) {
   next();
   return true;
 };
-module.exports = {checkRolesExisted: checkRolesExisted}
 
