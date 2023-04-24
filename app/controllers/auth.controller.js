@@ -44,7 +44,7 @@ async function comparePassword(password, hash)
 
 exports.signup = async (req, res) => {
   // Save User to Database
-  try {
+ /* try {
   
     {
       const user = await User.create({
@@ -80,12 +80,12 @@ exports.signup = async (req, res) => {
       // user has role = 1
       const result = user.setRoles([1]);
       if (result) res.send({ message: "User registered successfully!" });
-    }*/
+    }
   }
   catch (error) {
     res.status(500).send({ message: error.message });
   }
-  finally {console.log("email sent?")}
+  finally {console.log("email sent")}*/
 };
 
 exports.signin = async (req, res) => {
@@ -119,41 +119,6 @@ exports.signin = async (req, res) => {
   
 finally {res.render('dashboard');}};
 
-
-/*async function scheduleTable() { 
-
-  
-   await db.sequelize.sync().then(() => {
-    return new Promise ((resolve, reject) => {
-    User.findAll().then(res => {
-    const result = res
-    return resolve (result);
-  
-  
-    }).catch((error) => {
-    console.error('Failed to retrieve data : ', error);
-    
-    
-    
-    }).catch((error) => {
-    console.error('Unable to create table : ', error);
-    });
-  })
-}
-)}
-
-app.get('/data', async function (req, res) {
-
-const info = scheduleTable();
-
-  
-  res.render('data.ejs', {username: info})
-
-})
-*/
-exports.Test = function () {
-  console.log("test!")
-}
 
 exports.signout = async (req, res) => {
   try {
