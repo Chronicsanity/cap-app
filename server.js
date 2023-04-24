@@ -87,7 +87,7 @@ app.post('/', (req, res) => {
 */
 
 
-app.get('/data', async function (req, res) {
+/*app.get('/data', async function (req, res) {
   
 //const user = req.user;
 //console.log(user)
@@ -130,7 +130,7 @@ async function generateID(min, max) {
       Math.random() *(max - min) + min
   )
 }
-
+*/
 app.post('/data', (req, res) => {
 //const submit = req.body.submit;
 
