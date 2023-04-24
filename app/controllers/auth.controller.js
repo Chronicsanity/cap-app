@@ -17,7 +17,7 @@ const {connection, pool} = require("../config/db.config");
 const nodemailer = require('nodemailer');
 
 
-/*var transporter = nodemailer.createTransport({
+var transporter = nodemailer.createTransport({
   host: "sandbox.smtp.mailtrap.io",
   port: 2525,
   auth: {
@@ -87,8 +87,8 @@ exports.signup = async (req, res) => {
   }
   finally {console.log("email sent")}
 };
-*/
-exports.signin = async (req, res) => {
+
+/*exports.signin = async (req, res) => {
 
   try {
     const user = await User.findOne({ 
@@ -129,3 +129,4 @@ exports.signout = async (req, res) => {
   } catch (err) {
     return (err);
   }}
+*/
