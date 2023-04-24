@@ -7,7 +7,7 @@ const Sequelize = require("sequelize");
 const bodyParser = require("body-parser");
 //const passport = require('passport');
 const cookieParser = require("cookie-parser");
-//const db = require("./app/models/index");
+const db = require("./app/models/index");
 //const User = db.user;
 const mysql = require('mysql');
 const Promise = require('promise');
@@ -91,10 +91,7 @@ app.get('/data', async function (req, res) {
 //const user = req.user;
 //console.log(user)
 // console.log(result);
-  if (User.roles === 1 || User.roles === 0) {
-    res.redirect('login')
-  }
- else {
+
     async function scheduleTable() {
 return  new Promise(function(resolve, reject){
     db.sequelize.sync().then(() => {
@@ -125,7 +122,7 @@ return  new Promise(function(resolve, reject){
     //console.log(info)
     res.render('data.ejs', {user: info})
     
-}) }
+}) 
 
 async function generateID(min, max) {
   return Math.floor(
