@@ -56,14 +56,15 @@ exports.signup = async (req, res) => {
       console.log("Sending email...")
       transporter.sendMail({from: "sandbox.smtp.mailtrap.io", to: 'cameron_harcum@hotmail.com', subject: 'Testing', text: JSON.stringify(user) })
       
-      
+      if (req.body.roles = 0) {
       res.send ({message : "User created! Please wait while admin sets your role."})
         
-        
+      }
 
 
 
     }
+    
     /*if (req.body.roles) {
       const role = await role.findAll({
         where: {
