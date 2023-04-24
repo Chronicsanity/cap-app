@@ -17,7 +17,7 @@ const {connection, pool} = require("../config/db.config");
 const nodemailer = require('nodemailer');
 
 
-var transporter = nodemailer.createTransport({
+/*var transporter = nodemailer.createTransport({
   host: "sandbox.smtp.mailtrap.io",
   port: 2525,
   auth: {
@@ -25,7 +25,7 @@ var transporter = nodemailer.createTransport({
     pass: "7a8a3f5d6cc02d"
   }
 });
-
+*/
 
 async function hashPassword(password) 
   {
