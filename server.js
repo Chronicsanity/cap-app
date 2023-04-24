@@ -87,6 +87,9 @@ controller.signup(req,res);
 
 app.get('/data', [verifySignUp.checkRolesExisted], async function (req, res) {
 
+  if (verifySignUp.checkRolesExisted = false)
+  {res.redirect('login')}
+  else{
     async function scheduleTable() {
 return  new Promise(function(resolve, reject){
     db.sequelize.sync().then(() => {
@@ -117,8 +120,8 @@ return  new Promise(function(resolve, reject){
     //console.log(info)
     res.render('data.ejs', {user: info})
     
-}) 
-
+}) }
+  
 async function generateID(min, max) {
   return Math.floor(
       Math.random() *(max - min) + min
