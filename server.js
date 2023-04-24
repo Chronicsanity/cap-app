@@ -5,6 +5,7 @@ const cookieSession = require("cookie-session");
 const path = require('path');
 const Sequelize = require("sequelize");
 const bodyParser = require("body-parser");
+const passport = require('passport')
 const cookieParser = require("cookie-parser");
 const db = require("./app/models/index");
 const User = db.user;
@@ -87,7 +88,8 @@ controller.signup(req,res);
 
 app.get('/data', async function (req, res) {
   
- checkRolesExisted(req, res, next);
+const user = req.user;
+console.log(user)
   console.log(result);
   if (User.roles === 1 || User.roles === 0) {
     res.redirect('login')
