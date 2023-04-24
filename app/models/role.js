@@ -1,13 +1,13 @@
-/*module.exports = (sequelize, Sequelize) => {
+module.exports = (sequelize, Sequelize) => {
     const Role = sequelize.define("roles", {
       roleID: {
         type: Sequelize.INTEGER,
         primaryKey: true
       },
-      roleName: {
+      /*roleName: {
         type: Sequelize.STRING
-      }
+      }*/
     });
   
     return Role;
-  };*/
+  };
