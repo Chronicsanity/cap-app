@@ -62,7 +62,7 @@ require("./app/routes/user.routes")(app);
 app.get( '/forgetpass', (req, res) =>{
   res.render('forgetpass.ejs');
 });
-app.post('/forgetpass', (req,res) => {
+app.post('/forgetpass', (req, res) => {
   if (req.body.password != req.body.confPassword) {
     return res.status(404).send({ message: "Passwords do not match."})
   }
