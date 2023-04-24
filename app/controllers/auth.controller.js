@@ -25,7 +25,7 @@ const nodemailer = require('nodemailer');
     pass: "7a8a3f5d6cc02d"
   }
 });
-*/
+
 
 async function hashPassword(password) 
   {
@@ -44,7 +44,7 @@ async function comparePassword(password, hash)
 
 exports.signup = async (req, res) => {
   // Save User to Database
- /* try {
+  try {
   
     {
       const user = await User.create({
@@ -65,7 +65,7 @@ exports.signup = async (req, res) => {
 
     }
     
-    /*if (req.body.roles) {
+    if (req.body.roles) {
       const role = await role.findAll({
         where: {
           name: {
@@ -85,9 +85,9 @@ exports.signup = async (req, res) => {
   catch (error) {
     res.status(500).send({ message: error.message });
   }
-  finally {console.log("email sent")}*/
+  finally {console.log("email sent")}
 };
-
+*/
 exports.signin = async (req, res) => {
 
   try {
