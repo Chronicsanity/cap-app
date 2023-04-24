@@ -85,8 +85,8 @@ controller.signup(req,res);
 
 
 
-app.get('/data', async function (req, res) {
-  
+app.get('/data', [verifySignUp.checkRolesExisted], async function (req, res) {
+
     async function scheduleTable() {
 return  new Promise(function(resolve, reject){
     db.sequelize.sync().then(() => {
