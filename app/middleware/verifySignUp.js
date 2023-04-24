@@ -54,5 +54,5 @@ async function checkRolesExisted(req, res, next) {
   next();
   return true;
 };
-module.exports = {checkRolesExisted: checkRolesExisted, checkDuplicateUsernameOrEmail: checkDuplicateUsernameOrEmail}
+module.exports.checkRolesExisted = checkRolesExisted;
 
