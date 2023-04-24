@@ -51,12 +51,12 @@ db.sequelize.sync();
 app.get("/", (req, res) => {
   res.render('login', {title: "Login"});
 });
-/*
+
 app.get("/signin")
 // routes
 require("./app/routes/auth.routes")(app);
 require("./app/routes/user.routes")(app);
-
+/*
 app.get( '/forgetpass', (req, res) =>{
   res.render('forgetpass.ejs');
 });
