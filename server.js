@@ -46,11 +46,8 @@ app.use(
   })
 );
 
-
-const Role = db.role;
-
 db.sequelize.sync();
-
+/*
 app.get("/", (req, res) => {
   res.render('login', {title: "Login"});
 });
