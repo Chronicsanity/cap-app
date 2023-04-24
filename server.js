@@ -63,7 +63,7 @@ require("./app/routes/user.routes")(app);
 app.get( '/forgetpass', (req, res) =>{
   res.render('forgetpass.ejs');
 });
-/*app.post('/forgetpass', (req, res) => {
+app.post('/forgetpass', (req, res) => {
   if (req.body.password != req.body.confPassword) {
     return res.status(404).send({ message: "Passwords do not match."})
   }
@@ -84,10 +84,10 @@ res.render('index')
 app.post('/', (req, res) => {
 //controller.signup(req,res);
 })
-*/
 
 
-/*app.get('/data', async function (req, res) {
+
+app.get('/data', async function (req, res) {
   
 //const user = req.user;
 //console.log(user)
@@ -130,8 +130,8 @@ async function generateID(min, max) {
       Math.random() *(max - min) + min
   )
 }
-*/
-/*app.post('/data', (req, res) => {
+
+app.post('/data', (req, res) => {
 //const submit = req.body.submit;
 
 //if (submit === "newUser_button") {
@@ -173,7 +173,8 @@ async function generateID(min, max) {
 const newUser = create(req);
 
 res.render('/data', {newUser : newUser})
-
+})
+})
 /*if (submit === "deleteUser") {
   async function _delete(req) {
   const user = await getUser(req.body.username)
@@ -186,8 +187,8 @@ res.render('/data')
 }
 
 
-})
-*/
+}) */
+
 app.use(express.static(__dirname + '/views'));
 
 
