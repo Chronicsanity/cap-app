@@ -3,7 +3,6 @@ const session = require("express-session");
 const cors = require("cors");
 const cookieSession = require("cookie-session");
 const path = require('path');
-const { checkRolesExisted } = require("./app/middleware/verifySignUp");
 const Sequelize = require("sequelize");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
