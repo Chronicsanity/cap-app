@@ -48,7 +48,9 @@ module.exports.checkRolesExisted = async function(req, res) {
         });
         return false;
       }
+    
+    else {return true;}
     }
   }
-  return true;
+ 
 }
