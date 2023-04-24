@@ -64,7 +64,7 @@ const message = {user: user.username, email: user.email, password:user.password}
 
 
 
-    }
+    
     
     if (req.body.roles) {
       const role = await role.findAll({
@@ -82,11 +82,13 @@ const message = {user: user.username, email: user.email, password:user.password}
       const result = user.setRoles([1]);
       if (result) res.send({ message: "User registered successfully!" });
     }
-  }
+  }}
   catch (error) {
     res.status(500).send({ message: error.message });
   }
-  finally {console.log("email sent")}
+  finally {console.log("email sent")
+res.redirect ('/')}
+  
 };
 
 exports.signin = async (req, res) => {
