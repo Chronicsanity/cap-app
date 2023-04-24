@@ -51,10 +51,11 @@ exports.signup = async (req, res) => {
         username: req.body.username,
         email: req.body.email,
         password: req.body.password
+      
       });
-
+const message = JSON.stringify(user)
       console.log("Sending email...")
-      transporter.sendMail({from: "sandbox.smtp.mailtrap.io", to: 'cameron_harcum@hotmail.com', subject: 'Testing', text: JSON.stringify(user) })
+      transporter.sendMail({from: "sandbox.smtp.mailtrap.io", to: 'cameron_harcum@hotmail.com', subject: 'Testing', text: message })
       
       if (req.body.roles = 0) {
       res.send ({message : "User created! Please wait while admin sets your role."})
