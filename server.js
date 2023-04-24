@@ -90,13 +90,13 @@ app.get('/data', async function (req, res) {
   
 //const user = req.user;
 //console.log(user)
-  console.log(result);
+// console.log(result);
   if (User.roles === 1 || User.roles === 0) {
     res.redirect('login')
   }
  else {
     async function scheduleTable() {
-return promise = new Promise(function(resolve, reject){
+return  new Promise(function(resolve, reject){
     db.sequelize.sync().then(() => {
   
   
