@@ -187,7 +187,7 @@ res.render('/data')
 */
 
 })
-})
+
 app.use(express.static(__dirname + '/views'));
 
 
