@@ -88,7 +88,7 @@ exports.signup = async (req, res) => {
   finally {console.log("email sent")}
 };
 
-/*exports.signin = async (req, res) => {
+exports.signin = async (req, res) => {
 
   try {
     const user = await User.findOne({ 
@@ -129,4 +129,3 @@ exports.signout = async (req, res) => {
   } catch (err) {
     return (err);
   }}
-*/

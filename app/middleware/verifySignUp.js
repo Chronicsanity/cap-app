@@ -1,3 +1,4 @@
+const { verifySignUp } = require(".");
 const db = require("../models");
 const ROLES = db.ROLES;
 const User = db.user;
@@ -38,7 +39,7 @@ async function checkDuplicateUsernameOrEmail  (req, res, next) {
   }
 };
 
-module.exports.checkRolesExisted = async function(req, res) {
+ async function checkRolesExisted (req, res) {
   if (req.body.roles) {
     for (let i = 0; i < req.body.roles.length; i++) {
       if (!ROLES.includes(req.body.roles[i])) {
@@ -55,3 +56,5 @@ module.exports.checkRolesExisted = async function(req, res) {
   next();
  
 }
+const verifySignUp = {checkDuplicateUsernameOrEmail, checkRolesExisted} 
+module.exports = { verifySignUp }
