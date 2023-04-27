@@ -49,7 +49,6 @@ exports.signup = async (req, res) => {
     user.push(req.body.username)
     user.push(req.body.password)
     user.push(req.body.email)
-    user.push(req.body.role)
 
       };
       
