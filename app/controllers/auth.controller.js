@@ -46,19 +46,17 @@ exports.signup = async (req, res) => {
       
       });
       
-      if (req.body.roles = 0) {
-      res.send ({message : user + "added to cue!"})
-        
+     
       }
 
 
     }
-  }
+  
     
   catch (error) {
     res.status(500).send({ message: error.message });
   }
-  finally {console.log("email sent")
+  finally {console.log("added to queue!")
 res.redirect ('/')}
 }
 
