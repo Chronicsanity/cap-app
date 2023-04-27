@@ -82,7 +82,6 @@ res.render('index')
 });
 app.post('/', (req, res) => {
 controller.signup(req,res);
-res.render ('index')
 })
 
 
