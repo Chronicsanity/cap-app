@@ -44,21 +44,21 @@ exports.signup = async (req, res) => {
         email: req.body.email,
         password: req.body.password
       
-      });
-      
-     return user;
-      }
-
-
-    }
+     
+    })
+  return user;
+  }
+  }
   
-    
+ 
+        
   catch (error) {
     res.status(500).send({ message: error.message });
   }
-  finally {console.log("added to queue!")}
-}
+  finally {console.log("email sent")
 
+}
+};
 
 exports.signin = async (req, res) => {
 
