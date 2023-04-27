@@ -15,7 +15,7 @@ const mysql = require('mysql');
 const router = require('express').Router();
 const {connection, pool} = require("../config/db.config");
 const nodemailer = require('nodemailer');
-const QueuedUser = db.queuedUser;
+const QueuedUser = db.queuedUsers;
 
 
 
@@ -46,7 +46,7 @@ exports.signup = async (req, res) => {
       
       });
       
-     
+     return user;
       }
 
 
@@ -57,6 +57,7 @@ exports.signup = async (req, res) => {
     res.status(500).send({ message: error.message });
   }
   finally {console.log("added to queue!")
+  
 res.redirect ('/')}
 }
 
