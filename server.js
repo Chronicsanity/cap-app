@@ -8,13 +8,13 @@ const bodyParser = require("body-parser");
 const passport = require('passport');
 const { verifySignUp } = require("./app/middleware");
 const cookieParser = require("cookie-parser");
-const db = require("./app/models/index");
+const db = require("./app/models/index.js");
 const User = db.user;
 const Employee = db.employee;
 const mysql = require('mysql');
 const Promise = require('promise');
 const bcrypt = require('bcryptjs');
-const controller = require("./app/controllers/auth.controller");
+const controller = require("./app/controllers/auth.controller.js");
 const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06.cleardb.net/heroku_a26e4a307a3f41f?reconnect=true", {
 logging: false
 });

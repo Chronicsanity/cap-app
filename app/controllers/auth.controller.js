@@ -1,5 +1,5 @@
 const db = require("../models/index");
-const authConfig = require("../config/auth.config");
+const authConfig = require("../config/auth.config.js");
 const Sequelize = require("sequelize");
 const User = db.user;
 const Role = db.role;
@@ -13,7 +13,7 @@ const saltRounds = 8;
 const flash = require('express-flash');
 const mysql = require('mysql');
 const router = require('express').Router();
-const {connection, pool} = require("../config/db.config");
+const {connection, pool} = require("../config/db.config.js");
 const nodemailer = require('nodemailer');
 const QueuedUser = db.queuedUsers;
 
