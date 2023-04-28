@@ -68,7 +68,7 @@ exports.signup = async (req, res) => {
   catch (error) {
     res.status(500).send({ message: error.message });
   }
-  finally {console.log("Added to Queue!")
+  finally {console.log( req.body + "Added to Queue!")
 
 }
 }
