@@ -61,6 +61,7 @@ exports.signup = async (req, res) => {
     
         await user.save();
         }
+        makeNewUser();
       }
   
  
@@ -68,7 +69,7 @@ exports.signup = async (req, res) => {
   catch (error) {
     res.status(500).send({ message: error.message });
   }
-  finally { makeNewUser(), console.log("Added to Queue!")
+  finally {console.log("Added to Queue!")
 
 }
 }
