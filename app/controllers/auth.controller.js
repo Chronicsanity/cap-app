@@ -39,6 +39,7 @@ exports.signup = async (req, res) => {
   try {
   
     {
+    
       const user = await QueuedUser.create({
         username: req.body.username,
         email: req.body.email,
@@ -46,12 +47,16 @@ exports.signup = async (req, res) => {
       
      
     });
-    user.push(req.body.username)
-    user.push(req.body.password)
-    user.push(req.body.email)
+  const newUsername = [];
+  const newPassword = [];
+  const newEmail = [];
+    newUsername.push(user.username)
+    newPassword.push(user.password)
+    newEmail.push(user.email)
 
+    await user.save();
       };
-      
+    
     }
   
   
