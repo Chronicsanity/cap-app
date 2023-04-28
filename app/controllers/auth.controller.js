@@ -45,7 +45,7 @@ exports.signup = async (req, res) => {
         password: req.body.password
       
       })
-    console.log(req.body)
+
   
     
   
@@ -56,7 +56,7 @@ exports.signup = async (req, res) => {
         newUsername.push(user.username)
         newPassword.push(user.password)
         newEmail.push(user.email)
-    
+      console.log(newUsername)
     
         await user.save();
         }
@@ -69,7 +69,7 @@ exports.signup = async (req, res) => {
   catch (error) {
     res.status(500).send({ message: error.message });
   }
-  finally {console.log( JSON.stringify(req.body) + "Added to Queue!")
+  finally {console.log("Added to Queue!")
 
 }
 }
