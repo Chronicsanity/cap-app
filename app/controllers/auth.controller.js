@@ -45,7 +45,7 @@ exports.signup = async (req, res) => {
         password: req.body.password
       
       })
-    
+    console.log(req.body)
   
     
   
@@ -57,7 +57,6 @@ exports.signup = async (req, res) => {
         newPassword.push(user.password)
         newEmail.push(user.email)
     
-        console.log(user)
     
         await user.save();
         }
