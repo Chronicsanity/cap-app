@@ -38,41 +38,40 @@ exports.signup = async (req, res) => {
   // Save User to Database
   try {
   
-    {
     
       const user = await QueuedUser.create({
         username: req.body.username,
         email: req.body.email,
         password: req.body.password
       
-     
-    });
-  const newUsername = [];
-  const newPassword = [];
-  const newEmail = [];
-    newUsername.push(user.username)
-    newPassword.push(user.password)
-    newEmail.push(user.email)
-
-    console.log(user)
-
-    await user.save();
-      };
+      })
     
-    }
   
+    
   
-  
+    async function makeNewUser () {
+      const newUsername = [];
+      const newPassword = [];
+      const newEmail = [];
+        newUsername.push(user.username)
+        newPassword.push(user.password)
+        newEmail.push(user.email)
+    
+        console.log(user)
+    
+        await user.save();
+        }
+      }
   
  
         
   catch (error) {
     res.status(500).send({ message: error.message });
   }
-  finally {console.log("Added to Queue!")
+  finally { makeNewUser(), console.log("Added to Queue!")
 
 }
-};
+}
 
 exports.signin = async (req, res) => {
 
