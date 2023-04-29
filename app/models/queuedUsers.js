@@ -9,7 +9,9 @@ module.exports = (sequelize, Sequelize) => {
 	  email: {
 		type: Sequelize.STRING
 	  },
-	
+	  userID: {
+		type: Sequelize.INT
+	  },
 	});
   
 	return QueuedUser;
