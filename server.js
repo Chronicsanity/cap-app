@@ -14,7 +14,7 @@ const Employee = db.employee;
 const mysql = require('mysql');
 const Promise = require('promise');
 const bcrypt = require('bcryptjs');
-const controller = require("./app/controllers/auth.controller.js");
+const controller = require("./app/controllers/auth.controller.js").signup;
 const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06.cleardb.net/heroku_a26e4a307a3f41f?reconnect=true", {
 logging: false
 });
@@ -80,8 +80,9 @@ app.post('/forgetpass', (req, res) => {
 app.get('/index', (req, res) =>{
 res.render('index')
 });
-app.post('/', (req, res) => {
-controller.signup(req,res);
+app.post('/', [controller.signup], async function (req, res) {
+res.redirect('login')
+
 })
 
 
