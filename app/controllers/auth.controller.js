@@ -51,8 +51,9 @@ exports.signup = async (req, res) => {
         userID: await generateID(min, max)
         })
         
+        
       
-    async function makeNewUser() {
+    async function makeNewUser(newUser) {
       const newUsername = [];
       const newPassword = [];
       const newEmail = [];
@@ -68,7 +69,7 @@ exports.signup = async (req, res) => {
     
         await user.save();
         console.log(user);
-        return user;
+        return makeNewUser();
   }
 }
       
@@ -79,13 +80,10 @@ exports.signup = async (req, res) => {
     res.status(500).send({ message: error.message });
   }
   finally {
-
-  
-      const user = makeNewUser();
     
    
   
-    console.log(JSON.stringify(user) + "Added to Queue!")
+    console.log( "Added to Queue!")
 
 }
 }
