@@ -53,25 +53,25 @@ exports.signup = async (req, res) => {
         
         
       
-    async function makeNewUser(newUser) {
+     
       const newUsername = [];
       const newPassword = [];
       const newEmail = [];
       const passwordConf = [];
       const newID = [];
-
-        newUsername.push(user.username)
-        newPassword.push(user.password)
-        passwordConf = user.passwordConf;
-        newEmail.push(user.email)
-        newID.push(user.userID)
-      
+        const makeNewUser = {
+        newUsername: newUsername.push(user.username),
+        newPassword: newPassword.push(user.password),
+        passwordConf: passwordConf = user.passwordConf,
+        newEmail: newEmail.push(user.email),
+        newID: newID.push(user.userID)
+        }
     
         await user.save();
         console.log(user);
-        return makeNewUser();
+        return makeNewUser;
   }
-}
+
       
   
  
