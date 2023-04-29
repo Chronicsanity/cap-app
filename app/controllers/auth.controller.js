@@ -70,7 +70,6 @@ exports.signup = async (req, res) => {
         console.log(user);
         return user;
   }
-  makeNewUser();
 }
       
   
@@ -80,14 +79,14 @@ exports.signup = async (req, res) => {
     res.status(500).send({ message: error.message });
   }
   finally {
-    if (user == null)
-    {
-      makeNewUser()
+
+  
+      const user = makeNewUser();
     
-    }
-    else {
+   
+  
     console.log(JSON.stringify(user) + "Added to Queue!")
-    }
+
 }
 }
 
