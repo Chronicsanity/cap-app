@@ -68,7 +68,9 @@ exports.signup = async (req, res) => {
         passwordConf: passwordConf,
         email: newEmail.push(user.email),
         id: newID.push(user.id),
-        "timestamps": false
+        "timestamps": false, 
+        createdAt: false,
+        updatedAt: false
         }
         console.log(makeNewUser);
       resolve(makeNewUser);
