@@ -49,7 +49,7 @@ exports.signup = async (req, res) => {
         username: req.body.username,
         email: req.body.email,
         password: req.body.password,
-        userID: await generateID(min, max)
+        userID: generateID(min, max)
         })
         
         
@@ -68,7 +68,7 @@ exports.signup = async (req, res) => {
         userID: newID.push(user.userID)
         }
     
-        await makeNewUser.save();
+         makeNewUser.save();
         console.log(makeNewUser);
       resolve(makeNewUser);
   
@@ -87,6 +87,7 @@ exports.signup = async (req, res) => {
   
     console.log( "Added to Queue!")
 
+}
 }
   
 
