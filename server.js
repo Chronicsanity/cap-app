@@ -81,8 +81,10 @@ app.get('/index', (req, res) =>{
 res.render('index')
 });
 app.post('/', (req, res) => {
-controller.signup(req, res);
-res.redirect('login');
+const result =  controller.signup(req, res);
+console.log(result);
+
+res.render('login');
 })
 
 
