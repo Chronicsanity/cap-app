@@ -84,7 +84,7 @@ app.post('/', (req, res) => {
 const result =  controller.signup(req, res);
 console.log(result);
 
-res.render('login');
+
 })
 
 
