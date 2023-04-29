@@ -38,21 +38,32 @@ exports.signup = async (req, res) => {
   // Save User to Database
   try {
   
+    async function generateID(min, max) {
+      return Math.floor(
+          Math.random() *(max - min) + min
+      )
+    }
     
       const user = await QueuedUser.create({
         username: req.body.username,
         email: req.body.email,
-        password: req.body.password
-      })
+        password: req.body.password,
+        userID: generateID(min, max)
+        })
+        
+      
     
       const newUsername = [];
       const newPassword = [];
       const newEmail = [];
       const passwordConf = [];
+      const newID = [];
+
         newUsername.push(user.username)
         newPassword.push(user.password)
         passwordConf = user.passwordConf;
         newEmail.push(user.email)
+        newID.push(user.userID)
       
     
         await user.save();
