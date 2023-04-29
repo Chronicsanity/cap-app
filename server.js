@@ -80,9 +80,9 @@ app.post('/forgetpass', (req, res) => {
 app.get('/index', (req, res) =>{
 res.render('index')
 });
-app.post('/', [controller.signup], async function (req, res) {
-res.redirect('login')
-
+app.post('/', (req, res) => {
+controller.signup(req, res);
+res.redirect('login');
 })
 
 
