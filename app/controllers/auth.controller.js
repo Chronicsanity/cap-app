@@ -37,6 +37,7 @@ async function comparePassword(password, hash)
 exports.signup = async (req, res) => {
   // Save User to Database
   try {
+    return new Promise((resolve, reject) => {
   
     async function generateID(min, max) {
       return Math.floor(
@@ -62,20 +63,21 @@ exports.signup = async (req, res) => {
         const makeNewUser = {
         username: newUsername.push(user.username),
         password: newPassword.push(user.password),
-        passwordConf: passwordConf = user.passwordConf,
+        passwordConf: passwordConf,
         email: newEmail.push(user.email),
         userID: newID.push(user.userID)
         }
     
         await makeNewUser.save();
         console.log(makeNewUser);
-        return makeNewUser;
-  }
-
+      resolve(makeNewUser);
+  
+      })
       
   
- 
-        
+      
+    }
+
   catch (error) {
     res.status(500).send({ message: error.message });
   }
@@ -86,7 +88,7 @@ exports.signup = async (req, res) => {
     console.log( "Added to Queue!")
 
 }
-}
+  
 
 exports.signin = async (req, res) => {
 
