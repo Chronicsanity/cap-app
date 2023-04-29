@@ -39,7 +39,9 @@ exports.signup = async (req, res) => {
   try {
     return new Promise((resolve, reject) => {
   
-    async function generateID(min, max) {
+    async function generateID() {
+      const min = Math.min;
+      const max = Math.max;
       return Math.floor(
           Math.random() *(max - min) + min
       )
@@ -49,7 +51,7 @@ exports.signup = async (req, res) => {
         username: req.body.username,
         email: req.body.email,
         password: req.body.password,
-        userID: generateID(min, max)
+        userID: generateID()
         })
         
         
