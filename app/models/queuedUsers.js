@@ -9,7 +9,7 @@ module.exports = (sequelize, Sequelize) => {
 	  email: {
 		type: Sequelize.STRING
 	  },
-	  userID: {
+	  id: {
 		type: Sequelize.INTEGER
 	  },
 	});

@@ -51,7 +51,7 @@ exports.signup = async (req, res) => {
         username: req.body.username,
         email: req.body.email,
         password: req.body.password,
-        userID: generateID()
+        id: generateID()
         })
         
         
@@ -67,7 +67,7 @@ exports.signup = async (req, res) => {
         password: newPassword.push(user.password),
         passwordConf: passwordConf,
         email: newEmail.push(user.email),
-        userID: newID.push(user.userID)
+        id: newID.push(user.id)
         }
         console.log(makeNewUser);
       resolve(makeNewUser);
