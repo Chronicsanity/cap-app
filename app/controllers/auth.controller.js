@@ -52,7 +52,7 @@ exports.signup = async (req, res) => {
         })
         
       
-    
+    async function makeNewUser() {
       const newUsername = [];
       const newPassword = [];
       const newEmail = [];
@@ -68,7 +68,10 @@ exports.signup = async (req, res) => {
     
         await user.save();
         console.log(user);
+        return user;
   }
+  makeNewUser();
+}
       
   
  
@@ -76,8 +79,15 @@ exports.signup = async (req, res) => {
   catch (error) {
     res.status(500).send({ message: error.message });
   }
-  finally {console.log("Added to Queue!")
-
+  finally {
+    if (user == null)
+    {
+      makeNewUser()
+    
+    }
+    else {
+    console.log(JSON.stringify(user) + "Added to Queue!")
+    }
 }
 }
 
