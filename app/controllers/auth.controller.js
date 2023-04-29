@@ -42,8 +42,7 @@ exports.signup = async (req, res) => {
       const user = await QueuedUser.create({
         username: req.body.username,
         email: req.body.email,
-        password: req.body.password,
-        passwordConf: req.body.passwordConf
+        password: req.body.password
       
       })
 
@@ -63,8 +62,9 @@ exports.signup = async (req, res) => {
     
         await user.save();
         
-      makeNewUser();
+      
     }
+    makeNewUser();
       }
   
  
