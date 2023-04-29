@@ -62,9 +62,9 @@ exports.signup = async (req, res) => {
       console.log(newUsername)
     
         await user.save();
-        }
+        
       makeNewUser();
-      
+    }
       }
   
  
