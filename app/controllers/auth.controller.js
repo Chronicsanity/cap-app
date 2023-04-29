@@ -48,7 +48,7 @@ exports.signup = async (req, res) => {
         username: req.body.username,
         email: req.body.email,
         password: req.body.password,
-        userID: generateID(min, max)
+        userID: await generateID(min, max)
         })
         
       

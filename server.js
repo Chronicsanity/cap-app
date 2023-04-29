@@ -77,16 +77,13 @@ app.post('/forgetpass', (req, res) => {
     }
   }
   });
-app.get('/index', (req, res) =>{
+app.get('/index', async (req, res) =>{
 res.render('index')
 });
 app.post('/', (req, res) => {
-  async function makeUser () {
-const result =  await controller.signup(req, res);
+const result = controller.signup(req, res);
 console.log(result);
-  }
-makeUser();
-})
+  })
 
 
 
