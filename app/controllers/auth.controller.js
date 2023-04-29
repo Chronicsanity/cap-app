@@ -69,8 +69,6 @@ exports.signup = async (req, res) => {
         email: newEmail.push(user.email),
         userID: newID.push(user.userID)
         }
-    
-         makeNewUser.save();
         console.log(makeNewUser);
       resolve(makeNewUser);
   
