@@ -13,6 +13,8 @@ module.exports = (sequelize, Sequelize) => {
 		type: Sequelize.INTEGER,
 		primaryKey: true
 	  },
+	  createdAt: false,
+	  updatedAt: false
 	});
   
 	return QueuedUser;
