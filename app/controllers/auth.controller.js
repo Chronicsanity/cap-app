@@ -43,13 +43,8 @@ exports.signup = async (req, res) => {
         username: req.body.username,
         email: req.body.email,
         password: req.body.password
-      
       })
-
-  
-    
-  
-    async function makeNewUser (req) {
+      
       const newUsername = [];
       const newPassword = [];
       const newEmail = [];
@@ -61,11 +56,8 @@ exports.signup = async (req, res) => {
       
     
         await user.save();
-        
+  }
       
-    }
-    makeNewUser(user);
-      }
   
  
         
