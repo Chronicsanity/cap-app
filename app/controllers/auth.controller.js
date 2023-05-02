@@ -90,7 +90,7 @@ async function newUser () {
       const newPassword = [];
       const newEmail = [];
      // const salt =  bcrypt.genSalt(10);
-     user.username = newUsername.push(req.body.username)
+     user.username = req.body.username
      user.password = newPassword.push(req.body.password)
      user.email = newEmail.push(req.body.email)
      //const hashedPassword = bcrypt.hash(newPassword, salt);
