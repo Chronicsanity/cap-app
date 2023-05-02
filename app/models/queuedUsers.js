@@ -1,6 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
 	const QueuedUser = sequelize.define("queued_users", {
-		createdAt:  false,
 	  username: {
 		type: Sequelize.STRING
 	  },
@@ -14,7 +13,8 @@ module.exports = (sequelize, Sequelize) => {
 		type: Sequelize.INTEGER,
 		primaryKey: true
 	},  
-
+	createdAt:  false,
+	updatedAt: false
 	},{
 	
 	});
