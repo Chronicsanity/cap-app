@@ -40,8 +40,7 @@ exports.signup = async (req, res) => {
     return new Promise((resolve, reject) => {
   
     async function generateID(min, max) {
-      const min = Math.min;
-      const max = Math.max;
+     
       return Math.floor(
           Math.random() *(max - min) + min
       )
