@@ -97,7 +97,7 @@ async function newUser () {
       
         user.id = await generateID(2, 10);
         
-       
+       console.log(user.username)
         
         
         if (await QueuedUser.findOne({ where: {id: user.id}})) {
