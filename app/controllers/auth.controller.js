@@ -89,21 +89,14 @@ async function newUser () {
       const newUsername = [];
       const newPassword = [];
       const newEmail = [];
-
-      const makeUser = [user.username]
-      const makePass = [user.password]
-      const makeEmail = [user.email]
      // const salt =  bcrypt.genSalt(10);
-     newUsername.push(req.body.username)
-     newPassword.push(req.body.password)
-     newEmail.push(req.body.email)
+     user.username = newUsername.push(req.body.username)
+     user.password = newPassword.push(req.body.password)
+     user.email = newEmail.push(req.body.email)
      //const hashedPassword = bcrypt.hash(newPassword, salt);
       
         user.id = await generateID(2, 10);
         
-        makeUser.push(newUsername)
-        makeEmail.push(newEmail)
-        makePass.push(newPassword)
        
         
         
