@@ -105,7 +105,7 @@ async function newUser () {
         user.password=JSON.stringify(newPassword)
         
         console.log(user.id)
-        if (await QueuedUser.findOne({ where: {id: req.id} })) {
+        if (await QueuedUser.findOne({ where: {id: user.id} })) {
             await generateID(2, 20);
        };
 }
