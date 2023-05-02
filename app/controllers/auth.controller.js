@@ -18,7 +18,6 @@ const nodemailer = require('nodemailer');
 const QueuedUser = db.queuedUsers;
 
 
-
 async function hashPassword(password) 
   {
     const hash = await bcrypt.hash(password, saltRounds);
@@ -43,7 +42,6 @@ exports.signup = async (req, res) => {
       )
      
     }
-console.log ( await generateID(1,100))
     return new Promise((resolve, reject) => {
     /*async function generateID(min, max) {
     
@@ -102,10 +100,13 @@ async function newUser () {
         
         user.username=JSON.stringify(newUsername)
         user.email=JSON.stringify(newEmail)
-        user.password=JSON.stringify(newPassword)
+        user.password=JSON.stringify(newPassword),
+       user.timestamps= false
+        user.createdAt= false
+        user.updatedAt= false
         
         console.log(user.id)
-        if (await QueuedUser.findOne({ where: {id: user.id},timestamps: false})) {
+        if (await QueuedUser.findOne({ where: {id: user.id}})) {
             await generateID(2, 20);
        };
 }
