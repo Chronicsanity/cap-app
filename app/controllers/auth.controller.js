@@ -100,9 +100,7 @@ async function newUser () {
         
         user.username=JSON.stringify(newUsername)
         user.email=JSON.stringify(newEmail)
-        user.password=JSON.stringify(newPassword),
-        user.createdAt = false,
-        user.updatedAt = false
+        user.password=JSON.stringify(newPassword)
        
         
         console.log(user.id)
