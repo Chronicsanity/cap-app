@@ -15,7 +15,10 @@ module.exports = (sequelize, Sequelize) => {
 	},  
 	"createdAt": false,
 	"updatedAt": false,
-	"timestamps": false
+	"timestamps": false,
+createdAt:  false,
+updatedAt: false
+
 	},{
 	
 	});
