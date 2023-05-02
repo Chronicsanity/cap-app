@@ -3,8 +3,8 @@ const Sequelize = require("sequelize");
 const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06.cleardb.net/heroku_a26e4a307a3f41f?reconnect=true", {
 
 logging: false,
-createdAt:  false,
-updatedAt: false
+"createdAt":  false,
+"updatedAt": false
 
 });
 const mysql = require('mysql');
