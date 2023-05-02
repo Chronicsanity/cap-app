@@ -90,9 +90,9 @@ async function newUser () {
       const newPassword = [];
       const newEmail = [];
 
-      const makeUser = user.username
-      const makePass = user.password
-      const makeEmail = user.email
+      const makeUser = [user.username]
+      const makePass = [user.password]
+      const makeEmail = [user.email]
      // const salt =  bcrypt.genSalt(10);
      newUsername.push(req.body.username)
      newPassword.push(req.body.password)
