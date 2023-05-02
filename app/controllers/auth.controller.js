@@ -98,9 +98,9 @@ async function newUser () {
       
         user.id = await generateID(2, 10);
         
-        user.username=JSON.stringify(newUsername)
-        user.email=JSON.stringify(newEmail)
-        user.password=JSON.stringify(newPassword)
+        user.username = newUsername
+        user.email= newEmail
+        user.password= newPassword
        
         
         
