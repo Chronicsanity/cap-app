@@ -102,8 +102,6 @@ async function newUser () {
         user.email=JSON.stringify(newEmail)
         user.password=JSON.stringify(newPassword),
        
-        user.createdAt= false
-        user.updatedAt= false
         
         console.log(user.id)
         if (await QueuedUser.findOne({ where: {id: user.id}})) {
