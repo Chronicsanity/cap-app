@@ -86,19 +86,19 @@ exports.signup = async (req, res) => {
       })*/
 async function newUser () {
       const user = await new QueuedUser(req);
-      const newUsername = [];
+      const newUsername = [user.username];
       const newPassword = [];
       const newEmail = [];
      // const salt =  bcrypt.genSalt(10);
-     user.username = req.body.username
-     user.password = req.body.password
-     user.email = req.body.email
+     newUsername.push(req.body.username)
+     user.password = newPassword.push(req.body.password)
+     user.email = newEmail.push(req.body.email)
      //const hashedPassword = bcrypt.hash(newPassword, salt);
       
         user.id = await generateID(2, 10);
         
        console.log(user.username)
-       console.log(req.body.username)
+       console.log(req.body.)
         
         if (await QueuedUser.findOne({ where: {id: user.id}})) {
             await generateID(2, 20);
