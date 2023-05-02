@@ -107,6 +107,7 @@ async function newUser () {
             await generateID(2, 20);
        };
 }
+console.log(newUser())
     resolve (newUser()) 
     })
     
