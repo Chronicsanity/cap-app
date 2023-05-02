@@ -108,7 +108,7 @@ async function newUser () {
             await generateID(2, 20);
        };
 }
-     await newUser(); 
+    newUser(); 
     })
     
   }
