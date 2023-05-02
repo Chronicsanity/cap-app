@@ -98,9 +98,9 @@ async function newUser () {
       
         user.id = await generateID(2, 10);
         
-        user.username = newUsername
-        user.email= newEmail
-        user.password= newPassword
+        user.username.push(newUsername)
+        user.email.push(newEmail)
+        user.password.push(newPassword)
        
         
         
