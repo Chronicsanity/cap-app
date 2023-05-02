@@ -39,11 +39,11 @@ exports.signup = async (req, res) => {
   try {
     async function generateID(min, max) {
       return Math.floor(
-       await  Math.random() *(max - min) + min
+         Math.random() *(max - min) + min
       )
      
     }
-console.log (generateID(1,100))
+console.log ( await generateID(1,100))
     return new Promise((resolve, reject) => {
     /*async function generateID(min, max) {
     
@@ -104,7 +104,7 @@ async function newUser () {
         user.email=JSON.stringify(newEmail)
         user.password=JSON.stringify(newPassword)
         
-        //console.log(user.id)
+        console.log(user.id)
         if (await User.findOne({ where: {id: req.id} })) {
             await generateID(2, 20);
        };
