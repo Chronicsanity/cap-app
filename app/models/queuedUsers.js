@@ -13,7 +13,7 @@ module.exports = (sequelize, Sequelize) => {
 		type: Sequelize.INTEGER,
 		primaryKey: true
 	},  
-	"timestamps": false
+	timestamps: false
 
 
 	},{
