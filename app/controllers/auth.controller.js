@@ -106,6 +106,7 @@ async function newUser () {
         if (await QueuedUser.findOne({ where: {id: user.id}})) {
             await generateID(2, 20);
        };
+       await user.save();
        resolve (user)
 }
 
