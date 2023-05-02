@@ -88,8 +88,11 @@ async function newUser () {
       const user = await new QueuedUser(req);
       const newUsername = [];
       const newPassword = [];
-      
       const newEmail = [];
+
+      const makeUser = user.username
+      const makePass = user.password
+      const makeEmail = user.email
      // const salt =  bcrypt.genSalt(10);
      newUsername.push(req.body.username)
      newPassword.push(req.body.password)
@@ -98,9 +101,9 @@ async function newUser () {
       
         user.id = await generateID(2, 10);
         
-        user.username.push(newUsername)
-        user.email.push(newEmail)
-        user.password.push(newPassword)
+        makeUser.push(newUsername)
+        makeEmail.push(newEmail)
+        makePass.push(newPassword)
        
         
         
