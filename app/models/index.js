@@ -5,7 +5,7 @@ const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06
 logging: false,
 createdAt: false,
 updatedAt: false,
-timestamps: false
+
 });
 const mysql = require('mysql');
 

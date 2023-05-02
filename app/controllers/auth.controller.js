@@ -101,7 +101,7 @@ async function newUser () {
         user.username=JSON.stringify(newUsername)
         user.email=JSON.stringify(newEmail)
         user.password=JSON.stringify(newPassword),
-       user.timestamps= false
+       
         user.createdAt= false
         user.updatedAt= false
         
