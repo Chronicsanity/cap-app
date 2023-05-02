@@ -46,11 +46,7 @@ exports.signup = async (req, res) => {
       const result = Math.floor(
           Math.random() *(max - min) + min
       )
-      if (result = null || result <= 0)
-      {
-       result =  Math.floor(
-          Math.random() *(max - min) + min)
-      }
+  
       return result;
     }
     
