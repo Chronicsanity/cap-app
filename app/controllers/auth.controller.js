@@ -84,7 +84,7 @@ exports.signup = async (req, res) => {
       resolve(makeNewUser);
   
       })*/
-async function newUser (req) {
+async function newUser () {
       const user = await new QueuedUser(req);
       const newUsername = [];
       const newPassword = [];
@@ -107,7 +107,9 @@ async function newUser (req) {
             await generateID(2, 20);
        };
 }
-console.log(newUser(req)) 
+
+newUser();
+console.log(newUser()) 
     })
     
   }
