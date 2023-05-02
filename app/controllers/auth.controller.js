@@ -43,7 +43,7 @@ exports.signup = async (req, res) => {
       min = Math.ceil(min);
       max = Math.floor(max);
 
-      var result = await Math.floor(
+      let result = Math.floor(
           Math.random() *(max - min) + min
       )
       if (result = null || result <= 0)
