@@ -56,7 +56,7 @@ exports.signup = async (req, res) => {
       return result;
     } */
     
-      const user =  QueuedUser.create({
+      /*const user =  QueuedUser.create({
         username: req.body.username,
         email: req.body.email,
         password: req.body.password,
@@ -84,11 +84,35 @@ exports.signup = async (req, res) => {
         console.log(makeNewUser);
       resolve(makeNewUser);
   
-      })
+      })*/
+
+      const user = new User(req);
+      const newUsername = [];
+      const newPassword = [];
+      const newRole = [];
+      const newEmail = [];
+     // const salt =  bcrypt.genSalt(10);
+      newUsername.push(req.body.username)
+     newPassword.push(req.body.password)
+     newEmail.push(req.body.email)
+     newRole.push(req.body.role)
+     //const hashedPassword = bcrypt.hash(newPassword, salt);
       
-  
+        user.id =  generateID(2, 10);
+        
+        user.username=JSON.stringify(newUsername)
+        user.email=JSON.stringify(newEmail)
+        user.role=JSON.stringify(newRole)
+        user.password=JSON.stringify(newPassword)
+        
+        console.log(user.id)
+        if ( User.findOne({ where: {id: req.id} })) {
+             generateID(2, 20);
+       };
       
-    }
+      })}
+      
+    
 
   catch (error) {
     res.status(500).send({ message: error.message });
