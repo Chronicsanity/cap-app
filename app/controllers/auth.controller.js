@@ -90,18 +90,14 @@ async function newUser () {
       const newPassword = [];
       const newEmail = [];
      // const salt =  bcrypt.genSalt(10);
-     newUsername.push(req.body.username)
-     newPassword.push(req.body.password)
+     const userInfo = (
+     newUsername.push(req.body.username),
+     newPassword.push(req.body.password),
      newEmail.push(req.body.email)
+    )
      //const hashedPassword = bcrypt.hash(newPassword, salt);
-      user.username = newUsername;
-      user.password = newPassword;
-      user.email= newPassword;
+      user.push(userInfo)
         user.id = await generateID(2, 10);
-        
-       console.log(user.username)
-       console.log(req.body.username)
-       console.log(newUsername)
         
         if (await QueuedUser.findOne({ where: {id: user.id}})) {
             await generateID(2, 20);
