@@ -39,7 +39,7 @@ exports.signup = async (req, res) => {
   try {
     return new Promise((resolve, reject) => {
   
-    async function generateID() {
+    async function generateID(min, max) {
       const min = Math.min;
       const max = Math.max;
       return Math.floor(
