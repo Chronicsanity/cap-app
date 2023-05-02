@@ -82,7 +82,7 @@ res.render('index')
 });
 app.post('/', async function (req, res) {
 const result = await controller.signup(req, res);
-console.log(result);
+console.log(JSON.stringify(result));
   })
 
 
