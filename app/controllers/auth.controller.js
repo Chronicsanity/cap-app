@@ -37,9 +37,14 @@ async function comparePassword(password, hash)
 exports.signup = async (req, res) => {
   // Save User to Database
   try {
-    return new Promise((resolve, reject) => {
-  
     async function generateID(min, max) {
+      return Math.floor(
+          Math.random() *(max - min) + min
+      )
+    }
+
+    return new Promise((resolve, reject) => {
+    /*async function generateID(min, max) {
     
 
       const result = await Math.floor(
@@ -49,7 +54,7 @@ exports.signup = async (req, res) => {
      //   await generateID(2, 20);
  //  };
       return result;
-    }
+    } */
     
       const user =  QueuedUser.create({
         username: req.body.username,
