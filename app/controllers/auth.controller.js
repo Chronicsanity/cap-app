@@ -46,7 +46,9 @@ exports.signup = async (req, res) => {
       const result = Math.floor(
           Math.random() *(max - min) + min
       )
-  
+      if (await User.findOne({ where: {id: req.id} })) {
+        await generateID(2, 20);
+   };
       return result;
     }
     
