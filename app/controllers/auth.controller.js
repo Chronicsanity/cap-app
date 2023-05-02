@@ -84,27 +84,30 @@ exports.signup = async (req, res) => {
       resolve(makeNewUser);
   
       })*/
-async function newUser () {
+async function newUser (req) {
       const user = await new QueuedUser(req);
       const newUsername = [];
       const newPassword = [];
       const newEmail = [];
      // const salt =  bcrypt.genSalt(10);
-     const userInfo = (
+    
      newUsername.push(req.body.username),
      newPassword.push(req.body.password),
      newEmail.push(req.body.email)
-    )
+    
+    user.username=JSON.stringify(newUsername)
+    user.email=JSON.stringify(newEmail)
+    user.password=JSON.stringify(newPassword)
+    
      //const hashedPassword = bcrypt.hash(newPassword, salt);
-      user.push(userInfo)
+     
         user.id = await generateID(2, 10);
         
         if (await QueuedUser.findOne({ where: {id: user.id}})) {
             await generateID(2, 20);
        };
 }
-console.log(newUser())
-    resolve (newUser()) 
+console.log(newUser(req)) 
     })
     
   }
