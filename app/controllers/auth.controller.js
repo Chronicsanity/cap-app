@@ -40,10 +40,18 @@ exports.signup = async (req, res) => {
     return new Promise((resolve, reject) => {
   
     async function generateID(min, max) {
-     
-      return Math.floor(
+      min = Math.ceil(min);
+      max = Math.floor(max);
+
+      const result = await Math.floor(
           Math.random() *(max - min) + min
       )
+      if (result = null || result <= 0)
+      {
+       result =  Math.floor(
+          Math.random() *(max - min) + min)
+      }
+      return result;
     }
     
       const user =  QueuedUser.create({
