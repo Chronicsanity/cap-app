@@ -109,7 +109,7 @@ async function newUser () {
             await generateID(2, 20);
        };
 }
-    newUser(); 
+    resolve (newUser()) 
     })
     
   }
