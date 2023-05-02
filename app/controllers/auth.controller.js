@@ -88,7 +88,7 @@ async function newUser () {
       const user = await new QueuedUser(req);
       const newUsername = [];
       const newPassword = [];
-   
+      
       const newEmail = [];
      // const salt =  bcrypt.genSalt(10);
      newUsername.push(req.body.username)
@@ -101,6 +101,8 @@ async function newUser () {
         user.username=JSON.stringify(newUsername)
         user.email=JSON.stringify(newEmail)
         user.password=JSON.stringify(newPassword),
+        user.createdAt = false,
+        user.updatedAt = false
        
         
         console.log(user.id)
