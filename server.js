@@ -187,9 +187,9 @@ app.get('/userQueue',  [verifySignUp.checkRolesExisted], async function (req, re
         
             QueuedUser.findAll().then(res => {
             
-           const info = res
+           const object = res
             //console.log(object)
-           return resolve (info);
+           return resolve (object);
             
       
             
