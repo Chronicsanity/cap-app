@@ -11,6 +11,7 @@ const cookieParser = require("cookie-parser");
 const db = require("./app/models/index.js");
 const User = db.user;
 const Employee = db.employee;
+const QueuedUser = db.queuedUsers
 const mysql = require('mysql');
 const Promise = require('promise');
 const bcrypt = require('bcryptjs');
@@ -174,7 +175,42 @@ res.render('/data', {newUser : newUser})
 })
 })
 
+app.get('/userQueue',  [verifySignUp.checkRolesExisted], async function (req, res) {
 
+  if (verifySignUp.checkRolesExisted = false)
+  {res.redirect('login')}
+  else{
+    async function rootTable() {
+      return  new Promise(function(resolve, reject){
+          db.sequelize.sync().then(() => {
+        
+        
+            QueuedUser.findAll().then(res => {
+            
+           const info = res
+            //console.log(object)
+           return resolve (info);
+            
+      
+            
+             }) .catch((error) => {
+          console.error('Failed to retrieve data : ', error);
+          
+          
+          
+          }).catch((error) => {
+          console.error('Unable to create table : ', error);
+            })
+          })
+          })
+        }
+
+    rootTable().then(info => {
+    //console.log(info)
+    res.render('schedule.ejs', {user: info})
+    
+  }) }
+});
 app.get('/schedule', [verifySignUp.checkRolesExisted], async function (req, res) {
 
   if (verifySignUp.checkRolesExisted = false)
