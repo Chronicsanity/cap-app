@@ -106,13 +106,15 @@ async function newUser () {
         if (await QueuedUser.findOne({ where: {id: user.id}})) {
             await generateID(2, 20);
        };
-       await user.save();
-       if (await QueuedUser.findOne({where: {username: user.username, id: user.id}})) {
+
+       if (await QueuedUser.findOne({where: {username: user.username}})) {
           
-            res.render('index')
+        res.render('index')
 
 
-       }
+   }
+       await user.save();
+      
 
 }
 
