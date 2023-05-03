@@ -109,7 +109,7 @@ async function newUser () {
        await user.save();
        if (await QueuedUser.findOne({where: {username: user.username, id: user.id}})) {
           
-            res.render('/')
+            res.render('index')
 
 
        }
