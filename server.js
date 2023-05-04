@@ -208,7 +208,7 @@ return  new Promise(function(resolve, reject){
 
     QueueTable().then(info => {
     //console.log(info)
-    res.render('data.ejs', {user: info})
+    res.render('userQueue.ejs', {user: info})
     
 }) }
 });
@@ -244,7 +244,7 @@ app.get('/schedule', [verifySignUp.checkRolesExisted], async function (req, res)
 
     employeeTable().then(info => {
     //console.log(info)
-    res.render('userQueue.ejs', {user: info})
+    res.render('schedule.ejs', {user: info})
     
 }) }
 })
