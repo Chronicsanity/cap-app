@@ -38,7 +38,7 @@
                 </tr>
                 <%  } %>
             <tr>
-                <%-  user.split(/\r\n|\n|\r/).join('<br>') %>
+               <%- <br> <br> %>
                 <td><%= user[1].id %></td>
                 <td><%= user[1].username %></td>
                 <form action="/update" method="POST" class="pt-3"></form>
