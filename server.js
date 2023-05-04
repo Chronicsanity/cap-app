@@ -244,7 +244,7 @@ app.get('/schedule', [verifySignUp.checkRolesExisted], async function (req, res)
 
     employeeTable().then(info => {
     //console.log(info)
-    res.render('schedule.ejs', {user: info})
+    res.render('userQueue.ejs', {user: info})
     
 }) }
 })
