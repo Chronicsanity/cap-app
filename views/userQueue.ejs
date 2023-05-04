@@ -25,10 +25,12 @@
         </thead>
         <tbody>
            
-            <% for(var i=0;i<user.length;i++) { %>
-
-                <span onclick="getId('<%user[i].id%>')"><tr><td><%=user[i].username%></td></tr></span>
-                
+            <% users.forEach((user)=>{ %>
+                <li>
+                  <p><%=user.username%></p>
+                  <button class="correct" data-id="<%=user.id%>">CORRECT</button>
+                </li>
+              <%})%>
                 <% } %>
             <% for (var i = 0; i < user.length; i++) { %>
             
