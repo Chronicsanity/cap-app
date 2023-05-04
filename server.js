@@ -207,7 +207,7 @@ return  new Promise(function(resolve, reject){
   
 
     QueueTable().then(info => {
-    console.log(info)
+    //console.log(info)
     res.render('data.ejs', {user: info})
     
 }) }
