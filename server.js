@@ -175,41 +175,42 @@ res.render('/data', {newUser : newUser})
 })
 })
 
-app.get('/userQueue',  [verifySignUp.checkRolesExisted], async function (req, res) {
+app.get('/userQueue', [verifySignUp.checkRolesExisted], async function (req, res) {
 
   if (verifySignUp.checkRolesExisted = false)
   {res.redirect('login')}
   else{
-    async function rootTable() {
-      return  new Promise(function(resolve, reject){
-          db.sequelize.sync().then(() => {
-        
-        
-            QueuedUser.findAll().then(res => {
-            
-           const object = res
-            //console.log(object)
-           return resolve (object);
-            
+    async function QueueTable() {
+return  new Promise(function(resolve, reject){
+    db.sequelize.sync().then(() => {
+  
+  
+      QueuedUser.findAll().then(res => {
       
-            
-             }) .catch((error) => {
-          console.error('Failed to retrieve data : ', error);
-          
-          
-          
-          }).catch((error) => {
-          console.error('Unable to create table : ', error);
-            })
-          })
-          })
-        }
+     const object = res
+      //console.log(object)
+     return resolve (object);
+      
 
-    rootTable().then(info => {
-    //console.log(info)
-    res.render('schedule.ejs', {user: info})
+      
+       }) .catch((error) => {
+    console.error('Failed to retrieve data : ', error);
     
-  }) }
+    
+    
+    }).catch((error) => {
+    console.error('Unable to create table : ', error);
+      })
+    })
+    })
+  } 
+  
+
+    QueueTable().then(info => {
+    console.log(info)
+    res.render('data.ejs', {user: info})
+    
+}) }
 });
 app.get('/schedule', [verifySignUp.checkRolesExisted], async function (req, res) {
 
