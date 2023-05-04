@@ -26,12 +26,13 @@
         <tbody>
            
             <% users.forEach((user)=>{ %>
-                <li>
+               <tr> <li>
                   <p><%=user.username%></p>
-                  <button class="correct" data-id="<%=user.id%>">CORRECT</button>
+                <td> <button class="correct" data-id="<%=user.id%>">CORRECT</button> </td>
                 </li>
               <%})%>
                 <% } %>
+            </tr>
             <% for (var i = 0; i < user.length; i++) { %>
             
                 <tr>
