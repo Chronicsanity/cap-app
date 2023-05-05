@@ -214,7 +214,7 @@ return  new Promise(function(resolve, reject){
 });
 app.post('/userQueue', async function (req, res) {
   req.body = JSON.parse(JSON.stringify(req.body));
-if (await req.body.hasOwnProperty("updateRole")){
+if (await req.body.hasOwnProperty("accept")){
   console.log("Accept pressed")
   res.render('userQueue')
 }
