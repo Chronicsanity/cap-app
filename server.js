@@ -213,6 +213,7 @@ return  new Promise(function(resolve, reject){
 }) }
 });
 app.post('/userQueue', (req, res) => {
+  req.body = JSON.parse(JSON.stringify(req.body))
 if (req.body.hasOwnProperty("updateRole")){
   console.log("Accept pressed")
 }
