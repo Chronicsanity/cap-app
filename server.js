@@ -216,7 +216,10 @@ app.post('/userQueue', async function (req, res) {
   req.body = JSON.parse(JSON.stringify(req.body));
 if (await req.body.hasOwnProperty("accept")){
   console.log("Accept pressed")
-  res.render('userQueue')
+  QueueTable().then(info => {
+    res.render('userQueue',  {user:info})
+  })
+  
 }
 if (await req.body.hasOwnProperty("denyRole")){
   console.log("Deny pressed")
