@@ -136,7 +136,30 @@ newUser();
 
 }
 }
-  
+  exports.QueueTable = async function (res) {
+    return  new Promise(function(resolve, reject){
+        db.sequelize.sync().then(() => {
+      
+      
+          QueuedUser.findAll().then(res => {
+          
+         const object = res
+          //console.log(object)
+         return resolve (object);
+          
+    
+          
+           }) .catch((error) => {
+        console.error('Failed to retrieve data : ', error);
+        
+        
+        
+        }).catch((error) => {
+        console.error('Unable to create table : ', error);
+          })
+        })
+        })
+      }
 
 exports.signin = async (req, res) => {
 

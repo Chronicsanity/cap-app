@@ -216,7 +216,7 @@ app.post('/userQueue', async function (req, res) {
   req.body = JSON.parse(JSON.stringify(req.body));
 if (await req.body.hasOwnProperty("accept")){
   console.log("Accept pressed")
-  QueueTable().then(info => {
+  controller.QueueTable().then(info => {
     res.render('userQueue',  {user:info})
   })
   
