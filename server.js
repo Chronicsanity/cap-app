@@ -213,10 +213,10 @@ return  new Promise(function(resolve, reject){
 }) }
 });
 app.post('/userQueue', (req, res) => {
-if (req.body.hasOwnProperty("accept")){
+if (req.body.hasOwnProperty("acceptUser")){
   console.log("Accept pressed")
 }
-if (req.body.hasOwnProperty("deny")){
+if (req.body.hasOwnProperty("denyUser")){
   console.log("Deny pressed")
 }
 
