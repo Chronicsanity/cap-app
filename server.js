@@ -212,7 +212,7 @@ return  new Promise(function(resolve, reject){
     
 }) }
 });
-app.post('/userQueue', (req, res) => {
+app.post('/update', (req, res) => {
 if (req.body.hasOwnProperty("updateRole")){
   console.log("Accept pressed")
 }
