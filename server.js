@@ -180,38 +180,16 @@ app.get('/userQueue', [verifySignUp.checkRolesExisted], async function (req, res
   if (verifySignUp.checkRolesExisted = false)
   {res.redirect('login')}
   else{
-    async function QueueTable() {
-return  new Promise(function(resolve, reject){
-    db.sequelize.sync().then(() => {
-  
-  
-      QueuedUser.findAll().then(res => {
-      
-     const object = res
-      //console.log(object)
-     return resolve (object);
-      
-
-      
-       }) .catch((error) => {
-    console.error('Failed to retrieve data : ', error);
     
     
-    
-    }).catch((error) => {
-    console.error('Unable to create table : ', error);
-      })
-    })
-    })
-  } 
   
 
-    QueueTable().then(info => {
+    controller.QueueTable(res).then(info => {
     //console.log(info)
     res.render('userQueue.ejs', {user: info})
-    
-}) }
-});
+    }
+    )}
+})
 app.post('/userQueue', async function (req, res) {
   req.body = JSON.parse(JSON.stringify(req.body));
 if (await req.body.hasOwnProperty("accept")){
