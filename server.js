@@ -212,6 +212,18 @@ return  new Promise(function(resolve, reject){
     
 }) }
 });
+app.post('/userQueue', (req, res) => {
+if (req.body.hasOwnProperty("accept")){
+  console.log("Accept pressed")
+}
+if (req.body.hasOwnProperty("deny")){
+  console.log("Deny pressed")
+}
+
+
+
+
+})
 app.get('/schedule', [verifySignUp.checkRolesExisted], async function (req, res) {
 
   if (verifySignUp.checkRolesExisted = false)
