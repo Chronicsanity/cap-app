@@ -204,7 +204,13 @@ if (await req.body.hasOwnProperty("accept")){
   console.log("User Accepted!")}
   controller.QueueTable().then(info => { 
     for (var i = 0; i < info.length; i++) {
-console.log(info[1].id)
+      async function clone(){
+let data = await info[1].findOne({
+  where: {id: this.id}, raw: true
+})
+delete data.id;
+return await User.create(info[1])
+      }
   }
     res.render('userQueue',  {user:info})
   })
