@@ -198,8 +198,8 @@ if (await req.body.hasOwnProperty("accept")){
 
     console.log(firstUser[1])
 
-  }
-  console.log("User Accepted!")
+  
+  console.log("User Accepted!")}
   controller.QueueTable().then(info => {
     res.render('userQueue',  {user:info})
   })
