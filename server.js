@@ -208,7 +208,7 @@ if (await req.body.hasOwnProperty("accept")){
 let data = await info[1].findOne({
   where: {id: this.id}, raw: true
 })
-delete data.id;
+delete data;
 return await User.create(info[1])
       }
   }
