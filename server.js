@@ -192,9 +192,13 @@ app.get('/userQueue', [verifySignUp.checkRolesExisted], async function (req, res
 })
 app.post('/userQueue', async function (req, res) {
   req.body = JSON.parse(JSON.stringify(req.body));
+  const firstUser = controller.QueueTable(res)
 if (await req.body.hasOwnProperty("accept")){
-  
+  for (var i = 0; i < firstUser.length; i++) {
 
+    console.log(firstUser[1])
+
+  }
   console.log("User Accepted!")
   controller.QueueTable().then(info => {
     res.render('userQueue',  {user:info})
