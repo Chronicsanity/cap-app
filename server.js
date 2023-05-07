@@ -207,7 +207,7 @@ if (await req.body.hasOwnProperty("accept")){
 
         where: {id: info[1].id }
     })
-    
+    User.create(info)
     
       console.log("User Accepted!")
 return res.render('userQueue',  {user:info})
