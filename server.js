@@ -205,12 +205,9 @@ if (await req.body.hasOwnProperty("accept")){
   async function clone(){
   controller.QueueTable().then(info => { 
     for (var i = 0; i < info.length; i++) {
-    const currUser = req.body.currentUser
- currUser.findOne({
-  where: {id: req.body.QueuedUser}, raw: true
-})
+      User.create(info[1])
 delete info[1];
-return User.create(info[1])
+return info[1]
 }})
   }
     
