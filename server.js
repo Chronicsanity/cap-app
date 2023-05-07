@@ -199,7 +199,7 @@ if (await req.body.hasOwnProperty("accept")){
     
 
   
-  console.log("User Accepted!")}
+  console.log("User Accepted!")
   async function clone(){
   await controller.QueueTable().then(info => { 
     for (var i = 0; i < info.length; i++) {
@@ -209,6 +209,7 @@ if (await req.body.hasOwnProperty("accept")){
     })
        delete data
       console.log(data)
+      console.log("User Accepted!")
 return res.render('userQueue',  {user:info})
 }})
   }
@@ -217,7 +218,7 @@ return res.render('userQueue',  {user:info})
 
   
   
-
+}
 
 if (await req.body.hasOwnProperty("denyRole")){
   console.log("Deny pressed")
