@@ -215,8 +215,9 @@ return User.create(info[1])
     
    await clone();
 
-
+   controller.QueueTable().then(info => {
     res.render('userQueue',  {user:info})
+  })
 
 
 if (await req.body.hasOwnProperty("denyRole")){
