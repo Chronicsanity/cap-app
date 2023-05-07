@@ -202,24 +202,27 @@ if (await req.body.hasOwnProperty("accept")){
 
   
   console.log("User Accepted!")}
+  async function clone(){
   controller.QueueTable().then(info => { 
     for (var i = 0; i < info.length; i++) {
-      async function clone(){
-let data = await info[1].findOne({
+let data =  info[1].findOne({
   where: {id: this.id}, raw: true
 })
 delete data;
-return await User.create(info[1])
-      }
+return User.create(info[1])
+}})
   }
-   clone(),
+    
+   await clone();
+
+
     res.render('userQueue',  {user:info})
-  })
-  
+
+})
 if (await req.body.hasOwnProperty("denyRole")){
   console.log("Deny pressed")
 }
-})
+
 app.get('/schedule', [verifySignUp.checkRolesExisted], async function (req, res) {
 
   if (verifySignUp.checkRolesExisted = false)
