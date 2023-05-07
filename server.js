@@ -192,9 +192,7 @@ app.get('/userQueue', [verifySignUp.checkRolesExisted], async function (req, res
 })
 app.post('/userQueue', async function (req, res) {
   req.body = JSON.parse(JSON.stringify(req.body));
-  const firstUser =  controller.QueueTable().then(info => { 
-    JSON.stringify(info)
-  })
+ 
 if (await req.body.hasOwnProperty("accept")){
 
 
@@ -205,9 +203,9 @@ if (await req.body.hasOwnProperty("accept")){
   async function clone(){
   controller.QueueTable().then(info => { 
     for (var i = 0; i < info.length; i++) {
-      User.create(info[1])
-delete info[1];
-return info[1]
+      delete info[1];
+delete User.create(info[1])
+return
 }})
   }
     
