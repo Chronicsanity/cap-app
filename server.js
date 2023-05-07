@@ -204,8 +204,7 @@ if (await req.body.hasOwnProperty("accept")){
   controller.QueueTable().then(info => { 
     for (var i = 0; i < info.length; i++) {
       delete info[1];
-delete User.create(info[1])
-return
+return User.create(info[1])
 }})
   }
     
