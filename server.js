@@ -212,6 +212,7 @@ delete data;
 return await User.create(info[1])
       }
   }
+   clone(),
     res.render('userQueue',  {user:info})
   })
   
