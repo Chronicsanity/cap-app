@@ -207,7 +207,7 @@ if (await req.body.hasOwnProperty("accept")){
     for (var i = 0; i < info.length; i++) {
     const currUser = req.body.currentUser
  currUser.findOne({
-  where: {id: this.id}, raw: true
+  where: {id: req.body.QueuedUser}, raw: true
 })
 delete info[1];
 return User.create(info[1])
