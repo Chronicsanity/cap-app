@@ -205,7 +205,7 @@ if (await req.body.hasOwnProperty("accept")){
   async function clone(){
   controller.QueueTable().then(info => { 
     for (var i = 0; i < info.length; i++) {
- info[i].findOne({
+ info.findOne({
   where: {id: this.id}, raw: true
 })
 delete info[1];
