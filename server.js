@@ -208,7 +208,7 @@ if (await req.body.hasOwnProperty("accept")){
         where: {id: info[1].id }
     })
       
-return data.destroy()
+return delete data;
 }})
   }
     
