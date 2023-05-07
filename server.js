@@ -207,16 +207,16 @@ if (await req.body.hasOwnProperty("accept")){
 
         where: {id: info[1].id }
     })
-      
-return delete data;
+      delete data
+      console.log(data)
+return res.render('userQueue',  {user:info})
 }})
   }
     
    await clone();
 
-   controller.QueueTable().then(info => {
-    res.render('userQueue',  {user:info})
-  })
+  
+  
 
 
 if (await req.body.hasOwnProperty("denyRole")){
