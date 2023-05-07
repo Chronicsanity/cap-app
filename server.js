@@ -218,10 +218,10 @@ return User.create(info[1])
 
     res.render('userQueue',  {user:info})
 
-})
+
 if (await req.body.hasOwnProperty("denyRole")){
   console.log("Deny pressed")
-}
+}})
 
 app.get('/schedule', [verifySignUp.checkRolesExisted], async function (req, res) {
 
