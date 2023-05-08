@@ -193,7 +193,18 @@ exports.signin = async (req, res) => {
     req.session.token = token;
   }
   
-finally {res.render('dashboard');}};
+finally {
+  const user = await User.findOne({ 
+    where: {
+    username: req.body.username,
+    }})
+  if (user.role == 1) {
+  
+  res.render('dashboard');}
+  else if(user.role == 3) {
+    res.render('schedule')
+  }
+};}
 
 
 exports.signout = async (req, res) => {

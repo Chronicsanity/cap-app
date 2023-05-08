@@ -90,19 +90,6 @@ console.log(JSON.stringify(result));
 
 
 app.get('/data', async function (req, res) {
-
-  const userLogin = async (req, role, res) => {
-    let { username, password } = req;
-const userStatus = await User.findOne({ username })
-  if (!User)
-  {return res.redirect('login')}
-
-  if(User.role !== 2 || User.role !== 1) {
-    {return res.redirect('login')}
-
-  }
-
-  userLogin(req, role, res);
     async function scheduleTable() {
 return  new Promise(function(resolve, reject){
     db.sequelize.sync().then(() => {
@@ -133,7 +120,7 @@ return  new Promise(function(resolve, reject){
     //console.log(info)
     res.render('data.ejs', {user: info})
     
-}) }
+}) 
   
 async function generateID(min, max) {
   return  Math.floor(
@@ -177,12 +164,11 @@ app.post('/data', (req, res) => {
     // save user
     await user.save();
   }
-  
+
 const newUser = create(req);
 
 res.render('/data', {newUser : newUser})
-})
-})
+})})
 
 app.get('/userQueue', [verifySignUp.checkRolesExisted], async function (req, res) {
 
