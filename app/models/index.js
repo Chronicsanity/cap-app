@@ -25,9 +25,7 @@ const mysql = require('mysql');
         passwordColumn: {
           get: () => null,
         },
-        rolesColumn: {
-          get: () => null,
-        },
+       
       })
     }
   }
