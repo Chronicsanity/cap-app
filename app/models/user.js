@@ -8,10 +8,16 @@ module.exports = (sequelize, Sequelize) => {
 	  },
 	  password: {
 		type: Sequelize.STRING
-	  },
-	  createdAt: false,
-	  updatedAt: false
-	});
+	},  
+	
+	id: {
+		type: Sequelize.INTEGER,
+		primaryKey: true
+	},  
+
+},{
+	timestamps: false
+});
   
 	return User;
   };

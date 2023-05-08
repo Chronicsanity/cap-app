@@ -13,7 +13,6 @@ module.exports = (sequelize, Sequelize) => {
 		type: Sequelize.INTEGER,
 		primaryKey: true
 	},  
-	
 
 
 	},{
