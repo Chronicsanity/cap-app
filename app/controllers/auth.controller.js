@@ -168,6 +168,7 @@ exports.signin = async (req, res) => {
 
   try {
     const userBracketless = User.replace(/\[.*?\]/g,'');
+    console.log(userBracketless)
     const user = await userBracketless.findOne({ 
       where: {
       username: req.body.username,
@@ -200,13 +201,16 @@ finally {
     username: req.body.username,
     }})
   if (user.role == 1) {
-  
+
   res.render('dashboard');}
   else if(user.role == 3) {
     return res.render('schedule')
   }
   else if (user.role == 0) {
    return res.render('login')
+  }
+  else if (user.role == null){
+    return res.render ('index')
   }
 };}
 
