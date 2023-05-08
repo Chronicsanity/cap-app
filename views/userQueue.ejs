@@ -44,16 +44,18 @@
                 <td><%= user[1].id %></td>
                 <td><%= user[1].username %></td>
                 
-                <form action="/userQueue" method="POST" class="selectpicker" name="rolechoice">
-                    <select class="form-control"> 
-                        <option selected= <%= user.roles === "admin" %> value = "1">Admin</option> 
-                        <option selected= <%= user.roles === "supervisor" %> value = "2">Supervisor</option>  
-                        <option selected= <%= user.roles === "3" %> value = "3">Employee</option> 
-                        <option name="" value = "0">Choose the user's role</option>
-                      </select>
+                <form id="tableForm" action="/userQueue" method="get">
+                    <select class="selectpicker" data-style="btn-info" name="selectpicker">
+                        <optgroup label="Select Role">
+                            <option name="" value="0">Select role</option>
+                            <option name="admin" value="1">Admin</option>
+                            <option name="supervisor" value="2">Supervisor</option>
+                            <option name="employee" value="3">Employee</option>
+                        </optgroup>
+                    
                 <button type="submit" name="accept" value="currentUser" class="btn btn-success rounded-pill">Accept</button>
                 <button type="submit" name="deny" value="denyRole" class="btn btn-success rounded-pill">Deny</button>
-
+</select>
 </form>
                 
             </div>
