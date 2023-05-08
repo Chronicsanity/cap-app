@@ -209,7 +209,8 @@ if (await req.body.hasOwnProperty("accept")){
         id: newUser.id,
         username: newUser.username,
         password: newUser.password,
-        email: newUser.email
+        email: newUser.email,
+        role: req.body.rolechoice
 
       })
       console.log(newUser.id)
