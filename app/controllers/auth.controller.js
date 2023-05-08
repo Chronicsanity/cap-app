@@ -202,7 +202,10 @@ finally {
   
   res.render('dashboard');}
   else if(user.role == 3) {
-    res.render('schedule')
+    return res.render('schedule')
+  }
+  else if (user.role == 0 || null) {
+   return res.render('login')
   }
 };}
 
