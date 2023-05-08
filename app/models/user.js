@@ -15,6 +15,10 @@ module.exports = (sequelize, Sequelize) => {
 		primaryKey: true
 	},  
 
+	roles: {
+
+		type: Sequelize.INTEGER,
+	},
 },{
 	timestamps: false
 });
