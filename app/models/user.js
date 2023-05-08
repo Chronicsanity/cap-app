@@ -19,6 +19,9 @@ module.exports = (sequelize, Sequelize) => {
 
 		type: Sequelize.INTEGER,
 	},
+	roles: {
+		type: Sequelize.INTEGER
+	  },
 },{
 	timestamps: false
 });
