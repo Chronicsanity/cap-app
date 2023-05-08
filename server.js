@@ -204,8 +204,9 @@ if (await req.body.hasOwnProperty("accept")){
   await controller.QueueTable().then(info => { 
     for (var i = 0; i < info.length; i++) {
       console.log(req.body.selectpicker)
-      console.log(req.body.rolechoice)
       const newUser = info[1]
+      const rolecheck = newUser.role
+      console.log(rolecheck)
       User.upsert({
         id: newUser.id,
         username: newUser.username,
