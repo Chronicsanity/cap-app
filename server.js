@@ -203,7 +203,7 @@ if (await req.body.hasOwnProperty("accept")){
   async function clone(){
   await controller.QueueTable().then(info => { 
     for (var i = 0; i < info.length; i++) {
-      console.log(req.body.rolechoice)
+      console.log(req.body.selectpicker)
       const newUser = info[1]
       User.upsert({
         id: newUser.id,
