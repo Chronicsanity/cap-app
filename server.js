@@ -203,7 +203,6 @@ if (await req.body.hasOwnProperty("accept")){
   async function clone(){
   await controller.QueueTable().then(info => { 
     for (var i = 0; i < info.length; i++) {
-      console.log(req.body.rolechoice)
       const newUser = info[1]
       User.upsert({
         id: newUser.id,
@@ -211,9 +210,7 @@ if (await req.body.hasOwnProperty("accept")){
         password: newUser.password,
         email: newUser.email,
         role: req.body.rolechoice
-
       })
-      console.log(newUser.id)
      QueuedUser.destroy({
 
         where: {id: info[1].id }
