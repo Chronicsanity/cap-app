@@ -89,11 +89,20 @@ console.log(JSON.stringify(result));
 
 
 
-app.get('/data', [verifySignUp.checkRolesExisted], async function (req, res) {
+app.get('/data', async function (req, res) {
 
-  if (verifySignUp.checkRolesExisted = false)
-  {res.redirect('login')}
-  else{
+  const userLogin = async (req, role, res) => {
+    let { username, password } = req;
+const userStatus = await User.findOne({ username })
+  if (!User)
+  {return res.redirect('login')}
+
+  if(User.role !== 2 || User.role !== 1) {
+    {return res.redirect('login')}
+
+  }
+
+  userLogin(req, role, res);
     async function scheduleTable() {
 return  new Promise(function(resolve, reject){
     db.sequelize.sync().then(() => {
