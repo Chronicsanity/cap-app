@@ -167,7 +167,8 @@ newUser();
 exports.signin = async (req, res) => {
 
   try {
-    const user = await User[0].findOne({ 
+    const userBracketless = User.replace(/\[.*?\]/g,'');
+    const user = await userBracketless.findOne({ 
       where: {
       username: req.body.username,
       }
