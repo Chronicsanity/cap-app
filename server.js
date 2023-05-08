@@ -211,6 +211,7 @@ if (await req.body.hasOwnProperty("accept")){
         email: newUser.email
 
       })
+      console.log(newUser.id)
      QueuedUser.destroy({
 
         where: {id: info[1].id }
