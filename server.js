@@ -218,10 +218,10 @@ if (await req.body.hasOwnProperty("accept")){
         where: {id: info[1].id }
     })
   
-    
-      console.log("User Accepted!")
+  }
+     
 return res.render('userQueue',  {user:info})
-}})
+})
   }
     
    await clone();
