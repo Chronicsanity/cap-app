@@ -16,7 +16,6 @@ module.exports = (sequelize, Sequelize) => {
 	},  
 	roles: {
 		type: Sequelize.INTEGER,
-		foreignKey: 'roles'
 	  },
 },{
 	timestamps: false

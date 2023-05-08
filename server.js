@@ -211,7 +211,7 @@ if (await req.body.hasOwnProperty("accept")){
         username: newUser.username,
         password: newUser.password,
         email: newUser.email,
-        role: newUser.roles
+        roles: newUser.role
       })
      QueuedUser.destroy({
 

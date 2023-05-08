@@ -100,7 +100,7 @@ async function newUser () {
     user.username= await JSON.stringify(newUsername)
     user.email= await JSON.stringify(newEmail)
     user.password= await JSON.stringify(newPassword)
-    user.roles= await JSON.stringify(newRole)
+    user.role= await JSON.stringify(newRole)
     
      //const hashedPassword = bcrypt.hash(newPassword, salt);
      
