@@ -14,7 +14,7 @@ module.exports = (sequelize, Sequelize) => {
 		type: Sequelize.INTEGER,
 		primaryKey: true
 	},  
-	roles: {
+	role: {
 		type: Sequelize.INTEGER
 	}
 },{
