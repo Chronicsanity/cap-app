@@ -204,7 +204,7 @@ finally {
   else if(user.role == 3) {
     return res.render('schedule')
   }
-  else if (user.role == 0 || null) {
+  else if (user.role == 0) {
    return res.render('login')
   }
 };}
