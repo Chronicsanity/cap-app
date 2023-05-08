@@ -206,13 +206,12 @@ if (await req.body.hasOwnProperty("accept")){
       console.log(req.body.selectpicker)
       const newUser = info[1]
       const newRole = req.body.selectpicker
-      console.log(newUser.role)
       User.upsert({
         id: newUser.id,
         username: newUser.username,
         password: newUser.password,
         email: newUser.email,
-        role: newUser.role
+        role: req.body.selectpicker
       })
      QueuedUser.destroy({
 
