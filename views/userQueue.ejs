@@ -46,9 +46,9 @@
                 
                 <form action="/userQueue" method="POST" class="selectpicker" name="rolechoice">
                     <select class="form-control"> 
-                        <option selected= <%= user.role === "admin" %> value = "1">Admin</option> 
-                        <option selected= <%= user.role === "supervisor" %> value = "2">Supervisor</option>  
-                        <option selected= <%= user.role === "3" %> value = "3">Employee</option> 
+                        <option selected= <%= user.roles === "admin" %> value = "1">Admin</option> 
+                        <option selected= <%= user.roles === "supervisor" %> value = "2">Supervisor</option>  
+                        <option selected= <%= user.roles === "3" %> value = "3">Employee</option> 
                         <option name="" value = "0">Choose the user's role</option>
                       </select>
                 <button type="submit" name="accept" value="currentUser" class="btn btn-success rounded-pill">Accept</button>
