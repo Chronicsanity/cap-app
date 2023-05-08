@@ -276,7 +276,6 @@ _delete(req);
 res.render('/data')
 }
 */
-
 app.use(express.static(__dirname + '/views'));
 
 
