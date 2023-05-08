@@ -203,7 +203,8 @@ if (await req.body.hasOwnProperty("accept")){
   async function clone(){
   await controller.QueueTable().then(info => { 
     for (var i = 0; i < info.length; i++) {
-      const newUser = JSON.stringify(info[1])
+      console.log(info[1])
+      const newUser = info[1]
       User.upsert({
         id: newUser.id,
         username: newUser.username,
