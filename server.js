@@ -203,7 +203,8 @@ if (await req.body.hasOwnProperty("accept")){
   async function clone(){
   await controller.QueueTable().then(info => { 
     for (var i = 0; i < info.length; i++) {
-      User.push(info[1])
+      const newUser = JSON.stringify(info[1])
+      User.push(newUser)
      QueuedUser.destroy({
 
         where: {id: info[1].id }
