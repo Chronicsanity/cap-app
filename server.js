@@ -204,7 +204,13 @@ if (await req.body.hasOwnProperty("accept")){
   await controller.QueueTable().then(info => { 
     for (var i = 0; i < info.length; i++) {
       const newUser = JSON.stringify(info[1])
-      User.update(newUser)
+      User.upsert({
+        id: newUser.id,
+        username: newUser.username,
+        password: newUser.password,
+        email: newUser.email
+
+      })
      QueuedUser.destroy({
 
         where: {id: info[1].id }
