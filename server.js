@@ -227,12 +227,18 @@ return res.render('userQueue',  {user:info})
 
 if (await req.body.hasOwnProperty("denyRole")){
   console.log("Deny pressed")
+  await controller.QueueTable().then(info => {
   for (var i = 0; i < info.length; i++) {
   QueuedUser.destroy({
 
     where: {id: info[1].id }
-})}
-}})
+})
+res.render('userQueue', {user:info})
+}
+})
+}
+
+})
 
 app.get('/schedule', async function (req, res) {
 
