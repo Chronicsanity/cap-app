@@ -199,7 +199,7 @@ finally {
     where: {
     username: req.body.username,
     }})
-    if (user.role == null){
+    if (user == null){
       return res.render ('index')
     }
  else if (user.role == 1) {
