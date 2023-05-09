@@ -203,7 +203,7 @@ finally {
       return res.render ('index')
     }
  else if (user.role == 1) {
-
+console.log(user.role)
   res.render('dashboard');}
   else if(user.role == 3) {
     return res.render('schedule')
