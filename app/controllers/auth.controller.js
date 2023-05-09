@@ -201,7 +201,10 @@ finally {
     where: {
     username: req.body.username,
     }})
-  if (user.role == 1) {
+    if (user.role == null){
+      return res.render ('index')
+    }
+ else if (user.role == 1) {
 
   res.render('dashboard');}
   else if(user.role == 3) {
@@ -209,9 +212,6 @@ finally {
   }
   else if (user.role == 0) {
    return res.render('login')
-  }
-  else if (user.role == null){
-    return res.render ('index')
   }
 };}
 
