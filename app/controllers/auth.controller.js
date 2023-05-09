@@ -87,9 +87,9 @@ exports.signup = async (req, res) => {
 async function newUser () {
       const user = await new QueuedUser(req);
       const newUsername = '';
-      const newPassword = [];
-      const newEmail = [];
-      const newRole = [];
+      const newPassword = '';
+      const newEmail = '';
+      const newRole = '';
      // const salt =  bcrypt.genSalt(10);
     
      newUsername.push(req.body.username),
