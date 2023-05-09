@@ -97,10 +97,10 @@ async function newUser () {
      newEmail.push(req.body.email)
      newRole.push (req.body.selectpicker)
     
-    user.username= await JSON.stringify(newUsername)
-    user.email= await JSON.stringify(newEmail)
-    user.password= await JSON.stringify(newPassword)
-    user.role= await JSON.stringify(newRole)
+    user.username= await JSON.stringify(newUsername).replace(/]|[[]/g, '')
+    user.email= await JSON.stringify(newEmail).replace(/]|[[]/g, '')
+    user.password= await JSON.stringify(newPassword).replace(/]|[[]/g, '')
+    user.role= await JSON.stringify(newRole).replace(/]|[[]/g, '')
     
      //const hashedPassword = bcrypt.hash(newPassword, salt);
      
