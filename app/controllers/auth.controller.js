@@ -195,9 +195,10 @@ exports.signin = async (req, res) => {
   }
   
 finally {
+  const userString = JSON.stringify(req.body.username).replace(/]|[[]/g, ' ');
   const user = await User.findOne({ 
     where: {
-    username: req.body.username,
+    username: userString,
     }})
     if (user == null){
       console.log(user)
