@@ -240,7 +240,7 @@ return (res.render('userQueue', {user:info}))
 })
 
 }
-removeUser();
+await removeUser();
 }
 })
 app.get('/schedule', async function (req, res) {
