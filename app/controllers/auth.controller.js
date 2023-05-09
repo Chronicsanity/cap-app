@@ -167,12 +167,12 @@ newUser();
 exports.signin = async (req, res) => {
 
   try {
-    const userTest = JSON.stringify(User)
+    const userTest = JSON.stringify(User.username)
     const userBracketless = userTest.replace(/\[.*?\]/g,'');
     console.log(userBracketless)
     const user = await User.findOne({ 
       where: {
-      username: req.body.username,
+      username: req.body.username
       }
     });
     const userPass = await req.body.password;
