@@ -86,7 +86,7 @@ exports.signup = async (req, res) => {
       })*/
 async function newUser () {
       const user = await new QueuedUser(req);
-      const newUsername = [];
+      const newUsername = '';
       const newPassword = [];
       const newEmail = [];
       const newRole = [];
