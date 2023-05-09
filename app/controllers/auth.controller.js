@@ -167,8 +167,8 @@ newUser();
 exports.signin = async (req, res) => {
 
   try {
-    const userTest = Sequelize.escape('%{User}%')
-    const user = await userTest.findOne({ 
+   
+    const user = await User.findOne({ 
       where: {
       username: req.body.username
       }
