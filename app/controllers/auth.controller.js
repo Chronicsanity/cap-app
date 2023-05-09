@@ -167,8 +167,8 @@ newUser();
 exports.signin = async (req, res) => {
 
   try {
-   
-    const user = await User.findOne({ 
+   const userString = JSON.stringify([User])
+    const user = await userString.findOne({ 
       where: {
       username: req.body.username
       }
