@@ -167,10 +167,8 @@ newUser();
 exports.signin = async (req, res) => {
 
   try {
-    //const userTest = JSON.stringify(User.username)
-    //const userBracketless = userTest.replace(/\[.*?\]/g,'');
-    //console.log(userBracketless)
-    const user = await User.findOne({ 
+    const userTest = Sequelize.escape('%{User}%')
+    const user = await userTest.findOne({ 
       where: {
       username: req.body.username
       }
