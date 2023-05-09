@@ -24,12 +24,12 @@
         <tbody>
            
             
-            <% for (var i = 0; i < user.length; i++) { %>
+            <% for (var i = 0; i < newUser.length; i++) { %>
             
                 <tr>
-                    <td><%= user[i].id %></td>
-                    <td><%= user[i].user %> </td>
-                    <td><%= user[i].job_title %> </td>
+                    <td><%= newUser[i].id %></td>
+                    <td><%= newUser[i].user %> </td>
+                    <td><%= newUser[i].job_title %> </td>
                 </tr>
             <%  } %>
             <div>
@@ -44,7 +44,7 @@
                     <input type="text" class="form-control" name="job_title" placeholder="Job Title">
                 </div>
                 <div class="form-group">
-                    <input class="date" name="date_working" placeholder="Date Working">
+                    <input class="text" name="date_working" placeholder="Date Working">
                 </div>
                 
                 <button type="submit" name="acceptEmployee" value="addEmployee" class="btn btn-success rounded-pill">Accept</button>

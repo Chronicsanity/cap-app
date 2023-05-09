@@ -128,7 +128,7 @@ async function generateID(min, max) {
       Math.random() *(max - min) + min
   )
 }
-
+})
 app.post('/data', (req, res) => {
 //const submit = req.body.submit;
 
@@ -157,28 +157,12 @@ app.post('/data', (req, res) => {
        date_working: req.body.date_working
 
       })
-
-
-  
-  
-      }
-    user.username=JSON.stringify(newUsername)
-    user.email=JSON.stringify(newEmail)
-    user.role=JSON.stringify(newRole)
-    user.password=JSON.stringify(newPassword)
-    
-    console.log(user.id)
-    if (await User.findOne({ where: {id: req.id} })) {
-        await generateID(2, 20);
-   };
-    // save user
-    await user.save();
-  }
-
-const newUser = create(req);
+    }
+}
+newUser = createEmployee(req)
 
 res.render('/data', {newUser : newUser})
-})})
+})
 
 app.get('/userQueue', async function (req, res) {
 
