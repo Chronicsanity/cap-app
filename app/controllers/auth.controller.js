@@ -200,6 +200,7 @@ finally {
     username: req.body.username,
     }})
     if (user == null){
+      console.log(user)
       return res.render ('index')
     }
  else if (user.role == 1) {
