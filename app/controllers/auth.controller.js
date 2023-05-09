@@ -43,47 +43,7 @@ exports.signup = async (req, res) => {
      
     }
     return new Promise((resolve, reject) => {
-    /*async function generateID(min, max) {
-    
-
-      const result = await Math.floor(
-        Math.random() * (parseFloat(max) - parseFloat(min) + 1) + parseFloat(min)
-      )
-     // if (await User.findOne({ where: {id: req.id} })) {
-     //   await generateID(2, 20);
- //  };
-      return result;
-    } */
-    
-      /*const user =  QueuedUser.create({
-        username: req.body.username,
-        email: req.body.email,
-        password: req.body.password,
-        id: generateID(2, 20)
-        })
-        
-        
-      
-     
-      const newUsername = [];
-      const newPassword = [];
-      const newEmail = [];
-      const passwordConf = [];
-      const newID = [];
-        const makeNewUser = {
-        username: newUsername.push(user.username),
-        password: newPassword.push(user.password),
-        passwordConf: passwordConf,
-        email: newEmail.push(user.email),
-        id: newID.push(user.id),
-        "timestamps": false, 
-        createdAt: false,
-        updatedAt: false
-        }
-        console.log(makeNewUser);
-      resolve(makeNewUser);
-  
-      })*/
+ 
 async function newUser () {
       const user = await new QueuedUser(req);
       const newUsername = [];

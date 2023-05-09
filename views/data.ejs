@@ -16,9 +16,9 @@
         <thead>
           <tr>
            
-            <th>Name</th>
+            <th>Employee</th>
            
-            <th>Password </th>
+            <th>Job Title </th>
           </tr>
         </thead>
         <tbody>
@@ -27,29 +27,27 @@
             <% for (var i = 0; i < user.length; i++) { %>
             
                 <tr>
-                    <td><%= user[i].username %></td>
-                    <td><%= user[i].password %> </td>
+                    <td><%= user[i].id %></td>
+                    <td><%= user[i].user %> </td>
+                    <td><%= user[i].job_title %> </td>
                 </tr>
             <%  } %>
             <div>
-                <p>Add New User</p>
+                <p>Add New Employee: </p>
             </div>
             <form action="/data" method="POST" class="pt-3">
                 <div class="form-group">
-                    <input type="username" class="form-control" placeholder="username" name="username">
+                    <input type="username" class="form-control" placeholder="username" name="employee_name">
                     <small class="form-text text-muted text-left">Register Username</small>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" name="password" placeholder="password">
+                    <input type="text" class="form-control" name="job_title" placeholder="Job Title">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" name="email" placeholder="email">
+                    <input class="date" name="date_working" placeholder="Date Working">
                 </div>
-                <div class="form-group">
-                    <input class="form-control" name="role" placeholder="1, 2, 3">
-                </div>
-                <button type="submit" name="newUser_button" value="newUser" class="btn btn-success rounded-pill">New User</button>
-                <button type="submit" name="delete_button" value="deleteUser" class="btn btn-success rounded-pill">Delete User</button>
+                
+                <button type="submit" name="acceptEmployee" value="addEmployee" class="btn btn-success rounded-pill">Accept</button>
             </form>
 
           </tbody>

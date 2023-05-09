@@ -12,6 +12,7 @@ const db = require("./app/models/index.js");
 const User = db.user;
 const Employee = db.employee;
 const QueuedUser = db.queuedUsers
+const Time_Working = db.time_working;
 const mysql = require('mysql');
 const Promise = require('promise');
 const bcrypt = require('bcryptjs');
@@ -95,7 +96,7 @@ return  new Promise(function(resolve, reject){
     db.sequelize.sync().then(() => {
   
   
-      User.findAll().then(res => {
+      Employee.findAll().then(res => {
       
      const object = res
       //console.log(object)
@@ -132,25 +133,27 @@ app.post('/data', (req, res) => {
 //const submit = req.body.submit;
 
 //if (submit === "newUser_button") {
-  async function create(req) {
+  async function createEmployee(req) {
     // validate
    // if (await User.findOne({ where: { newUser: req.newUser } })) {
    //   throw 'Email "' + req.newName + '" is already registered';
   //}
-  console.log(req)
-  const user = new User(req);
-  const newUsername = [];
-  const newPassword = [];
-  const newRole = [];
-  const newEmail = [];
-  const salt = await bcrypt.genSalt(10);
-  newUsername.push(req.body.username)
- newPassword.push(req.body.password)
- newEmail.push(req.body.email)
- newRole.push(req.body.role)
- //const hashedPassword = bcrypt.hash(newPassword, salt);
+  const user = req.body.employee_name
+  const addEmployee = User.findOne({
+      where: {user: User.username }
+      })
+      if (addEmployee == null)
+      {
+       console.log("User not found!");
+        return res.render('data')
+      }
+
+     
+      Employee.create(user)
+
+
   
-    user.id = await generateID(2, 10);
+    Employee.id == User.id
     
     user.username=JSON.stringify(newUsername)
     user.email=JSON.stringify(newEmail)
