@@ -170,11 +170,8 @@ const newUser = create(req);
 res.render('/data', {newUser : newUser})
 })})
 
-app.get('/userQueue', [verifySignUp.checkRolesExisted], async function (req, res) {
+app.get('/userQueue', async function (req, res) {
 
-  if (verifySignUp.checkRolesExisted = false)
-  {res.redirect('login')}
-  else{
     
     
   
@@ -182,9 +179,12 @@ app.get('/userQueue', [verifySignUp.checkRolesExisted], async function (req, res
     controller.QueueTable(res).then(info => {
     //console.log(info)
     res.render('userQueue.ejs', {user: info})
+    if (info.id == null) {
+      res.render('userQueue.ejs', {user: "No users in queue!"})
+
     }
-    )}
-})
+    }
+    )})
 app.post('/userQueue', async function (req, res) {
   req.body = JSON.parse(JSON.stringify(req.body));
  
