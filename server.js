@@ -225,7 +225,7 @@ return res.render('userQueue',  {user:info})
   
 }
 
-if (await req.body.hasOwnProperty("denyRole")){
+else if (await req.body.hasOwnProperty("deny")){
   console.log("Deny pressed")
   async function removeUser() {
   await controller.QueueTable().then(info => {
