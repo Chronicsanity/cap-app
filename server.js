@@ -149,7 +149,7 @@ app.post('/data', (req, res) => {
       }
       else {
      
-      await Employee.create( 
+      return await Employee.create( 
       {
         id: addEmployee.id,
        user: user,
@@ -159,9 +159,9 @@ app.post('/data', (req, res) => {
       })
     }
 }
-newUser = createEmployee(req)
+const newUser = createEmployee(req);
 
-res.render('/data', {newUser : newUser})
+res.render('/data', {user : newUser})
 })
 
 app.get('/userQueue', async function (req, res) {
