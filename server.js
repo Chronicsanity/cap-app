@@ -234,7 +234,7 @@ if (await req.body.hasOwnProperty("denyRole")){
 
     where: {id: info[1].id }
 })
-return (res.render('userQueue', {user:info}))
+return res.render('userQueue', {user:info})
 }
   
 })
