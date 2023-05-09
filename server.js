@@ -180,7 +180,7 @@ app.get('/userQueue', async function (req, res) {
     //console.log(info)
     res.render('userQueue.ejs', {user: info})
     if (info.id == null) {
-      res.render('userQueue.ejs', {user: "No users in queue!"})
+      res.render('userQueue.ejs', {user: " "})
 
     }
     }
