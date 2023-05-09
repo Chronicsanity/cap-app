@@ -227,13 +227,15 @@ return res.render('userQueue',  {user:info})
 
 if (await req.body.hasOwnProperty("denyRole")){
   console.log("Deny pressed")
+  for (var i = 0; i < info.length; i++) {
+  QueuedUser.destroy({
+
+    where: {id: info[1].id }
+})}
 }})
 
-app.get('/schedule', [verifySignUp.checkRolesExisted], async function (req, res) {
+app.get('/schedule', async function (req, res) {
 
-  if (verifySignUp.checkRolesExisted = false)
-  {res.redirect('login')}
-  else{
     async function employeeTable() {
       return  new Promise(function(resolve, reject){
           db.sequelize.sync().then(() => {
@@ -263,8 +265,7 @@ app.get('/schedule', [verifySignUp.checkRolesExisted], async function (req, res)
     //console.log(info)
     res.render('schedule.ejs', {user: info})
     
-}) }
-})
+}) })
 /*if (submit === "deleteUser") {
   async function _delete(req) {
   const user = await getUser(req.body.username)
