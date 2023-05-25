@@ -139,26 +139,26 @@ app.post('/data', (req, res) => {
    //   throw 'Email "' + req.newName + '" is already registered';
   //}
   const user = await req.body.username
-  const addEmployee = await User.findOne({
-    username : User.username,
+  /*const addEmployee = await User.findOne({
+    ,
       where: {username: user}
       })
       if (addEmployee == null)
       {
        console.log("User not found!");
         return res.render('data')
-      }
-      else {
+      }*/
+     // else {
      
       return await Employee.create( 
       {
-        id: addEmployee.id,
+        id: User.id,
        user: user,
        job_title: req.body.job_title,
        date_working: req.body.date_working
 
       })
-    }
+    //}
 }
 const newUser = createEmployee(req);
 
