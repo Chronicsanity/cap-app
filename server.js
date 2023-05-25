@@ -140,7 +140,7 @@ app.post('/data', (req, res) => {
   //}
   const user = await req.body.username
   const addEmployee = await User.findOne({
-      where: {user: User.username }
+      where: {username: user}
       })
       if (addEmployee == null)
       {
@@ -161,7 +161,7 @@ app.post('/data', (req, res) => {
 }
 const newUser = createEmployee(req);
 
-res.render('/data', {user: newUser})
+res.render('/data')
 })
 
 app.get('/userQueue', async function (req, res) {
