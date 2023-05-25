@@ -140,7 +140,7 @@ app.post('/data', (req, res) => {
   //}
   const user = await req.body.username
   const addEmployee = await User.findOne({
-      where: {user: User.username}
+      where: {User: user}
       })
       if (addEmployee == null)
       {
