@@ -150,7 +150,8 @@ app.post('/data', (req, res) => {
       }*/
      // else {
      
-      return await Employee.create( 
+      return console.log(user),
+      await Employee.create( 
       {
         id: 0,
        user: user,
