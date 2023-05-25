@@ -138,7 +138,7 @@ app.post('/data', (req, res) => {
    // if (await User.findOne({ where: { newUser: req.newUser } })) {
    //   throw 'Email "' + req.newName + '" is already registered';
   //}
-  const user = await req.body.username
+  const user = await req.body.employee_name
   /*const addEmployee = await User.findOne({
     ,
       where: {username: user}
