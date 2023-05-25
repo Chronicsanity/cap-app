@@ -161,7 +161,7 @@ app.post('/data', (req, res) => {
 }
 const newUser = createEmployee(req);
 
-res.render('/data', {user : newUser})
+res.render('/data')
 })
 
 app.get('/userQueue', async function (req, res) {
