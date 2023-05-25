@@ -137,8 +137,8 @@ app.post('/data', (req, res) => {
     // validate
    // if (await User.findOne({ where: { newUser: req.newUser } })) {
    //   throw 'Email "' + req.newName + '" is already registered';
-  //}
-  const user = await req.body.employee_name
+  //} 
+  const user = await JSON.stringify(req.body.employee_name).replace(/]|[[]/g, '');
   const addEmployee = await User.findOne({
     
       where: {username: user}
