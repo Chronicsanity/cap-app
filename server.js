@@ -152,7 +152,7 @@ app.post('/data', (req, res) => {
      
       return await Employee.create( 
       {
-        id: User.id,
+        id: 0,
        user: user,
        job_title: req.body.job_title,
        date_working: req.body.date_working
@@ -162,7 +162,7 @@ app.post('/data', (req, res) => {
 }
 const newUser = createEmployee(req);
 
-res.render('/data')
+res.render('data')
 })
 
 app.get('/userQueue', async function (req, res) {
