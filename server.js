@@ -193,7 +193,7 @@ async function scheduleTable() {
     } 
     
       //console.log(info)
-      res.render('data.ejs')
+      res.render('data.ejs', {user: info})
       
   }) 
 
