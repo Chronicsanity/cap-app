@@ -191,7 +191,7 @@ async function scheduleTable() {
       })
       })
     } 
-    
+    const info = scheduleTable()
       //console.log(info)
       res.render('data.ejs', {user: info})
       
