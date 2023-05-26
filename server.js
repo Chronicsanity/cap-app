@@ -163,11 +163,35 @@ app.post('/data', (req, res) => {
 }
 const newUser = createEmployee(req);
 
-Employee.findAll().then(res => { 
+async function scheduleTable() {
+  return  new Promise(function(resolve, reject){
+      db.sequelize.sync().then(() => {
+    
+    
+        Employee.findAll().then(res => {
+        
+       const object = res
+        //console.log(object)
+       return resolve (object);
+        
   
-
-res.render('data', {user: res})
-})
+        
+         }) .catch((error) => {
+      console.error('Failed to retrieve data : ', error);
+      
+      
+      
+      }).catch((error) => {
+      console.error('Unable to create table : ', error);
+        })
+      })
+      })
+    } 
+    scheduleTable().then(info => {
+      //console.log(info)
+      res.render('data.ejs', {user: info})
+      
+  }) 
 })
 
 app.get('/userQueue', async function (req, res) {
