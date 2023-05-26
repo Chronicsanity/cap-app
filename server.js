@@ -163,8 +163,10 @@ app.post('/data', (req, res) => {
 }
 const newUser = createEmployee(req);
 
-scheduleTable().then(info => {
-res.render('data', {user: info})
+Employee.findAll().then(res => { 
+  
+
+res.render('data', {user: res})
 })
 })
 
