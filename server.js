@@ -163,7 +163,9 @@ app.post('/data', (req, res) => {
 }
 const newUser = createEmployee(req);
 
-res.render('data')
+scheduleTable().then(info => {
+res.render('data', {user: info})
+})
 })
 
 app.get('/userQueue', async function (req, res) {
