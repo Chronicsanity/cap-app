@@ -146,7 +146,11 @@ app.post('/data', (req, res) => {
       if (addEmployee == null)
       {
        console.log("User not found!");
-        return res.render('data')
+        return scheduleTable().then(info => {
+          //console.log(info)
+          res.render('data.ejs', {user: info}
+          )
+        })
       }
      else {
      
