@@ -191,12 +191,12 @@ async function scheduleTable() {
       })
       })
     } 
-    scheduleTable().then(info => {
+    
       //console.log(info)
-      res.render('data.ejs', {user: info})
+      res.render('data.ejs')
       
   }) 
-})
+
 
 app.get('/userQueue', async function (req, res) {
 
