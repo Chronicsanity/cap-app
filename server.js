@@ -117,9 +117,8 @@ return  new Promise(function(resolve, reject){
   } 
   
 
-    scheduleTable().then(info => {
-    //console.log(info)
-    res.render('data.ejs', {user: info})
+    
+    res.render('data.ejs')
     
 }) 
   
@@ -128,7 +127,7 @@ async function generateID(min, max) {
       Math.random() *(max - min) + min
   )
 }
-})
+
 app.post('/data', (req, res) => {
 //const submit = req.body.submit;
 
