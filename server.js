@@ -1,3 +1,4 @@
+const {useState} = require( "react");
 const Calendar = require ("react-calendar");
 const express = require("express");
 const session = require("express-session");
@@ -275,7 +276,6 @@ await removeUser();
 app.get('/schedule', async function (req, res) {
 
   function calendarMaker() {
-    const {useState} = require( "react");
     const [date, setDate] = useState(new Date())
 
 
