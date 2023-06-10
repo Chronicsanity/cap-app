@@ -1,5 +1,6 @@
+import React, {useState} from "react";
+import Calendar from "react-calendar";
 const express = require("express");
-const react = require("react");
 const session = require("express-session");
 const cors = require("cors");
 const cookieSession = require("cookie-session");
@@ -18,8 +19,6 @@ const mysql = require('mysql');
 const Promise = require('promise');
 const bcrypt = require('bcryptjs');
 const controller = require("./app/controllers/auth.controller.js");
-const {useState} = require ('react');
-const Calendar = require ('react-calendar');
 const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06.cleardb.net/heroku_a26e4a307a3f41f?reconnect=true", {
 logging: false
 });
@@ -282,7 +281,7 @@ app.get('/schedule', async function (req, res) {
 
 
     return (
-     <div className="app">
+     /*<div className="app">
        <h1 className="header">React Calendar</h1>
        <div className="calendar-container">
          <Calendar onChange={setDate} value={date}/>
@@ -291,7 +290,8 @@ app.get('/schedule', async function (req, res) {
           Selected date: {date.toDateString()}
        </div>
      </div>
-      
+      */
+     console.log ("Working?")
     )
   }
   res.render ('schedule', calendarMaker)
