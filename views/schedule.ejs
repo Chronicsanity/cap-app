@@ -1,6 +1,5 @@
-
-<script type="module">
-
+<!DOCTYPE html>
+<html>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 	</script>
@@ -14,30 +13,33 @@
 </head>
 
 <body>
-  <% import {useState} from 'react';
-  import Calendar from 'react-calendar'; 
-  import './App.css';
   
-  function App() {
-   const [date, setDate] = useState(new Date())
-  
-  
-  
-  return (
-   <div className="app">
-     <h1 className="header">React Calendar</h1>
-     <div className="calendar-container">
-       <Calendar onChange={setDate} value={date}/>
-     </div>
-     <div className="text-center">
-        Selected date: {date.toDateString()}
-     </div>
-   </div>
-    )
-  
-  }
-  
-  export default App;
-  %>
-  </body>
-</script>
+    <table class="table">
+        <thead>
+          <tr>
+           
+            <th>Name</th>
+           
+            <th>Password </th>
+          </tr>
+        </thead>
+        <tbody>
+           
+            <% for (var i = 0; i < user.length; i++) { %>
+            
+                <tr>
+                    <td><%= user[i].user %></td>
+                    <td><%= user[i].job_title %> </td>
+                    <td><%= user[i].date_working %> </td>
+                </tr>
+            <%  } %>
+
+          </tbody>
+        </table>
+
+
+</body>
+            </div>
+        </div>
+        </div>
+</html>

@@ -1,4 +1,5 @@
 const express = require("express");
+const react = require("react");
 const session = require("express-session");
 const cors = require("cors");
 const cookieSession = require("cookie-session");
@@ -17,6 +18,8 @@ const mysql = require('mysql');
 const Promise = require('promise');
 const bcrypt = require('bcryptjs');
 const controller = require("./app/controllers/auth.controller.js");
+const {useState} = require ('react');
+const Calendar = require ('react-calendar');
 const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06.cleardb.net/heroku_a26e4a307a3f41f?reconnect=true", {
 logging: false
 });
@@ -273,36 +276,27 @@ await removeUser();
 })
 app.get('/schedule', async function (req, res) {
 
-    async function employeeTable() {
-      return  new Promise(function(resolve, reject){
-          db.sequelize.sync().then(() => {
-        
-        
-            Employee.findAll().then(res => {
-            
-           const object = res
-            //console.log(object)
-           return resolve (object);
-            
-      
-            
-             }) .catch((error) => {
-          console.error('Failed to retrieve data : ', error);
-          
-          
-          
-          }).catch((error) => {
-          console.error('Unable to create table : ', error);
-            })
-          })
-          })
-        } 
+  function calendarMaker() {
+    const [date, setDate] = useState(new Date())
 
-    employeeTable().then(info => {
-    //console.log(info)
-    res.render('schedule.ejs', {user: info})
-    
-}) })
+
+
+    return (
+     <div className="app">
+       <h1 className="header">React Calendar</h1>
+       <div className="calendar-container">
+         <Calendar onChange={setDate} value={date}/>
+       </div>
+       <div className="text-center">
+          Selected date: {date.toDateString()}
+       </div>
+     </div>
+      
+    )
+  }
+  res.render ('schedule', calendarMaker)
+
+  })
 /*if (submit === "deleteUser") {
   async function _delete(req) {
   const user = await getUser(req.body.username)
