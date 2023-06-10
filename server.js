@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import Calendar from "react-calendar";
+const {useState} = require( "react");
+const Calendar = require ("react-calendar");
 const express = require("express");
 const session = require("express-session");
 const cors = require("cors");
