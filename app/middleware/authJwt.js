@@ -90,11 +90,11 @@ isModeratorOrAdmin = async (req, res, next) => {
     });
   }
 };
-
+/*
 const authJwt = {
   verifyToken,
   isAdmin,
   isModerator,
   isModeratorOrAdmin,
 };
-module.exports = authJwt;
+module.exports = authJwt;*/
