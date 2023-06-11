@@ -1,4 +1,4 @@
-/*const jwt = require("jsonwebtoken");
+const jwt = require("jsonwebtoken");
 const config = require("../config/auth.config.js");
 const db = require("../models");
 const User = db.user;
@@ -97,4 +97,4 @@ const authJwt = {
   isModerator,
   isModeratorOrAdmin,
 };
-module.exports = authJwt;*/
+module.exports = authJwt;
