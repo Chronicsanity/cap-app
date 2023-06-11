@@ -4,7 +4,7 @@ const db = require("../models");
 const User = db.user;
 const Role = db.role;
 
-/*verifyToken = (req, res, next) => {
+const verifyToken = (req, res, next) => {
   let token = req.session.token;
 
   if (!token) {
@@ -23,8 +23,8 @@ const Role = db.role;
     next();
   });
 };
-*/
-isAdmin = async (req, res, next) => {
+
+const isAdmin = async (req, res, next) => {
   try {
     const user = await User.findByPk(req.userId);
     const roles = await User.findByPk(req.roleId);
@@ -45,7 +45,7 @@ isAdmin = async (req, res, next) => {
   }
 };
 
-isModerator = async (req, res, next) => {
+const isModerator = async (req, res, next) => {
   try {
     const user = await User.findByPk(req.userId);
     const roles = await User.findByPk(req.roleId);
@@ -66,7 +66,7 @@ isModerator = async (req, res, next) => {
   }
 };
 
-isModeratorOrAdmin = async (req, res, next) => {
+const isModeratorOrAdmin = async (req, res, next) => {
   try {
     const user = await User.findByPk(req.userId);
     const roles = await User.findByPk(req.roleId);
@@ -92,7 +92,7 @@ isModeratorOrAdmin = async (req, res, next) => {
 };
 
 const authJwt = {
-  //verifyToken,
+  verifyToken,
   isAdmin,
   isModerator,
   isModeratorOrAdmin,
