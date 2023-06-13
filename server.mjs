@@ -57,7 +57,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/signin")
-const authRoute = require('./app/routes/auth.routes.js')
+import authRoute from ('./app/routes/auth.routes.js')
 require('./app/routes/user.routes.js')(app)
 authRoute(app)
 app.get( '/forgetpass', (req, res) =>{
