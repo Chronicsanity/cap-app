@@ -1,6 +1,5 @@
 import {useState} from 'react';
-import Calendar from 'react-calendar'; 
-import Date from 'react-calendar';
+import Calendar from 'react-calendar';
 import express from "express";
 const app = express();
 app.use(express.json());
@@ -8,7 +7,7 @@ app.use(express.json());
 
 
 
- async function calendar () {
+ async function Calendar () {
   const newdate = new Date();
   const [date, setdate] = useState(new Date())
 console.log ()
@@ -18,4 +17,4 @@ console.log ()
      await root.render(e(Calendar), );
       
     }
-  export default calendar();
+  export default Calendar;
