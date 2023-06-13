@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Calendar from "./app/models/calendar.js";
+import {calendar} from "./app/models/calendar.js";
 import express from "express";
 import session from "express-session";
 import cors from "cors";
@@ -272,9 +272,9 @@ await removeUser();
 }
 })
 app.get('/schedule', async function (req, res) {
-  Calendar()
-  console.log(Calendar.date)
-  res.render ('schedule', {date: Calendar} )
+  calendar()
+  console.log(calendar().date)
+  res.render ('schedule', {date: calendar()} )
 
   })
 
