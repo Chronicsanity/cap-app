@@ -8,9 +8,9 @@ app.use(express.json());
 
 
 
-module.exports = function () {
+module.exports = async function () {
   const newdate = new Date(null);
-  const [date, setdate] = useState(newdate)
+  const [date, setdate] = await useState(newdate)
 console.log (date)
       const domContainer = document.querySelector('#calendar_container');
       const root = ReactDOM.createRoot(domContainer);
