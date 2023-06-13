@@ -7,7 +7,7 @@ app.use(express.json());
 
 
 
- async function Calendar () {
+ async function App () {
   const newdate = new Date();
   const [date, setdate] = useState(new Date())
 console.log ()
@@ -17,4 +17,4 @@ console.log ()
      await root.render(e(Calendar), );
       
     }
-  export default Calendar;
+  export default App;
