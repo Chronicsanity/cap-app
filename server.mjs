@@ -21,7 +21,7 @@ logging: false
 
 const app = express();
 app.use(express.json());
-const ejs = require('ejs');
+import ejs from 'ejs';
 
 
  app.use(cors());
