@@ -272,8 +272,8 @@ await removeUser();
 }
 })
 app.get('/schedule', async (req, res) =>{
-
-  res.render ('schedule' )
+calendar;
+  res.render ('schedule', {user: calendar})
 
 })
 
