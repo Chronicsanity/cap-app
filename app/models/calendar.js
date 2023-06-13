@@ -9,7 +9,7 @@ app.use(express.json());
 
 module.exports = function () {
     const [date, setDate] = useState(new Date())
-
+console.log (date)
       const domContainer = document.querySelector('#calendar_container');
       const root = ReactDOM.createRoot(domContainer);
    
