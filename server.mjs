@@ -130,9 +130,9 @@ async function generateID(min, max) {
 }
 })
 app.post('/data', (req, res) => {
-//const submit = req.body.submit;
+const submit = req.body.submit;
 
-//if (submit === "newUser_button") {
+if (submit === "addEmployee") {
   async function createEmployee(req) {
     // validate
    // if (await User.findOne({ where: { newUser: req.newUser } })) {
@@ -206,9 +206,13 @@ async function scheduleTable() {
       //console.log(info)
       res.render('data.ejs', {user: info})
       
-  }) 
+  } 
+  if(submit === "denyEmployee") 
+  {
+    req.body.remove_user
+  }
 
-
+})
 app.get('/userQueue', async function (req, res) {
 
     
