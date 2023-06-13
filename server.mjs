@@ -6,7 +6,7 @@ import cors from "cors";
 import cookieSession from "cookie-session";
 
 import Sequelize from "sequelize";
-const bodyParser = require("body-parser");
+import bodyParser from "body-parser";
 const db = require("./app/models/index.js");
 const User = db.user;
 const Employee = db.employee;
