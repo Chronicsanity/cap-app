@@ -208,10 +208,12 @@ async function scheduleTable() {
       
   } 
   if(submit === "denyEmployee") 
-  {
+  { 
     scheduleTable().then(info => {
       const removedUser = info.user;
       const check = req.body.remove_user;
+      if (check == null) 
+      {res.render(('data.ejs'))}
     if (check == removedUser )
     {
       check.destroy({
