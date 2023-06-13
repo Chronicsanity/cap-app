@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Calendar from "react-calendar";
 import express from "express";
 import session from "express-session";
@@ -273,7 +273,7 @@ await removeUser();
 })
 app.get('/schedule', async function (req, res) {
   const [date, setDate] = useState(new Date())
-
+date();
   res.render ('schedule', {date: date} )
 
   })
