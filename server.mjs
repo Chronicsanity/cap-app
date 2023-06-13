@@ -271,12 +271,12 @@ return res.render('userQueue', {user:info})
 await removeUser();
 }
 })
-app.get('/schedule', async function (req, res) {
+app.get('/schedule', async (req, res) =>{
   
-
+calendar();
   res.render ('schedule', {date: calendar()} )
 
-  })
+})
 
 app.use(express.static(__dirname + '/views'));
 
