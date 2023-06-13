@@ -4,10 +4,11 @@ import express from "express";
 import session from "express-session";
 import cors from "cors";
 import cookieSession from "cookie-session";
-
+import path from 'path';
 import Sequelize from "sequelize";
 import bodyParser from "body-parser";
 import db from "./app/models/index.js";
+import {fileURLToPath} from 'url';
 const User = db.user;
 const Employee = db.employee;
 const QueuedUser = db.queuedUsers;
@@ -18,7 +19,8 @@ import controller from "./app/controllers/auth.controller.js";
 const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06.cleardb.net/heroku_a26e4a307a3f41f?reconnect=true", {
 logging: false
 });
-
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const app = express();
 app.use(express.json());
 import ejs from 'ejs';
