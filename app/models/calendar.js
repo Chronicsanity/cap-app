@@ -1,10 +1,11 @@
 import {useState} from 'react';
 import Calendar from 'react-calendar'; 
+import Date from 'react-calendar';
 import express from "express";
 const app = express();
 app.use(express.json());
 
-const [date, setDate] = useState(new Date())
+const [date, setdate] = useState(new Date())
 
 
 
