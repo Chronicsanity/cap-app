@@ -16,6 +16,7 @@ import mysql from 'mysql';
 import Promise from 'promise';
 import bcrypt from 'bcryptjs';
 import controller from "./app/controllers/auth.controller.js";
+import Calendar from './app/models/calendar.js';
 const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06.cleardb.net/heroku_a26e4a307a3f41f?reconnect=true", {
 logging: false
 });
@@ -272,40 +273,11 @@ await removeUser();
 }
 })
 app.get('/schedule', async function (req, res) {
-
-  function calendarMaker() {
-    const [date, setDate] = useState(new Date())
-
-
-
-    return (
-     <div className="app">
-       <h1 className="header">React Calendar</h1>
-       <div className="calendar-container">
-         <Calendar onChange={setDate} value={date}/>
-       </div>
-       <div className="text-center">
-          Selected date: {date.toDateString()}
-       </div>
-     </div>
-      
-    
-    )
-  }
-  res.render ('schedule', calendarMaker())
+  
+  res.render ('schedule' )
 
   })
-/*if (submit === "deleteUser") {
-  async function _delete(req) {
-  const user = await getUser(req.body.username)
-  console.log (user)
-  user.destroy();
-console.log ("User has been removed.");
-  }
-_delete(req);
-res.render('/data')
-}
-*/
+
 app.use(express.static(__dirname + '/views'));
 
 

@@ -13,33 +13,21 @@
 </head>
 
 <body>
-  
-    <table class="table">
-        <thead>
-          <tr>
-           
-            <th>Name</th>
-           
-            <th>Password </th>
-          </tr>
-        </thead>
-        <tbody>
-           
-            <% for (var i = 0; i < user.length; i++) { %>
-            
-                <tr>
-                    <td><%= user[i].user %></td>
-                    <td><%= user[i].job_title %> </td>
-                    <td><%= user[i].date_working %> </td>
-                </tr>
-            <%  } %>
+  <div className="app">
+    <h1 className="header">React Calendar</h1>
+    <div className="calendar-container">
+      <Calendar onChange={setDate} value={date}/>
+    </div>
+    <div className="text-center">
+       Selected date: {date.toDateString()}
+    </div>
+  </div>
 
-          </tbody>
-        </table>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
 
-
+  <!-- Load our React component. -->
+  <script src="calendar.js"></script>
 </body>
-            </div>
-        </div>
-        </div>
+        
 </html>
