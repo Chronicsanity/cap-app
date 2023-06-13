@@ -7,7 +7,7 @@ app.use(express.json());
 
 
 
-module.exports = function (calendar) {
+module.exports = function (app) {
     const [date, setDate] = useState(new Date())
 
       const domContainer = document.querySelector('#calendar_container');
