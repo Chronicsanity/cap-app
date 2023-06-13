@@ -209,10 +209,19 @@ async function scheduleTable() {
   } 
   if(submit === "denyEmployee") 
   {
-    req.body.remove_user
-  }
+    scheduleTable().then(info => {
+      const removedUser = info.user;
+      const check = req.body.remove_user;
+    if (check == removedUser )
+    {
+      check.destroy({
 
-})
+        where: check == removedUser
+      })
+    }
+  
+  })
+}})
 app.get('/userQueue', async function (req, res) {
 
     
