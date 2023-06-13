@@ -56,7 +56,7 @@ app.get("/", (req, res) => {
 
 app.get("/signin")
 // routes
-import "./app/routes/auth.routes";(app);
+import "./routes/auth.routes";(app);
 import "./app/routes/user.routes";(app);
 
 app.get( '/forgetpass', (req, res) =>{
