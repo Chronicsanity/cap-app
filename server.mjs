@@ -218,9 +218,12 @@ async function scheduleTable() {
 
         where: check == removedUser
       })
+      return removedUser
     }
   
-  })
+  
+  res.render ('data.ejs', {user: removedUser})
+   } )
 }})
 app.get('/userQueue', async function (req, res) {
 
