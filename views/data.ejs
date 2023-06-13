@@ -39,6 +39,14 @@
                     <input type="username" class="form-control" placeholder="username" name="employee_name">
                     <small class="form-text text-muted text-left">Register Username</small>
                 </div>
+                    <select class="selectpicker" data-style="btn-info" name="selectpicker">
+                        <optgroup label="Select Table">
+                            <option value="">Select Job Title</option>
+                            <% rows.forEach(function(row){ %>
+                            <option value="<%= row %>"><%= row %></option>
+                            <% }) %>
+                        </optgroup>
+                    </select>
                 <div class="form-group">
                     <input type="text" class="form-control" name="job_title" placeholder="Job Title">
                 </div>
