@@ -272,7 +272,7 @@ await removeUser();
 }
 })
 app.get('/schedule', async function (req, res) {
-  const [date, setDate] = useState(new Date())
+  const [date, setDate] = useState(new Date() | null>(null))
 date();
   res.render ('schedule', {date: date} )
 
