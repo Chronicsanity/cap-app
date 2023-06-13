@@ -15,7 +15,7 @@ console.log (date)
       const domContainer = document.querySelector('#calendar_container');
       const root = ReactDOM.createRoot(domContainer);
    
-     root.render(e(Calendar), {date: date});
+     await root.render(e(Calendar), {date: date});
       
     }
   
