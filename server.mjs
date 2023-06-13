@@ -168,7 +168,11 @@ app.post('/data', (req, res) => {
 }
 if (newUser.job_title == "chef" || Employee.job_title == "sues chef" || Employee.job_title == "bus boy"  || Employee.job_title == "waiter" ) {
 const newUser = createEmployee(req);
-res.render ('data.ejs', {user: newUser})
+scheduleTable().then(info => {
+  //console.log(info)
+  res.render('data.ejs', {user: info}
+  )
+})
 }
 else {
 return res.render('data.ejs')
