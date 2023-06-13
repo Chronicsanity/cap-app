@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Calendar from "react-calendar";
 import express from "express";
-const session = require("express-session");
+import session from "express-session";
 const cors = require("cors");
 const cookieSession = require("cookie-session");
 const path = require('path');
