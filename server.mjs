@@ -292,7 +292,7 @@ app.get('/schedule', async function (req, res) {
      console.log ("Working?")
     )
   }
-  res.render ('schedule', calendarMaker)
+  res.render ('schedule', calendarMaker())
 
   })
 /*if (submit === "deleteUser") {
