@@ -272,7 +272,7 @@ await removeUser();
 }
 })
 app.get('/schedule', async (req, res) =>{
-calendar;
+console.log(calendar.date);
   res.render ('schedule', {date: calendar})
 
 })
