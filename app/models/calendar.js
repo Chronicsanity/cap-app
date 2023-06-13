@@ -4,13 +4,13 @@ import Calendar from 'react-calendar';
 import express from "express";
 const app = express();
 app.use(express.json());
-const newdate = new Date(null);
-const [date, setdate] = useState(newdate)
+
 
 
 
 module.exports = function () {
- 
+  const newdate = new Date(null);
+  const [date, setdate] = useState(newdate)
 console.log (date)
       const domContainer = document.querySelector('#calendar_container');
       const root = ReactDOM.createRoot(domContainer);
