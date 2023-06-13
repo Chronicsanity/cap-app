@@ -4,7 +4,7 @@
   "description": "Class project.",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon --exec babel-node server.js",
+    "start": "nodemon --exec babel-node server.mjs",
     "dev": "nodemon server.mjs"
   },
   "engines": {
