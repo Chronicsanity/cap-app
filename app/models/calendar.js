@@ -8,7 +8,7 @@ app.use(express.json());
 
 
 
-module.exports = async function () {
+ async function calendar () {
   const newdate = new Date(null);
   const [date, setdate] = await useState(newdate)
 console.log (date)
@@ -18,4 +18,4 @@ console.log (date)
      await root.render(e(Calendar), {date: date});
       
     }
-  
+  export default calendar();
