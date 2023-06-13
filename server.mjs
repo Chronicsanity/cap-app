@@ -274,7 +274,7 @@ await removeUser();
 app.get('/schedule', async function (req, res) {
 
   function calendarMaker() {
-    //const [date, setDate] = useState(new Date())
+    const [date, setDate] = useState(new Date())
 
 
 
