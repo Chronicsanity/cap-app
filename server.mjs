@@ -2,19 +2,15 @@ import { useState } from "react";
 import Calendar from "react-calendar";
 import express from "express";
 import session from "express-session";
-const cors = require("cors");
-const cookieSession = require("cookie-session");
-const path = require('path');
-const Sequelize = require("sequelize");
+import cors from "cors";
+import cookieSession from "cookie-session";
+
+import Sequelize from "sequelize";
 const bodyParser = require("body-parser");
-const passport = require('passport');
-const { verifySignUp } = require("./app/middleware");
-const cookieParser = require("cookie-parser");
 const db = require("./app/models/index.js");
 const User = db.user;
 const Employee = db.employee;
-const QueuedUser = db.queuedUsers
-const Time_Working = db.time_working;
+const QueuedUser = db.queuedUsers;
 const mysql = require('mysql');
 const Promise = require('promise');
 const bcrypt = require('bcryptjs');
