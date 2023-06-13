@@ -13,7 +13,7 @@ module.exports = function (date) {
       const domContainer = document.querySelector('#calendar_container');
       const root = ReactDOM.createRoot(domContainer);
    
-     root.render(e(Calendar), {date: date}, {setDate:setDate});
+     root.render(e(Calendar), {setDate:setDate});
       
     }
   
