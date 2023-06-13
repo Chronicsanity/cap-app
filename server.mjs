@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Calendar from "react-calendar";
 import express from "express";
 import session from "express-session";
@@ -289,7 +289,7 @@ app.get('/schedule', async function (req, res) {
        </div>
      </div>
       */
-     console.log ("Working?")
+     console.log (date)
     )
   }
   res.render ('schedule', calendarMaker())
