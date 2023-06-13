@@ -279,7 +279,7 @@ app.get('/schedule', async function (req, res) {
 
 
     return (
-     /*<div className="app">
+     <div className="app">
        <h1 className="header">React Calendar</h1>
        <div className="calendar-container">
          <Calendar onChange={setDate} value={date}/>
@@ -288,8 +288,8 @@ app.get('/schedule', async function (req, res) {
           Selected date: {date.toDateString()}
        </div>
      </div>
-      */
-     console.log (date)
+      
+    
     )
   }
   res.render ('schedule', calendarMaker())
