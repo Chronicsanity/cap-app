@@ -9,7 +9,7 @@ app.use(express.json());
 
 
  async function calendar () {
-  const newdate = new Date(null);
+  const newdate = new Date();
   const [date, setdate] = await useState(newdate)
 console.log (date)
       const domContainer = document.querySelector('#calendar_container');
