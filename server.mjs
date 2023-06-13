@@ -272,8 +272,8 @@ await removeUser();
 }
 })
 app.get('/schedule', async (req, res) =>{
-
-  res.render ('schedule')
+const scheduleInfo = App;
+  res.render ('schedule', {date: scheduleInfo})
 
 })
 
