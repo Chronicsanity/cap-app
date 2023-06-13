@@ -13,6 +13,10 @@
 </head>
 
 <body>
+
+  <ScheduleComponent width='100%' height='650px'>
+    <Inject services={[Day, Week, WorkWeek, Month, Agenda]}/>
+</ScheduleComponent>
   <div className="app">
     <h1 className="header">React Calendar</h1>
     <div className="calendar-container">
