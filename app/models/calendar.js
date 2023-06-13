@@ -4,8 +4,8 @@ import Date from 'react-calendar';
 import express from "express";
 const app = express();
 app.use(express.json());
-
-const [date, setdate] = useState(new Date())
+const newdate = new Date();
+const [date, setdate] = useState(newdate)
 
 
 
