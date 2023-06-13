@@ -57,7 +57,8 @@ app.get("/", (req, res) => {
 });
 
 app.get("/signin")
-
+require('./app/routes/auth.routes.js')(app)
+require('./app/routes/user.routes.js')(app)
 app.get( '/forgetpass', (req, res) =>{
   res.render('forgetpass.ejs');
 });
