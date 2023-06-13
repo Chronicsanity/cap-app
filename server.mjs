@@ -56,9 +56,10 @@ app.get("/", (req, res) => {
 
 app.get("/signin")
 // routes
-import "./routes/auth.routes";(app);
-import "./app/routes/user.routes";(app);
-
+import authRoute from "./routes/auth.routes";
+import userRoute from "./app/routes/user.routes";
+await authRoute;
+await userRoute;
 app.get( '/forgetpass', (req, res) =>{
   res.render('forgetpass.ejs');
 });
