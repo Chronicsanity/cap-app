@@ -163,10 +163,17 @@ app.post('/data', (req, res) => {
        date_working: req.body.date_working
 
       })
+      
     }
 }
+if (newUser.job_title == "chef" || Employee.job_title == "sues chef" || Employee.job_title == "bus boy"  || Employee.job_title == "waiter" ) {
 const newUser = createEmployee(req);
+res.render ('data.ejs', {user: newUser})
+}
+else {
+return res.render('data.ejs')
 
+}
 async function scheduleTable() {
   return  new Promise(function(resolve, reject){
       db.sequelize.sync().then(() => {
