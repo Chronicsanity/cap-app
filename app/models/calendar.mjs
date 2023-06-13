@@ -11,4 +11,4 @@ function calendar() {
       root.render(e(Calendar), e(date), e(setDate));
       
     }
-       export default calendar;
+       module.exports = calendar;
