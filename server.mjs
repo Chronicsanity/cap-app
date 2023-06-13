@@ -7,14 +7,14 @@ import cookieSession from "cookie-session";
 
 import Sequelize from "sequelize";
 import bodyParser from "body-parser";
-const db = require("./app/models/index.js");
-const User = db.user;
-const Employee = db.employee;
-const QueuedUser = db.queuedUsers;
-const mysql = require('mysql');
-const Promise = require('promise');
-const bcrypt = require('bcryptjs');
-const controller = require("./app/controllers/auth.controller.js");
+import db from "./app/models/index.js";
+import User from db.user;
+import Employee from db.employee;
+import QueuedUser from db.queuedUsers;
+import mysql from 'mysql';
+import Promise from 'promise';
+import bcrypt from 'bcryptjs';
+import controller from "./app/controllers/auth.controller.js";
 const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06.cleardb.net/heroku_a26e4a307a3f41f?reconnect=true", {
 logging: false
 });
