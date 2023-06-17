@@ -78,8 +78,6 @@ async function newUser () {
 
    }
        await user.save();
-      
-
 }
 
 newUser();
@@ -87,8 +85,6 @@ newUser();
     
   }
       
-    
-
   catch (error) {
     res.status(500).send({ message: error.message });
   }

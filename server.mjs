@@ -164,7 +164,7 @@ return res.redirect('data')
   { 
     
 
-    async function remove() {
+    async function remove(req) {
       const removeUser = await JSON.stringify(req.body.rejectEmployee).replace(/]|[[]/g, '');
       const userRemoved = await  Employee.findOne({where: {user: removeUser}})
    
@@ -178,7 +178,7 @@ return res.redirect('data')
 }
 
     
-   remove();
+   remove(req);
 
    controller.scheduleTable().then(info => {
     //console.log(info)
