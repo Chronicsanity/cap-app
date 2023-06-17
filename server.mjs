@@ -219,9 +219,7 @@ async function scheduleTable() {
         where: {user: removeUser }
     })
   })
-    
-     
-    
+      
     
 }
 
@@ -230,7 +228,7 @@ async function scheduleTable() {
 
    scheduleTable().then(info => {
     //console.log(info)
-    res.redirect('data', {user: info}
+    res.render('data', {user: info}
     )
   })
   }
