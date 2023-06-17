@@ -132,7 +132,7 @@ async function generateID(min, max) {
 app.post('/data', (req, res) => {
 const submit = req.body.submit;
 
-if (submit === "addEmployee") {
+if (req.body.hasOwnProperty("acceptEmployee")) {
   async function createEmployee(req) {
     // validate
    // if (await User.findOne({ where: { newUser: req.newUser } })) {
@@ -207,7 +207,7 @@ async function scheduleTable() {
       res.render('data.ejs', {user: info})
       
   } 
-  if(submit === "denyEmployee") 
+  else if(req.body.hasOwnProperty("rejectEmployee")) 
   { 
     scheduleTable().then(info => {
       const removedUser = info.user;
