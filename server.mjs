@@ -219,10 +219,10 @@ async function scheduleTable() {
     })
   })
     
-      //console.log(info)
-      res.redirect('data')}
+     
     
-  
+    
+}
 
     
    remove();
