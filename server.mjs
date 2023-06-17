@@ -216,7 +216,7 @@ async function scheduleTable() {
    
       Employee.destroy({
     
-        where: {res: removeUser }
+        where: {user: removeUser }
     })
   })
     
