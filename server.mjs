@@ -131,7 +131,11 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
       {
         where: {user: req.body.employee_name}
       })
-
+      return controller.scheduleTable().then(info => {
+        //console.log(info)
+        res.render('data.ejs', {user: info}
+        )
+      })
      }
      else if (user === null ||user ==='""' && user != editEmployee)
       {
