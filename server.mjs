@@ -170,12 +170,12 @@ if (newUser.job_title == "chef" || Employee.job_title == "sous chef" || Employee
 
 scheduleTable().then(info => {
   //console.log(info)
-  res.redirect('data.ejs', {user: info}
+  res.redirect('data', {user: info}
   )
 })
 }
 else {
-return res.redirect('data.ejs')
+return res.redirect('data')
 
 }
 async function scheduleTable() {
