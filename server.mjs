@@ -155,9 +155,9 @@ else {
 return res.redirect('data')
 
 }
-    const info = controller.scheduleTable()
+    const schedule = controller.scheduleTable();
       //console.log(info)
-      res.render('data.ejs', {user: info})
+      res.render('data.ejs', {user: schedule})
       
   } 
   if(req.body.hasOwnProperty("rejectEmployee")) 
