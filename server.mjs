@@ -165,12 +165,12 @@ return res.redirect('data')
     
 
     async function remove(req) {
-      const removeUser = await JSON.stringify(req.body.rejectEmployee).replace(/]|[[]/g, '');
+      const removeUser = await JSON.stringify(req.body.remove_Employee).replace(/]|[[]/g, '');
       const userRemoved = await  Employee.findOne({where: {user: removeUser}})
    
      await Employee.destroy({
     
-        where: {user: req.body.rejectEmployee }
+        where: {user: req.body.remove_Employee }
     })
   
       
