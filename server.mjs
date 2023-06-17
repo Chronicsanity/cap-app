@@ -229,7 +229,7 @@ async function scheduleTable() {
    remove();
 
   
-  res.render ('data.ejs')
+  res.render ('data.ejs', {user: Employee})
   }
 })
 app.get('/userQueue', async function (req, res) {
