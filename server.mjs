@@ -130,7 +130,7 @@ async function generateID(min, max) {
 }
 })
 app.post('/data', (req, res) => {
-  
+
 req.body = JSON.parse(JSON.stringify(req.body));
 if (req.body.hasOwnProperty("acceptEmployee")) {
   async function createEmployee(req) {
@@ -141,14 +141,14 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
   const user = await JSON.stringify(req.body.employee_name).replace(/]|[[]/g, '');
   const addEmployee = await User.findOne({
     
-      where: {username: user}
+      where: {username: req.body.employee_name}
       })
       if (addEmployee == null)
       {
        console.log("User not found!");
         return scheduleTable().then(info => {
           //console.log(info)
-          res.render('data.ejs', {user: info}
+          res.redirect('data.ejs', {user: info}
           )
         })
       }
@@ -170,12 +170,12 @@ if (newUser.job_title == "chef" || Employee.job_title == "sues chef" || Employee
 
 scheduleTable().then(info => {
   //console.log(info)
-  res.render('data.ejs', {user: info}
+  res.redirect('data.ejs', {user: info}
   )
 })
 }
 else {
-return res.render('data.ejs')
+return res.redirect('data.ejs')
 
 }
 async function scheduleTable() {
