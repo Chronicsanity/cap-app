@@ -120,16 +120,10 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
     
       where: {user: req.body.employee_name}
       })
-      if (user === null ||user ==='""' && user != editEmployee)
-      {
-       console.log("User not found!");
-        return controller.scheduleTable().then(info => {
-          //console.log(info)
-          res.render('data.ejs', {user: info}
-          )
-        })
-      }
-    if (user === Employee.user) {
+
+      
+      
+    if (user === editEmployee) {
       Employee.update({
         user: req.body.employee_name,
         job_title: req.body.job_title
@@ -139,6 +133,15 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
       })
 
      }
+     else if (user === null ||user ==='""' && user != editEmployee)
+      {
+       console.log("User not found!");
+        return controller.scheduleTable().then(info => {
+          //console.log(info)
+          res.render('data.ejs', {user: info}
+          )
+        })
+      }
      else {
       return console.log(user),
       await Employee.create( 
