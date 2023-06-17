@@ -170,7 +170,7 @@ return res.redirect('data')
    
      await Employee.destroy({
     
-        where: {user: req.body.remove_Employee }
+        where: {user: removeUser }
     })
   
       
