@@ -235,7 +235,7 @@ async function scheduleTable() {
     }
     async function remove() {
       const removeUser = req.body.rejectEmployee;
-      const userRemoved = await  Employee.findOne({user: removeUser})
+      const userRemoved = await  Employee.findOne({where: {user: removeUser}})
    
       Employee.destroy({
     
