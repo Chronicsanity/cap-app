@@ -218,7 +218,9 @@ async function scheduleTable() {
         where: {info: removeUser }
     })
   })
-    return res.render('userQueue', {user:info})
+    return scheduleTable().then(info => {
+      //console.log(info)
+      res.redirect('data', {user: info})})
     }
   
 
