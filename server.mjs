@@ -265,7 +265,7 @@ async function scheduleTable() {
 
   scheduleTable().then(info => {
     //console.log(info)
-   return res.redirect('data', {user: info}
+   return res.render('data', {user: info}
     )
   }
   )
