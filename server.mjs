@@ -265,12 +265,8 @@ async function scheduleTable() {
     })
   }
 
-  scheduleTable().then(info => {
-    //console.log(info)
-   return res.render('data', {user: info}
-    )
-  }
-  )
+
+  
 })
 app.get('/userQueue', async function (req, res) {
 
