@@ -129,7 +129,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
           )
         })
       }
-    if (user === editEmployee) {
+    if (user === Employee.user) {
       Employee.update({
         user: req.body.employee_name,
         job_title: req.body.job_title
