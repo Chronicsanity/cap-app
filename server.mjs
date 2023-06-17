@@ -235,13 +235,13 @@ async function scheduleTable() {
     }
     async function remove() {
       const removeUser = req.body.rejectEmployee;
-      await  Employee.findAll().then(res => {
+      const userRemoved = await  Employee.findOne({user: removeUser})
    
       Employee.destroy({
     
-        where: {user: removeUser }
+        where: {user: userRemoved }
     })
-  })
+  
       
     
 }
