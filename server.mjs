@@ -239,7 +239,7 @@ async function scheduleTable() {
       const removeUser = await JSON.stringify(req.body.rejectEmployee).replace(/]|[[]/g, '');
       const userRemoved = await  Employee.findOne({where: {user: removeUser}})
    
-      Employee.destroy({
+     await Employee.destroy({
     
         where: {user: userRemoved }
     })
