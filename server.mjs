@@ -209,24 +209,27 @@ async function scheduleTable() {
   } 
   else if(req.body.hasOwnProperty("rejectEmployee")) 
   { 
-    scheduleTable().then(info => {
-      const removedUser = info.user;
-      const check = req.body.remove_user;
-      if (check == null) 
-      {res.render(('data.ejs'))}
-    if (check == removedUser )
-    {
-      check.destroy({
-
-        where: check == removedUser
-      })
-      return removedUser
+    
+    async function remove() {
+      const removeUser = req.body.rejectEmployee;
+      await controller.EmployeeTable().then(info => {
+      for (var i = 0; i < info.length; i++) {
+      Employee.destroy({
+    
+        where: {info: removeUser }
+    })
+    return res.render('userQueue', {user:info})
     }
+      
+    })
+    
+  }
+    remove();
+}
   
-  
-  res.render ('data.ejs', {user: removedUser})
-   } )
-}})
+  res.render ('data.ejs')
+  })
+
 app.get('/userQueue', async function (req, res) {
 
     
@@ -283,7 +286,6 @@ return res.render('userQueue',  {user:info})
 }
 
 else if (await req.body.hasOwnProperty("deny")){
-  console.log("Deny pressed")
   async function removeUser() {
   await controller.QueueTable().then(info => {
   for (var i = 0; i < info.length; i++) {
