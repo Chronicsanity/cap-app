@@ -202,6 +202,7 @@ async function scheduleTable() {
       })
       })
     } 
+
     const info = scheduleTable()
       //console.log(info)
       res.render('data.ejs', {user: info})
@@ -233,8 +234,9 @@ async function scheduleTable() {
         })
       })
     }
+
     async function remove() {
-      const removeUser = req.body.rejectEmployee;
+      const removeUser = await JSON.stringify(req.body.rejectEmployee).replace(/]|[[]/g, '');
       const userRemoved = await  Employee.findOne({where: {user: removeUser}})
    
       Employee.destroy({
