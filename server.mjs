@@ -228,9 +228,47 @@ async function scheduleTable() {
     
    remove();
 
-  
-  res.render ('data.ejs', {user: Employee})
+   scheduleTable().then(info => {
+    //console.log(info)
+    res.redirect('data', {user: info}
+    )
+  })
   }
+  else {
+  return res.redirect('data')
+  
+  }
+  async function scheduleTable() {
+    return  new Promise(function(resolve, reject){
+        db.sequelize.sync().then(() => {
+      
+      
+          Employee.findAll().then(res => {
+          
+         const object = res
+          //console.log(object)
+         return resolve (object);
+          
+    
+          
+           }) .catch((error) => {
+        console.error('Failed to retrieve data : ', error);
+        
+        
+        
+        }).catch((error) => {
+        console.error('Unable to create table : ', error);
+        })
+      })
+    })
+  }
+
+  scheduleTable().then(info => {
+    //console.log(info)
+    res.redirect('data', {user: info}
+    )
+  }
+  )
 })
 app.get('/userQueue', async function (req, res) {
 
