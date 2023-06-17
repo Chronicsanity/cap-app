@@ -160,7 +160,7 @@ return res.redirect('data')
       res.render('data.ejs', {user: info})
       
   } 
-  else if(req.body.hasOwnProperty("rejectEmployee")) 
+  if(req.body.hasOwnProperty("rejectEmployee")) 
   { 
     
 
