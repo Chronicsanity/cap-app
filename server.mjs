@@ -212,7 +212,7 @@ async function scheduleTable() {
     
     async function remove() {
       const removeUser = req.body.rejectEmployee;
-      await controller.EmployeeTable().then(info => {
+      await controller.scheduleTable().then(info => {
       for (var i = 0; i < info.length; i++) {
       Employee.destroy({
     
@@ -224,7 +224,7 @@ async function scheduleTable() {
     })
     
   }
-    remove();
+   remove();
 }
   
   res.render ('data.ejs')
