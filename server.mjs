@@ -120,7 +120,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
     
       where: {user: req.body.employee_name}
       })
-      if (user === null || "")
+      if (user === null ||user ==='""')
       {
        console.log("User not found!");
         return controller.scheduleTable().then(info => {
@@ -129,7 +129,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
           )
         })
       }
-     else if (user === editEmployee) {
+    if (user === editEmployee) {
       Employee.update({
         job_title: req.body.job_title
       })
