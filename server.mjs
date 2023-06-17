@@ -130,8 +130,8 @@ async function generateID(min, max) {
 }
 })
 app.post('/data', (req, res) => {
-const submit = req.body.submit;
-
+  
+req.body = JSON.parse(JSON.stringify(req.body));
 if (req.body.hasOwnProperty("acceptEmployee")) {
   async function createEmployee(req) {
     // validate
@@ -237,7 +237,7 @@ app.get('/userQueue', async function (req, res) {
     //console.log(info)
     res.render('userQueue.ejs', {user: info})
     if (info.id == null) {
-      res.render('userQueue.ejs', {user: " "})
+      res.render('userQueue.ejs', {user: "---"})
 
     }
     }
