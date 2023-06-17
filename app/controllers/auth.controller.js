@@ -16,6 +16,7 @@ const router = require('express').Router();
 const {connection, pool} = require("../config/db.config.js");
 const nodemailer = require('nodemailer');
 const QueuedUser = db.queuedUsers;
+const Employee = db.employee;
 
 
 async function hashPassword(password) 
@@ -98,6 +99,32 @@ newUser();
     console.log( "Added to Queue!")
 
 }
+}
+exports.scheduleTable = async function (res) {
+  return  new Promise(function(resolve, reject){
+    db.sequelize.sync().then(() => {
+  
+  
+      Employee.findAll().then(res => {
+      
+     const object = res
+      //console.log(object)
+     return resolve (object);
+      
+
+      
+       }) .catch((error) => {
+    console.error('Failed to retrieve data : ', error);
+    
+    
+    
+    }).catch((error) => {
+    console.error('Unable to create table : ', error);
+    })
+  })
+})
+
+
 }
   exports.QueueTable = async function (res) {
     return  new Promise(function(resolve, reject){

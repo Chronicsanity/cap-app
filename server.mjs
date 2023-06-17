@@ -91,33 +91,10 @@ console.log(JSON.stringify(result));
 
 
 app.get('/data', async function (req, res) {
-    async function scheduleTable() {
-return  new Promise(function(resolve, reject){
-    db.sequelize.sync().then(() => {
-  
-  
-      Employee.findAll().then(res => {
-      
-     const object = res
-      //console.log(object)
-     return resolve (object);
-      
-
-      
-       }) .catch((error) => {
-    console.error('Failed to retrieve data : ', error);
-    
-    
-    
-    }).catch((error) => {
-    console.error('Unable to create table : ', error);
-      })
-    })
-    })
-  } 
+   
   
 
-    scheduleTable().then(info => {
+    controller.scheduleTable().then(info => {
     //console.log(info)
     res.render('data.ejs', {user: info})
     
@@ -146,7 +123,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
       if (user == null)
       {
        console.log("User not found!");
-        return scheduleTable().then(info => {
+        return controller.scheduleTable().then(info => {
           //console.log(info)
           res.render('data.ejs', {user: info}
           )
@@ -168,7 +145,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
 }const newUser = createEmployee(req);
 if (newUser.job_title == "chef" || Employee.job_title == "sous chef" || Employee.job_title == "bus boy"  || Employee.job_title == "waiter" ) {
 
-scheduleTable().then(info => {
+controller.scheduleTable().then(info => {
   //console.log(info)
   res.redirect('data', {user: info}
   )
@@ -178,62 +155,14 @@ else {
 return res.redirect('data')
 
 }
-async function scheduleTable() {
-  return  new Promise(function(resolve, reject){
-      db.sequelize.sync().then(() => {
-    
-    
-        Employee.findAll().then(res => {
-        
-       const object = res
-        //console.log(object)
-       return resolve (object);
-        
-  
-        
-         }) .catch((error) => {
-      console.error('Failed to retrieve data : ', error);
-      
-      
-      
-      }).catch((error) => {
-      console.error('Unable to create table : ', error);
-        })
-      })
-      })
-    } 
-
-    const info = scheduleTable()
+    const info = controller.scheduleTable()
       //console.log(info)
       res.render('data.ejs', {user: info})
       
   } 
   else if(req.body.hasOwnProperty("rejectEmployee")) 
   { 
-    async function scheduleTable() {
-      return  new Promise(function(resolve, reject){
-          db.sequelize.sync().then(() => {
-        
-        
-            Employee.findAll().then(res => {
-            
-           const object = res
-            //console.log(object)
-           return resolve (object);
-            
-      
-            
-             }) .catch((error) => {
-          console.error('Failed to retrieve data : ', error);
-          
-          
-          
-          }).catch((error) => {
-          console.error('Unable to create table : ', error);
-          })
-        })
-      })
-    }
+    
 
     async function remove() {
       const removeUser = await JSON.stringify(req.body.rejectEmployee).replace(/]|[[]/g, '');
@@ -251,7 +180,7 @@ async function scheduleTable() {
     
    remove();
 
-   scheduleTable().then(info => {
+   controller.scheduleTable().then(info => {
     //console.log(info)
     res.render('data', {user: info}
     )
@@ -259,7 +188,7 @@ async function scheduleTable() {
   }
       
   else {
-  return scheduleTable().then(info => {
+  return controller.scheduleTable().then(info => {
     //console.log(info)
    return res.render('data', {user: info}
     )
