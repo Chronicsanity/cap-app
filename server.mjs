@@ -143,12 +143,12 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
     
       where: {username: req.body.employee_name}
       })
-      if (addEmployee == null)
+      if (user == null)
       {
        console.log("User not found!");
         return scheduleTable().then(info => {
           //console.log(info)
-          res.redirect('data.ejs', {user: info}
+          res.render('data.ejs', {user: info}
           )
         })
       }
@@ -166,7 +166,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
       
     }
 }const newUser = createEmployee(req);
-if (newUser.job_title == "chef" || Employee.job_title == "sues chef" || Employee.job_title == "bus boy"  || Employee.job_title == "waiter" ) {
+if (newUser.job_title == "chef" || Employee.job_title == "sous chef" || Employee.job_title == "bus boy"  || Employee.job_title == "waiter" ) {
 
 scheduleTable().then(info => {
   //console.log(info)
