@@ -121,23 +121,8 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
       where: {user: req.body.employee_name}
       })
 
-      
-      
-    if (user === editEmployee) {
-      Employee.update({
-        user: req.body.employee_name,
-        job_title: req.body.job_title
-      },
-      {
-        where: {user: req.body.employee_name}
-      })
-      return controller.scheduleTable().then(info => {
-        //console.log(info)
-        res.render('data.ejs', {user: info}
-        )
-      })
-     }
-     else if (user === null ||user ==='""' && user != editEmployee)
+    
+     if (user === null ||user ==='""' && user != editEmployee)
       {
        console.log("User not found!");
         return controller.scheduleTable().then(info => {
@@ -146,7 +131,14 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
           )
         })
       }
-     else {
+     else if (user === editEmployee) {
+      Employee.update({
+      user: req.body.employee_name,
+      job_title: req.body.job_title
+    },
+    {
+      where: {user: req.body.employee_name}
+    })
       return console.log(user),
       await Employee.create( 
       {
@@ -158,7 +150,8 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
       })
       
     }
-}const newUser = createEmployee(req);
+}
+const newUser = createEmployee(req);
 if (newUser.job_title == "chef" || Employee.job_title == "sous chef" || Employee.job_title == "bus boy"  || Employee.job_title == "waiter" ) {
 
 controller.scheduleTable().then(info => {
