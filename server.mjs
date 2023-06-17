@@ -120,7 +120,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
     
       where: {username: req.body.employee_name}
       })
-      if (user == null)
+      if (user === null)
       {
        console.log("User not found!");
         return controller.scheduleTable().then(info => {
@@ -170,7 +170,7 @@ return res.redirect('data')
    
      await Employee.destroy({
     
-        where: {user: userRemoved }
+        where: {user: req.body.rejectEmployee }
     })
   
       
