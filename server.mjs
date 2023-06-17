@@ -116,11 +116,11 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
    //   throw 'Email "' + req.newName + '" is already registered';
   //} 
   const user = await JSON.stringify(req.body.employee_name).replace(/]|[[]/g, '');
-  const addEmployee = await User.findOne({
+  const editEmployee = await Employee.findOne({
     
-      where: {username: req.body.employee_name}
+      where: {user: req.body.employee_name}
       })
-      if (user === null)
+      if (user === null || "")
       {
        console.log("User not found!");
         return controller.scheduleTable().then(info => {
@@ -129,8 +129,13 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
           )
         })
       }
+     else if (user === editEmployee) {
+      Employee.update({
+        job_title: req.body.job_title
+      })
+
+     }
      else {
-     
       return console.log(user),
       await Employee.create( 
       {
