@@ -209,7 +209,30 @@ async function scheduleTable() {
   } 
   else if(req.body.hasOwnProperty("rejectEmployee")) 
   { 
-    
+    async function scheduleTable() {
+      return  new Promise(function(resolve, reject){
+          db.sequelize.sync().then(() => {
+        
+        
+            Employee.findAll().then(res => {
+            
+           const object = res
+            //console.log(object)
+           return resolve (object);
+            
+      
+            
+             }) .catch((error) => {
+          console.error('Failed to retrieve data : ', error);
+          
+          
+          
+          }).catch((error) => {
+          console.error('Unable to create table : ', error);
+          })
+        })
+      })
+    }
     async function remove() {
       const removeUser = req.body.rejectEmployee;
       await  Employee.findAll().then(res => {
@@ -232,6 +255,7 @@ async function scheduleTable() {
     )
   })
   }
+      
   else {
   return scheduleTable().then(info => {
     //console.log(info)
@@ -240,34 +264,9 @@ async function scheduleTable() {
   })
   
   }
-  async function scheduleTable() {
-    return  new Promise(function(resolve, reject){
-        db.sequelize.sync().then(() => {
-      
-      
-          Employee.findAll().then(res => {
-          
-         const object = res
-          //console.log(object)
-         return resolve (object);
-          
-    
-          
-           }) .catch((error) => {
-        console.error('Failed to retrieve data : ', error);
-        
-        
-        
-        }).catch((error) => {
-        console.error('Unable to create table : ', error);
-        })
-      })
-    })
-  }
-
-
   
-})
+    })
+
 app.get('/userQueue', async function (req, res) {
 
     
