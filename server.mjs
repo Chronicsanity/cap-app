@@ -116,7 +116,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
    //   throw 'Email "' + req.newName + '" is already registered';
   //} 
   const user = await JSON.stringify(req.body.employee_name).replace(/]|[[]/g, '');
-  const editEmployee = await Employee.findOne({
+  const editEmployee = await Employee.findAll({
     
       where: {user: req.body.employee_name}
       })
