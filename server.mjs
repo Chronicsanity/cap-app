@@ -131,14 +131,18 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
           )
         })
       }
-     else if (user === editEmployee) {
-      Employee.update({
-      user: req.body.employee_name,
-      job_title: req.body.job_title
-    },
-    {
-      where: {user: req.body.employee_name}
-    })
+      else if (user === editEmployee) 
+      {
+        Employee.update({
+          user: req.body.employee_name,
+          job_title: req.body.job_title
+        },
+        {
+          where: {user: req.body.employee_name}
+        })
+
+      }
+     else {
       return console.log(user),
       await Employee.create( 
       {
