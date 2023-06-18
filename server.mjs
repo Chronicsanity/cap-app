@@ -115,7 +115,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
    
   const user = JSON.stringify(req.body.employee_name).replace(/]|[[]/g, '');
 
-  
+  const editEmployee = Employee.findOne({where: {user: user}}).then(result => {return JSON.stringify(result)})
   
   
   
@@ -135,10 +135,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
         
      else {
 
-      if (Employee.findOne({where: {user: user}}).then(result => {return result})
-    
-    
-       == user) {
+      if (editEmployee == user) {
         console.log("CHECK")
         await Employee.update({
         job_title: req.body.job_title},
