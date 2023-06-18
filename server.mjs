@@ -147,10 +147,6 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
   return await newEmployee
       
 
- else{
-  return await updateEmployee
-  
-  }
   
 
 
