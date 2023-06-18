@@ -117,7 +117,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
 
   const editEmployee = await Employee.findAll({attributes: ['user']}, {where: {user: user}}).then(result => {
     
-    return result
+    return JSON.stringify(result)
   })
   
   
