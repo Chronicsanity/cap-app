@@ -126,24 +126,10 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
           )
         })
       }
-      if (user === editEmployee) 
-      {
-        console.log("CHECKING")
-        Employee.update({
-          user: user,
-          job_title: req.body.job_title
-        },
-        {
-          where: {user: user}
-        })
-        return controller.scheduleTable().then(info => {
-          //console.log(info)
-          res.render('data', {user: info})
-        })
-        }
-     else if (user != editEmployee) {
-      return console.log(editEmployee),
-      await Employee.create( 
+     
+        
+     else {
+      const newEmployee = await Employee.create( 
       {
         id: 0,
        user: user,
@@ -151,8 +137,12 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
        date_working: req.body.date_working
 
       })
-      
+      if (newEmployee == user) {
+        return console.log("CHECK")
+      }
+      else {return newEmployee}
     }
+     
 }
 const newUser = createEmployee(req);
 if (newUser.job_title == "chef" || Employee.job_title == "sous chef" || Employee.job_title == "bus boy"  || Employee.job_title == "waiter" ) {
