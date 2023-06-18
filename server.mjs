@@ -149,8 +149,9 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
      
       }
     
- 
+ else if (user =! newEmployee.user) {
   return newEmployee
+ }
     }
 }
 const newUser = createEmployee(req);
