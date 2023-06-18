@@ -118,8 +118,8 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
   const editEmployee = await Employee.findAll({attributes: ['user']}, {where: {user: user}}).then(result => {
     if (result == null || "")  
     
-    {return false}
-    else {return true}
+    {return true}
+    else {return false}
     
   })
   
