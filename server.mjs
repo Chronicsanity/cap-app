@@ -116,8 +116,8 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
   const user = JSON.stringify(req.body.employee_name).replace(/]|[[]/g, '');
 
   const editEmployee = await Employee.findAll({where: {user: user}}).then(result => {
-    const checkUser = result.user;
-    return JSON.stringify(checkUser)})
+    
+    return JSON.stringify(result)})
   
   
   
@@ -137,7 +137,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
         
      else {
 
-      if (editEmployee == user) {
+      if (editEmployee.user == user) {
         console.log("CHECK")
         await Employee.update({
         job_title: req.body.job_title},
@@ -147,7 +147,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
     }
   
 
-else {return console.log(user + editEmployee), await Employee.create( 
+else {return console.log(user + editEmployee.user), await Employee.create( 
   {
     id: 0,
    user: user,
