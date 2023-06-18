@@ -136,8 +136,11 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
         {
           where: {user: user}
         })
-
-      }
+        return controller.scheduleTable().then(info => {
+          //console.log(info)
+          res.render('data', {user: info})
+        })
+        }
      else if (user != editEmployee) {
       return console.log(editEmployee),
       await Employee.create( 
