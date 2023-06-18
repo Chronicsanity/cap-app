@@ -106,7 +106,7 @@ async function generateID(min, max) {
   )
 }
 })
-app.post('/data', (req, res) => {
+app.post('/data', async (req, res) => {
 
 req.body = JSON.parse(JSON.stringify(req.body));
 async function createEmployee(req) {
@@ -152,7 +152,7 @@ date_working: req.body.date_working
 }
 if (req.body.hasOwnProperty("acceptEmployee")) {
 
- createEmployee(req);
+ await createEmployee(req);
  return controller.scheduleTable().then(info => {
   //console.log(info)
  return res.render('data', {user: info}
@@ -179,7 +179,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
 }
 
     
-   remove(req);
+   await remove(req);
    return controller.scheduleTable().then(info => {
     //console.log(info)
    return res.render('data', {user: info}
