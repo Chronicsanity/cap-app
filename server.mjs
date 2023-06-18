@@ -142,6 +142,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
       },
       {where: {user:user}});
      
+      await newEmployee;
       
  if (user =! newEmployee.user) {
   return newEmployee
