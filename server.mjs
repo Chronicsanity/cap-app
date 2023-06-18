@@ -113,13 +113,10 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
   async function createEmployee(req) {
    
   const user = await JSON.stringify(req.body.employee_name).replace(/]|[[]/g, '');
-  const editEmployee = await Employee.findAll({
-    
-      where: {user: user}
-      })
+  const editEmployee = await Employee.findAll({where: {user: user}});
 
     
-     if (user === null ||user ==='""' && user != editEmployee)
+     if (user == null ||user =='""' && user != editEmployee)
       {
        console.log("User not found!");
         return controller.scheduleTable().then(info => {
@@ -128,8 +125,9 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
           )
         })
       }
-      if (req.body.employee_name === Employee.user) 
+      if (req.body.employee_name == Employee.user) 
       {
+
         Employee.update({
           user: req.body.employee_name,
           job_title: req.body.job_title
