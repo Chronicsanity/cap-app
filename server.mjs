@@ -123,7 +123,7 @@ async function createEmployee(req) {
   
   if (editEmployee != false)
   {
-    return console.log(req.body.employee_name + user + employeeCheck),
+    return console.log(req.body.employee_name + user),
     await Employee.update({
     job_title: req.body.job_title},
   
