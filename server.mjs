@@ -147,7 +147,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
     
 
   if (Employee.user === user)
-  return   await updateEmployee, await Employee.destroy({
+  return   await Employee.destroy({
     where: {user:user}
   })
   
