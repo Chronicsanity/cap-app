@@ -140,17 +140,10 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
       if (user == newEmployee.user) {
         return await Employee.update({
           job_title: req.body.job_title
-        },
-        {where: {user:user}}),
-        controller.scheduleTable().then(info => {
-          //console.log(info)
-          res.render('data', {user: info}
-  
-          )
-        })
-      }
-      else {return newEmployee}
+      })
     }
+      else if (user =! newEmployee.user) {return newEmployee}
+  }
      
 }
 const newUser = createEmployee(req);
