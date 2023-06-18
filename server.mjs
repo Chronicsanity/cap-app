@@ -137,7 +137,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
        date_working: req.body.date_working
 
       })
-      if (user == newEmployee.user) {
+      if (user === newEmployee.user) {
         return await Employee.update({
           job_title: req.body.job_title
       })
