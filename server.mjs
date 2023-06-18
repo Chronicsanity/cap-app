@@ -141,7 +141,13 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
         return await Employee.update({
           job_title: req.body.job_title
         },
-        {where: {user:user}})
+        {where: {user:user}}),
+        controller.scheduleTable().then(info => {
+          //console.log(info)
+          res.render('data', {user: info}
+  
+          )
+        })
       }
       else {return newEmployee}
     }
