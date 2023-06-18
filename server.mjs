@@ -114,11 +114,11 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
   async function createEmployee(req) {
    
   const user = JSON.stringify(req.body.employee_name).replace(/]|[[]/g, '');
-  const editEmployee = Employee.findOne({where: {user: user}}.then(function(user){
+  const editEmployee = Employee.findAll().then(function(user){
     return JSON.stringify(user)
   })
     
-    )
+  
   
   
 
