@@ -135,10 +135,10 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
         
      else {
 
-      if (Employee.findOne({where: {user: user}})
+      if (Employee.findOne({where: {user: user}.then(result => {return result})})
     
     
-       == true) {
+       == user) {
         console.log("CHECK")
         await Employee.update({
         job_title: req.body.job_title},
