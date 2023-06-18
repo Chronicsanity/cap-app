@@ -113,20 +113,15 @@ async function createEmployee(req) {
    
   const user = JSON.stringify(req.body.employee_name).replace(/]|[[]/g, '');
     
-  /*const editEmployee = await Employee.findAll({attributes: ['user']}, {where: {user: user}}).then(result => {
+  const editEmployee = await Employee.findAll({attributes: ['user']}, {where: {user: user}}).then(result => {
     if (result == null || result == "")  
     
     {return false}
     
-  })*/
+  })
   
   
-  if (await Employee.findAll({attributes: ['user']}, {where: {user: user}}).then(result => {
-    if (result == null || result == "")  
-    console.log(JSON.stringify(result))
-    {return true}
-    
-  }) != true)
+  if (editEmployee != false)
   {
     return console.log(req.body.employee_name + user + employeeCheck),
     await Employee.update({
