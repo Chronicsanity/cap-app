@@ -142,7 +142,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
           job_title: req.body.job_title
         },
         {where: {user:user}}),
-        Employee.delete({
+        Employee.destroy({
           where: {user:user}
         })
       }
