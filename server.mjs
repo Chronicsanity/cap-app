@@ -141,10 +141,8 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
         return await Employee.update({
           job_title: req.body.job_title
         },
-        {where: {user:user}}),
-        Employee.destroy({
-          where: {user:user}
-        })
+        {where: {user:user}})
+       
       }
       
       else {return newEmployee}
