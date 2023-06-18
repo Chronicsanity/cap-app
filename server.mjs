@@ -135,18 +135,17 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
         
      else {
 
-      if (Employee.findOne({user: user}.then(result=> {
-        return JSON.stringify(result)
+      if (Employee.findOne({user: user})
     
     
-      })) == true) {
+       == true) {
         await Employee.update({
         job_title: req.body.job_title},
       
       {where: {user:user}
       })
     }
-      
+  
 
 else {return console.log(user ), await Employee.create( 
   {
