@@ -143,7 +143,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
      
         
      else {
-      if (user =! Employee.user)
+      if (user != Employee.user)
   return await newEmployee
       
 
