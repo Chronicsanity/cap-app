@@ -129,22 +129,24 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
      
         
      else {
-      if (Employee.user != user) 
-  return await Employee.create( 
-    {
-      id: 0,
-     user: user,
-     job_title: req.body.job_title,
-     date_working: req.body.date_working
 
-    })
+      if (Employee.user == user) {
+        await Employee.update({
+        job_title: req.body.job_title},
       
-else{
-  await Employee.update({
-  job_title: req.body.job_title},
+      {where: {user:user}
+      })
+    }
+      
+else if (Employee.user != user) 
+return await Employee.create( 
+  {
+    id: 0,
+   user: user,
+   job_title: req.body.job_title,
+   date_working: req.body.date_working
 
-{where: {user:user}
-});}
+  })
   
 
 
