@@ -139,7 +139,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
      else {
 
       if ( Employee.findOne({attributes: ['user']}, {where: {user: user}}).then(result => {
-        if (result != user)  return  
+        if (result == user)  return  
         
       
         console.log("CHECK")
