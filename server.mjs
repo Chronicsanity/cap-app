@@ -165,7 +165,7 @@ date_working: req.body.date_working
 if (req.body.hasOwnProperty("acceptEmployee")) {
 
   createEmployee(req);
-  res.redirect('data')
+
 }
 
   if(req.body.hasOwnProperty("rejectEmployee")) 
