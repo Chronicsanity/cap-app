@@ -138,7 +138,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
 
       })
       if (user == newEmployee.user) {
-        return await Employee.update({
+        return await Employee.upsert({
           job_title: req.body.job_title
         },
         {where: {user:user}})
