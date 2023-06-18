@@ -115,12 +115,12 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
    
   const user = JSON.stringify(req.body.employee_name).replace(/]|[[]/g, '');
 
-  const editEmployee = await Employee.findAll({attributes: ['user']}, {where: {user: user}}).then(result => {
+  /*const editEmployee = await Employee.findAll({attributes: ['user']}, {where: {user: user}}).then(result => {
     if (result == null || result == "")  
     
     {return false}
     
-  })
+  })*/
   
   
   
@@ -141,7 +141,12 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
         
      else {
 
-      if (editEmployee != false)
+      if (await Employee.findAll({attributes: ['user']}, {where: {user: user}}).then(result => {
+        if (result == null || result == "")  
+        
+        {return false}
+        
+      }) != false)
       {
         return console.log("CHECK"),
         Employee.update({
@@ -153,7 +158,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
      
     
   
-else if (editEmployee == false) {
+else {
 return console.log(req.body.employee_name + user + editEmployee), await Employee.create( 
   {
     id: 0,
