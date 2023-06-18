@@ -137,9 +137,9 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
        date_working: req.body.date_working
 
       })
-      const updateEmployee = await Employee.update({
-        job_title: req.body.job_title
-      },
+      const updateEmployee = await Employee.destroy(//update({
+       // job_title: req.body.job_title
+      //},
       {where: {user:user}});
      
     
@@ -147,11 +147,12 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
       if (user == newEmployee.user) {
         return updateEmployee;
      
-}
-else if (user =! newEmployee.user) {
+      }
+    
+ 
   return newEmployee
+    }
 }
-}}
 const newUser = createEmployee(req);
 
 if (newUser.job_title == "chef" || Employee.job_title == "sous chef" || Employee.job_title == "bus boy"  || Employee.job_title == "waiter" ) {
