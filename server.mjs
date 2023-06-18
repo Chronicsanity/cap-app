@@ -112,21 +112,22 @@ req.body = JSON.parse(JSON.stringify(req.body));
 
 if (req.body.hasOwnProperty("acceptEmployee")) {
   async function createEmployee(req) {
-    const newEmployee = await Employee.create( 
-      {
-        id: 0,
-       user: user,
-       job_title: req.body.job_title,
-       date_working: req.body.date_working
-
-      })
-      const updateEmployee = await Employee.update({
-        job_title: req.body.job_title
-      },
-      {where: {user:user}});
+   
   const user = await JSON.stringify(req.body.employee_name).replace(/]|[[]/g, '');
   const editEmployee = await Employee.findOne({where: {user: user}});
 
+  const newEmployee = await Employee.create( 
+    {
+      id: 0,
+     user: user,
+     job_title: req.body.job_title,
+     date_working: req.body.date_working
+
+    })
+    const updateEmployee = await Employee.update({
+      job_title: req.body.job_title
+    },
+    {where: {user:user}});
     
      if (user == null ||user =='""' && user != editEmployee)
       {
