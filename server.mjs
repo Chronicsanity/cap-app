@@ -130,7 +130,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
         
      else {
 
-      if (req.body.employee_name == user) {
+      if (Employee.user == req.body.employee_name) {
         await Employee.update({
         job_title: req.body.job_title},
       
