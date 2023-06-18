@@ -111,7 +111,7 @@ app.post('/data', (req, res) => {
 req.body = JSON.parse(JSON.stringify(req.body));
 async function createEmployee(req) {
    
-  const user = JSON.stringify(req.body.employee_name).replace(/]|[[]/g, '');
+  const user = await JSON.stringify(req.body.employee_name).replace(/]|[[]/g, '');
     
   const editEmployee = await Employee.findAll({attributes: ['user']}, {where: {user: user}}).then(result => {
     if (result == null || result == "")  
@@ -121,7 +121,7 @@ async function createEmployee(req) {
   })
   
   
-  if (editEmployee != false)
+  if (await editEmployee != false)
   {
     return console.log(req.body.employee_name + user),
     await Employee.update({
@@ -140,7 +140,7 @@ async function createEmployee(req) {
 
 
 else {
-return console.log(req.body.employee_name + user), await Employee.create( 
+return await Employee.create( 
 {
 id: 0,
 user: user,
@@ -152,7 +152,7 @@ date_working: req.body.date_working
 }
 if (req.body.hasOwnProperty("acceptEmployee")) {
 
-  createEmployee(req);
+ createEmployee(req);
   
 
 }
