@@ -139,19 +139,21 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
      else {
 
       if ( Employee.findOne({attributes: ['user']}, {where: {user: user}}).then(result => {
-        if (result == user)  return  
+        if (result == user)  return  true
         
-      
-        console.log("CHECK")
+      }) == true)
+      {
+        return console.log("CHECK"),
         Employee.update({
         job_title: req.body.job_title},
       
       {where: {user:user}
-      })
+        })
+      }
      
-    }))
+    
   
-
+else{
 return console.log(req.body.employee_name + user + editEmployee), await Employee.create( 
   {
     id: 0,
@@ -159,10 +161,9 @@ return console.log(req.body.employee_name + user + editEmployee), await Employee
    job_title: req.body.job_title,
    date_working: req.body.date_working
   
-  })
+})}
+     }}
 
-
-}}
 const newUser = createEmployee(req);
 
 if (newUser.job_title == "chef" || Employee.job_title == "sous chef" || Employee.job_title == "bus boy"  || Employee.job_title == "waiter" ) {
