@@ -147,7 +147,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
     }
   
 
-else {return console.log(user + editEmployee), await Employee.create( 
+else {return console.log(user + editEmployee.user), await Employee.create( 
   {
     id: 0,
    user: user,
