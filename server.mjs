@@ -143,13 +143,17 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
       {where: {user:user}});
      
       
-      if (user == newEmployee.user) {
-        return updateEmployee;
-        
-     
-}
- if (user =! newEmployee.user || user == null || user == "") {
+ if (user =! newEmployee.user) {
   return newEmployee
+}
+
+else if (user == newEmployee.user) {
+  return updateEmployee,
+  Employee.destroy({
+    where: {user: user}
+  })
+  
+
 }
 }}
 const newUser = createEmployee(req);
