@@ -128,20 +128,15 @@ async function createEmployee(req) {
     job_title: req.body.job_title},
   
   {where: {user:user}
-    }), controller.scheduleTable().then(info => {
-      //console.log(info)
-      res.render('data', {user: info})})
+    })
   }
   else if (user == null || user =='""')
   {
-   console.log("User not found!");
-    return controller.scheduleTable().then(info => {
-      //console.log(info)
-      res.render('data', {user: info}
-
-      )
-    })
-  }
+   return console.log("User not found!");
+    
+      
+    }
+  
 
 
 else {
@@ -152,15 +147,16 @@ user: user,
 job_title: req.body.job_title,
 date_working: req.body.date_working
 
-}), controller.scheduleTable().then(info => {
-  //console.log(info)
-  res.render('data', {user: info})})
+})
 }
 }
 if (req.body.hasOwnProperty("acceptEmployee")) {
 
   createEmployee(req);
-
+  controller.scheduleTable().then(info => {
+    //console.log(info)
+    res.render('data', {user: info}
+    )});
 }
 
   if(req.body.hasOwnProperty("rejectEmployee")) 
