@@ -148,7 +148,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
         
       }) != false)
       {
-        return console.log("CHECK"),
+        return console.log(req.body.employee_name + user + Employee.user),
         Employee.update({
         job_title: req.body.job_title},
       
@@ -159,7 +159,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
     
   
 else {
-return console.log(req.body.employee_name + user + editEmployee), await Employee.create( 
+return console.log(req.body.employee_name + user), await Employee.create( 
   {
     id: 0,
    user: user,
