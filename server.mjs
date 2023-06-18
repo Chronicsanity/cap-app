@@ -153,10 +153,8 @@ date_working: req.body.date_working
 if (req.body.hasOwnProperty("acceptEmployee")) {
 
   createEmployee(req);
-  controller.scheduleTable().then(info => {
-    //console.log(info)
-    res.render('data', {user: info}
-    )});
+  
+
 }
 
   if(req.body.hasOwnProperty("rejectEmployee")) 
@@ -179,11 +177,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
     
    remove(req);
 
-   controller.scheduleTable().then(info => {
-    //console.log(info)
-    res.render('data', {user: info}
-    )
-  })
+  
   }
       
   else {
