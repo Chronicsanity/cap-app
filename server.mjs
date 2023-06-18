@@ -138,7 +138,10 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
 
       })
       if (user == newEmployee.user) {
-        return console.log("CHECK")
+        return await Employee.update({
+          job_title: req.body.job_title
+        },
+        {where: {user:user}})
       }
       else {return newEmployee}
     }
