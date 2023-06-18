@@ -109,9 +109,7 @@ async function generateID(min, max) {
 app.post('/data', (req, res) => {
 
 req.body = JSON.parse(JSON.stringify(req.body));
-
-if (req.body.hasOwnProperty("acceptEmployee")) {
-  async function createEmployee(req) {
+async function createEmployee(req) {
    
   const user = JSON.stringify(req.body.employee_name).replace(/]|[[]/g, '');
     
@@ -135,7 +133,9 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
     job_title: req.body.job_title},
   
   {where: {user:user}
-    })
+    }), controller.scheduleTable().then(info => {
+      //console.log(info)
+      res.render('data', {user: info})})
   }
   else if (user == null || user =='""')
   {
@@ -157,32 +157,17 @@ user: user,
 job_title: req.body.job_title,
 date_working: req.body.date_working
 
-})}
-}
-     
-        
-   
-
-
-
-
-if (Employee.job_title == "chef" || Employee.job_title == "sous chef" || Employee.job_title == "bus boy"  || Employee.job_title == "waiter" ) {
-createEmployee(req);
-controller.scheduleTable().then(info => {
+}), controller.scheduleTable().then(info => {
   //console.log(info)
-  res.redirect('data', {user: info}
-  )
-})
+  res.render('data', {user: info})})
 }
-else {
-return res.redirect('data')
+}
+if (req.body.hasOwnProperty("acceptEmployee")) {
 
+  createEmployee(req);
+  res.redirect('data')
 }
-    const schedule = controller.scheduleTable();
-      //console.log(info)
-      res.render('data.ejs', {user: schedule})
-      
-  } 
+
   if(req.body.hasOwnProperty("rejectEmployee")) 
   { 
     
