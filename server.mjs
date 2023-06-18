@@ -137,7 +137,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
        date_working: req.body.date_working
 
       })
-      if (newEmployee == user) {
+      if (user == newEmployee.user) {
         return console.log("CHECK")
       }
       else {return newEmployee}
