@@ -115,11 +115,11 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
    
   const user = await JSON.stringify(req.body.employee_name).replace(/]|[[]/g, '');
   const editEmployee = await Employee.findOne({where: {user: user}});
-  const updateEmployee = await Employee.update({
+  /*const updateEmployee = await Employee.update({
     job_title: req.body.job_title
   },
   {where: {user:user}});
-
+*/
   const newEmployee = await Employee.create( 
     {
       id: 0,
