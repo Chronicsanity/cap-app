@@ -144,12 +144,12 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
      
     
       
-      if (user == newEmployee.user) {
+     /* if (user == newEmployee.user) {
         return updateEmployee;
      
       }
     
- else if (user =! newEmployee.user) {
+ else*/ if (user =! newEmployee.user) {
   return newEmployee
  }
     }
