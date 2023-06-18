@@ -128,7 +128,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
       job_title: req.body.job_title
     },
     {where: {user:user}});
-    
+
      if (user == null ||user =='""' && user != editEmployee)
       {
        console.log("User not found!");
@@ -146,9 +146,9 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
   await newEmployee
     
 
-  if (newEmployee.user == Employee.user)
+  if (Employee.user === user)
   return   await Employee.destroy({
-    where: {user:newEmployee}
+    where: {user:newEmployee.user}
   })
   
 
