@@ -141,7 +141,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
         
      else {
 
-      if (editEmployee =! false)
+      if (editEmployee != false)
       {
         return console.log("CHECK"),
         Employee.update({
