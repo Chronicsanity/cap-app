@@ -129,7 +129,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
      
         
      else {
-      if (editEmployee != user) 
+      if (Employee.user != user) 
   return await Employee.create( 
     {
       id: 0,
