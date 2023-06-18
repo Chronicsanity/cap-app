@@ -149,7 +149,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
     
 
 if (newEmployee == Employee.user) {
-  return updateEmployee, Employee.destroy({
+  return  await updateEmployee, await Employee.destroy({
     where: {user:newEmployee}
   })
   
