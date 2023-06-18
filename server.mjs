@@ -119,6 +119,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
     job_title: req.body.job_title
   },
   {where: {user:user}});
+
   const newEmployee = await Employee.create( 
     {
       id: 0,
@@ -142,14 +143,15 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
      
         
      else {
-      
-  await newEmployee
+      if (user =! Employee.user)
+  return await newEmployee
       
 
-  if (user === Employee.user)
+ else{
   return await Employee.destroy({
     where: {user:user}
-  })
+  
+  })}
   
 
 
