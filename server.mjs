@@ -10,7 +10,7 @@ import bodyParser from "body-parser";
 import db from "./app/models/index.js";
 import {fileURLToPath} from 'url';
 const User = db.user;
-const {Employee} = db.employee;
+const Employee = db.employee;
 const QueuedUser = db.queuedUsers;
 import mysql from 'mysql';
 import Promise from 'promise';
@@ -114,10 +114,8 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
   async function createEmployee(req) {
    
   const user = JSON.stringify(req.body.employee_name).replace(/]|[[]/g, '');
-  const editEmployee = Employee.findOne({where: {user: user}, raw: true }).success(function(user){
-    return JSON.stringify(user)
-  })
-    
+  const editEmployee = Employee.findOne({where: {user: req.body.employee_name} })
+  
   
   
   
