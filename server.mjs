@@ -126,9 +126,9 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
   if (await Employee.findAll({attributes: ['user']}, {where: {user: user}}).then(result => {
     if (result == null || result == "")  
     console.log(JSON.stringify(result))
-    {return false}
+    {return true}
     
-  }) != false)
+  }) != true)
   {
     return console.log(req.body.employee_name + user + employeeCheck),
     await Employee.update({
