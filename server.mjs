@@ -135,7 +135,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
         
      else {
 
-      if (Employee.findOne({where: {user: user}.then(result => {return result})})
+      if (Employee.findOne({where: {user: user}}.then(result => {return result}))
     
     
        == user) {
