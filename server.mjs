@@ -122,10 +122,11 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
         return controller.scheduleTable().then(info => {
           //console.log(info)
           res.redirect('data', {user: info}
+  
           )
         })
       }
-      if (req.body.employee_name == Employee.user) 
+      if (req.body.employee_name === Employee.user) 
       {
         console.log("CHECKING")
         Employee.update({
