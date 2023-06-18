@@ -138,7 +138,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
       })
     }
       
-else if (Employee.user != user) 
+else { 
 return await Employee.create( 
   {
     id: 0,
@@ -150,7 +150,7 @@ return await Employee.create(
   
 
 
-}}
+}}}
 const newUser = createEmployee(req);
 
 if (newUser.job_title == "chef" || Employee.job_title == "sous chef" || Employee.job_title == "bus boy"  || Employee.job_title == "waiter" ) {
