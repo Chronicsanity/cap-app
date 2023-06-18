@@ -126,11 +126,11 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
           )
         })
       }
-      if (req.body.employee_name === editEmployee) 
+      if (user === editEmployee) 
       {
         console.log("CHECKING")
         Employee.update({
-          user: req.body.employee_name,
+          user: user,
           job_title: req.body.job_title
         },
         {
@@ -138,7 +138,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
         })
 
       }
-     else if (req.body.employee_name != editEmployee) {
+     else if (user != editEmployee) {
       return console.log(editEmployee),
       await Employee.create( 
       {
