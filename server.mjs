@@ -113,7 +113,7 @@ async function createEmployee(req) {
    
   const user = await JSON.stringify(req.body.employee_name).replace(/]|[[]/g, '');
     
-  const editEmployee = await Employee.findAll({attributes: ['user']}, {where: {user: user}}).then(result => {
+  const editEmployee = await Employee.findAll( {where: {user: user}}).then(result => {
     if (result == null || result == "")  
     
     {return false}
