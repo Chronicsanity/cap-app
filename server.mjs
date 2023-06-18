@@ -127,7 +127,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
       }
       if (req.body.employee_name == Employee.user) 
       {
-
+        console.log("CHECKING")
         Employee.update({
           user: req.body.employee_name,
           job_title: req.body.job_title
