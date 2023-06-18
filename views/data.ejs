@@ -36,16 +36,12 @@
             </div>
             <form action="/data" method="POST" class="pt-3">
                 <div class="form-group">
-                    <input type="username" class="form-control" placeholder="username" name="employee_name">
-                    <small class="form-text text-muted text-left">Register Username</small>
+                    <input type="username" class="form-control" placeholder="Employee Name" name="employee_name">
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control" name="job_title" placeholder="Job Title">
                 </div>
-                <div class="form-group">
-                    <input class="text" name="date_working" placeholder="Date Started">
-                </div>
-                
+  
                 <button type="submit" name="acceptEmployee" value="addEmployee" class="btn btn-success rounded-pill">Accept</button>
             </form>
 <div>
@@ -54,7 +50,6 @@
 <form action="/data" method="POST" class="pt-3">
     <div class="form-group">
         <input type="username" class="form-control" placeholder="Employee Name" name="remove_Employee">
-        <small class="form-text text-muted text-left">Username</small>
         <button type="submit" name="rejectEmployee" value="subEmployee" class="btn btn-success rounded-pill">Remove</button>
     </div>
 
