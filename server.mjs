@@ -141,7 +141,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
       }
      
         
-     else {
+   
 
       if (await Employee.findAll({attributes: ['user']}, {where: {user: user}}).then(result => {
         if (result == null || result == "")  
@@ -169,7 +169,7 @@ return console.log(req.body.employee_name + user), await Employee.create(
    date_working: req.body.date_working
   
 })}
-     }}
+     }
 
 const newUser = createEmployee(req);
 
