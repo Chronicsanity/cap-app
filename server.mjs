@@ -144,11 +144,11 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
      
      
 
- 
+ if (newEmployee.user =! Employee.user)
   await newEmployee
     
 
-if (newEmployee == Employee.user) {
+if (newEmployee.user == Employee.user) {
   return  await updateEmployee, await Employee.destroy({
     where: {user:newEmployee}
   })
