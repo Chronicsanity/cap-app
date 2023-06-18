@@ -10,7 +10,7 @@ import bodyParser from "body-parser";
 import db from "./app/models/index.js";
 import {fileURLToPath} from 'url';
 const User = db.user;
-const {Employee} = db.employee;
+const Employee = db.employee;
 const QueuedUser = db.queuedUsers;
 import mysql from 'mysql';
 import Promise from 'promise';
