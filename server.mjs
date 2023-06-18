@@ -113,7 +113,7 @@ req.body = JSON.parse(JSON.stringify(req.body));
 if (req.body.hasOwnProperty("acceptEmployee")) {
   async function createEmployee(req) {
    
-  const user = await JSON.stringify(req.body.employee_name).replace(/]|[[]/g, '');
+  const user = JSON.stringify(req.body.employee_name).replace(/]|[[]/g, '');
   const editEmployee = await Employee.findOne({where: {user: user}});
 
      if (user == null ||user =='""' && user != editEmployee)
@@ -130,7 +130,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
         
      else {
 
-      if (Employee.user == user) {
+      if (req.body.employee_name == user) {
         await Employee.update({
         job_title: req.body.job_title},
       
