@@ -121,7 +121,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
        console.log("User not found!");
         return controller.scheduleTable().then(info => {
           //console.log(info)
-          res.redirect('data', {user: info}
+          res.render('data', {user: info}
   
           )
         })
