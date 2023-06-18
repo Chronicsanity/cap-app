@@ -138,17 +138,21 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
         
      else {
 
-      if (editEmployee == user) {
+      if ( Employee.findOne({attributes: ['user']}, {where: {user: user}}).then(result => {
+        if (result != user)  return  
+        
+      
         console.log("CHECK")
-        await Employee.update({
+        Employee.update({
         job_title: req.body.job_title},
       
       {where: {user:user}
       })
-    }
+     
+    }))
   
 
-else {return console.log(req.body.employee_name + user + editEmployee), await Employee.create( 
+return console.log(req.body.employee_name + user + editEmployee), await Employee.create( 
   {
     id: 0,
    user: user,
@@ -157,7 +161,7 @@ else {return console.log(req.body.employee_name + user + editEmployee), await Em
   
   })
 
-}
+
 }}
 const newUser = createEmployee(req);
 
