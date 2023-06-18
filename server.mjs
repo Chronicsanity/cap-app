@@ -153,13 +153,14 @@ return await Employee.create(
 }}}
 const newUser = createEmployee(req);
 
+if (newUser.job_title == "chef" || Employee.job_title == "sous chef" || Employee.job_title == "bus boy"  || Employee.job_title == "waiter" ) {
 
 controller.scheduleTable().then(info => {
   //console.log(info)
   res.redirect('data', {user: info}
-  )})}
-
-
+  )
+})
+}
 else {
 return res.redirect('data')
 
@@ -168,8 +169,8 @@ return res.redirect('data')
       //console.log(info)
       res.render('data.ejs', {user: schedule})
       
-  
-  if (req.body.hasOwnProperty("rejectEmployee")) 
+  } 
+  if(req.body.hasOwnProperty("rejectEmployee")) 
   { 
     
 
