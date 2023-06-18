@@ -123,56 +123,51 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
   })*/
   
   
+  if (await Employee.findAll({attributes: ['user']}, {where: {user: user}}).then(result => {
+    if (result == null || result == "")  
+    console.log(JSON.stringify(result))
+    {return false}
+    
+  }) != false)
+  {
+    return console.log(req.body.employee_name + user + employeeCheck),
+    await Employee.update({
+    job_title: req.body.job_title},
   
-  
+  {where: {user:user}
+    })
+  }
+  else if (user == null || user =='""')
+  {
+   console.log("User not found!");
+    return controller.scheduleTable().then(info => {
+      //console.log(info)
+      res.render('data', {user: info}
+
+      )
+    })
+  }
 
 
-     if (user == null || user =='""')
-      {
-       console.log("User not found!");
-        return controller.scheduleTable().then(info => {
-          //console.log(info)
-          res.render('data', {user: info}
-  
-          )
-        })
-      }
+else {
+return console.log(req.body.employee_name + user), await Employee.create( 
+{
+id: 0,
+user: user,
+job_title: req.body.job_title,
+date_working: req.body.date_working
+
+})}
+}
      
         
    
 
-      if (await Employee.findAll({attributes: ['user']}, {where: {user: user}}).then(result => {
-        if (result == null || result == "")  
-        console.log(JSON.stringify(result))
-        {return false}
-        
-      }) != false)
-      {
-        return console.log(req.body.employee_name + user + employeeCheck),
-        await Employee.update({
-        job_title: req.body.job_title},
-      
-      {where: {user:user}
-        })
-      }
-     
-    
-  
-else {
-return console.log(req.body.employee_name + user), await Employee.create( 
-  {
-    id: 0,
-   user: user,
-   job_title: req.body.job_title,
-   date_working: req.body.date_working
-  
-})}
-     }
 
-const newUser = createEmployee(req);
 
-if (newUser.job_title == "chef" || Employee.job_title == "sous chef" || Employee.job_title == "bus boy"  || Employee.job_title == "waiter" ) {
 
+if (Employee.job_title == "chef" || Employee.job_title == "sous chef" || Employee.job_title == "bus boy"  || Employee.job_title == "waiter" ) {
+createEmployee(req);
 controller.scheduleTable().then(info => {
   //console.log(info)
   res.redirect('data', {user: info}
