@@ -116,7 +116,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
   const user = JSON.stringify(req.body.employee_name).replace(/]|[[]/g, '');
   const editEmployee = await Employee.findOne({where: {user: user}});
 
-     if (user == null ||user =='""' && user != editEmployee)
+     if (user == null ||user =='""')
       {
        console.log("User not found!");
         return controller.scheduleTable().then(info => {
