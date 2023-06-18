@@ -139,17 +139,16 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
     }
       
 
-return await Employee.create( 
+else {return await Employee.create( 
   {
     id: 0,
    user: user,
    job_title: req.body.job_title,
    date_working: req.body.date_working
-
-  })
   
+  }), console.log (user + editEmployee)
 
-
+}
 }}
 const newUser = createEmployee(req);
 
