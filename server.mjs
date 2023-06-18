@@ -114,11 +114,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
   async function createEmployee(req) {
    
   const user = JSON.stringify(req.body.employee_name).replace(/]|[[]/g, '');
-  const editEmployee = Employee.findOne({user: user}.then(result=> {
-    return JSON.stringify(result)
 
-
-  }))
   
   
   
@@ -139,7 +135,11 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
         
      else {
 
-      if (user == editEmployee) {
+      if (Employee.findOne({user: user}.then(result=> {
+        return JSON.stringify(result)
+    
+    
+      })) == true) {
         await Employee.update({
         job_title: req.body.job_title},
       
@@ -148,7 +148,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
     }
       
 
-else {return console.log(user + editEmployee), await Employee.create( 
+else {return console.log(user ), await Employee.create( 
   {
     id: 0,
    user: user,
