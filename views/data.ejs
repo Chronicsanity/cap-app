@@ -39,7 +39,15 @@
                     <input type="username" class="form-control" placeholder="Employee Name" name="employee_name">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="job_title" placeholder="Job Title">
+                    <select class="selectpicker" data-style="btn-info" name="job_choice">
+                        <optgroup label="Select Employee's Job Title">
+                            <option name="" value="0">Select Job</option>
+                            <option name="headChef" value="user.job_title = 1">Chef de Cuisine</option>
+                            <option name="sousChef" value="user.job_title = 2">Sous Chef</option>
+                            <option name="lineCook" value="user.job_title = 3">Chef de Partie</option>
+                            <option name="busser" value="user.job_title = 4">Busser</option>
+                        </optgroup>
+                    </select>
                 </div>
   
                 <button type="submit" name="acceptEmployee" value="addEmployee" class="btn btn-success rounded-pill">Accept</button>
