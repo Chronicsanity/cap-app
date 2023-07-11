@@ -65,11 +65,11 @@ async function newUser () {
     
      //const hashedPassword = bcrypt.hash(newPassword, salt);
      
-        user.id = await generateID(2, 10);
+        user.id = await generateID(2, 100);
     
         if (await QueuedUser.findOne({ where: {id: user.id}})) {
           
-            user.id = await generateID(2, 20);
+            user.id = await generateID(10,100);
        };
 
        if (await QueuedUser.findOne({where: {username: user.username}})) {
