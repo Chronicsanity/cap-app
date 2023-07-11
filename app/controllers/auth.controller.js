@@ -83,7 +83,7 @@ async function newUser () {
        await user.save()
 }
 newUser();
-res.render('thanks')
+res.render('index')
 
     })
     
