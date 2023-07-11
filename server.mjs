@@ -90,7 +90,7 @@ console.log(JSON.stringify(result));
   })
 
 
-app.post('/Thanks'), async function (req,res) {
+app.post('/thanks'), async function (req,res) {
   res.render('/')
 }
 
