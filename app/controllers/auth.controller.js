@@ -73,7 +73,7 @@ async function newUser () {
 
        if (await QueuedUser.findOne({where: {username: user.username}})) {
           
-        res.render('Thanks')
+        console.log( "Added to Queue!")
 
 
    }
@@ -91,8 +91,7 @@ newUser();
   finally {
     
    
-  
-    console.log( "Added to Queue!")
+  res.render('Thanks')
 
 }
 }
