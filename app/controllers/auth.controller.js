@@ -17,7 +17,7 @@ const {connection, pool} = require("../config/db.config.js");
 const nodemailer = require('nodemailer');
 const QueuedUser = db.queuedUsers;
 const Employee = db.employee;
-const notifier = require('node-notifier').WindowsToaster;
+const WindowsToaster = require('node-notifier').WindowsToaster;
 
 app.set('view engine','ejs');
 
