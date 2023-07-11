@@ -19,6 +19,7 @@ const QueuedUser = db.queuedUsers;
 const Employee = db.employee;
 
 app.set('view engine','ejs')
+
 async function hashPassword(password) 
   {
     const hash = await bcrypt.hash(password, saltRounds);
@@ -83,7 +84,7 @@ async function newUser () {
        await user.save()
 }
 newUser();
-res.render('thanks')
+res.render('index')
 
     })
     
