@@ -86,7 +86,6 @@ async function newUser () {
        notifier.notify({
         title: 'Success!',
         message: 'Your application has been added into the queue! Please wait...',
-        sound: true,
         time: 1000,
         wait: true
       },
