@@ -83,13 +83,7 @@ async function newUser () {
    
 
        await user.save(),
-       notifier.notify({
-        title: 'Success!',
-        message: 'Your application has been added into the queue! Please wait...',
-        time: 1000,
-        wait: true
-      },
-      function (err, response) {})
+       notifier.notify('Hello!');
       console.log("Check")
 }
 newUser();
