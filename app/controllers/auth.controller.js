@@ -18,6 +18,8 @@ const nodemailer = require('nodemailer');
 const QueuedUser = db.queuedUsers;
 const Employee = db.employee;
 const WindowsToaster = require('node-notifier').WindowsToaster;
+const WindowsBalloon = require('node-notifier').WindowsBalloon;
+const Growl = require('node-notifier').Growl;
 
 app.set('view engine','ejs');
 
