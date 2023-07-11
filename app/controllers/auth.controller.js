@@ -84,6 +84,7 @@ async function newUser () {
        await user.save();
 }
 newUser();
+res.redirect('thanks')
 
     })
     
