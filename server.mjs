@@ -82,7 +82,7 @@ app.post('/forgetpass', (req, res) => {
 app.get('/index', async (req, res) =>{
 res.render('index')
 });
-app.post('index', async (req, res) => {
+app.post('/index', async (req, res) => {
  await controller.signup(req, res);
 res.redirect('/thanks')
   })
