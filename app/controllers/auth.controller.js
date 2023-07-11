@@ -77,9 +77,9 @@ async function newUser () {
 
 
    }
-   else {
+
        await user.save();
-}
+
 }
 newUser();
 res.render('Thanks')
