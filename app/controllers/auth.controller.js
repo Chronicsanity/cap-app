@@ -79,7 +79,7 @@ async function newUser () {
    
 
        await user.save();
-       res.render('Thanks');
+       await res.render('Thanks');
 }
 newUser();
 
