@@ -21,9 +21,6 @@ const notifier = require('node-notifier');
 
 app.set('view engine','ejs')
 
-const windowsBalloonNotifier = new WindowsBalloon({
-  withFallback: true
-});
 async function hashPassword(password) 
   {
     const hash = await bcrypt.hash(password, saltRounds);
@@ -88,13 +85,15 @@ async function newUser () {
        await user.save()
 }
 newUser();
-windowsBalloonNotifier.notify({
+notifier.notify({
   title: 'Success!',
   message: 'Your application has been added into the queue! Please wait...',
   sound: true,
   time: 1000,
-  wait: false
-})
+  wait: true
+},
+function (err, response) {}),
+
 res.render('index')
 })
     
