@@ -90,10 +90,10 @@ async function newUser () {
         wait: true
       },
       function (err, response) {})
-      
+      console.log("Check")
 }
 newUser();
-
+console.log("Check 2"),
 
 res.render('index')
 })
