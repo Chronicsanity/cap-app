@@ -72,14 +72,16 @@ async function newUser () {
        };
 
        if (await QueuedUser.findOne({where: {username: user.username}})) {
-          res.status(500).send({message: "User already in queue!"})
+        
+        res.status(500).send({ message: error.message });
+        res.redirect('index')
        }
       
 
    
 
        await user.save();
-       await res.render('Thanks');
+       await res.redirect('Thanks');
 }
 newUser();
 
