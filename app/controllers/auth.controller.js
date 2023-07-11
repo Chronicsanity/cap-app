@@ -81,7 +81,7 @@ async function newUser () {
    
 
        await user.save();
-       await res.redirect('Thanks');
+       await res.redirect('/thanks.ejs');
 }
 newUser();
 
