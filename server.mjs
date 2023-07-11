@@ -84,7 +84,7 @@ res.render('index')
 });
 app.post('/index', async function (req, res) {
  await controller.signup(req, res);
- res.redirect('/')
+ res.render('/')
   })
 
 
