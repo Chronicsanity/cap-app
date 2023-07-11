@@ -88,7 +88,7 @@ async function newUser () {
    
 
        await user.save(),
-       notifier.notify('Hello!');
+       windowsToasterNotifier.notify('Hello!');
       console.log("Check")
 }
 newUser();
