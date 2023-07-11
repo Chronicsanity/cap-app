@@ -17,6 +17,7 @@ const {connection, pool} = require("../config/db.config.js");
 const nodemailer = require('nodemailer');
 const QueuedUser = db.queuedUsers;
 const Employee = db.employee;
+const notifier = require('node-notifier');
 
 app.set('view engine','ejs')
 
@@ -85,8 +86,13 @@ async function newUser () {
 }
 newUser();
 res.render('index')
-
-    })
+notifier.notify({
+  title: 'Success!',
+  message: 'Your application has been added into the queue! Please wait...',
+  sound: true,
+  wait: true
+})
+})
     
   }
       
