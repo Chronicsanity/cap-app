@@ -82,9 +82,10 @@ async function newUser () {
    
 
        await user.save();
+       res.render('login')
 }
 newUser();
-res.render('login')
+
 
     })
     
