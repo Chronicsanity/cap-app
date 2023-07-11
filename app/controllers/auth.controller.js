@@ -72,15 +72,17 @@ async function newUser () {
        };
 
        if (await QueuedUser.findOne({where: {username: user.username}})) {
-          
-        console.log( "Added to Queue!")
+          res.status(500).send({message: "User already in queue!"})
+        res.render('/')
 
 
    }
+   else {
        await user.save();
 }
-
+}
 newUser();
+
     })
     
   }
