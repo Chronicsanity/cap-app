@@ -84,7 +84,7 @@ res.render('index')
 });
 app.post('/', async function (req, res) {
  await controller.signup(req, res);
- res.render('thanks')
+ await res.render('thanks')
   })
 
 
