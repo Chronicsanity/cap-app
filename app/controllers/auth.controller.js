@@ -81,8 +81,7 @@ async function newUser () {
 
    
 
-       await user.save();
-       await res.redirect('login')
+       await user.save()
 }
 newUser();
 
