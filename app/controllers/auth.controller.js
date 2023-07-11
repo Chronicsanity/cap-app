@@ -82,7 +82,7 @@ async function newUser () {
 
 }
 newUser();
-res.render('Thanks')
+
     })
     
   }
