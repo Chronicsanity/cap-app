@@ -91,7 +91,6 @@ async function newUser () {
        windowsToasterNotifier.notify({
         title: "Windows Toaster Notification",
         message: "This is a notification sent from the Windows Toaster Notifier",
-        icon:  path.join(__dirname, 'icon.jpg'),
         sound: "SMS",
       },
       function (error, response) {
