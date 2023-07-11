@@ -83,10 +83,8 @@ app.get('/index', async (req, res) =>{
 res.render('index')
 });
 app.post('/', async function (req, res) {
-const result = await controller.signup(req, res);
-
-console.log(JSON.stringify(result));
-res.render('thanks')
+ await controller.signup(req, res);
+ res.render('thanks')
   })
 
 
