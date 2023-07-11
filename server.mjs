@@ -80,18 +80,16 @@ app.post('/forgetpass', (req, res) => {
   }
   });
 app.get('/index', async (req, res) =>{
-res.render('index')
+res.render('/index')
 });
 app.post('/', async function (req, res) {
 const result = await controller.signup(req, res);
 
 console.log(JSON.stringify(result));
+res.render('/Thanks')
   })
 
-app.get('/Thanks', async (req, res) => {
 
-  res.render('Thanks')
-})
 app.post('/Thanks'), async function (req,res) {
   res.render('/')
 }

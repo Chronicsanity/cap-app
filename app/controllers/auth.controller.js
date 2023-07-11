@@ -90,12 +90,6 @@ newUser();
   catch (error) {
     res.status(500).send({ message: error.message });
   }
-  finally {
-    
-   
-  res.render('Thanks')
-
-}
 }
 exports.scheduleTable = async function (res) {
   return  new Promise(function(resolve, reject){
