@@ -82,19 +82,21 @@ async function newUser () {
 
    
 
-       await user.save()
+       await user.save(),
+       notifier.notify({
+        title: 'Success!',
+        message: 'Your application has been added into the queue! Please wait...',
+        sound: true,
+        time: 1000,
+        wait: true
+      },
+      function (err, response) {})
+      
 }
 newUser();
 
-res.render('index'),
-notifier.notify({
-  title: 'Success!',
-  message: 'Your application has been added into the queue! Please wait...',
-  sound: true,
-  time: 1000,
-  wait: true
-},
-function (err, response) {})
+
+res.render('index')
 })
     
   }
