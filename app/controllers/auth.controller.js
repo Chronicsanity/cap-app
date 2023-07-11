@@ -17,9 +17,14 @@ const {connection, pool} = require("../config/db.config.js");
 const nodemailer = require('nodemailer');
 const QueuedUser = db.queuedUsers;
 const Employee = db.employee;
-const notifier = require('node-notifier');
+const notifier = require('node-notifier').WindowsToaster;
 
-app.set('view engine','ejs')
+app.set('view engine','ejs');
+
+
+let windowsToasterNotifier = new WindowsToaster({
+  withFallback: true
+});
 
 async function hashPassword(password) 
   {
