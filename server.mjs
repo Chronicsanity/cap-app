@@ -88,7 +88,13 @@ const result = await controller.signup(req, res);
 console.log(JSON.stringify(result));
   })
 
+app.get('/Thanks', async (req, res) => {
 
+  res.render('Thanks')
+})
+app.post('/Thanks'), async function (req,res) {
+  res.render('/')
+}
 
 app.get('/data', async function (req, res) {
    
