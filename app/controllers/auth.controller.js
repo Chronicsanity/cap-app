@@ -68,7 +68,8 @@ async function newUser () {
         user.id = await generateID(2, 10);
     
         if (await QueuedUser.findOne({ where: {id: user.id}})) {
-            await generateID(2, 20);
+          
+            user.id = await generateID(2, 20);
        };
 
        if (await QueuedUser.findOne({where: {username: user.username}})) {
