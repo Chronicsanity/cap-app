@@ -86,7 +86,7 @@ app.get('/index', async (req, res) =>{
 res.render('index', {message: message})
 });
 app.post('/index', async (req, res) => {
-  const message = req.flash('message','Thank you, please wait for your application to be accepted!')
+  const message = await req.flash('message','Thank you, please wait for your application to be accepted!')
  await controller.signup(req, res);
  res.render('index', {message: message})
   });
