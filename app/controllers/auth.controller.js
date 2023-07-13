@@ -18,6 +18,7 @@ const nodemailer = require('nodemailer');
 const QueuedUser = db.queuedUsers;
 const Employee = db.employee;
 const alert = require('alert')
+app.use(flash());
 
 app.set('view engine','ejs');
 
@@ -88,7 +89,7 @@ async function newUser () {
 newUser();
 
 
-req.flash('Thank you, please wait for your application to be accepted!')
+res.flash('Thank you, please wait for your application to be accepted!')
 })
     
   }
