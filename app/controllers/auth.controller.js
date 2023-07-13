@@ -14,18 +14,18 @@ const flash = require('connect-flash');
 const mysql = require('mysql');
 const router = require('express').Router();
 const {connection, pool} = require("../config/db.config.js");
-const nodemailer = require('nodemailer');
 const QueuedUser = db.queuedUsers;
 const Employee = db.employee;
 const session = require('express-session');
-const alert = require('alert')
+const alert = require('alert');
+const path = ('path');
 app.use(flash());
 app.use(session({
   saveUninitialized: true,
   resave: true
 }));
 app.set('view engine','ejs');
-
+app.set('views', path.join(__dirname, "views"));
 
 async function hashPassword(password) 
   {
