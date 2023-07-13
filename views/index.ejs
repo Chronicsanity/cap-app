@@ -19,7 +19,7 @@
 		method: "POST",
 		data : $(form1).serialize(),
 		cache : false,
-		success : function (data) {
+		success : function (<%= data %>) {
 			// data is the object that you send form the server by 
 			// res.jsonp();
 			// here data = {success : true}
