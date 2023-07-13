@@ -17,9 +17,13 @@ const {connection, pool} = require("../config/db.config.js");
 const nodemailer = require('nodemailer');
 const QueuedUser = db.queuedUsers;
 const Employee = db.employee;
+const session = require('express-session');
 const alert = require('alert')
 app.use(flash());
-
+app.use(session({
+  saveUninitialized: true,
+  resave: true
+}));
 app.set('view engine','ejs');
 
 
