@@ -88,7 +88,7 @@ await res.render('index', {message: message})
 });
 app.post('/index', async (req, res) => {
  await controller.signup(req, res);
- await res.render('index')
+ await res.redirect('index')
   });
 
 
