@@ -8,7 +8,6 @@ import path from 'path';
 import Sequelize from "sequelize";
 import bodyParser from "body-parser";
 import db from "./app/models/index.js";
-import flash from 'flash';
 import {fileURLToPath} from 'url';
 const User = db.user;
 const Employee = db.employee;
