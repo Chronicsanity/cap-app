@@ -88,7 +88,7 @@ async function newUser () {
 newUser();
 
 
-res.send('Checking')
+res.status(200)
 })
     
   }
