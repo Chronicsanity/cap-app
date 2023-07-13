@@ -83,7 +83,7 @@ async function newUser () {
        await user.save()
        
 }
-const data = 'success';
+const data = JSON.stringify('success');
 
 newUser();
 
