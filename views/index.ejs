@@ -13,7 +13,31 @@
 </head>
 
 <body>
-
+	<script>
+	$.ajax({
+		url:"/index",
+		method: "POST",
+		data : {
+			data : form1,
+			put : "Check??"
+		},
+		cache : false,
+		success : function (data) {
+			// data is the object that you send form the server by 
+			// res.jsonp();
+			// here data = {success : true}
+			// validate it
+			if(data['success']){
+				alert("Uhh...Nice?");
+			}
+		},
+		error : function () {
+			// some error handling part
+			alert("Oops! Something went wrong.");
+		}
+	});
+	</script>
+	
 	<div class="col-md-4 col-md-offset-4 form-card">
 		<div>
 			<p>Register Now
