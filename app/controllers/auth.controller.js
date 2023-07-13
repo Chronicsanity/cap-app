@@ -84,9 +84,6 @@ async function newUser () {
         res.status(500).send({ message: error.message });
        }
       
-
-   
-
        await user.save(),
        alert('Check')
       console.log("Check")
