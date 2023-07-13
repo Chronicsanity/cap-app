@@ -88,7 +88,7 @@ async function newUser () {
 newUser();
 
 
-res.status(200)
+res.send('Thank you, please wait for your application to be accepted!')
 })
     
   }
