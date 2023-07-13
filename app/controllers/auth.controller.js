@@ -83,8 +83,10 @@ async function newUser () {
        await user.save()
        
 }
+const data = res.json({success : true});
+
 newUser();
-const data = res.jsonp({success : true});
+
 
 res.render('index', {data : data})
 })
