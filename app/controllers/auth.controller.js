@@ -19,13 +19,13 @@ const Employee = db.employee;
 const session = require('express-session');
 const alert = require('alert');
 const path = ('path');
-app.use(flash());
 app.use(session({
   saveUninitialized: true,
   resave: true
 }));
+app.use(flash());
 app.set('view engine','ejs');
-app.set('views', path.join(__dirname, "views"));
+
 
 async function hashPassword(password) 
   {
