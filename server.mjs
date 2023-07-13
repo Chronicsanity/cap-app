@@ -84,7 +84,6 @@ res.render('index')
 });
 app.post('/index', async (req, res) => {
  await controller.signup(req, res);
- res.jsonp({success : true})
   });
 
 

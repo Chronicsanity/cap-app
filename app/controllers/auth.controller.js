@@ -81,9 +81,12 @@ async function newUser () {
        }
       
        await user.save()
+       
 }
 newUser();
-res.render('index')
+const data = res.jsonp({success : true});
+
+res.render('index', {data : data})
 })
     
   }
