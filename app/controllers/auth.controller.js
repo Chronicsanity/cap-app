@@ -22,10 +22,6 @@ const alert = require('alert')
 app.set('view engine','ejs');
 
 
-let windowsToasterNotifier = new WindowsToaster({
-  withFallback: true
-});
-
 async function hashPassword(password) 
   {
     const hash = await bcrypt.hash(password, saltRounds);
