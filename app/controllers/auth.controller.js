@@ -83,7 +83,7 @@ async function newUser () {
 
        if (await QueuedUser.findOne({where: {username: user.username}})) {
         
-        res.status(500).send({ message: error.message });
+        res.status(500)({ message: error.message });
        }
       
        await user.save()
