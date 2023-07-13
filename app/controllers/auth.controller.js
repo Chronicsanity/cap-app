@@ -94,7 +94,7 @@ async function newUser () {
 newUser();
 
 
-req.flash('message','Thank you, please wait for your application to be accepted!')
+
 })
     
   }

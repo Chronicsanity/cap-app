@@ -16,12 +16,14 @@ import mysql from 'mysql';
 import Promise from 'promise';
 import bcrypt from 'bcryptjs';
 import controller from "./app/controllers/auth.controller.js";
+import flash from 'connect-flash';
 const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06.cleardb.net/heroku_a26e4a307a3f41f?reconnect=true", {
 logging: false
 });
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
+app.use(flash());
 app.use(express.json());
 import ejs from 'ejs';
 
@@ -83,7 +85,9 @@ app.get('/index', async (req, res) =>{
 res.render('index')
 });
 app.post('/index', async (req, res) => {
+  const message = req.flash('message','Thank you, please wait for your application to be accepted!')
  await controller.signup(req, res);
+ res.render('index', {message: message})
   });
 
 
