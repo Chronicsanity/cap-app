@@ -87,7 +87,8 @@ res.render('index', {message: message})
 });
 app.post('/index', async (req, res) => {
  await controller.signup(req, res);
- res.redirect('index')
+ const message = await req.flash('message', 'Thank you, please wait for your application to be accepted!')
+ res.redirect('index', {message:message})
   });
 
 

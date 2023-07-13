@@ -48,16 +48,10 @@
 				<input type="password" name="password" placeholder="Password" required="" class="form-control"><br />
 				<input type="password" name="passwordConf" placeholder="Confirm Password" required=""
 					class="form-control"><br />
-				<input type="submit" value="Register" class="btn btn-success" onClick= "<%- "return trueMessage()" %>">
+				<input type="submit" value="Register" class="btn btn-success" onClick= <div class ="alert alert-alert_success"> <%= message %> </div>>
 			</form>
 		</div>
-<script language= "javascript">
-function trueMessage() {
-<% if (message != ' ') { %>
-<div class ="alert alert-alert_success"> <%= message %> </div>
-<% } %>
-}
-</script>
+
 
 		<div class="mssg bg-danger">
 			<span id="check"></span>
