@@ -80,13 +80,9 @@ async function newUser () {
         res.status(500).send({ message: error.message });
        }
       
-       await user.save(),
-       alert('Alert!')
-      console.log("Check")
+       await user.save()
 }
 newUser();
-console.log("Check 2"),
-alert('Alert!2')
 res.render('index')
 })
     
