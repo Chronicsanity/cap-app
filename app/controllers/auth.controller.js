@@ -88,7 +88,7 @@ async function newUser () {
 newUser();
 
 
-res.redirect('/thanks.ejs')
+res.redirect('thanks.ejs')
 })
     
   }
