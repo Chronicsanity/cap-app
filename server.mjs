@@ -82,13 +82,13 @@ app.post('/forgetpass', (req, res) => {
   }
   });
 app.get('/index', async (req, res) =>{
-  const message = ""
-res.render('index', {message:message})
+ 
+res.render('index')
 });
 app.post('/index', async (req, res) => {
-  const message = await req.flash('Thank you, please wait for your application to be accepted!')
+await req.flash('message', 'Thank you, please wait for your application to be accepted!')
  await controller.signup(req, res);
- res.redirect('index', {message: message})
+ res.redirect('index')
   });
 
 
