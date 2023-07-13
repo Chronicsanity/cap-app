@@ -92,7 +92,9 @@ async function newUser () {
 
 
 newUser();
-res.render('index');
+const message =  req.flash('message', 'Thank you, please wait for your application to be accepted!')
+res.locals.messages = req.flash();
+res.render('index', {message:message});
 
 
 })
