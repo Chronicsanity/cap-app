@@ -82,8 +82,8 @@ app.post('/forgetpass', (req, res) => {
   }
   });
 app.get('/index', async (req, res) =>{
- 
-res.render('index')
+ const message = " "
+res.render('index', {message: message})
 });
 app.post('/index', async (req, res) => {
 await req.flash('message', 'Thank you, please wait for your application to be accepted!')
