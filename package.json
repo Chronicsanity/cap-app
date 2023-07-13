@@ -64,6 +64,7 @@
     "react": "^18.2.0",
     "react-calendar": "^4.2.1",
     "react-router-dom": "^6.12.1",
+    "req-flash": "^0.0.3",
     "salt": "^0.5.5",
     "sequelize": "^6.26.0",
     "uuid": "^9.0.0"
