@@ -17,10 +17,7 @@
 	$.ajax({
 		url:"/index",
 		method: "POST",
-		data : {
-			data : form1,
-			put : "Check??"
-		},
+		data : $(form1).serialize(),
 		cache : false,
 		success : function (data) {
 			// data is the object that you send form the server by 
