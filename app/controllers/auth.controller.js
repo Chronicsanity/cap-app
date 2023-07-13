@@ -20,6 +20,7 @@ const session = require('express-session');
 const alert = require('alert');
 const path = ('path');
 app.use(session({
+  secret: authConfig,
   saveUninitialized: true,
   resave: true
 }));
