@@ -17,7 +17,7 @@ const {connection, pool} = require("../config/db.config.js");
 const nodemailer = require('nodemailer');
 const QueuedUser = db.queuedUsers;
 const Employee = db.employee;
-const popup = require('popups')
+const alert = require('alert')
 
 app.set('view engine','ejs');
 
@@ -88,14 +88,7 @@ async function newUser () {
    
 
        await user.save(),
-       windowsToasterNotifier.notify({
-        title: "Windows Toaster Notification",
-        message: "This is a notification sent from the Windows Toaster Notifier",
-        sound: "SMS",
-      },
-      function (error, response) {
-        console.log(response);
-      })
+       alert('Check')
       console.log("Check")
 }
 newUser();
