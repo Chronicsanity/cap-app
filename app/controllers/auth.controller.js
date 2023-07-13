@@ -83,12 +83,12 @@ async function newUser () {
        await user.save()
        
 }
-const data = JSON.stringify(success);
+
 
 newUser();
 
 
-res.render('index', {data : data})
+res.render('index')
 })
     
   }
