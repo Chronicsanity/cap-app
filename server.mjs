@@ -88,9 +88,7 @@ await res.render('index', {message: message})
 });
 app.post('/index', async (req, res) => {
  await controller.signup(req, res);
-  res.locals.messages = await req.flash();
- const message = await req.flash('message', 'Thank you, please wait for your application to be accepted!')
- await res.render('index', {message:message})
+ await res.render('index')
   });
 
 
