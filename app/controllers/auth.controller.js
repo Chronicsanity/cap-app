@@ -88,7 +88,7 @@ async function newUser () {
 newUser();
 
 
-res.render('thanks')
+res.redirect('thanks')
 })
     
   }
