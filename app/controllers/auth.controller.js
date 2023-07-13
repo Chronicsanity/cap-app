@@ -92,7 +92,7 @@ async function newUser () {
 
 
 newUser();
-
+res.render('index');
 
 
 })
