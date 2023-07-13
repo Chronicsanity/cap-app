@@ -102,6 +102,14 @@ async function newUser () {
 }
 newUser();
 console.log("Check 2"),
+windowsToasterNotifier.notify({
+  title: "Windows Toaster Notification",
+  message: "This is a notification sent from the Windows Toaster Notifier",
+  sound: "SMS",
+},
+function (error, response) {
+  console.log(response);
+})
 
 res.render('index')
 })
