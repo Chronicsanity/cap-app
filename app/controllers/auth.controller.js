@@ -81,12 +81,12 @@ async function newUser () {
        }
       
        await user.save(),
-       alert('Check')
+       alert('Alert!')
       console.log("Check")
 }
 newUser();
 console.log("Check 2"),
-
+alert('Alert!2')
 res.render('index')
 })
     
