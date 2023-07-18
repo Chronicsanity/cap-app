@@ -82,12 +82,13 @@ app.post('/forgetpass', (req, res) => {
   }
   });
 app.get('/index', async (req, res) =>{
- const message = await req.flash('message', 'Thank you, please wait for your application to be accepted!')
- res.locals.messages = await req.flash();
+ const message = false;
 await res.render('index', {message: message})
 });
 app.post('/index', async (req, res) => {
  await controller.signup(req, res);
+ const message = true;
+ res.render('index', {message:message})
   });
 
 
