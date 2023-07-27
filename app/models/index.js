@@ -43,6 +43,7 @@ db.role = require("../models/role.js")(sequelize, Sequelize);
 db.employee = require('../models/employee.js')(sequelize, Sequelize);
 db.queuedUsers = require('../models/queuedUsers.js')(sequelize, Sequelize);
 db.time_working = require('./shift.js')(sequelize, Sequelize);
+db.time = require('time.js')(sequelize, Sequelize);
 
 db.role.belongsToMany(db.user, {
   through: "user_roles",
