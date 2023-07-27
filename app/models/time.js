@@ -1,4 +1,4 @@
-module.exports = (sequelize, Sequelize) => {
+module.exports = (time, schedule, setSchedule) => {
     const time = [
     { id: "null", t: "Select" },
     { id: "7", t: "7:00am" },

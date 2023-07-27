@@ -1,4 +1,5 @@
 import react, { useState, useEffect } from "react";
+import {time, schedule, setSchedule} from "./app/models/time"
 import App from "./app/models/calendar.js";
 import express from "express";
 import session from "express-session";
@@ -285,7 +286,12 @@ const scheduleInfo = App;
 
 app.use(express.static(__dirname + '/views'));
 
+app.get('/shiftmaker', async (req, res) => {
+const usedTime = time;
+const usedSchedule = schedule
+  res.render ('shiftmaker', {time: usedTime}, {schedule: usedSchedule})
 
+})
 
 const PORT = process.env.PORT || 43488;
 app.listen(PORT, () => {
