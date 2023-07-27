@@ -17,7 +17,7 @@ module.exports = (time, schedule, setSchedule) => {
     { id: "18", t: "18:00pm" },
     { id: "19", t: "19:00pm" },
 ];
- [schedule, setSchedule] = useState([
+ [schedule, setSchedule] = [
     { day: "Sun", startTime: "", endTime: "" },
     { day: "Mon", startTime: "", endTime: "" },
     { day: "Tue", startTime: "", endTime: "" },
@@ -25,5 +25,5 @@ module.exports = (time, schedule, setSchedule) => {
     { day: "Thu", startTime: "", endTime: "" },
     { day: "Fri", startTime: "", endTime: "" },
     { day: "Sat", startTime: "", endTime: "" },
-]);
+];
 }
