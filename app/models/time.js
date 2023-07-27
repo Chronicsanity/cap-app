@@ -1,3 +1,5 @@
+const useState = require('react')
+
 module.exports = (time, schedule, setSchedule) => {
      time = [
     { id: "null", t: "Select" },
