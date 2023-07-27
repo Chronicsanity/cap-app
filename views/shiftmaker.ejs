@@ -3,7 +3,7 @@
     <main className='dashboard__main'>
         <h2 className='dashboard__heading'>Select your availability</h2>
 
-           <% {schedule.map((sch, id) => ( %>
+           <%- {schedule.map((sch, id) => ( %>
                 <div className='form', key={id}>
                     <p>{sch.day}</p>
                     <div className='select__wrapper'>
