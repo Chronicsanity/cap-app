@@ -1,5 +1,5 @@
 import react, { useState, useEffect } from "react";
-import {time, schedule, setSchedule} from "./app/models/time"
+import {time, schedule, setSchedule} from "./models/time";
 import App from "./app/models/calendar.js";
 import express from "express";
 import session from "express-session";
