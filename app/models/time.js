@@ -1,5 +1,5 @@
 module.exports = (time, schedule, setSchedule) => {
-    const time = [
+     time = [
     { id: "null", t: "Select" },
     { id: "7", t: "7:00am" },
     { id: "8", t: "8:00am" },
@@ -15,7 +15,7 @@ module.exports = (time, schedule, setSchedule) => {
     { id: "18", t: "18:00pm" },
     { id: "19", t: "19:00pm" },
 ];
-const [schedule, setSchedule] = useState([
+ [schedule, setSchedule] = useState([
     { day: "Sun", startTime: "", endTime: "" },
     { day: "Mon", startTime: "", endTime: "" },
     { day: "Tue", startTime: "", endTime: "" },
