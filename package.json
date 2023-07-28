@@ -27,6 +27,7 @@
   "author": "Cameron Harcum",
   "dependencies": {
     "@angular/cli": "^16.1.6",
+    "@syncfusion/ej2-angular-calendars": "^22.2.5",
     "ajax": "^0.0.4",
     "alert": "^5.1.4",
     "babel-core": "^6.26.3",
