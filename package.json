@@ -27,7 +27,6 @@
   "author": "Cameron Harcum",
   "dependencies": {
     "@angular/cli": "^16.1.6",
-    "@bevacqua/rome": "^3.0.4",
     "ajax": "^0.0.4",
     "alert": "^5.1.4",
     "babel-core": "^6.26.3",
