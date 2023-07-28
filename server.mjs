@@ -287,14 +287,7 @@ const scheduleInfo = App;
 app.use(express.static(__dirname + '/views'));
 
 app.get('/shiftmaker', async (req, res) => {
-const time = new TimePicker('#timepicker-container', {
-
-  initialHour: 15,
-  initialMinute: 13,
-  inputType: 'selectbox',
-  showMeridiem: false
-
-})
+const time = TimePicker;
   res.render ('shiftmaker', {time:time} )
 
 })
