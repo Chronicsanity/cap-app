@@ -16,6 +16,7 @@ import mysql from 'mysql';
 import Promise from 'promise';
 import bcrypt from 'bcryptjs';
 import controller from "./app/controllers/auth.controller.js";
+import rome from "@bevacqua/rome";
 import flash from 'connect-flash';
 const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06.cleardb.net/heroku_a26e4a307a3f41f?reconnect=true", {
 logging: false
@@ -286,9 +287,8 @@ const scheduleInfo = App;
 app.use(express.static(__dirname + '/views'));
 
 app.get('/shiftmaker', async (req, res) => {
-const usedTime = db.time;
-const usedSchedule = db.time;
-  res.render ('shiftmaker', {time: usedTime}, {schedule: usedSchedule})
+const romeTime = rome(dt,options);
+  res.render ('shiftmaker', {time:romeTime} )
 
 })
 

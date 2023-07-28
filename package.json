@@ -27,6 +27,7 @@
   "author": "Cameron Harcum",
   "dependencies": {
     "@angular/cli": "^16.1.6",
+    "@bevacqua/rome": "^3.0.4",
     "@syncfusion/ej2-angular-calendars": "^22.2.5",
     "ajax": "^0.0.4",
     "alert": "^5.1.4",
@@ -70,6 +71,7 @@
     "react-router-dom": "^6.12.1",
     "react-toastify": "^9.1.3",
     "req-flash": "^0.0.3",
+    "rome": "^12.1.3",
     "salt": "^0.5.5",
     "sequelize": "^6.26.0",
     "uuid": "^9.0.0"
