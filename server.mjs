@@ -17,7 +17,7 @@ import Promise from 'promise';
 import bcrypt from 'bcryptjs';
 import controller from "./app/controllers/auth.controller.js";
 import flash from 'connect-flash';
-import time_picker from './node_modules/tui-time-picker'
+import TimePicker from 'tui-time-picker';
 const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06.cleardb.net/heroku_a26e4a307a3f41f?reconnect=true", {
 logging: false
 });
@@ -287,7 +287,14 @@ const scheduleInfo = App;
 app.use(express.static(__dirname + '/views'));
 
 app.get('/shiftmaker', async (req, res) => {
-const time = time_picker
+const time = new TimePicker('#timepicker-container', {
+
+  initialHour: 15,
+  initialMinute: 13,
+  inputType: 'selectbox',
+  showMeridiem: false
+
+})
   res.render ('shiftmaker', {time:time} )
 
 })
