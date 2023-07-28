@@ -287,8 +287,8 @@ const scheduleInfo = App;
 app.use(express.static(__dirname + '/views'));
 
 app.get('/shiftmaker', async (req, res) => {
-const time = time_picker
-  res.render ('shiftmaker', {time:time} )
+//const time = time_picker
+  res.render ('shiftmaker'/*, {time:time}*/ )
 
 })
 
