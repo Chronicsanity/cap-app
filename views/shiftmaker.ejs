@@ -1,13 +1,17 @@
 <html>
     <head>
-       
-        <link href="tui-time-picker.css" rel="stylesheet">
+        <script src="http://trentrichardson.com/examples/timepicker/js/jquery-1.7.1.min.js">     </script>
+        <script src="http://trentrichardson.com/examples/timepicker/js/jquery-ui-1.8.16.custom.min.js"></script>
+        <script src="http://trentrichardson.com/examples/timepicker/js/jquery-ui-sliderAccess.js"></script>
+        <script src="http://trentrichardson.com/examples/timepicker/js/jquery-ui-timepicker-addon.js"></script>
+        <link type="text/css" href="http://trentrichardson.com/examples/timepicker/css/ui-lightness/jquery-ui-1.8.16.custom.css" rel="stylesheet">
     </head>
     <body>
-      
-        <script type="text/javascript" src="tui-time-picker.min.js"><div id="timepicker-wrapper"></div></script>
-        <div id="timepicker-wrapper"></div>
-
-       
+        <input id="TimePicker"></input>  
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#TimePicker').timepicker();
+            });
+        </script> 
     </body>
 </html>
