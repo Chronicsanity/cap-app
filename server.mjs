@@ -17,7 +17,7 @@ import Promise from 'promise';
 import bcrypt from 'bcryptjs';
 import controller from "./app/controllers/auth.controller.js";
 import flash from 'connect-flash';
-import time_picker from './tui-time-picker'
+//import time_picker from './tui-time-picker'
 const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06.cleardb.net/heroku_a26e4a307a3f41f?reconnect=true", {
 logging: false
 });
