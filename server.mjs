@@ -289,7 +289,7 @@ app.use(express.static(__dirname + '/views'));
 app.get('/shiftmaker', async (req, res) => {
 
 
-  const datepicker = datePicker.TimePicker('#wrapper', {
+  const picker = datePicker.TimePicker('#wrapper', {
     date: new Date(),
     input: {
       element: '#datepicker-input',
@@ -310,7 +310,7 @@ app.get('/shiftmaker', async (req, res) => {
     }
   });
 
-  res.render ('shiftmaker', {datepicker:datepicker}, {datepicker2:datepicker2} )
+  res.render ('shiftmaker', {datepicker:picker}, {datepicker2:datepicker2} )
 
 })
 
