@@ -18,9 +18,8 @@
 
     <script type="text/javascript">
  $('#timepicker1').timepicker().on('change dp.change', function(e){
-    alert('changed');
+  console.log('The time is ' + e.time.value);
     });
     </script>
-     <button type="submit" value="accept" class="btn btn-success rounded-pill">accept</button>
     </body>
 </html>
