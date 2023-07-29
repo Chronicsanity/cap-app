@@ -4,7 +4,6 @@
 <meta http-equiv="Expires" content="-1">
 <html>
     <head>
-        <script src="/cap-capstone/node_modules/tui-time-picker/dist/tui-time-picker.js">tpSelectbox</script>
     </head>
     
     <body>
@@ -27,8 +26,9 @@
 
         
         <script type="text/javascript">
-          $('#timepicker1').keydown(function(){
-return false;});
+        $(document).ready(function() {
+$('#timepicker1').timepicker();
+});
         
     
           $('#timepicker2').timepicker({
