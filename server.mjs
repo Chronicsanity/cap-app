@@ -289,7 +289,7 @@ app.use(express.static(__dirname + '/views'));
 app.get('/shiftmaker', async (req, res) => {
 
 
-  const datepicker = new TimePicker('#wrapper', {
+  const datepicker = TimePicker('#wrapper', {
     date: new Date(),
     input: {
       element: '#datepicker-input',
