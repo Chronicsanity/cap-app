@@ -287,10 +287,7 @@ const scheduleInfo = App;
 app.use(express.static(__dirname + '/views'));
 
 app.get('/shiftmaker', async (req, res) => {
-  const container = document.getElementById('timepicker-wrapper');
-  const instance = new TimePicker(container, {
-    
-  })
+
 const timepicker = TimePicker;
   res.render ('shiftmaker', {timepicker:timepicker} )
 
