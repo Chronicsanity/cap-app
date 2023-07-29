@@ -11,20 +11,25 @@
 
 
 
+        <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/bootstrap.timepicker/0.2.6/css/bootstrap-timepicker.min.css" rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="https://cdn.jsdelivr.net/bootstrap.timepicker/0.2.6/js/bootstrap-timepicker.min.js"></script>
+        
+        
+        <div class="input-group bootstrap-timepicker timepicker">
+          <input id="timepicker1" type="text" class="form-control input-small">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+        </div>
+        
+        <script type="text/javascript">
+          $('#timepicker1').timepicker({
+            showInputs: false
+          });
+      
 
-<script>
-
-var tpSelectbox = new tui.TimePicker('#timepicker-selectbox', {
-    inputType: 'selectbox' // default
-    initialHour: 15,
-    initialMinute: 13,
-    inputType: 'selectbox',
-    showMeridiem: false
-});
-
-var tpSpinbox = new tui.TimePicker('#timepicker-spinbox', {
-   
-});
 </script>
  
 </body>
