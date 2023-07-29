@@ -36,6 +36,7 @@
     "body-parser": "^1.20.2",
     "bootstrap": "^5.3.1",
     "bootstrap-datetimepicker": "^0.0.7",
+    "bootstrap-timepicker": "^0.5.2",
     "cldr-data": "^36.0.1",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^3.0.0",
