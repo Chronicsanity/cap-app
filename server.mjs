@@ -1,7 +1,7 @@
 import react, { useState, useEffect } from "react";
 import App from "./app/models/calendar.js";
 import express from "express";
-import jQuery from "jquery";
+
 import session from "express-session";
 import cors from "cors";
 import cookieSession from "cookie-session";
