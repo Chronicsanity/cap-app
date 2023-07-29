@@ -11,15 +11,20 @@
         
     </head>
     <body>
-      <div class="input-group bootstrap-timepicker timepicker pull-right">
+      <div class="input-group bootstrap-timepicker timepicker">
         <input id="timepicker3" type="text" class="form-control input-small">
+        <span class="input-group-addon">
+          <i class="glyphicon glyphicon-time"></i>
+      </span>
     </div>
 
     <script type="text/javascript">
         $('#timepicker3').timepicker({
             minuteStep: 5,
             showInputs: false,
-            disableFocus: true
+            disableFocus: true,
+            template: 'modal',
+            appendWidgetTo: 'body',
         });
     </script>
     </body>
