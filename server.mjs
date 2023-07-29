@@ -296,7 +296,7 @@ app.get('/shiftmaker', async (req, res) => {
     timePicker: true
   });
 
-  var datepicker2 = new tui.DatePicker('#wrapper-2', {
+  var datepicker2 = new tui('#wrapper-2', {
     date: new Date(),
     input: {
       element: '#datepicker-input-2',
