@@ -34,6 +34,8 @@
     "babel-preset-react": "^6.24.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.2",
+    "bootstrap": "^5.3.1",
+    "bootstrap-datetimepicker": "^0.0.7",
     "cldr-data": "^36.0.1",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^3.0.0",
