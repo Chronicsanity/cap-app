@@ -289,30 +289,12 @@ app.use(express.static(__dirname + '/views'));
 
 app.get('/shiftmaker', async (req, res) => {
 
-jQuery(function($){
-  const picker = datePicker.TimePicker('#wrapper', {
-    date: new Date(),
-    input: {
-      element: '#datepicker-input',
-      format: 'yyyy-MM-dd HH:mm A'
-    },
-    timePicker: true
-  });
 
-  const datepicker2 = new datePicker.TimePicker('#wrapper-2', {
-    date: new Date(),
-    input: {
-      element: '#datepicker-input-2',
-      format: 'yyyy-MM-dd HH:mm A'
-    },
-    timePicker: {
-      layoutType: 'tab',
-      inputType: 'spinbox'
-    }
-  });
-})
+  
+ 
 
-  res.render ('shiftmaker', {datepicker:picker}, {datepicker2:datepicker2} )
+
+  res.render ('shiftmaker')
 
 })
 

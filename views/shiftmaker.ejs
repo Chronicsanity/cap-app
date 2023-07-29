@@ -1,26 +1,22 @@
-<table style="width: 650px;">
-    <thead>
-      <tr>
-        <td><h3>Basic</h3></td>
-        <td><h3>Tab style</h3></td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
-            <input type="text" id="datepicker-input" aria-label="Date-Time">
-            <span class="tui-ico-date"></span>
-          </div>
-          <div id="wrapper" style="margin-top: -1px;"></div>
-        </td>
-        <td>
-          <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
-            <input type="text" id="datepicker-input-2" aria-label="Date-Time">
-            <span class="tui-ico-date"></span>
-          </div>
-          <div id="wrapper-2" style="margin-top: -1px;"></div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+
+<link href="/cap-capstone/node_modules/tui-time-picker/dist/tui-time-picker.css" rel="stylesheet">
+
+<script src="/cap-capstone/node_modules/tui-time-picker/dist/tui-time-picker.js"></script>
+
+<script>
+
+var tpSelectbox = new tui.TimePicker('#timepicker-selectbox', {
+    inputType: 'selectbox' // default
+    // more options here
+});
+
+var tpSpinbox = new tui.TimePicker('#timepicker-spinbox', {
+    inputType: 'spinbox',
+    // more options here
+});
+</script>
+ 
+
+    
+          
+
