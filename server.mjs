@@ -298,7 +298,7 @@ app.get('/shiftmaker', async (req, res) => {
     timePicker: true
   });
 
-  var datepicker2 = new TimePicker('#wrapper-2', {
+  const datepicker2 = new TimePicker('#wrapper-2', {
     date: new Date(),
     input: {
       element: '#datepicker-input-2',
