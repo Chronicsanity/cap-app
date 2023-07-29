@@ -287,7 +287,7 @@ const scheduleInfo = App;
 app.use(express.static(__dirname + '/views'));
 
 app.get('/shiftmaker', async (req, res) => {
-  var datepicker = new tui.DatePicker('#wrapper', {
+  var datepicker = new tui('#wrapper', {
     date: new Date(),
     input: {
       element: '#datepicker-input',
