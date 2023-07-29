@@ -17,10 +17,16 @@
     </div>
 
     <script type="text/javascript">
-        $(document).ready(function() {
-$('#timepicker1').keydown(function(){
-return false;});
-});
+$('#department').change(function(){
+if($(this).val() == 1)
+time = '9:30 AM';		
+else if($(this).val() == 2)
+time = '10:30 AM';
+else
+time = '8:30 AM'; 			
+$('#timepicker1').val(time);			// set #timepicker textbox value
+$('#timepicker1').timepicker('setTime', time);     // set widget time according to department change
+		});
     </script>
     </body>
 </html>
