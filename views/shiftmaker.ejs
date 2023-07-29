@@ -12,12 +12,12 @@
     </head>
     <body>
       <div class="input-group bootstrap-timepicker timepicker">
+        <input id="timepicker1" type="text" class="form-control input-small">
         <input type='text' class="form-control" />
-  <span class="input-group-addon">
-   <span class="glyphicon glyphicon-calendar"></span>
-  </span>
- </div>
-
+        <span class="input-group-addon">
+         <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+       </div>
     <script type="text/javascript">
  $('#timepicker1').timepicker().on('change dp.change', function(e){
   alert('The time is ' + e);
