@@ -15,55 +15,20 @@
     <body>
 
         
-        <div class="input-group bootstrap-timepicker timepicker">
-          <input id="timepicker1" type="text" class="form-control input-small" onkeydown=”return false;”/>
-          <input id="timepicker2" type="text" class="form-control input-small">
-          <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-        </div>
-
+      <div class="input-group bootstrap-timepicker timepicker">
+        <input id="timepicker1" type="text" class="form-control input-small">
+        <input id="timepicker2" type="text" class="form-control input-small">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+    </div>
         
         <script type="text/javascript">
         $(document).ready(function() {
-$('#timepicker1').timepicker();
-});
-        
-    
-          $('#timepicker2').timepicker({
-            showInputs: false
-          });
 
-          $(document).ready(function() {
-$('#timepicker1').keydown(function(){
-return false;});
-});
-$('#department').change(function(){
-if($(this).val() == 1)
-time = '9:30 AM';		
-else if($(this).val() == 2)
-time = '10:30 AM';
-else
-time = '8:30 AM'; 			
-$('#timepicker1').val(time);			// set #timepicker textbox value
-$('#timepicker1').timepicker('setTime', time);     // set widget time according to department change
-		});
+          $('#timepicker1').timepicker();
+          $('#timepicker2').timepicker();
+        })
 
-    $('#enable').click(function(e){
-e.preventDefault();
-$('#timepicker1').prop("readonly", false);
-$('#department').removeAttr("readonly");			
-$('#timepicker1').parents('.timepicker').click(function (){          
-/* click event for time symbol button of textbox to set time and show timepicker widget.  */
-if (! $('#timepicker1').is('[readonly]') ){
-$('#timepicker1').parents('.timepicker').timepicker('setTime', $('#timepicker1').val());
-$('#timepicker1').parents('.timepicker').timepicker('showWidget');
-}
-});
-    });
-    $('#timepicker1').parents('.timepicker').timepicker().on('changeTime.timepicker', function(e) {
-if (! $('#timepicker1').is('[readonly]') ){
-$('#timepicker1').val(e.time.value);
-}
-});
+
 </script>
  
 </body>
