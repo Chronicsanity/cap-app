@@ -289,7 +289,7 @@ app.get('/shiftmaker', async (req, res) => {
 
 const TimePicker = await import ('tui-time-picker');
 
-  const datepicker = new TimePicker('#wrapper', {
+  const datepicker = new TimePicker.TimePicker('#wrapper', {
     date: new Date(),
     input: {
       element: '#datepicker-input',
@@ -298,7 +298,7 @@ const TimePicker = await import ('tui-time-picker');
     timePicker: true
   });
 
-  var datepicker2 = new TimePicker('#wrapper-2', {
+  var datepicker2 = new TimePicker.TimePicker('#wrapper-2', {
     date: new Date(),
     input: {
       element: '#datepicker-input-2',
