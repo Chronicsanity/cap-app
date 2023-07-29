@@ -287,9 +287,9 @@ app.use(express.static(__dirname + '/views'));
 
 app.get('/shiftmaker', async (req, res) => {
 
-const TimePicker = await import ('tui-time-picker');
+const time = await import ('tui-time-picker');
 
-  const datepicker = new TimePicker.TimePicker('#wrapper', {
+  const datepicker = new time.TimePicker('#wrapper', {
     date: new Date(),
     input: {
       element: '#datepicker-input',
@@ -298,7 +298,7 @@ const TimePicker = await import ('tui-time-picker');
     timePicker: true
   });
 
-  var datepicker2 = new TimePicker.TimePicker('#wrapper-2', {
+  var datepicker2 = new time.TimePicker('#wrapper-2', {
     date: new Date(),
     input: {
       element: '#datepicker-input-2',
