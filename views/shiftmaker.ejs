@@ -61,7 +61,12 @@ $('#timepicker1').parents('.timepicker').timepicker('setTime', $('#timepicker1')
 $('#timepicker1').parents('.timepicker').timepicker('showWidget');
 }
 });
-    })
+    });
+    $('#timepicker1').parents('.timepicker').timepicker().on('changeTime.timepicker', function(e) {
+if (! $('#timepicker1').is('[readonly]') ){
+$('#timepicker1').val(e.time.value);
+}
+});
 </script>
  
 </body>
