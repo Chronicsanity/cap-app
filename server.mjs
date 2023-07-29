@@ -1,6 +1,7 @@
 import react, { useState, useEffect } from "react";
 import App from "./app/models/calendar.js";
 import express from "express";
+import jQuery from "jquery";
 import session from "express-session";
 import cors from "cors";
 import cookieSession from "cookie-session";
@@ -37,7 +38,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 
-app.use(express.urlencoded({ extended: true }));
+app.use('/jquery',express.urlencoded({ extended: true }));
 
 
 app.set('view engine','ejs')
@@ -288,7 +289,7 @@ app.use(express.static(__dirname + '/views'));
 
 app.get('/shiftmaker', async (req, res) => {
 
-
+jQuery(function($){
   const picker = datePicker.TimePicker('#wrapper', {
     date: new Date(),
     input: {
@@ -309,6 +310,7 @@ app.get('/shiftmaker', async (req, res) => {
       inputType: 'spinbox'
     }
   });
+})
 
   res.render ('shiftmaker', {datepicker:picker}, {datepicker2:datepicker2} )
 
