@@ -27,7 +27,7 @@
         
         <script type="text/javascript">
         $(document).ready(function() {
-$('#timepicker1').timepicker({‘template’ : false});
+$('#timepicker1').timepicker();
 });
         
     
@@ -50,6 +50,18 @@ $('#timepicker1').val(time);			// set #timepicker textbox value
 $('#timepicker1').timepicker('setTime', time);     // set widget time according to department change
 		});
 
+    $('#enable').click(function(e){
+e.preventDefault();
+$('#timepicker1').prop("readonly", false);
+$('#department').removeAttr("readonly");			
+$('#timepicker1').parents('.timepicker').click(function (){          
+/* click event for time symbol button of textbox to set time and show timepicker widget.  */
+if (! $('#timepicker1').is('[readonly]') ){
+$('#timepicker1').parents('.timepicker').timepicker('setTime', $('#timepicker1').val());
+$('#timepicker1').parents('.timepicker').timepicker('showWidget');
+}
+});
+    })
 </script>
  
 </body>
