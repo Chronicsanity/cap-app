@@ -12,21 +12,17 @@
     </head>
     <body>
       <div class="input-group bootstrap-timepicker timepicker">
-        <input id="timepicker1" type="text" class="form-control input-small" onkeydown="return false;">
+        <input id="timepicker1" type="text" class="form-control input-small">
         <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
     </div>
 
     <script type="text/javascript">
-       $('#department').change(function(){
-if($(this).val() == 1)
-time = '9:30 AM';		
-else if($(this).val() == 2)
-time = '10:30 AM';
-else
-time = '8:30 AM'; 			
-$('#timepicker1').val(time);			// set #timepicker textbox value
-$('#timepicker1').timepicker('setTime', time);     // set widget time according to department change
-		});
+ $('#timepicker1').timepicker().on('changeTime.timepicker', function(e) {
+    console.log('The time is ' + e.time.value);
+    console.log('The hour is ' + e.time.hours);
+    console.log('The minute is ' + e.time.minutes);
+    console.log('The meridian is ' + e.time.meridian);
+  });
     </script>
     </body>
 </html>
