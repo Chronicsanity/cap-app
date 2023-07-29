@@ -287,9 +287,28 @@ const scheduleInfo = App;
 app.use(express.static(__dirname + '/views'));
 
 app.get('/shiftmaker', async (req, res) => {
+  var datepicker = new tui.DatePicker('#wrapper', {
+    date: new Date(),
+    input: {
+      element: '#datepicker-input',
+      format: 'yyyy-MM-dd HH:mm A'
+    },
+    timePicker: true
+  });
 
-const timepicker = TimePicker;
-  res.render ('shiftmaker', {timepicker:timepicker} )
+  var datepicker2 = new tui.DatePicker('#wrapper-2', {
+    date: new Date(),
+    input: {
+      element: '#datepicker-input-2',
+      format: 'yyyy-MM-dd HH:mm A'
+    },
+    timePicker: {
+      layoutType: 'tab',
+      inputType: 'spinbox'
+    }
+  });
+
+  res.render ('shiftmaker', {datepicker:datepicker}, {datepicker2:datepicker2} )
 
 })
 
