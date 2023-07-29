@@ -1,7 +1,4 @@
-
 <!DOCTYPE html>
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="-1">
 <html>
     <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -15,21 +12,18 @@
     <body>
 
         
-      <div class="input-group bootstrap-timepicker timepicker">
-        <input id="timepicker1" type="text" class="form-control input-small">
-        <input id="timepicker2" type="text" class="form-control input-small">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+      <div class="bootstrap-timepicker">
+        <input id="timepicker1" type="text" class="input-small">
+        <i class="icon-time"></i>
     </div>
-        
-        <script type="text/javascript">
-        $(document).ready(function() {
 
-          $('#timepicker1').timepicker();
-          $('#timepicker2').timepicker();
-        })
-
-
-</script>
+    <script type="text/javascript">
+        $('#timepicker1').timepicker({
+            template: false,
+            showInputs: false,
+            minuteStep: 5
+        });
+    </script>
  
 </body>
 </html>
