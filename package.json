@@ -75,10 +75,10 @@
     "rome": "^12.1.3",
     "salt": "^0.5.5",
     "sequelize": "^6.26.0",
-    "tui-time-picker": "^2.1.6",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0"
+    "babel-cli": "^6.26.0",
+    "tui-time-picker": "^2.1.6"
   }
 }
