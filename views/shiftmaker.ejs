@@ -17,14 +17,9 @@
     </div>
 
     <script type="text/javascript">
- $('#timepicker1').timepicker().on('changeTime.timepicker', function(e) {
-  if (submit === true) {
-    console.log('The time is ' + e.time.value);
-    console.log('The hour is ' + e.time.hours);
-    console.log('The minute is ' + e.time.minutes);
-    console.log('The meridian is ' + e.time.meridian);
-  }
-  });
+ $('#timepicker1').timepicker().on(('change dp.change', function(e){
+    alert(e+'changed');
+    }));
     </script>
      <button type="submit" value="accept" class="btn btn-success rounded-pill">accept</button>
     </body>
