@@ -291,7 +291,7 @@ app.get('/shiftmaker', async (req, res) => {
 
   await controller.employeeList().then(info => {
     
-    const data = JSON.stringify(info);
+    const data = info;
     
   
  
