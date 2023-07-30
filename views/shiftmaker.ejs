@@ -15,12 +15,12 @@
       <select id="datacheck">
 
         
-      
-    
+       <script> for (var i = 0; i < <%= data%>.length; i++) {
+        const datacheck = <%= data[i].user%>
      
-            <option value="check"> <%=data%> </option> 
-        
-   
+            <option value="check"> datacheck </option> 
+       }
+   </script>
         </select>
       <option value="<%= data %>"> <%= data.user %> </option>
 
