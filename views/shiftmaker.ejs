@@ -16,11 +16,11 @@
 
         
         <% for(var i=0; i < data.length; i++) { %>
-        <%  if(i === data.length-1){ %>
+        <%  if(data[i] === data.length -1){ %>
          <%   i += 1; %>
                                 
         <%  }else{ %>
-          <%  i +=1 %>
+          <%  i += 1 %>
           <option value="<%= data %>"><%= data[i].user %></option>
          
 
