@@ -304,7 +304,8 @@ app.post('/shiftmaker', async (req, res) =>{
 
 
 
-  console.log(res.body.dataReturn)
+  console.log(res.body.check)
+  console.log(res.body.check2)
 
 
 
