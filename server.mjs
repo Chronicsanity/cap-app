@@ -301,13 +301,15 @@ app.get('/shiftmaker', async (req, res) => {
     })
   })
 app.post('/shiftmaker', async (req, res) =>{
+  const check = req.body.chosen;
+const employeeChecker =  await Employee.findAll( {where: {user: check}}).then(result => {
+    
+  
+  {return console.log(result + "Check")}
+  
+})
 
-
-
-  console.log(req.body.check3)
-  console.log(req.body.time1)
-  console.log(req.body.time2)
-
+employeeChecker;
 
 
   await controller.employeeList().then(info => {
