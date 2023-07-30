@@ -20,7 +20,7 @@
          <%   i += 1; %>
                                 
         <%  }else{ %>
-          <%  i  %>
+          <%  i += 2 %>
           <option value="<%= data %>"><%= data[i].user %></option>
          
 
@@ -28,7 +28,6 @@
             <option value="check"><%= data[i].user%></option>
   <% } } %>
         </select>
-      <option value="<%= data %>">  datadouble </option>
 
       <div class="input-group bootstrap-timepicker timepicker">
         <input id="timepicker1" type="text" class="form-control input-small">
