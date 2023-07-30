@@ -300,6 +300,11 @@ app.get('/shiftmaker', async (req, res) => {
   res.render ('shiftmaker',{data: data})
     })
   })
+app.post('/shiftmaker', async (req, res) =>{
+
+res.render ('shiftmaker')
+
+})
 
 
 const PORT = process.env.PORT || 43488;
