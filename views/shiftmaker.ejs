@@ -14,16 +14,18 @@
     <body>
       <select id="datacheck">
 
-        
+        <% var seen = [];%>
         <% for(var i=0; i < data.length; i++) { %>
-        
-        
+        <%seen === data[i];%>
+          <%if(seen === data.length){%>
+          <%i++ }%>
+            <%else{%>
           <option value="<%= data %>"><%= data[i].user %></option>
          
 
   
             <option value="check"><%= data[i].user%></option>
-  <% } %>
+  <% } }rtherthert%>
         </select>
 
       <div class="input-group bootstrap-timepicker timepicker">
