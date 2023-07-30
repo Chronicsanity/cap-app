@@ -301,16 +301,18 @@ app.get('/shiftmaker', async (req, res) => {
     })
   })
 app.post('/shiftmaker', async (req, res) =>{
+
+if (req.body.dataReturn) {
+
+  console.log(req.body.dataReturn)
+}
+
+
   await controller.employeeList().then(info => {
     
     const data = info;
-    
-  
  
-
-
   res.render ('shiftmaker',{data: data})
-res.render ('shiftmaker')
 
 })
 })
