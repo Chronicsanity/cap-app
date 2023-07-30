@@ -16,10 +16,10 @@
 
         
       
-     <script> <%=  for (var i = 0; i < data.length; i++) { %> </script>
-            <option value="<%= data[ i ] %>"selected > <%= i %></option> 
+     <script>   for (var i = 0; i < <%=data.length%>; i++) { 
+            <option value="<%= data[ i ] %>"><%= i %></option> 
         }
-        
+        </script>
         </select>
       <option value="<%= data %>"> <%= data %> </option>
 
