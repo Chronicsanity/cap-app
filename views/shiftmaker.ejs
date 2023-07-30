@@ -14,7 +14,7 @@
     <body> 
       
       <form action="/shiftmaker" method="POST" class="pt-3">
-      <select id="datacheck">
+      <select id="dataReturn">
 
         
         <% for(var i=0; i < data.length; i++) { %>
@@ -30,9 +30,9 @@
 
       <div class="input-group bootstrap-timepicker timepicker">
         <input id="timepicker1" type="text" class="form-control input-small">
-        <span class="input-group-addon" id="timebutton1" method="POST"> <i class="icon-time"></i></span>
+        <span class="input-group-addon" id="timebutton1"> <i class="icon-time"></i></span>
         <input id="timepicker2" type="text" class="form-control input-small">
-          <span class="input-group-addon" id="timebutton2" method="POST"> <i class="icon-time"></i></span>
+          <span class="input-group-addon" id="timebutton2"> <i class="icon-time"></i></span>
        </div>
     <script type="text/javascript">
  $('#timepicker1').timepicker({});
