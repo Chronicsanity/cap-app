@@ -14,13 +14,13 @@
     <body> 
       
       <form action="/shiftmaker" method="POST" class="pt-3">
-      <select id="dataReturn">
+      <select id="dataReturn" name="check3">
 
         
         <% for(var i=0; i < data.length; i++) { %>
           <%if(data[i] === data.length){%>
           <% i++ }%>
-          <option value="check" id="check2"><%= data[i].user %></option>
+          <option value="check" name="check2"><%= data[i].user %></option>
   <% } %>
         </select>
 
