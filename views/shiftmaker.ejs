@@ -16,9 +16,8 @@
 
         <% var seen = [];%>
         <% for(var i=0; i < data.length; i++) { %>
-        <%seen === data[i];%>
-          <%if(seen === data.length){%>
-          <%i++ }%>
+          <%if(data[i] === data.length){%>
+          <% i++ }%>
           <option value="<%= data %>"><%= data[i].user %></option>
          
 
