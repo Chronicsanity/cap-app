@@ -12,7 +12,15 @@
         
     </head>
     <body>
+      <select id="data">
 
+        
+      
+      <%=  for (var i = 0; i < data.length; i++) { %>
+            <option value="<%= data[ i ] %>"selected > <%= i %></option> 
+        }
+        
+        </select>
       <option value="<%= data %>"> <%= data %> </option>
 
       <div class="input-group bootstrap-timepicker timepicker">
