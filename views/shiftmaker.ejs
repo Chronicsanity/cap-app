@@ -14,13 +14,15 @@
     <body>
       <div class="input-group bootstrap-timepicker timepicker">
         <input id="timepicker1" type="text" class="form-control input-small">
-  
+        <input id="timepicker2" type="text" class="form-control input-small">
           <span class="input-group-addon" id="timebutton1"> <i class="icon-time"></i></span>
+          <span class="input-group-addon" id="timebutton2"> <i class="icon-time"></i></span>
        </div>
     <script type="text/javascript">
  $('#timepicker1').timepicker({});
  $("#timebutton1").addClass("btn btn-success");
-    
+ $('#timepicker2').timepicker({});
+ $("#timebutton2").addClass("btn btn-success");
     </script>
     </body>
 </html>
