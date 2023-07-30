@@ -16,17 +16,14 @@
 
         
         <% for(var i=0; i < data.length; i++) { %>
-        <%  if(data[i] === data[i]-1){ %>
-         <%   i+1 ; %>
-                                
-        <%  }else{ %>
-          <%  i  %>
-          <option value="<%= data %>"><%= data[i].user %></option>
+        
+        
+          <option value="<%= data %>"><%= data.concat[i].user %></option>
          
 
   
             <option value="check"><%= data[i].user%></option>
-  <% } } %>
+  <% } %>
         </select>
 
       <div class="input-group bootstrap-timepicker timepicker">
