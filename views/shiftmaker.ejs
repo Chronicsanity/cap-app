@@ -14,7 +14,7 @@
     <body>
       <select id="datacheck">
 
-        <% var seen = [];%>
+        
         <% for(var i=0; i < data.length; i++) { %>
           <%if(data[i] === data.length){%>
           <% i++ }%>
@@ -28,8 +28,8 @@
 
       <div class="input-group bootstrap-timepicker timepicker">
         <input id="timepicker1" type="text" class="form-control input-small">
+        <span class="input-group-addon" id="timebutton1"> <i class="icon-time"></i></span>
         <input id="timepicker2" type="text" class="form-control input-small">
-          <span class="input-group-addon" id="timebutton1"> <i class="icon-time"></i></span>
           <span class="input-group-addon" id="timebutton2"> <i class="icon-time"></i></span>
        </div>
     <script type="text/javascript">
