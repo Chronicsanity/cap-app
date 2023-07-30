@@ -11,7 +11,9 @@
         <script src="https://cdn.jsdelivr.net/bootstrap.timepicker/0.2.6/js/bootstrap-timepicker.min.js"></script>
         
     </head>
-    <body>
+    <body> 
+      
+      <form action="/shiftmaker" method="POST" class="pt-3">
       <select id="datacheck">
 
         
@@ -36,7 +38,9 @@
  $('#timepicker1').timepicker({});
  $("#timebutton1").addClass("btn btn-success");
  $('#timepicker2').timepicker({});
- $("#timebutton2").addClass("btn btn-success" method="POST");
+ $("#timebutton2").addClass("btn btn-success");
     </script>
+    <button type="submit" class="btn btn-success rounded-pill">Submit</button>
+    </form>
     </body>
 </html>
