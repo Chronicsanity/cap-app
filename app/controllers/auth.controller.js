@@ -156,6 +156,32 @@ exports.scheduleTable = async function (res) {
         })
       }
 
+      exports.employeeList = async function (res) {
+        return  new Promise(function(resolve, reject){
+            db.sequelize.sync().then(() => {
+          
+          
+              Employee.findAll().then(res => {
+              
+             const object = res
+              //console.log(object)
+             return resolve (object);
+              
+        
+              
+               }) .catch((error) => {
+            console.error('Failed to retrieve data : ', error);
+            
+            
+            
+            }).catch((error) => {
+            console.error('Unable to create table : ', error);
+              })
+            })
+            })
+          }
+
+
 exports.signin = async (req, res) => {
 
   try {

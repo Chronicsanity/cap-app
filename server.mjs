@@ -289,13 +289,18 @@ app.use(express.static(__dirname + '/views'));
 
 app.get('/shiftmaker', async (req, res) => {
 
-
+  await controller.employeeList().then(info => {
+    for (var i = 0; i < info.length; i++) {
+        const data = JSON.stringify(info)
+    
+    
   
  
 
 
-  res.render ('shiftmaker')
-
+  res.render ('shiftmaker',{data: data})
+    }
+  })
 })
 
 const PORT = process.env.PORT || 43488;
