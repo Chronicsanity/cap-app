@@ -20,7 +20,7 @@
         <% for(var i=0; i < data.length; i++) { %>
           <%if(data[i] === data.length){%>
           <% i++ }%>
-          <option value="check" name="check2"><%= data[i].user %></option>
+          <option value="<%= data[i].user %>"><%= data[i].user %></option>
   <% } %>
         </select>
 
