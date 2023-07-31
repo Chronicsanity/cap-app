@@ -9,11 +9,10 @@
         <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/js/bootstrap-datetimepicker.min.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
         <script src="https://cdn.jsdelivr.net/bootstrap.timepicker/0.2.6/js/bootstrap-timepicker.min.js"></script>
-
-
+        <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
     </head>
     <body> 
       
@@ -27,19 +26,24 @@
           <option value="<%= data[i].user %>"><%= data[i].user %></option>
   <% } %>
         </select>
-        <div class="well">
-          <div id="datetimepicker1" class="input-append date">
-            <input data-format="dd/MM/yyyy" type="text"></input>
-            <span class="input-group-addon" id="timebutton1"> <i class="icon-calendar"></i></span>
-          </div>
-        </div>
-        <script type="text/javascript">
-          $(function() {
-            $('#datepicker').datetimepicker({
-              language: 'pt-BR'
-            });
-          });
-        </script>
+        <div id="datepicker" 
+        class="input-group date" 
+        data-date-format="mm-dd-yyyy">
+       <input class="form-control" 
+              type="text" readonly />
+       <span class="input-group-addon">
+           <i class="glyphicon glyphicon-calendar"></i>
+       </span>
+   </div>
+</div>
+<script>
+  $(function () {
+      $("#datepicker").datepicker({ 
+          autoclose: true, 
+          todayHighlight: true,
+      }).datepicker('update', new Date());
+  });
+</script>
       <div class="input-group bootstrap-timepicker timepicker">
         <input id="timepicker1" type="text" name="time1" class="form-control input-small">
         <span class="input-group-addon" id="timebutton1"> <i class="icon-time"></i></span>
