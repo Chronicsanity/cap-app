@@ -13,6 +13,7 @@ import {fileURLToPath} from 'url';
 const User = db.user;
 const Employee = db.employee;
 const QueuedUser = db.queuedUsers;
+const Shift = db.shift;
 import mysql from 'mysql';
 import Promise from 'promise';
 import bcrypt from 'bcryptjs';
@@ -303,10 +304,18 @@ app.get('/shiftmaker', async (req, res) => {
 app.post('/shiftmaker', async (req, res) =>{
   const check = req.body.chosen;
 const employeeChecker =  await Employee.findAll( {where: {user: check}}).then(result => {
-    
+  if (result === true) {
+
+    const start = [];
+    const end = [];
+    start.push(req.body.time1);
+    end.push(req.body.time2);
+    Shift.start_time = start;
+    Shift.end_time = end;
+
   
-  {return console.log(result + "Check")}
-  
+  {return console.log(check+" is scheduled from "+ start+" to "+end)}
+  }
 })
 
 employeeChecker;

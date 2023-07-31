@@ -13,7 +13,11 @@ module.exports = (sequelize, Sequelize) => {
 	  min_title: {
 		type: Sequelize.STRING
 	  },
-		
+	  start_time: {
+		type: Sequelize.DATETIME
+	  }, end_time: {
+		type: Sequelize.DATETIME
+	  },
 	}, 
 	
 	{
