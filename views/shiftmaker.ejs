@@ -27,12 +27,22 @@
           <option value="<%= data[i].user %>"><%= data[i].user %></option>
   <% } %>
         </select>
-        <div class="input-group bootstrap-datetimepicker datetimepicker" data-provide="datepicker">
-          <input type="text" class="form-control">
-          <div class="input-group-addon">
-              <span class="glyphicon glyphicon-th"></span>
+        <div class="well">
+          <div id="datetimepicker1" class="input-append date">
+            <input data-format="dd/MM/yyyy" type="text"></input>
+            <span class="add-on">
+              <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+              </i>
+            </span>
           </div>
-      </div>
+        </div>
+        <script type="text/javascript">
+          $(function() {
+            $('#datepicker').datetimepicker({
+              language: 'pt-BR'
+            });
+          });
+        </script>
       <div class="input-group bootstrap-timepicker timepicker">
         <input id="timepicker1" type="text" name="time1" class="form-control input-small">
         <span class="input-group-addon" id="timebutton1"> <i class="icon-time"></i></span>
@@ -45,8 +55,6 @@
  $("#timebutton1").addClass("btn btn-success");
  $('#timepicker2').timepicker({});
  $("#timebutton2").addClass("btn btn-success");
-
-  $('#datepicker').datetimepicker();
 
     </script>
     <button type="submit" class="btn btn-success rounded-pill">Submit</button>
