@@ -312,7 +312,7 @@ if(Employee.findOne( {where: {user: check}})) {
   name.push(JSON.stringify(check).replace(/]|[[]/g, ''));
   start.push(req.body.time1);
   end.push(req.body.time2);
-  datetime.push(req.body.dates);
+  datetime.push(req.body.date);
   
 
   Shift.upsert({
