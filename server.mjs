@@ -303,17 +303,16 @@ app.get('/shiftmaker', async (req, res) => {
   })
 app.post('/shiftmaker', async (req, res) =>{
   const check = req.body.chosen;
-const employeeChecker =  await Employee.findAll( {where: {user: check}}).then(result => {
-  if (result === true) {
+if(Employee.findOne( {where: {user: check}})) {
+console.log("YAY")
+}
+ 
 
-    console.log("DONE")
+
   
   {return console.log(check+" is scheduled from "+ start+" to "+end)}
   }
-})
-
-employeeChecker;
-
+)
 
   await controller.employeeList().then(info => {
     
@@ -322,7 +321,7 @@ employeeChecker;
   res.render ('shiftmaker',{data: data})
 
 })
-})
+
 
 
 const PORT = process.env.PORT || 43488;
