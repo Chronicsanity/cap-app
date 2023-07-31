@@ -307,12 +307,12 @@ if(Employee.findOne( {where: {user: check}})) {
   const name = [];
   const start = [];
   const end = [];
-  const date = []
+  const datetime = []
  
   name.push(JSON.stringify(check).replace(/]|[[]/g, ''));
   start.push(req.body.time1);
   end.push(req.body.time2);
-  date.push(req.body.dates);
+  datetime.push(req.body.dates);
   
 
   Shift.upsert({
@@ -322,7 +322,7 @@ if(Employee.findOne( {where: {user: check}})) {
     date: date
   })
   
-console.log(check+" is set for "+start+" to "+end+ " at "+date)
+console.log(check+" is set for "+start+" to "+end+ " at "+datetime)
 }
  
 
