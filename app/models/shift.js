@@ -16,7 +16,7 @@ module.exports = (sequelize, Sequelize) => {
 	  }, time_end: {
 		type: Sequelize.TIME
 	  }, date: {
-		type: Sequelize.DATETIME
+		type: Sequelize.TIME
 	  },
 	}, 
 	
