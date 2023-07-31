@@ -308,6 +308,7 @@ const employeeChecker =  await Employee.findAll( {where: {user: check}}).then(re
 
     const start = [];
     const end = [];
+    Shift.employee_name = check;
     start.push(req.body.time1);
     end.push(req.body.time2);
     Shift.start_time = start;

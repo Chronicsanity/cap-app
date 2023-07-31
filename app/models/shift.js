@@ -1,11 +1,9 @@
 module.exports = (sequelize, Sequelize) => {
 	const shift = sequelize.define("shift", {
-	  id: {
-		type: Sequelize.INTEGER,
-        primaryKey: true
-	  },
+	 
 	  employee_name: {
-		type: Sequelize.STRING
+		type: Sequelize.STRING,
+		primaryKey: true
 	  },
 	  jobs: {
 		type: Sequelize.STRING
