@@ -314,7 +314,7 @@ if(Employee.findOne( {where: {user: check}})) {
   
 
   Shift.upsert({
-    employee_name: name,
+    employee_name: name.JSON(),
     start_time: start,
     end_time: end
   })
