@@ -310,7 +310,7 @@ if(Employee.findOne( {where: {user: check}})) {
 
   start.push(req.body.time1);
   end.push(req.body.time2);
-  name.push(JSON.stringify(check))
+  name.push(await JSON.stringify(newUsername).replace(/]|[[]/g, ''))
   
 
   Shift.upsert({
