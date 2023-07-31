@@ -306,11 +306,11 @@ app.post('/shiftmaker', async (req, res) =>{
 if(Employee.findOne( {where: {user: check}})) {
   const start = [];
   const end = [];
-  Shift.employee_name = check;
+  Shift.employee_name = await JSON.stringify(check);
   start.push(req.body.time1);
   end.push(req.body.time2);
-  Shift.start_time = start;
-  Shift.end_time = end;
+  Shift.start_time = await JSON.stringify(start);
+  Shift.end_time = await JSON.stringify(end);
 console.log(check+" is set for "+start+" to "+end)
 }
  
