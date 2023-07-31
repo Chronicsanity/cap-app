@@ -314,7 +314,7 @@ if(Employee.findOne( {where: {user: check}})) {
   Shift.employee_name = await JSON.stringify(name);
   Shift.start_time = await JSON.stringify(start);
   Shift.end_time = await JSON.stringify(end);
-  console.log(Shift)
+  console.log(Shift.end_time)
 console.log(check+" is set for "+start+" to "+end)
 }
  
