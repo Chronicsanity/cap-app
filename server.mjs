@@ -304,22 +304,25 @@ app.get('/shiftmaker', async (req, res) => {
 app.post('/shiftmaker', async (req, res) =>{
   const check = req.body.chosen;
 if(Employee.findOne( {where: {user: check}})) {
+  const name = [];
   const start = [];
   const end = [];
-  const name = [];
-
+  const date = []
+ 
+  name.push(JSON.stringify(check).replace(/]|[[]/g, ''));
   start.push(req.body.time1);
   end.push(req.body.time2);
-  name.push(JSON.stringify(check).replace(/]|[[]/g, ''));
+  date.push(req.body.dates);
   
 
   Shift.upsert({
     employee_name: name,
     time_start: start,
-    time_end: end
+    time_end: end,
+    date: date
   })
-  console.log(Shift)
-console.log(check+" is set for "+start+" to "+end)
+  
+console.log(check+" is set for "+start+" to "+end+ " at "+date)
 }
  
 
