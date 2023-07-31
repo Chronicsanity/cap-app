@@ -306,14 +306,7 @@ app.post('/shiftmaker', async (req, res) =>{
 const employeeChecker =  await Employee.findAll( {where: {user: check}}).then(result => {
   if (result === true) {
 
-    const start = [];
-    const end = [];
-    Shift.employee_name = check;
-    start.push(req.body.time1);
-    end.push(req.body.time2);
-    Shift.start_time = start;
-    Shift.end_time = end;
-
+    console.log("DONE")
   
   {return console.log(check+" is scheduled from "+ start+" to "+end)}
   }
