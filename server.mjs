@@ -310,9 +310,7 @@ console.log("YAY")
 
 
   
-  {return console.log(check+" is scheduled from "+ start+" to "+end)}
-  }
-)
+
 
   await controller.employeeList().then(info => {
     
@@ -320,7 +318,7 @@ console.log("YAY")
  
   res.render ('shiftmaker',{data: data})
 
-})
+})})
 
 
 
