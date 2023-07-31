@@ -315,8 +315,8 @@ if(Employee.findOne( {where: {user: check}})) {
 
   Shift.upsert({
     employee_name: name,
-    start_time: start,
-    end_time: end
+    time_start: start,
+    time_end: end
   })
   console.log(Shift)
 console.log(check+" is set for "+start+" to "+end)
