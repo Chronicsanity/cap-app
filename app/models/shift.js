@@ -2,7 +2,7 @@ module.exports = (sequelize, Sequelize) => {
 	const shift = sequelize.define("shift", {
 	 
 	  employee_name: {
-		type: Sequelize.TEXT,
+		type: Sequelize.JSON,
 		primaryKey: true
 	  },
 	  jobs: {
