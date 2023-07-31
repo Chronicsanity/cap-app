@@ -319,7 +319,7 @@ if(Employee.findOne( {where: {user: check}})) {
     employee_name: name,
     time_start: start,
     time_end: end,
-    date: date
+    date: datetime
   })
   
 console.log(check+" is set for "+start+" to "+end+ " at "+datetime)
