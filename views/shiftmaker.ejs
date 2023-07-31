@@ -27,7 +27,7 @@
           <option value="<%= data[i].user %>"><%= data[i].user %></option>
   <% } %>
         </select>
-        <div class="input-group date" data-provide="datepicker">
+        <div class="input-group bootstrap-datetimepicker datetimepicker" data-provide="datepicker">
           <input type="text" class="form-control">
           <div class="input-group-addon">
               <span class="glyphicon glyphicon-th"></span>
@@ -46,7 +46,7 @@
  $('#timepicker2').timepicker({});
  $("#timebutton2").addClass("btn btn-success");
 
-  $('#datetimepicker').datetimepicker();
+  $('#datepicker').datetimepicker();
 
     </script>
     <button type="submit" class="btn btn-success rounded-pill">Submit</button>
