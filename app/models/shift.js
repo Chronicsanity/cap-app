@@ -14,9 +14,9 @@ module.exports = (sequelize, Sequelize) => {
 		type: Sequelize.STRING
 	  },
 	  start_time: {
-		type: Sequelize.DATETIME
+		type: Sequelize.TIME
 	  }, end_time: {
-		type: Sequelize.DATETIME
+		type: Sequelize.TIME
 	  },
 	}, 
 	
