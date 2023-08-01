@@ -134,7 +134,7 @@ async function createEmployee(req) {
   {
     return console.log(req.body.employee_name + user),
     await Employee.update({
-    job_title: req.body.job_title},
+    job_title: req.body.job_choice},
   
   {where: {user:user}
     })
@@ -324,11 +324,6 @@ if(Employee.findOne( {where: {user: check}})) {
   
 console.log(check+" is set for "+start+" to "+end+ " at "+datetime)
 }
- 
-
-
-  
-
 
   await controller.employeeList().then(info => {
     
