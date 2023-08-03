@@ -317,7 +317,7 @@ if(Employee.findOne( {where: {user: check}})) {
   datetime.push(req.body.datetimes);
   if (Employee)
 if (Jobs.min_title != confirmed_Employee.job_title) {
-console.log ("good")
+console.log ("bad")
 
 }
  /* Shift.upsert({
@@ -327,7 +327,7 @@ console.log ("good")
     date: datetime
   })*/
   
-console.log(check+" is set for "+start+" to "+end+ " at "+datetime)
+console.log(check+" is set for "+start+" to "+end+ " at "+datetime+confirmed_Employee.job_title) 
 }
 
   await controller.employeeList().then(info => {
