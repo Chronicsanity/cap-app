@@ -316,7 +316,7 @@ if(Employee.findOne( {where: {user: check}})) {
   end.push(req.body.time2);
   datetime.push(req.body.datetimes);
   if (Employee)
-if (Jobs.min_title === confirmed_Employee.job_title) {
+if (Jobs.min_title != confirmed_Employee.job_title) {
 console.log ("good")
 
 }
