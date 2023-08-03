@@ -305,7 +305,7 @@ app.get('/shiftmaker', async (req, res) => {
 app.post('/shiftmaker', async (req, res) =>{
   const check = req.body.chosen;
 if(Employee.findOne( {where: {user: check}})) {
-  const confirmed_Employee = Employee.findOne( {where: {user: check}});
+  const confirmed_Employee = await Employee.findOne( {where: {user: check}});
   const name = [];
   const start = [];
   const end = [];
