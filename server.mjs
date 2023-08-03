@@ -291,16 +291,20 @@ app.use(express.static(__dirname + '/views'));
 
 app.get('/shiftmaker', async (req, res) => {
 
-  await controller.employeeList().then(info => {
+  async function employee_list () { await controller.employeeList().then(info => {
     
     const data = info;
-    
-  
- 
-
-
-  res.render ('shiftmaker',{data: data})
+    return data;
     })
+  }
+  async function job_list () { await controller.jobList().then(info => {
+    const jobData = info;
+    return jobData;
+
+  })}
+const data = employee_list ();
+const jobData = job_list();
+  res.render ('shiftmaker',{data: data}, {job: jobData})
   })
 app.post('/shiftmaker', async (req, res) =>{
   const check = req.body.chosen;

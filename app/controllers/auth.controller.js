@@ -3,6 +3,7 @@ const authConfig = require("../config/auth.config.js");
 const Sequelize = require("sequelize");
 const User = db.user;
 const Role = db.role;
+const Jobs = db.job;
 const Op = db.Sequelize.Op;
 const express = require('express');
 const jwt = require("jsonwebtoken");
@@ -180,7 +181,30 @@ exports.scheduleTable = async function (res) {
             })
             })
           }
-
+          exports.jobList = async function (res) {
+            return  new Promise(function(resolve, reject){
+                db.sequelize.sync().then(() => {
+              
+              
+                  Jobs.findAll().then(res => {
+                  
+                 const object = res
+                  //console.log(object)
+                 return resolve (object);
+                  
+            
+                  
+                   }) .catch((error) => {
+                console.error('Failed to retrieve data : ', error);
+                
+                
+                
+                }).catch((error) => {
+                console.error('Unable to create table : ', error);
+                  })
+                })
+                })
+              }
 
 exports.signin = async (req, res) => {
 
