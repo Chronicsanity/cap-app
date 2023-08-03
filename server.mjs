@@ -14,6 +14,7 @@ const User = db.user;
 const Employee = db.employee;
 const QueuedUser = db.queuedUsers;
 const Shift = db.shift;
+const Jobs = db.job;
 import mysql from 'mysql';
 import Promise from 'promise';
 import bcrypt from 'bcryptjs';
@@ -314,13 +315,16 @@ if(Employee.findOne( {where: {user: check}})) {
   end.push(req.body.time2);
   datetime.push(req.body.datetimes);
   
+if (Jobs.min_title === check) {
+console.log ("good")
 
-  Shift.upsert({
+}
+ /* Shift.upsert({
     employee_name: name,
     time_start: start,
     time_end: end,
     date: datetime
-  })
+  })*/
   
 console.log(check+" is set for "+start+" to "+end+ " at "+datetime)
 }
