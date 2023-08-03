@@ -327,7 +327,7 @@ console.log ("bad")
     date: datetime
   })*/
   
-console.log(check+" is set for "+start+" to "+end+ " at "+datetime+confirmed_Employee.job_title) 
+console.log(check+" is set for "+start+" to "+end+ " at "+datetime+confirmed_Employee) 
 }
 
   await controller.employeeList().then(info => {
