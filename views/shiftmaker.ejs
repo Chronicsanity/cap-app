@@ -53,11 +53,11 @@
         <select id="JobList" name="jobList">
   
           
-          <% for(var i=0; i < job.length; i++) { %>
-            <%if(job[i] === job.length){%>
+          <% for(var i=0; i < jobData.length; i++) { %>
+            <%if(jobData[i] === jobData.length){%>
             <% i++ }%>
 
-            <option value="<%= data[i].user %>"><%= job[i].Jobs %></option>
+            <option value="<%= jobData[i].user %>"><%= jobData[i].Jobs %></option>
             <% } %>
         </select>
     <script type="text/javascript">

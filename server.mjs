@@ -304,7 +304,7 @@ app.get('/shiftmaker', async (req, res) => {
   })}
 const data = employee_list ();
 const jobData = job_list();
-  res.render ('shiftmaker',{data: data}, {job: jobData})
+  res.render ('shiftmaker',{data: data}, {jobData: jobData})
   })
 app.post('/shiftmaker', async (req, res) =>{
   const check = req.body.chosen;
