@@ -293,15 +293,11 @@ app.get('/shiftmaker', async (req, res) => {
 
   const employee_list = await Employee.findAll();
   
-  async function job_list () { await controller.jobList().then(info => {
-    const jobData = info;
-    return jobData;
-
-  })}
+  const job_list = await Jobs.findAll();
 const data = employee_list;
-const jobData = job_list();
-console.log(employee_list.user)
-  res.render ('shiftmaker',{data: data}, )
+const jobData = job_list;
+
+  res.render ('shiftmaker',{data: data}, {jobData:jobData} )
   })
 app.post('/shiftmaker', async (req, res) =>{
   const check = req.body.chosen;
