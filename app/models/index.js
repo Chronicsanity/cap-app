@@ -45,7 +45,7 @@ db.queuedUsers = require('../models/queuedUsers.js')(sequelize, Sequelize);
 db.time_working = require('./shift.js')(sequelize, Sequelize);
 db.time = require('./time.js')(sequelize, Sequelize);
 db.shift = require('../models/shift.js')(sequelize, Sequelize);
-db.job = require('./jobs.js')(sequelize, Sequelize);
+db.jobs = require('./jobs.js')(sequelize, Sequelize);
 
 db.role.belongsToMany(db.user, {
   through: "user_roles",

@@ -14,7 +14,7 @@ const User = db.user;
 const Employee = db.employee;
 const QueuedUser = db.queuedUsers;
 const Shift = db.shift;
-const Jobs = db.job;
+const Jobs = db.jobs;
 import mysql from 'mysql';
 import Promise from 'promise';
 import bcrypt from 'bcryptjs';
@@ -297,7 +297,7 @@ app.get('/shiftmaker', async (req, res) => {
 const data = employee_list;
 const jobData = job_list;
 
-  res.render ('shiftmaker',{data: data} )
+  res.render ('shiftmaker',{data: data, jobData:jobData} )
   })
 app.post('/shiftmaker', async (req, res) =>{
   const check = req.body.chosen;
@@ -324,7 +324,7 @@ console.log ("bad")
     date: datetime
   })*/
   
-console.log(check+" is set for "+start+" to "+end+ " at "+datetime+confirmed_Employee.job_title) 
+console.log(check+" is set for "+start+" to "+end+ " at "+datetime) 
 }
 
   await controller.employeeList().then(info => {
