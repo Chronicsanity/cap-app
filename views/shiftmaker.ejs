@@ -49,17 +49,7 @@
           <span class="input-group-addon" id="timebutton2"> <i class="icon-time"></i></span>
        </div>
 
-       <form action="/shiftmaker" method="POST" class="pt-3">
-        <select id="JobList" name="jobList">
-  
-          
-          <% for(var i=0; i < jobData.length; i++) { %>
-            <%if(jobData[i] === jobData.length){%>
-            <% i++ }%>
-
-            <option value="<%= jobData[i].user %>"><%= jobData[i].Jobs %></option>
-            <% } %>
-        </select>
+   
     <script type="text/javascript">
  $('#timepicker1').timepicker({});
  $("#timebutton1").addClass("btn btn-success");
