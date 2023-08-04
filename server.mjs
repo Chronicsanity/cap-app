@@ -326,14 +326,18 @@ console.log ("bad")
   
 console.log(check+" is set for "+start+" to "+end+ " at "+datetime) 
 }
+const employee_list = await Employee.findAll();
+  
+  const job_list = await Jobs.findAll();
+const data = employee_list;
+const jobData = job_list;
 
-  await controller.employeeList().then(info => {
-    
-    const data = info;
+  res.render ('shiftmaker',{data: data, jobData:jobData} )
+  })
+
  
-  res.render ('shiftmaker',{data: data})
 
-})})
+
 
 
 
