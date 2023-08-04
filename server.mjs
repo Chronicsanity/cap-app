@@ -323,6 +323,7 @@ const jobData = job_list;
 console.log("bad");
   res.render ('shiftmaker',{data: data, jobData:jobData} )
 }
+else{
  /* Shift.upsert({
     employee_name: name,
     time_start: start,
@@ -330,7 +331,7 @@ console.log("bad");
     date: datetime
   })*/
   
-console.log(check+" is set for "+start+" to "+end+ " at "+datetime) 
+console.log(check+" is set for "+start+" to "+end+ " at "+datetime) }
 }
 const employee_list = await Employee.findAll();
   
