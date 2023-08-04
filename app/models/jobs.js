@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-	const shift = sequelize.define("shift", {
+	const shift = sequelize.define("jobs", {
 	 
 	  jobs: {
 		type: Sequelize.STRING,
