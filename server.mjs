@@ -296,7 +296,7 @@ app.get('/shiftmaker', async (req, res) => {
   const job_list = await Jobs.findAll();
 const data = employee_list;
 const jobData = job_list;
-console.log(job_list+jobData)
+
   res.render ('shiftmaker',{data: data, jobData:jobData} )
   })
 app.post('/shiftmaker', async (req, res) =>{
@@ -312,10 +312,16 @@ if(Employee.findOne( {where: {user: check}})) {
   start.push(req.body.time1);
   end.push(req.body.time2);
   datetime.push(req.body.datetimes);
-  if (Employee)
-if (Jobs.min_title != confirmed_Employee.job_title) {
-console.log ("bad")
 
+
+if (Jobs.min_title != confirmed_Employee.job_title) {
+  const employee_list = await Employee.findAll();
+  
+  const job_list = await Jobs.findAll();
+const data = employee_list;
+const jobData = job_list;
+console.log("bad");
+  res.render ('shiftmaker',{data: data, jobData:jobData} )
 }
  /* Shift.upsert({
     employee_name: name,
