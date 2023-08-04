@@ -321,7 +321,7 @@ if (Jobs.min_title != confirmed_Employee.job_title) {
 const data = employee_list;
 const jobData = job_list;
 console.log("bad");
-  res.render ('shiftmaker',{data: data, jobData:jobData} )
+ 
 }
 else{
  /* Shift.upsert({
