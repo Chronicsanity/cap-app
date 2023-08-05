@@ -315,6 +315,7 @@ app.post('/shiftmaker', async (req, res) =>{
 if(Employee.findOne( {where: {user: check}})) {
   const confirmed_Employee = await Employee.findOne( {where: {user: check}});
   const job_list = await Jobs.findAll();
+  const confirmedValue = confirmed_Employee.job_value
   const name = [];
   const start = [];
   const end = [];
@@ -326,25 +327,28 @@ if(Employee.findOne( {where: {user: check}})) {
   datetime.push(req.body.datetimes);
 
 
-if (job_list.job_value != confirmed_Employee.job_value) {
-  
-  const employee_list = await Employee.findAll();
-
-const data = employee_list;
-const jobData = job_list;
-console.log("bad"+confirmed_Employee.job_value+job_list.job_value);
  
-}
-else{
- /* Shift.upsert({
-    employee_name: name,
-    time_start: start,
-    time_end: end,
-    date: datetime
-  })*/
+  await Jobs.findAll( {where: {job_value: confirmedValue}}).then(result => {
+if (result === null || result === 0) { 
   
-console.log(check+" is set for "+start+" to "+end+ " at "+datetime) }
+  console.log("bad")
+
 }
+
+else{
+  /* Shift.upsert({
+     employee_name: name,
+     time_start: start,
+     time_end: end,
+     date: datetime
+   })*/
+   
+ console.log(check+" is set for "+start+" to "+end+ " at "+datetime) }}
+  ) 
+}
+  
+  
+
 const employee_list = await Employee.findAll();
   
   const job_list = await Jobs.findAll();
