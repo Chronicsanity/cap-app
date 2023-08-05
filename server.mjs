@@ -325,7 +325,7 @@ if(Employee.findOne( {where: {user: check}})) {
   datetime.push(req.body.datetimes);
 
 
-if (Jobs.job_value > confirmed_Employee.job_value) {
+if (Jobs.job_value != confirmed_Employee.job_value) {
   
   const employee_list = await Employee.findAll();
   const job_list = await Jobs.findAll();
