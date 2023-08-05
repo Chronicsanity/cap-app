@@ -334,17 +334,17 @@ if(Employee.findOne( {where: {user: check}})) {
 
 if (confirmed_job.job_value > confirmed_Employee.job_value) { 
   
-  console.log("bad"+ confirmed_Employee.job_value + confirmed_job.job_value)
+  alert("They are not trained for this job yet!")
 
 }
 
 else{
-  /* Shift.upsert({
+   Shift.upsert({
      employee_name: name,
      time_start: start,
      time_end: end,
      date: datetime
-   })*/
+   })
    
  console.log(check+" is set for "+start+" to "+end+ " at "+datetime) }}
 
