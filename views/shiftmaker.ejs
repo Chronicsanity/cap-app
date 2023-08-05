@@ -40,7 +40,7 @@
 <script>
   
       $("#datepicker").datepicker({startDate: '0m',
-    endDate: '+3w'
+    endDate: '+4w'
       })
 </script>
       <div class="input-group bootstrap-timepicker timepicker">
@@ -62,9 +62,16 @@
             <% } %>
         </select>
     <script type="text/javascript">
- $('#timepicker1').timepicker({});
+ $('#timepicker1').timepicker({
+  minDate: moment({h:6}),
+  maxDate: moment({h:10}),
+  clearButton: true
+});
  $("#timebutton1").addClass("btn btn-success");
- $('#timepicker2').timepicker({});
+ $('#timepicker2').timepicker({
+  minDate: moment({h:21}),
+  maxDate: moment({h:22}),
+  clearButton: true});
  $("#timebutton2").addClass("btn btn-success");
 
 
