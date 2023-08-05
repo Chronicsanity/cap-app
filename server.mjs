@@ -311,6 +311,10 @@ const jobData = job_list;
   res.render ('shiftmaker',{data: data, jobData:jobData} )
   })
 app.post('/shiftmaker', async (req, res) =>{
+  async function generateID(min, max) {
+    return  Math.floor(
+        Math.random() *(max - min) + min
+    )}
   const check = req.body.chosen;
 if(Employee.findOne( {where: {user: check}})) {
   const confirmed_Employee = await Employee.findOne( {where: {user: check}});
@@ -329,12 +333,13 @@ const jobData = job_list;
   const start = [];
   const end = [];
   const datetime = []
+  const id = []
  
   name.push(JSON.stringify(check).replace(/]|[[]/g, ''));
   start.push(req.body.time1);
   end.push(req.body.time2);
   datetime.push(req.body.datetimes);
-
+  id.push(generateID(100, 10000))
 
  
 
