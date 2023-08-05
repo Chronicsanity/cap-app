@@ -322,7 +322,11 @@ if(Employee.findOne( {where: {user: check}})) {
   const data = employee_list;
 const jobData = job_list;
  
-
+async function generateID(min, max) {
+  return  Math.floor(
+      Math.random() *(max - min) + min
+  )
+}
   
 
  
@@ -330,7 +334,7 @@ const jobData = job_list;
   const start = [];
   const end = [];
   const datetime = []
- 
+ const id = generateID(1, 99999)
  
   name.push(JSON.stringify(check).replace(/]|[[]/g, ''));
   start.push(req.body.time1);
@@ -353,8 +357,8 @@ else{
      employee_name: name,
      time_start: start,
      time_end: end,
-     date: datetime
-     
+     date: datetime,
+     shiftID: id
    })
    
  console.log(check+" is set for "+start+" to "+end+ " at "+datetime) }}
