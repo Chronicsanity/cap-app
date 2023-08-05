@@ -341,7 +341,7 @@ const jobData = job_list;
 if (confirmed_job.job_value > confirmed_Employee.job_value) { 
   const data = employee_list
   res.status(404).send("They are not trained for this job yet!")
-  return
+  return (res.render ('shiftmaker',{data: data}))
 }
 
 else{
