@@ -332,7 +332,7 @@ if(Employee.findOne( {where: {user: check}})) {
   await Jobs.findAll( {where: {jobs: confirmedJob}}).then(result => {
 if (result == result) { 
   
-  console.log("bad"+ confirmed_Employee.job_value + result)
+  console.log("bad"+ confirmed_Employee.job_value + result.job_value)
 
 }
 
