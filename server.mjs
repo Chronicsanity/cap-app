@@ -333,7 +333,7 @@ if(Employee.findOne( {where: {user: check}})) {
  
 
 if (confirmed_job.job_value > confirmed_Employee.job_value) { 
-  res.status(404).send({ message: "They are not trained for this job yet!"})
+  res.status(404).send({ message: "They are not trained for this job yet!"}, res.render('shiftmaker') )
 
 }
 
