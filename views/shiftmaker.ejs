@@ -63,13 +63,12 @@
         </select>
     <script type="text/javascript">
  $('#timepicker1').timepicker({
-  minDate: moment({h:6}),
-  maxDate: moment({h:10}),
+  enabledHours: [6, 7, 8, 9, 10, 11]
   clearButton: true
 });
  $("#timebutton1").addClass("btn btn-success");
  $('#timepicker2').timepicker({
-  minDate: moment({h:21}),
+  enabledHours: [13, 14, 15, 16, 17, 18, 19, 20],
   maxDate: moment({h:22}),
   clearButton: true});
  $("#timebutton2").addClass("btn btn-success");
