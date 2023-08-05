@@ -317,6 +317,8 @@ if(Employee.findOne( {where: {user: check}})) {
   const job_list = await Jobs.findAll();
   const confirmedJob = req.body.jobList;
   const confirmed_job = await Jobs.findOne( {where: {jobs: confirmedJob}});
+  const data = employee_list;
+const jobData = job_list;
  
  
   const name = [];
