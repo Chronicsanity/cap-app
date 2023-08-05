@@ -348,7 +348,7 @@ if (confirmed_job.job_value > confirmed_Employee.job_value) {
 }
 
 else{
-   Shift.insert({
+   Shift.create({
    
      employee_name: name,
      time_start: start,
