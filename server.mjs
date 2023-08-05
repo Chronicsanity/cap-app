@@ -154,8 +154,7 @@ return await Employee.create(
 {
 id: 0,
 user: user,
-job_title: req.body.job_choice,
-date_working: req.body.date_working
+job_title: req.body.job_choice
 
 })
 }
