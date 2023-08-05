@@ -63,7 +63,10 @@
         </select>
     <script type="text/javascript">
  $('#timepicker1').timepicker({
-  [moment().hour(0).minutes(0), moment().hour(8).minutes(30)],
+  disabledTimeIntervals: [
+      [moment().hour(0).minutes(0), moment().hour(8).minutes(30)],
+      [moment().hour(20).minutes(30), moment().hour(24).minutes(0)]
+   ],
   format: 'HH:mm',
   clearButton: true
 });
