@@ -331,8 +331,8 @@ if(Employee.findOne( {where: {user: check}})) {
 
 
  
-  await Jobs.findAll( {where: {jobs: confirmedJob}}).then(result => {
-if (result == result) { 
+
+if (confirmed_job.job_value > confirmed_Employee.job_value) { 
   
   console.log("bad"+ confirmed_Employee.job_value + confirmed_job.job_value)
 
@@ -347,8 +347,7 @@ else{
    })*/
    
  console.log(check+" is set for "+start+" to "+end+ " at "+datetime) }}
-  ) 
-}
+
   
   
 
