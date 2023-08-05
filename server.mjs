@@ -331,7 +331,7 @@ if (Jobs.job_value != confirmed_Employee.job_value) {
   const job_list = await Jobs.findAll();
 const data = employee_list;
 const jobData = job_list;
-console.log("bad");
+console.log("bad"+confirmed_Employee.job_value+Jobs.job_value);
  
 }
 else{
