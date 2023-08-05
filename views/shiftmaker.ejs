@@ -63,10 +63,9 @@
         </select>
     <script type="text/javascript">
  $('#timepicker1').timepicker({
-  disabledTimeIntervals: [
-      [moment().hour(0).minutes(0), moment().hour(8).minutes(30)],
-      [moment().hour(20).minutes(30), moment().hour(24).minutes(0)]
-   ],
+  twelvehour: true,
+    min: "8:20am",
+    max: "5:15pm",
   format: 'HH:mm',
   clearButton: true
 });
