@@ -61,7 +61,8 @@
             <% } %>
         </select>
     <script type="text/javascript">
- $('#timepicker1').timepicker({});
+ $('#timepicker1').timepicker({startDate: '-2m',
+    endDate: '+2d'});
  $("#timebutton1").addClass("btn btn-success");
  $('#timepicker2').timepicker({});
  $("#timebutton2").addClass("btn btn-success");
