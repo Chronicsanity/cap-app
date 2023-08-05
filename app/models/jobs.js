@@ -5,6 +5,7 @@ module.exports = (sequelize, Sequelize) => {
 	 },
 	  jobs: {
 		type: Sequelize.STRING,
+		primaryKey: true
 	  },
 	  min_title: {
 		type: Sequelize.STRING
