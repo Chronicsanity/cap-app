@@ -14,8 +14,8 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
 	  job_title: {
 		type: Sequelize.STRING
 	  },
-	  date_working: {
-		type: Sequelize.STRING
+	  job_value: {
+		type: Sequelize.INTEGER
 	  },
 	
 	});

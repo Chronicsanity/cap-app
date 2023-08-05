@@ -154,7 +154,7 @@ return await Employee.create(
 {
 id: 0,
 user: user,
-job_title: req.body.job_title,
+job_title: req.body.job_choice,
 date_working: req.body.date_working
 
 })
@@ -163,6 +163,18 @@ date_working: req.body.date_working
 if (req.body.hasOwnProperty("acceptEmployee")) {
 
  await createEmployee(req);
+ if (req.body.job_choice === "busser"){
+  Employee.job_value === 1
+ }
+ if (req.body.job_choice === "lineCook"){
+  Employee.job_value === 2
+ }
+ if (req.body.job_choice === "sousChef"){
+  Employee.job_value === 3
+ }
+ if (req.body.job_choice === "headChef"){
+  Employee.job_value === 4
+ }
  return controller.scheduleTable().then(info => {
   //console.log(info)
  return res.render('data', {user: info}
@@ -314,9 +326,9 @@ if(Employee.findOne( {where: {user: check}})) {
   datetime.push(req.body.datetimes);
 
 
-if (Jobs.min_title != confirmed_Employee.job_title) {
-  const employee_list = await Employee.findAll();
+if (Jobs.job_value > confirmed_Employee.job_value) {
   
+  const employee_list = await Employee.findAll();
   const job_list = await Jobs.findAll();
 const data = employee_list;
 const jobData = job_list;
