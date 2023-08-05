@@ -39,7 +39,8 @@
 </div>
 <script>
   
-      $("#datepicker").datepicker({
+      $("#datepicker").datepicker({startDate: '-2m',
+    endDate: '+2d'
       })
 </script>
       <div class="input-group bootstrap-timepicker timepicker">
@@ -61,8 +62,7 @@
             <% } %>
         </select>
     <script type="text/javascript">
- $('#timepicker1').timepicker({startDate: '-2m',
-    endDate: '+2d'});
+ $('#timepicker1').timepicker({});
  $("#timebutton1").addClass("btn btn-success");
  $('#timepicker2').timepicker({});
  $("#timebutton2").addClass("btn btn-success");
