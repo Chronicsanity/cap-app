@@ -353,12 +353,12 @@ if (confirmed_job.job_value > confirmed_Employee.job_value) {
 
 else{
    Shift.create({
-   
+    shiftID: id,
      employee_name: name,
      time_start: start,
      time_end: end,
      date: datetime,
-     shiftID: id
+     
    })
    
  console.log(check+" is set for "+start+" to "+end+ " at "+datetime) }}
