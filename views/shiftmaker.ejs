@@ -63,8 +63,7 @@
         </select>
     <script type="text/javascript">
  $('#timepicker1').timepicker({
-  step: 15,
-  format: 'HH:mm',
+  [moment().hour(0).minutes(0), moment().hour(8).minutes(30)],
   clearButton: true
 });
  $("#timebutton1").addClass("btn btn-success");
