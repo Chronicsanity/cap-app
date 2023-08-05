@@ -334,7 +334,7 @@ if(Employee.findOne( {where: {user: check}})) {
 
 if (confirmed_job.job_value > confirmed_Employee.job_value) { 
   
-  alert("They are not trained for this job yet!")
+  res.send(message("They are not trained for this job yet!"))
 
 }
 
