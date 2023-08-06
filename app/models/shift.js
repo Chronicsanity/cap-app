@@ -9,7 +9,7 @@ module.exports = (sequelize, Sequelize) => {
 		type: Sequelize.JSON
 	  },
 	  jobs: {
-		type: Sequelize.STRING
+		type: Sequelize.JSON
 	  },
 	  time_start: {
 		type: Sequelize.TIME
