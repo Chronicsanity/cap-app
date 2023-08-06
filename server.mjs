@@ -324,7 +324,7 @@ if(Employee.findOne( {where: {user: check}})) {
   const time2 = req.body.time2;
   const date = req.body.datetimes;
 const jobData = job_list;
-const shiftDate = await Shift.findOne( {where: {date:date}});
+const shiftDate = await Shift.findAll( {where: {date:date}});
 
 
 
