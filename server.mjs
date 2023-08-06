@@ -372,7 +372,7 @@ else{
   console.log("1")
 }}
 else{
-  console.log(shiftEmployee+" "+check+" "+req.body.datetimes+" "+date)
+  console.log(name+" "+check+" "+req.body.datetimes+" "+date)
    Shift.create({
     shiftID: id,
      employee_name: name,
