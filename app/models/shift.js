@@ -11,9 +11,6 @@ module.exports = (sequelize, Sequelize) => {
 	  jobs: {
 		type: Sequelize.STRING
 	  },
-	  min_title: {
-		type: Sequelize.STRING
-	  },
 	  time_start: {
 		type: Sequelize.TIME
 	  }, time_end: {
