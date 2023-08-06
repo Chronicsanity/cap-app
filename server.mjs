@@ -353,7 +353,7 @@ if (confirmed_job.job_value > confirmed_Employee.job_value) {
    const jobData = job_list;
   return (res.status(404).send("They are not trained for this job yet!"))
 }
-else if (Shift.employee_name === confirmed_Employee && req.body.datetimes === shiftDate) {
+if (Shift.employee_name === confirmed_Employee && req.body.datetimes === shiftDate) {
   if (Shift.timestart === time1)
   {console.log("nope")
   return (res.status(404).send("no"))
