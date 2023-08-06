@@ -336,13 +336,13 @@ async function generateID(min, max) {
   const start = [];
   const end = [];
   const datetime = []
- const id = []
+ const id = 1;
  
   name.push(JSON.stringify(check).replace(/]|[[]/g, ''));
   start.push(req.body.time1);
   end.push(req.body.time2);
   datetime.push(req.body.datetimes);
-  id.push(generateID(1, 255));
+  //id.push(generateID(1, 255))
  
 
  
@@ -355,16 +355,16 @@ if (confirmed_job.job_value > confirmed_Employee.job_value) {
 
 else{
   
-   
-    Shift.shiftID = id,
-    Shift.employee_name = name,
-    Shift.time_start= start,
-    Shift.time_end= end,
-    Shift.date= datetime,
+   Shift.create({
+    shiftID: id,
+     employee_name: name,
+     time_start: start,
+     time_end: end,
+     date: datetime,
      
-
+   })
    
- console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id) }};
+ console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id) }}
 
  const employee_list = await Employee.findAll();
  const job_list = await Jobs.findAll();
@@ -372,7 +372,7 @@ else{
  const jobData = job_list;
 
   res.render ('shiftmaker',{data: data, jobData:jobData} )
-})
+  })
 
  
 
