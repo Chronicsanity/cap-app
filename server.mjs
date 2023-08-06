@@ -325,7 +325,7 @@ if(Employee.findOne( {where: {user: check}})) {
   const date = req.body.datetimes;
 const jobData = job_list;
 const fixedName = JSON.stringify(check).replace(/\\/g, "");
-
+const fixedThing = JSON.stringify(fixedName).replace(/\\/g, "");
 
 
 
@@ -374,7 +374,7 @@ else{
   console.log("1")
 }}
 else{
-  console.log(name+" "+check+" "+req.body.datetimes+" "+date)
+  console.log(shiftEmployee+" "+check+" "+req.body.datetimes+" "+date)
    Shift.create({
     shiftID: id,
      employee_name: name,
