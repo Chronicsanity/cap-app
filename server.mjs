@@ -322,19 +322,17 @@ if(Employee.findOne( {where: {user: check}})) {
   const data = employee_list;
 const jobData = job_list;
  
-async function generateID(min, max) {
-  return  Math.floor(
-      Math.random() *(max - min) + min
-  )
-}
-  
+
+
+ 
 
  
   const name = [];
   const start = [];
   const end = [];
   const datetime = []
- const id = generateID(1, 255)
+ const i = 0;
+ const id = i++;
  
   name.push(JSON.stringify(check).replace(/]|[[]/g, ''));
   start.push(req.body.time1);
