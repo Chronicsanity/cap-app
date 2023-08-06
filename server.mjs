@@ -332,7 +332,7 @@ const jobData = job_list;
   const end = [];
   const datetime = []
  const i = 0;
- const id = i++;
+ const id = i;
  
   name.push(JSON.stringify(check).replace(/]|[[]/g, ''));
   start.push(req.body.time1);
@@ -350,6 +350,7 @@ if (confirmed_job.job_value > confirmed_Employee.job_value) {
 }
 
 else{
+  i++;
    Shift.create({
     shiftID: id,
      employee_name: name,
