@@ -371,7 +371,7 @@ else{
   console.log("1")
 }}
 else{
-  
+  console.log("2")
    Shift.create({
     shiftID: id,
      employee_name: name,
