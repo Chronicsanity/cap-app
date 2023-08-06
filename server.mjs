@@ -354,10 +354,11 @@ if (confirmed_job.job_value > confirmed_Employee.job_value) {
   return (res.status(404).send("They are not trained for this job yet!"))
 }
 if (Shift.employee_name === confirmed_Employee && req.body.datetimes === shiftDate) {
-  if (Shift.timestart === time1)
+  if (Shift.time_start === time1)
   {console.log("nope")
   return (res.status(404).send("no"))
 }
+else{
   Shift.upsert({
 
      employee_name: name,
@@ -368,7 +369,7 @@ if (Shift.employee_name === confirmed_Employee && req.body.datetimes === shiftDa
      
    })
   console.log("1")
-}
+}}
 else{
   
    Shift.create({
