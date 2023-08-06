@@ -324,7 +324,7 @@ if(Employee.findOne( {where: {user: check}})) {
   const time2 = req.body.time2;
   const date = req.body.datetimes;
 const jobData = job_list;
-const shiftEmployee = await Shift.findOne( {where: {employee_name: check}});
+const shiftEmployee = await Shift.findOne( {where: {employee_name: name}});
 
 
 
@@ -371,7 +371,6 @@ else{
   console.log("1")
 }}
 else{
-  const shiftEmployee = await Shift.findOne( {where: {employee_name: check}});
   console.log(shiftEmployee+" "+check+" "+req.body.datetimes+" "+date)
    Shift.create({
     shiftID: id,
