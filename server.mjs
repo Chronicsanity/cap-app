@@ -324,6 +324,7 @@ if(Employee.findOne( {where: {user: check}})) {
   const time2 = req.body.time2;
   const date = req.body.datetimes;
 const jobData = job_list;
+const fixedName = JSON.stringify(check);
 
 
 
@@ -353,7 +354,7 @@ if (confirmed_job.job_value > confirmed_Employee.job_value) {
    const jobData = job_list;
   return (res.status(404).send("They are not trained for this job yet!"))
 }
-const shiftEmployee = await Shift.findOne( {where: {employee_name: name}});
+const shiftEmployee = await Shift.findOne( {where: {employee_name: fixedName}});
 if (shiftEmployee === check && req.body.datetimes === date) {
   if (Shift.time_start === time1)
   {console.log("nope")
