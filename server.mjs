@@ -324,7 +324,8 @@ if(Employee.findOne( {where: {user: check}})) {
   const time2 = req.body.time2;
   const date = req.body.datetimes;
 const jobData = job_list;
-const fixedName = JSON.stringify(check).replace(/]|[[]|\[]/g, '');
+const fixedName = JSON.stringify(check).replace(/\\/g, "");
+
 
 
 
