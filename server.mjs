@@ -320,29 +320,30 @@ if(Employee.findOne( {where: {user: check}})) {
   const confirmedJob = req.body.jobList;
   const confirmed_job = await Jobs.findOne( {where: {jobs: confirmedJob}});
   const data = employee_list;
+  const time1 = req.body.time1;
+  const time2 = req.body.time2;
+  const date = req.body.datetimes;
 const jobData = job_list;
- 
+const shiftDate = await Shift.findOne( {where: {date:date}});
 
 
+
  
-async function generateID(min, max) {
-  return Math.floor(
-     Math.random() *(max - min) + min
-  )
- 
-}
+
  
   const name = [];
+  const job = [];
   const start = [];
   const end = [];
   const datetime = []
  const id = [];
  
   name.push(JSON.stringify(check).replace(/]|[[]/g, ''));
+  job.push(confirmedJob);
   start.push(req.body.time1);
   end.push(req.body.time2);
   datetime.push(req.body.datetimes);
-  //id.push(generateID(1, 255))
+ 
  
 
  
@@ -352,12 +353,25 @@ if (confirmed_job.job_value > confirmed_Employee.job_value) {
    const jobData = job_list;
   return (res.status(404).send("They are not trained for this job yet!"))
 }
+else if (Shift.employee_name === confirmed_Employee && req.body.datetimes === shiftDate) {
+  
+  Shift.upsert({
 
+     employee_name: name,
+     jobs: job,
+     time_start: start,
+     time_end: end,
+     date: datetime,
+     
+   })
+  
+}
 else{
   
    Shift.create({
     shiftID: id,
      employee_name: name,
+     jobs: job,
      time_start: start,
      time_end: end,
      date: datetime,
