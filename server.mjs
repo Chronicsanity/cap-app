@@ -336,7 +336,7 @@ async function generateID(min, max) {
   const start = [];
   const end = [];
   const datetime = []
- const id = 1;
+ const id = [];
  
   name.push(JSON.stringify(check).replace(/]|[[]/g, ''));
   start.push(req.body.time1);
