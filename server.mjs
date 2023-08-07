@@ -181,9 +181,9 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
 await createEmployee(req);
 
 
- return controller.scheduleTable().then(info => {
+  controller.scheduleTable().then(info => {
   //console.log(info)
- return res.render('data', {user: info}
+  res.render('data', {user: info}
  )
 })
 
@@ -208,18 +208,18 @@ await createEmployee(req);
 
     
    await remove(req);
-   return controller.scheduleTable().then(info => {
+    controller.scheduleTable().then(info => {
     //console.log(info)
-   return res.render('data', {user: info}
+    res.render('data', {user: info}
     )
   })
   
   }
       
   else {
-  return controller.scheduleTable().then(info => {
+  controller.scheduleTable().then(info => {
     //console.log(info)
-   return res.render('data', {user: info}
+    res.render('data', {user: info}
     )
   })
   
