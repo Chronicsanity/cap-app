@@ -194,7 +194,7 @@ async function employee_value (req) {
    if (EmpChoice.job_choice === "headChef"){
     EmpChoice.job_value === 4
    }
-
+ console.log (EmpChoice);
 }
 if (req.body.hasOwnProperty("acceptEmployee")) {
 
