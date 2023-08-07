@@ -122,7 +122,7 @@ req.body = JSON.parse(JSON.stringify(req.body));
 async function createEmployee(req) {
    
   const user = await JSON.stringify(req.body.employee_name).replace(/]|[[]/g, '');
-    
+    const EmpChoice = await Employee.findAll( {where: {user: user}});
   const editEmployee = await Employee.findAll( {where: {user: user}}).then(result => {
     if (result == null || result == "")  
     
@@ -157,17 +157,18 @@ user: user,
 job_title: req.body.job_choice
 
 })
+
 if (req.body.job_choice === "busser"){
-  createEmp.job_value === 1
+  EmpChoice.job_value === 1
  }
  if (req.body.job_choice === "lineCook"){
-  createEmp.job_value === 2
+  EmpChoice.job_value === 2
  }
  if (req.body.job_choice === "sousChef"){
-  createEmp.job_value === 3
+  EmpChoice.job_value === 3
  }
  if (req.body.job_choice === "headChef"){
-  createEmp.job_value === 4
+  EmpChoice.job_value === 4
  }
  return createEmp
 }
