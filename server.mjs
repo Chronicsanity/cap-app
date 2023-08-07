@@ -193,9 +193,9 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
    if (await EmpChoice.job_title === "headChef"){
     EmpChoice.job_value == 4
    } 
+  }
 
-
- return controller.scheduleTable().then(info => {
+ controller.scheduleTable().then(info => {
   //console.log(info)
  return res.render('data', {user: info}
  )
@@ -239,7 +239,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
   
   }
   
-    }
+    
 
 app.get('/userQueue', async function (req, res) {
 
