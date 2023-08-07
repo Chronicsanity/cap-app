@@ -119,6 +119,8 @@ async function generateID(min, max) {
 app.post('/data', async (req, res) => {
 
 req.body = JSON.parse(JSON.stringify(req.body));
+
+
 async function createEmployee(req) {
    
   const user = await JSON.stringify(req.body.employee_name).replace(/]|[[]/g, '');
@@ -149,16 +151,7 @@ async function createEmployee(req) {
   
 
 
-else { 
-  const createEmp = Employee.create(
-{
-
-user: user,
-job_title: req.body.job_choice
-
-})
-
-if (req.body.job_choice === "busser"){
+else { if (req.body.job_choice === "busser"){
   EmpChoice.job_value === 1
  }
  if (req.body.job_choice === "lineCook"){
@@ -170,12 +163,43 @@ if (req.body.job_choice === "busser"){
  if (req.body.job_choice === "headChef"){
   EmpChoice.job_value === 4
  }
- return createEmp
+  const createEmp = Employee.create(
+{
+
+user: user,
+job_title: req.body.job_choice,
+
+
+})
+
+
+ return createEmp 
+ 
 }
+}
+
+async function employee_value (req) {
+
+  const EmpChoice = await Employee.findAll();
+
+  if (EmpChoice.job_choice === "busser"){
+    EmpChoice.job_value === 1
+   }
+   if (EmpChoice.job_choice === "lineCook"){
+    EmpChoice.job_value === 2
+   }
+   if (EmpChoice.job_choice === "sousChef"){
+    EmpChoice.job_value === 3
+   }
+   if (EmpChoice.job_choice === "headChef"){
+    EmpChoice.job_value === 4
+   }
+
 }
 if (req.body.hasOwnProperty("acceptEmployee")) {
 
  await createEmployee(req);
+ await employee_value(req);
 
  return controller.scheduleTable().then(info => {
   //console.log(info)
