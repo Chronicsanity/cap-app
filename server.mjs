@@ -149,35 +149,37 @@ async function createEmployee(req) {
   
 
 
-else {
-return await Employee.create( 
+else { 
+  const createEmp = Employee.create(
 {
-id: 0,
+
 user: user,
 job_title: req.body.job_choice
 
 })
+if (req.body.job_choice === "busser"){
+  createEmp.job_value === 1
+ }
+ if (req.body.job_choice === "lineCook"){
+  createEmp.job_value === 2
+ }
+ if (req.body.job_choice === "sousChef"){
+  createEmp.job_value === 3
+ }
+ if (req.body.job_choice === "headChef"){
+  createEmp.job_value === 4
+ }
+ return createEmp
 }
 }
 if (req.body.hasOwnProperty("acceptEmployee")) {
 
  await createEmployee(req);
- if (req.body.job_choice === "busser"){
-  Employee.job_value === 1
- }
- if (req.body.job_choice === "lineCook"){
-  Employee.job_value === 2
- }
- if (req.body.job_choice === "sousChef"){
-  Employee.job_value === 3
- }
- if (req.body.job_choice === "headChef"){
-  Employee.job_value === 4
- }
+
  return controller.scheduleTable().then(info => {
   //console.log(info)
  return res.render('data', {user: info}
-  )
+ )
 })
 
 }
