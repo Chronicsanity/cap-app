@@ -171,11 +171,11 @@ job_title: req.body.job_choice,
 console.log (await createEmp.job_value)
  return await createEmp 
  
-}}
+}
 }
 
 
-)
+
 if (req.body.hasOwnProperty("acceptEmployee")) {
 
  const newEmployee= await createEmployee(req);
@@ -193,9 +193,9 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
    if (await EmpChoice.job_title === "headChef"){
     EmpChoice.job_value == 4
    } 
-  }
 
- controller.scheduleTable().then(info => {
+
+ return controller.scheduleTable().then(info => {
   //console.log(info)
  return res.render('data', {user: info}
  )
@@ -239,7 +239,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
   
   }
   
-    
+    }})
 
 app.get('/userQueue', async function (req, res) {
 
