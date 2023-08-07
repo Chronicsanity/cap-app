@@ -168,20 +168,20 @@ job_title: req.body.job_choice,
 
 })
 
-if (createEmp.job_title === "busser"){
+if (await createEmp.job_title === "busser"){
   createEmp.job_value === 1
  }
- if (createEmp.job_title === "lineCook"){
+ if (await createEmp.job_title === "lineCook"){
   createEmp.job_value === 2
  }
- if (createEmp.job_title === "sousChef"){
+ if (await createEmp.job_title === "sousChef"){
  createEmp.job_value === 3
  }
- if (createEmp.job_title === "headChef"){
+ if (await createEmp.job_title === "headChef"){
   createEmp.job_value === 4
  }
 console.log (await createEmp)
- return createEmp 
+ return await createEmp 
  
 }
 }
