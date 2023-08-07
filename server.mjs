@@ -180,7 +180,7 @@ if (await createEmp.job_title === "busser"){
  if (await createEmp.job_title === "headChef"){
   createEmp.job_value === 4
  }
-console.log (await createEmp)
+console.log (await createEmp.job_value)
  return await createEmp 
  
 }
