@@ -167,19 +167,7 @@ user: user,
 job_title: req.body.job_choice,
 
 })
-if (await createEmp.job_title == null) {
-if (await createEmp.job_title === "busser"){
-  createEmp.job_value == 1
- }
- if (await createEmp.job_title === "lineCook"){
-  createEmp.job_value == 2
- }
- if (await createEmp.job_title === "sousChef"){
- createEmp.job_value == 3
- }
- if (await createEmp.job_title === "headChef"){
-  createEmp.job_value == 4
- }
+
 console.log (await createEmp.job_value)
  return await createEmp 
  
@@ -187,10 +175,24 @@ console.log (await createEmp.job_value)
 }
 
 
-
+)
 if (req.body.hasOwnProperty("acceptEmployee")) {
 
- await createEmployee(req);
+ const newEmployee= await createEmployee(req);
+ const EmpChoice = await Employee.findAll( {where: {user: newEmployee}});
+ if (await EmpChoice.job_title == null) {
+  if (await EmpChoice.job_title === "busser"){
+    EmpChoice.job_value == 1
+   }
+   if (await EmpChoice.job_title === "lineCook"){
+    EmpChoice.job_value == 2
+   }
+   if (await EmpChoice.job_title === "sousChef"){
+    EmpChoice.job_value == 3
+   }
+   if (await EmpChoice.job_title === "headChef"){
+    EmpChoice.job_value == 4
+   } 
 
 
  return controller.scheduleTable().then(info => {
@@ -237,7 +239,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
   
   }
   
-    })
+    }
 
 app.get('/userQueue', async function (req, res) {
 
