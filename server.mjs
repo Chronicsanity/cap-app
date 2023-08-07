@@ -167,7 +167,7 @@ user: user,
 job_title: req.body.job_choice,
 
 })
-
+if (await createEmp.job_title == null) {
 if (await createEmp.job_title === "busser"){
   createEmp.job_value == 1
  }
@@ -183,7 +183,7 @@ if (await createEmp.job_title === "busser"){
 console.log (await createEmp.job_value)
  return await createEmp 
  
-}
+}}
 }
 
 
