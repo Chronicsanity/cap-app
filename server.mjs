@@ -180,7 +180,7 @@ if (createEmp.job_title === "busser"){
  if (createEmp.job_title === "headChef"){
   createEmp.job_value === 4
  }
-
+console.log (createEmp)
  return createEmp 
  
 }
