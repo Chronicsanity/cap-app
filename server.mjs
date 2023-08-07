@@ -159,18 +159,7 @@ const lineCook = [];
 const sousChef = [];
 const headChef = [];
 
-if (req.body.job_choice === "busser"){
-  busser.push(job_value === 1)
- }
- if (req.body.job_choice === "lineCook"){
-  lineCook.push(job_value === 2)
- }
- if (req.body.job_choice === "sousChef"){
-  sousChef.push(job_value === 3)
- }
- if (req.body.job_choice === "headChef"){
-  headChef.push(job_value === 4)
- }
+
   const createEmp = Employee.create(
 {
 
@@ -179,17 +168,17 @@ job_title: req.body.job_choice,
 
 })
 
-if (req.body.job_choice === "busser"){
-  busser.push(createEmp.job_value === 1)
+if (createEmp.job_title === "busser"){
+  createEmp.job_value === 1
  }
- if (req.body.job_choice === "lineCook"){
-  lineCook.push(createEmp.job_value === 2)
+ if (createEmp.job_title === "lineCook"){
+  createEmp.job_value === 2
  }
- if (req.body.job_choice === "sousChef"){
-  sousChef.push(createEmp.job_value === 3)
+ if (createEmp.job_title === "sousChef"){
+ createEmp.job_value === 3
  }
- if (req.body.job_choice === "headChef"){
-  headChef.push(createEmp.job_value === 4)
+ if (createEmp.job_title === "headChef"){
+  createEmp.job_value === 4
  }
 
  return createEmp 
@@ -197,28 +186,12 @@ if (req.body.job_choice === "busser"){
 }
 }
 
-async function employee_value (req) {
 
-  const EmpChoice = await Employee.findAll();
-  if (EmpChoice.job_choice === "busser"){
-    EmpChoice.job_value === 1
-   }
-   if (EmpChoice.job_choice === "lineCook"){
-    EmpChoice.job_value === 2
-   }
-   if (EmpChoice.job_choice === "sousChef"){
-    EmpChoice.job_value === 3
-   }
-   if (EmpChoice.job_choice === "headChef"){
-    EmpChoice.job_value === 4
-   }
- console.log (EmpChoice);
- return 
-}
+
 if (req.body.hasOwnProperty("acceptEmployee")) {
 
  await createEmployee(req);
- await employee_value(req);
+
 
  return controller.scheduleTable().then(info => {
   //console.log(info)
