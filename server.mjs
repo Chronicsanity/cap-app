@@ -151,17 +151,25 @@ async function createEmployee(req) {
   
 
 
-else { if (req.body.job_choice === "busser"){
-  EmpChoice.job_value === 1
+
+else {
+  
+  const busser = [];
+const lineCook = [];
+const sousChef = [];
+const headChef = [];
+
+if (req.body.job_choice === "busser"){
+  busser.push(job_value === 1)
  }
  if (req.body.job_choice === "lineCook"){
-  EmpChoice.job_value === 2
+  lineCook.push(job_value === 2)
  }
  if (req.body.job_choice === "sousChef"){
-  EmpChoice.job_value === 3
+  sousChef.push(job_value === 3)
  }
  if (req.body.job_choice === "headChef"){
-  EmpChoice.job_value === 4
+  headChef.push(job_value === 4)
  }
   const createEmp = Employee.create(
 {
@@ -169,9 +177,20 @@ else { if (req.body.job_choice === "busser"){
 user: user,
 job_title: req.body.job_choice,
 
-
 })
 
+if (req.body.job_choice === "busser"){
+  busser.push(createEmp.job_value === 1)
+ }
+ if (req.body.job_choice === "lineCook"){
+  lineCook.push(createEmp.job_value === 2)
+ }
+ if (req.body.job_choice === "sousChef"){
+  sousChef.push(createEmp.job_value === 3)
+ }
+ if (req.body.job_choice === "headChef"){
+  headChef.push(createEmp.job_value === 4)
+ }
 
  return createEmp 
  
@@ -181,7 +200,6 @@ job_title: req.body.job_choice,
 async function employee_value (req) {
 
   const EmpChoice = await Employee.findAll();
-
   if (EmpChoice.job_choice === "busser"){
     EmpChoice.job_value === 1
    }
