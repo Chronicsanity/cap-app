@@ -179,8 +179,19 @@ console.log (await createEmp.job_value)
 if (req.body.hasOwnProperty("acceptEmployee")) {
 
 await createEmployee(req);
+const Emp = await Employee.findAll( {where: {job_value: null}})
+if (Emp.job_title == "busser") { Emp.job_value == 1
 
+}
+if (Emp.job_title == "lineCook") { Emp.job_value == 2
 
+}
+if (Emp.job_title == "sousChef") { Emp.job_value == 3
+
+}
+if (Emp.job_title == "headChef") { Emp.job_value == 4
+
+}
   controller.scheduleTable().then(info => {
   //console.log(info)
   res.render('data', {user: info}
