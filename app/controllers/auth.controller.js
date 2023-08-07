@@ -252,6 +252,10 @@ finally {
   else if(user.role == 3) {
     return res.render('schedule')
   }
+  else if(user.role == 2) {
+    return res.render('shiftmaker')
+  }
+
   else if (user.role == 0) {
    return res.render('login')
   }

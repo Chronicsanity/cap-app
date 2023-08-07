@@ -178,21 +178,7 @@ console.log (await createEmp.job_value)
 
 if (req.body.hasOwnProperty("acceptEmployee")) {
 
- const newEmployee= await createEmployee(req);
- const EmpChoice = await Employee.findAll( {where: {user: newEmployee}});
- if (await EmpChoice.job_title == null) {
-  if (await EmpChoice.job_title === "busser"){
-    EmpChoice.job_value == 1
-   }
-   if (await EmpChoice.job_title === "lineCook"){
-    EmpChoice.job_value == 2
-   }
-   if (await EmpChoice.job_title === "sousChef"){
-    EmpChoice.job_value == 3
-   }
-   if (await EmpChoice.job_title === "headChef"){
-    EmpChoice.job_value == 4
-   } 
+await createEmployee(req);
 
 
  return controller.scheduleTable().then(info => {
@@ -239,7 +225,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
   
   }
   
-    }})
+    })
 
 app.get('/userQueue', async function (req, res) {
 
