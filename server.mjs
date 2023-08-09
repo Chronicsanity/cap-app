@@ -414,11 +414,11 @@ else{
   res.render ('shiftmaker',{data: data, jobData:jobData} )
   })
 
-  app.get('/weekofshifts', async function (req, res) {
+  app.get('/weekshift', async function (req, res) {
 
    await controller.weekTable().then(info => {
       //console.log(info)
-      res.render('weekofshifts', {week: info}
+      res.render('weekshift', {week: info}
       )
     })
   })
