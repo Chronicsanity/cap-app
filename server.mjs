@@ -15,6 +15,7 @@ const Employee = db.employee;
 const QueuedUser = db.queuedUsers;
 const Shift = db.shift;
 const Jobs = db.jobs;
+const WeekofShifts = db.weekofshifts;
 import mysql from 'mysql';
 import Promise from 'promise';
 import bcrypt from 'bcryptjs';
@@ -413,7 +414,14 @@ else{
   res.render ('shiftmaker',{data: data, jobData:jobData} )
   })
 
- 
+  app.get('/weekofshifts', async function (req, res) {
+
+   await controller.weekTable().then(info => {
+      //console.log(info)
+      res.render('weekofshifts', {week: info}
+      )
+    })
+  })
 
 
 

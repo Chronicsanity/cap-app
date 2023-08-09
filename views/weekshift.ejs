@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+
+<table class="table">
+    <thead>
+      <tr>
+       
+        <th>Mon</th>
+       
+        <th>Tue</th>
+
+        <th>Wed</th> 
+        
+        <th>Thu</th>
+       
+        <th>Fri</th>
+
+        <th>Sat</th>
+
+        <th>Sun</th>
+
+      </tr>
+    </thead>
+    <tbody>
+       
+      
+      
+        <% for (var i = 0; i < week.length; i++) { %>
+        
+            <tr>
+                <td><%= week[i].Mon %> </td>
+                <td><%= user[i].Tue %></td>
+                <td><%= user[i].Wed %> </td>
+                <td><%= week[i].Thu %> </td>
+                <td><%= user[i].Fri %></td>
+                <td><%= user[i].Sat %> </td>
+                <td><%= user[i].Sun %> </td>
+            </tr>
+            <%  } %>
+
+        </table>
+     
+        <td>
+            <input type="checkbox" id="enabled" name="enabled[<%= i %>]">Check</input>
+          </td>
+
+</html>
