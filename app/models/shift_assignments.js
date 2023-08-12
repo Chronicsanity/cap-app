@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-	const weekofshifts = sequelize.define("weekofshifts", {
+	const shiftAssignments = sequelize.define("shift_assignments", {
 	 
 		id:{
 			type: Sequelize.INTEGER,
@@ -17,5 +17,5 @@ module.exports = (sequelize, Sequelize) => {
 		timestamps: false
 	});
   
-	return weekofshifts;
+	return shiftAssignments;
   };
