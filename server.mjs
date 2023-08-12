@@ -423,10 +423,17 @@ else{
     })
   })
   app.post('/weekshift', async (req, res) =>{
-res.render ('')
+    if (req.body.MonAM) {
+      console.log("True")
+    }
+    await controller.weekTable().then(info => {
+      //console.log(info)
+      res.render('weekshift', {week: info}
+      )
 
 
   })
+})
 
 
 
