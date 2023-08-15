@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+
+<table class="table">
+    <thead>
+      <tr>
+       
+        <th>Mon</th>
+       
+        <th>Tue</th>
+
+        <th>Wed</th> 
+        
+        <th>Thu</th>
+       
+        <th>Fri</th>
+
+        <th>Sat</th>
+
+        <th>Sun</th>
+
+      </tr>
+    </thead>
+    <tbody>
+       
+      
+      
+       <form action = "/weekshift" method="POST">
+        
+          <tr>
+            <td><input type="checkbox" id="enabled" name="MonAM">AM</input> <br> <input type="checkbox" id="enabled" name="MonPM">PM</input> </td>
+            <td><input type="checkbox" id="enabled" name="TueAM">AM</input> <br> <input type="checkbox" id="enabled" name="TuePM">PM</input> </td>
+            <td><input type="checkbox" id="enabled" name="WedAM">AM</input> <br> <input type="checkbox" id="enabled" name="WedPM">PM</input> </td>
+            <td><input type="checkbox" id="enabled" name="ThuAM">AM</input> <br> <input type="checkbox" id="enabled" name="ThuPM">PM</input> </td>
+            <td><input type="checkbox" id="enabled" name="FriAM">AM</input> <br> <input type="checkbox" id="enabled" name="FriPM">PM</input> </td>
+            <td><input type="checkbox" id="enabled" name="SatAM">AM</input> <br> <input type="checkbox" id="enabled" name="SatPM">PM</input> </td>
+            <td><input type="checkbox" id="enabled" name="SunAM">AM</input> <br> <input type="checkbox" id="enabled" name="SunPM">PM</input> </td>
+        </tr>
+           
+
+        </table>
+        <button type="submit" name="shiftAccept" class="btn btn-success rounded-pill">Submit</button>
+</html>
+      </form>
