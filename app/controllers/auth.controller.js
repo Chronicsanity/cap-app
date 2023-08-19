@@ -233,11 +233,11 @@ exports.scheduleTable = async function (res) {
               exports.checkedList = async function (req) {
                 const assigning = Shift_Assignments.DaysAssigned;
                 if (req.body.MonAM) {
-                  assigning.push("Mon AM")
+                  assigning = "Mon AM"
                   console.log("True")
                 }
                 if (req.body.MonPM) {
-                  assigning.push("Mon PM")
+                  assigning = "Mon PM"
                   console.log("True")
                 }
                 if (req.body.TueAM) {
