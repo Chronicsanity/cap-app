@@ -319,7 +319,7 @@ exports.scheduleTable = async function (res) {
                 }
 
                 if (req.body.SunPM === false) {
-                  Shift_Assignments.destroy({where: {DaysAssigned: "Sun PM" }})
+                  Shift_Assignments.destroy({where: {DaysAssigned: 'Sun PM' }})
                   }
               }
 
