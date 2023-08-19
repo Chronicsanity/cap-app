@@ -318,7 +318,7 @@ exports.scheduleTable = async function (res) {
                   console.log("True")
                 }
 
-                if (req.body.SunPM === false) {
+                if (req.body.SunPM == false) {
                   Shift_Assignments.destroy({where: {DaysAssigned:"'Sun PM'"}})
                   }
               }
