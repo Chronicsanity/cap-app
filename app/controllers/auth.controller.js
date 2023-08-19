@@ -298,7 +298,7 @@ exports.scheduleTable = async function (res) {
                 
                     Shift_Assignments.findAll().then(res => {
                     
-                   const object = res.DaysAssigned;
+                   const object = res;
                     //console.log(object)
                    return resolve (object);
                     
