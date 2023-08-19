@@ -246,51 +246,75 @@ exports.scheduleTable = async function (res) {
                   console.log("True")
                 }
                 if (req.body.TueAM) {
-                  assigning.push("Tue AM")
+                  Shift_Assignments.upsert({
+                    DaysAssigned: "Tue AM"
+                  })
                   console.log("True")
                 }
                 if (req.body.TuePM) {
-                  assigning.push("Tue PM")
+                  Shift_Assignments.upsert({
+                    DaysAssigned: "Tue PM"
+                  })
                   console.log("True")
                 }
                 if (req.body.WedAM) {
-                  assigning.push("Wed AM")
+                  Shift_Assignments.upsert({
+                    DaysAssigned: "Wed AM"
+                  })
                   console.log("True")
                 }
                 if (req.body.WedPM) {
-                  assigning.push("Wed PM")
+                  Shift_Assignments.upsert({
+                    DaysAssigned: "Wed PM"
+                  })
                   console.log("True")
                 }
                 if (req.body.ThuAM) {
-                  assigning.push("Thu AM")
+                  Shift_Assignments.upsert({
+                    DaysAssigned: "Thu AM"
+                  })
                   console.log("True")
                 }
                 if (req.body.ThuPM) {
-                  assigning.push("Thu PM")
+                  Shift_Assignments.upsert({
+                    DaysAssigned: "Thu PM"
+                  })
                   console.log("True")
                 }
                 if (req.body.FriAM) {
-                  assigning.push("Fri AM")
+                  Shift_Assignments.upsert({
+                    DaysAssigned: "Fri AM"
+                  })
                   console.log("True")
                 }
                 if (req.body.FriPM) {
-                  assigning.push("Fri PM")
+                  Shift_Assignments.upsert({
+                    DaysAssigned: "Fri PM"
+                  })
                   console.log("True")
                 }
                 if (req.body.SatAM) {
-                  assigning.push("Sat AM")
+                  Shift_Assignments.upsert({
+                    DaysAssigned: "Sat AM"
+                  })
                   console.log("True")
                 }
                 if (req.body.SatPM) {
-                  assigning.push("Sat PM")
+                  Shift_Assignments.upsert({
+                    DaysAssigned: "Sat PM"
+                  })
                   console.log("True")
                 }
                 if (req.body.SunAM) {
-                  assigning.push("Sun AM")
+                  Shift_Assignments.upsert({
+                    DaysAssigned: "Sun AM"
+                  })
                   console.log("True")
                 }
                 if (req.body.SunPM) {
-                  assigning.push("Sun PM")
+                  Shift_Assignments.upsert({
+                    DaysAssigned: "Sun PM"
+                  })
                   console.log("True")
                 }
               }
