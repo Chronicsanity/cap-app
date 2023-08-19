@@ -294,7 +294,7 @@ exports.scheduleTable = async function (res) {
               }
 
               exports.assignmentsTable = async function (res) {
-                const assigning = Shift_Assignments.DaysAssigned;
+       
                 return  new Promise(function(resolve, reject){
                   db.sequelize.sync().then(() => {
                 
