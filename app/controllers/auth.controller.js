@@ -307,14 +307,7 @@ exports.scheduleTable = async function (res) {
                     
               
                     
-                     }) .catch((error) => {
-                  console.error('Failed to retrieve data : ', error);
-                  
-                  
-                  
-                  }).catch((error) => {
-                  console.error('Unable to create table : ', error);
-                  })
+                     }) 
                 })
               })  
               }
