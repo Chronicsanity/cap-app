@@ -424,77 +424,8 @@ else{
   })
   app.post('/weekshift', async (req, res) =>{
 
-    async function checkedList(){
-    const monAMShift = [];
-    const tueAMShift = [];
-    const wedAMShift = [];
-    const thuAMShift = [];
-    const friAMShift = [];
-    const satAMShift = [];
-    const sunAMShift = [];
-    const monPMShift = [];
-    const tuePMShift = [];
-    const wedPMShift = [];
-    const thuPMShift = [];
-    const friPMShift = [];
-    const satPMShift = [];
-    const sunPMShift = [];
-    if (req.body.MonAM) {
-      monAMShift.push("Yes")
-      console.log("True")
-    }
-    if (req.body.MonPM) {
-      monPMShift.push("Yes")
-      console.log("True")
-    }
-    if (req.body.TueAM) {
-      tueAMShift.push("Yes")
-      console.log("True")
-    }
-    if (req.body.TuePM) {
-      tuePMShift.push("Yes")
-      console.log("True")
-    }
-    if (req.body.WedAM) {
-      wedAMShift.push("Yes")
-      console.log("True")
-    }
-    if (req.body.WedPM) {
-      wedPMShift.push("Yes")
-      console.log("True")
-    }
-    if (req.body.ThuAM) {
-      thuAMShift.push("Yes")
-      console.log("True")
-    }
-    if (req.body.ThuPM) {
-      thuPMShift.push("Yes")
-      console.log("True")
-    }
-    if (req.body.FriAM) {
-      friAMShift.push("Yes")
-      console.log("True")
-    }
-    if (req.body.FriPM) {
-      friPMShift.push("Yes")
-      console.log("True")
-    }
-    if (req.body.SatAM) {
-      satAMShift.push("Yes")
-      console.log("True")
-    }
-    if (req.body.SatPM) {
-      satPMShift.push("Yes")
-      console.log("True")
-    }
-    if (req.body.SunAM) {
-      sunAMShift.push("Yes")
-      console.log("True")
-    }
-    if (req.body.SunPM) {
-      sunPMShift.push("Yes")
-      console.log("True")
-    }
+  
+    await controller.checkedList(req)
   
   
   
@@ -503,10 +434,9 @@ else{
   
   
   
-  }
-    await controller.weekTable().then(info => {
+    await controller.assignmentsTable().then(info => {
       //console.log(info)
-      res.render('weekshift', {week: info}
+      res.render('shiftassignment', {week: info}
       )
 
 

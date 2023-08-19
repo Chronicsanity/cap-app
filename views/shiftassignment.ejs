@@ -10,27 +10,18 @@
     <thead>
       <tr>
        
-        <th>Mon</th>
+        <th><% for(var i=0; i < week.length; i++) { %>
+          <%if(week[i] === week.length){%>
+          <% i++ }%></th>
        
-        <th>Tue</th>
-
-        <th>Wed</th> 
-        
-        <th>Thu</th>
-       
-        <th>Fri</th>
-
-        <th>Sat</th>
-
-        <th>Sun</th>
-
+    
       </tr>
     </thead>
     <tbody>
        
       
       
-       <form action = "/weekshift" method="POST">
+       <form action = "/shiftassignment" method="POST">
         
           <tr>
             <td><input type="checkbox" id="enabled" name="MonAM">AM</input> <br> <input type="checkbox" id="enabled" name="MonPM">PM</input> </td>

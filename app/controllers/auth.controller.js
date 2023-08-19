@@ -4,6 +4,7 @@ const Sequelize = require("sequelize");
 const User = db.user;
 const Role = db.role;
 const Jobs = db.jobs;
+const Shift_Assignments = db.shift_assignments;
 const WeekofShifts = db.weekofshifts;
 const Op = db.Sequelize.Op;
 const express = require('express');
@@ -229,7 +230,91 @@ exports.scheduleTable = async function (res) {
                 })
               })  
               }
+              exports.checkedList = async function (req) {
+                const assigning = Shift_Assignments.DaysAssigned;
+                if (req.body.MonAM) {
+                  assigning.push("Mon AM")
+                  console.log("True")
+                }
+                if (req.body.MonPM) {
+                  assigning.push("Mon PM")
+                  console.log("True")
+                }
+                if (req.body.TueAM) {
+                  assigning.push("Tue AM")
+                  console.log("True")
+                }
+                if (req.body.TuePM) {
+                  assigning.push("Tue PM")
+                  console.log("True")
+                }
+                if (req.body.WedAM) {
+                  assigning.push("Wed AM")
+                  console.log("True")
+                }
+                if (req.body.WedPM) {
+                  assigning.push("Wed PM")
+                  console.log("True")
+                }
+                if (req.body.ThuAM) {
+                  assigning.push("Thu AM")
+                  console.log("True")
+                }
+                if (req.body.ThuPM) {
+                  assigning.push("Thu PM")
+                  console.log("True")
+                }
+                if (req.body.FriAM) {
+                  assigning.push("Fri AM")
+                  console.log("True")
+                }
+                if (req.body.FriPM) {
+                  assigning.push("Fri PM")
+                  console.log("True")
+                }
+                if (req.body.SatAM) {
+                  assigning.push("Sat AM")
+                  console.log("True")
+                }
+                if (req.body.SatPM) {
+                  assigning.push("Sat PM")
+                  console.log("True")
+                }
+                if (req.body.SunAM) {
+                  assigning.push("Sun AM")
+                  console.log("True")
+                }
+                if (req.body.SunPM) {
+                  assigning.push("Sun PM")
+                  console.log("True")
+                }
+              }
 
+              exports.assignmentsTable = async function (res) {
+                const assigning = Shift_Assignments.DaysAssigned;
+                return  new Promise(function(resolve, reject){
+                  db.sequelize.sync().then(() => {
+                
+                
+                    assigning.findAll().then(res => {
+                    
+                   const object = res
+                    //console.log(object)
+                   return resolve (object);
+                    
+              
+                    
+                     }) .catch((error) => {
+                  console.error('Failed to retrieve data : ', error);
+                  
+                  
+                  
+                  }).catch((error) => {
+                  console.error('Unable to create table : ', error);
+                  })
+                })
+              })  
+              }
 exports.signin = async (req, res) => {
 
   try {

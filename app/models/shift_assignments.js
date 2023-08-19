@@ -5,11 +5,16 @@ module.exports = (sequelize, Sequelize) => {
 			type: Sequelize.INTEGER,
 			primaryKey: true
 		},
-        Assignments: {type: Sequelize.STRING
+        Assignments: {
+			type: Sequelize.STRING
         
     },
-	AmntEmp: {type: Sequelize.INTEGER
-        }
+	AmntEmp: {
+		type: Sequelize.INTEGER
+        },
+		DaysAssigned: {
+			type: Sequelize.STRING
+		}
 
 	}, 
 	

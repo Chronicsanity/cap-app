@@ -45,6 +45,7 @@ db.queuedUsers = require('../models/queuedUsers.js')(sequelize, Sequelize);
 db.time_working = require('./shift.js')(sequelize, Sequelize);
 db.time = require('./time.js')(sequelize, Sequelize);
 db.shift = require('../models/shift.js')(sequelize, Sequelize);
+db.shift_assignments = require('../models/shift_assignments.js')(sequelize, Sequelize);
 db.jobs = require('../models/jobs.js')(sequelize, Sequelize);
 db.weekofshifts = require('../models/weekofshifts.js')(sequelize, Sequelize);
 
