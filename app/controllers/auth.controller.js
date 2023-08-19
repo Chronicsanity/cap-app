@@ -234,14 +234,14 @@ exports.scheduleTable = async function (res) {
                 const assigning = Shift_Assignments.DaysAssigned;
                 const checking = []
                 if (req.body.MonAM) {
-                  Shift_Assignments.create({
+                  Shift_Assignments.upsert({
                     DaysAssigned: "Mon AM"
                   })
                   console.log("True")
                 }
                 if (req.body.MonPM) {
-                  Shift_Assignments.create({
-                    DaysAssigned: "Mon AM"
+                  Shift_Assignments.upsert({
+                    DaysAssigned: "Mon PM"
                   })
                   console.log("True")
                 }
