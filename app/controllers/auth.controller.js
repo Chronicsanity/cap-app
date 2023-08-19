@@ -296,9 +296,9 @@ exports.scheduleTable = async function (res) {
                   db.sequelize.sync().then(() => {
                 
                 
-                    assigning.findAll().then(res => {
+                    Shift_Assignments.Days.findAll().then(res => {
                     
-                   const object = res
+                   const object = res.DaysAssigned;
                     //console.log(object)
                    return resolve (object);
                     
