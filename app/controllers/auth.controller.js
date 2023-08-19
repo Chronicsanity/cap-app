@@ -240,7 +240,9 @@ exports.scheduleTable = async function (res) {
                   console.log("True")
                 }
                 if (req.body.MonPM) {
-                  Shift_Assignments.DaysAssigned = "Mon PM"
+                  Shift_Assignments.upsert({
+                    DaysAssigned: "Mon AM"
+                  })
                   console.log("True")
                 }
                 if (req.body.TueAM) {
