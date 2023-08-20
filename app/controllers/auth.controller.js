@@ -239,78 +239,130 @@ exports.scheduleTable = async function (res) {
                   })
                   console.log("True")
                 }
+                if (req.body.MonAM != true) {
+            
+                  Shift_Assignments.destroy({where: {DaysAssigned: "Mon AM"}})
+                  }
                 if (req.body.MonPM) {
                   Shift_Assignments.upsert({
                     DaysAssigned: "Mon PM"
                   })
                   console.log("True")
                 }
+                if (req.body.MonPM != true) {
+            
+                  Shift_Assignments.destroy({where: {DaysAssigned: "Mon PM"}})
+                  }
                 if (req.body.TueAM) {
                   Shift_Assignments.upsert({
                     DaysAssigned: "Tue AM"
                   })
                   console.log("True")
                 }
+                if (req.body.TueAM != true) {
+            
+                  Shift_Assignments.destroy({where: {DaysAssigned: "Tue AM"}})
+                  }
                 if (req.body.TuePM) {
                   Shift_Assignments.upsert({
                     DaysAssigned: "Tue PM"
                   })
                   console.log("True")
                 }
+                if (req.body.TuePM != true) {
+            
+                  Shift_Assignments.destroy({where: {DaysAssigned: "Tue PM"}})
+                  }
                 if (req.body.WedAM) {
                   Shift_Assignments.upsert({
                     DaysAssigned: "Wed AM"
                   })
                   console.log("True")
                 }
+                if (req.body.WedAM != true) {
+            
+                  Shift_Assignments.destroy({where: {DaysAssigned: "Wed AM"}})
+                  }
                 if (req.body.WedPM) {
                   Shift_Assignments.upsert({
                     DaysAssigned: "Wed PM"
                   })
                   console.log("True")
                 }
+                if (req.body.WedPM != true) {
+            
+                  Shift_Assignments.destroy({where: {DaysAssigned: "Wed PM"}})
+                  }
                 if (req.body.ThuAM) {
                   Shift_Assignments.upsert({
                     DaysAssigned: "Thu AM"
                   })
                   console.log("True")
                 }
+                if (req.body.ThuAM != true) {
+            
+                  Shift_Assignments.destroy({where: {DaysAssigned: "Thu AM"}})
+                  }
                 if (req.body.ThuPM) {
                   Shift_Assignments.upsert({
                     DaysAssigned: "Thu PM"
                   })
                   console.log("True")
                 }
+                if (req.body.ThuPM != true) {
+            
+                  Shift_Assignments.destroy({where: {DaysAssigned: "Thu PM"}})
+                  }
                 if (req.body.FriAM) {
                   Shift_Assignments.upsert({
                     DaysAssigned: "Fri AM"
                   })
                   console.log("True")
                 }
+                if (req.body.FriAM != true) {
+            
+                  Shift_Assignments.destroy({where: {DaysAssigned: "Fri AM"}})
+                  }
                 if (req.body.FriPM) {
                   Shift_Assignments.upsert({
                     DaysAssigned: "Fri PM"
                   })
                   console.log("True")
                 }
+                if (req.body.FriPM != true) {
+            
+                  Shift_Assignments.destroy({where: {DaysAssigned: "Fri PM"}})
+                  }
                 if (req.body.SatAM) {
                   Shift_Assignments.upsert({
                     DaysAssigned: "Sat AM"
                   })
                   console.log("True")
                 }
+                if (req.body.SatAM != true) {
+            
+                  Shift_Assignments.destroy({where: {DaysAssigned: "Sat AM"}})
+                  }
                 if (req.body.SatPM) {
                   Shift_Assignments.upsert({
                     DaysAssigned: "Sat PM"
                   })
                   console.log("True")
                 }
+                if (req.body.SatPM != true) {
+            
+                  Shift_Assignments.destroy({where: {DaysAssigned: "Sat PM"}})
+                  }
                 if (req.body.SunAM) {
                   Shift_Assignments.upsert({
                     DaysAssigned: "Sun AM"
                   })
                   console.log("True")
                 }
+                if (req.body.SunAM != true) {
+            
+                  Shift_Assignments.destroy({where: {DaysAssigned: "Sun AM"}})
+                  }
                 if (req.body.SunPM) {
                   Shift_Assignments.upsert({
                     DaysAssigned: "Sun PM"
@@ -319,7 +371,7 @@ exports.scheduleTable = async function (res) {
                 }
 
                 if (req.body.SunPM != true) {
-                  console.log("Eh?")
+            
                   Shift_Assignments.destroy({where: {DaysAssigned: "Sun PM"}})
                   }
               }
