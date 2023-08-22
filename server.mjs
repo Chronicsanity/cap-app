@@ -455,7 +455,7 @@ app.get('/shiftassignment', async function (req,res){
 })
 })
 app.post('/shiftassignment', async function (req,res){
-console.log()
+console.log(req.body.week)
 const amount = req.body.amntEmployees;
 const assignments = req.body.assignments;
 const findMon = Shift_Assignments.findOne({where: {DaysAssigned: "Mon AM"}})
