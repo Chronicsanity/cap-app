@@ -458,8 +458,8 @@ app.post('/shiftassignment', async function (req,res){
 
 const amount = req.body.amntEmployees;
 const assignments = req.body.assignments;
-const findMon = Shift_Assignments.findOne({where: {DaysAssigned:'Mon AM'}})
-const findMPM = Shift_Assignments.findOne({where: {DaysAssigned:'Mon PM'}})
+const findMon = Shift_Assignments.findOne({where: {DaysAssigned: "Mon AM"}})
+const findMPM = Shift_Assignments.findOne({where: {DaysAssigned: "Mon PM"}})
 const findTue = Shift_Assignments.findOne({where: {DaysAssigned:'Tue AM'}})
 const findTPM = Shift_Assignments.findOne({where: {DaysAssigned:'Tue PM'}})
 const findWed = Shift_Assignments.findOne({where: {DaysAssigned:'Wed AM'}})
