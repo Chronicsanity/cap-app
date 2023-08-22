@@ -472,7 +472,7 @@ const findSat = Shift_Assignments.findOne({where: {DaysAssigned:'Sat AM'}})
 const findSPM = Shift_Assignments.findOne({where: {DaysAssigned:'Sat PM'}})
 const findSun = Shift_Assignments.findOne({where: {DaysAssigned:'Sun AM'}})
 const findSunPM = Shift_Assignments.findOne({where: {DaysAssigned:'Sun PM'}})
-if (await req.body.hasOwnProperty(" week[i] ") == "Mon AM")
+if (await req.body.week == "Mon AM")
 {
   Shift_Assignments.upsert({
     Assignments: assignments,
