@@ -458,14 +458,112 @@ app.post('/shiftassignment', async function (req,res){
 
 const amount = req.body.amntEmployees;
 const assignments = req.body.assignments;
-const dayCheck = await controller.assignmentsTable(res).then(info => {
- for (var i = 0; i < info.length; i++) {
-const week = info[i];
-return week
-}})
-const checking = Shift_Assignments.findOne({where: {DaysAssigned:' dayCheck '}})
-
-if (checking == true)
+const findMon = Shift_Assignments.findOne({where: {DaysAssigned:'Mon AM'}})
+const findMPM = Shift_Assignments.findOne({where: {DaysAssigned:'Mon PM'}})
+const findTue = Shift_Assignments.findOne({where: {DaysAssigned:'Tue AM'}})
+const findTPM = Shift_Assignments.findOne({where: {DaysAssigned:'Tue PM'}})
+const findWed = Shift_Assignments.findOne({where: {DaysAssigned:'Wed AM'}})
+const findWPM = Shift_Assignments.findOne({where: {DaysAssigned:'Wed PM'}})
+const findThu = Shift_Assignments.findOne({where: {DaysAssigned:'Thu AM'}})
+const findThPM = Shift_Assignments.findOne({where: {DaysAssigned:'Thu PM'}})
+const findFri = Shift_Assignments.findOne({where: {DaysAssigned:'Fri AM'}})
+const findFPM = Shift_Assignments.findOne({where: {DaysAssigned:'Fri PM'}})
+const findSat = Shift_Assignments.findOne({where: {DaysAssigned:'Sat AM'}})
+const findSPM = Shift_Assignments.findOne({where: {DaysAssigned:'Sat PM'}})
+const findSun = Shift_Assignments.findOne({where: {DaysAssigned:'Sun AM'}})
+const findSunPM = Shift_Assignments.findOne({where: {DaysAssigned:'Sun PM'}})
+if (findMon== true)
+{
+  Shift_Assignments.upsert({
+    Assignments: assignments,
+    AmntEmp: amount
+  })
+}
+if (findMPM== true)
+{
+  Shift_Assignments.upsert({
+    Assignments: assignments,
+    AmntEmp: amount
+  })
+}
+if (findTue== true)
+{
+  Shift_Assignments.upsert({
+    Assignments: assignments,
+    AmntEmp: amount
+  })
+}
+if (findTPM== true)
+{
+  Shift_Assignments.upsert({
+    Assignments: assignments,
+    AmntEmp: amount
+  })
+}
+if (findWed== true)
+{
+  Shift_Assignments.upsert({
+    Assignments: assignments,
+    AmntEmp: amount
+  })
+}
+if (findWPM== true)
+{
+  Shift_Assignments.upsert({
+    Assignments: assignments,
+    AmntEmp: amount
+  })
+}
+if (findThu== true)
+{
+  Shift_Assignments.upsert({
+    Assignments: assignments,
+    AmntEmp: amount
+  })
+}
+if (findThPM== true)
+{
+  Shift_Assignments.upsert({
+    Assignments: assignments,
+    AmntEmp: amount
+  })
+}
+if (findFri== true)
+{
+  Shift_Assignments.upsert({
+    Assignments: assignments,
+    AmntEmp: amount
+  })
+}
+if (findFPM== true)
+{
+  Shift_Assignments.upsert({
+    Assignments: assignments,
+    AmntEmp: amount
+  })
+}
+if (findSat== true)
+{
+  Shift_Assignments.upsert({
+    Assignments: assignments,
+    AmntEmp: amount
+  })
+}
+if (findSPM== true)
+{
+  Shift_Assignments.upsert({
+    Assignments: assignments,
+    AmntEmp: amount
+  })
+}
+if (findSun== true)
+{
+  Shift_Assignments.upsert({
+    Assignments: assignments,
+    AmntEmp: amount
+  })
+}
+if (findSunPM== true)
 {
   Shift_Assignments.upsert({
     Assignments: assignments,
