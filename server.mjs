@@ -469,7 +469,7 @@ if (checking == true)
 {
   Shift_Assignments.upsert({
     Assignments: assignments,
-    AmntEmp: amount
+    //AmntEmp: amount
   })
 }
 
