@@ -463,13 +463,13 @@ const dayCheck = await controller.assignmentsTable(res).then(info => {
 const week = info[i];
 return week
 }})
-const checking = Shift_Assignments.findOne({where: {DaysAssigned: dayCheck}})
+const checking = Shift_Assignments.findOne({where: {DaysAssigned:' dayCheck '}})
 
 if (checking == true)
 {
   Shift_Assignments.upsert({
     Assignments: assignments,
-    //AmntEmp: amount
+    AmntEmp: amount
   })
 }
 
