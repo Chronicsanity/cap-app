@@ -22,7 +22,7 @@
     </thead>
     <tbody>
        <tr><% for (var i = 0; i < week.length; i++) { %>
-        <div name = "week[i]"></div>
+        
         <td><form action="/shiftassignment" method="POST" class="pt-3">
           <div class="form-group">
               <input type="username" class="form-control" placeholder="Assignments" name="assignments">
@@ -40,7 +40,7 @@
       <% } %>
         </td>
       </tr>
-           
+           <input type = "hidden" name = "week" value = "<% week[i] %>" >
 
         </table>
         <button type="submit" value="Accept" class="btn btn-success"> Accept </button>
