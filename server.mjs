@@ -16,6 +16,7 @@ const QueuedUser = db.queuedUsers;
 const Shift = db.shift;
 const Jobs = db.jobs;
 const WeekofShifts = db.weekofshifts;
+const Shift_Assignments = db.shift_assignments;
 import mysql from 'mysql';
 import Promise from 'promise';
 import bcrypt from 'bcryptjs';
@@ -441,7 +442,46 @@ else{
 
 
   })
+
 })
+
+app.get('/shiftassignment', async function (req,res){
+
+  await controller.assignmentsTable(res).then(info => {
+    //console.log(info)
+    res.render('shiftassignment', {week: info}
+    )
+
+})
+})
+app.post('/shiftassignment', async function (req,res){
+
+const amount = req.body.amntEmployees;
+const assignments = req.body.assignments;
+const dayCheck = await controller.assignmentsTable(res).then(info => {
+ for (var i = 0; i < info.length; i++) {
+const week = info[i];
+return week
+}})
+const checking = Shift_Assignments.findOne({where: {DaysAssigned: dayCheck}})
+
+if (checking == true)
+{
+  Shift_Assignments.upsert({
+    Assignments: assignments,
+    AmntEmp: amount
+  })
+}
+
+
+
+  await controller.assignmentsTable(res).then(info => {
+    //console.log(info)
+    res.render('shiftassignment', {week: info}
+    )
+})
+})
+
 
 
 
