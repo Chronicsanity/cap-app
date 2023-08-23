@@ -479,7 +479,7 @@ if (await req.body.week == "Mon AM")
     AmntEmp: amount
   })
 }
-if (findMPM== true)
+if (req.body.week == "Mon PM")
 {
   Shift_Assignments.upsert({
     Assignments: assignments,
