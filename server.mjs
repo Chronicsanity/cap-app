@@ -459,21 +459,7 @@ app.post('/shiftassignment', async function (req,res){
 const amount = req.body.amntEmployees
 const assignments = req.body.assignments;
 const weekcheck = JSON.stringify(req.body.weekcheck).replace(/]|[/""[]/g, "")
-const attempt = weekcheck.forEach()
-const findMon = await Shift_Assignments.findOne({where: {DaysAssigned: "Mon AM"}})
-const findMPM = await Shift_Assignments.findOne({where: {DaysAssigned: "Mon PM"}})
-const findTue = await Shift_Assignments.findOne({where: {DaysAssigned:'Tue AM'}})
-const findTPM = await Shift_Assignments.findOne({where: {DaysAssigned:'Tue PM'}})
-const findWed = await Shift_Assignments.findOne({where: {DaysAssigned:'Wed AM'}})
-const findWPM = await Shift_Assignments.findOne({where: {DaysAssigned:'Wed PM'}})
-const findThu = await Shift_Assignments.findOne({where: {DaysAssigned:'Thu AM'}})
-const findThPM = await Shift_Assignments.findOne({where: {DaysAssigned:'Thu PM'}})
-const findFri = await Shift_Assignments.findOne({where: {DaysAssigned:'Fri AM'}})
-const findFPM = await Shift_Assignments.findOne({where: {DaysAssigned:'Fri PM'}})
-const findSat = await Shift_Assignments.findOne({where: {DaysAssigned:'Sat AM'}})
-const findSPM = await Shift_Assignments.findOne({where: {DaysAssigned:'Sat PM'}})
-const findSun = await Shift_Assignments.findOne({where: {DaysAssigned:'Sun AM'}})
-const findSunPM = await Shift_Assignments.findOne({where: {DaysAssigned:'Sun PM'}})
+
 console.log(weekcheck, "Mon AM")
 if (weekcheck === "Mon AM")
 {
