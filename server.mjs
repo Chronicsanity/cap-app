@@ -475,10 +475,11 @@ const findSunPM = await Shift_Assignments.findOne({where: {DaysAssigned:'Sun PM'
 console.log(findMon)
 if (await req.body.weekcheck == "Mon AM")
 {
-  await findMon.upsert({
+  await Shift_Assignments.upsert({
     Assignments: assignments,
     AmntEmp: amount
-  })
+  },
+  {where: {DaysAssigned: "Mon AM"}})
 }
 if (req.body.weekcheck == "Mon PM")
 {
