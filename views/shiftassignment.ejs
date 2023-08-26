@@ -23,7 +23,7 @@
     <tbody> 
        <tr><td><% for (var i = 0; i < week.length; i++) { %> </td>
         <script> const weekcheck = <%= week[i].DaysAssigned %>;</script>
-        <input type = "hidden" name = "weekcheck" value = "<%= week[i].DaysAssigned %>" > <% week[i] %> </input>
+        <input type = "hidden" name = "weekcheck" value = "weekcheck" > <% week[i] %> </input>
         <td><form action="/shiftassignment" method="POST" class="pt-3">
           <div class="form-group">
               <input type="username" class="form-control" placeholder="Assignments" name="assignments">
