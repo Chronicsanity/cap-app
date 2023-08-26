@@ -456,7 +456,7 @@ app.get('/shiftassignment', async function (req,res){
 })
 app.post('/shiftassignment', async function (req,res){
 
-const amount = controller.countFixed(req);
+const amount = req.body.amtEmployees
 const assignments = req.body.assignments;
 const findMon = await Shift_Assignments.findOne({where: {DaysAssigned: "Mon AM"}})
 const findMPM = await Shift_Assignments.findOne({where: {DaysAssigned: "Mon PM"}})
