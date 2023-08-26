@@ -22,7 +22,9 @@
     </thead>
     <tbody> 
        <tr><td><% for (var i = 0; i < week.length; i++) { %> </td>
-        <script> const weekcheck = <%= week[i] %>; </script>
+        <script> const weekcheck = <%= week[i] %>;
+        console.log(week[i]);
+        </script>
         <td><form action="/shiftassignment" method="POST" class="pt-3">
           <div class="form-group">
               <input type="username" class="form-control" placeholder="Assignments" name="assignments">
