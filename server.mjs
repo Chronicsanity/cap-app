@@ -459,8 +459,14 @@ app.post('/shiftassignment', async function (req,res){
 const amount = req.body.amntEmployees
 const assignments = req.body.assignments;
 const weekcheck = JSON.stringify(req.body.weekcheck).replace(/]|[/""[]/g, "")
+const result = [];
+for (var i = 0; i < weekcheck.length; i++){
+  result.push(
+    weekcheck[i]
+  )
+}
 
-console.log(weekcheck, "Mon AM")
+console.log(weekcheck, result)
 if (weekcheck === "Mon AM")
 {
   await Shift_Assignments.update({
