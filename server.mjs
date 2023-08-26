@@ -459,8 +459,8 @@ app.post('/shiftassignment', async function (req,res){
 const amount = req.body.amntEmployees
 const assignments = req.body.assignments;
 const check = req.body.weekcheck
-const weekcheck = JSON.stringify(req.body.weekcheck).replace(/]|[/""[]/g, "")
 const result = check.map(week => [week])
+const weekcheck = JSON.stringify(result).replace(/]|[/''[]/g, "")
 
 
 
