@@ -461,7 +461,7 @@ const assignments = req.body.assignments;
 const weekcheck = JSON.stringify(req.body.weekcheck).replace(/]|[/""[]/g, "")
 const result = [];
 for (var i = 0; i < weekcheck.length; i += result){
-  const chunk = weekcheck.slice(0,i + result)
+  const chunk = weekcheck.slice(6,i + result)
 
 
 
