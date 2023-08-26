@@ -473,7 +473,7 @@ const findSPM = await Shift_Assignments.findOne({where: {DaysAssigned:'Sat PM'}}
 const findSun = await Shift_Assignments.findOne({where: {DaysAssigned:'Sun AM'}})
 const findSunPM = await Shift_Assignments.findOne({where: {DaysAssigned:'Sun PM'}})
 console.log(req.body.weekcheck)
-if (await req.body.weekcheck === "Mon AM")
+if (await req.body.weekcheck === " Mon AM ")
 {
   await Shift_Assignments.update({
     Assignments: assignments,
