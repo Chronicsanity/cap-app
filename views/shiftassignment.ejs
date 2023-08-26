@@ -13,7 +13,7 @@
         <th><% for (var i = 0; i < week.length; i++) { %> </th>
         <td><%= week[i].DaysAssigned %> </td>
         <script> const weekcheck = <%= week[i].DaysAssigned %>;</script>
-        <input type = "hidden" name = "weekcheck" value = "weekcheck" > <% week[i].DaysAssigned %> </input>
+        <input type = "hidden" name = "weekcheck" value = "<%= week[i].DaysAssigned %>" > <% week[i].DaysAssigned %> </input>
           <%  } %>    
     
        
