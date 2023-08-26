@@ -461,10 +461,14 @@ const assignments = req.body.assignments;
 const check = req.body.weekcheck
 const result = check.map(week => [week])
 const weekcheck = JSON.stringify(result).replace(/]|[/''[]/g, "")
+const test = 10
+const attempt = []
+for (var i=0; i<weekcheck.length; i+=test) {
+  attempt.push(weekcheck.slice(i,i+test));
+}
 
 
-
-console.log(weekcheck, result)
+console.log(weekcheck, attempt)
 if (weekcheck === 'Mon AM')
 {
   await Shift_Assignments.update({
