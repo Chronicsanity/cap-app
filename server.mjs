@@ -465,7 +465,7 @@ const result = check.map(week => [week])
 
 
 console.log(weekcheck, result)
-if (weekcheck === "Mon AM")
+if (result === "Mon AM")
 {
   await Shift_Assignments.update({
     Assignments: assignments,
@@ -476,7 +476,7 @@ if (weekcheck === "Mon AM")
 }
 )
 }
-if (weekcheck === "Mon PM")
+if (result === "Mon PM")
 {
   await Shift_Assignments.update({
     Assignments: assignments,
@@ -486,7 +486,7 @@ if (weekcheck === "Mon PM")
   where: {DaysAssigned: "Mon PM"}
 })
 }
-if (weekcheck === "Tue AM")
+if (result === "Tue AM")
 {
   Shift_Assignments.update({
     Assignments: assignments,
