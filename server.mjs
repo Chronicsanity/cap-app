@@ -458,6 +458,7 @@ app.post('/shiftassignment', async function (req,res){
 
 const amount = req.body.amntEmployees
 const assignments = req.body.assignments;
+const weekcheck = JSON.stringify(req.body.weekcheck)
 const findMon = await Shift_Assignments.findOne({where: {DaysAssigned: "Mon AM"}})
 const findMPM = await Shift_Assignments.findOne({where: {DaysAssigned: "Mon PM"}})
 const findTue = await Shift_Assignments.findOne({where: {DaysAssigned:'Tue AM'}})
@@ -472,8 +473,8 @@ const findSat = await Shift_Assignments.findOne({where: {DaysAssigned:'Sat AM'}}
 const findSPM = await Shift_Assignments.findOne({where: {DaysAssigned:'Sat PM'}})
 const findSun = await Shift_Assignments.findOne({where: {DaysAssigned:'Sun AM'}})
 const findSunPM = await Shift_Assignments.findOne({where: {DaysAssigned:'Sun PM'}})
-console.log(req.body.weekcheck)
-if (await req.body.weekcheck === " Mon AM ")
+console.log(weekcheck)
+if (weekcheck === " Mon AM ")
 {
   await Shift_Assignments.update({
     Assignments: assignments,
