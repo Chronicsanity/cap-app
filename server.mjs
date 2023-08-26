@@ -472,7 +472,7 @@ const findSat = await Shift_Assignments.findOne({where: {DaysAssigned:'Sat AM'}}
 const findSPM = await Shift_Assignments.findOne({where: {DaysAssigned:'Sat PM'}})
 const findSun = await Shift_Assignments.findOne({where: {DaysAssigned:'Sun AM'}})
 const findSunPM = await Shift_Assignments.findOne({where: {DaysAssigned:'Sun PM'}})
-console.log(findMon)
+console.log(amount)
 if (await req.body.weekcheck == "Mon AM")
 {
   await Shift_Assignments.upsert({
