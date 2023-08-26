@@ -455,7 +455,7 @@ app.get('/shiftassignment', async function (req,res){
 })
 })
 app.post('/shiftassignment', async function (req,res){
-console.log(req.body.week)
+console.log(req.body.weekcheck)
 const amount = req.body.amntEmployees;
 const assignments = req.body.assignments;
 const findMon = Shift_Assignments.findOne({where: {DaysAssigned: "Mon AM"}})
@@ -472,7 +472,7 @@ const findSat = Shift_Assignments.findOne({where: {DaysAssigned:'Sat AM'}})
 const findSPM = Shift_Assignments.findOne({where: {DaysAssigned:'Sat PM'}})
 const findSun = Shift_Assignments.findOne({where: {DaysAssigned:'Sun AM'}})
 const findSunPM = Shift_Assignments.findOne({where: {DaysAssigned:'Sun PM'}})
-if (await req.body.week == "Mon AM")
+if (await req.body.weekcheck == "Mon AM")
 {
   findMon.upsert({
     Assignments: assignments,
