@@ -465,7 +465,7 @@ const weekcheck = JSON.stringify(result).replace(/]|[/''[]/g, "")
 
 
 console.log(weekcheck, result)
-if (result === 'Mon AM')
+if (weekcheck === 'Mon AM')
 {
   await Shift_Assignments.update({
     Assignments: assignments,
@@ -476,7 +476,7 @@ if (result === 'Mon AM')
 }
 )
 }
-if (result === "Mon PM")
+if (weekcheck === "Mon PM")
 {
   await Shift_Assignments.update({
     Assignments: assignments,
@@ -486,7 +486,7 @@ if (result === "Mon PM")
   where: {DaysAssigned: "Mon PM"}
 })
 }
-if (result === "Tue AM")
+if (weekcheck === "Tue AM")
 {
   Shift_Assignments.update({
     Assignments: assignments,
