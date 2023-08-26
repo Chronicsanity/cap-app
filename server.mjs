@@ -480,7 +480,7 @@ if (await req.body.weekcheck === "Mon AM")
     AmntEmp: amount
   },
   {
-    where: {DaysAssigned: "Mon PM"}
+  DaysAssigned: "Mon PM"
 }
 )
 }
