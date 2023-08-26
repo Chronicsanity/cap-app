@@ -459,6 +459,7 @@ app.post('/shiftassignment', async function (req,res){
 const amount = req.body.amntEmployees
 const assignments = req.body.assignments;
 const weekcheck = JSON.stringify(req.body.weekcheck).replace(/]|[/""[]/g, "")
+const attempt = weekcheck.forEach()
 const findMon = await Shift_Assignments.findOne({where: {DaysAssigned: "Mon AM"}})
 const findMPM = await Shift_Assignments.findOne({where: {DaysAssigned: "Mon PM"}})
 const findTue = await Shift_Assignments.findOne({where: {DaysAssigned:'Tue AM'}})
@@ -485,96 +486,135 @@ if (weekcheck === "Mon AM")
 }
 )
 }
-if (req.body.weekcheck == "Mon PM")
+if (weekcheck === "Mon PM")
 {
-  await findMPM.upsert({
+  await Shift_Assignments.update({
     Assignments: assignments,
     AmntEmp: amount
-  })
+  },
+  {
+  where: {DaysAssigned: "Mon PM"}
+})
 }
-if (findTue== true)
+if (weekcheck === "Tue AM")
 {
-  Shift_Assignments.upsert({
+  Shift_Assignments.update({
     Assignments: assignments,
     AmntEmp: amount
-  })
+  },
+  {
+  where: {DaysAssigned: "Tue AM"}
+})
 }
-if (findTPM== true)
+if (weekcheck === "Tue PM")
 {
-  Shift_Assignments.upsert({
+  Shift_Assignments.update({
     Assignments: assignments,
     AmntEmp: amount
-  })
+  },
+  {
+  where: {DaysAssigned: "Tue PM"}
+})
 }
-if (findWed== true)
+if (weekcheck === "Wed AM")
 {
-  Shift_Assignments.upsert({
+  Shift_Assignments.update({
     Assignments: assignments,
     AmntEmp: amount
-  })
+  },
+  {
+  where: {DaysAssigned: "Wed AM"}
+})
 }
-if (findWPM== true)
+if (weekcheck === "Wed PM")
 {
-  Shift_Assignments.upsert({
+  Shift_Assignments.update({
     Assignments: assignments,
     AmntEmp: amount
-  })
+  },
+  {
+  where: {DaysAssigned: "Wed PM"}
+})
 }
-if (findThu== true)
+if (weekcheck === "Thu AM")
 {
-  Shift_Assignments.upsert({
+  Shift_Assignments.update({
     Assignments: assignments,
     AmntEmp: amount
-  })
+  },
+  {
+  where: {DaysAssigned: "Thu AM"}
+})
 }
-if (findThPM== true)
+if (weekcheck === "Thu PM")
 {
-  Shift_Assignments.upsert({
+  Shift_Assignments.update({
     Assignments: assignments,
     AmntEmp: amount
-  })
+  },
+  {
+  where: {DaysAssigned: "Thu PM"}
+})
 }
-if (findFri== true)
+if (weekcheck === "Fri AM")
 {
-  Shift_Assignments.upsert({
+  Shift_Assignments.update({
     Assignments: assignments,
     AmntEmp: amount
-  })
+  },
+  {
+  where: {DaysAssigned: "Fri AM"}
+})
 }
-if (findFPM== true)
+if (weekcheck === "Fri PM")
 {
-  Shift_Assignments.upsert({
+  Shift_Assignments.update({
     Assignments: assignments,
     AmntEmp: amount
-  })
+  },
+  {
+  where: {DaysAssigned: "Fri PM"}
+})
 }
-if (findSat== true)
+if (weekcheck === "Sat AM")
 {
-  Shift_Assignments.upsert({
+  Shift_Assignments.update({
     Assignments: assignments,
     AmntEmp: amount
-  })
+  },
+  {
+  where: {DaysAssigned: "Sat AM"}
+})
 }
-if (findSPM== true)
+if (weekcheck === "Sat PM")
 {
-  Shift_Assignments.upsert({
+  Shift_Assignments.update({
     Assignments: assignments,
     AmntEmp: amount
-  })
+  },
+  {
+  where: {DaysAssigned: "Sat PM"}
+})
 }
-if (findSun== true)
+if (weekcheck === "Sun AM")
 {
-  Shift_Assignments.upsert({
+  Shift_Assignments.update({
     Assignments: assignments,
     AmntEmp: amount
-  })
+  },
+  {
+  where: {DaysAssigned: "Sun AM"}
+})
 }
-if (findSunPM== true)
+if (weekcheck === "Sun PM")
 {
-  Shift_Assignments.upsert({
+  Shift_Assignments.update({
     Assignments: assignments,
     AmntEmp: amount
-  })
+  },
+  {
+  where: {DaysAssigned: "Sun PM"}
+})
 }
 
 
