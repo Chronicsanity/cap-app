@@ -230,6 +230,23 @@ exports.scheduleTable = async function (res) {
                 })
               })  
               }
+
+              exports.countFixed = async function (req) {
+                const numberFixed = []
+                if (req.body.amntEmployees == "1") {
+                numberFixed.push(1)
+                }
+                if (req.body.amntEmployees == "2") {
+                  numberFixed.push(2)
+                  }
+                  if (req.body.amntEmployees == "3") {
+                    numberFixed.push(3)
+                    }
+                    if (req.body.amntEmployees == "") {
+                      numberFixed.push( )
+                      }
+                      return numberFixed;
+              }
               exports.checkedList = async function (req) {
                 const assigning = Shift_Assignments.DaysAssigned;
                 const checking = []
