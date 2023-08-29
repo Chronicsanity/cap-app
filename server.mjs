@@ -468,7 +468,7 @@ for (var i=0; i<weekcheck.length; i+=test) {
 }
 
 
-console.log(weekcheck, check, amount, assignments)
+console.log(weekcheck, check.indexOf("Mon AM"), amount, assignments)
 if (check === "Mon AM")
 {
   await Shift_Assignments.update({
