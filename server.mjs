@@ -468,7 +468,7 @@ for (var i=0; i<weekcheck.length; i+=test) {
 }
 
 
-console.log(weekcheck, amount.length, assignments.length, amount, assignments)
+console.log(weekcheck, amount.length, assignments.length, amount[1], assignments)
 if (check.indexOf("Mon AM") === 0)
 {
   if (amount.length > 1 || assignments.length > 1)
