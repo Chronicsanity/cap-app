@@ -461,6 +461,7 @@ const assignments = req.body.assignments;
 const check = req.body.weekcheck
 const result = check.map(week => [week])
 const weekcheck = JSON.stringify(result).replace(/]|[/''[]/g, "")
+const amountFixed = JSON.stringify(amount)
 const test = 6
 
 
@@ -470,7 +471,7 @@ if (weekcheck.indexOf("Mon AM") === 1)
 {
   await Shift_Assignments.update({
     Assignments: assignments,
-    AmntEmp: amount
+    AmntEmp: amountFixed
   },
   {
   where: {DaysAssigned: "Mon AM"}
