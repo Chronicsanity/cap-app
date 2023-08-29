@@ -471,18 +471,39 @@ for (var i=0; i<weekcheck.length; i+=test) {
 console.log(weekcheck, amount.length, assignments.length, amount, assignments)
 if (check.indexOf("Mon AM") === 0)
 {
-
+  if (amount.length > 1)
+  {
+    await Shift_Assignments.update({
+      Assignments: assignments[1],
+      AmntEmp: amount[1]
+    },
+    {
+      where: {DaysAssigned: "Mon AM"}
+    })
+  }
+else{
   await Shift_Assignments.update({
     Assignments: assignments,
     AmntEmp: amount
   },
   {
   where: {DaysAssigned: "Mon AM"}
+})
 }
-)
 }
 if (check.indexOf("Mon PM") === 0)
 {
+  if (amount.length > 1)
+  {
+    await Shift_Assignments.update({
+      Assignments: assignments[2],
+      AmntEmp: amount[2]
+    },
+    {
+      where: {DaysAssigned: "Mon PM"}
+    })
+  }
+else{
   await Shift_Assignments.update({
     Assignments: assignments,
     AmntEmp: amount
@@ -490,6 +511,7 @@ if (check.indexOf("Mon PM") === 0)
   {
   where: {DaysAssigned: "Mon PM"}
 })
+}
 }
 if (weekcheck === "Tue AM")
 {
