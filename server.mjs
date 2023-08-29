@@ -474,7 +474,7 @@ if (check.indexOf("Mon AM") === 0)
   if (amount.length > 1 || assignments.length > 1)
   {
     await Shift_Assignments.update({
-      Assignments: assignments[0],
+      Assignments: assignments[1],
       AmntEmp: amount[0]
     },
     {
