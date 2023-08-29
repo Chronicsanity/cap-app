@@ -469,7 +469,7 @@ for (var i=0; i<weekcheck.length; i+=test) {
 
 
 console.log(weekcheck)
-if (weekcheck === 'Mon AM')
+if (weekcheck === "Mon AM")
 {
   await Shift_Assignments.update({
     Assignments: assignments,
