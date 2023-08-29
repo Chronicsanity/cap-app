@@ -460,7 +460,7 @@ const amount = req.body.amntEmployees
 const assignments = req.body.assignments;
 const check = req.body.weekcheck
 const weekcheck = JSON.stringify(check).replace(/]|[/''[]/g, "")
-const result = check.map(week => [week])
+
 const test = 6
 const attempt = []
 for (var i=0; i<weekcheck.length; i+=test) {
