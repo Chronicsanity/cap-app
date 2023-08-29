@@ -477,7 +477,7 @@ if (weekcheck.indexOf("Mon AM") === 1)
 }
 )
 }
-if (weekcheck === "Mon PM")
+if (weekcheck.indexOf("Mon PM") === 1)
 {
   await Shift_Assignments.update({
     Assignments: assignments,
