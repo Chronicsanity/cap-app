@@ -471,7 +471,7 @@ for (var i=0; i<weekcheck.length; i+=test) {
 console.log(weekcheck, amount.length, assignments.length, amount, assignments)
 if (check.indexOf("Mon AM") === 0)
 {
-  if (amount.length > 1)
+  if (amount.length > 1 || assignments.length > 1)
   {
     await Shift_Assignments.update({
       Assignments: assignments[1],
@@ -493,7 +493,7 @@ else{
 }
 if (check.indexOf("Mon PM") === 0)
 {
-  if (amount.length > 1)
+  if (amount.length > 1 || assignments.length > 1)
   {
     await Shift_Assignments.update({
       Assignments: assignments[2],
