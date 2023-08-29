@@ -465,7 +465,7 @@ const test = 6
 
 
 
-console.log(weekcheck, attempt)
+console.log(weekcheck)
 if (weekcheck.indexOf('Mon AM') === 1)
 {
   await Shift_Assignments.update({
