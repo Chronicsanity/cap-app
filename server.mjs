@@ -479,6 +479,7 @@ if (check.indexOf("Mon AM") >= 0)
     {
       where: {DaysAssigned: "Mon AM"}
     })
+    i++
   }
   }
 else{
@@ -526,6 +527,7 @@ if (check.indexOf("Tue AM") >= 0)
       where: {DaysAssigned: "Tue AM"}
     })
   }
+  i++
 }
 else{
  
