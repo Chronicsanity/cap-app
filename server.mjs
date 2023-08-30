@@ -463,19 +463,26 @@ const check = await req.body.weekcheck
 const weekcheck = JSON.stringify(check).replace(/]|[/''[]/g, "")
 const counter = []
 
-
+assignments.forEach(i => {
+  if (counter[i]){
+    counter[i] += 1;
+  }
+  else {counter[i] = 1}
+})
 
 for (var i=0; i<check.length; i++) {
+  
   
 }
 if (check.indexOf("Mon AM") >= 0)
 {
   if (check.length > 1)
   {
+    
      
     await Shift_Assignments.update({
-      Assignments: assignments[i],
-      AmntEmp: amount[i]
+      Assignments: assignments[counter],
+      AmntEmp: amount[counter]
     },
     {
       where: {DaysAssigned: "Mon AM"}
@@ -499,8 +506,8 @@ if (check.indexOf("Mon PM") >= 0)
   {
     
     await Shift_Assignments.update({
-      Assignments: assignments[i],
-      AmntEmp: amount[i]
+      Assignments: assignments[counter],
+      AmntEmp: amount[counter]
     },
     {
       where: {DaysAssigned: "Mon PM"}
@@ -524,8 +531,8 @@ if (check.indexOf("Tue AM") >= 0)
   {
     
     await Shift_Assignments.update({
-      Assignments: assignments[i],
-      AmntEmp: amount[i]
+      Assignments: assignments[counter],
+      AmntEmp: amount[counter]
     },
     {
       where: {DaysAssigned: "Tue AM"}
