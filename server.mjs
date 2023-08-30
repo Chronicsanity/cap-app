@@ -522,6 +522,7 @@ if (check.indexOf("Tue AM") >= 0)
   if (check.length > 1)
   {
     for (var j=0; j<assignments.length; j++) {
+      console.log(assignments, assignments[j])
     await Shift_Assignments.update({
       Assignments: assignments[j],
       AmntEmp: amount[j]
