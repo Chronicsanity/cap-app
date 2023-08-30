@@ -461,25 +461,25 @@ const assignments = await req.body.assignments;
 const check = await req.body.weekcheck
 const weekcheck = JSON.stringify(check).replace(/]|[/''[]/g, "")
 
-const test = 6
-const attempt = []
-for (var i=0; i<weekcheck.length; i+=test) {
-  attempt.push(weekcheck.slice(i,i+test));
+
+
+
+for (var i=0; i<check.length; i++) {
+  
 }
-
-
-
 if (check.indexOf("Mon AM") >= 0)
 {
-  if (check.length > 0)
+  if (amount.length > 1)
   {
+    for (var i=0; i<amount.length; i++) {
     await Shift_Assignments.update({
-      Assignments: assignments[0],
-      AmntEmp: amount[0]
+      Assignments: assignments[i],
+      AmntEmp: amount[i]
     },
     {
       where: {DaysAssigned: "Mon AM"}
     })
+  }
   }
 else{
   await Shift_Assignments.update({
@@ -493,7 +493,7 @@ else{
 }
 if (check.indexOf("Mon PM") >= 0)
 {
-  if (amount.length > 1 || assignments.length > 1)
+  if (amount.length > 1)
   {
     await Shift_Assignments.update({
       Assignments: assignments[1],
@@ -517,17 +517,18 @@ if (check.indexOf("Tue AM") >= 0)
 {
   if (amount.length > 1)
   {
-    console.log("If", amount.length)
+    for (var i=0; i<amount.length; i++) {
     await Shift_Assignments.update({
-      Assignments: assignments[2],
-      AmntEmp: amount[2]
+      Assignments: assignments[i],
+      AmntEmp: amount[i]
     },
     {
       where: {DaysAssigned: "Tue AM"}
     })
   }
+}
 else{
-  console.log(assignments, amount, "else")
+ 
   await Shift_Assignments.update({
     Assignments: assignments,
     AmntEmp: amount
