@@ -470,7 +470,7 @@ for (var i=0; i<check.length; i++) {
 }
 if (check.indexOf("Mon AM") >= 0)
 {
-  if (amount.length > 1)
+  if (check.length > 1)
   {
     for (var i=0; i<amount.length; i++) {
     await Shift_Assignments.update({
@@ -495,7 +495,7 @@ else{
 }
 if (check.indexOf("Mon PM") >= 0)
 {
-  if (amount.length > 1)
+  if (check.length > 1)
   {
     for (var i=0; i<amount.length; i++) {
     await Shift_Assignments.update({
@@ -521,7 +521,7 @@ else{
 }
 if (check.indexOf("Tue AM") >= 0)
 {
-  if (amount.length > 1)
+  if (check.length > 1)
   {
     for (var i=0; i<amount.length; i++) {
     await Shift_Assignments.update({
@@ -547,7 +547,7 @@ else{
 }
 if (check.indexOf("Tue PM") >= 0)
 {
-  if (amount.length > 1)
+  if (check.length > 1)
   {
   for (var i=0; i<amount.length; i++) {
   await Shift_Assignments.update({
@@ -575,7 +575,7 @@ else
 
 if (check.indexOf("Wed AM") >= 0)
 {
-  if (amount.length > 1)
+  if (check.length > 1)
   {
   for (var i=0; i<amount.length; i++) {
   await Shift_Assignments.update({
@@ -602,7 +602,7 @@ else
 }
 if (check.indexOf("Wed PM") >= 0)
 {
-  if (amount.length > 1)
+  if (check.length > 1)
   {
     for (var i=0; i<amount.length; i++) {
     await Shift_Assignments.update({
@@ -627,7 +627,7 @@ else{
 }
 if (check.indexOf("Thu AM") >= 0)
 {{
-  if (amount.length > 1)
+  if (check.length > 1)
   {
     for (var i=0; i<amount.length; i++) {
     await Shift_Assignments.update({
@@ -653,7 +653,7 @@ else{
 
 if (check.indexOf("Thu PM") >= 0)
 {
-  if (amount.length > 1)
+  if (check.length > 1)
   {
     for (var i=0; i<amount.length; i++) {
     await Shift_Assignments.update({
@@ -679,7 +679,7 @@ else{
 
 if (check.indexOf("Fri AM") >= 0)
 {
-  if (amount.length > 1)
+  if (check.length > 1)
   {
     for (var i=0; i<amount.length; i++) {
     await Shift_Assignments.update({
@@ -704,7 +704,7 @@ else{
 }
 if (check.indexOf("Fri PM") >= 0)
 {
-  if (amount.length > 1)
+  if (check.length > 1)
   {
     for (var i=0; i<amount.length; i++) {
     await Shift_Assignments.update({
@@ -729,7 +729,7 @@ else{
 }
 if (check.indexOf("Sat AM") >= 0)
 {
-  if (amount.length > 1)
+  if (check.length > 1)
   {
     for (var i=0; i<amount.length; i++) {
     await Shift_Assignments.update({
@@ -754,7 +754,7 @@ else{
 }
 if (check.indexOf("Sat PM") >= 0)
 {
-  if (amount.length > 1)
+  if (check.length > 1)
   {
     for (var i=0; i<amount.length; i++) {
     await Shift_Assignments.update({
@@ -779,7 +779,7 @@ else{
 }
 if (check.indexOf("Sun AM") >= 0)
 {
-  if (amount.length > 1)
+  if (check.length > 1)
   {
     for (var i=0; i<amount.length; i++) {
     await Shift_Assignments.update({
@@ -805,7 +805,7 @@ else{
 
 if (check.indexOf("Sun PM") >= 0)
 {
-  if (amount.length > 1)
+  if (check.length > 1)
   {
     for (var i=0; i<amount.length; i++) {
     await Shift_Assignments.update({
