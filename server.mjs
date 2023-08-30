@@ -807,7 +807,7 @@ if (check.indexOf("Sun PM") >= 0)
 {
   if (check.length > 1)
   {
-    for (var i=0; i<amount.length; i++) {
+    for (var i=0; i<check.length; i++) {
     await Shift_Assignments.update({
       Assignments: assignments[i],
       AmntEmp: amount[i]
