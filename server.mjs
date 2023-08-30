@@ -468,7 +468,7 @@ for (var i=0; i<weekcheck.length; i+=test) {
 }
 
 
-console.log(assignments[0], assignments[1], check.indexOf("Mon PM"), check.indexOf("Tue AM"))
+
 if (check.indexOf("Mon AM") >= 0)
 {
   if (amount.length > 1 || assignments.length > 1)
@@ -517,6 +517,7 @@ if (check.indexOf("Tue AM") >= 0)
 {
   if (amount.length > 1 || assignments.length > 1)
   {
+    console.log("If")
     await Shift_Assignments.update({
       Assignments: assignments[2],
       AmntEmp: amount[2]
@@ -526,10 +527,10 @@ if (check.indexOf("Tue AM") >= 0)
     })
   }
 else{
-  console.log(assignments, amount)
+  console.log(assignments, amount, "else")
   await Shift_Assignments.update({
-    Assignments: assignments[0],
-    AmntEmp: amount[0]
+    Assignments: assignments,
+    AmntEmp: amount
   },
   {
   where: {DaysAssigned: "Tue AM"}
