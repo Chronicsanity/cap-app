@@ -515,7 +515,7 @@ else{
 }
 if (check.indexOf("Tue AM") >= 0)
 {
-  if (amount.length != 1 || assignments.length != 1)
+  if (amount.length != 0 || assignments.length != 0)
   {
     console.log("If")
     await Shift_Assignments.update({
