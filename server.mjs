@@ -461,13 +461,10 @@ const amount = await req.body.amntEmployees
 const assignments = await req.body.assignments;
 const check = await req.body.weekcheck
 const weekcheck = JSON.stringify(check).replace(/]|[/''[]/g, "")
-const counter = assignments.reduce(function (value, value2) {
-  return (
-      value[value2] ? ++value[value2] :(value[value2] = 1),
-      value
-  );
-}, {});
-
+const counter = {}
+for ( counter<assignments.length; counter++;) {
+  console.log(counter)
+}
 for (var i=0; i<check.length; i++) {
   
   
