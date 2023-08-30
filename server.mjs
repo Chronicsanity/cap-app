@@ -518,8 +518,8 @@ if (check.indexOf("Tue AM") >= 0)
   if (amount.length > 1 || assignments.length > 1)
   {
     await Shift_Assignments.update({
-      Assignments: assignments[3],
-      AmntEmp: amount[3]
+      Assignments: assignments[2],
+      AmntEmp: amount[2]
     },
     {
       where: {DaysAssigned: "Tue AM"}
