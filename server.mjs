@@ -526,6 +526,7 @@ if (check.indexOf("Tue AM") >= 0)
     })
   }
 else{
+  console.log(assignments, amount)
   await Shift_Assignments.update({
     Assignments: assignments,
     AmntEmp: amount
