@@ -521,7 +521,7 @@ else{
   where: {DaysAssigned: "Mon PM"}
 })
 }
-}
+
 if (check.indexOf("Tue AM") >= 0)
 {
   if (check.length > 1)
@@ -825,7 +825,7 @@ else{
 }
 }
 }
-
+  }
 }
 
   await controller.assignmentsTable(res).then(info => {
