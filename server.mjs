@@ -463,11 +463,11 @@ const check = await req.body.weekcheck
 const weekcheck = JSON.stringify(check).replace(/]|[/''[]/g, "")
 const counter = 0;
 
-for (var i=0; i<check.length; i++) {
-  if(check[i] instanceof Object) {
+for (var i=0; i<assignments.length; i++) {
+  if(assignments[i] instanceof Object) {
     counter++;
   }
-  
+  for (var i=0; i<assignments.length;) {
   
 
 if (check.indexOf("Mon AM") >= 0)
@@ -475,7 +475,7 @@ if (check.indexOf("Mon AM") >= 0)
   if (check.length > 1)
   {
     
-    for (var i=0; i<amount.length; i++) {
+   
     await Shift_Assignments.update({
       Assignments: assignments[i],
       AmntEmp: amount[i]
@@ -483,10 +483,7 @@ if (check.indexOf("Mon AM") >= 0)
     {
       where: {DaysAssigned: "Mon AM"}
     })
-    for (var j=0; j<counter.length; j++) {
-      console.log(j, counter)
-      }
-  }
+  i++
   
   }
 else{
@@ -503,7 +500,6 @@ if (check.indexOf("Mon PM") >= 0)
 {
   if (check.length > 1)
   {
-    for (var i=0; i<check.length; i++) {
     await Shift_Assignments.update({
       Assignments: assignments[i],
       AmntEmp: amount[i]
@@ -511,7 +507,7 @@ if (check.indexOf("Mon PM") >= 0)
     {
       where: {DaysAssigned: "Mon PM"}
     })
-    }
+    i++
   }
   }
 else{
@@ -528,15 +524,16 @@ if (check.indexOf("Tue AM") >= 0)
 {
   if (check.length > 1)
   {
-    for (var i=0; i<check.length; i++) {
+   
     await Shift_Assignments.update({
-      Assignments: assignments[j],
-      AmntEmp: amount[j]
+      Assignments: assignments[i],
+      AmntEmp: amount[i]
     },
     {
       where: {DaysAssigned: "Tue AM"}
     })
-  }}
+    i++
+  }
 else{
  
   await Shift_Assignments.update({
@@ -826,7 +823,7 @@ else{
 }
 }
   }
-}
+}}
 
   await controller.assignmentsTable(res).then(info => {
     //console.log(info)
