@@ -476,10 +476,11 @@ if (check.indexOf("Mon AM") >= 0)
   {
     for (var j=0; j<counter.length; j++) {
     console.log(j, counter)
-     
+    }
+    for (var i=0; i<amount.length; i++) {
     await Shift_Assignments.update({
-      Assignments: assignments[j],
-      AmntEmp: amount[j]
+      Assignments: assignments[i],
+      AmntEmp: amount[i]
     },
     {
       where: {DaysAssigned: "Mon AM"}
@@ -501,16 +502,16 @@ if (check.indexOf("Mon PM") >= 0)
 {
   if (check.length > 1)
   {
- 
+    for (var i=0; i<check.length; i++) {
     await Shift_Assignments.update({
-      Assignments: assignments[j],
-      AmntEmp: amount[j]
+      Assignments: assignments[i],
+      AmntEmp: amount[i]
     },
     {
       where: {DaysAssigned: "Mon PM"}
     })
     }
-
+  }
   }
 else{
   await Shift_Assignments.update({
@@ -526,8 +527,7 @@ if (check.indexOf("Tue AM") >= 0)
 {
   if (check.length > 1)
   {
-   
-      console.log(assignments[j], j)
+    for (var i=0; i<check.length; i++) {
     await Shift_Assignments.update({
       Assignments: assignments[j],
       AmntEmp: amount[j]
@@ -535,8 +535,7 @@ if (check.indexOf("Tue AM") >= 0)
     {
       where: {DaysAssigned: "Tue AM"}
     })
-    
-}
+  }}
 else{
  
   await Shift_Assignments.update({
@@ -546,7 +545,7 @@ else{
   {
   where: {DaysAssigned: "Tue AM"}
 })
-}
+  }
 }
 if (check.indexOf("Tue PM") >= 0)
 {
