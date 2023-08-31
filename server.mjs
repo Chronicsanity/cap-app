@@ -461,16 +461,21 @@ const amount = await req.body.amntEmployees
 const assignments = await req.body.assignments;
 const check = await req.body.weekcheck
 const weekcheck = JSON.stringify(check).replace(/]|[/''[]/g, "")
-const counter = {}
+const counter = 0;
 for (var i=0; i<check.length; i++) {
-  
+if(check[i] instanceof Object) {
+  counter++;
+}}
+
+for (var i=0; i<check.length; i++) {
+  for (var j=0; j<counter.length; j++) {
   
 
 if (check.indexOf("Mon AM") >= 0)
 {
   if (check.length > 1)
   {
-    for (var j=0; j<assignments.length; j++) {
+   
      
     await Shift_Assignments.update({
       Assignments: assignments[j],
@@ -491,12 +496,12 @@ else{
   where: {DaysAssigned: "Mon AM"}
 })
 }
-}
+
 if (check.indexOf("Mon PM") >= 0)
 {
   if (check.length > 1)
   {
-    for (var j=0; j<assignments.length; j++) {
+ 
     await Shift_Assignments.update({
       Assignments: assignments[j],
       AmntEmp: amount[j]
@@ -521,7 +526,7 @@ if (check.indexOf("Tue AM") >= 0)
 {
   if (check.length > 1)
   {
-    for (var j=0; j<assignments.length; j++) {
+   
       console.log(assignments[j], j)
     await Shift_Assignments.update({
       Assignments: assignments[j],
@@ -530,7 +535,7 @@ if (check.indexOf("Tue AM") >= 0)
     {
       where: {DaysAssigned: "Tue AM"}
     })
-    }
+    
 }
 else{
  
@@ -547,7 +552,7 @@ if (check.indexOf("Tue PM") >= 0)
 {
   if (check.length > 1)
   {
-  for (var i=0; i<check.length; i++) {
+ 
   await Shift_Assignments.update({
     Assignments: assignments[i],
     AmntEmp: amount[i]
@@ -556,9 +561,7 @@ if (check.indexOf("Tue PM") >= 0)
     where: {DaysAssigned: "Tue PM"}
   })
     }
-      i++
-}
-
+     
 else
 {
   await Shift_Assignments.update({
@@ -575,7 +578,6 @@ if (check.indexOf("Wed AM") >= 0)
 {
   if (check.length > 1)
   {
-  for (var i=0; i<check.length; i++) {
   await Shift_Assignments.update({
     Assignments: assignments[i],
     AmntEmp: amount[i]
@@ -583,8 +585,6 @@ if (check.indexOf("Wed AM") >= 0)
   {
     where: {DaysAssigned: "Wed AM"}
   })
-    }
-      i++
 }
 
 else
@@ -602,7 +602,6 @@ if (check.indexOf("Wed PM") >= 0)
 {
   if (check.length > 1)
   {
-    for (var i=0; i<amount.length; i++) {
     await Shift_Assignments.update({
       Assignments: assignments[i],
       AmntEmp: amount[i]
@@ -610,8 +609,7 @@ if (check.indexOf("Wed PM") >= 0)
     {
       where: {DaysAssigned: "Wed PM"}
     })
-    i++
-  }
+  
   }
 else{
   await Shift_Assignments.update({
