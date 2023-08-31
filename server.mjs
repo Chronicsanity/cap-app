@@ -467,13 +467,14 @@ for (var i=0; i<check.length; i++) {
   if(check[i] instanceof Object) {
     counter++;
   }
-  for (var j=0; j<counter.length; j++) {
+  
   
 
 if (check.indexOf("Mon AM") >= 0)
 {
   if (check.length > 1)
   {
+    for (var j=0; j<counter.length; j++) {
     console.log(j, counter)
      
     await Shift_Assignments.update({
