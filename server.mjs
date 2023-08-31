@@ -557,6 +557,7 @@ if (check.indexOf("Tue PM") >= 0)
   {
     where: {DaysAssigned: "Tue PM"}
   })
+  i++
     }
      
 else
@@ -582,6 +583,7 @@ if (check.indexOf("Wed AM") >= 0)
   {
     where: {DaysAssigned: "Wed AM"}
   })
+  i++
 }
 
 else
@@ -606,7 +608,7 @@ if (check.indexOf("Wed PM") >= 0)
     {
       where: {DaysAssigned: "Wed PM"}
     })
-  
+  i++
   }
 else{
   await Shift_Assignments.update({
@@ -622,7 +624,7 @@ if (check.indexOf("Thu AM") >= 0)
 {{
   if (check.length > 1)
   {
-    for (var i=0; i<amount.length; i++) {
+ 
     await Shift_Assignments.update({
       Assignments: assignments[i],
       AmntEmp: amount[i]
@@ -631,7 +633,7 @@ if (check.indexOf("Thu AM") >= 0)
       where: {DaysAssigned: "Thu AM"}
     })
     i++
-  }
+  
   }
 else{
   await Shift_Assignments.update({
@@ -648,7 +650,6 @@ if (check.indexOf("Thu PM") >= 0)
 {
   if (check.length > 1)
   {
-    for (var i=0; i<amount.length; i++) {
     await Shift_Assignments.update({
       Assignments: assignments[i],
       AmntEmp: amount[i]
@@ -657,7 +658,7 @@ if (check.indexOf("Thu PM") >= 0)
       where: {DaysAssigned: "Thu PM"}
     })
     i++
-  }
+  
   }
 else{
   await Shift_Assignments.update({
@@ -674,7 +675,6 @@ if (check.indexOf("Fri AM") >= 0)
 {
   if (check.length > 1)
   {
-    for (var i=0; i<amount.length; i++) {
     await Shift_Assignments.update({
       Assignments: assignments[i],
       AmntEmp: amount[i]
@@ -683,7 +683,6 @@ if (check.indexOf("Fri AM") >= 0)
       where: {DaysAssigned: "Fri AM"}
     })
     i++
-  }
   }
 else{
   await Shift_Assignments.update({
@@ -699,7 +698,6 @@ if (check.indexOf("Fri PM") >= 0)
 {
   if (check.length > 1)
   {
-    for (var i=0; i<amount.length; i++) {
     await Shift_Assignments.update({
       Assignments: assignments[i],
       AmntEmp: amount[i]
@@ -708,7 +706,6 @@ if (check.indexOf("Fri PM") >= 0)
       where: {DaysAssigned: "Fri PM"}
     })
     i++
-  }
   }
 else{
   await Shift_Assignments.update({
@@ -724,7 +721,6 @@ if (check.indexOf("Sat AM") >= 0)
 {
   if (check.length > 1)
   {
-    for (var i=0; i<amount.length; i++) {
     await Shift_Assignments.update({
       Assignments: assignments[i],
       AmntEmp: amount[i]
@@ -733,7 +729,6 @@ if (check.indexOf("Sat AM") >= 0)
       where: {DaysAssigned: "Sat AM"}
     })
     i++
-  }
   }
 else{
   await Shift_Assignments.update({
@@ -749,7 +744,6 @@ if (check.indexOf("Sat PM") >= 0)
 {
   if (check.length > 1)
   {
-    for (var i=0; i<amount.length; i++) {
     await Shift_Assignments.update({
       Assignments: assignments[i],
       AmntEmp: amount[i]
@@ -758,7 +752,7 @@ if (check.indexOf("Sat PM") >= 0)
       where: {DaysAssigned: "Sat PM"}
     })
     i++
-  }
+  
   }
 else{
   await Shift_Assignments.update({
@@ -774,7 +768,6 @@ if (check.indexOf("Sun AM") >= 0)
 {
   if (check.length > 1)
   {
-    for (var i=0; i<amount.length; i++) {
     await Shift_Assignments.update({
       Assignments: assignments[i],
       AmntEmp: amount[i]
@@ -783,7 +776,6 @@ if (check.indexOf("Sun AM") >= 0)
       where: {DaysAssigned: "Sun AM"}
     })
     i++
-  }
   }
 else{
   await Shift_Assignments.update({
@@ -800,7 +792,6 @@ if (check.indexOf("Sun PM") >= 0)
 {
   if (check.length > 1)
   {
-    for (var i=0; i<check.length; i++) {
     await Shift_Assignments.update({
       Assignments: assignments[i],
       AmntEmp: amount[i]
@@ -809,7 +800,6 @@ if (check.indexOf("Sun PM") >= 0)
       where: {DaysAssigned: "Sun PM"}
     })
     i++
-  }
   }
 else{
   await Shift_Assignments.update({
@@ -821,8 +811,7 @@ else{
 })
 }
 }
-}
-  }
+}}
 }}
 
   await controller.assignmentsTable(res).then(info => {
