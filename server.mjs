@@ -474,9 +474,7 @@ if (check.indexOf("Mon AM") >= 0)
 {
   if (check.length > 1)
   {
-    for (var j=0; j<counter.length; j++) {
-    console.log(j, counter)
-    }
+    
     for (var i=0; i<amount.length; i++) {
     await Shift_Assignments.update({
       Assignments: assignments[i],
@@ -485,6 +483,9 @@ if (check.indexOf("Mon AM") >= 0)
     {
       where: {DaysAssigned: "Mon AM"}
     })
+    for (var j=0; j<counter.length; j++) {
+      console.log(j, counter)
+      }
   }
   
   }
