@@ -462,12 +462,11 @@ const assignments = await req.body.assignments;
 const check = await req.body.weekcheck
 const weekcheck = JSON.stringify(check).replace(/]|[/''[]/g, "")
 const counter = 0;
-for (var i=0; i<check.length; i++) {
-if(check[i] instanceof Object) {
-  counter++;
-}}
 
 for (var i=0; i<check.length; i++) {
+  if(check[i] instanceof Object) {
+    counter++;
+  }
   for (var j=0; j<counter.length; j++) {
   
 
