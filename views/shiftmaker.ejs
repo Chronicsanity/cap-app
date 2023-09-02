@@ -29,7 +29,7 @@
           <option value="<%= data[i].user %>"><%= data[i].user %></option>
   <% } %>
         </select>
-        <div id="datepicker" class="input-group bootstrap-datepicker" data-date-format="mm-dd-yyyy">
+        <div id="datepicker" class="input-group bootstrap-datepicker" data-date-format="mm-dd-yyyy DD">
        <input class="form-control" 
               type="text" name="datetimes">
        <span class="input-group-addon">
@@ -40,7 +40,7 @@
 <script>
   
       $("#datepicker").datepicker({startDate: '0m',
-    endDate: '+4w'
+    endDate: '+1w'
       })
 </script>
       <div class="input-group bootstrap-timepicker timepicker">
