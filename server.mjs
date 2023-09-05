@@ -814,9 +814,9 @@ else{
 }}
 }}
 
-  await controller.assignmentsTable(res).then(info => {
+  await controller.weekTable(res).then(info => {
     //console.log(info)
-    res.render('shiftassignment', {week: info}
+    res.render('shiftmaker', {data: info}
     )
 })
 })
