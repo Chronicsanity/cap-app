@@ -561,9 +561,9 @@ if (check.indexOf("Mon PM") >= 0)
     })
     
     await valueCheck(i).then(function(result){
-console.log(JSON.stringify(result).replace(/]|[/''\[]/g, ""))
+console.log(JSON.stringify(result).replace(/]\|[/''|/""[]/g, ""))
       Jobs.upsert({
-       job_value: JSON.stringify(result).replace(/]|[/''\[]/g, ""),
+       job_value: JSON.stringify(result).replace(/]|[/|''[]/g, ""),
        jobs: assignments[i],
        min_title: min_title[i]
      })
