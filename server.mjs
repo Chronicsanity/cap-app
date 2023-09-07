@@ -521,13 +521,13 @@ if (check.indexOf("Mon AM") >= 0)
       where: {DaysAssigned: "Mon AM"}
     })
 await valueCheck(i).then(function(result){
-    console.log(result, valcounter)})
 
-    await Jobs.upsert({
-      job_value: await valueCheck(i),
+     Jobs.upsert({
+      job_value: result,
       jobs: assignments[i],
       min_title: min_title[i]
-    });
+    })
+  });
   i++
   
   }
@@ -560,11 +560,14 @@ if (check.indexOf("Mon PM") >= 0)
       where: {DaysAssigned: "Mon PM"}
     })
     
-    await Jobs.upsert({
-      job_value: await valueCheck(i),
-      jobs: assignments[i],
-      min_title: min_title[i]
-    })
+    await valueCheck(i).then(function(result){
+
+      Jobs.upsert({
+       job_value: result,
+       jobs: assignments[i],
+       min_title: min_title[i]
+     })
+   });
     i++
   }
   }
