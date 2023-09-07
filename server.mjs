@@ -846,7 +846,7 @@ else{
 
   await controller.weekTable(res).then(info => {
     //console.log(info)
-    res.render('shiftmaker', {data: info}
+    res.render('shiftmaker', {jobData: info}
     )
 })
 })
