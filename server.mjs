@@ -348,11 +348,6 @@ const jobData = job_list;
 const fixedName = JSON.stringify(check).replace(/[\{\}\"]/g, "");
 
 
-
-
-
- 
-
  
   const name = [];
   const job = [];
@@ -378,10 +373,10 @@ if (conValue.indexOf(EmpValue) >= 0) {
   return (res.status(404).send("They are not trained for this job yet!"))
 }
 const shiftEmployee = await Shift.findOne( {where: {employee_name: fixedName}});
-if (shiftEmployee === check && req.body.datetimes === date) {
+if (shiftEmployee == check && req.body.datetimes == date) {
   if (Shift.time_start === time1)
   {console.log("nope")
-  return (res.status(404).send("no"))
+   (res.status(404).send("no"))
 }
 else{
   Shift.upsert({
