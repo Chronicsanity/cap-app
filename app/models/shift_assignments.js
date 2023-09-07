@@ -14,7 +14,10 @@ module.exports = (sequelize, Sequelize) => {
         },
 		DaysAssigned: {
 			type: Sequelize.STRING
-		}
+		},
+	min_title: {
+		type: Sequelize.STRING
+	}
 
 	}, 
 	
