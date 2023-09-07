@@ -843,10 +843,16 @@ else{
 }
 }}
 }}
+const employee_list = await Employee.findAll();
+const job_list = await Jobs.findAll();
+const data = employee_list;
+const jobData = job_list;
+
 
   await controller.weekTable(res).then(info => {
-    //console.log(info)
-    res.render('shiftmaker', {jobData: info}
+    
+  
+    res.render('shiftmaker', {week: info, jobData: jobData, data: data}
     )
 })
 })
