@@ -463,7 +463,7 @@ const min_title = await req.body.min_title
 const check = await req.body.weekcheck
 const weekcheck = JSON.stringify(check).replace(/]|[/''[]/g, "")
 async function valueCheck(i) { 
-  const valcounter = 0;
+  const valcounter = {};
 if (min_title[i] == "headChef")
 {
   valcounter = 4;
