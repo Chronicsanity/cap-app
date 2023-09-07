@@ -482,7 +482,7 @@ if (min_title[i] == "busser")
 }
 return valcounter}
 
-const valcounter = 0;
+const valcounter = {};
 if (min_title == "headChef")
 {
   valcounter = 4;
