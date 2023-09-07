@@ -480,7 +480,7 @@ if (min_title[i] == "busser")
 {
   valcounter.push("1")
 }
-return valcounter}
+return JSON.stringify(valcounter)}
 
 const valcounter = [];
 if (min_title == "headChef")
@@ -522,7 +522,7 @@ if (check.indexOf("Mon AM") >= 0)
     })
     console.log(valueCheck(i), valcounter)
     await Jobs.upsert({
-      job_value: JSON.stringify(await valueCheck(i)),
+      job_value: await valueCheck(i),
       jobs: assignments[i],
       min_title: min_title[i]
     });
@@ -559,7 +559,7 @@ if (check.indexOf("Mon PM") >= 0)
     })
     
     await Jobs.upsert({
-      job_value: JSON.stringify(await valueCheck(i)),
+      job_value: await valueCheck(i),
       jobs: assignments[i],
       min_title: min_title[i]
     })
