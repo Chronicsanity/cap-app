@@ -1041,7 +1041,7 @@ const jobData = job_list;
   await controller.weekTable(res).then(info => {
     
   
-    res.render('shiftmaker', {week: info, jobData: jobData, data: data}
+    res.render('shiftassignment', {week: info, jobData: jobData, data: data}
     )
 })
 })
