@@ -521,7 +521,7 @@ if (check.indexOf("Mon AM") >= 0)
       where: {DaysAssigned: "Mon AM"}
     })
 await valueCheck(i).then(function(result){
-const check = JSON.stringify(result).replace(/'\''/g, "");
+const check = JSON.stringify(result).replace(/'\'""'/g);
      Jobs.upsert({
       job_value: check,
       jobs: assignments[i],
