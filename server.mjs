@@ -521,7 +521,7 @@ if (check.indexOf("Mon AM") >= 0)
       where: {DaysAssigned: "Mon AM"}
     })
 await valueCheck(i).then(function(result){
-
+console.log(result)
      Jobs.upsert({
       job_value: result,
       jobs: assignments[i],
@@ -561,7 +561,7 @@ if (check.indexOf("Mon PM") >= 0)
     })
     
     await valueCheck(i).then(function(result){
-
+console.log(result)
       Jobs.upsert({
        job_value: result,
        jobs: assignments[i],
@@ -600,7 +600,7 @@ if (check.indexOf("Tue AM") >= 0)
     {
       where: {DaysAssigned: "Tue AM"}
     })
-    
+ 
     await Jobs.upsert({
       job_value: valueCheck(i),
       jobs: assignments[i],
