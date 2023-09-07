@@ -520,6 +520,7 @@ if (check.indexOf("Mon AM") >= 0)
     {
       where: {DaysAssigned: "Mon AM"}
     })
+    console.log(valueCheck(i), valcounter)
     await Jobs.upsert({
       job_value: valueCheck(i),
       jobs: assignments[i],
