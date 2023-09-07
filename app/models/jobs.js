@@ -1,7 +1,7 @@
 module.exports = (sequelize, Sequelize) => {
 	const shift = sequelize.define("jobs", {
 	 job_value: {
-		type: Sequelize.INTEGER,
+		type: Sequelize.STRING,
 	 },
 	  jobs: {
 		type: Sequelize.STRING,
