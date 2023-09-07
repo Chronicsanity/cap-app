@@ -522,7 +522,8 @@ if (check.indexOf("Mon AM") >= 0)
     })
 await valueCheck(i).then(function(result){
 console.log(result)
-const check = result
+const check = result;
+console.log(check)
      Jobs.upsert({
       job_value: check,
       jobs: assignments[i],
