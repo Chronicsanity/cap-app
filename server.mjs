@@ -522,7 +522,7 @@ if (check.indexOf("Mon AM") >= 0)
     })
     console.log(valueCheck(i), valcounter)
     await Jobs.upsert({
-      job_value: valueCheck(i),
+      job_value: JSON.stringify(await valueCheck(i)),
       jobs: assignments[i],
       min_title: min_title[i]
     });
@@ -559,7 +559,7 @@ if (check.indexOf("Mon PM") >= 0)
     })
     
     await Jobs.upsert({
-      job_value: valueCheck(i),
+      job_value: JSON.stringify(await valueCheck(i)),
       jobs: assignments[i],
       min_title: min_title[i]
     })
