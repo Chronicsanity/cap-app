@@ -520,14 +520,13 @@ if (check.indexOf("Mon AM") >= 0)
     {
       where: {DaysAssigned: "Mon AM"}
     })
-    
+    await Jobs.upsert({
+      job_value: valueCheck(i),
+      jobs: assignments[i],
+      min_title: min_title[i]
+    });
   i++
- 
-  await Jobs.upsert({
-    job_value: valueCheck(i),
-    jobs: assignments[i],
-    min_title: min_title[i]
-  })
+
   }
 else{
   await Shift_Assignments.update({
@@ -557,12 +556,13 @@ if (check.indexOf("Mon PM") >= 0)
     {
       where: {DaysAssigned: "Mon PM"}
     })
-    i++
+    
     await Jobs.upsert({
       job_value: valueCheck(i),
       jobs: assignments[i],
       min_title: min_title[i]
     })
+    i++
   }
   }
 else{
@@ -594,12 +594,13 @@ if (check.indexOf("Tue AM") >= 0)
     {
       where: {DaysAssigned: "Tue AM"}
     })
-    i++
+    
     await Jobs.upsert({
       job_value: valueCheck(i),
       jobs: assignments[i],
       min_title: min_title[i]
     })
+    i++
   }
 else{
  
@@ -631,12 +632,13 @@ if (check.indexOf("Tue PM") >= 0)
   {
     where: {DaysAssigned: "Tue PM"}
   })
-  i++
+ 
   await Jobs.upsert({
     job_value: valueCheck(i),
     jobs: assignments[i],
     min_title: min_title[i]
   })
+  i++
     }
      
 else
@@ -669,12 +671,12 @@ if (check.indexOf("Wed AM") >= 0)
   {
     where: {DaysAssigned: "Wed AM"}
   })
-  i++
   await Jobs.upsert({
     job_value: valueCheck(i),
     jobs: assignments[i],
     min_title: min_title[i]
   })
+  i++
 }
 
 else
@@ -706,12 +708,12 @@ if (check.indexOf("Wed PM") >= 0)
     {
       where: {DaysAssigned: "Wed PM"}
     })
-  i++
   await Jobs.upsert({
     job_value: valueCheck(i),
     jobs: assignments[i],
     min_title: min_title[i]
   })
+  i++
   }
 else{
   await Shift_Assignments.update({
@@ -742,12 +744,13 @@ if (check.indexOf("Thu AM") >= 0)
     {
       where: {DaysAssigned: "Thu AM"}
     })
-    i++
+    
     await Jobs.upsert({
       job_value: valueCheck(i),
       jobs: assignments[i],
       min_title: min_title[i]
     })
+    i++
   }
 else{
   await Shift_Assignments.update({
@@ -778,12 +781,13 @@ if (check.indexOf("Thu PM") >= 0)
     {
       where: {DaysAssigned: "Thu PM"}
     })
-    i++
+    
     await Jobs.upsert({
       job_value: valueCheck(i),
       jobs: assignments[i],
       min_title: min_title[i]
     })
+    i++
   }
 else{
   await Shift_Assignments.update({
@@ -814,12 +818,13 @@ if (check.indexOf("Fri AM") >= 0)
     {
       where: {DaysAssigned: "Fri AM"}
     })
-    i++
+  
     await Jobs.upsert({
       job_value: valueCheck(i),
       jobs: assignments[i],
       min_title: min_title[i]
     })
+    i++
   }
 else{
   await Shift_Assignments.update({
@@ -849,12 +854,13 @@ if (check.indexOf("Fri PM") >= 0)
     {
       where: {DaysAssigned: "Fri PM"}
     })
-    i++
+    
     await Jobs.upsert({
       job_value: valueCheck(i),
       jobs: assignments[i],
       min_title: min_title[i]
     })
+    i++
   }
 else{
   await Shift_Assignments.update({
@@ -884,12 +890,13 @@ if (check.indexOf("Sat AM") >= 0)
     {
       where: {DaysAssigned: "Sat AM"}
     })
-    i++
+    
     await Jobs.upsert({
       job_value: valueCheck(i),
       jobs: assignments[i],
       min_title: min_title[i]
     })
+    i++
   }
 else{
   await Shift_Assignments.update({
@@ -919,12 +926,13 @@ if (check.indexOf("Sat PM") >= 0)
     {
       where: {DaysAssigned: "Sat PM"}
     })
-    i++
+    
     await Jobs.upsert({
       job_value: valueCheck(i),
       jobs: assignments[i],
       min_title: min_title[i]
     })
+    i++
   }
 else{
   await Shift_Assignments.update({
@@ -954,12 +962,13 @@ if (check.indexOf("Sun AM") >= 0)
     {
       where: {DaysAssigned: "Sun AM"}
     })
-    i++
+    
     await Jobs.upsert({
       job_value: valueCheck(i),
       jobs: assignments[i],
       min_title: min_title[i]
     })
+    i++
   }
 else{
   await Shift_Assignments.update({
@@ -991,12 +1000,13 @@ if (check.indexOf("Sun PM") >= 0)
     {
       where: {DaysAssigned: "Sun PM"}
     })
-    i++
+    
     await Jobs.upsert({
       job_value: valueCheck(i),
       jobs: assignments[i],
       min_title: min_title[i]
     })
+    i++
   }
 else{
   await Shift_Assignments.update({
