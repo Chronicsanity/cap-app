@@ -368,10 +368,11 @@ const fixedName = JSON.stringify(check).replace(/[\{\}\"]/g, "");
   datetime.push(req.body.datetimes);
  
  
-
+const conValue = confirmed_job.job_value;
+const EmpValue = confirmed_Employee.job_value
  
 
-if (confirmed_job.job_value > confirmed_Employee.job_value) { 
+if (conValue.indexOf(EmpValue) >= 0) { 
   const data = employee_list
    const jobData = job_list;
   return (res.status(404).send("They are not trained for this job yet!"))
