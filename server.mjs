@@ -480,7 +480,7 @@ if (min_title[i] == "busser")
 {
   valcounter.push("1")
 }
-return JSON.stringify(valcounter).replace(/]|[/''[]/g, "")}
+return JSON.stringify(valcounter)}
 
 const valcounter = [];
 if (min_title == "headChef")
@@ -521,7 +521,7 @@ if (check.indexOf("Mon AM") >= 0)
       where: {DaysAssigned: "Mon AM"}
     })
 await valueCheck(i).then(function(result){
-const check = result;
+const check = JSON.stringify(result);
      Jobs.upsert({
       job_value: check,
       jobs: assignments[i],
