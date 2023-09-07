@@ -462,14 +462,49 @@ const assignments = await req.body.assignments;
 const min_title = await req.body.min_title
 const check = await req.body.weekcheck
 const weekcheck = JSON.stringify(check).replace(/]|[/''[]/g, "")
-const counter = 0;
+async function valueCheck(i) { 
+  const valcounter = 0;
+if (min_title[i] == "headChef")
+{
+  valcounter = 4;
+}
+if (min_title[i] == "sousChef")
+{
+  valcounter = 3;
+}
+if (min_title[i] == "lineCook")
+{
+  valcounter = 4;
+}
+if (min_title[i] == "busser")
+{
+  valcounter = 1;
+}
+return valcounter}
 
+const valcounter = 0;
+if (min_title == "headChef")
+{
+  valcounter = 4;
+}
+if (min_title == "sousChef")
+{
+  valcounter = 3;
+}
+if (min_title == "lineCook")
+{
+  valcounter = 4;
+}
+if (min_title == "busser")
+{
+  valcounter = 1;
+}
 for (var i=0; i<assignments.length; i++) {
   if(assignments[i] instanceof Object) {
     counter++;
   }
   for (var i=0; i<assignments.length;) {
-  
+
 
 if (check.indexOf("Mon AM") >= 0)
 {
@@ -485,8 +520,14 @@ if (check.indexOf("Mon AM") >= 0)
     {
       where: {DaysAssigned: "Mon AM"}
     })
+    
   i++
-  
+ 
+  await Jobs.upsert({
+    job_value: valueCheck(i),
+    jobs: assignments[i],
+    min_title: min_title[i]
+  })
   }
 else{
   await Shift_Assignments.update({
@@ -496,6 +537,11 @@ else{
   },
   {
   where: {DaysAssigned: "Mon AM"}
+})
+await Jobs.upsert({
+  job_value: valcounter,
+  jobs: assignments,
+  min_title: min_title
 })
 }
 
@@ -512,6 +558,11 @@ if (check.indexOf("Mon PM") >= 0)
       where: {DaysAssigned: "Mon PM"}
     })
     i++
+    await Jobs.upsert({
+      job_value: valueCheck(i),
+      jobs: assignments[i],
+      min_title: min_title[i]
+    })
   }
   }
 else{
@@ -522,6 +573,11 @@ else{
   },
   {
   where: {DaysAssigned: "Mon PM"}
+})
+await Jobs.upsert({
+  job_value: valcounter,
+  jobs: assignments,
+  min_title: min_title
 })
 }
 
@@ -539,6 +595,11 @@ if (check.indexOf("Tue AM") >= 0)
       where: {DaysAssigned: "Tue AM"}
     })
     i++
+    await Jobs.upsert({
+      job_value: valueCheck(i),
+      jobs: assignments[i],
+      min_title: min_title[i]
+    })
   }
 else{
  
@@ -549,6 +610,11 @@ else{
   },
   {
   where: {DaysAssigned: "Tue AM"}
+})
+await Jobs.upsert({
+  job_value: valcounter,
+  jobs: assignments,
+  min_title: min_title
 })
   }
 }
@@ -566,6 +632,11 @@ if (check.indexOf("Tue PM") >= 0)
     where: {DaysAssigned: "Tue PM"}
   })
   i++
+  await Jobs.upsert({
+    job_value: valueCheck(i),
+    jobs: assignments[i],
+    min_title: min_title[i]
+  })
     }
      
 else
@@ -577,6 +648,11 @@ else
   },
   {
   where: {DaysAssigned: "Tue PM"}
+})
+await Jobs.upsert({
+  job_value: valcounter,
+  jobs: assignments,
+  min_title: min_title
 })
 }
 }
@@ -594,6 +670,11 @@ if (check.indexOf("Wed AM") >= 0)
     where: {DaysAssigned: "Wed AM"}
   })
   i++
+  await Jobs.upsert({
+    job_value: valueCheck(i),
+    jobs: assignments[i],
+    min_title: min_title[i]
+  })
 }
 
 else
@@ -605,6 +686,11 @@ else
   },
   {
   where: {DaysAssigned: "Wed AM"}
+})
+await Jobs.upsert({
+  job_value: valcounter,
+  jobs: assignments,
+  min_title: min_title
 })
 }
 }
@@ -621,6 +707,11 @@ if (check.indexOf("Wed PM") >= 0)
       where: {DaysAssigned: "Wed PM"}
     })
   i++
+  await Jobs.upsert({
+    job_value: valueCheck(i),
+    jobs: assignments[i],
+    min_title: min_title[i]
+  })
   }
 else{
   await Shift_Assignments.update({
@@ -630,6 +721,11 @@ else{
   },
   {
   where: {DaysAssigned: "Wed PM"}
+})
+await Jobs.upsert({
+  job_value: valcounter,
+  jobs: assignments,
+  min_title: min_title
 })
 }
 }
@@ -647,7 +743,11 @@ if (check.indexOf("Thu AM") >= 0)
       where: {DaysAssigned: "Thu AM"}
     })
     i++
-  
+    await Jobs.upsert({
+      job_value: valueCheck(i),
+      jobs: assignments[i],
+      min_title: min_title[i]
+    })
   }
 else{
   await Shift_Assignments.update({
@@ -657,6 +757,11 @@ else{
   },
   {
   where: {DaysAssigned: "Thu AM"}
+})
+await Jobs.upsert({
+  job_value: valcounter,
+  jobs: assignments,
+  min_title: min_title
 })
 }
 }
@@ -674,7 +779,11 @@ if (check.indexOf("Thu PM") >= 0)
       where: {DaysAssigned: "Thu PM"}
     })
     i++
-  
+    await Jobs.upsert({
+      job_value: valueCheck(i),
+      jobs: assignments[i],
+      min_title: min_title[i]
+    })
   }
 else{
   await Shift_Assignments.update({
@@ -684,6 +793,11 @@ else{
   },
   {
   where: {DaysAssigned: "Thu PM"}
+})
+await Jobs.upsert({
+  job_value: valcounter,
+  jobs: assignments,
+  min_title: min_title
 })
 }
 }
@@ -701,6 +815,11 @@ if (check.indexOf("Fri AM") >= 0)
       where: {DaysAssigned: "Fri AM"}
     })
     i++
+    await Jobs.upsert({
+      job_value: valueCheck(i),
+      jobs: assignments[i],
+      min_title: min_title[i]
+    })
   }
 else{
   await Shift_Assignments.update({
@@ -710,6 +829,11 @@ else{
   },
   {
   where: {DaysAssigned: "Fri AM"}
+})
+await Jobs.upsert({
+  job_value: valcounter,
+  jobs: assignments,
+  min_title: min_title
 })
 }
 }
@@ -726,6 +850,11 @@ if (check.indexOf("Fri PM") >= 0)
       where: {DaysAssigned: "Fri PM"}
     })
     i++
+    await Jobs.upsert({
+      job_value: valueCheck(i),
+      jobs: assignments[i],
+      min_title: min_title[i]
+    })
   }
 else{
   await Shift_Assignments.update({
@@ -735,6 +864,11 @@ else{
   },
   {
   where: {DaysAssigned: "Fri PM"}
+})
+await Jobs.upsert({
+  job_value: valcounter,
+  jobs: assignments,
+  min_title: min_title
 })
 }
 }
@@ -751,6 +885,11 @@ if (check.indexOf("Sat AM") >= 0)
       where: {DaysAssigned: "Sat AM"}
     })
     i++
+    await Jobs.upsert({
+      job_value: valueCheck(i),
+      jobs: assignments[i],
+      min_title: min_title[i]
+    })
   }
 else{
   await Shift_Assignments.update({
@@ -760,6 +899,11 @@ else{
   },
   {
   where: {DaysAssigned: "Sat AM"}
+})
+await Jobs.upsert({
+  job_value: valcounter,
+  jobs: assignments,
+  min_title: min_title
 })
 }
 }
@@ -776,7 +920,11 @@ if (check.indexOf("Sat PM") >= 0)
       where: {DaysAssigned: "Sat PM"}
     })
     i++
-  
+    await Jobs.upsert({
+      job_value: valueCheck(i),
+      jobs: assignments[i],
+      min_title: min_title[i]
+    })
   }
 else{
   await Shift_Assignments.update({
@@ -786,6 +934,11 @@ else{
   },
   {
   where: {DaysAssigned: "Sat PM"}
+})
+await Jobs.upsert({
+  job_value: valcounter,
+  jobs: assignments,
+  min_title: min_title
 })
 }
 }
@@ -802,6 +955,11 @@ if (check.indexOf("Sun AM") >= 0)
       where: {DaysAssigned: "Sun AM"}
     })
     i++
+    await Jobs.upsert({
+      job_value: valueCheck(i),
+      jobs: assignments[i],
+      min_title: min_title[i]
+    })
   }
 else{
   await Shift_Assignments.update({
@@ -811,6 +969,11 @@ else{
   },
   {
   where: {DaysAssigned: "Sun AM"}
+})
+await Jobs.upsert({
+  job_value: valcounter,
+  jobs: assignments,
+  min_title: min_title
 })
 }
 }
@@ -829,6 +992,11 @@ if (check.indexOf("Sun PM") >= 0)
       where: {DaysAssigned: "Sun PM"}
     })
     i++
+    await Jobs.upsert({
+      job_value: valueCheck(i),
+      jobs: assignments[i],
+      min_title: min_title[i]
+    })
   }
 else{
   await Shift_Assignments.update({
@@ -838,6 +1006,11 @@ else{
   },
   {
   where: {DaysAssigned: "Sun PM"}
+})
+await Jobs.upsert({
+  job_value: valcounter,
+  jobs: assignments,
+  min_title: min_title
 })
 }
 }
