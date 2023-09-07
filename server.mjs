@@ -463,41 +463,41 @@ const min_title = await req.body.min_title
 const check = await req.body.weekcheck
 const weekcheck = JSON.stringify(check).replace(/]|[/''[]/g, "")
 async function valueCheck(i) { 
-  const valcounter = {};
+  const valcounter = [];
 if (min_title[i] == "headChef")
 {
-  valcounter.push(4)
+  valcounter.push("4")
 }
 if (min_title[i] == "sousChef")
 {
-  valcounter.push(3)
+  valcounter.push("3")
 }
 if (min_title[i] == "lineCook")
 {
-  valcounter.push(2)
+  valcounter.push("2")
 }
 if (min_title[i] == "busser")
 {
-  valcounter.push(1)
+  valcounter.push("1")
 }
 return valcounter}
 
-const valcounter = {};
+const valcounter = [];
 if (min_title == "headChef")
 {
-  valcounter.push(4)
+  valcounter.push("4")
 }
 if (min_title == "sousChef")
 {
-  valcounter.push(3)
+  valcounter.push("3")
 }
 if (min_title == "lineCook")
 {
-  valcounter.push(2)
+  valcounter.push("2")
 }
 if (min_title == "busser")
 {
-  valcounter.push(1)
+  valcounter.push("1")
 }
 for (var i=0; i<assignments.length; i++) {
   if(assignments[i] instanceof Object) {
