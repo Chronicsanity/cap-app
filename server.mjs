@@ -372,7 +372,7 @@ if (conValue.indexOf(EmpValue) >= 0) {
    const jobData = job_list;
   return (res.status(404).send("They are not trained for this job yet!"))
 }
-if (datetime.indexOf("Monday")>= 0 && start.indexOf("AM")>= 0) {
+if (datetime.indexOf("Monday")>= -1 && start.toString().indexOf("AM") > -1) {
 if (await controller.dayChecker("Mon AM") > 0)
 {
   for (var i=0; i < await controller.dayChecker("Mon AM");)
@@ -390,7 +390,7 @@ if (await controller.dayChecker("Mon AM") > 0)
   }
   console.log("Days Amount Full!")
   }}
-  if (datetime.indexOf("Monday")>= -1 && start.toString().indexOf(PM) > -1) {
+  if (datetime.indexOf("Monday")>= -1 && start.toString().indexOf("PM") > -1) {
 if (await controller.dayChecker("Mon PM") > 0)
 {
   for (var i=0; i < await controller.dayChecker("Mon PM");)
@@ -410,7 +410,7 @@ if (await controller.dayChecker("Mon PM") > 0)
   }
 }
 
-   const PM = "PM"
+
  console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id)}
 
  const employee_list = await Employee.findAll();
