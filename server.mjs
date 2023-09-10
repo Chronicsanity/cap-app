@@ -370,7 +370,7 @@ const EmpValue = confirmed_Employee.job_value
 if (conValue.indexOf(EmpValue) > -1) { 
   const data = employee_list
    const jobData = job_list;
-  return (res.status(404).send("They are not trained for this job yet!"))
+  return (res.status(404).send("They are not trained for this job yet!"+conValue.indexOf(EmpValue) ))
 }
 if (datetime.indexOf("Monday")>= -1 && start.toString().indexOf("AM") > -1) {
 if (await controller.dayChecker("Mon AM") > 0)
