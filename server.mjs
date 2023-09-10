@@ -367,7 +367,7 @@ const conValue = confirmed_job.job_value;
 const EmpValue = confirmed_Employee.job_value
  
 
-if (conValue.indexOf(EmpValue) >= 0) { 
+if (conValue.indexOf(EmpValue) > -1) { 
   const data = employee_list
    const jobData = job_list;
   return (res.status(404).send("They are not trained for this job yet!"))
