@@ -375,7 +375,7 @@ if (conValue.indexOf(EmpValue) >= 0) {
 
 if (await controller.dayChecker("Mon AM") > 0)
 {
-  for (i=0;i< await controller.dayChecker("Mon AM"); i++)
+  for (var i=0; i < await controller.dayChecker("Mon AM"); i++)
   {
   Shift.upsert({
 
@@ -388,9 +388,9 @@ if (await controller.dayChecker("Mon AM") > 0)
    })
   }
   }
-  if (await controller.dayChecker("Mon PM") > 0)
+if (await controller.dayChecker("Mon PM") > 0)
 {
-  for (i=0;i< await controller.dayChecker("Mon PM"); i++)
+  for (var i=0; i < await controller.dayChecker("Mon PM"); i++)
   {
   Shift.upsert({
 
