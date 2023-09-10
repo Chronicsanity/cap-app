@@ -13,7 +13,7 @@
         <th><% for (var i = 0; i < week.length; i++) { if (week[i].DaysAssigned != null) {%> </th>
         <td><%= week[i].DaysAssigned %> </td>
                     
-          <%  } else {<%= week[i-1].DaysAssigned %>}} %>    
+          <%=  } else { week[i-1].DaysAssigned}} %>    
     
        
     
