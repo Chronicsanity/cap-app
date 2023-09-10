@@ -518,7 +518,7 @@ if (check.indexOf("Mon AM") >= 0)
   {
     
    
-    await Shift_Assignments.update({
+    await Shift_Assignments.create({
       Assignments: assignments[i],
       AmntEmp: amount[i],
       min_title: min_title[i]
@@ -527,7 +527,7 @@ if (check.indexOf("Mon AM") >= 0)
       where: {DaysAssigned: "Mon AM"}
     })
 await valueCheck(i).then(function(result){
-     Jobs.upsert({
+     Jobs.update({
       job_value: result,
       jobs: assignments[i],
       min_title: min_title[i]
@@ -537,7 +537,7 @@ await valueCheck(i).then(function(result){
   
   }
 else{
-  await Shift_Assignments.update({
+  await Shift_Assignments.create({
     Assignments: assignments,
     AmntEmp: amount,
     min_title: min_title
@@ -556,7 +556,7 @@ if (check.indexOf("Mon PM") >= 0)
 {
   if (check.length > 1)
   {
-    await Shift_Assignments.update({
+    await Shift_Assignments.create({
       Assignments: assignments[i],
       AmntEmp: amount[i],
       min_title: min_title[i]
@@ -577,7 +577,7 @@ if (check.indexOf("Mon PM") >= 0)
   }
   }
 else{
-  await Shift_Assignments.update({
+  await Shift_Assignments.create({
     Assignments: assignments,
     AmntEmp: amount,
     min_title: min_title
@@ -597,7 +597,7 @@ if (check.indexOf("Tue AM") >= 0)
   if (check.length > 1)
   {
    
-    await Shift_Assignments.update({
+    await Shift_Assignments.create({
       Assignments: assignments[i],
       AmntEmp: amount[i],
       min_title: min_title[i]
@@ -615,7 +615,7 @@ if (check.indexOf("Tue AM") >= 0)
   }
 else{
  
-  await Shift_Assignments.update({
+  await Shift_Assignments.create({
     Assignments: assignments,
     AmntEmp: amount,
     min_title: min_title
@@ -635,7 +635,7 @@ if (check.indexOf("Tue PM") >= 0)
   if (check.length > 1)
   {
  
-  await Shift_Assignments.update({
+  await Shift_Assignments.create({
     Assignments: assignments[i],
     AmntEmp: amount[i],
     min_title: min_title[i]
@@ -654,7 +654,7 @@ if (check.indexOf("Tue PM") >= 0)
      
 else
 {
-  await Shift_Assignments.update({
+  await Shift_Assignments.create({
     Assignments: assignments,
     AmntEmp: amount,
     min_title: min_title

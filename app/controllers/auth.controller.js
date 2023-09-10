@@ -400,6 +400,10 @@ exports.scheduleTable = async function (res) {
                 const amountPull = await Shift_Assignments.findOne( {where: {DaysAssigned: day}})
               return amountPull.AmntEmp
             }
+
+            exports.assignmentChecker = async function (day) {
+              const assignment = await Shift_Assignments.finddayChecker(day)
+            }
 exports.signin = async (req, res) => {
 
   try {
