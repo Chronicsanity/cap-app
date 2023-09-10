@@ -1046,7 +1046,7 @@ const data = employee_list;
 const jobData = job_list;
 
 
-  await controller.weekTable(res).then(info => {
+await controller.assignmentsTable(res).then(info => {
     
   
     res.render('shiftassignment', {week: info, jobData: jobData, data: data}
