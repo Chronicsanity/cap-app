@@ -395,7 +395,7 @@ if (await controller.dayChecker("Mon PM") > 0)
 {
   for (var i=0; i < await controller.dayChecker("Mon PM");)
   {
-    Shift.upsert({
+    Shift.create({
     
       employee_name: name,
       jobs: job,
