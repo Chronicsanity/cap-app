@@ -521,6 +521,7 @@ if (check.indexOf("Mon AM") >= 0)
     await Shift_Assignments.upsert({
       Assignments: assignments[i],
       AmntEmp: amount[i],
+      DaysAssigned: "Mon AM",
       min_title: min_title[i]
     },
     {
@@ -562,6 +563,7 @@ if (check.indexOf("Mon PM") >= 0)
     await Shift_Assignments.update({
       Assignments: assignments[i],
       AmntEmp: amount[i],
+      DaysAssigned: "Mon PM",
       min_title: min_title[i]
     },
     {
