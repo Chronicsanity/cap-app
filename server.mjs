@@ -536,6 +536,9 @@ await valueCheck(i).then(function(result){
   i++
   
   }
+  else if (check.indexOf("Mon AM") = -1) {
+    await Shift_Assignments.destroy({where:{DaysAssigned: "Mon AM"}})
+  }
 else{
   await Shift_Assignments.update({
     Assignments: assignments,
