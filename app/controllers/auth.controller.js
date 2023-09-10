@@ -387,9 +387,7 @@ exports.scheduleTable = async function (res) {
                     
                    const object = res;
                    const shiftFix = Shift_Assignments.DaysAssigned;
-                   if (shiftFix.indexOf(object) > -1){
-                    return object.findOne({where:{DaysAssigned: object}})
-                   }
+                  
                    // console.log(object)
                    return resolve (object);
                     

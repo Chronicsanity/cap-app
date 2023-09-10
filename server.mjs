@@ -579,6 +579,9 @@ if (check.indexOf("Mon PM") >= 0)
     i++
   }
   }
+  else if (check.indexOf("Mon PM") = -1) {
+    await Shift_Assignments.destroy({where:{DaysAssigned: "Mon PM"}})
+  }
 else{
   await Shift_Assignments.update({
     Assignments: assignments,
@@ -615,6 +618,9 @@ if (check.indexOf("Tue AM") >= 0)
       min_title: min_title[i]
     })
     i++
+  }
+  else if (check.indexOf("Tue AM") = -1) {
+    await Shift_Assignments.destroy({where:{DaysAssigned: "Tue AM"}})
   }
 else{
  
@@ -654,7 +660,9 @@ if (check.indexOf("Tue PM") >= 0)
   })
   i++
     }
-     
+    else if (check.indexOf("Tue PM") = -1) {
+      await Shift_Assignments.destroy({where:{DaysAssigned: "Tue PM"}})
+    }
 else
 {
   await Shift_Assignments.update({
