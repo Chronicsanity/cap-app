@@ -372,10 +372,10 @@ if (conValue.indexOf(EmpValue) >= 0) {
    const jobData = job_list;
   return (res.status(404).send("They are not trained for this job yet!"))
 }
-
+if (datetime.indexOf("Monday")>= 0 && start.indexOf("AM")>= 0) {
 if (await controller.dayChecker("Mon AM") > 0)
 {
-  for (var i=0; i < await controller.dayChecker("Mon AM"); i++)
+  for (var i=0; i < await controller.dayChecker("Mon AM");)
   {
   Shift.upsert({
 
@@ -386,11 +386,14 @@ if (await controller.dayChecker("Mon AM") > 0)
      date: datetime,
      
    })
+   i++
   }
-  }
+  console.log("Days Amount Full!")
+  }}
+  if (datetime.indexOf("Monday")>= 0 && start.indexOf("PM")>= 0) {
 if (await controller.dayChecker("Mon PM") > 0)
 {
-  for (var i=0; i < await controller.dayChecker("Mon PM"); i++)
+  for (var i=0; i < await controller.dayChecker("Mon PM");)
   {
   Shift.upsert({
 
@@ -401,8 +404,11 @@ if (await controller.dayChecker("Mon PM") > 0)
      date: datetime,
      
    })
+   i++
   }
+  console.log("Day's Amount Full!")
   }
+}
 
   console.log(fixedName+" "+check+" "+req.body.datetimes+" "+date)
    Shift.create({
