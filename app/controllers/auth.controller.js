@@ -387,12 +387,12 @@ exports.scheduleTable = async function (res) {
                     
                    const object = res;
                    const shiftFix = Shift_Assignments.DaysAssigned;
-                   const check = []
+              
                   
                    // console.log(object)
-                   if (shiftFix == null) {
-                    return resolve (check)
-                   }
+                    
+                   
+               
                    return resolve (object);
                     
               
