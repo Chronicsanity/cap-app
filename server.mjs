@@ -410,16 +410,7 @@ if (await controller.dayChecker("Mon PM") > 0)
   }
 }
 
-  console.log(fixedName+" "+check+" "+req.body.datetimes+" "+date)
-   Shift.create({
-    shiftID: id,
-     employee_name: name,
-     jobs: job,
-     time_start: start,
-     time_end: end,
-     date: datetime,
-     
-   })
+   
    
  console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" ")}
 
