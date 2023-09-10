@@ -399,7 +399,7 @@ exports.scheduleTable = async function (res) {
               exports.dayChecker = async function (day) {
                 const amountPull = await Shift_Assignments.findOne( {where: {DaysAssigned: day}})
                 console.log(amountPull.AmntEmp)
-              return amountPull
+              return amountPull.AmntEmp
             }
 exports.signin = async (req, res) => {
 
