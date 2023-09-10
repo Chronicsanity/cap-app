@@ -560,7 +560,7 @@ if (check.indexOf("Mon PM") >= 0)
 {
   if (check.length > 1)
   {
-    await Shift_Assignments.update({
+    await Shift_Assignments.upsert({
       Assignments: assignments[i],
       AmntEmp: amount[i],
       DaysAssigned: "Mon PM",
@@ -605,9 +605,10 @@ if (check.indexOf("Tue AM") >= 0)
   if (check.length > 1)
   {
    
-    await Shift_Assignments.update({
+    await Shift_Assignments.upsert({
       Assignments: assignments[i],
       AmntEmp: amount[i],
+      DaysAssigned: "Tue AM",
       min_title: min_title[i]
     },
     {
@@ -646,9 +647,10 @@ if (check.indexOf("Tue PM") >= 0)
   if (check.length > 1)
   {
  
-  await Shift_Assignments.update({
+  await Shift_Assignments.upsert({
     Assignments: assignments[i],
     AmntEmp: amount[i],
+    DaysAssigned: "Tue PM",
     min_title: min_title[i]
   },
   {
@@ -687,9 +689,10 @@ if (check.indexOf("Wed AM") >= 0)
 {
   if (check.length > 1)
   {
-  await Shift_Assignments.update({
+  await Shift_Assignments.upsert({
     Assignments: assignments[i],
     AmntEmp: amount[i],
+    DaysAssigned: "Wed AM",
     min_title: min_title[i]
   },
   {
@@ -726,9 +729,10 @@ if (check.indexOf("Wed PM") >= 0)
 {
   if (check.length > 1)
   {
-    await Shift_Assignments.update({
+    await Shift_Assignments.upsert({
       Assignments: assignments[i],
       AmntEmp: amount[i],
+      DaysAssigned: "Wed PM",
       min_title: min_title[i]
     },
     {
@@ -766,9 +770,10 @@ if (check.indexOf("Thu AM") >= 0)
   if (check.length > 1)
   {
  
-    await Shift_Assignments.update({
+    await Shift_Assignments.upsert({
       Assignments: assignments[i],
       AmntEmp: amount[i],
+      DaysAssigned: "Thu AM",
       min_title: min_title[i]
     },
     {
@@ -807,9 +812,10 @@ if (check.indexOf("Thu PM") >= 0)
 {
   if (check.length > 1)
   {
-    await Shift_Assignments.update({
+    await Shift_Assignments.upsert({
       Assignments: assignments[i],
       AmntEmp: amount[i],
+      DaysAssigned: "Thu PM",
       min_title: min_title[i]
     },
     {
@@ -848,9 +854,10 @@ if (check.indexOf("Fri AM") >= 0)
 {
   if (check.length > 1)
   {
-    await Shift_Assignments.update({
+    await Shift_Assignments.upsert({
       Assignments: assignments[i],
       AmntEmp: amount[i],
+      DaysAssigned: "Fri AM",
       min_title: min_title[i]
     },
     {
@@ -888,9 +895,10 @@ if (check.indexOf("Fri PM") >= 0)
 {
   if (check.length > 1)
   {
-    await Shift_Assignments.update({
+    await Shift_Assignments.upsert({
       Assignments: assignments[i],
       AmntEmp: amount[i],
+      DaysAssigned: "Fri PM",
       min_title: min_title[i]
     },
     {
@@ -927,9 +935,10 @@ if (check.indexOf("Sat AM") >= 0)
 {
   if (check.length > 1)
   {
-    await Shift_Assignments.update({
+    await Shift_Assignments.upsert({
       Assignments: assignments[i],
       AmntEmp: amount[i],
+      DaysAssigned: "Sat AM",
       min_title: min_title[i]
     },
     {
@@ -966,9 +975,10 @@ if (check.indexOf("Sat PM") >= 0)
 {
   if (check.length > 1)
   {
-    await Shift_Assignments.update({
+    await Shift_Assignments.upsert({
       Assignments: assignments[i],
       AmntEmp: amount[i],
+      DaysAssigned: "Sat PM",
       min_title: min_title[i]
     },
     {
@@ -1005,9 +1015,10 @@ if (check.indexOf("Sun AM") >= 0)
 {
   if (check.length > 1)
   {
-    await Shift_Assignments.update({
+    await Shift_Assignments.upsert({
       Assignments: assignments[i],
       AmntEmp: amount[i],
+      DaysAssigned: "Sun AM",
       min_title: min_title[i]
     },
     {
@@ -1045,9 +1056,10 @@ if (check.indexOf("Sun PM") >= 0)
 {
   if (check.length > 1)
   {
-    await Shift_Assignments.update({
+    await Shift_Assignments.upsert({
       Assignments: assignments[i],
       AmntEmp: amount[i],
+      DaysAssigned: "Sun PM",
       min_title: min_title[i]
     
     },
