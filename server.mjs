@@ -518,7 +518,7 @@ if (check.indexOf("Mon AM") >= 0)
   {
     
    
-    await Shift_Assignments.create({
+    await Shift_Assignments.upsert({
       Assignments: assignments[i],
       AmntEmp: amount[i],
       min_title: min_title[i]
