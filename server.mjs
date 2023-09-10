@@ -346,7 +346,6 @@ if(Employee.findOne( {where: {user: check}})) {
   const date = req.body.datetimes;
 const jobData = job_list;
 const fixedName = JSON.stringify(check).replace(/[\{\}\"]/g, "");
-const checking = await controller.dayChecker("Mon AM")
 
 
  
@@ -374,12 +373,10 @@ if (conValue.indexOf(EmpValue) >= 0) {
   return (res.status(404).send("They are not trained for this job yet!"))
 }
 
-if (datetime.indexOf("Monday")>=0 && time1.indexOf("AM") >= 0) {
-  if (Shift.time_start === time1)
-  {console.log("nope")
-   (res.status(404).send("no"))
-}
-else{
+if (await controller.dayChecker("Mon AM") > 0)
+{
+  for (i=0;i< await controller.dayChecker("Mon AM"); i++)
+  {
   Shift.upsert({
 
      employee_name: name,
@@ -389,9 +386,24 @@ else{
      date: datetime,
      
    })
-  console.log("1")
-}}
-else{
+  }
+  }
+  if (await controller.dayChecker("Mon PM") > 0)
+{
+  for (i=0;i< await controller.dayChecker("Mon PM"); i++)
+  {
+  Shift.upsert({
+
+     employee_name: name,
+     jobs: job,
+     time_start: start,
+     time_end: end,
+     date: datetime,
+     
+   })
+  }
+  }
+
   console.log(fixedName+" "+check+" "+req.body.datetimes+" "+date)
    Shift.create({
     shiftID: id,
@@ -403,15 +415,16 @@ else{
      
    })
    
- console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" "+checking)}}
+ console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" ")}
 
  const employee_list = await Employee.findAll();
  const job_list = await Jobs.findAll();
  const data = employee_list;
  const jobData = job_list;
 
-  res.render ('shiftmaker',{data: data, jobData:jobData} )
-  })
+  res.render ('shiftmaker',{data: data, jobData:jobData})
+
+})
 
   app.get('/weekshift', async function (req, res) {
 
