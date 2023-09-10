@@ -372,8 +372,8 @@ if (conValue.indexOf(EmpValue) >= 0) {
    const jobData = job_list;
   return (res.status(404).send("They are not trained for this job yet!"))
 }
-const shiftEmployee = await Shift.findOne( {where: {employee_name: fixedName}});
-if (shiftEmployee == check && req.body.datetimes == date) {
+
+if (datetime.indexOf("Monday")>=0 && time1.indexOf("AM") >= 0) {
   if (Shift.time_start === time1)
   {console.log("nope")
    (res.status(404).send("no"))
@@ -402,7 +402,7 @@ else{
      
    })
    
- console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id) }}
+ console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" "+controller.dayChecker("Mon AM")) }}
 
  const employee_list = await Employee.findAll();
  const job_list = await Jobs.findAll();
