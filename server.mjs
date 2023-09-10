@@ -402,7 +402,7 @@ else{
      
    })
    
- console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" "+controller.dayChecker("Mon AM")) }}
+ console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" "+await controller.dayChecker("Mon AM")) }}
 
  const employee_list = await Employee.findAll();
  const job_list = await Jobs.findAll();
