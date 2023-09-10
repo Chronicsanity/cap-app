@@ -377,15 +377,15 @@ if (await controller.dayChecker("Mon AM") > 0)
 {
   for (var i=0; i < await controller.dayChecker("Mon AM");)
   {
-  Shift.upsert({
-
-     employee_name: name,
-     jobs: job,
-     time_start: start,
-     time_end: end,
-     date: datetime,
-     
-   })
+    Shift.create({
+    
+      employee_name: name,
+      jobs: job,
+      time_start: start,
+      time_end: end,
+      date: datetime,
+      
+    })
    i++
   }
   console.log("Days Amount Full!")
@@ -395,22 +395,21 @@ if (await controller.dayChecker("Mon PM") > 0)
 {
   for (var i=0; i < await controller.dayChecker("Mon PM");)
   {
-  Shift.upsert({
-
-     employee_name: name,
-     jobs: job,
-     time_start: start,
-     time_end: end,
-     date: datetime,
-     
-   })
+    Shift.create({
+    
+      employee_name: name,
+      jobs: job,
+      time_start: start,
+      time_end: end,
+      date: datetime,
+      
+    })
    i++
   }
   console.log("Day's Amount Full!")
   }
 }
 
-   
    
  console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" ")}
 
