@@ -411,7 +411,7 @@ if (await controller.dayChecker("Mon PM") > 0)
 }
 
    const PM = "PM"
- console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" "+datetime.includes(PM))}
+ console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" "+start.includes(PM))}
 
  const employee_list = await Employee.findAll();
  const job_list = await Jobs.findAll();
