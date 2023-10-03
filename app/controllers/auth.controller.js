@@ -389,23 +389,21 @@ exports.scheduleTable = async function (res) {
                    const shiftFix = Shift_Assignments.DaysAssigned;
               
                   
-                   // console.log(object)
-                    
+                   for (var i = 0; i < object.length; i++) {
+                    if (object[i] == null) 
                    
-               
-                   return resolve (object);
-                    
+     
+                   return resolve (object[i]);
+                   }
                     
                     
                      }) 
                 })
               }) 
-              }
-              else {
-                return
-              }
+              }}
               
-              }
+              
+              
 
               exports.dayChecker = async function (day) {
                 const amountPull = await Shift_Assignments.findOne( {where: {DaysAssigned: day}})
