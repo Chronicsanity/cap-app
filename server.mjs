@@ -846,10 +846,7 @@ if (min_title == "busser")
 {
   valcounter.push("1")
 }
-for (var i=0; i<assignments.length; i++) {
-  if(assignments[i] instanceof Object) {
-    counter++;
-  }
+
   for (var i=0; i<assignments.length;) {
 
 
@@ -1421,7 +1418,7 @@ await Jobs.upsert({
 }
 }
 
-}}
+}
 const employee_list = await Employee.findAll();
 const job_list = await Jobs.findAll();
 const data = employee_list;
