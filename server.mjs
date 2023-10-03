@@ -877,7 +877,7 @@ await valueCheck(i).then(function(result){
   });
   i++
   
-  }}
+  }
   else if (check.indexOf("Mon AM") = -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Mon AM"}})
   }
@@ -895,7 +895,7 @@ await Jobs.upsert({
   jobs: assignments,
   min_title: min_title
 })
-}
+}}
 
 if (check.indexOf("Mon PM") >= 0)
 {
@@ -921,7 +921,7 @@ if (check.indexOf("Mon PM") >= 0)
    });
     i++
   }
-  }
+  
   else if (check.indexOf("Mon PM") = -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Mon PM"}})
   }
@@ -939,7 +939,7 @@ await Jobs.upsert({
   jobs: assignments,
   min_title: min_title
 })
-}
+}}
 
 if (check.indexOf("Tue AM") >= 0)
 {
@@ -1147,7 +1147,7 @@ await Jobs.upsert({
   min_title: min_title
 })
 }
-}
+}}
 
 if (check.indexOf("Thu PM") >= 0)
 {
@@ -1434,7 +1434,7 @@ await Jobs.upsert({
 })
 }
 }
-}
+
 }}
 const employee_list = await Employee.findAll();
 const job_list = await Jobs.findAll();
