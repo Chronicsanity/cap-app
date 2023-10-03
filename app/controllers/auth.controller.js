@@ -379,7 +379,9 @@ exports.scheduleTable = async function (res) {
                   Shift_Assignments.destroy({where: {DaysAssigned: "Sun PM"}})
                   }
               }
-            
+            else if (Shift_Assignments.assignments != null){
+              return null
+            }
             }
 
               exports.assignmentsTable = async function (res) {
