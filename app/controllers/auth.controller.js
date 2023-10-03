@@ -399,10 +399,12 @@ exports.scheduleTable = async function (res) {
                     
                      }) 
                 })
-              })  }
+              }) 
+              }
               else {
                 return
               }
+              
               }
 
               exports.dayChecker = async function (day) {
