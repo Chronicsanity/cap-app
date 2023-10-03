@@ -882,11 +882,11 @@ await valueCheck(i).then(function(result){
     await Shift_Assignments.destroy({where:{DaysAssigned: "Mon AM"}})
   }
 else{
-  await Shift_Assignments.update({
+  await Shift_Assignments.upsert({
     Assignments: assignments[i],
     AmntEmp: amount[i],
     DaysAssigned: "Mon AM",
-    min_title: min_title
+    min_title: min_title[i]
   },
   {
   where: {DaysAssigned: "Mon AM"}
