@@ -853,7 +853,7 @@ for (var i=0; i<assignments.length; i++) {
   for (var i=0; i<assignments.length;) {
 
 
-if (check.indexOf("Mon AM") >= 0)
+if (check.indexOf("Mon AM") >= -1)
 {
   if (check.length > 1)
   {
@@ -880,11 +880,12 @@ await valueCheck(i).then(function(result){
   }
   else if (check.indexOf("Mon AM") = -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Mon AM"}})
-  }}
+  }
 else{
   await Shift_Assignments.update({
-    Assignments: assignments,
-    AmntEmp: amount,
+    Assignments: assignments[i],
+    AmntEmp: amount[i],
+    DaysAssigned: "Mon AM",
     min_title: min_title
   },
   {
@@ -895,7 +896,7 @@ await Jobs.upsert({
   jobs: assignments,
   min_title: min_title
 })
-}
+}}
 
 if (check.indexOf("Mon PM") >= 0)
 {
