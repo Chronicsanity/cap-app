@@ -877,7 +877,7 @@ await valueCheck(i).then(function(result){
   });
   i++
   
-  }
+  }}
   else if (check.indexOf("Mon AM") = -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Mon AM"}})
   }
@@ -1434,7 +1434,7 @@ await Jobs.upsert({
 })
 }
 }
-}}
+}
 }}
 const employee_list = await Employee.findAll();
 const job_list = await Jobs.findAll();
