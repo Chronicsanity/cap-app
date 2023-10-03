@@ -378,7 +378,7 @@ exports.scheduleTable = async function (res) {
               }
 
               exports.assignmentsTable = async function (res) {
-       
+                  if (Shift_Assignments.assignments == null) {
                 return  new Promise(function(resolve, reject){
                   db.sequelize.sync().then(() => {
                 
@@ -395,11 +395,11 @@ exports.scheduleTable = async function (res) {
                
                    return resolve (object);
                     
-              
+                    
                     
                      }) 
                 })
-              })  
+              })  }
               }
 
               exports.dayChecker = async function (day) {
