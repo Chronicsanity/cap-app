@@ -846,7 +846,7 @@ if (min_title == "busser")
 {
   valcounter.push("1")
 }
-if (Shift_Assignments.assignments != null) {
+if (Shift_Assignments.assignments == null) {
   for (var i=0; i<assignments.length;) {
 
 
