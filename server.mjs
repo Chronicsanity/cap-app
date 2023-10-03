@@ -855,7 +855,7 @@ for (var i=0; i<assignments.length; i++) {
 
 if (check.indexOf("Mon AM") >= -1)
 {
- 
+  if (check.length > 1)
   {
     
    
@@ -877,10 +877,12 @@ await valueCheck(i).then(function(result){
   });
   i++
   
-}
-  if (check.indexOf("Mon AM") = -1) {
+  }
+  else if (check.indexOf("Mon AM") = -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Mon AM"}})
   }
+
+
 }
 
 if (check.indexOf("Mon PM") >= 0)
