@@ -390,12 +390,12 @@ exports.scheduleTable = async function (res) {
               
                   
                    for (var i = 0; i < object.length; i++) {
-                    if (object[i] == null) 
+                    if (object[i] == null) {
                    
      
-                   return resolve (object);
+                   return resolve  (object);
                    }
-                    
+                  }
                     
                      }) 
                 })
