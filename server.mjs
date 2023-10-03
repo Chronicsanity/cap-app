@@ -883,10 +883,10 @@ await valueCheck(i).then(function(result){
   }
 else{
   await Shift_Assignments.upsert({
-    Assignments: assignments[i],
-    AmntEmp: amount[i],
+    Assignments: assignments,
+    AmntEmp: amount,
     DaysAssigned: "Mon AM",
-    min_title: min_title[i]
+    min_title: min_title
   },
   {
   where: {DaysAssigned: "Mon AM"}
