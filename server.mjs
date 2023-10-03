@@ -847,7 +847,7 @@ if (min_title == "busser")
   valcounter.push("1")
 }
 
-  for (var i=0; i<check.length;) {
+  for (var i=0; i<assignments.length;) {
 
 
 if (check.indexOf("Mon AM") >= -1)
