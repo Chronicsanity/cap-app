@@ -393,7 +393,7 @@ exports.scheduleTable = async function (res) {
                     if (object[i] == null) 
                    
      
-                   return resolve (object[i]);
+                   return resolve (object);
                    }
                     
                     
