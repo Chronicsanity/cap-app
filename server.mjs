@@ -852,7 +852,7 @@ if (min_title == "busser")
 
 if (check.indexOf("Mon AM") >= -1)
 {
-  if (check.length >= 1)
+  if (check.length > 0)
   {
     
    
