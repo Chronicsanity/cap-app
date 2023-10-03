@@ -234,6 +234,9 @@ exports.scheduleTable = async function (res) {
               exports.checkedList = async function (req) {
                 const assigning = Shift_Assignments.DaysAssigned;
                 const checking = []
+
+                if (Shift_Assignments.assignments == null)
+                {
                 if (req.body.MonAM) {
                   Shift_Assignments.upsert({
                     DaysAssigned: "Mon AM"
@@ -376,6 +379,8 @@ exports.scheduleTable = async function (res) {
                   Shift_Assignments.destroy({where: {DaysAssigned: "Sun PM"}})
                   }
               }
+            
+            }
 
               exports.assignmentsTable = async function (res) {
                   if (Shift_Assignments.assignments == null) {
