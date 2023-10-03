@@ -389,18 +389,17 @@ exports.scheduleTable = async function (res) {
                    const shiftFix = Shift_Assignments.DaysAssigned;
               
                   
-                   for (var i = 0; i < object.length; i++) {
-                    if (object[i] == null) {
+                   
                    
      
                    return resolve  (object);
-                   }
-                  }
-                    
-                     }) 
+                   
+                  })
+                  
                 })
               }) 
-              }}
+            }}
+              
               
               
               
