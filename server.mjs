@@ -846,7 +846,7 @@ if (min_title == "busser")
 {
   valcounter.push("1")
 }
-
+if (Shift_Assignments.assignments != null) {
   for (var i=0; i<assignments.length;) {
 
 
@@ -880,7 +880,7 @@ await valueCheck(i).then(function(result){
   }
 }
 
-if (check.indexOf("Mon PM") >= 0)
+if (check.indexOf("Mon PM") >= -1)
 {
   if (check.length > 1)
   {
@@ -1418,7 +1418,7 @@ await Jobs.upsert({
 }
 }
 
-}
+}}
 const employee_list = await Employee.findAll();
 const job_list = await Jobs.findAll();
 const data = employee_list;
