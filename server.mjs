@@ -881,7 +881,7 @@ await valueCheck(i).then(function(result){
   else if (check.indexOf("Mon AM") = -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Mon AM"}})
   }
-/*else{
+else if (check.length = 1) {
   await Shift_Assignments.upsert({
     Assignments: assignments,
     AmntEmp: amount,
@@ -895,8 +895,8 @@ await Jobs.upsert({
   job_value: valcounter,
   jobs: assignments,
   min_title: min_title
-}) */
-}
+}) 
+}}
 
 if (check.indexOf("Mon PM") >= 0)
 {
