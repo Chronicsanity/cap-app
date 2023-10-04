@@ -10,12 +10,10 @@
     <thead>
       <tr>
        
-        <th><% for (var i = 0; i < week.length; i++) { if (week[i].DaysAssigned == null) {%> </th>
-        <td><%= week[i].DaysAssigned %> </td>
+        <th><% for (var i = 0; i < week.length;) { if (week[i].DaysAssigned == null) {%> </th>
+        <td><%= week[i].DaysAssigned%> </td>
                     
-         <th> <%  } else if (week[i].DaysAssigned != null){i-1  %>  </th>
-          <td><%= week[i].DaysAssigned  %> </td>
-          <th><% }} %></th>
+         <th> <% i++ }%>
     
        
     
