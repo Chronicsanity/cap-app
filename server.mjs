@@ -377,7 +377,7 @@ if (conValue.indexOf(EmpValue) == -1) {
   return (res.status(404).send("They are not trained for this job yet!" ))
 }
 if (datetime.indexOf("Monday")>= -1 && start.toString().indexOf("AM") > -1) {
-  console.log (dayChecker("Mon AM").AmntEmp)
+
 if (await dayChecker("Mon AM").AmntEmp > 0)
 { 
   for (var i=0; i < await dayChecker("Mon AM").AmntEmp;)
@@ -758,7 +758,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
 
 
 
- console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" ")}
+ console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" "+await dayChecker("Mon AM").AmntEmp)}
 
  const employee_list = await Employee.findAll();
  const job_list = await Jobs.findAll();
