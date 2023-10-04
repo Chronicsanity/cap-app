@@ -329,7 +329,6 @@ app.get('/shiftmaker', async (req, res) => {
 const data = employee_list;
 const jobData = job_list;
 Shift_Assignments.destroy({where: {AmntEmp: null}});
-console.log(await Shift_Assignments.findOne( {where: {DaysAssigned: "Mon AM"}}))
   res.render ('shiftmaker',{data: data, jobData:jobData} )
   })
 app.post('/shiftmaker', async (req, res) =>{
@@ -374,9 +373,9 @@ if (conValue.indexOf(EmpValue) == -1) {
   return (res.status(404).send("They are not trained for this job yet!" ))
 }
 if (datetime.indexOf("Monday")>= -1 && start.toString().indexOf("AM") > -1) {
-if (await controller.dayChecker("Monday") > 0)
+if (await controller.dayChecker("Mon AM") > 0)
 {
-  for (var i=0; i < await controller.dayChecker("Monday");)
+  for (var i=0; i < await controller.dayChecker("Mon AM");)
   {
     Shift.create({
     
@@ -388,7 +387,7 @@ if (await controller.dayChecker("Monday") > 0)
       
     })
    i++;
-   if (i == await controller.dayChecker("Monday")){
+   if (i == await controller.dayChecker("Mon AM")){
     console.log("Day Full!")
     Shift.update({
       employee_name: name,
@@ -403,9 +402,9 @@ if (await controller.dayChecker("Monday") > 0)
 
   }}
   if (datetime.indexOf("Monday")>= -1 && start.toString().indexOf("PM") > -1) {
-if (await controller.dayChecker("Monday") > 0)
+if (await controller.dayChecker("Mon PM") > 0)
 {
-  for (var i=0; i < await controller.dayChecker("Monday");)
+  for (var i=0; i < await controller.dayChecker("Mon PM");)
   {
     Shift.create({
     
@@ -417,7 +416,7 @@ if (await controller.dayChecker("Monday") > 0)
       
     })
    i++
-   if (i == await controller.dayChecker("Monday")){
+   if (i == await controller.dayChecker("Mon PM")){
     console.log("Day Full!")
     Shift.update({
       employee_name: name,
