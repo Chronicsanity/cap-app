@@ -775,7 +775,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
 
   
     await controller.checkedList(req)
-  console.log(await Shift_Assignments.findOne( {where: {DaysAssigned: "Mon AM"}}))
+  
   
   
   
@@ -1428,7 +1428,7 @@ const jobData = job_list;
 
 
 await controller.assignmentsTable(res).then(info => {
-    
+  console.log( Shift_Assignments.findOne( {where: {DaysAssigned: "Mon AM"}}))
   
     res.render('shiftassignment', {week: info, jobData: jobData, data: data}
     )
