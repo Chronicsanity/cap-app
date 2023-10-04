@@ -365,7 +365,11 @@ const fixedName = JSON.stringify(check).replace(/[\{\}\"]/g, "");
  
 const conValue = confirmed_job.job_value;
 const EmpValue = confirmed_Employee.job_value
- 
+  async function dayChecker (day) {
+  const amountPull = await Shift_Assignments.findOne( {where: {DaysAssigned: day}})
+  
+return amountPull
+}
 
 if (conValue.indexOf(EmpValue) == -1) { 
   const data = employee_list
@@ -373,10 +377,10 @@ if (conValue.indexOf(EmpValue) == -1) {
   return (res.status(404).send("They are not trained for this job yet!" ))
 }
 if (datetime.indexOf("Monday")>= -1 && start.toString().indexOf("AM") > -1) {
-  console.log (controller.dayChecker("Mon AM").AmntEmp)
-if (await controller.dayChecker("Mon AM") > -1)
+  console.log (dayChecker("Mon AM").AmntEmp)
+if (await dayChecker("Mon AM").AmntEmp > -1)
 { 
-  for (var i=0; i < await controller.dayChecker("Mon AM");)
+  for (var i=0; i < await dayChecker("Mon AM").AmntEmp;)
   {
     Shift.create({
     
@@ -388,7 +392,7 @@ if (await controller.dayChecker("Mon AM") > -1)
       
     })
    i++;
-   if (i >= await controller.dayChecker("Mon AM")){
+   if (i >= await dayChecker("Mon AM").AmntEmp){
     console.log("Day Full!")
     Shift.update({
       employee_name: name,
@@ -403,9 +407,9 @@ if (await controller.dayChecker("Mon AM") > -1)
 
   }}
   if (datetime.indexOf("Monday")>= -1 && start.toString().indexOf("PM") > -1) {
-if (await controller.dayChecker("Mon PM") > -1)
+if (await dayChecker("Mon PM") > -1)
 {
-  for (var i=0; i < await controller.dayChecker("Mon PM");)
+  for (var i=0; i < await dayChecker("Mon PM").AmntEmp;)
   {
     Shift.create({
     
@@ -417,7 +421,7 @@ if (await controller.dayChecker("Mon PM") > -1)
       
     })
    i++
-   if (i >= await controller.dayChecker("Mon PM")){
+   if (i >= await dayChecker("Mon PM").AmntEmp){
     console.log("Day Full!")
     Shift.upsert({
       employee_name: name,
@@ -432,9 +436,9 @@ if (await controller.dayChecker("Mon PM") > -1)
   }
 }
 if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
-  if (await controller.dayChecker("Tue AM") > 0)
+  if (await dayChecker("Tue AM") > 0)
   {
-    for (var i=0; i < await controller.dayChecker("Tue AM");)
+    for (var i=0; i < await dayChecker("Tue AM");)
     {
       Shift.create({
       
@@ -446,7 +450,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
         
       })
      i++
-     if (i == await controller.dayChecker("Tue AM")){
+     if (i == await dayChecker("Tue AM")){
       console.log("Day Full!")
       Shift.update({
         employee_name: name,
@@ -461,9 +465,9 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
     }
   }
   if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("PM") > -1) {
-    if (await controller.dayChecker("Tue PM") > 0)
+    if (await dayChecker("Tue PM") > 0)
     {
-      for (var i=0; i < await controller.dayChecker("Tue PM");)
+      for (var i=0; i < await dayChecker("Tue PM");)
       {
         Shift.create({
         
@@ -475,7 +479,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
           
         })
        i++
-       if (i == await controller.dayChecker("Tue PM")){
+       if (i == await dayChecker("Tue PM")){
         console.log("Day Full!")
         Shift.update({
           employee_name: name,
@@ -490,9 +494,9 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
       }
     }
     if (datetime.indexOf("Wednesday")>= -1 && start.toString().indexOf("AM") > -1) {
-      if (await controller.dayChecker("Wed AM") > 0)
+      if (await dayChecker("Wed AM") > 0)
       {
-        for (var i=0; i < await controller.dayChecker("Wed AM");)
+        for (var i=0; i < await dayChecker("Wed AM");)
         {
           Shift.create({
           
@@ -504,7 +508,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
             
           })
          i++
-         if (i == await controller.dayChecker("Wed AM")){
+         if (i == await dayChecker("Wed AM")){
           console.log("Day Full!")
           Shift.update({
             employee_name: name,
@@ -519,9 +523,9 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
         }
       }
       if (datetime.indexOf("Wednesday")>= -1 && start.toString().indexOf("PM") > -1) {
-        if (await controller.dayChecker("Wed PM") > 0)
+        if (await dayChecker("Wed PM") > 0)
         {
-          for (var i=0; i < await controller.dayChecker("Wed PM");)
+          for (var i=0; i < await dayChecker("Wed PM");)
           {
             Shift.create({
             
@@ -533,7 +537,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
               
             })
            i++
-           if (i == await controller.dayChecker("Wed PM")){
+           if (i == await dayChecker("Wed PM")){
             console.log("Day Full!")
             Shift.update({
               employee_name: name,
@@ -548,7 +552,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
           }
         }
         if (datetime.indexOf("Thursday")>= -1 && start.toString().indexOf("AM") > -1) {
-          if (await controller.dayChecker("Thu AM") > 0)
+          if (await dayChecker("Thu AM") > 0)
           {
             for (var i=0; i < await controller.dayChecker("Thu AM");)
             {
@@ -562,7 +566,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
                 
               })
              i++
-             if (i == await controller.dayChecker("Thu AM")){
+             if (i == await dayChecker("Thu AM")){
               console.log("Day Full!")
               Shift.update({
                 employee_name: name,
@@ -577,9 +581,9 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
             }
           }
           if (datetime.indexOf("Thursday")>= -1 && start.toString().indexOf("PM") > -1) {
-            if (await controller.dayChecker("Thu PM") > 0)
+            if (await dayChecker("Thu PM") > 0)
             {
-              for (var i=0; i < await controller.dayChecker("Thu PM");)
+              for (var i=0; i < await dayChecker("Thu PM");)
               {
                 Shift.create({
                 
@@ -591,7 +595,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
                   
                 })
                i++
-               if (i == await controller.dayChecker("Thu PM")){
+               if (i == await dayChecker("Thu PM")){
                 console.log("Day Full!")
                 Shift.update({
                   employee_name: name,
@@ -606,9 +610,9 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
               }
             }
             if (datetime.indexOf("Friday")>= -1 && start.toString().indexOf("AM") > -1) {
-              if (await controller.dayChecker("Fri AM") > 0)
+              if (await dayChecker("Fri AM") > 0)
               {
-                for (var i=0; i < await controller.dayChecker("Fri AM");)
+                for (var i=0; i < await dayChecker("Fri AM");)
                 {
                   Shift.create({
                   
@@ -620,7 +624,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
                     
                   })
                  i++
-                 if (i == await controller.dayChecker("Fri AM")){
+                 if (i == await dayChecker("Fri AM")){
                   console.log("Day Full!")
                   Shift.update({
                     employee_name: name,
@@ -635,9 +639,9 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
                 }
               }
               if (datetime.indexOf("Saturday")>= -1 && start.toString().indexOf("AM") > -1) {
-                if (await controller.dayChecker("Sat AM") > 0)
+                if (await dayChecker("Sat AM") > 0)
                 {
-                  for (var i=0; i < await controller.dayChecker("Sat AM");)
+                  for (var i=0; i < await dayChecker("Sat AM");)
                   {
                     Shift.create({
                     
@@ -649,7 +653,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
                       
                     })
                    i++
-                   if (i == await controller.dayChecker("Sat AM")){
+                   if (i == await dayChecker("Sat AM")){
                     console.log("Day Full!")
                     Shift.update({
                       employee_name: name,
@@ -664,9 +668,9 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
                   }
                 }
                 if (datetime.indexOf("Saturday")>= -1 && start.toString().indexOf("PM") > -1) {
-                  if (await controller.dayChecker("Sat PM") > 0)
+                  if (await dayChecker("Sat PM") > 0)
                   {
-                    for (var i=0; i < await controller.dayChecker("Sat PM");)
+                    for (var i=0; i < await dayChecker("Sat PM");)
                     {
                       Shift.create({
                       
@@ -678,7 +682,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
                         
                       })
                      i++
-                     if (i == await controller.dayChecker("Sat PM")){
+                     if (i == await dayChecker("Sat PM")){
                       console.log("Day Full!")
                       Shift.update({
                         employee_name: name,
@@ -693,9 +697,9 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
                     }
                   }
                   if (datetime.indexOf("Sunday")>= -1 && start.toString().indexOf("AM") > -1) {
-                    if (await controller.dayChecker("Sun AM") > 0)
+                    if (await dayChecker("Sun AM") > 0)
                     {
-                      for (var i=0; i < await controller.dayChecker("Sun AM");)
+                      for (var i=0; i < await dayChecker("Sun AM");)
                       {
                         Shift.create({
                         
@@ -707,7 +711,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
                           
                         })
                        i++
-                       if (i == await controller.dayChecker("Sun AM")){
+                       if (i == await dayChecker("Sun AM")){
                         console.log("Day Full!")
                         Shift.update({
                           employee_name: name,
@@ -722,9 +726,9 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
                       }
                     }
                     if (datetime.indexOf("Sunday")>= -1 && start.toString().indexOf("PM") > -1) {
-                      if (await controller.dayChecker("Sun PM") > 0)
+                      if (await dayChecker("Sun PM") > 0)
                       {
-                        for (var i=0; i < await controller.dayChecker("Sun PM");)
+                        for (var i=0; i < await dayChecker("Sun PM");)
                         {
                           Shift.create({
                           
@@ -736,7 +740,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
                             
                           })
                          i++
-                         if (i == await controller.dayChecker("Sun PM")){
+                         if (i == await dayChecker("Sun PM")){
                           console.log("Day Full!")
                           Shift.update({
                             employee_name: name,
@@ -751,10 +755,10 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
                         }
                       }
 
-const annoying =  await Shift_Assignments.findOne( {where: {DaysAssigned: "Mon AM"}})
 
 
- console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" "+ annoying.AmntEmp)}
+
+ console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" ")}
 
  const employee_list = await Employee.findAll();
  const job_list = await Jobs.findAll();
