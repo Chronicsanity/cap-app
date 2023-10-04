@@ -753,7 +753,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
 
 
 
- console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" "+ await controller.dayChecker("Mon AM"))}
+ console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" "+ await controller.dayChecker("Mon AM").AmntEmp)}
 
  const employee_list = await Employee.findAll();
  const job_list = await Jobs.findAll();
