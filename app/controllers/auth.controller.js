@@ -236,22 +236,26 @@ exports.scheduleTable = async function (res) {
                 const checking = [];
                 const blah = Shift_Assignments.assignments;
 
-                if (Shift_Assignments.assignments == null)
-                {
+              
+               
                 if (req.body.MonAM) {
+                  if (blah == null) {
                   Shift_Assignments.upsert({
                     DaysAssigned: "Mon AM"
                   })
-                  console.log("True")
+                }
+                  
                 }
                 if (req.body.MonAM != true) {
             
                   Shift_Assignments.destroy({where: {DaysAssigned: "Mon AM"}})
                   }
                 if (req.body.MonPM) {
+                  if (blah == null) {
                   Shift_Assignments.upsert({
                     DaysAssigned: "Mon PM"
                   })
+                }
                   console.log("True")
                 }
                 if (req.body.MonPM != true) {
@@ -380,13 +384,13 @@ exports.scheduleTable = async function (res) {
                   Shift_Assignments.destroy({where: {DaysAssigned: "Sun PM"}})
                   }
               }
-            else if (Shift_Assignments.assignments != null){
-              for (var i = 0; i < blah.length; i++) {
-                if (blah[i][assigning] !== null) return blah[i][assigning];
-            }
-            return null;
-        }
-            }
+            
+              
+                
+            
+           
+        
+            
             
 
               exports.assignmentsTable = async function (res) {
