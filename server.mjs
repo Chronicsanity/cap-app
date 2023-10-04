@@ -378,7 +378,7 @@ if (conValue.indexOf(EmpValue) == -1) {
 }
 if (datetime.indexOf("Monday")>= -1 && start.toString().indexOf("AM") > -1) {
   console.log (dayChecker("Mon AM").AmntEmp)
-if (await dayChecker("Mon AM").AmntEmp > -1)
+if (await dayChecker("Mon AM").AmntEmp > 0)
 { 
   for (var i=0; i < await dayChecker("Mon AM").AmntEmp;)
   {
