@@ -387,7 +387,7 @@ if (await controller.dayChecker("Mon AM") > 0)
       
     })
    i++;
-   if (i == await controller.dayChecker("Mon AM")){
+   if (i >= await controller.dayChecker("Mon AM")){
     console.log("Day Full!")
     Shift.update({
       employee_name: name,
@@ -416,9 +416,9 @@ if (await controller.dayChecker("Mon PM") > 0)
       
     })
    i++
-   if (i == await controller.dayChecker("Mon PM")){
+   if (i >= await controller.dayChecker("Mon PM")){
     console.log("Day Full!")
-    Shift.update({
+    Shift.upsert({
       employee_name: name,
       jobs: job,
       time_start: start,
