@@ -21,7 +21,7 @@
       
     </thead>
     <tbody> 
-       <tr><td><% for (var i = 0; i < week.length; i++) { %> </td>
+       <tr><td><% for (var i = 0; i < week.length; i++) { if (week[i].Assignments == null) { %> </td>
         
         <td><form action="/shiftassignment" method="POST" class="pt-3">
           <div class="form-group">
@@ -47,7 +47,7 @@
                   </optgroup>
               </select>
           </div>
-      <% } %>
+      <% }} %>
         </td>
       </tr>
 
