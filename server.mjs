@@ -373,8 +373,9 @@ if (conValue.indexOf(EmpValue) == -1) {
   return (res.status(404).send("They are not trained for this job yet!" ))
 }
 if (datetime.indexOf("Monday")>= -1 && start.toString().indexOf("AM") > -1) {
+  console.log (controller.dayChecker("Mon AM").AmntEmp)
 if (await controller.dayChecker("Mon AM") > -1)
-{ console.log (controller.dayChecker("Mon AM").AmntEmp)
+{ 
   for (var i=0; i < await controller.dayChecker("Mon AM");)
   {
     Shift.create({
