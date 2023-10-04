@@ -368,7 +368,7 @@ const EmpValue = confirmed_Employee.job_value
   async function dayChecker (day) {
   const amountPull = await Shift_Assignments.findOne( {where: {DaysAssigned: day}})
   
-return amountPull.AmntEmp
+return amountPull
 }
 
 if (conValue.indexOf(EmpValue) == -1) { 
