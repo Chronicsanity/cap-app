@@ -375,7 +375,7 @@ if (conValue.indexOf(EmpValue) == -1) {
 if (datetime.indexOf("Monday")>= -1 && start.toString().indexOf("AM") > -1) {
 if (await controller.dayChecker("Monday") > 0)
 {
-  for (var i=0; i < await controller.dayChecker("Mon AM");)
+  for (var i=0; i < await controller.dayChecker("Monday");)
   {
     Shift.create({
     
@@ -387,7 +387,7 @@ if (await controller.dayChecker("Monday") > 0)
       
     })
    i++;
-   if (i == await controller.dayChecker("Mon AM")){
+   if (i == await controller.dayChecker("Monday")){
     console.log("Day Full!")
     Shift.update({
       employee_name: name,
@@ -402,9 +402,9 @@ if (await controller.dayChecker("Monday") > 0)
 
   }}
   if (datetime.indexOf("Monday")>= -1 && start.toString().indexOf("PM") > -1) {
-if (await controller.dayChecker("Mon PM") > 0)
+if (await controller.dayChecker("Monday") > 0)
 {
-  for (var i=0; i < await controller.dayChecker("Mon PM");)
+  for (var i=0; i < await controller.dayChecker("Monday");)
   {
     Shift.create({
     
@@ -416,7 +416,7 @@ if (await controller.dayChecker("Mon PM") > 0)
       
     })
    i++
-   if (i == await controller.dayChecker("Mon PM")){
+   if (i == await controller.dayChecker("Monday")){
     console.log("Day Full!")
     Shift.update({
       employee_name: name,
