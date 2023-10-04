@@ -374,7 +374,7 @@ if (conValue.indexOf(EmpValue) == -1) {
 }
 if (datetime.indexOf("Monday")>= -1 && start.toString().indexOf("AM") > -1) {
 if (await controller.dayChecker("Mon AM") > -1)
-{ console.log (controller.dayChecker("Mon AM"))
+{ console.log (controller.dayChecker("Mon AM").AmntEmp)
   for (var i=0; i < await controller.dayChecker("Mon AM");)
   {
     Shift.create({

@@ -425,7 +425,7 @@ exports.scheduleTable = async function (res) {
               exports.dayChecker = async function (day) {
                 const amountPull = await Shift_Assignments.findOne( {where: {DaysAssigned: day}})
                 
-              return amountPull.AmntEmp
+              return amountPull
             }
 
 exports.signin = async (req, res) => {
