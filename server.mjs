@@ -368,7 +368,7 @@ const EmpValue = confirmed_Employee.job_value
   async function dayChecker (day) {
   const amountPull = await Shift_Assignments.findOne( {where: {DaysAssigned: day}})
   
-return amountPull
+return amountPull.AmntEmp
 }
 
 if (conValue.indexOf(EmpValue) == -1) { 
@@ -758,7 +758,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
 
 
 
- console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" "+await dayChecker("Mon AM").AmntEmp)}
+ console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" "+await dayChecker("Mon AM"))}
 
  const employee_list = await Employee.findAll();
  const job_list = await Jobs.findAll();
