@@ -244,7 +244,9 @@ exports.scheduleTable = async function (res) {
                     DaysAssigned: "Mon AM"
                   })
                 }
-                  
+                  else {
+                    
+                  }
                 }
                 if (req.body.MonAM != true) {
             
