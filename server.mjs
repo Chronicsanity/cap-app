@@ -1426,9 +1426,9 @@ const job_list = await Jobs.findAll();
 const data = employee_list;
 const jobData = job_list;
 
-
+console.log(await Shift_Assignments.findOne( {where: {DaysAssigned: "Mon AM"}}))
 await controller.assignmentsTable(res).then(info => {
-  console.log( Shift_Assignments.findOne( {where: {DaysAssigned: "Mon AM"}}))
+
   
     res.render('shiftassignment', {week: info, jobData: jobData, data: data}
     )
