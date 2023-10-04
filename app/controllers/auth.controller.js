@@ -233,7 +233,8 @@ exports.scheduleTable = async function (res) {
 
               exports.checkedList = async function (req) {
                 const assigning = Shift_Assignments.DaysAssigned;
-                const checking = []
+                const checking = [];
+                const blah = Shift_Assignments.assignments;
 
                 if (Shift_Assignments.assignments == null)
                 {
@@ -380,9 +381,13 @@ exports.scheduleTable = async function (res) {
                   }
               }
             else if (Shift_Assignments.assignments != null){
-              return null
+              for (var i = 0; i < blah.length; i++) {
+                if (blah[i][assigning] !== null) return blah[i][assigning];
             }
+            return null;
+        }
             }
+            
 
               exports.assignmentsTable = async function (res) {
                   if (Shift_Assignments.assignments == null) {
