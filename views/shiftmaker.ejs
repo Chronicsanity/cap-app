@@ -40,7 +40,7 @@
 <% for(var i=0; i < week.length; i++) { %>
 <script>
   
-      $("#datepicker").datepicker({startDate: '<%= week[i].DaysAssigned %>',
+      $("#datepicker").datepicker({startDate: <%= week[i].DaysAssigned %>,
     endDate: '+1w'
       })
 </script>
