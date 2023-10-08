@@ -36,13 +36,15 @@
            <i class="icon-time"></i>
        </span>
    </div>
-</div>
+</div> 
+<% for(var i=0; i < week.length; i++) { %>
 <script>
   
-      $("#datepicker").datepicker({startDate: '0m',
+      $("#datepicker").datepicker({startDate: '<%= week[i].DaysAssigned %>',
     endDate: '+1w'
       })
 </script>
+<% } %>
       <div class="input-group bootstrap-timepicker timepicker">
         <input id="timepicker1" type="text" name="time1" class="form-control input-small">
         <span class="input-group-addon" id="timebutton1"> <i class="icon-time"></i></span>

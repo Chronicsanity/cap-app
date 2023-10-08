@@ -764,8 +764,9 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
  const job_list = await Jobs.findAll();
  const data = employee_list;
  const jobData = job_list;
-
-  res.render ('shiftmaker',{data: data, jobData:jobData})
+ await controller.assignmentsTable(res).then(info => {
+  res.render ('shiftmaker',{data: data, jobData:jobData, week: info})
+ })
 
 })
 
