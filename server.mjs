@@ -158,15 +158,15 @@ async function createEmployee(req) {
 else {
   const value = [];
   const choice = req.body.job_choice
-  if (choice.indexOf("busser")>= -1) { value.push(1)
+  if (choice.indexOf("busser")== -1) { value.push(1)
   }
-  if (choice.indexOf("lineCook")>= -1) { value.push (2)
+  if (choice.indexOf("lineCook")== -1) { value.push (2)
   
   }
-  if (choice.indexOf("sousChef")>= -1) { value.push(3)
+  if (choice.indexOf("sousChef")== -1) { value.push(3)
   
   }
-  if (choice.indexOf("headChef")>= -1) { value.push(4)}
+  if (choice.indexOf("headChef")== -1) { value.push(4)}
 
 
   const createEmp = Employee.create(
