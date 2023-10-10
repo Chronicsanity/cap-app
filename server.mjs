@@ -192,7 +192,7 @@ if (req.body.hasOwnProperty("acceptEmployee")) {
 
 await createEmployee(req);
   controller.scheduleTable().then(info => {
-  console.log(Emp.job_title)
+
   res.render('data', {user: info}
  )
 })
