@@ -156,11 +156,17 @@ async function createEmployee(req) {
 
 
 else {
+  const job_value = [];
+  if (req.body.job_choice == "busser") { job_value == 1
+
+  }
+  if (req.body.job_choice == "lineCook") { job_value == 2
   
-  const busser = [];
-const lineCook = [];
-const sousChef = [];
-const headChef = [];
+  }
+  if (req.body.job_choice == "sousChef") { job_value == 3
+  
+  }
+  if (req.body.job_choice == "headChef") { job_value == 4}
 
 
   const createEmp = Employee.create(
@@ -168,12 +174,15 @@ const headChef = [];
 
 user: user,
 job_title: req.body.job_choice,
+job_value: job_value
 
 })
+
 
 console.log (await createEmp.job_value)
  return await createEmp 
  
+
 }
 }
 
@@ -182,19 +191,6 @@ console.log (await createEmp.job_value)
 if (req.body.hasOwnProperty("acceptEmployee")) {
 
 await createEmployee(req);
-const Emp = await Employee.findAll( {where: {job_value: null}})
-if (Emp.job_title == "busser") { Emp.job_value == 1
-
-}
-if (Emp.job_title == "lineCook") { Emp.job_value == 2
-
-}
-if (Emp.job_title == "sousChef") { Emp.job_value == 3
-
-}
-if (Emp.job_title == "headChef") { Emp.job_value == 4
-
-}
   controller.scheduleTable().then(info => {
   console.log(Emp.job_title)
   res.render('data', {user: info}
