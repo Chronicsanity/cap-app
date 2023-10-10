@@ -166,7 +166,7 @@ else {
   if (choice.indexOf("sousChef") < 0) { value.push(3)
   
   }
-  if (choice.indexOf("headChef") < 0) { value.push(4)}
+  if (choice == "headChef") { value.push(4)}
 
 
   const createEmp = Employee.create(
