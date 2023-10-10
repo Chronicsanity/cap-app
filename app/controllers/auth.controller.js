@@ -68,7 +68,7 @@ async function newUser () {
      newUsername.push(req.body.username),
      newPassword.push(req.body.password),
      newEmail.push(req.body.email)
-     newRole.push (req.body.selectpicker)
+     newRole.push (0)
     
     user.username= await JSON.stringify(newUsername).replace(/]|[[]/g, '')
     user.email= await JSON.stringify(newEmail).replace(/]|[[]/g, '')
