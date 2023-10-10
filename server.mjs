@@ -196,7 +196,7 @@ if (Emp.job_title == "headChef") { Emp.job_value == 4
 
 }
   controller.scheduleTable().then(info => {
-  console.log(Emp.job_value)
+  console.log(Emp.job_title)
   res.render('data', {user: info}
  )
 })
