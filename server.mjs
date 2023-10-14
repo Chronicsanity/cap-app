@@ -179,7 +179,7 @@ job_value: value
 })
 
 
-console.log (choice.indexOf("headChef"))
+
  return await createEmp 
  
 

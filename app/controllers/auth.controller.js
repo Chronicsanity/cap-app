@@ -471,7 +471,8 @@ finally {
     return res.render('schedule')
   }
   else if(user.role == 2) {
-    return res.render('shiftmaker')
+
+    return res.render('weekshift')
   }
 
   else if (user.role == 0) {
