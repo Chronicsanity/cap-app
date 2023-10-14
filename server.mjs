@@ -748,7 +748,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
                       }
 
 
-const ahhhh = await Shift_Assignments.DaysAssigned
+const ahhhh = await Shift_Assignments.findOne( {where: {DaysAssigned: "Mon AM"}})
 
  console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" "+datetime.indexOf("Monday")+start.toString().indexOf("AM")+" "+ ahhhh)}
 
