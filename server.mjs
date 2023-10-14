@@ -391,14 +391,9 @@ if (await dayChecker("Mon AM").AmntEmp > 0)
    i++;
    if (i >= await dayChecker("Mon AM").AmntEmp){
     console.log("Day Full!")
-    Shift.update({
-      employee_name: name,
-      jobs: job,
-      time_start: start,
-      time_end: end,
-      date: datetime
-    })
-   }
+   
+    }
+   
   }
   
 
