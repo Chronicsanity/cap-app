@@ -375,8 +375,8 @@ if (conValue > EmpValue) {
 }
 if (datetime.indexOf("Monday") == 0 && start.toString().indexOf("AM") >= 0) {
 
-if (await dayChecker("Mon AM").AmntEmp > 0)
-{ 
+//if (await dayChecker("Mon AM").AmntEmp > 0)
+//{ 
   for (var i=0; i < await dayChecker("Mon AM").AmntEmp;)
   {
     Shift.create({
@@ -394,7 +394,7 @@ if (await dayChecker("Mon AM").AmntEmp > 0)
    
     }
    
-  }
+  //}
   
 
   }}
