@@ -370,6 +370,7 @@ return amountPull
 if (conValue.indexOf(EmpValue) == -1) { 
   const data = employee_list
    const jobData = job_list;
+   console.log(conValue.indexOf(EmpValue))
   return (res.status(404).send("They are not trained for this job yet!" ))
 }
 if (datetime.indexOf("Monday")>= -1 && start.toString().indexOf("AM") > -1) {
