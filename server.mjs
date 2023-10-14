@@ -265,7 +265,7 @@ if (await req.body.hasOwnProperty("accept")){
   async function clone(){
   await controller.QueueTable().then(info => { 
     for (var i = 0; i < info.length; i++) {
-      console.log(req.body.selectpicker)
+     
       const newUser = info[1]
       const newRole = req.body.selectpicker
       User.upsert({
@@ -363,7 +363,7 @@ const conValue = confirmed_job.job_value;
 const EmpValue = confirmed_Employee.job_value
   async function dayChecker (day) {
   const amountPull = await Shift_Assignments.findOne( {where: {DaysAssigned: day}})
-  console.log(amountPull)
+
 return amountPull
 }
 
