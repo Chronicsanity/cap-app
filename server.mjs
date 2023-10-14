@@ -367,7 +367,7 @@ const EmpValue = confirmed_Employee.job_value
 return amountPull
 }
 
-if (conValue.indexOf(EmpValue) == 0) { 
+if (conValue > EmpValue) { 
   const data = employee_list
    const jobData = job_list;
    console.log(conValue.indexOf(EmpValue))
