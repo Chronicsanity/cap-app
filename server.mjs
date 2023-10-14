@@ -748,9 +748,9 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
                       }
 
 
+const ahhhh = Shift_Assignments.AmntEmp
 
-
- console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" "+datetime.indexOf("Monday")+start.toString().indexOf("AM")+" "+ Shift_Assignments.AmntEmp)}
+ console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" "+datetime.indexOf("Monday")+start.toString().indexOf("AM")+" "+ ahhhh)}
 
  const employee_list = await Employee.findAll();
  const job_list = await Jobs.findAll();
