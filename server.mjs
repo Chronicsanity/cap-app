@@ -379,7 +379,7 @@ if (await dayChecker("Mon AM").AmntEmp > 0)
 { 
   for (var i=0; i < await dayChecker("Mon AM").AmntEmp;)
   {
-    Shift.create({
+    Shift.upsert({
     
       employee_name: name,
       jobs: job,
