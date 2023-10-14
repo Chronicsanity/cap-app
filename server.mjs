@@ -363,7 +363,9 @@ const conValue = confirmed_job.job_value;
 const EmpValue = confirmed_Employee.job_value
   async function dayChecker (day) {
   const amountPull = await Shift_Assignments.findOne( {where: {DaysAssigned: day}})
-  const checking = amountPull.AmntEmp
+  const checking = await Shift_Assignments.findAll( {where: {DaysAssigned: day}}).then(result => { 
+    result.amntEmp
+  })
 console.log(checking)
 return amountPull
 }
