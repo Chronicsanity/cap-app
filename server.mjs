@@ -750,7 +750,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
 
 const ahhhh = await Shift_Assignments.findOne( {where: {DaysAssigned: "Mon AM"}}).then(result => {return result})
 const fixed = JSON.stringify(ahhhh)
-const scream = Shift_Assignments.AmntEmp
+const scream = await Shift_Assignments.DaysAssigned
 
  console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" "+datetime.indexOf("Monday")+start.toString().indexOf("AM")+" "+ fixed+" "+ scream)}
 
