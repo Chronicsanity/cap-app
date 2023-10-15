@@ -751,7 +751,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
 const ahhhh = await Shift_Assignments.findAll( {where: {DaysAssigned: "Mon AM"}}).then(result => {return result})
 const fixed = JSON.stringify(ahhhh)
 
- console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" "+datetime.indexOf("Monday")+start.toString().indexOf("AM")+" "+ fixed)}
+ console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" "+datetime.indexOf("Monday")+start.toString().indexOf("AM")+" "+ fixed.AmntEmp)}
 
  const employee_list = await Employee.findAll();
  const job_list = await Jobs.findAll();
