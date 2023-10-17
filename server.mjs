@@ -868,7 +868,6 @@ if (check.indexOf("Mon AM") == 0)
     })
     
     console.log(check.indexOf("Mon AM"));
-    await Shift_Assignments.destroy({where:{DaysAssigned: "Mon AM", AmntEmp: null}})
     if (assignments.length == null )
   {
     console.log("No job selected, skipping!")}
@@ -900,7 +899,6 @@ if (check.indexOf("Mon AM") == 0)
     })
     
     console.log(check.indexOf("Mon PM"));
-    await Shift_Assignments.destroy({where:{DaysAssigned: "Mon PM", AmntEmp: null}})
     if (assignments.length == null )
   {
     console.log("No job selected, skipping!")}
@@ -932,7 +930,7 @@ if (check.indexOf("Mon AM") == 0)
     })
     
     console.log(check.indexOf("Tue AM"));
-    await Shift_Assignments.destroy({where:{DaysAssigned: "Tue AM", AmntEmp: null}})
+   
     if (assignments.length == null )
   {
     console.log("No job selected, skipping!")}
@@ -963,7 +961,7 @@ if (check.indexOf("Mon AM") == 0)
     })
     
     console.log(check.indexOf("Tue PM"));
-    await Shift_Assignments.destroy({where:{DaysAssigned: "Tue PM", AmntEmp: null}})
+
     if (assignments.length == null )
   {
     console.log("No job selected, skipping!")}
@@ -995,7 +993,7 @@ if (check.indexOf("Mon AM") == 0)
     })
     
     console.log(check.indexOf("Wed AM"));
-    await Shift_Assignments.destroy({where:{DaysAssigned: "Wed AM", AmntEmp: null}})
+ 
     if (assignments.length == null )
   {
     console.log("No job selected, skipping!")}
@@ -1026,7 +1024,7 @@ if (check.indexOf("Mon AM") == 0)
     })
     
     console.log(check.indexOf("Wed PM"));
-    await Shift_Assignments.destroy({where:{DaysAssigned: "Wed PM", AmntEmp: null}})
+
     if (assignments.length == null )
   {
     console.log("No job selected, skipping!")}
@@ -1057,7 +1055,7 @@ if (check.indexOf("Mon AM") == 0)
     })
     
     console.log(check.indexOf("Thu AM"));
-    await Shift_Assignments.destroy({where:{DaysAssigned: "Thu AM", AmntEmp: null}})
+   
     if (assignments.length == null )
   {
     console.log("No job selected, skipping!")}
@@ -1089,7 +1087,7 @@ if (check.indexOf("Mon AM") == 0)
     })
     
     console.log(check.indexOf("Thu PM"));
-    await Shift_Assignments.destroy({where:{DaysAssigned: "Thu PM", AmntEmp: null}})
+  
     if (assignments.length == null )
   {
     console.log("No job selected, skipping!")}
@@ -1119,7 +1117,7 @@ if (check.indexOf("Mon AM") == 0)
     })
     
     console.log(check.indexOf("Fri AM"));
-    await Shift_Assignments.destroy({where:{DaysAssigned: "Fri AM", AmntEmp: null}})
+   
     if (assignments.length == null )
   {
     console.log("No job selected, skipping!")}
@@ -1150,7 +1148,7 @@ if (check.indexOf("Mon AM") == 0)
     })
     
     console.log(check.indexOf("Fri PM"));
-    await Shift_Assignments.destroy({where:{DaysAssigned: "Fri PM", AmntEmp: null}})
+   
     if (assignments.length == null )
   {
     console.log("No job selected, skipping!")}
@@ -1181,7 +1179,7 @@ if (check.indexOf("Mon AM") == 0)
     })
     
     console.log(check.indexOf("Sat AM"));
-    await Shift_Assignments.destroy({where:{DaysAssigned: "Sat AM", AmntEmp: null}})
+   
     if (assignments.length == null )
   {
     console.log("No job selected, skipping!")}
@@ -1212,7 +1210,7 @@ if (check.indexOf("Mon AM") == 0)
     })
     
     console.log(check.indexOf("Sat PM"));
-    await Shift_Assignments.destroy({where:{DaysAssigned: "Sat PM", AmntEmp: null}})
+   
     if (assignments.length == null )
   {
     console.log("No job selected, skipping!")}
@@ -1243,7 +1241,7 @@ if (check.indexOf("Mon AM") == 0)
     })
     
     console.log(check.indexOf("Sun AM"));
-    await Shift_Assignments.destroy({where:{DaysAssigned: "Sun AM", AmntEmp: null}})
+    
     if (assignments.length == null )
   {
     console.log("No job selected, skipping!")}
@@ -1275,7 +1273,6 @@ if (check.indexOf("Mon AM") == 0)
     })
     
     console.log(check.indexOf("Sun PM"));
-    await Shift_Assignments.destroy({where:{DaysAssigned: "Sun PM", AmntEmp: null}})
     if (assignments.length == null )
   {
     console.log("No job selected, skipping!")}
@@ -1290,6 +1287,7 @@ if (check.indexOf("Mon AM") == 0)
   }
 
 }
+await Shift_Assignments.destroy({where:{AmntEmp: null}})
 if (assignments != null) {
   await Jobs.create({
     job_value: valueCheck(i),
