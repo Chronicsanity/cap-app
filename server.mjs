@@ -866,8 +866,10 @@ if (check.indexOf("Mon AM") >= -1)
     {
       where: {DaysAssigned: "Mon AM"}
     })
-  if (assignments.length != null )
+  if (assignments.length == null )
   {
+    console.log("No job selected, skipping!")}
+    else{
 await valueCheck(i).then(function(result){
      Jobs.upsert({
       job_value: result,
@@ -875,7 +877,8 @@ await valueCheck(i).then(function(result){
       min_title: min_title[i]
     })
   })
-}
+
+  }
   i++
   
   }
