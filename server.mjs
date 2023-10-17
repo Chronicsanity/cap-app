@@ -809,6 +809,7 @@ const amount = await req.body.amntEmployees
 const assignments = await req.body.assignments;
 const min_title = await req.body.min_title
 const check = await req.body.weekcheck
+const shifting = await Shift_Assignments.AmntEmp;
 const weekcheck = JSON.stringify(check).replace(/]|[/''[]/g, "")
 async function valueCheck(i) { 
   const valcounter = [];
@@ -848,12 +849,12 @@ if (min_title == "busser")
   valcounter.push("1")
 }
 if (Shift_Assignments.id == null) {
-  for (var i=0; i< amount;) {
+  for (var i=0; i< check.length;) {
 
 
 if (check.indexOf("Mon AM") == 0)
 {
-  if (amount == null)
+  if (shifting == null)
   {console.log ("Problem")}
   else
   {
