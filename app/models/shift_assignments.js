@@ -10,7 +10,7 @@ module.exports = (sequelize, Sequelize) => {
         
     },
 	AmntEmp: {
-		type: Sequelize.STRING
+		type: Sequelize.INTEGER
         },
 		DaysAssigned: {
 			type: Sequelize.STRING
