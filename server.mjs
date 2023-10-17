@@ -751,7 +751,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
 const ahhhh = await Shift_Assignments.findOne( {attributes: {exclude: ['id', 'Assignments', 'DaysAssigned', 'min_title']}},{where: {DaysAssigned: "Mon AM"}})
 
 const fixed = JSON.stringify(ahhhh)
-
+if (ahhhh > 0) {console.log("fixed")}
  console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" "+datetime.indexOf("Monday")+start.toString().indexOf("AM")+" "+fixed)}
 
  const employee_list = await Employee.findAll();
