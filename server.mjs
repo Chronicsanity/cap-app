@@ -890,16 +890,7 @@ if (check.indexOf("Mon PM") >= -1)
     },
     {
       where: {DaysAssigned: "Mon PM"}
-    })
-    
-    await valueCheck(i).then(function(result){
-
-      Jobs.upsert({
-       job_value: result,
-       jobs: assignments[i],
-       min_title: min_title[i]
-     })
-   });
+    });
     i++
   }
   
