@@ -364,7 +364,7 @@ const EmpValue = confirmed_Employee.job_value
   async function dayChecker (day) {
   const amountPull = await Shift_Assignments.findOne( {attributes: {exclude: ['id', 'Assignments', 'DaysAssigned', 'min_title']}},{where: {DaysAssigned: day}})
 
-return amountPull
+return JSON.stringify(amountPull)
 }
 
 if (conValue > EmpValue) { 
@@ -373,7 +373,7 @@ if (conValue > EmpValue) {
  
   return (res.status(404).send("They are not trained for this job yet!" ))
 }
-if (datetime.indexOf("Monday") == 0 && start.toString().indexOf("AM") >= 0) {
+if (datetime.indexOf("Monday") >= 0 && start.toString().indexOf("AM") >= 0) {
 
 if (await dayChecker("Mon AM") > 0)
 { 
