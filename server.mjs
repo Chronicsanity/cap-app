@@ -748,7 +748,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
                       }
 
 
-const ahhhh = await Shift_Assignments.findAll( {attributes: {exclude: ['id', 'Assignments', 'DaysAssigned', 'min_title']}},{where: {DaysAssigned: "Mon AM"}})
+const ahhhh = await Shift_Assignments.findAll( {exclude: ['id', 'Assignments', 'DaysAssigned', 'min_title']},{where: {DaysAssigned: "Mon AM"}})
 const fixed = JSON.stringify(ahhhh)
 
  console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" "+datetime.indexOf("Monday")+start.toString().indexOf("AM")+" "+ fixed)}
