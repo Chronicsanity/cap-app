@@ -234,7 +234,7 @@ exports.scheduleTable = async function (res) {
               exports.checkedList = async function (req) {
                 const assigning = Shift_Assignments.DaysAssigned;
                 const checking = [];
-                const blah = Shift_Assignments.assignments;
+                const blah = Shift_Assignments.id;
 
               
                
