@@ -748,11 +748,11 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
                       }
 
 
-const ahhhh = await Shift_Assignments.findOne( {attributes: {exclude: ['id', 'Assignments', 'DaysAssigned', 'min_title']}},{where: {DaysAssigned: "Mon AM"}})
-const grr = await Shift_Assignments.query('SELECT AmntEmp FROM Shift_Assignments WHERE DaysAssigned: Mon AM')
+const ahhhh = await Shift_Assignments.findOne( {attributes: {exclude: ['id', 'Assignments', 'DaysAssigned', 'min_title'][sequelize.literal('static value'), 'static_value']}},{where: {DaysAssigned: "Mon AM"}})
+
 const fixed = JSON.stringify(ahhhh)
 
- console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" "+datetime.indexOf("Monday")+start.toString().indexOf("AM")+" "+ grr)}
+ console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" "+datetime.indexOf("Monday")+start.toString().indexOf("AM"))}
 
  const employee_list = await Employee.findAll();
  const job_list = await Jobs.findAll();
