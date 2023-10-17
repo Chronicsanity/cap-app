@@ -375,9 +375,9 @@ if (conValue > EmpValue) {
 }
 if (datetime.indexOf("Monday") == 0 && start.toString().indexOf("AM") >= 0) {
 
-if (await dayChecker("Mon AM").AmntEmp > 0)
+if (await dayChecker("Mon AM") > 0)
 { 
-  for (var i=0; i < await dayChecker("Mon AM").AmntEmp;)
+  for (var i=0; i < await dayChecker("Mon AM");)
   {
     Shift.create({
     
@@ -389,7 +389,7 @@ if (await dayChecker("Mon AM").AmntEmp > 0)
       
     })
    i++;
-   if (i >= await dayChecker("Mon AM").AmntEmp){
+   if (i >= await dayChecker("Mon AM")){
     console.log("Day Full!")
    
     }
@@ -401,7 +401,7 @@ if (await dayChecker("Mon AM").AmntEmp > 0)
   if (datetime.indexOf("Monday")>= -1 && start.toString().indexOf("PM") > -1) {
 if (await dayChecker("Mon PM") > -1)
 {
-  for (var i=0; i < await dayChecker("Mon PM").AmntEmp;)
+  for (var i=0; i < await dayChecker("Mon PM");)
   {
     Shift.create({
     
