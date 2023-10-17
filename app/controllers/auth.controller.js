@@ -235,12 +235,14 @@ exports.scheduleTable = async function (res) {
                 const assigning = Shift_Assignments.DaysAssigned;
                 const checking = [];
                 const blah = Shift_Assignments.id;
+                
 
               
                
                 if (req.body.MonAM) {
                   if (blah == null) {
                   Shift_Assignments.upsert({
+                    id: checking,
                     DaysAssigned: "Mon AM"
                   })
                 }
