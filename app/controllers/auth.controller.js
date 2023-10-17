@@ -239,14 +239,12 @@ exports.scheduleTable = async function (res) {
               
                
                 if (req.body.MonAM) {
-                  if (blah == null) { console.log("Monday created!")
+                  if (blah == null) {
                   Shift_Assignments.upsert({
                     DaysAssigned: "Mon AM"
                   })
                 }
-                  else {
-                    
-                  }
+          
                 }
                 if (req.body.MonAM != true) {
             

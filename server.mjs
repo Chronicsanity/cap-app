@@ -847,8 +847,8 @@ if (min_title == "busser")
 {
   valcounter.push("1")
 }
-if (Shift_Assignments.assignments == null) {
-  for (var i=0; i<assignments.length;) {
+if (Shift_Assignments.id == null) {
+  for (var i=0; i<amount;) {
 
 
 if (check.indexOf("Mon AM") >= -1)
