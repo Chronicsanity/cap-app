@@ -866,13 +866,16 @@ if (check.indexOf("Mon AM") >= -1)
     {
       where: {DaysAssigned: "Mon AM"}
     })
+  if (assignments.length != null && assignments.length > 0 )
+  {
 await valueCheck(i).then(function(result){
      Jobs.upsert({
       job_value: result,
       jobs: assignments[i],
       min_title: min_title[i]
     })
-  });
+  })
+};
   i++
   
   }
