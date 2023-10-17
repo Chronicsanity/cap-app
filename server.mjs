@@ -854,7 +854,7 @@ if (Shift_Assignments.id == null) {
 
 if (check.indexOf("Mon AM") == 0)
   {
-    if (amount >= 1)
+    if (amount > 0)
     {
    
     await Shift_Assignments.upsert({
