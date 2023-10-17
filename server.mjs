@@ -866,7 +866,8 @@ if (check.indexOf("Mon AM") >= 0)
     {
       where: {DaysAssigned: "Mon AM"}
     })
-    i++
+    i++;
+    console.log(check.indexOf("Mon AM"))
     if (assignments.length == null )
   {
     console.log("No job selected, skipping!")}
