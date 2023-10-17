@@ -362,7 +362,7 @@ const fixedName = JSON.stringify(check).replace(/[\{\}\"]/g, "");
 const conValue = confirmed_job.job_value;
 const EmpValue = confirmed_Employee.job_value
   async function dayChecker (day) {
-  const amountPull = await Shift_Assignments.findOne( {where: {DaysAssigned: day}})
+  const amountPull = await Shift_Assignments.findOne( {attributes: {exclude: ['id', 'Assignments', 'DaysAssigned', 'min_title']}},{where: {DaysAssigned: day}})
 
 return amountPull
 }
