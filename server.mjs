@@ -875,6 +875,7 @@ if (check.indexOf("Mon AM") == 0)
   i++
   }
   else{await Shift_Assignments.destroy({where:{DaysAssigned: "Mon AM", AmntEmp: null}})
+  i++
   }}
   
   else if (check.indexOf("Mon AM") = -1) {
