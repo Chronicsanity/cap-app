@@ -854,7 +854,8 @@ if (Shift_Assignments.id == null) {
 
 if (check.indexOf("Mon AM") == 0)
   {
-    i++
+    if (amount > 1)
+    {
    
     await Shift_Assignments.upsert({
       Assignments: assignments[i],
@@ -871,12 +872,14 @@ if (check.indexOf("Mon AM") == 0)
   {
     console.log("No job selected, skipping!")}
   
-  
+  i++
   }
+}
   
   else if (check.indexOf("Mon AM") = -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Mon AM"}})
   }
+
 
 
 if (check.indexOf("Mon PM") >= 0)
