@@ -878,7 +878,7 @@ if (check.indexOf("Mon AM") == 0)
   
   }
   
-  else if (check.indexOf("Mon AM") = -1) {
+  else if (check.indexOf("Mon AM") == -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Mon AM"}})
   }
 
@@ -910,7 +910,7 @@ if (check.indexOf("Mon AM") == 0)
   
   }
   
-  else if (check.indexOf("Mon PM") = -1) {
+  else if (check.indexOf("Mon PM") == -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Mon PM"}})
   }
 
@@ -942,7 +942,7 @@ if (check.indexOf("Mon AM") == 0)
   
   }
   
-  else if (check.indexOf("Tue AM") = -1) {
+  else if (check.indexOf("Tue AM") == -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Tue AM"}})
   }
 
@@ -973,7 +973,7 @@ if (check.indexOf("Mon AM") == 0)
   
   }
   
-  else if (check.indexOf("Tue PM") = -1) {
+  else if (check.indexOf("Tue PM") == -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Tue PM"}})
   }
 
@@ -1005,7 +1005,7 @@ if (check.indexOf("Mon AM") == 0)
   
   }
   
-  else if (check.indexOf("Wed AM") = -1) {
+  else if (check.indexOf("Wed AM") == -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Wed AM"}})
   }
 
@@ -1036,7 +1036,7 @@ if (check.indexOf("Mon AM") == 0)
   
   }
   
-  else if (check.indexOf("Wed PM") = -1) {
+  else if (check.indexOf("Wed PM") == -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Wed PM"}})
   }
 
@@ -1067,7 +1067,7 @@ if (check.indexOf("Mon AM") == 0)
   
   }
   
-  else if (check.indexOf("Thu AM") = -1) {
+  else if (check.indexOf("Thu AM") == -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Thu AM"}})
   }
 
@@ -1099,7 +1099,7 @@ if (check.indexOf("Mon AM") == 0)
   
   }
   
-  else if (check.indexOf("Thu PM") = -1) {
+  else if (check.indexOf("Thu PM") == -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Thu PM"}})
   }
 
@@ -1129,7 +1129,7 @@ if (check.indexOf("Mon AM") == 0)
   
   }
   
-  else if (check.indexOf("Fri AM") = -1) {
+  else if (check.indexOf("Fri AM") == -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Fri AM"}})
   }
 
@@ -1160,7 +1160,7 @@ if (check.indexOf("Mon AM") == 0)
   
   }
   
-  else if (check.indexOf("Fri PM") = -1) {
+  else if (check.indexOf("Fri PM") == -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Fri PM"}})
   }
 
@@ -1191,7 +1191,7 @@ if (check.indexOf("Mon AM") == 0)
   
   }
   
-  else if (check.indexOf("Sat AM") = -1) {
+  else if (check.indexOf("Sat AM") == -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Sat AM"}})
   }
 
@@ -1222,7 +1222,7 @@ if (check.indexOf("Mon AM") == 0)
   
   }
   
-  else if (check.indexOf("Sat PM") = -1) {
+  else if (check.indexOf("Sat PM") == -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Sat PM"}})
   }
 
@@ -1253,7 +1253,7 @@ if (check.indexOf("Mon AM") == 0)
   
   }
   
-  else if (check.indexOf("Sun AM") = -1) {
+  else if (check.indexOf("Sun AM") == -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Sun AM"}})
   }
 
@@ -1285,7 +1285,7 @@ if (check.indexOf("Mon AM") == 0)
   
   }
   
-  else if (check.indexOf("Sun PM") = -1) {
+  else if (check.indexOf("Sun PM") == -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Sun PM"}})
   }
 
