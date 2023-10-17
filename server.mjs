@@ -853,7 +853,9 @@ if (Shift_Assignments.id == null) {
 
 if (check.indexOf("Mon AM") == 0)
 {
-  if (amount > 0)
+  if (amount == null)
+  {console.log ("Problem")}
+  else
   {
     
    
