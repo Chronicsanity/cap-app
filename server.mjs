@@ -853,7 +853,7 @@ if (Shift_Assignments.id == null) {
 
 if (check.indexOf("Mon AM") >= -1)
 {
-  if (check.length > 0)
+  if (amount > 0)
   {
     
    
