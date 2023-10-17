@@ -875,9 +875,8 @@ if (check.indexOf("Mon AM") == 0)
   
   i++
   }
-  else if (shifting == null) {await Shift_Assignments.destroy({where:{DaysAssigned: "Mon AM", AmntEmp: null}})
-  i++
-  }}
+  
+  }
   
   else if (check.indexOf("Mon AM") = -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Mon AM"}})
@@ -885,10 +884,11 @@ if (check.indexOf("Mon AM") == 0)
 
 
 
-if (check.indexOf("Mon PM") >= 0)
-{
-  if (check.length > 1)
+  if (check.indexOf("Mon PM") == 0)
   {
+    if (amount > 0)
+    {
+   
     await Shift_Assignments.upsert({
       Assignments: assignments[i],
       AmntEmp: amount[i],
@@ -897,29 +897,29 @@ if (check.indexOf("Mon PM") >= 0)
     },
     {
       where: {DaysAssigned: "Mon PM"}
-    });
-    i++
+    })
+    
+    console.log(check.indexOf("Mon PM"));
+    await Shift_Assignments.destroy({where:{DaysAssigned: "Mon PM", AmntEmp: null}})
+    if (assignments.length == null )
+  {
+    console.log("No job selected, skipping!")}
+  
+  i++
+  }
+  
   }
   
   else if (check.indexOf("Mon PM") = -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Mon PM"}})
   }
-else{
-  await Shift_Assignments.update({
-    Assignments: assignments,
-    AmntEmp: amount,
-    min_title: min_title
-  },
-  {
-  where: {DaysAssigned: "Mon PM"}
-})
 
-}}
 
-if (check.indexOf("Tue AM") >= 0)
-{
-  if (check.length > 1)
+
+  if (check.indexOf("Tue AM") == 0)
   {
+    if (amount > 0)
+    {
    
     await Shift_Assignments.upsert({
       Assignments: assignments[i],
@@ -930,121 +930,91 @@ if (check.indexOf("Tue AM") >= 0)
     {
       where: {DaysAssigned: "Tue AM"}
     })
- 
-    await Jobs.upsert({
-      job_value: valueCheck(i),
-      jobs: assignments[i],
-      min_title: min_title[i]
-    })
-    i++
+    
+    console.log(check.indexOf("Tue AM"));
+    await Shift_Assignments.destroy({where:{DaysAssigned: "Tue AM", AmntEmp: null}})
+    if (assignments.length == null )
+  {
+    console.log("No job selected, skipping!")}
+  
+  i++
   }
+  
+  }
+  
   else if (check.indexOf("Tue AM") = -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Tue AM"}})
   }
-else{
- 
-  await Shift_Assignments.update({
-    Assignments: assignments,
-    AmntEmp: amount,
-    min_title: min_title
-  },
-  {
-  where: {DaysAssigned: "Tue AM"}
-})
-await Jobs.upsert({
-  job_value: valcounter,
-  jobs: assignments,
-  min_title: min_title
-})
-  }
-}
-if (check.indexOf("Tue PM") >= 0)
-{
-  if (check.length > 1)
-  {
- 
-  await Shift_Assignments.upsert({
-    Assignments: assignments[i],
-    AmntEmp: amount[i],
-    DaysAssigned: "Tue PM",
-    min_title: min_title[i]
-  },
-  {
-    where: {DaysAssigned: "Tue PM"}
-  })
- 
-  await Jobs.upsert({
-    job_value: valueCheck(i),
-    jobs: assignments[i],
-    min_title: min_title[i]
-  })
-  i++
-    }
-    else if (check.indexOf("Tue PM") = -1) {
-      await Shift_Assignments.destroy({where:{DaysAssigned: "Tue PM"}})
-    }
-else
-{
-  await Shift_Assignments.update({
-    Assignments: assignments,
-    AmntEmp: amount,
-    min_title: min_title
-  },
-  {
-  where: {DaysAssigned: "Tue PM"}
-})
-await Jobs.upsert({
-  job_value: valcounter,
-  jobs: assignments,
-  min_title: min_title
-})
-}
-}
 
-if (check.indexOf("Wed AM") >= 0)
-{
-  if (check.length > 1)
+
+  if (check.indexOf("Tue PM") == 0)
   {
-  await Shift_Assignments.upsert({
-    Assignments: assignments[i],
-    AmntEmp: amount[i],
-    DaysAssigned: "Wed AM",
-    min_title: min_title[i]
-  },
+    if (amount > 0)
+    {
+   
+    await Shift_Assignments.upsert({
+      Assignments: assignments[i],
+      AmntEmp: amount[i],
+      DaysAssigned: "Tue PM",
+      min_title: min_title[i]
+    },
+    {
+      where: {DaysAssigned: "Tue PM"}
+    })
+    
+    console.log(check.indexOf("Tue PM"));
+    await Shift_Assignments.destroy({where:{DaysAssigned: "Tue PM", AmntEmp: null}})
+    if (assignments.length == null )
   {
-    where: {DaysAssigned: "Wed AM"}
-  })
-  await Jobs.upsert({
-    job_value: valueCheck(i),
-    jobs: assignments[i],
-    min_title: min_title[i]
-  })
+    console.log("No job selected, skipping!")}
+  
   i++
-}
-else if (check.indexOf("Wed AM") = -1) {
-  await Shift_Assignments.destroy({where:{DaysAssigned: "Wed AM"}})
-}
-else
-{
-  await Shift_Assignments.update({
-    Assignments: assignments,
-    AmntEmp: amount,
-    min_title: min_title
-  },
+  }
+  
+  }
+  
+  else if (check.indexOf("Tue PM") = -1) {
+    await Shift_Assignments.destroy({where:{DaysAssigned: "Tue PM"}})
+  }
+
+
+
+  if (check.indexOf("Wed AM") == 0)
   {
-  where: {DaysAssigned: "Wed AM"}
-})
-await Jobs.upsert({
-  job_value: valcounter,
-  jobs: assignments,
-  min_title: min_title
-})
-}
-}
-if (check.indexOf("Wed PM") >= 0)
-{
-  if (check.length > 1)
+    if (amount > 0)
+    {
+   
+    await Shift_Assignments.upsert({
+      Assignments: assignments[i],
+      AmntEmp: amount[i],
+      DaysAssigned: "Wed AM",
+      min_title: min_title[i]
+    },
+    {
+      where: {DaysAssigned: "Wed AM"}
+    })
+    
+    console.log(check.indexOf("Wed AM"));
+    await Shift_Assignments.destroy({where:{DaysAssigned: "Wed AM", AmntEmp: null}})
+    if (assignments.length == null )
   {
+    console.log("No job selected, skipping!")}
+  
+  i++
+  }
+  
+  }
+  
+  else if (check.indexOf("Wed AM") = -1) {
+    await Shift_Assignments.destroy({where:{DaysAssigned: "Wed AM"}})
+  }
+
+
+  if (check.indexOf("Wed PM") == 0)
+  {
+    if (amount > 0)
+    {
+   
     await Shift_Assignments.upsert({
       Assignments: assignments[i],
       AmntEmp: amount[i],
@@ -1054,38 +1024,28 @@ if (check.indexOf("Wed PM") >= 0)
     {
       where: {DaysAssigned: "Wed PM"}
     })
-  await Jobs.upsert({
-    job_value: valueCheck(i),
-    jobs: assignments[i],
-    min_title: min_title[i]
-  })
+    
+    console.log(check.indexOf("Wed PM"));
+    await Shift_Assignments.destroy({where:{DaysAssigned: "Wed PM", AmntEmp: null}})
+    if (assignments.length == null )
+  {
+    console.log("No job selected, skipping!")}
+  
   i++
   }
+  
+  }
+  
   else if (check.indexOf("Wed PM") = -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Wed PM"}})
   }
 
-else{
-  await Shift_Assignments.update({
-    Assignments: assignments,
-    AmntEmp: amount,
-    min_title: min_title
-  },
+
+  if (check.indexOf("Thu AM") == 0)
   {
-  where: {DaysAssigned: "Wed PM"}
-})
-await Jobs.upsert({
-  job_value: valcounter,
-  jobs: assignments,
-  min_title: min_title
-})
-}
-}
-if (check.indexOf("Thu AM") >= 0)
-{{
-  if (check.length > 1)
-  {
- 
+    if (amount > 0)
+    {
+   
     await Shift_Assignments.upsert({
       Assignments: assignments[i],
       AmntEmp: amount[i],
@@ -1096,38 +1056,28 @@ if (check.indexOf("Thu AM") >= 0)
       where: {DaysAssigned: "Thu AM"}
     })
     
-    await Jobs.upsert({
-      job_value: valueCheck(i),
-      jobs: assignments[i],
-      min_title: min_title[i]
-    })
-    i++
+    console.log(check.indexOf("Thu AM"));
+    await Shift_Assignments.destroy({where:{DaysAssigned: "Thu AM", AmntEmp: null}})
+    if (assignments.length == null )
+  {
+    console.log("No job selected, skipping!")}
+  
+  i++
   }
+  
+  }
+  
   else if (check.indexOf("Thu AM") = -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Thu AM"}})
   }
-  
-else{
-  await Shift_Assignments.update({
-    Assignments: assignments,
-    AmntEmp: amount,
-    min_title: min_title
-  },
-  {
-  where: {DaysAssigned: "Thu AM"}
-})
-await Jobs.upsert({
-  job_value: valcounter,
-  jobs: assignments,
-  min_title: min_title
-})
-}
-}}
 
-if (check.indexOf("Thu PM") >= 0)
-{
-  if (check.length > 1)
+
+
+  if (check.indexOf("Thu PM") == 0)
   {
+    if (amount > 0)
+    {
+   
     await Shift_Assignments.upsert({
       Assignments: assignments[i],
       AmntEmp: amount[i],
@@ -1138,38 +1088,26 @@ if (check.indexOf("Thu PM") >= 0)
       where: {DaysAssigned: "Thu PM"}
     })
     
-    await Jobs.upsert({
-      job_value: valueCheck(i),
-      jobs: assignments[i],
-      min_title: min_title[i]
-    })
-    i++
+    console.log(check.indexOf("Thu PM"));
+    await Shift_Assignments.destroy({where:{DaysAssigned: "Thu PM", AmntEmp: null}})
+    if (assignments.length == null )
+  {
+    console.log("No job selected, skipping!")}
+  
+  i++
   }
+  
+  }
+  
   else if (check.indexOf("Thu PM") = -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Thu PM"}})
   }
 
-else{
-  await Shift_Assignments.update({
-    Assignments: assignments,
-    AmntEmp: amount,
-    min_title: min_title
-  },
+  if (check.indexOf("Fri AM") == 0)
   {
-  where: {DaysAssigned: "Thu PM"}
-})
-await Jobs.upsert({
-  job_value: valcounter,
-  jobs: assignments,
-  min_title: min_title
-})
-}
-}
-
-if (check.indexOf("Fri AM") >= 0)
-{
-  if (check.length > 1)
-  {
+    if (amount > 0)
+    {
+   
     await Shift_Assignments.upsert({
       Assignments: assignments[i],
       AmntEmp: amount[i],
@@ -1179,38 +1117,28 @@ if (check.indexOf("Fri AM") >= 0)
     {
       where: {DaysAssigned: "Fri AM"}
     })
+    
+    console.log(check.indexOf("Fri AM"));
+    await Shift_Assignments.destroy({where:{DaysAssigned: "Fri AM", AmntEmp: null}})
+    if (assignments.length == null )
+  {
+    console.log("No job selected, skipping!")}
   
-    await Jobs.upsert({
-      job_value: valueCheck(i),
-      jobs: assignments[i],
-      min_title: min_title[i]
-    })
-    i++
+  i++
   }
+  
+  }
+  
   else if (check.indexOf("Fri AM") = -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Fri AM"}})
   }
 
-else{
-  await Shift_Assignments.update({
-    Assignments: assignments,
-    AmntEmp: amount,
-    min_title: min_title
-  },
+
+  if (check.indexOf("Fri PM") == 0)
   {
-  where: {DaysAssigned: "Fri AM"}
-})
-await Jobs.upsert({
-  job_value: valcounter,
-  jobs: assignments,
-  min_title: min_title
-})
-}
-}
-if (check.indexOf("Fri PM") >= 0)
-{
-  if (check.length > 1)
-  {
+    if (amount > 0)
+    {
+   
     await Shift_Assignments.upsert({
       Assignments: assignments[i],
       AmntEmp: amount[i],
@@ -1221,36 +1149,27 @@ if (check.indexOf("Fri PM") >= 0)
       where: {DaysAssigned: "Fri PM"}
     })
     
-    await Jobs.upsert({
-      job_value: valueCheck(i),
-      jobs: assignments[i],
-      min_title: min_title[i]
-    })
-    i++
+    console.log(check.indexOf("Fri PM"));
+    await Shift_Assignments.destroy({where:{DaysAssigned: "Fri PM", AmntEmp: null}})
+    if (assignments.length == null )
+  {
+    console.log("No job selected, skipping!")}
+  
+  i++
   }
+  
+  }
+  
   else if (check.indexOf("Fri PM") = -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Fri PM"}})
   }
-else{
-  await Shift_Assignments.update({
-    Assignments: assignments,
-    AmntEmp: amount,
-    min_title: min_title
-  },
+
+
+  if (check.indexOf("Sat AM") == 0)
   {
-  where: {DaysAssigned: "Fri PM"}
-})
-await Jobs.upsert({
-  job_value: valcounter,
-  jobs: assignments,
-  min_title: min_title
-})
-}
-}
-if (check.indexOf("Sat AM") >= 0)
-{
-  if (check.length > 1)
-  {
+    if (amount > 0)
+    {
+   
     await Shift_Assignments.upsert({
       Assignments: assignments[i],
       AmntEmp: amount[i],
@@ -1261,36 +1180,27 @@ if (check.indexOf("Sat AM") >= 0)
       where: {DaysAssigned: "Sat AM"}
     })
     
-    await Jobs.upsert({
-      job_value: valueCheck(i),
-      jobs: assignments[i],
-      min_title: min_title[i]
-    })
-    i++
+    console.log(check.indexOf("Sat AM"));
+    await Shift_Assignments.destroy({where:{DaysAssigned: "Sat AM", AmntEmp: null}})
+    if (assignments.length == null )
+  {
+    console.log("No job selected, skipping!")}
+  
+  i++
   }
+  
+  }
+  
   else if (check.indexOf("Sat AM") = -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Sat AM"}})
   }
-else{
-  await Shift_Assignments.update({
-    Assignments: assignments,
-    AmntEmp: amount,
-    min_title: min_title
-  },
+
+
+  if (check.indexOf("Sat PM") == 0)
   {
-  where: {DaysAssigned: "Sat AM"}
-})
-await Jobs.upsert({
-  job_value: valcounter,
-  jobs: assignments,
-  min_title: min_title
-})
-}
-}
-if (check.indexOf("Sat PM") >= 0)
-{
-  if (check.length > 1)
-  {
+    if (amount > 0)
+    {
+   
     await Shift_Assignments.upsert({
       Assignments: assignments[i],
       AmntEmp: amount[i],
@@ -1301,36 +1211,27 @@ if (check.indexOf("Sat PM") >= 0)
       where: {DaysAssigned: "Sat PM"}
     })
     
-    await Jobs.upsert({
-      job_value: valueCheck(i),
-      jobs: assignments[i],
-      min_title: min_title[i]
-    })
-    i++
+    console.log(check.indexOf("Sat PM"));
+    await Shift_Assignments.destroy({where:{DaysAssigned: "Sat PM", AmntEmp: null}})
+    if (assignments.length == null )
+  {
+    console.log("No job selected, skipping!")}
+  
+  i++
   }
+  
+  }
+  
   else if (check.indexOf("Sat PM") = -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Sat PM"}})
   }
-else{
-  await Shift_Assignments.update({
-    Assignments: assignments,
-    AmntEmp: amount,
-    min_title: min_title
-  },
+
+
+  if (check.indexOf("Sun AM") == 0)
   {
-  where: {DaysAssigned: "Sat PM"}
-})
-await Jobs.upsert({
-  job_value: valcounter,
-  jobs: assignments,
-  min_title: min_title
-})
-}
-}
-if (check.indexOf("Sun AM") >= 0)
-{
-  if (check.length > 1)
-  {
+    if (amount > 0)
+    {
+   
     await Shift_Assignments.upsert({
       Assignments: assignments[i],
       AmntEmp: amount[i],
@@ -1341,74 +1242,52 @@ if (check.indexOf("Sun AM") >= 0)
       where: {DaysAssigned: "Sun AM"}
     })
     
-    await Jobs.upsert({
-      job_value: valueCheck(i),
-      jobs: assignments[i],
-      min_title: min_title[i]
-    })
-    i++
+    console.log(check.indexOf("Sun AM"));
+    await Shift_Assignments.destroy({where:{DaysAssigned: "Sun AM", AmntEmp: null}})
+    if (assignments.length == null )
+  {
+    console.log("No job selected, skipping!")}
+  
+  i++
   }
+  
+  }
+  
   else if (check.indexOf("Sun AM") = -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Sun AM"}})
   }
-else{
-  await Shift_Assignments.update({
-    Assignments: assignments,
-    AmntEmp: amount,
-    min_title: min_title
-  },
-  {
-  where: {DaysAssigned: "Sun AM"}
-})
-await Jobs.upsert({
-  job_value: valcounter,
-  jobs: assignments,
-  min_title: min_title
-})
-}
-}
 
-if (check.indexOf("Sun PM") >= 0)
-{
-  if (check.length > 1)
+
+
+  if (check.indexOf("Sun PM") == 0)
   {
+    if (amount > 0)
+    {
+   
     await Shift_Assignments.upsert({
       Assignments: assignments[i],
       AmntEmp: amount[i],
       DaysAssigned: "Sun PM",
       min_title: min_title[i]
-    
     },
     {
       where: {DaysAssigned: "Sun PM"}
     })
     
-    await Jobs.upsert({
-      job_value: valueCheck(i),
-      jobs: assignments[i],
-      min_title: min_title[i]
-    })
-    i++
+    console.log(check.indexOf("Sun PM"));
+    await Shift_Assignments.destroy({where:{DaysAssigned: "Sun PM", AmntEmp: null}})
+    if (assignments.length == null )
+  {
+    console.log("No job selected, skipping!")}
+  
+  i++
   }
+  
+  }
+  
   else if (check.indexOf("Sun PM") = -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Sun PM"}})
   }
-else{
-  await Shift_Assignments.update({
-    Assignments: assignments,
-    AmntEmp: amount,
-    min_title: min_title
-  },
-  {
-  where: {DaysAssigned: "Sun PM"}
-})
-await Jobs.upsert({
-  job_value: valcounter,
-  jobs: assignments,
-  min_title: min_title
-})
-}
-}
 
 }
 }
