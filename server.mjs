@@ -915,11 +915,7 @@ else{
   {
   where: {DaysAssigned: "Mon PM"}
 })
-await Jobs.upsert({
-  job_value: valcounter,
-  jobs: assignments,
-  min_title: min_title
-})
+
 }}
 
 if (check.indexOf("Tue AM") >= 0)
