@@ -866,13 +866,14 @@ if (check.indexOf("Mon AM") >= -1)
     {
       where: {DaysAssigned: "Mon AM"}
     })
+    i++
     if (assignments.length == null )
   {
     console.log("No job selected, skipping!")}
   
-  i++
   
   }
+  
   else if (check.indexOf("Mon AM") = -1) {
     await Shift_Assignments.destroy({where:{DaysAssigned: "Mon AM"}})
   }
