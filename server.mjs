@@ -853,7 +853,7 @@ if (Shift_Assignments.id == null) {
 
 if (check.indexOf("Mon AM") >= -1)
 {
-  if (check.length > 0)
+  if (check.length > 1)
   {
     
    
@@ -866,7 +866,7 @@ if (check.indexOf("Mon AM") >= -1)
     {
       where: {DaysAssigned: "Mon AM"}
     })
-  if (assignments.length == null )
+    if (assignments.length == null )
   {
     console.log("No job selected, skipping!")}
   
