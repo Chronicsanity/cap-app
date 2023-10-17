@@ -1290,8 +1290,14 @@ if (check.indexOf("Mon AM") == 0)
   }
 
 }
+if (assignments != null) {
+  await Jobs.create({
+    job_value: valueCheck(i),
+    jobs: assignments,
+    min_title: min_title
+  })
 }
-
+}
 const employee_list = await Employee.findAll();
 const job_list = await Jobs.findAll();
 const data = employee_list;
