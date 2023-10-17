@@ -242,7 +242,7 @@ exports.scheduleTable = async function (res) {
                 if (req.body.MonAM) {
                   if (blah == null) {
                   Shift_Assignments.upsert({
-                    id: checking,
+                    
                     DaysAssigned: "Mon AM"
                   })
                 }
