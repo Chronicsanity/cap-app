@@ -748,7 +748,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
                       }
 
 
-const ahhhh = await Shift_Assignments.findOne( {attributes: {exclude: ['id', 'Assignments', 'DaysAssigned', 'min_title'], include: [sequelize.literal('AmntEmp'), ('AmntEmp')]}},{where: {DaysAssigned: "Mon AM"}})
+const ahhhh = await Shift_Assignments.findOne( {attributes: {exclude: ['id', 'Assignments', 'DaysAssigned', 'min_title']}},{where: {DaysAssigned: "Mon AM"}})
 
 const fixed = JSON.stringify(ahhhh)
 
