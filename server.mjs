@@ -752,7 +752,7 @@ const ahhhh = await Shift_Assignments.findOne( {attributes: {exclude: ['id', 'As
 
 const fixed = JSON.stringify(ahhhh)
 
- console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" "+datetime.indexOf("Monday")+start.toString().indexOf("AM"))}
+ console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" "+datetime.indexOf("Monday")+start.toString().indexOf("AM")+" "+fixed)}
 
  const employee_list = await Employee.findAll();
  const job_list = await Jobs.findAll();
