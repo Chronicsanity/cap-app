@@ -855,7 +855,7 @@ if (Shift_Assignments.id == null) {
 if (check.indexOf("Mon AM") == 0)
 {
   if (shifting == null)
-  {console.log ("Problem")}
+  {i++; console.log ("Problem")}
   else
   {
     
