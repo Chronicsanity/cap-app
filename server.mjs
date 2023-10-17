@@ -851,7 +851,7 @@ if (Shift_Assignments.id == null) {
   for (var i=0; i<check.length;) {
 
 
-if (check.indexOf("Mon AM") >= -1)
+if (check.indexOf("Mon AM") >= 0)
 {
   if (amount > 0)
   {
@@ -879,7 +879,7 @@ if (check.indexOf("Mon AM") >= -1)
   }
 }
 
-if (check.indexOf("Mon PM") >= -1)
+if (check.indexOf("Mon PM") >= 0)
 {
   if (check.length > 1)
   {
