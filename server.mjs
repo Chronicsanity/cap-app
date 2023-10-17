@@ -415,13 +415,7 @@ if (await dayChecker("Mon PM") > -1)
    i++
    if (i >= await dayChecker("Mon PM").AmntEmp){
     console.log("Day Full!")
-    Shift.upsert({
-      employee_name: name,
-      jobs: job,
-      time_start: start,
-      time_end: end,
-      date: datetime
-    })
+ 
    }
   }
 
@@ -444,13 +438,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
      i++
      if (i == await dayChecker("Tue AM")){
       console.log("Day Full!")
-      Shift.update({
-        employee_name: name,
-        jobs: job,
-        time_start: start,
-        time_end: end,
-        date: datetime
-      })
+     
      }
     }
   
@@ -473,13 +461,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
        i++
        if (i == await dayChecker("Tue PM")){
         console.log("Day Full!")
-        Shift.update({
-          employee_name: name,
-          jobs: job,
-          time_start: start,
-          time_end: end,
-          date: datetime
-        })
+      
        }
       }
     
@@ -502,13 +484,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
          i++
          if (i == await dayChecker("Wed AM")){
           console.log("Day Full!")
-          Shift.update({
-            employee_name: name,
-            jobs: job,
-            time_start: start,
-            time_end: end,
-            date: datetime
-          })
+          
          }
         }
       
@@ -531,13 +507,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
            i++
            if (i == await dayChecker("Wed PM")){
             console.log("Day Full!")
-            Shift.update({
-              employee_name: name,
-              jobs: job,
-              time_start: start,
-              time_end: end,
-              date: datetime
-            })
+          
            }
           }
         
@@ -560,13 +530,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
              i++
              if (i == await dayChecker("Thu AM")){
               console.log("Day Full!")
-              Shift.update({
-                employee_name: name,
-                jobs: job,
-                time_start: start,
-                time_end: end,
-                date: datetime
-              })
+             
              }
             }
           
@@ -589,13 +553,6 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
                i++
                if (i == await dayChecker("Thu PM")){
                 console.log("Day Full!")
-                Shift.update({
-                  employee_name: name,
-                  jobs: job,
-                  time_start: start,
-                  time_end: end,
-                  date: datetime
-                })
                }
               }
             
@@ -618,13 +575,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
                  i++
                  if (i == await dayChecker("Fri AM")){
                   console.log("Day Full!")
-                  Shift.update({
-                    employee_name: name,
-                    jobs: job,
-                    time_start: start,
-                    time_end: end,
-                    date: datetime
-                  })
+                 
                  }
                 }
               
@@ -647,13 +598,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
                    i++
                    if (i == await dayChecker("Sat AM")){
                     console.log("Day Full!")
-                    Shift.update({
-                      employee_name: name,
-                      jobs: job,
-                      time_start: start,
-                      time_end: end,
-                      date: datetime
-                    })
+                   
                    }
                   }
                 
@@ -676,13 +621,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
                      i++
                      if (i == await dayChecker("Sat PM")){
                       console.log("Day Full!")
-                      Shift.update({
-                        employee_name: name,
-                        jobs: job,
-                        time_start: start,
-                        time_end: end,
-                        date: datetime
-                      })
+                 
                      }
                     }
                   
@@ -705,13 +644,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
                        i++
                        if (i == await dayChecker("Sun AM")){
                         console.log("Day Full!")
-                        Shift.update({
-                          employee_name: name,
-                          jobs: job,
-                          time_start: start,
-                          time_end: end,
-                          date: datetime
-                        })
+                  
                        }
                       }
                     
@@ -734,13 +667,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
                          i++
                          if (i == await dayChecker("Sun PM")){
                           console.log("Day Full!")
-                          Shift.update({
-                            employee_name: name,
-                            jobs: job,
-                            time_start: start,
-                            time_end: end,
-                            date: datetime
-                          })
+                       
                          }
                         }
                       
@@ -748,11 +675,8 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
                       }
 
 
-const ahhhh = await Shift_Assignments.findOne( {attributes: {exclude: ['id', 'Assignments', 'DaysAssigned', 'min_title']}},{where: {DaysAssigned: "Mon AM"}})
 
-const fixed = JSON.stringify(ahhhh)
-if (ahhhh > 0) {console.log("fixed")}
- console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" "+datetime.indexOf("Monday")+start.toString().indexOf("AM")+" "+fixed)}
+ console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id)}
 
  const employee_list = await Employee.findAll();
  const job_list = await Jobs.findAll();
