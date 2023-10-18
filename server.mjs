@@ -1286,15 +1286,16 @@ if (check.indexOf("Mon AM") == 0)
     await Shift_Assignments.destroy({where:{DaysAssigned: "Sun PM"}})
   }
 
-}
 
-if (assignments != null) {
+
+else if (assignments != null) {
   await Jobs.create({
     job_value: valueCheck(i),
     jobs: assignments,
     min_title: min_title
   })
 }
+  }
 }
 await Shift_Assignments.destroy({where:{AmntEmp: null}})
 
