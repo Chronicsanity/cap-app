@@ -233,7 +233,7 @@ exports.scheduleTable = async function (res) {
 
               exports.checkedList = async function (req) {
                 const assigning = Shift_Assignments.DaysAssigned;
-                const checking = [];
+                const counter = [];
                 const blah = Shift_Assignments.id;
                 
 
@@ -245,6 +245,7 @@ exports.scheduleTable = async function (res) {
                     
                     DaysAssigned: "Mon AM"
                   })
+                  counter+1
                 }
           
                 }
@@ -257,6 +258,7 @@ exports.scheduleTable = async function (res) {
                   Shift_Assignments.upsert({
                     DaysAssigned: "Mon PM"
                   })
+                  counter+1
                 }
                   console.log("True")
                 }
@@ -268,7 +270,7 @@ exports.scheduleTable = async function (res) {
                   Shift_Assignments.upsert({
                     DaysAssigned: "Tue AM"
                   })
-                  console.log("True")
+                  counter+1
                 }
                 if (req.body.TueAM != true) {
             
@@ -278,7 +280,7 @@ exports.scheduleTable = async function (res) {
                   Shift_Assignments.upsert({
                     DaysAssigned: "Tue PM"
                   })
-                  console.log("True")
+               counter+1
                 }
                 if (req.body.TuePM != true) {
             
@@ -288,7 +290,7 @@ exports.scheduleTable = async function (res) {
                   Shift_Assignments.upsert({
                     DaysAssigned: "Wed AM"
                   })
-                  console.log("True")
+                  counter+1
                 }
                 if (req.body.WedAM != true) {
             
@@ -298,7 +300,7 @@ exports.scheduleTable = async function (res) {
                   Shift_Assignments.upsert({
                     DaysAssigned: "Wed PM"
                   })
-                  console.log("True")
+                  counter+1
                 }
                 if (req.body.WedPM != true) {
             
@@ -308,7 +310,7 @@ exports.scheduleTable = async function (res) {
                   Shift_Assignments.upsert({
                     DaysAssigned: "Thu AM"
                   })
-                  console.log("True")
+                  counter+1
                 }
                 if (req.body.ThuAM != true) {
             
@@ -318,7 +320,7 @@ exports.scheduleTable = async function (res) {
                   Shift_Assignments.upsert({
                     DaysAssigned: "Thu PM"
                   })
-                  console.log("True")
+                  counter+1
                 }
                 if (req.body.ThuPM != true) {
             
@@ -328,7 +330,7 @@ exports.scheduleTable = async function (res) {
                   Shift_Assignments.upsert({
                     DaysAssigned: "Fri AM"
                   })
-                  console.log("True")
+                  counter+1
                 }
                 if (req.body.FriAM != true) {
             
@@ -338,7 +340,7 @@ exports.scheduleTable = async function (res) {
                   Shift_Assignments.upsert({
                     DaysAssigned: "Fri PM"
                   })
-                  console.log("True")
+                  counter+1
                 }
                 if (req.body.FriPM != true) {
             
@@ -348,7 +350,7 @@ exports.scheduleTable = async function (res) {
                   Shift_Assignments.upsert({
                     DaysAssigned: "Sat AM"
                   })
-                  console.log("True")
+                  counter+1
                 }
                 if (req.body.SatAM != true) {
             
@@ -358,7 +360,7 @@ exports.scheduleTable = async function (res) {
                   Shift_Assignments.upsert({
                     DaysAssigned: "Sat PM"
                   })
-                  console.log("True")
+                  counter+1
                 }
                 if (req.body.SatPM != true) {
             
@@ -368,7 +370,7 @@ exports.scheduleTable = async function (res) {
                   Shift_Assignments.upsert({
                     DaysAssigned: "Sun AM"
                   })
-                  console.log("True")
+                  counter+1
                 }
                 if (req.body.SunAM != true) {
             
@@ -378,13 +380,14 @@ exports.scheduleTable = async function (res) {
                   Shift_Assignments.upsert({
                     DaysAssigned: "Sun PM"
                   })
-                  console.log("True")
+                  counter+1
                 }
 
                 if (req.body.SunPM != true) {
             
                   Shift_Assignments.destroy({where: {DaysAssigned: "Sun PM"}})
                   }
+                  return counter
               }
             
               

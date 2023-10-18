@@ -804,7 +804,7 @@ app.get('/shiftassignment', async function (req,res){
 })
 })
 app.post('/shiftassignment', async function (req,res){
-
+const counter =  await controller.checkedList(req);
 const amount = await req.body.amntEmployees
 const assignments = await req.body.assignments;
 const min_title = await req.body.min_title
@@ -849,7 +849,7 @@ if (min_title == "busser")
   valcounter.push("1")
 }
 if (Shift_Assignments.id == null) {
-  for (var i=0; i< check.length;) {
+  for (var i=0; i< counter;) {
 
 
 if (check.indexOf("Mon AM") == 0)
