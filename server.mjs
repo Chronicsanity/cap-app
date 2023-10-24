@@ -813,7 +813,7 @@ const check = await req.body.weekcheck
 const shifting = await Shift_Assignments.AmntEmp;
 const weekcheck = JSON.stringify(check).replace(/]|[/''[]/g, "")
 function fixingCounter(counter) {
-  var arr = counter.split(" ").map(Number);
+  var arr = counter.toString().split(" ").map(Number);
   var largest = arr[0];
   for (var i = 1; i < arr.length; i++) {
     if (arr[i] > largest) {
