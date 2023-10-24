@@ -398,7 +398,7 @@ if (await dayChecker("Mon AM") > 0)
   
 
   }}
-  if (datetime.indexOf("Monday")>= -1 && start.toString().indexOf("PM") > -1) {
+  if (datetime.indexOf("Monday")>= 0 && start.toString().indexOf("PM") > 0) {
 if (await dayChecker("Mon PM") > -1)
 {
   for (var i=0; i < await dayChecker("Mon PM");)
@@ -752,7 +752,7 @@ const ahhhh = await Shift_Assignments.findOne( {attributes: {exclude: ['id', 'As
 
 const fixed = JSON.stringify(ahhhh)
 if (ahhhh > 0) {console.log("fixed")}
- console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" "+datetime.indexOf("Monday")+start.toString().indexOf("AM"))}
+ console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" "+datetime.indexOf("Monday")+start.toString().indexOf("AM")+" "+datetime.indexOf("Friday")+start.toString().indexOf("PM"))}
 
  const employee_list = await Employee.findAll();
  const job_list = await Jobs.findAll();
