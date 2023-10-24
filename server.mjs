@@ -808,11 +808,12 @@ const counter =  req.body.countercheck
 function arrayMax(counter) {
   const len = counter.length
   const max = -Infinity;
-  while (len--) {
+  
     if (counter[len] > max) {
       max = counter[len];
+      len--
     }
-  }
+  
   return max;
 };
 const maxCounter = arrayMax(counter);
