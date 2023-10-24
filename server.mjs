@@ -814,7 +814,7 @@ const shifting = await Shift_Assignments.AmntEmp;
 const weekcheck = JSON.stringify(check).replace(/]|[/''[]/g, "")
 const annoying = [1,2,3]
 
-const maxCounter = await Math.max(annoying)
+const maxCounter = await Math.max.apply(annoying)
 async function valueCheck(i) { 
   const valcounter = [];
 if (min_title[i] == "headChef")
