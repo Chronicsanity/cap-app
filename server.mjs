@@ -1297,7 +1297,7 @@ else if (assignments != null) {
   })
 }
   }
-  console.log("erase NULL"+ " "+maxCounter)
+  console.log("erase NULL"+ " "+maxCounter+" "+counter)
   await Shift_Assignments.destroy({where:{AmntEmp: [null]}})
 }
 
