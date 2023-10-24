@@ -852,7 +852,7 @@ if (min_title == "busser")
   valcounter.push("1")
 }
 if (Shift_Assignments.id == null) {
-  for (var i=0; i< counter;) {
+  for (var i=0; i< 2;) {
 
 
 if (check.indexOf("Mon AM") == 0)
