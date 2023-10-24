@@ -398,7 +398,7 @@ if (await dayChecker("Mon AM") > 0)
   
 
   }}
-  if (datetime.indexOf("Monday")>= 0 && start.toString().indexOf("PM") > 0) {
+  if (datetime.indexOf("Monday")>= 0 && start.toString().indexOf("PM") >= 0) {
 if (await dayChecker("Mon PM") > -1)
 {
   for (var i=0; i < await dayChecker("Mon PM");)
@@ -427,7 +427,7 @@ if (await dayChecker("Mon PM") > -1)
 
   }
 }
-if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
+if (datetime.indexOf("Tuesday")>= 0 && start.toString().indexOf("AM") >= 0) {
   if (await dayChecker("Tue AM") > 0)
   {
     for (var i=0; i < await dayChecker("Tue AM");)
@@ -456,7 +456,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
   
     }
   }
-  if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("PM") > -1) {
+  if (datetime.indexOf("Tuesday")>= 0 && start.toString().indexOf("PM") >= 0) {
     if (await dayChecker("Tue PM") > 0)
     {
       for (var i=0; i < await dayChecker("Tue PM");)
@@ -485,7 +485,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
     
       }
     }
-    if (datetime.indexOf("Wednesday")>= -1 && start.toString().indexOf("AM") > -1) {
+    if (datetime.indexOf("Wednesday")>= 0 && start.toString().indexOf("AM") >= 0) {
       if (await dayChecker("Wed AM") > 0)
       {
         for (var i=0; i < await dayChecker("Wed AM");)
@@ -514,7 +514,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
       
         }
       }
-      if (datetime.indexOf("Wednesday")>= -1 && start.toString().indexOf("PM") > -1) {
+      if (datetime.indexOf("Wednesday")>= 0 && start.toString().indexOf("PM") >= 0) {
         if (await dayChecker("Wed PM") > 0)
         {
           for (var i=0; i < await dayChecker("Wed PM");)
@@ -543,7 +543,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
         
           }
         }
-        if (datetime.indexOf("Thursday")>= -1 && start.toString().indexOf("AM") > -1) {
+        if (datetime.indexOf("Thursday")>= 0 && start.toString().indexOf("AM") >= 0) {
           if (await dayChecker("Thu AM") > 0)
           {
             for (var i=0; i < await controller.dayChecker("Thu AM");)
@@ -572,7 +572,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
           
             }
           }
-          if (datetime.indexOf("Thursday")>= -1 && start.toString().indexOf("PM") > -1) {
+          if (datetime.indexOf("Thursday")>= 0 && start.toString().indexOf("PM")>= 0) {
             if (await dayChecker("Thu PM") > 0)
             {
               for (var i=0; i < await dayChecker("Thu PM");)
@@ -601,7 +601,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
             
               }
             }
-            if (datetime.indexOf("Friday")>= -1 && start.toString().indexOf("AM") > -1) {
+            if (datetime.indexOf("Friday")>= 0 && start.toString().indexOf("AM") >= 0) {
               if (await dayChecker("Fri AM") > 0)
               {
                 for (var i=0; i < await dayChecker("Fri AM");)
@@ -630,7 +630,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
               
                 }
               }
-              if (datetime.indexOf("Saturday")>= -1 && start.toString().indexOf("AM") > -1) {
+              if (datetime.indexOf("Saturday")>= 0 && start.toString().indexOf("AM") >= 0) {
                 if (await dayChecker("Sat AM") > 0)
                 {
                   for (var i=0; i < await dayChecker("Sat AM");)
@@ -659,7 +659,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
                 
                   }
                 }
-                if (datetime.indexOf("Saturday")>= -1 && start.toString().indexOf("PM") > -1) {
+                if (datetime.indexOf("Saturday")>= 0 && start.toString().indexOf("PM") >= 0) {
                   if (await dayChecker("Sat PM") > 0)
                   {
                     for (var i=0; i < await dayChecker("Sat PM");)
@@ -688,7 +688,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
                   
                     }
                   }
-                  if (datetime.indexOf("Sunday")>= -1 && start.toString().indexOf("AM") > -1) {
+                  if (datetime.indexOf("Sunday")>= 0 && start.toString().indexOf("AM") >= 0) {
                     if (await dayChecker("Sun AM") > 0)
                     {
                       for (var i=0; i < await dayChecker("Sun AM");)
@@ -717,7 +717,7 @@ if (datetime.indexOf("Tuesday")>= -1 && start.toString().indexOf("AM") > -1) {
                     
                       }
                     }
-                    if (datetime.indexOf("Sunday")>= -1 && start.toString().indexOf("PM") > -1) {
+                    if (datetime.indexOf("Sunday")>= 0  && start.toString().indexOf("PM") >= 0) {
                       if (await dayChecker("Sun PM") > 0)
                       {
                         for (var i=0; i < await dayChecker("Sun PM");)
@@ -812,7 +812,6 @@ const min_title = await req.body.min_title
 const check = await req.body.weekcheck
 const shifting = await Shift_Assignments.AmntEmp;
 const weekcheck = JSON.stringify(check).replace(/]|[/''[]/g, "")
-const annoying = [1,2,3]
 
 const maxCounter = await counter.length;
 async function valueCheck(i) { 
@@ -853,7 +852,7 @@ if (min_title == "busser")
   valcounter.push("1")
 }
 if (Shift_Assignments.id == null) {
-  for (var i=0; i< maxCounter;) {
+  for (var i=0; i< counter;) {
 
 
 if (check.indexOf("Mon AM") == 0)
