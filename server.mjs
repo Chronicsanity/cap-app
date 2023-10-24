@@ -813,17 +813,8 @@ const check = await req.body.weekcheck
 const shifting = await Shift_Assignments.AmntEmp;
 const weekcheck = JSON.stringify(check).replace(/]|[/''[]/g, "")
 const annoying = [1,2,3]
-async function fixingCounter(counter) {
-  var arr = await counter.toString().split(" ").map(Number);
-  var largest = arr[0];
-  for (var i = 1; i < arr.length; i++) {
-    if (arr[i] > largest) {
-      largest = arr[i];
-    }
-  }
-  return largest;
-}
-const maxCounter = await fixingCounter(counter);
+
+const maxCounter = await counter.length;
 async function valueCheck(i) { 
   const valcounter = [];
 if (min_title[i] == "headChef")
