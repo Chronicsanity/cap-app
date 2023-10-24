@@ -805,18 +805,7 @@ app.get('/shiftassignment', async function (req,res){
 })
 app.post('/shiftassignment', async function (req,res){
 const counter =  req.body.countercheck
-function arrayMax(counter) {
-  const len = counter.length
-  const max = -Infinity;
-  
-    if (counter[len] > max) {
-      max = counter[len];
-      len--
-    }
-  
-  return max;
-};
-const maxCounter = arrayMax(counter);
+const maxCounter = Math.max(counter);
 const amount = await req.body.amntEmployees
 const assignments = await req.body.assignments;
 const min_title = await req.body.min_title
