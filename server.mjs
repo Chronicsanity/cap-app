@@ -823,7 +823,7 @@ async function fixingCounter(amount) {
   }
   return largest;
 }
-const maxCounter = fixingCounter(amount);
+const maxCounter = await fixingCounter(amount);
 async function valueCheck(i) { 
   const valcounter = [];
 if (min_title[i] == "headChef")
