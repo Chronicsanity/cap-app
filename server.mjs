@@ -21,7 +21,6 @@ import mysql from 'mysql';
 import Promise from 'promise';
 import bcrypt from 'bcryptjs';
 import controller from "./app/controllers/auth.controller.js";
-import datePicker from "tui-time-picker"
 import flash from 'connect-flash';
 const sequelize = new Sequelize("mysql://b68ec5f8aea53b:6f4d23b2@us-cdbr-east-06.cleardb.net/heroku_a26e4a307a3f41f?reconnect=true", {
 logging: false
@@ -810,8 +809,6 @@ const amount = await req.body.amntEmployees
 const assignments = await req.body.assignments;
 const min_title = await req.body.min_title
 const check = await req.body.weekcheck
-const shifting = await Shift_Assignments.AmntEmp;
-const weekcheck = JSON.stringify(check).replace(/]|[/''[]/g, "")
 
 const maxCounter = await counter.length;
 async function valueCheck(i) { 
