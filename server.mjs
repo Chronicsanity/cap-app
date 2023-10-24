@@ -858,7 +858,7 @@ if (check.indexOf("Mon AM") == 0)
     if (amount > 0)
     {
    
-    await Shift_Assignments.upsert({
+    await Shift_Assignments.create({
       Assignments: assignments[i],
       AmntEmp: amount[i],
       DaysAssigned: "Mon AM",
@@ -889,7 +889,7 @@ if (check.indexOf("Mon AM") == 0)
     if (amount > 0)
     {
    
-    await Shift_Assignments.upsert({
+    await Shift_Assignments.create({
       Assignments: assignments[i],
       AmntEmp: amount[i],
       DaysAssigned: "Mon PM",
