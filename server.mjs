@@ -1296,9 +1296,9 @@ else if (assignments != null) {
   })
 }
   }
+  console.log("erase NULL"+ " "+counter)
+  await Shift_Assignments.destroy({where:{AmntEmp: [null]}})
 }
-console.log("erase NULL")
-await Shift_Assignments.destroy({where:{AmntEmp: [null]}})
 
 const employee_list = await Employee.findAll();
 const job_list = await Jobs.findAll();
