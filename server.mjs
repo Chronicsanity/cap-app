@@ -804,7 +804,7 @@ app.get('/shiftassignment', async function (req,res){
 })
 })
 app.post('/shiftassignment', async function (req,res){
-const counter =  await controller.checkedList(req);
+const counter =  req.body.countercheck
 const amount = await req.body.amntEmployees
 const assignments = await req.body.assignments;
 const min_title = await req.body.min_title
