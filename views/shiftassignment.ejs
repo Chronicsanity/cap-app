@@ -22,7 +22,7 @@
     </thead>
     <tbody> <div><p>Add new Assignments</p></div>
        <tr><td><% for (var i = 0; i < week.length; i++) { if (week[i].Assignments == null) { %> </td>
-        <script>const count = []; count.push(i)</script>
+        
         
         <td><form action="/shiftassignment" method="POST" class="pt-3">
           <div class="form-group">
@@ -38,7 +38,7 @@
             </select>
           </div>
           <input type = "hidden" name = "weekcheck" value = "<%= week[i].DaysAssigned %>" > <% week[i] %> </input>
-          <input type = "hidden" name = "countercheck" value = "count"> <% i %> </input>
+          <input type = "hidden" name = "countercheck" value = "checking[i]"> <%  %> </input>
           <div><p>Amount of Workers for <%= week[i].DaysAssigned %></p></div>
           <div class="form-group">
               <select class="selectpicker" data-style="btn-info" name="amntEmployees">
