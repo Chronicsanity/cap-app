@@ -812,9 +812,9 @@ const min_title = await req.body.min_title
 const check = await req.body.weekcheck
 const shifting = await Shift_Assignments.AmntEmp;
 const weekcheck = JSON.stringify(check).replace(/]|[/''[]/g, "")
+const annoying = [1,2,3]
 
-
-const maxCounter = await Math.max(amount)
+const maxCounter = await Math.max(annoying)
 async function valueCheck(i) { 
   const valcounter = [];
 if (min_title[i] == "headChef")
