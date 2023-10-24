@@ -812,9 +812,9 @@ const min_title = await req.body.min_title
 const check = await req.body.weekcheck
 const shifting = await Shift_Assignments.AmntEmp;
 const weekcheck = JSON.stringify(check).replace(/]|[/''[]/g, "")
-function fixingCounter(counter) {
-  var arr = counter.toString().split(" ").map(Number);
-  var largest = arr[1];
+function fixingCounter(amount) {
+  var arr = amount.toString().split(" ").map(Number);
+  var largest = arr[0];
   for (var i = 1; i < arr.length; i++) {
     if (arr[i] > largest) {
       largest = arr[i];
@@ -822,7 +822,7 @@ function fixingCounter(counter) {
   }
   return largest;
 }
-const maxCounter = fixingCounter(counter);
+const maxCounter = fixingCounter(amount);
 async function valueCheck(i) { 
   const valcounter = [];
 if (min_title[i] == "headChef")
