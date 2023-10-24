@@ -855,8 +855,8 @@ if (Shift_Assignments.id == null) {
 
 if (check.indexOf("Mon AM") == 0)
   {
-   
-    
+    if (amount > 0)
+    {
    
     await Shift_Assignments.create({
       Assignments: assignments[i],
@@ -874,7 +874,7 @@ if (check.indexOf("Mon AM") == 0)
     console.log("No job selected, skipping!")}
   
   i++
-  
+  }
   
   }
   
@@ -886,8 +886,8 @@ if (check.indexOf("Mon AM") == 0)
 
   if (check.indexOf("Mon PM") == 0)
   {
-   
-    
+    if (amount > 0)
+    {
    
     await Shift_Assignments.create({
       Assignments: assignments[i],
@@ -905,7 +905,7 @@ if (check.indexOf("Mon AM") == 0)
     console.log("No job selected, skipping!")}
   
   i++
-  
+  }
   
   }
   
@@ -1297,7 +1297,7 @@ else if (assignments != null) {
   })
 }
   }
-  console.log("erase NULL"+ " "+counter)
+  console.log("erase NULL"+ " "+maxCounter)
   await Shift_Assignments.destroy({where:{AmntEmp: [null]}})
 }
 
