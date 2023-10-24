@@ -805,13 +805,24 @@ app.get('/shiftassignment', async function (req,res){
 })
 app.post('/shiftassignment', async function (req,res){
 const counter =  req.body.countercheck
-const maxCounter = Math.max.apply(null, counter);
+
 const amount = await req.body.amntEmployees
 const assignments = await req.body.assignments;
 const min_title = await req.body.min_title
 const check = await req.body.weekcheck
 const shifting = await Shift_Assignments.AmntEmp;
 const weekcheck = JSON.stringify(check).replace(/]|[/''[]/g, "")
+function fixingCounter(counter) {
+  var arr = counter.split(" ").map(Number);
+  var largest = arr[0];
+  for (var i = 1; i < arr.length; i++) {
+    if (arr[i] > largest) {
+      largest = arr[i];
+    }
+  }
+  return largest;
+}
+const maxCounter = fixingCounter(counter);
 async function valueCheck(i) { 
   const valcounter = [];
 if (min_title[i] == "headChef")
@@ -850,7 +861,7 @@ if (min_title == "busser")
   valcounter.push("1")
 }
 if (Shift_Assignments.id == null) {
-  for (var i=0; i< maxCounter;) {
+  for (var i=0; i< counter;) {
 
 
 if (check.indexOf("Mon AM") == 0)
@@ -1297,7 +1308,7 @@ else if (assignments != null) {
   })
 }
   }
-  console.log("erase NULL"+ " "+maxCounter+" "+counter)
+  console.log("erase NULL"+ " "+" "+counter+" "+maxCounter)
   await Shift_Assignments.destroy({where:{AmntEmp: [null]}})
 }
 
