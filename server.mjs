@@ -827,12 +827,16 @@ if (await req.body.hasOwnProperty("add")){
           DaysAssigned: dayChoice+" "+amOrPm
           
         })
-    return res.render('newWeek', {info:info})
   
   }})
 }  
 
 await timeAdd()
+
+controller.assignmentsTable(res).then(info => {
+  //console.log(info)
+  res.render('newWeek', {info: info})
+})
 }});
 
 
