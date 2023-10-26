@@ -815,10 +815,7 @@ req.body = JSON.parse(JSON.stringify(req.body));
 
 if (await req.body.hasOwnProperty("add")){
   async function timeAdd(){
-    await controller.assignmentsTable().then(info => { 
-      for (var i = 0; i < info.length; i++) {
-       console.log(JSON.stringify(info))
-        const newDay = info[i]
+    
       const amOrPm = []
       if (timeCheck != null) {
         amOrPm.push(timeCheck)
@@ -828,9 +825,7 @@ if (await req.body.hasOwnProperty("add")){
           
         })
   
-  }})
-}  
-
+  }
 await timeAdd()
 
 controller.assignmentsTable(res).then(info => {
