@@ -827,15 +827,14 @@ if (await req.body.hasOwnProperty("add")){
           DaysAssigned: dayChoice+" "+amOrPm
           
         })
-    return newDay
+    return res.render('newWeek', {info:info})
   
   }})
-
 }  
-await timeAdd().then(info=>{
-res.render('newWeek', {info:info})
-});
-}})
+
+await timeAdd()
+}});
+
 
 app.get('/shiftassignment', async function (req,res){
 
