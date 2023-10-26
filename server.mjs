@@ -821,8 +821,8 @@ else{return 0}
 if (await req.body.hasOwnProperty("add")){
   async function timeAdd(){
     await controller.assignmentsTable().then(info => { 
-      for (var i = 0; i < info.length; i++) {
-       
+      for (var i = 0; i < 2; i++) {
+       console.log(JSON.stringify(info))
         const newDay = info[i]
         const amOrPm = amPmCheck(amCheck,pmCheck)
         Shift_Assignments.upsert({
