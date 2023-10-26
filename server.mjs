@@ -798,9 +798,9 @@ app.get('/newWeek', async function (req,res){
 
   controller.assignmentsTable(res).then(info => {
     //console.log(info)
-    res.render('newWeek', {user: info})
+    res.render('newWeek', {info: info})
     if (info.id == null) {
-      res.render('newWeek', {user: "---"})
+      res.render('newWeek', {info: "---"})
 
     }
   })
