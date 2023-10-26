@@ -796,9 +796,13 @@ if (ahhhh > 0) {console.log("fixed")}
 })
 app.get('/newWeek', async function (req,res){
 
-  await controller.assignmentsTable(res).then(info => {
+  controller.assignmentsTable(res).then(info => {
     //console.log(info)
-    res.render('newWeek', {info: info})
+    res.render('newWeek.ejs', {user: info})
+    if (info.id == null) {
+      res.render('newWeek.ejs', {user: "---"})
+
+    }
   })
 })
 app.post('/newWeek', async function (req,res){
@@ -827,7 +831,7 @@ if (await req.body.hasOwnProperty("add")){
           DaysAssigned: dayChoice+" "+amOrPm
           
         })
-    return res.render('newWeek', {info:info})
+    return res.render('newWeek.ejs', {info:info})
   
   }})
 }  
