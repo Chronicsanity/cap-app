@@ -806,6 +806,7 @@ app.post('/newWeek', async function (req,res){
 const dayChoice = await req.body.selectweek;
 const amCheck = await req.body.AM;
 const pmCheck = await req.body.PM;
+req.body = JSON.parse(JSON.stringify(req.body));
 
 async function amPmCheck(amCheck,pmCheck){
   if (amCheck != null){
