@@ -811,28 +811,29 @@ const dayChoice = await req.body.selectweek;
 const timeCheck = await req.body.time;
 req.body = JSON.parse(JSON.stringify(req.body));
 
+async function timeAdd(){
+    
+  const amOrPm = []
+  if (timeCheck != null) {
+    amOrPm.push(timeCheck)
+  }
+    Shift_Assignments.upsert({
+      DaysAssigned: dayChoice+" "+amOrPm
+      
+    })
 
+}
 
 if (await req.body.hasOwnProperty("add")){
-  async function timeAdd(){
-    
-      const amOrPm = []
-      if (timeCheck != null) {
-        amOrPm.push(timeCheck)
-      }
-        Shift_Assignments.upsert({
-          DaysAssigned: dayChoice+" "+amOrPm
-          
-        })
-  
-  }
+ 
 await timeAdd()
 
 controller.assignmentsTable(res).then(info => {
   //console.log(info)
   res.render('newWeek', {info: info})
 })
-}});
+}
+});
 
 
 app.get('/shiftassignment', async function (req,res){
