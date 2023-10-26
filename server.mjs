@@ -808,8 +808,7 @@ app.get('/newWeek', async function (req,res){
 app.post('/newWeek', async function (req,res){
 
 const dayChoice = await req.body.selectweek;
-const amCheck = await req.body.AM;
-const pmCheck = await req.body.PM;
+const timeCheck = await req.body.time;
 req.body = JSON.parse(JSON.stringify(req.body));
 
 
@@ -821,11 +820,8 @@ if (await req.body.hasOwnProperty("add")){
        console.log(JSON.stringify(info))
         const newDay = info[i]
       const amOrPm = []
-      if (amCheck != null) {
-        amOrPm.push("AM")
-      }
-      else if (pmCheck != null){
-        amOrPm.push("PM")
+      if (timeCheck != null) {
+        amOrPm.push(timeCheck)
       }
         Shift_Assignments.upsert({
           DaysAssigned: dayChoice+" "+amOrPm
