@@ -798,11 +798,11 @@ app.get('/newWeek', async function (req,res){
 
   await controller.assignmentsTable(res).then(info => {
     //console.log(info)
-    res.render('newWeek', {week: info})
+    res.render('newWeek', {info: info})
   })
 })
 app.post('/newWeek', async function (req,res){
-  
+
 const dayChoice = await req.body.selectweek;
 const amCheck = await req.body.AM;
 const pmCheck = await req.body.PM;
@@ -834,7 +834,7 @@ if (await req.body.hasOwnProperty("add")){
 
 }  
 await timeAdd().then(info=>{
-res.render('newWeek', {week:info})
+res.render('newWeek', {info:info})
 });
 }})
 
