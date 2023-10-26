@@ -831,7 +831,7 @@ if (await req.body.hasOwnProperty("add")){
           DaysAssigned: dayChoice+" "+amOrPm
           
         })
-    return res.render('newWeek.ejs', {info:info})
+    return res.render('newWeek', {info:info})
   
   }})
 }  
