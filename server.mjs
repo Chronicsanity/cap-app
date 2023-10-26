@@ -820,7 +820,7 @@ else{return 0}
 
 if (await req.body.hasOwnProperty("add")){
   async function timeAdd(){
-    await controller.dayTable().then(info => { 
+    await controller.assignmentsTable().then(info => { 
       for (var i = 0; i < info.length; i++) {
        
         const newDay = info[i]
