@@ -307,6 +307,8 @@ return res.render('userQueue', {user:info})
 }
 await removeUser();
 }
+
+
 })
 app.get('/schedule', async (req, res) =>{
 const scheduleInfo = App;
@@ -323,7 +325,7 @@ app.get('/shiftmaker', async (req, res) => {
   const job_list = await Jobs.findAll();
 const data = employee_list;
 const jobData = job_list;
-Shift_Assignments.destroy({where: {AmntEmp: null}});
+
   res.render ('shiftmaker',{data: data, jobData:jobData} )
   })
 app.post('/shiftmaker', async (req, res) =>{
@@ -412,7 +414,7 @@ if (await dayChecker("Mon PM") > -1)
       
     })
    i++
-   if (i >= await dayChecker("Mon PM").AmntEmp){
+   if (i >= await dayChecker("Mon PM")){
     console.log("Day Full!")
     Shift.upsert({
       employee_name: name,
@@ -792,6 +794,49 @@ if (ahhhh > 0) {console.log("fixed")}
   })
 
 })
+app.get('/newWeek', async function (req,res){
+
+  await controller.assignmentsTable(res).then(info => {
+    //console.log(info)
+    res.render('newWeek', {week: info})
+  })
+})
+app.post('/newWeek', async function (req,res){
+  
+const dayChoice = await req.body.selectweek;
+const amCheck = await req.body.AM;
+const pmCheck = await req.body.PM;
+
+async function amPmCheck(amCheck,pmCheck){
+  if (amCheck != null){
+return amCheck
+  }
+else if (pmCheck != null){
+  return pmCheck
+}
+else{return 0}
+}
+
+if (await req.body.hasOwnProperty("add")){
+  async function timeAdd(){
+    await controller.dayTable().then(info => { 
+      for (var i = 0; i < info.length; i++) {
+       
+        const newDay = info[i]
+        const amOrPm = amPmCheck(amCheck,pmCheck)
+        Shift_Assignments.upsert({
+          DaysAssigned: dayChoice+amOrPm
+          
+        })
+    return newDay
+  
+  }})
+
+}  
+await timeAdd().then(info=>{
+res.render('newWeek', {week:info})
+});
+}})
 
 app.get('/shiftassignment', async function (req,res){
 
@@ -803,7 +848,7 @@ app.get('/shiftassignment', async function (req,res){
 })
 })
 app.post('/shiftassignment', async function (req,res){
-const counter =  req.body.countercheck
+const counter =  await req.body.countercheck
 
 const amount = await req.body.amntEmployees
 const assignments = await req.body.assignments;
@@ -859,7 +904,7 @@ if (check.indexOf("Mon AM") == 0)
    
     await Shift_Assignments.create({
       Assignments: assignments[i],
-      AmntEmp: amount[i],
+
       DaysAssigned: "Mon AM",
       min_title: min_title[i]
     },
@@ -890,7 +935,7 @@ if (check.indexOf("Mon AM") == 0)
    
     await Shift_Assignments.create({
       Assignments: assignments[i],
-      AmntEmp: amount[i],
+
       DaysAssigned: "Mon PM",
       min_title: min_title[i]
     },
@@ -921,7 +966,7 @@ if (check.indexOf("Mon AM") == 0)
    
     await Shift_Assignments.upsert({
       Assignments: assignments[i],
-      AmntEmp: amount[i],
+
       DaysAssigned: "Tue AM",
       min_title: min_title[i]
     },
@@ -952,7 +997,7 @@ if (check.indexOf("Mon AM") == 0)
    
     await Shift_Assignments.upsert({
       Assignments: assignments[i],
-      AmntEmp: amount[i],
+
       DaysAssigned: "Tue PM",
       min_title: min_title[i]
     },
@@ -984,7 +1029,7 @@ if (check.indexOf("Mon AM") == 0)
    
     await Shift_Assignments.upsert({
       Assignments: assignments[i],
-      AmntEmp: amount[i],
+
       DaysAssigned: "Wed AM",
       min_title: min_title[i]
     },
@@ -1015,7 +1060,7 @@ if (check.indexOf("Mon AM") == 0)
    
     await Shift_Assignments.upsert({
       Assignments: assignments[i],
-      AmntEmp: amount[i],
+   
       DaysAssigned: "Wed PM",
       min_title: min_title[i]
     },
@@ -1046,7 +1091,7 @@ if (check.indexOf("Mon AM") == 0)
    
     await Shift_Assignments.upsert({
       Assignments: assignments[i],
-      AmntEmp: amount[i],
+  
       DaysAssigned: "Thu AM",
       min_title: min_title[i]
     },
@@ -1078,7 +1123,7 @@ if (check.indexOf("Mon AM") == 0)
    
     await Shift_Assignments.upsert({
       Assignments: assignments[i],
-      AmntEmp: amount[i],
+    
       DaysAssigned: "Thu PM",
       min_title: min_title[i]
     },
@@ -1108,7 +1153,7 @@ if (check.indexOf("Mon AM") == 0)
    
     await Shift_Assignments.upsert({
       Assignments: assignments[i],
-      AmntEmp: amount[i],
+  
       DaysAssigned: "Fri AM",
       min_title: min_title[i]
     },
@@ -1139,7 +1184,7 @@ if (check.indexOf("Mon AM") == 0)
    
     await Shift_Assignments.upsert({
       Assignments: assignments[i],
-      AmntEmp: amount[i],
+   
       DaysAssigned: "Fri PM",
       min_title: min_title[i]
     },
@@ -1170,7 +1215,7 @@ if (check.indexOf("Mon AM") == 0)
    
     await Shift_Assignments.upsert({
       Assignments: assignments[i],
-      AmntEmp: amount[i],
+   
       DaysAssigned: "Sat AM",
       min_title: min_title[i]
     },
@@ -1201,7 +1246,7 @@ if (check.indexOf("Mon AM") == 0)
    
     await Shift_Assignments.upsert({
       Assignments: assignments[i],
-      AmntEmp: amount[i],
+    
       DaysAssigned: "Sat PM",
       min_title: min_title[i]
     },
@@ -1232,7 +1277,6 @@ if (check.indexOf("Mon AM") == 0)
    
     await Shift_Assignments.upsert({
       Assignments: assignments[i],
-      AmntEmp: amount[i],
       DaysAssigned: "Sun AM",
       min_title: min_title[i]
     },
@@ -1264,7 +1308,6 @@ if (check.indexOf("Mon AM") == 0)
    
     await Shift_Assignments.upsert({
       Assignments: assignments[i],
-      AmntEmp: amount[i],
       DaysAssigned: "Sun PM",
       min_title: min_title[i]
     },
@@ -1297,7 +1340,7 @@ else if (assignments != null) {
 }
   }
   console.log("erase NULL"+ " "+" "+counter+" "+maxCounter)
-   Shift_Assignments.destroy({where:{AmntEmp: [null], id: [null]}})
+   Shift_Assignments.destroy({id: [null]})
 }
 
 const employee_list = await Employee.findAll();

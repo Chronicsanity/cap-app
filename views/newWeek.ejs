@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="./css/root.css">
+                
+<head>
+	
+</head>
+
+<body>
+    <table class="table">
+        <thead>
+          <tr>
+            <th>Shifts: </th>
+    
+          </tr>
+        </thead>
+        <tbody>
+           
+          
+          
+            <% for (var i = 0; i < info.length; i++) { %>
+            
+                <tr>
+                    <td><%= info[i].DaysAssigned %> </td>
+                 
+                    
+                   
+                </tr>
+                <%  } %>
+
+            </table>
+         
+
+            <div> 
+                
+                
+                <form id="tableForm" action="/newWeek" method="POST">
+                    <select class="selectpicker" data-style="btn-info" name="selectweek">
+                        <optgroup label="Select Days">
+                            <option name="" value="0">Add Day</option>
+                            <option name="Mon" value="1">Monday</option>
+                            <option name="Tue" value="2">Tuesday</option>
+                            <option name="Wed" value="3">Wednesday</option>
+                            <option name="Thu" value="4">Thursday</option>
+                            <option name="Fri" value="5">Friday</option>
+                            <option name="Sat" value="6">Saturday</option>
+                            <option name="Sun" value="7">Sunday</option>
+                        </optgroup>
+                    </select>
+                    <td><input type="checkbox" id="enabled" name="AM">AM</input> </td>
+                    <td><input type="checkbox" id="enabled" name="PM">PM</input> </td>
+
+
+                <button type="submit" name="add" value="newDay" class="btn btn-success rounded-pill">Add</button>
+                <button type="submit" name="remove" value="removeDay" class="btn btn-success rounded-pill">Delete</button>
+
+</form>
+                
+            </div>
+          </tbody>
+       
+
+
+</body>
+            </div>
+        </div>
+        </div>
+</html>
