@@ -833,7 +833,7 @@ async function timeAdd(){
 
   const counting = await Shift_Assignments.count({where: {DaysAssigned: dayChoice+ " "+timeCheck}})
  
-console.log(counting)
+
 
   const amOrPm = []
 
@@ -847,7 +847,8 @@ console.log(counting)
 
  
     Shift_Assignments.upsert({
-      DaysAssigned: dayChoice+" "+amOrPm
+      DaysAssigned: dayChoice+" "+amOrPm,
+      Shift_Counter: counting
     })
    
 }
