@@ -825,7 +825,7 @@ async function removeShift() {
 async function timeAdd(){
 
 
-  const counter = 0
+  var counter = 0
 
   const amOrPm = []
   
