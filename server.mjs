@@ -852,7 +852,7 @@ work.push(counting)
  
     await Shift_Assignments.upsert({
       DaysAssigned: dayChoice+" "+amOrPm,
-      Shift_counter: work
+      Shift_counter: counting
     })
 
 }
