@@ -843,17 +843,13 @@ async function timeAdd(){
     
     amOrPm.push(timeCheck)
   }
-  if(dayChoice == dayCheck)
-  {
-    work.push(counting)
-    console.log(work)
-  }
+  
 
 
  
     Shift_Assignments.upsert({
       DaysAssigned: dayChoice+" "+amOrPm,
-      Shift_Counter: work
+      Shift_Counter: counting
     })
    
 }
