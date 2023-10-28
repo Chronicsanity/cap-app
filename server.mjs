@@ -837,7 +837,7 @@ async function timeAdd(){
   async function countering(counter) {
     if (await dayChoice == await dayCheck)
     {
-     counter++;
+     counter + 1;
      console.log(await counter)
       return await counter
     }
