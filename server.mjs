@@ -799,12 +799,11 @@ app.get('/newWeek', async function (req,res){
   controller.assignmentsTable(res).then(info => {
     //console.log(info)
     res.render('newWeek', {info: info})
-    if (info.id == null) {
-      res.render('newWeek', {info: "---"})
+  
 
-    }
+    })
   })
-})
+
 app.post('/newWeek', async function (req,res){
 
 const dayChoice = await req.body.selectweek;
@@ -836,6 +835,7 @@ async function timeAdd(){
 
   const work = JSON.stringify(counting)
   const amOrPm = []
+  const attempt = []
 
   console.log(counting, work)
 
@@ -843,14 +843,16 @@ async function timeAdd(){
     
     amOrPm.push(timeCheck)
   }
+  attempt.push(work)
   
 
 
  
-    Shift_Assignments.upsert({
-      DaysAssigned: dayChoice+" "+amOrPm
+    await Shift_Assignments.upsert({
+      DaysAssigned: dayChoice+" "+amOrPm,
+      Shift_Counter: attempt
     })
-Shift_Assignments.Shift_Counter= work
+
 }
 
 if (await req.body.hasOwnProperty("add")){
