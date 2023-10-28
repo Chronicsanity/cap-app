@@ -834,11 +834,12 @@ async function timeAdd(){
     var counter = 1;
     if (dayChoice == dayCheck)
     {
-      console.log("1")
-      return counter++
+     counter++;
+     console.log(counter)
+      return counter
     }
     else {
-      console.log("2")
+      console.log(counter)
   return counter
     }
   
