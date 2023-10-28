@@ -835,11 +835,9 @@ async function timeAdd(){
   
  
 
-  const work = []
+  
   const amOrPm = []
-work.push(counting)
 
-  console.log(counting, work)
 
   if (timeCheck != null) {
     
