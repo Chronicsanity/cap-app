@@ -843,7 +843,7 @@ async function timeAdd(){
       DaysAssigned: dayChoice+" "+amOrPm,
       Shift_counter: i
     })
-  
+  console.log(counter)
 }
 
 if (await req.body.hasOwnProperty("add")){
