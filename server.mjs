@@ -809,7 +809,7 @@ app.post('/newWeek', async function (req,res){
 
 const dayChoice = await req.body.selectweek;
 const timeCheck = await req.body.time;
-const dayCheck = await Shift_Assignments.findAll({where: {DaysAssigned: dayChoice+" "+timeCheck}})
+const dayCheck = await Shift_Assignments.findAll({where: {DaysAssigned:dayChoice}})
 req.body = JSON.parse(JSON.stringify(req.body));
 
 
@@ -834,21 +834,26 @@ async function timeAdd(){
   const counting = await Shift_Assignments.count({where: {DaysAssigned: dayChoice+ " "+timeCheck}})
  
 
-
+  const work = []
   const amOrPm = []
 
-  
+  console.log(counting)
 
   if (timeCheck != null) {
     
     amOrPm.push(timeCheck)
+  }
+  if(dayChoice == dayCheck)
+  {
+    work.push(counting)
+    console.log(work)
   }
 
 
  
     Shift_Assignments.upsert({
       DaysAssigned: dayChoice+" "+amOrPm,
-      Shift_Counter: counting
+      Shift_Counter: work
     })
    
 }
