@@ -809,20 +809,10 @@ app.post('/newWeek', async function (req,res){
 
 const dayChoice = await req.body.selectweek;
 const timeCheck = await req.body.time;
-const dayCheck = await Shift_Assignments.Findall({where: {DaysAssigned: dayChoice}})
+const dayCheck = await Shift_Assignments.findAll({where: {DaysAssigned: dayChoice}})
 req.body = JSON.parse(JSON.stringify(req.body));
 
-async function counter() {
-  var counter = 1;
-  if (dayChoice == dayCheck)
-  {
-    return counter++
-  }
-  else {
-return counter
-  }
 
-}
 
 async function removeShift() {
   const removeDay =  await dayChoice
@@ -840,8 +830,20 @@ async function timeAdd(){
 
 
   const amOrPm = []
- 
-const counter = await counter();
+  async function countering() {
+    var counter = 1;
+    if (dayChoice == dayCheck)
+    {
+      return counter++
+    }
+    else {
+  return counter
+    }
+  
+  }
+
+const counter = await countering();
+
   if (timeCheck != null) {
     
     amOrPm.push(timeCheck)
