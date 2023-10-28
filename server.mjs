@@ -834,7 +834,7 @@ async function timeAdd(){
   const counting = await Shift_Assignments.count({where: {DaysAssigned: dayChoice+ " "+timeCheck}})
  
 
-  const work = []
+  const work = JSON.stringify(counting)
   const amOrPm = []
 
   console.log(counting)
@@ -849,9 +849,9 @@ async function timeAdd(){
  
     Shift_Assignments.upsert({
       DaysAssigned: dayChoice+" "+amOrPm,
-      Shift_Counter: counting
+      Shift_Counter: work
     })
-   
+
 }
 
 if (await req.body.hasOwnProperty("add")){
