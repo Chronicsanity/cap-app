@@ -25,7 +25,7 @@
             <% for (var i = 0; i < info.length; i++) { %>
             
                 <tr>
-                    <td><%= info[i].DaysAssigned %> </td>
+                    <td><%= info[i].DaysAssigned %>    <%= info[i].Shift_counter %></td>
                  
                     
                    
@@ -53,6 +53,17 @@
                     </select>
                     <td><input type="radio" id="enabled" name="time" value="AM">AM</input> </td>
                     <td><input type="radio" id="enabled" name="time" value="PM">PM</input> </td>
+
+                    <select id="removal" name="removalNumber">
+  
+          
+                        <% for(var i=0; i < info.length; i++) { %>
+                          <%if(info[i] === info.length){%>
+                          <% i++ }%>
+              
+                          <option value="<%= info[i].Shift_counter %>"><%= info[i].Shift_counter %></option>
+                          <% } %>
+                      </select>
 
 
                 <button type="submit" name="add" value="newDay" class="btn btn-success rounded-pill">Add</button>

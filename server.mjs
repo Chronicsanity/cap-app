@@ -817,15 +817,15 @@ req.body = JSON.parse(JSON.stringify(req.body));
 async function removeShift() {
   const removeDay =  await dayChoice
   const amOrPm = []
-  const highestCount = await Shift_Assignments.max('Shift_Counter', {where: {DaysAssigned:dayChoice}})
-  
+ const removalNumber = req.body.removalNumber;
+
   if (timeCheck != null) {
     amOrPm.push(timeCheck)
   }
  
  await Shift_Assignments.destroy({
 
-    where: {DaysAssigned: removeDay+ " "+amOrPm, Shift_Counter:highestCount}
+    where: {DaysAssigned: removeDay+ " "+amOrPm, Shift_counter: removalNumber}
 })}
 
 
