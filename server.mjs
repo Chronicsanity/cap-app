@@ -809,6 +809,7 @@ app.post('/newWeek', async function (req,res){
 const dayChoice = await req.body.selectweek;
 const timeCheck = await req.body.time;
 const dayCheck = await Shift_Assignments.findAll({where: {DaysAssigned:dayChoice}})
+const counting = await Shift_Assignments.count({where: {DaysAssigned: dayChoice+ " "+timeCheck}})
 req.body = JSON.parse(JSON.stringify(req.body));
 
 
@@ -817,6 +818,7 @@ async function removeShift() {
   const removeDay =  await dayChoice
   const amOrPm = []
   const highestCount = await Shift_Assignments.max('Shift_Counter', {where: {DaysAssigned:dayChoice}})
+  
   if (timeCheck != null) {
     amOrPm.push(timeCheck)
   }
@@ -830,12 +832,12 @@ async function removeShift() {
 
 async function timeAdd(){
 
-  const counting = await Shift_Assignments.count({where: {DaysAssigned: dayChoice+ " "+timeCheck}})
+  
  
 
   const work = JSON.stringify(counting)
   const amOrPm = []
-  const attempt = []
+
 
   console.log(counting, work)
 
@@ -843,14 +845,14 @@ async function timeAdd(){
     
     amOrPm.push(timeCheck)
   }
-  attempt.push(JSON.stringify(counting))
+  
   
 
 
  
     await Shift_Assignments.upsert({
       DaysAssigned: dayChoice+" "+amOrPm,
-      Shift_Counter: attempt
+      Shift_Counter: counting
     })
 
 }
