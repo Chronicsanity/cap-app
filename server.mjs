@@ -835,9 +835,12 @@ async function timeAdd(){
   const amOrPm = []
 
   async function countering(counter) {
+    var checking = 1
+
     if (await dayChoice == await dayCheck)
     {
-     counter + 1;
+      checking++;
+     counter.push(checking) ;
      console.log(await counter)
       return await counter
     }
@@ -852,7 +855,7 @@ async function timeAdd(){
     
     amOrPm.push(timeCheck)
   }
-const counter = 1;
+const counter = [];
 const checking = await countering(counter)
  
  
