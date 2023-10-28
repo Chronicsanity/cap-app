@@ -836,9 +836,10 @@ async function timeAdd(){
     amOrPm.push(timeCheck)
   }
   counter.push(i++)
+  i++
     Shift_Assignments.upsert({
       DaysAssigned: dayChoice+" "+amOrPm,
-      Shift_counter: counter
+      Shift_counter: i
     })
   
 }
