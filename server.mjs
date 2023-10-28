@@ -817,7 +817,7 @@ async function removeShift(req) {
  await Shift_Assignments.destroy({
 
     where: {DaysAssigned: removeDay+ " "+removeTime}
-})
+})}
 async function timeAdd(){
     
   const amOrPm = []
@@ -848,7 +848,7 @@ if (await req.body.hasOwnProperty("remove")){
     res.render('newWeek', {info: info})})
 
 }
-}});
+});
 
 
 app.get('/shiftassignment', async function (req,res){
