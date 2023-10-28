@@ -835,9 +835,9 @@ async function timeAdd(){
   
  
 
-  const work = JSON.stringify(counting)
+  const work = []
   const amOrPm = []
-
+work.push(counting)
 
   console.log(counting, work)
 
@@ -852,7 +852,7 @@ async function timeAdd(){
  
     await Shift_Assignments.upsert({
       DaysAssigned: dayChoice+" "+amOrPm,
-      Shift_Counter: counting
+      Shift_Counter: work
     })
 
 }
