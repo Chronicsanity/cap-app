@@ -810,7 +810,14 @@ app.post('/newWeek', async function (req,res){
 const dayChoice = await req.body.selectweek;
 const timeCheck = await req.body.time;
 req.body = JSON.parse(JSON.stringify(req.body));
+async function removeShift(req) {
+  const removeDay =  JSON.stringify(req.body.selectweek).replace(/]|[[]/g, '');
+  const removeTime = JSON.stringify(req.body.time).replace(/]|[[]/g, '');
+ 
+ await Shift_Assignments.destroy({
 
+    where: {DaysAssigned: removeDay+ " "+removeTime}
+})
 async function timeAdd(){
     
   const amOrPm = []
@@ -833,7 +840,15 @@ controller.assignmentsTable(res).then(info => {
   res.render('newWeek', {info: info})
 })
 }
-});
+
+if (await req.body.hasOwnProperty("remove")){
+  await removeShift(req);
+  controller.assignmentsTable(res).then(info => {
+    //console.log(info)
+    res.render('newWeek', {info: info})})
+
+}
+}});
 
 
 app.get('/shiftassignment', async function (req,res){
