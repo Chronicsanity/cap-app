@@ -811,8 +811,8 @@ const dayChoice = await req.body.selectweek;
 const timeCheck = await req.body.time;
 req.body = JSON.parse(JSON.stringify(req.body));
 async function removeShift(req) {
-  const removeDay =  JSON.stringify(req.body.selectweek).replace(/]|[[]/g, '');
-  const removeTime = JSON.stringify(req.body.time).replace(/]|[[]/g, '');
+  const removeDay =  JSON.stringify(await req.body.selectweek).replace(/]|[[]/g, '');
+  const removeTime = JSON.stringify(await req.body.time).replace(/]|[[]/g, '');
  
  await Shift_Assignments.destroy({
 
