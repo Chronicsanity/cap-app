@@ -826,21 +826,24 @@ async function removeShift() {
 
     where: {DaysAssigned: removeDay+ " "+amOrPm, Shift_Counter:highestCount}
 })}
+
+
+
 async function timeAdd(){
 
 
   const amOrPm = []
 
   async function countering(counter) {
-    if (dayChoice == dayCheck)
+    if (await dayChoice == await dayCheck)
     {
      counter++;
-     console.log(counter)
-      return counter
+     console.log(await counter)
+      return await counter
     }
     else {
-      console.log(counter)
-  return counter
+      console.log(await counter)
+  return await counter
     }
   
   }
@@ -850,14 +853,14 @@ async function timeAdd(){
     amOrPm.push(timeCheck)
   }
 var counter = 1;
-const checking = countering(counter)
+const checking = await countering(counter)
  
  
     Shift_Assignments.upsert({
       DaysAssigned: dayChoice+" "+amOrPm,
-      Shift_Counter: checking
+      Shift_Counter: await checking
     })
-    console.log(checking)
+    console.log(await checking)
 }
 
 if (await req.body.hasOwnProperty("add")){
