@@ -830,16 +830,10 @@ async function removeShift() {
 
 
 async function timeAdd(){
-if (dayCheck == dayChoice)
-{
-  const counting = await Shift_Assignments.count({where: {DaysAssigned: dayChoice}})
-  for (var i=0; i < counting; i++)
-  {
-    var counter = i
-    console.log(counter)
-  }
 
-}
+  const counting = await Shift_Assignments.count({where: {DaysAssigned: dayChoice}})
+ 
+console.log(counting)
 
   const amOrPm = []
 
