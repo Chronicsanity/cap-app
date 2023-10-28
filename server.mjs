@@ -852,7 +852,7 @@ async function timeAdd(){
     
     amOrPm.push(timeCheck)
   }
-var counter = 1;
+const counter = 1;
 const checking = await countering(counter)
  
  
