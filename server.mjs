@@ -863,7 +863,6 @@ const counter = await countering();
 if (await req.body.hasOwnProperty("add")){
  
 await timeAdd();
-await countering()
 
 
 controller.assignmentsTable(res).then(info => {
