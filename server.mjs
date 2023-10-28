@@ -831,7 +831,7 @@ async function removeShift() {
 
 async function timeAdd(){
 
-  const counting = await Shift_Assignments.count({where: {DaysAssigned: dayChoice}})
+  const counting = await Shift_Assignments.count({where: {DaysAssigned: dayChoice+ " "+timeCheck}})
  
 console.log(counting)
 
