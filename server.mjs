@@ -830,8 +830,8 @@ async function timeAdd(){
 
 
   const amOrPm = []
-  async function countering() {
-    var counter = 1;
+
+  async function countering(counter) {
     if (dayChoice == dayCheck)
     {
      counter++;
@@ -845,20 +845,19 @@ async function timeAdd(){
   
   }
 
-const counter = await countering();
-
   if (timeCheck != null) {
     
     amOrPm.push(timeCheck)
   }
-
+var counter = 1;
+const checking = countering(counter)
  
  
     Shift_Assignments.upsert({
       DaysAssigned: dayChoice+" "+amOrPm,
-      Shift_Counter: counter
+      Shift_Counter: checking
     })
-    console.log(counter)
+    console.log(checking)
 }
 
 if (await req.body.hasOwnProperty("add")){
