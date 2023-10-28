@@ -810,8 +810,8 @@ app.post('/newWeek', async function (req,res){
 const dayChoice = await req.body.selectweek;
 const timeCheck = await req.body.time;
 req.body = JSON.parse(JSON.stringify(req.body));
-async function removeShift(req) {
-  const removeDay =  await req.body.selectweek
+async function removeShift() {
+  const removeDay =  await dayChoice
   const amOrPm = []
   if (timeCheck != null) {
     amOrPm.push(timeCheck)
@@ -822,16 +822,21 @@ async function removeShift(req) {
     where: {DaysAssigned: removeDay+ " "+amOrPm}
 })}
 async function timeAdd(){
-    
+
+  const counter = []
+  for (var i=0; i < dayChoice.length; i++)
+  {counter.push(i)}
   const amOrPm = []
+  
+
   if (timeCheck != null) {
     amOrPm.push(timeCheck)
   }
     Shift_Assignments.upsert({
-      DaysAssigned: dayChoice+" "+amOrPm
-      
+      DaysAssigned: dayChoice+" "+amOrPm,
+      Shift_counter: counter
     })
-
+  
 }
 
 if (await req.body.hasOwnProperty("add")){
@@ -845,7 +850,9 @@ controller.assignmentsTable(res).then(info => {
 }
 
 if (await req.body.hasOwnProperty("remove")){
-  await removeShift(req);
+
+  await removeShift();
+
   controller.assignmentsTable(res).then(info => {
     //console.log(info)
     res.render('newWeek', {info: info})})

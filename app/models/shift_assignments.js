@@ -15,8 +15,10 @@ module.exports = (sequelize, Sequelize) => {
 		},
 	min_title: {
 		type: Sequelize.STRING
-	}
-
+	},
+Shift_counter: {
+	type:Sequelize.STRING
+}
 	}, 
 	
 	{
