@@ -848,10 +848,9 @@ async function timeAdd(){
 
  
     Shift_Assignments.upsert({
-      DaysAssigned: dayChoice+" "+amOrPm,
-      Shift_Counter: work
+      DaysAssigned: dayChoice+" "+amOrPm
     })
-
+Shift_Assignments.Shift_Counter= work
 }
 
 if (await req.body.hasOwnProperty("add")){
