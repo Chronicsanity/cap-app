@@ -825,7 +825,8 @@ async function removeShift() {
 async function timeAdd(){
 
 
-  var counter = 0
+  const counter = []
+  var i = 0
 
   const amOrPm = []
   
@@ -834,7 +835,7 @@ async function timeAdd(){
     
     amOrPm.push(timeCheck)
   }
-  counter++
+  counter.push(i++)
     Shift_Assignments.upsert({
       DaysAssigned: dayChoice+" "+amOrPm,
       Shift_counter: counter
