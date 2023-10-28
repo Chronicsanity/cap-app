@@ -845,6 +845,7 @@ async function timeAdd(){
       return await counter
     }
     else {
+      counter.push(checking)
       console.log(await counter)
   return await counter
     }
@@ -857,6 +858,7 @@ async function timeAdd(){
   }
 const counter = [];
 const checking = await countering(counter)
+countering(counter)
  
  
     Shift_Assignments.upsert({
