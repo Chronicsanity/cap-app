@@ -843,7 +843,7 @@ async function timeAdd(){
     
     amOrPm.push(timeCheck)
   }
-  attempt.push(work)
+  attempt.push(JSON.stringify(counting))
   
 
 
