@@ -826,7 +826,7 @@ async function timeAdd(){
 
 
   const amOrPm = []
-  const counter = Shift_Assignments.count({ where: {DaysAssigned: dayChoice}, distinct: true})
+  const counter = await Shift_Assignments.count({ where: {DaysAssigned: dayChoice}, distinct: true})
 
   if (timeCheck != null) {
     
