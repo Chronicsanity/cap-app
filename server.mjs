@@ -834,9 +834,11 @@ async function timeAdd(){
     var counter = 1;
     if (dayChoice == dayCheck)
     {
+      console.log("1")
       return counter++
     }
     else {
+      console.log("2")
   return counter
     }
   
@@ -860,7 +862,9 @@ const counter = await countering();
 
 if (await req.body.hasOwnProperty("add")){
  
-await timeAdd()
+await timeAdd();
+await countering()
+
 
 controller.assignmentsTable(res).then(info => {
   //console.log(info)
