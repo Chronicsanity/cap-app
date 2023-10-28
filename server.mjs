@@ -837,7 +837,7 @@ async function timeAdd(){
   const work = JSON.stringify(counting)
   const amOrPm = []
 
-  console.log(counting)
+  console.log(counting, work)
 
   if (timeCheck != null) {
     
