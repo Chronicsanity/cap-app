@@ -53,7 +53,9 @@
                     </select>
                     <td><input type="radio" id="enabled" name="time" value="AM">AM</input> </td>
                     <td><input type="radio" id="enabled" name="time" value="PM">PM</input> </td>
-
+<br>
+                        Choose the number of the shift you would like to remove:
+                        <br>
                     <select id="removal" name="removalNumber">
   
           
@@ -64,7 +66,7 @@
                           <option value="<%= info[i].Shift_counter %>"><%= info[i].Shift_counter %></option>
                           <% } %>
                       </select>
-
+<br>
 
                 <button type="submit" name="add" value="newDay" class="btn btn-success rounded-pill">Add</button>
                 <button type="submit" name="remove" value="removeDay" class="btn btn-success rounded-pill">Delete</button>
