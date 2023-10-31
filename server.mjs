@@ -889,14 +889,14 @@ app.post('/createAssignments', async function (req,res){
 
 const newJobs = await req.body.assignments;
 const newMinTitle = JSON.stringify(await req.body.min_title).replace(/]|[[]/g, '');
-const value = []
+
 
 
 const test = await Jobs.upsert({
 job_value: newMinTitle,
 jobs: newJobs
 })
-const test2 = test.min_title;
+const test2 = await test.min_title;
 if(newMinTitle == "4")
 {
   await test2.push(JSON.stringify("Head Chef"))
@@ -917,7 +917,7 @@ if(newMinTitle == "0")
 {
  await test.min_title == "Busser"
 }
-console.log(await test, await test.min_title)
+console.log(await test, await test2)
 
 await controller.jobList(res).then(info => {
   res.render('createAssignments', {jobs:info})
