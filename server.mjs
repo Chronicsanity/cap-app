@@ -894,7 +894,7 @@ const test2 = "Head Chef"
 
 if(newMinTitle == "4")
 {
-  test.push(JSON.stringify(test2))
+  test.push(test2)
 }
 /*if(newMinTitle == "3")
 {
