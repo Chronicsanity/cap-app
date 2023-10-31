@@ -919,7 +919,7 @@ jobs: newJobs,
 min_title: value
 })
 await controller.jobList(res).then(info => {
-  res.render('createAssignment', {jobs:info})
+  res.render('createAssignments', {jobs:info})
 
 
 })
