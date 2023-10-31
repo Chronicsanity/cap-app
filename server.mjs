@@ -888,7 +888,7 @@ await controller.jobList(res).then(info => {
 app.post('/createAssignments', async function (req,res){
 
 const newJobs = await req.body.assignments;
-const newMinTitle = JSON.stringify(await req.body.min_title)
+const newMinTitle = JSON.stringify(await req.body.min_title).replace(/]|[[]/g, '');
 const value = []
 if(newMinTitle == "4")
 {
@@ -911,7 +911,7 @@ if(newMinTitle == "0")
   value.push(JSON.stringify("Busser"))
 }
 
-console.log(value)
+console.log(value, newMinTitle)
 
 await Jobs.upsert({
 job_value: newMinTitle,
