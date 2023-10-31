@@ -8,7 +8,7 @@ module.exports = (sequelize, Sequelize) => {
 		primaryKey: true
 	  },
 	  min_title: {
-		type: Sequelize.STRING
+		type: Sequelize.JSON
 	  },
 	}, 
 	
