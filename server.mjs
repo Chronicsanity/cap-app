@@ -913,7 +913,8 @@ if(newMinTitle == "0")
 }
  await Jobs.upsert({
 job_value: newMinTitle,
-jobs: newJobs
+jobs: newJobs,
+min_title: test
 })
 
 
