@@ -899,7 +899,7 @@ jobs: newJobs
 
 if(newMinTitle == "4")
 {
-  await test.min_title == "Head Chef"
+  await test.min_title == JSON.stringify("Head Chef")
 }
 if(newMinTitle == "3")
 {
@@ -917,7 +917,7 @@ if(newMinTitle == "0")
 {
  await test.min_title == "Busser"
 }
-console.log(await test)
+console.log(await test, await test.min_title)
 
 await controller.jobList(res).then(info => {
   res.render('createAssignments', {jobs:info})
