@@ -891,8 +891,8 @@ const newJobs = await req.body.assignments;
 const newMinTitle = JSON.stringify(await req.body.min_title).replace(/]|[[]/g, '');
 const test = []
 const test2 = "Head Chef"
-console.log(newMinTitle)
-if(newMinTitle == "4")
+console.log(indexOf(newMinTitle))
+if(indexOf(newMinTitle) >=0)
 {
   test.push(test2)
 }
