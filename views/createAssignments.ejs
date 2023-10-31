@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="./css/root.css">
+                
+</head>
+
+     <body>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Shifts: </th>
+    
+          </tr>
+        </thead>
+        <tbody>
+           
+          
+          
+            <% for (var i = 0; i < jobs.length; i++) { %>
+            
+                <tr>
+                    <td><%= jobs[i].DaysAssigned %>    <%= jobs[i].jobs %></td>
+                 
+                    
+                   
+                </tr>
+                <%  } %>
+
+            </table>
+
+     <td><form action="/createAssignments" method="POST" class="pt-3">
+          <div class="form-group">
+              <input type="text" class="form-control" placeholder="Assignments" name="assignments">
+              <select class="selectpicker" data-style="btn-info" name="min_title">
+                <optgroup label="Choose the minimum title needed for the assignment">
+                  <option name="" value="0">Select minimum title</option>
+                  <option name="headChef" value="4">Chef de Cuisine</option>
+                  <option name="sousChef" value="3">Sous Chef</option>
+                  <option name="lineCook" value="2">Chef de Partie</option>
+                  <option name="busser" value="1">Busser</option>
+                </optgroup>
+            </select>
+          </div>
+          <button type="submit" value="Register" class="btn btn-success"> Register </button>
+          </form></td>
+          </body>
+
+          </html>
+          
+          
+          

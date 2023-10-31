@@ -877,6 +877,53 @@ if (await req.body.hasOwnProperty("remove")){
 }
 });
 
+app.get('/createAssignments', async function (req,res){
+await controller.jobList(res).then(info => {
+  res.render('createAssignment', {jobs:info})
+
+})
+})
+
+
+app.post('/createAssignments', async function (req,res){
+
+const newJobs = req.body.assignments;
+const newMinTitle = JSON.stringify(req.body.min_title)
+const value = []
+if(newMinTitle == "4")
+{
+  value.push("Head Chef")
+}
+if(newMinTitle == "3")
+{
+  value.push("Sous Chef")
+}
+if(newMinTitle == "2")
+{
+  value.push("Line Cook")
+}
+if(newMinTitle == "1")
+{
+  value.push("Busser")
+}
+if(newMinTitle == "0")
+{
+ value.push("Busser")
+}
+
+
+
+await Jobs.upsert({
+job_value: newMinTitle,
+jobs: newJobs,
+min_title: value
+})
+await controller.jobList(res).then(info => {
+  res.render('createAssignment', {jobs:info})
+
+
+})
+})
 
 app.get('/shiftassignment', async function (req,res){
 
@@ -916,23 +963,7 @@ if (min_title[i] == "busser")
 }
 return JSON.stringify(valcounter).replace(/]|[/''[]/g, "")}
 
-const valcounter = [];
-if (min_title == "headChef")
-{
-  valcounter.push("4")
-}
-if (min_title == "sousChef")
-{
-  valcounter.push("3")
-}
-if (min_title == "lineCook")
-{
-  valcounter.push("2")
-}
-if (min_title == "busser")
-{
-  valcounter.push("1")
-}
+
 if (Shift_Assignments.id == null) {
   for (var i=0; i< counter;) {
 
