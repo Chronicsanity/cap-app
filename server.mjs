@@ -890,28 +890,29 @@ app.post('/createAssignments', async function (req,res){
 const newJobs = await req.body.assignments;
 const newMinTitle = JSON.stringify(await req.body.min_title).replace(/]|[[]/g, '');
 const value = []
+const test = []
 if(newMinTitle == "4")
 {
-  value.push(JSON.stringify("Head Chef"))
+  test = value.push(JSON.stringify("Head Chef"))
 }
 if(newMinTitle == "3")
 {
-  value.push(JSON.stringify("Sous Chef"))
+ test = value.push(JSON.stringify("Sous Chef"))
 }
 if(newMinTitle == "2")
 {
-  value.push(JSON.stringify("Line Cook"))
+  test = value.push(JSON.stringify("Line Cook"))
 }
 if(newMinTitle == "1")
 {
-  value.push(JSON.stringify("Busser"))
+ test = value.push(JSON.stringify("Busser"))
 }
 if(newMinTitle == "0")
 {
-  value.push(JSON.stringify("Busser"))
+ test = value.push(JSON.stringify("Busser"))
 }
 
-console.log(value, newMinTitle)
+console.log(test, newMinTitle)
 
 await Jobs.upsert({
 job_value: newMinTitle,
