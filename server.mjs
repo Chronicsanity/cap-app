@@ -893,23 +893,23 @@ const value = []
 const test = []
 if(newMinTitle == "4")
 {
-  test = value.push(JSON.stringify("Head Chef"))
+  test = value.push("Head Chef")
 }
 if(newMinTitle == "3")
 {
- test = value.push(JSON.stringify("Sous Chef"))
+ test = value.push("Sous Chef")
 }
 if(newMinTitle == "2")
 {
-  test = value.push(JSON.stringify("Line Cook"))
+  test = value.push("Line Cook")
 }
 if(newMinTitle == "1")
 {
- test = value.push(JSON.stringify("Busser"))
+ test = value.push("Busser")
 }
 if(newMinTitle == "0")
 {
- test = value.push(JSON.stringify("Busser"))
+ test = value.push("Busser")
 }
 
 console.log(test, newMinTitle)
