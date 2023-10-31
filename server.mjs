@@ -879,7 +879,7 @@ if (await req.body.hasOwnProperty("remove")){
 
 app.get('/createAssignments', async function (req,res){
 await controller.jobList(res).then(info => {
-  res.render('createAssignment', {jobs:info})
+  res.render('createAssignments', {jobs:info})
 
 })
 })
