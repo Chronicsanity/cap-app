@@ -897,7 +897,7 @@ if(newMinTitle == "4")
 }
 if(newMinTitle == "3")
 {
-  test.push ("Sous Chef")
+  test == "Sous Chef"
 }
 if(newMinTitle == "2")
 {
@@ -914,8 +914,9 @@ if(newMinTitle == "0")
  await Jobs.upsert({
 job_value: newMinTitle,
 jobs: newJobs,
-min_title: test
+min_title: []
 })
+
 
 
 console.log( test)
