@@ -892,23 +892,23 @@ const newMinTitle = JSON.stringify(req.body.min_title)
 const value = []
 if(newMinTitle == "4")
 {
-  value.push("Head Chef")
+  value.push(JSON.stringify("Head Chef"))
 }
 if(newMinTitle == "3")
 {
-  value.push("Sous Chef")
+  value.push(JSON.stringify("Sous Chef"))
 }
 if(newMinTitle == "2")
 {
-  value.push("Line Cook")
+  value.push(JSON.stringify("Line Cook"))
 }
 if(newMinTitle == "1")
 {
-  value.push("Busser")
+  value.push(JSON.stringify("Busser"))
 }
 if(newMinTitle == "0")
 {
- value.push("Busser")
+  value.push(JSON.stringify("Busser"))
 }
 
 
