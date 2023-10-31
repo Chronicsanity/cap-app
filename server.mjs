@@ -896,22 +896,22 @@ const test = await Jobs.upsert({
 job_value: newMinTitle,
 jobs: newJobs
 })
-
+const test2 = test.min_title;
 if(newMinTitle == "4")
 {
-  await test.min_title == JSON.stringify("Head Chef")
+  await test2.push(JSON.stringify("Head Chef"))
 }
 if(newMinTitle == "3")
 {
-  await test.min_title == "Sous Chef"
+  await test2.push ("Sous Chef")
 }
 if(newMinTitle == "2")
 {
-  await test.min_title == "Line Cook"
+  await test2.push ("Line Cook")
 }
 if(newMinTitle == "1")
 {
- await test.min_title =="Busser"
+ await test2.push ("Busser")
 }
 if(newMinTitle == "0")
 {
