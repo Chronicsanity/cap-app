@@ -890,11 +890,11 @@ app.post('/createAssignments', async function (req,res){
 const newJobs = await req.body.assignments;
 const newMinTitle = JSON.stringify(await req.body.min_title).replace(/]|[[]/g, '');
 const test = []
-const test2 = "Head Chef"
-console.log(newMinTitle.indexOf(4))
+const test2 = JSON.stringify("Head Chef").replace(/]|[[]/g, '')
+
 if(newMinTitle.indexOf(4) >= 0)
 {
-  test.push(test2)
+  test.push(JSON.stringify("Head Chef").replace(/]|[[]/g, ''))
 }
 /*if(newMinTitle == "3")
 {
