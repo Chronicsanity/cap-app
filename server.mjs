@@ -893,7 +893,7 @@ const test = []
 
 if(newMinTitle == "4")
 {
-  test.push(JSON.stringify("Head Chef"))
+  test==JSON.stringify("Head Chef")
 }
 if(newMinTitle == "3")
 {
