@@ -954,6 +954,26 @@ app.get('/daysAssignment', async function (req,res){
  })
 
 })
+
+app.post('/daysAssignment', async function (req,res){
+
+  const dayPicked = await req.body.dayList
+  const jobPicked = await req.body.jobList
+  const chosenDay = await Shift_Assignments.findOne({where:{DaysAssigned:dayPicked}})
+
+  console.log(await chosenDay)
+
+
+  await controller.jobList(res).then(info => {
+    controller.assignmentsTable(res).then(i => {
+  
+      res.render('daysAssignment', {info:i, jobData:info})
+    })
+   })
+
+
+})
+
 app.get('/shiftassignment', async function (req,res){
 
   await controller.assignmentsTable(res).then(info => {
