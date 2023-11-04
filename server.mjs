@@ -895,7 +895,7 @@ const test = []
 
 if(newMinTitle.indexOf(4) >= 0)
 {
-  test.push(JSON.stringify("Head Chef").replace(/]|\|[[]/g, ' '))
+  test.push(JSON.stringify("Head Chef").replace(/]|[\[[]/g, ' '))
 }
 if(newMinTitle.indexOf(3) >= 0)
 {
