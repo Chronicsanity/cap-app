@@ -895,23 +895,23 @@ const test = []
 
 if(newMinTitle.indexOf(4) >= 0)
 {
-  test.push(JSON.stringify("Head Chef").replace(/]|[[]""/g, ''))
+  test.push(JSON.stringify("Head Chef").replace(/]|[[]/g, ' '))
 }
 if(newMinTitle.indexOf(3) >= 0)
 {
-  test.push(JSON.stringify("Sous Chef").replace(/]|[[]""/g, ''))
+  test.push(JSON.stringify("Sous Chef").replace(/]|[[]/g, ' '))
 }
 if(newMinTitle.indexOf(2) >= 0)
 {
-  test.push(JSON.stringify("Line Cook").replace(/]|[[]""/g, ''))
+  test.push(JSON.stringify("Line Cook").replace(/]|[[]/g, ' '))
 }
 if(newMinTitle.indexOf(1) >= 0)
 {
-  test.push(JSON.stringify("Busser").replace(/]|[[]""/g, ''))
+  test.push(JSON.stringify("Busser").replace(/]|[[]/g, ' '))
 }
 if(newMinTitle.indexOf(0) >= 0)
 {
-  test.push(JSON.stringify("Busser").replace(/]|[[]""/g, ''))
+  test.push(JSON.stringify("Busser").replace(/]|[[]/g, ' '))
 }
  await Jobs.upsert({
 job_value: newMinTitle,
