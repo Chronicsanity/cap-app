@@ -39,10 +39,20 @@
                 
                 
 <br>
-                       
+
+<form action="/daysAssignment" method="POST" class="pt-3">
+    <select id="JobList" name="dayList">
+        <% for (var i = 0; i < info.length; i++) { 
+             <%if(info[i] === info.length){%>
+            <% i++ }%>
+
+            <option value="<%= info[i].DaysAssigned %>"><%= info[i].DaysAssigned %></option>
+            <% } %>
+        </select>
+         %>   
                         <br>
-                  
-  
+
+                        <% for (var i = 0; i < week.length; i++) { if (info[i].Assignments == null) { %>
           
                         <form action="/daysAssignment" method="POST" class="pt-3">
                             <select id="JobList" name="jobList">
@@ -55,6 +65,7 @@
                                 <option value="<%= jobData[i].jobs %>"><%= jobData[i].jobs %></option>
                                 <% } %>
                             </select>
+                            <% }} %>
 <br>
 
                 <button type="submit" name="add" value="newDay" class="btn btn-success rounded-pill">Add</button>
