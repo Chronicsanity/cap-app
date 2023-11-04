@@ -42,7 +42,7 @@
 
 <form action="/daysAssignment" method="POST" class="pt-3">
     <select id="JobList" name="dayList">
-        <% for (var i = 0; i < info.length; i++) { 
+        <% for (var i = 0; i < info.length; i++) {  %>
              <%if(info[i] === info.length){%>
             <% i++ }%>
 
@@ -59,8 +59,8 @@
                       
                               
                               <% for(var i=0; i < jobData.length; i++) { %>
-                                <%if(jobData[i] === jobData.length){%>
-                                <% i++ }%>
+                                <% if(jobData[i] === jobData.length){ %>
+                                <% i++ } %>
                     
                                 <option value="<%= jobData[i].jobs %>"><%= jobData[i].jobs %></option>
                                 <% } %>
