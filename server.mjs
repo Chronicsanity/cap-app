@@ -963,9 +963,8 @@ app.post('/daysAssignment', async function (req,res){
   const chosenDay = await Shift_Assignments.findOne({where:{DaysAssigned:dayPicked}})
   const chosenJob = await Jobs.findOne({where:{jobs:jobPicked}})
   console.log( jobPicked)
-await Shift_Assignments.update({where:{DaysAssigned:dayPicked},
-  Assignments: await jobPicked
-})
+await Shift_Assignments.update({where:{DaysAssigned:dayPicked}},
+  {Assignments: await jobPicked})
 
   await controller.jobList(res).then(info => {
     controller.assignmentsTable(res).then(i => {
