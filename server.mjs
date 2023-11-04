@@ -963,7 +963,7 @@ app.post('/daysAssignment', async function (req,res){
   const chosenJob = await Jobs.findOne({where:{jobs:jobPicked}})
   const test = await chosenDay.Assignments
   console.log(await test, await chosenJob)
-await chosenDay.Assignments == await jobPicked
+await test.push( await jobPicked)
 
   await controller.jobList(res).then(info => {
     controller.assignmentsTable(res).then(i => {
