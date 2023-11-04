@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="./css/root.css">
+                
+<head>
+	
+</head>
+
+<body>
+    <table class="table">
+        <thead>
+          <tr>
+            <th>Shifts: </th>
+    
+          </tr>
+        </thead>
+        <tbody>
+           
+          
+          
+            <% for (var i = 0; i < info.length; i++) { %>
+            
+                <tr>
+                    <td><%= info[i].DaysAssigned %>    <%= info[i].Assignments %></td>
+                 
+                    
+                   
+                </tr>
+                <%  } %>
+
+            </table>
+         
+
+            <div> 
+                
+                
+<br>
+                       
+                        <br>
+                  
+  
+          
+                        <form action="/daysAssignment" method="POST" class="pt-3">
+                            <select id="JobList" name="jobList">
+                      
+                              
+                              <% for(var i=0; i < jobData.length; i++) { %>
+                                <%if(jobData[i] === jobData.length){%>
+                                <% i++ }%>
+                    
+                                <option value="<%= jobData[i].jobs %>"><%= jobData[i].jobs %></option>
+                                <% } %>
+                            </select>
+<br>
+
+                <button type="submit" name="add" value="newDay" class="btn btn-success rounded-pill">Add</button>
+                <button type="submit" name="remove" value="removeDay" class="btn btn-success rounded-pill">Delete</button>
+
+</form>
+                
+            </div>
+          </tbody>
+       
+
+
+</body>
+            </div>
+        </div>
+        </div>
+</html>

@@ -944,7 +944,16 @@ if (await req.body.hasOwnProperty("remove")){
 }
 
 })
+app.get('/daysAssignment', async function (req,res){
 
+ await controller.jobList(res).then(info => {
+  controller.assignmentsTable(res).then(i => {
+
+    res.render('createAssignments', {info:i, jobData:info})
+  })
+ })
+
+})
 app.get('/shiftassignment', async function (req,res){
 
   await controller.assignmentsTable(res).then(info => {
