@@ -886,7 +886,7 @@ await controller.jobList(res).then(info => {
 
 
 app.post('/createAssignments', async function (req,res){
-
+  req.body = JSON.parse(JSON.stringify(req.body));
 
  async function assignmentCreate(req){ 
 const newJobs = await req.body.assignments;
