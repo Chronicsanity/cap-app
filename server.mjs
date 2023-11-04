@@ -949,7 +949,7 @@ app.get('/daysAssignment', async function (req,res){
  await controller.jobList(res).then(info => {
   controller.assignmentsTable(res).then(i => {
 
-    res.render('createAssignments', {info:i, jobData:info})
+    res.render('daysAssignments', {info:i, jobData:info})
   })
  })
 
