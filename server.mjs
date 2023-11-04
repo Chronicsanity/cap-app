@@ -887,6 +887,8 @@ await controller.jobList(res).then(info => {
 
 app.post('/createAssignments', async function (req,res){
 
+
+ async function assignmentCreate(req){ 
 const newJobs = await req.body.assignments;
 const newMinTitle = JSON.stringify(await req.body.min_title).replace(/]|[[]/g, '');
 const test = []
@@ -916,16 +918,31 @@ job_value: newMinTitle,
 jobs: newJobs,
 min_title: test
 })
+ }
+
+ async function assignmentRemove(req){
+const newJobs = await req.body.assignments;
+await Jobs.destroy({where:{jobs: newJobs}})
+
+ }
 
 
-
-console.log( test)
-
+ if (await req.body.hasOwnProperty("add")){
+await assignmentCreate(req)
+ 
 await controller.jobList(res).then(info => {
   res.render('createAssignments', {jobs:info})
-
-
 })
+}
+
+if (await req.body.hasOwnProperty("remove")){
+  assignmentRemove(req)
+
+  await controller.jobList(res).then(info => {
+    res.render('createAssignments', {jobs:info})
+  })
+}
+
 })
 
 app.get('/shiftassignment', async function (req,res){

@@ -24,7 +24,7 @@
             <% for (var i = 0; i < jobs.length; i++) { %>
             
                 <tr>
-                    <td><%= jobs[i].DaysAssigned %>    <%= jobs[i].jobs %></td>
+                    <td><%= jobs[i].DaysAssigned %>    <%= jobs[i].jobs %>                <%= jobs[i].min_title %></td>
                  
                     
                    
@@ -46,7 +46,9 @@
                 </optgroup>
             </select>
           </div>
-          <button type="submit" value="Register" class="btn btn-success"> Register </button>
+
+          <button type="submit" name="add" value="add" class="btn btn-success rounded-pill">Register Assignment</button>
+          <button type="submit" name="remove" value="remove" class="btn btn-success rounded-pill">Remove Assignment</button>
           </form></td>
           </body>
 
