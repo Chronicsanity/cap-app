@@ -958,20 +958,34 @@ app.get('/daysAssignment', async function (req,res){
 app.post('/daysAssignment', async function (req,res){
 
   req.body = JSON.parse(JSON.stringify(req.body));
+  
   const dayPicked = await req.body.dayList
   const jobPicked = await req.body.jobList
   const chosenDay = await Shift_Assignments.findOne({where:{DaysAssigned:dayPicked}})
   const chosenJob = await Jobs.findOne({where:{jobs:jobPicked}})
+  const dayCounter = await chosenDay.Shift_counter
   console.log( jobPicked)
+if (await chosenDay != null)
+{
+  if (await req.body.hasOwnProperty("add")){
+    await Shift_Assignments.upsert({
+      Assignments: jobPicked
+      })}
+  if (await req.body.hasOwnProperty("remove")){
+    await Shift_Assignments.destroy({
+      where: {Assignments: jobPicked, DaysAssigned:dayPicked}
+    })
 
+  }
   await controller.jobList(res).then(info => {
     controller.assignmentsTable(res).then(i => {
-  
+      
       res.render('daysAssignment', {info:i, jobData:info})
     })
    })
+  
 
-
+}
 })
 
 app.get('/shiftassignment', async function (req,res){
