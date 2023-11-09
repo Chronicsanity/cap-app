@@ -52,7 +52,7 @@
             
                         <br>
 
-                        <% for (var i = 0; i < info.length; i++) { if (info[i].Assignments == null) { %>
+                        <% for (var i = 0; i < info.length; i++) { %>
           
                         <form action="/daysAssignment" method="POST" class="pt-3">
                             <select id="JobList" name="jobList">
@@ -60,12 +60,12 @@
                               
                               <% for(var i=0; i < jobData.length; i++) { %>
                                 <% if(jobData[i] === jobData.length){ %>
-                                <% i++ }}} %>
+                                <% i++ } %>
                     
                                 <option value="<%= jobData[i].jobs %>"><%= jobData[i].jobs %></option>
                                 
                             </select>
-                            <% } %>
+                            <% }} %>
 <br>
 
                 <button type="submit" name="add" value="newDay" class="btn btn-success rounded-pill">Add</button>
