@@ -597,8 +597,8 @@ app.post('/daysAssignment', async function (req,res){
 if (await chosenDay != null)
 {
   if (await req.body.hasOwnProperty("add")){
-    await Shift_Assignments.update({where:{DaysAssigned:dayPicked}},{Assignments:jobPicked})}
-    
+    await Shift_Assignments.update({Assignments:jobPicked}, {where:{DaysAssigned:dayPicked},})}
+
   if (await req.body.hasOwnProperty("remove")){
     await Shift_Assignments.destroy({
       where:{DaysAssigned:dayPicked} && {Assignments: jobPicked}
