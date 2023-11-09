@@ -54,9 +54,8 @@
     <select id="counterList" name="counterList">
         <% for (var i = 0; i < info.length; i++) {  %>
             <%if(info[i] === info.length){%>
-                <% const check = info[i].Shift_counter; %>
            <% i++ }%>
-        <option value="<%= check.forEach(item => {info[i].findOne({where:Shift_Counter:item})}) %>"><%= check.forEach(item => {info[i].findOne({where:Shift_Counter:item})}) %></option>
+        <option value="<%= info[i].Shift_counter %>"><%= info[i].Shift_counter %></option>
         <% } %>
     </select>
                         <br>
