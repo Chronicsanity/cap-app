@@ -49,11 +49,13 @@
             <option value="<%= info[i].DaysAssigned %>"><%= info[i].DaysAssigned %></option>
             <% } %>
     </select>
-    <% for (var i = 0; i < info.length; i++) {  %>
-        <%if(info[i] === info.length){%>
-       <% i++ }%>
+   
 
-    <select id="counterList" name="counterList"><option value="<%= info[i].Shift_counter %>"><%= info[i].Shift_counter %></option>
+    <select id="counterList" name="counterList">
+        <% for (var i = 0; i < info.length; i++) {  %>
+            <%if(info[i] === info.length){%>
+           <% i++ }%>
+        <option value="<%= info[i].Shift_counter %>"><%= info[i].Shift_counter %></option>
         <% } %>
     </select>
                         <br>
