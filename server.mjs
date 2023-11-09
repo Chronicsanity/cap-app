@@ -322,9 +322,9 @@ app.get('/shiftmaker', async (req, res) => {
 
   const employee_list = await Employee.findAll();
   
-  const job_list = await Jobs.findAll();
+  const job_list = await Shift_Assignments.findAll();
 const data = employee_list;
-const jobData = job_list;
+const jobData = await job_list.Assignments;
 
   res.render ('shiftmaker',{data: data, jobData:jobData} )
   })
@@ -351,7 +351,7 @@ const fixedName = JSON.stringify(check).replace(/[\{\}\"]/g, "");
   const start = [];
   const end = [];
   const datetime = []
- const id = [];
+
  
   name.push(JSON.stringify(check).replace(/]|[[]/g, ''));
   job.push(confirmedJob);
@@ -362,11 +362,8 @@ const fixedName = JSON.stringify(check).replace(/[\{\}\"]/g, "");
  
 const conValue = confirmed_job.job_value;
 const EmpValue = confirmed_Employee.job_value
-  async function dayChecker (day) {
-  const amountPull = await Shift_Assignments.findOne( {attributes: {exclude: ['id', 'Assignments', 'DaysAssigned', 'min_title']}},{where: {DaysAssigned: day}})
 
-return JSON.stringify(amountPull)
-}
+
 
 if (conValue > EmpValue) { 
   const data = employee_list
@@ -374,12 +371,8 @@ if (conValue > EmpValue) {
  
   return (res.status(404).send("They are not trained for this job yet!" ))
 }
-if (datetime.indexOf("Monday") >= 0 && start.toString().indexOf("AM") >= 0) {
 
-if (await dayChecker("Mon AM") > 0)
-{ 
-  for (var i=0; i < await dayChecker("Mon AM");)
-  {
+
     Shift.create({
     
       employee_name: name,
@@ -389,372 +382,8 @@ if (await dayChecker("Mon AM") > 0)
       date: datetime,
       
     })
-   i++;
-   if (i >= await dayChecker("Mon AM")){
-    console.log("Day Full!")
-   
-    }
-   
-  }
-  
-
-  }}
-  if (datetime.indexOf("Monday")>= 0 && start.toString().indexOf("PM") >= 0) {
-if (await dayChecker("Mon PM") > -1)
-{
-  for (var i=0; i < await dayChecker("Mon PM");)
-  {
-    Shift.create({
-    
-      employee_name: name,
-      jobs: job,
-      time_start: start,
-      time_end: end,
-      date: datetime,
-      
-    })
-   i++
-   if (i >= await dayChecker("Mon PM")){
-    console.log("Day Full!")
-    Shift.upsert({
-      employee_name: name,
-      jobs: job,
-      time_start: start,
-      time_end: end,
-      date: datetime
-    })
-   }
-  }
 
   }
-}
-if (datetime.indexOf("Tuesday")>= 0 && start.toString().indexOf("AM") >= 0) {
-  if (await dayChecker("Tue AM") > 0)
-  {
-    for (var i=0; i < await dayChecker("Tue AM");)
-    {
-      Shift.create({
-      
-        employee_name: name,
-        jobs: job,
-        time_start: start,
-        time_end: end,
-        date: datetime,
-        
-      })
-     i++
-     if (i == await dayChecker("Tue AM")){
-      console.log("Day Full!")
-      Shift.update({
-        employee_name: name,
-        jobs: job,
-        time_start: start,
-        time_end: end,
-        date: datetime
-      })
-     }
-    }
-  
-    }
-  }
-  if (datetime.indexOf("Tuesday")>= 0 && start.toString().indexOf("PM") >= 0) {
-    if (await dayChecker("Tue PM") > 0)
-    {
-      for (var i=0; i < await dayChecker("Tue PM");)
-      {
-        Shift.create({
-        
-          employee_name: name,
-          jobs: job,
-          time_start: start,
-          time_end: end,
-          date: datetime,
-          
-        })
-       i++
-       if (i == await dayChecker("Tue PM")){
-        console.log("Day Full!")
-        Shift.update({
-          employee_name: name,
-          jobs: job,
-          time_start: start,
-          time_end: end,
-          date: datetime
-        })
-       }
-      }
-    
-      }
-    }
-    if (datetime.indexOf("Wednesday")>= 0 && start.toString().indexOf("AM") >= 0) {
-      if (await dayChecker("Wed AM") > 0)
-      {
-        for (var i=0; i < await dayChecker("Wed AM");)
-        {
-          Shift.create({
-          
-            employee_name: name,
-            jobs: job,
-            time_start: start,
-            time_end: end,
-            date: datetime,
-            
-          })
-         i++
-         if (i == await dayChecker("Wed AM")){
-          console.log("Day Full!")
-          Shift.update({
-            employee_name: name,
-            jobs: job,
-            time_start: start,
-            time_end: end,
-            date: datetime
-          })
-         }
-        }
-      
-        }
-      }
-      if (datetime.indexOf("Wednesday")>= 0 && start.toString().indexOf("PM") >= 0) {
-        if (await dayChecker("Wed PM") > 0)
-        {
-          for (var i=0; i < await dayChecker("Wed PM");)
-          {
-            Shift.create({
-            
-              employee_name: name,
-              jobs: job,
-              time_start: start,
-              time_end: end,
-              date: datetime,
-              
-            })
-           i++
-           if (i == await dayChecker("Wed PM")){
-            console.log("Day Full!")
-            Shift.update({
-              employee_name: name,
-              jobs: job,
-              time_start: start,
-              time_end: end,
-              date: datetime
-            })
-           }
-          }
-        
-          }
-        }
-        if (datetime.indexOf("Thursday")>= 0 && start.toString().indexOf("AM") >= 0) {
-          if (await dayChecker("Thu AM") > 0)
-          {
-            for (var i=0; i < await controller.dayChecker("Thu AM");)
-            {
-              Shift.create({
-              
-                employee_name: name,
-                jobs: job,
-                time_start: start,
-                time_end: end,
-                date: datetime,
-                
-              })
-             i++
-             if (i == await dayChecker("Thu AM")){
-              console.log("Day Full!")
-              Shift.update({
-                employee_name: name,
-                jobs: job,
-                time_start: start,
-                time_end: end,
-                date: datetime
-              })
-             }
-            }
-          
-            }
-          }
-          if (datetime.indexOf("Thursday")>= 0 && start.toString().indexOf("PM")>= 0) {
-            if (await dayChecker("Thu PM") > 0)
-            {
-              for (var i=0; i < await dayChecker("Thu PM");)
-              {
-                Shift.create({
-                
-                  employee_name: name,
-                  jobs: job,
-                  time_start: start,
-                  time_end: end,
-                  date: datetime,
-                  
-                })
-               i++
-               if (i == await dayChecker("Thu PM")){
-                console.log("Day Full!")
-                Shift.update({
-                  employee_name: name,
-                  jobs: job,
-                  time_start: start,
-                  time_end: end,
-                  date: datetime
-                })
-               }
-              }
-            
-              }
-            }
-            if (datetime.indexOf("Friday")>= 0 && start.toString().indexOf("AM") >= 0) {
-              if (await dayChecker("Fri AM") > 0)
-              {
-                for (var i=0; i < await dayChecker("Fri AM");)
-                {
-                  Shift.create({
-                  
-                    employee_name: name,
-                    jobs: job,
-                    time_start: start,
-                    time_end: end,
-                    date: datetime,
-                    
-                  })
-                 i++
-                 if (i == await dayChecker("Fri AM")){
-                  console.log("Day Full!")
-                  Shift.update({
-                    employee_name: name,
-                    jobs: job,
-                    time_start: start,
-                    time_end: end,
-                    date: datetime
-                  })
-                 }
-                }
-              
-                }
-              }
-              if (datetime.indexOf("Saturday")>= 0 && start.toString().indexOf("AM") >= 0) {
-                if (await dayChecker("Sat AM") > 0)
-                {
-                  for (var i=0; i < await dayChecker("Sat AM");)
-                  {
-                    Shift.create({
-                    
-                      employee_name: name,
-                      jobs: job,
-                      time_start: start,
-                      time_end: end,
-                      date: datetime,
-                      
-                    })
-                   i++
-                   if (i == await dayChecker("Sat AM")){
-                    console.log("Day Full!")
-                    Shift.update({
-                      employee_name: name,
-                      jobs: job,
-                      time_start: start,
-                      time_end: end,
-                      date: datetime
-                    })
-                   }
-                  }
-                
-                  }
-                }
-                if (datetime.indexOf("Saturday")>= 0 && start.toString().indexOf("PM") >= 0) {
-                  if (await dayChecker("Sat PM") > 0)
-                  {
-                    for (var i=0; i < await dayChecker("Sat PM");)
-                    {
-                      Shift.create({
-                      
-                        employee_name: name,
-                        jobs: job,
-                        time_start: start,
-                        time_end: end,
-                        date: datetime,
-                        
-                      })
-                     i++
-                     if (i == await dayChecker("Sat PM")){
-                      console.log("Day Full!")
-                      Shift.update({
-                        employee_name: name,
-                        jobs: job,
-                        time_start: start,
-                        time_end: end,
-                        date: datetime
-                      })
-                     }
-                    }
-                  
-                    }
-                  }
-                  if (datetime.indexOf("Sunday")>= 0 && start.toString().indexOf("AM") >= 0) {
-                    if (await dayChecker("Sun AM") > 0)
-                    {
-                      for (var i=0; i < await dayChecker("Sun AM");)
-                      {
-                        Shift.create({
-                        
-                          employee_name: name,
-                          jobs: job,
-                          time_start: start,
-                          time_end: end,
-                          date: datetime,
-                          
-                        })
-                       i++
-                       if (i == await dayChecker("Sun AM")){
-                        console.log("Day Full!")
-                        Shift.update({
-                          employee_name: name,
-                          jobs: job,
-                          time_start: start,
-                          time_end: end,
-                          date: datetime
-                        })
-                       }
-                      }
-                    
-                      }
-                    }
-                    if (datetime.indexOf("Sunday")>= 0  && start.toString().indexOf("PM") >= 0) {
-                      if (await dayChecker("Sun PM") > 0)
-                      {
-                        for (var i=0; i < await dayChecker("Sun PM");)
-                        {
-                          Shift.create({
-                          
-                            employee_name: name,
-                            jobs: job,
-                            time_start: start,
-                            time_end: end,
-                            date: datetime,
-                            
-                          })
-                         i++
-                         if (i == await dayChecker("Sun PM")){
-                          console.log("Day Full!")
-                          Shift.update({
-                            employee_name: name,
-                            jobs: job,
-                            time_start: start,
-                            time_end: end,
-                            date: datetime
-                          })
-                         }
-                        }
-                      
-                        }
-                      }
-
-
-const ahhhh = await Shift_Assignments.findOne( {attributes: {exclude: ['id', 'Assignments', 'DaysAssigned', 'min_title']}},{where: {DaysAssigned: "Mon AM"}})
-
-const fixed = JSON.stringify(ahhhh)
-if (ahhhh > 0) {console.log("fixed")}
- console.log(check+" is set for "+start+" to "+end+ " at "+datetime+" "+id+" "+datetime.indexOf("Monday")+start.toString().indexOf("AM")+" "+datetime.indexOf("Friday")+start.toString().indexOf("PM"))}
-
  const employee_list = await Employee.findAll();
  const job_list = await Jobs.findAll();
  const data = employee_list;
