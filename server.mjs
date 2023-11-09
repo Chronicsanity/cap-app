@@ -590,6 +590,7 @@ app.post('/daysAssignment', async function (req,res){
   
   const dayPicked = await req.body.dayList
   const jobPicked = await req.body.jobList
+  const counter = await req.body.counterList
   const chosenDay = await Shift_Assignments.findOne({where:{DaysAssigned:dayPicked}})
   const chosenJob = await Jobs.findOne({where:{jobs:jobPicked}})
   const dayCounter = await chosenDay.Shift_counter
@@ -599,7 +600,7 @@ if (await chosenDay != null)
 {
   if (await req.body.hasOwnProperty("add")){
     if(dayCounter[i] > 0){
-    await Shift_Assignments.update({Assignments:jobPicked}, {where:{DaysAssigned:dayPicked},})}
+    await Shift_Assignments.update({Assignments:jobPicked}, {where:{DaysAssigned:dayPicked} && {Shift_counter:counter},})}
       
   }
   if (await req.body.hasOwnProperty("remove")){
