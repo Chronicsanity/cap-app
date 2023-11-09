@@ -600,7 +600,7 @@ if (await chosenDay != null)
 {
   if (await req.body.hasOwnProperty("add")){
     if(await counter == await dayCounter){
-    await Shift_Assignments.update({Assignments:jobPicked}, {where:{DaysAssigned:dayPicked},})}
+    await Shift_Assignments.update({Assignments:jobPicked}, {where:{DaysAssigned:dayPicked}&&{Shift_counter:counter},})}
       
   }
   if (await req.body.hasOwnProperty("remove")){
