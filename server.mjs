@@ -602,7 +602,7 @@ if (await chosenDay != null)
   if (await req.body.hasOwnProperty("remove")){
     await Shift_Assignments.destroy({
       where:{DaysAssigned:dayPicked} && {Assignments: jobPicked}
-    })
+    }, {exclude: {DaysAssigned}})
 
   }
   await controller.jobList(res).then(info => {
