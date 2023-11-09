@@ -599,8 +599,8 @@ app.post('/daysAssignment', async function (req,res){
 if (await chosenDay != null)
 {
   if (await req.body.hasOwnProperty("add")){
-    if(dayCounter[i] > 0){
-    await Shift_Assignments.update({Assignments:jobPicked}, {where:{DaysAssigned:dayPicked} && {Shift_counter:counter},})}
+    if(await counter == await dayCounter){
+    await Shift_Assignments.update({Assignments:jobPicked}, {where:{DaysAssigned:dayPicked},})}
       
   }
   if (await req.body.hasOwnProperty("remove")){
