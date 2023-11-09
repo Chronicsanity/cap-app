@@ -46,7 +46,7 @@
              <%if(info[i] === info.length){%>
             <% i++ }%>
 
-            <option value="<%= info[i].DaysAssigned %>"><%= info[i].DaysAssigned %></option> <option value="<%= info[i].Shift_counter %>"><%= info[i].Shift_counter %></option>
+            <option value="<%= info[i].DaysAssigned %>"><%= info[i].DaysAssigned %></option></select> <select id="counterList" name="counterList"><option value="<%= info[i].Shift_counter %>"><%= info[i].Shift_counter %></option>
             <% } %>
         </select>
             
