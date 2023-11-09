@@ -973,7 +973,7 @@ if (await chosenDay != null)
       })}
   if (await req.body.hasOwnProperty("remove")){
     await Shift_Assignments.destroy({
-      where: {Assignments: jobPicked, DaysAssigned:dayPicked}
+      where:{DaysAssigned:dayPicked, Assignments: jobPicked}
     })
 
   }
