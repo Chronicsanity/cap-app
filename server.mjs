@@ -593,16 +593,19 @@ app.post('/daysAssignment', async function (req,res){
   const chosenDay = await Shift_Assignments.findOne({where:{DaysAssigned:dayPicked}})
   const chosenJob = await Jobs.findOne({where:{jobs:jobPicked}})
   const dayCounter = await chosenDay.Shift_counter
+  for(var i=0; i < await dayCounter.length; i++) {
   console.log( jobPicked)
 if (await chosenDay != null)
 {
   if (await req.body.hasOwnProperty("add")){
+    if(dayCounter[i] > 0){
     await Shift_Assignments.update({Assignments:jobPicked}, {where:{DaysAssigned:dayPicked},})}
-
+      
+  }
   if (await req.body.hasOwnProperty("remove")){
     await Shift_Assignments.findAll({where: {Assignments: jobPicked}&&{DaysAssigned:dayPicked}}).then(info =>{info.forEach(info => info.destroy())})
 
-  }
+  }}
   await controller.jobList(res).then(info => {
     controller.assignmentsTable(res).then(i => {
       
