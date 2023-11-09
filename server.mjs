@@ -600,7 +600,7 @@ if (await chosenDay != null)
     await Shift_Assignments.update({Assignments:jobPicked}, {where:{DaysAssigned:dayPicked},})}
 
   if (await req.body.hasOwnProperty("remove")){
-    await Shift_Assignments.findAll({where:{DaysAssigned:dayPicked} && {Assignments: jobPicked}}.then(info =>{info.forEach(info => info.destroy())}))
+    await Shift_Assignments.findAll({where:{DaysAssigned:dayPicked} && {Assignments: jobPicked}}).then(info =>{info.forEach(info => info.destroy())})
 
   }
   await controller.jobList(res).then(info => {
