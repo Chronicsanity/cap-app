@@ -602,7 +602,7 @@ app.post('/daysAssignment', async function (req,res){
 if (await chosenDay != null)
 {
   if (await req.body.hasOwnProperty("add")){
-    console.log(test, test.indexOf("Mon"), test.indexOf("Mon PM"))
+   
   if (test.indexOf("Mon") >= 1 && test.indexOf("AM") >= 1){
    
       console.log(test.indexOf(await dayPicked))
@@ -617,6 +617,55 @@ if (await chosenDay != null)
       
     await Shift_Assignments.update({Assignments:jobPicked, min_title:title_update}, {where:{DaysAssigned:dayPicked, Shift_counter:counter},})}
 
+
+    else if (test.indexOf("Tue") >= 1 && test.indexOf("PM") >= 1 ){
+      
+        await Shift_Assignments.update({Assignments:jobPicked, min_title:title_update}, {where:{DaysAssigned:dayPicked, Shift_counter:counter},})}
+    
+    else if (test.indexOf("Wed") >= 1 && test.indexOf("AM") >= 1 ){
+      
+        await Shift_Assignments.update({Assignments:jobPicked, min_title:title_update}, {where:{DaysAssigned:dayPicked, Shift_counter:counter},})}
+    
+        else if (test.indexOf("Wed") >= 1 && test.indexOf("PM") >= 1 ){
+      
+        await Shift_Assignments.update({Assignments:jobPicked, min_title:title_update}, {where:{DaysAssigned:dayPicked, Shift_counter:counter},})}
+    
+        else if (test.indexOf("Thu") >= 1 && test.indexOf("AM") >= 1 ){
+      
+        await Shift_Assignments.update({Assignments:jobPicked, min_title:title_update}, {where:{DaysAssigned:dayPicked, Shift_counter:counter},})}
+    
+        else if (test.indexOf("Thu") >= 1 && test.indexOf("PM") >= 1 ){
+      
+        await Shift_Assignments.update({Assignments:jobPicked, min_title:title_update}, {where:{DaysAssigned:dayPicked, Shift_counter:counter},})}
+    
+        else if (test.indexOf("Fri") >= 1 && test.indexOf("AM") >= 1 ){
+      
+        await Shift_Assignments.update({Assignments:jobPicked, min_title:title_update}, {where:{DaysAssigned:dayPicked, Shift_counter:counter},})}
+    
+        else if (test.indexOf("Fri") >= 1 && test.indexOf("PM") >= 1 ){
+      
+        await Shift_Assignments.update({Assignments:jobPicked, min_title:title_update}, {where:{DaysAssigned:dayPicked, Shift_counter:counter},})}
+    
+        else if (test.indexOf("Sat") >= 1 && test.indexOf("AM") >= 1 ){
+      
+        await Shift_Assignments.update({Assignments:jobPicked, min_title:title_update}, {where:{DaysAssigned:dayPicked, Shift_counter:counter},})}
+    
+        else if (test.indexOf("Sat") >= 1 && test.indexOf("AM") >= 1 ){
+      
+        await Shift_Assignments.update({Assignments:jobPicked, min_title:title_update}, {where:{DaysAssigned:dayPicked, Shift_counter:counter},})}
+    
+        else if (test.indexOf("Sat") >= 1 && test.indexOf("PM") >= 1 ){
+      
+        await Shift_Assignments.update({Assignments:jobPicked, min_title:title_update}, {where:{DaysAssigned:dayPicked, Shift_counter:counter},})}
+    
+        else if (test.indexOf("Sun") >= 1 && test.indexOf("AM") >= 1 ){
+      
+        await Shift_Assignments.update({Assignments:jobPicked, min_title:title_update}, {where:{DaysAssigned:dayPicked, Shift_counter:counter},})}
+    
+        else if (test.indexOf("Sun") >= 1 && test.indexOf("PM") >= 1 ){
+      
+        await Shift_Assignments.update({Assignments:jobPicked, min_title:title_update}, {where:{DaysAssigned:dayPicked, Shift_counter:counter},})}
+    
   }
   if (await req.body.hasOwnProperty("remove")){
     await Shift_Assignments.findAll({where: {Assignments: jobPicked}&&{DaysAssigned:dayPicked}}).then(info =>{info.forEach(info => info.destroy())})
