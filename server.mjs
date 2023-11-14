@@ -603,7 +603,7 @@ if (await chosenDay != null)
 {
   if (await req.body.hasOwnProperty("add")){
     console.log(test, test.indexOf("Mon AM"), test.indexOf("Mon PM"))
-  if (test.indexOf("Mon") >= 1 && test.indexOf("AM") >= 1){
+  if (test.indexOf("Mon") >= 1){
    
       console.log(test.indexOf(await dayPicked))
     await Shift_Assignments.update({Assignments:jobPicked, min_title:title_update}, {where:{DaysAssigned:dayPicked}&&{Shift_counter:counter}})}
@@ -613,7 +613,7 @@ if (await chosenDay != null)
         await Shift_Assignments.update({Assignments:jobPicked, min_title:title_update}, {where:{DaysAssigned:dayPicked}&&{Shift_counter:counter},})}
     
   
-    else if (test.indexOf("Tue") >= 1 && test.indexOf("AM") >= 1){
+    else if (test.indexOf("Tue") >= 1 ){
       
     await Shift_Assignments.update({Assignments:jobPicked, min_title:title_update}, {where:{DaysAssigned:dayPicked}&&{Shift_counter:counter},})}
 
