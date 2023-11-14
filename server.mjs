@@ -606,7 +606,7 @@ if (await chosenDay != null)
   if (test.indexOf("Mon") >= 1 && test.indexOf("AM") >= 1){
    
       console.log(test.indexOf(await dayPicked))
-    await Shift_Assignments.update({Assignments:jobPicked, min_title:title_update}, {where:{DaysAssigned:dayPicked}&&{Shift_counter:counter},})}
+    await Shift_Assignments.update({Assignments:jobPicked, min_title:title_update}, {where:{DaysAssigned:dayPicked}&&{Shift_counter:counter}})}
     
     else if (test.indexOf("Mon") >= 1 && test.indexOf("PM") >= 1){
       
