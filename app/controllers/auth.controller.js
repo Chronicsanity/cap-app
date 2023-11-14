@@ -447,7 +447,7 @@ exports.scheduleTable = async function (res) {
               
               exports.testing = async (req) => {
                 const date = await req.body.datetimes;
-
+                console.log (date)
                 if (date.indexOf("Mon") >= 1)
                 {
                   return "Mon"
