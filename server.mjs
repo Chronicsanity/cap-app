@@ -596,14 +596,14 @@ app.post('/daysAssignment', async function (req,res){
   const chosenJob = await Jobs.findOne({where:{jobs:jobPicked}})
   const dayCounter = await chosenDay.Shift_counter
   const title_update = await chosenJob.min_title;
-  const weekCounter = await req.body.weekcheck
+ 
   for(var i=0; i < await dayCounter.length; i++) {
  
 if (await chosenDay != null)
 {
   if (await req.body.hasOwnProperty("add")){
     console.log(test, dayPicked.indexOf(test))
-    if(await counter == await dayCounter && test.indexOf(await weekCounter) == -1){
+    if(await counter == await dayCounter && test.indexOf("Mon") == -1){
       console.log(test.indexOf(await dayPicked))
     await Shift_Assignments.update({Assignments:jobPicked, min_title:title_update}, {where:{DaysAssigned:dayPicked}&&{Shift_counter:counter},})}
       
