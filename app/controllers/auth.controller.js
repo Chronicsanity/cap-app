@@ -445,7 +445,7 @@ exports.scheduleTable = async function (res) {
               }) 
             }}
               
-              exports.testing = async (req,res) => {
+              exports.testing = async (req) => {
                 const date = await req.body.datetimes;
 
                 if (date.indexOf("Mon") >= 1)
