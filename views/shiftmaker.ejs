@@ -56,13 +56,13 @@
         <select id="JobList" name="jobList">
   
           
-          <% for(var i=0; i < data.length; i++) { %>
-            <%if(data[i] === data.length){%>
+          <% for(var i=0; i < jobData.length; i++) { %>
+            <%if(jobData[i] === jobData.length){%>
 
-            <% i++ %>
+            <% i++ }%>
 
-            <option value="<%= data[i].Assignments %>"><%= data[i].Assignments %></option>
-            <% } }%>
+            <option value="<%= jobData[i].Assignments %>"><%= jobData[i].Assignments %></option>
+            <% } %>
         </select>
     <script type="text/javascript">
  $('#timepicker1').timepicker({

@@ -324,9 +324,8 @@ app.get('/shiftmaker', async (req, res) => {
   
   const job_list = await Shift_Assignments.findAll();
 const data = employee_list;
-const jobData = await job_list.Assignments;
-console.log (jobData)
-  res.render ('shiftmaker',{data: data, jobData:jobData} )
+
+  res.render ('shiftmaker',{data: data, jobData:job_list} )
   })
 app.post('/shiftmaker', async (req, res) =>{
  
