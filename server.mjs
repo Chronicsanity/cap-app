@@ -375,7 +375,6 @@ if (conValue > EmpValue) {
   return (res.status(404).send("They are not trained for this job yet!" ))
 }
 
-console.log (await shift_counter)
 
     Shift.create({
     
