@@ -343,8 +343,9 @@ if(Employee.findOne( {where: {user: check}})) {
 const jobData = job_list;
 const fixedName = JSON.stringify(check).replace(/[\{\}\"]/g, "");
 const day = await controller.testing(req,res)
-const check = await day
-const shift_counter = await Shift_Assignments.findOne({where: {DaysAssigned: check}})
+const checking = await day
+checking
+const shift_counter = await Shift_Assignments.findOne({where: {DaysAssigned: checking}})
 
 
  
