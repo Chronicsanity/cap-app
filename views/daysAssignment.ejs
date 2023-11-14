@@ -27,7 +27,7 @@
                 <tr>
                     <td>Day: <%= info[i].DaysAssigned %> <%= info[i].Shift_counter %> <%-   '  ' %> Job Assigned:  <%= info[i].Assignments %> </td>
                  
-                    
+                    <input type = "hidden" name = "weekcheck" value = "<%= info[i].DaysAssigned %>" > <% info[i] %> </input>
                    
                 </tr>
                 <%  } %>
