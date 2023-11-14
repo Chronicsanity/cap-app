@@ -343,10 +343,10 @@ if(Employee.findOne( {where: {user: check}})) {
 const jobData = job_list;
 const fixedName = JSON.stringify(check).replace(/[\{\}\"]/g, "");
 const day = await controller.testing(req,res)
-const checking = await day
-console.log (checking, day)
-//const shift_counter = await Shift_Assignments.findOne({where: {DaysAssigned: checking}})
 
+
+const dayCounter = await Shift_Assignments.findOne({where: {DaysAssigned: day}})
+const shift_counter = await dayCounter.shift_counter
 
  
   const name = [];
@@ -374,7 +374,9 @@ if (conValue > EmpValue) {
  
   return (res.status(404).send("They are not trained for this job yet!" ))
 }
-
+for (var i = 0; i < shift_counter.length; i++) {
+if (shift_counter < i)
+{
 
     Shift.create({
     
@@ -385,8 +387,8 @@ if (conValue > EmpValue) {
       date: datetime,
       
     })
-
-}
+  }
+}}
  const employee_list = await Employee.findAll();
  const job_list = await Jobs.findAll();
  const data = employee_list;
