@@ -374,9 +374,8 @@ if (conValue > EmpValue) {
  
   return (res.status(404).send("They are not trained for this job yet!" ))
 }
-for (var i = 0; i < shift_counter.length; i++) {
-if (shift_counter < i)
-{
+
+
 
     Shift.create({
     
@@ -387,8 +386,8 @@ if (shift_counter < i)
       date: datetime,
       
     })
-  }
-}}
+  
+}
  const employee_list = await Employee.findAll();
  const job_list = await Jobs.findAll();
  const data = employee_list;
