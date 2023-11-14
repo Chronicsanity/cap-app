@@ -592,7 +592,7 @@ app.post('/daysAssignment', async function (req,res){
   const jobPicked = await req.body.jobList
   const counter = await req.body.counterList
   const chosenDay = await Shift_Assignments.findOne({where:{DaysAssigned:dayPicked}})
-  const test = JSON.stringify(chosenDay)
+  const test = JSON.stringify(chosenDay.DaysAssigned)
   const chosenJob = await Jobs.findOne({where:{jobs:jobPicked}})
   const dayCounter = await chosenDay.Shift_counter
   const title_update = await chosenJob.min_title;
