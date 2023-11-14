@@ -602,8 +602,8 @@ app.post('/daysAssignment', async function (req,res){
 if (await chosenDay != null)
 {
   if (await req.body.hasOwnProperty("add")){
-    console.log(test, dayPicked.indexOf(test))
-    if(await counter == await dayCounter && test.indexOf("Mon AM") == -1){
+    console.log(test, test.indexOf("Mon AM"))
+    if(await counter == await dayCounter && test.indexOf("Mon AM") > -1){
       console.log(test.indexOf(await dayPicked))
     await Shift_Assignments.update({Assignments:jobPicked, min_title:title_update}, {where:{DaysAssigned:dayPicked}&&{Shift_counter:counter},})}
       
