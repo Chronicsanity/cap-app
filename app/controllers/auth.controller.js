@@ -445,7 +445,40 @@ exports.scheduleTable = async function (res) {
               }) 
             }}
               
-              
+              exports.testing = async (req,res) => {
+                const date = await req.body.datetimes;
+
+                if (date.indexOf("Mon") >= 1)
+                {
+                  return "Mon"
+                }
+                if (date.indexOf("Tue") >= 1)
+                {
+                  return "Tue"
+
+                }   
+                  if (date.indexOf("Wed") >= 1)
+                {
+                  return "Wed"
+                } 
+                    if (date.indexOf("Thu") >= 1)
+                {
+                  return "Thu"
+                }  
+                   if (date.indexOf("Fri") >= 1)
+                {
+                  return "Fri"
+                }
+                if (date.indexOf("Sat") >= 1)
+                {
+                  return "Sat"
+                }
+
+                if (date.indexOf("Sun") >= 1)
+                {
+                  return "Sun"
+                }
+              }
               
               
 
