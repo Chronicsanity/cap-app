@@ -268,7 +268,6 @@ if (await req.body.hasOwnProperty("accept")){
       const newUser = info[1]
       const newRole = req.body.selectpicker
       User.upsert({
-        id: newUser.id,
         username: newUser.username,
         password: newUser.password,
         email: newUser.email,
