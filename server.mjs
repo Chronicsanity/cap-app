@@ -344,8 +344,8 @@ const fixedName = JSON.stringify(check).replace(/[\{\}\"]/g, "");
 const day = await controller.testing(req,res)
 
 
-const dayCounter = await Shift_Assignments.findOne({where: {DaysAssigned: day}})
-const shift_counter = await dayCounter.shift_counter
+
+
 
  
   const name = [];
