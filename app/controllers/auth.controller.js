@@ -151,6 +151,7 @@ exports.scheduleTable = async function (res) {
             object.id =  JSON.stringify(id).replace(/]|[[]/g, '')
             object.username =  JSON.stringify(username).replace(/]|[[]/g, '')
             object.email =  JSON.stringify(email).replace(/]|[[]/g, '')
+            return resolve (object)
           }
           else {
          return resolve (object);
