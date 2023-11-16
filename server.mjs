@@ -280,7 +280,7 @@ if (await req.body.hasOwnProperty("accept")){
     })
   
     if (info.username == null || info.username == undefined) {
-      return res.render('userQueue', {user: "---"})
+      return res.render('userQueue', {user: null})
     
     }
      else{
