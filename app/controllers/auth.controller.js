@@ -141,8 +141,9 @@ exports.scheduleTable = async function (res) {
           
          const object = res
           //console.log(object)
+          if (object != null) {
          return resolve (object);
-          
+          }
     
           
            }) .catch((error) => {
