@@ -29,11 +29,11 @@
             <% for (var i = 0; i < user.length; i++) { %>
             
                 <tr>
+                    <script> if( <% user[i] %> == null) { <% user[i].id %> = 0; <% user[i].username %> = "---"; <% user[i].email %> = "---" }</script>
                     <td><%= user[i].id %> </td>
                     <td><%= user[i].username %></td>
                     <td><%= user[i].email %> </td>
                     
-                   
                 </tr>
                 <%  } %>
 
