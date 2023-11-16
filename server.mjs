@@ -246,7 +246,7 @@ app.get('/userQueue', async function (req, res) {
     //console.log(info)
     if (info.id != null) {
     res.render('userQueue.ejs', {user: info})}
-    
+
     if (info.id == null) {
       res.render('userQueue.ejs', {user: "---"})
 
@@ -280,9 +280,13 @@ if (await req.body.hasOwnProperty("accept")){
         where: {id: info[1].id }
     })
   
-  
+    if (info.id != null) {
      
-return res.render('userQueue',  {user:info})
+return res.render('userQueue',  {user:info})}
+if (info.id == null) {
+  return res.render('userQueue', {user: "---"})
+
+}
   }})
   }
     
@@ -300,7 +304,12 @@ else if (await req.body.hasOwnProperty("deny")){
 
     where: {id: info[1].id }
 })
-return res.render('userQueue', {user:info})
+if (info.id == null) {
+return res.render('userQueue', {user:info})}
+if (info.id == null) {
+  return res.render('userQueue', {user: "---"})
+
+}
 }
   
 })
