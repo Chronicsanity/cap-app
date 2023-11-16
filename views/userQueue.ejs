@@ -35,7 +35,7 @@
                     <td><%= user[i].email %> </td>
                     
                 </tr>
-                <%  } %>
+                
 
             </table>
          
@@ -44,7 +44,7 @@
                 <script> if( <% user[1] %> == null || <% user[1] %> == undefined) { <% user[1].id %> = 0; <% user[1].username %> = "---"; <% user[1].email %> = "---" </script>
                 <td><%= user[1].id %></td>
                 <td><%= user[1].username %></td>
-                <script>}</script>
+                <script>}</script><%  } %>
                 <form id="tableForm" action="/userQueue" method="POST">
                     <select class="selectpicker" data-style="btn-info" name="selectpicker">
                         <optgroup label="Select Role">
