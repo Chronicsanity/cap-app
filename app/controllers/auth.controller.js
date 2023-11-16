@@ -147,7 +147,7 @@ exports.scheduleTable = async function (res) {
           
          const object = res
           
-          if (object == null || object == undefined) {
+          if (object == null || object == undefined || object == []) {
             object.id =  JSON.stringify(id).replace(/]|[[]/g, '')
             object.username =  JSON.stringify(username).replace(/]|[[]/g, '')
             object.email =  JSON.stringify(email).replace(/]|[[]/g, '')
