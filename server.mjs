@@ -265,8 +265,13 @@ if (await req.body.hasOwnProperty("accept")){
   await controller.QueueTable().then(info => { 
     for (var i = 0; i < info.length; i++) {
      
-      const newUser = info[1]
+      const newUser = info[0]
       const newRole = req.body.selectpicker
+      if (newUser == null || newUser == undefined){
+        return res.render('userQueue', {user: info})
+
+      }
+      else{
       User.upsert({
         username: newUser.username,
         password: newUser.password,
@@ -276,16 +281,12 @@ if (await req.body.hasOwnProperty("accept")){
      QueuedUser.destroy({
 
         where: {id: info[1].id }
-    })
+    })}
   
-    if (info.username == null || info.username == undefined) {
-      return res.render('userQueue', {user: null})
-    
-    }
-     else{
+  
 return res.render('userQueue',  {user:info})}
 
-  }})
+  })
   }
     
    await clone();
