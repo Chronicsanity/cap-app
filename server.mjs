@@ -242,11 +242,6 @@ app.get('/userQueue', async function (req, res) {
    
     await controller.QueueTable(res).then(info => {
 
-      if (info == null || info == undefined){
-        info.id = JSON.stringify(id).replace(/]|[[]/g, '')
-        info.username =  JSON.stringify(username).replace(/]|[[]/g, '')
-        info.email =  JSON.stringify(email).replace(/]|[[]/g, '')
-      }
     console.log(info.id)
     
 
