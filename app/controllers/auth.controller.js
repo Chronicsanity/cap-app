@@ -136,12 +136,20 @@ exports.scheduleTable = async function (res) {
     return  new Promise(function(resolve, reject){
         db.sequelize.sync().then(() => {
       
-      
+          const id = []
+          const username = []
+          const email = []
+        id.push("Empty")
+        username.push("Empty")
+        email.push("Empty")
           QueuedUser.findAll().then(res => {
           
          const object = res
           //console.log(object)
-          if (object != null) {
+          if (object == null) {
+            object.id =  JSON.stringify(id).replace(/]|[[]/g, '')
+            object.username =  JSON.stringify(username).replace(/]|[[]/g, '')
+            object.email =  JSON.stringify(email).replace(/]|[[]/g, '')
          return resolve (object);
           }
     

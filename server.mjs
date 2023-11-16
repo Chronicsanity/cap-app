@@ -239,12 +239,7 @@ await createEmployee(req);
 app.get('/userQueue', async function (req, res) {
 
     
-    const id = []
-    const username = []
-    const email = []
-  id.push("Empty")
-  username.push("Empty")
-  email.push("Empty")
+   
     await controller.QueueTable(res).then(info => {
 
       if (info == null || info == undefined){
