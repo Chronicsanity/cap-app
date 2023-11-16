@@ -244,13 +244,11 @@ app.get('/userQueue', async function (req, res) {
 
     await controller.QueueTable(res).then(info => {
     console.log(info.id)
-    if (info.id == null) {
-     res.render('userQueue.ejs', {user: "---"})
+    
 
-    } 
-    else{
+   
     res.render('userQueue.ejs', {user: info})
-    }
+    
     
     }
     )})
@@ -281,7 +279,7 @@ if (await req.body.hasOwnProperty("accept")){
         where: {id: info[1].id }
     })
   
-    if (info.id == null) {
+    if (info.username == null || info.username == undefined) {
       return res.render('userQueue', {user: "---"})
     
     }
