@@ -280,7 +280,7 @@ if (await req.body.hasOwnProperty("accept")){
       })
      QueuedUser.destroy({
 
-        where: {id: info[1].id }
+        where: {id: info[0].id }
     })}
   
   
