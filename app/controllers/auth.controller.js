@@ -133,12 +133,13 @@ exports.scheduleTable = async function (res) {
 })
 }
   exports.QueueTable = async function (res) {
+    const id = []
+          const username = []
+          const email = []
     return  await new Promise(function(resolve, reject){
         db.sequelize.sync().then(() => {
       
-          const id = []
-          const username = []
-          const email = []
+          
         id.push("Empty")
         username.push("Empty")
         email.push("Empty")
@@ -150,8 +151,9 @@ exports.scheduleTable = async function (res) {
             object.id =  JSON.stringify(id).replace(/]|[[]/g, '')
             object.username =  JSON.stringify(username).replace(/]|[[]/g, '')
             object.email =  JSON.stringify(email).replace(/]|[[]/g, '')
-         return resolve (object);
           }
+         return resolve (object);
+          
     
           
            }) .catch((error) => {
