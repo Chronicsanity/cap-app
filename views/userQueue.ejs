@@ -44,7 +44,7 @@
                 <script> if( <% user[1] %> == null || <% user[1] %> == undefined) { <% user.id %> = "---"; <% user.username %> = "---"; <% user.email %> = "---" </script>
                 <td><%= user.id %></td>
                 <td><%= user.username %></td>
-                <script>} else {</script>
+                <script>} else if (<% user[1] %> != undefined || <% user[1] %> == null){</script>
                     <td><%= user[1].id %></td>
                 <td><%= user[1].username %></td>
                 <script>}</script>
