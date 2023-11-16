@@ -29,26 +29,21 @@
             <% for (var i = 0; i < user.length; i++) { %>
             
                 <tr>
-                    <script> if( <% user[i] %> == null || <% user[i] %> == undefined) { <% user[i].id %> = "---"; <% user[i].username %> = "---"; <% user[i].email %> = "---" }</script>
                     <td><%= user[i].id %> </td>
                     <td><%= user[i].username %></td>
                     <td><%= user[i].email %> </td>
                     
+                   
                 </tr>
-                
                 <%  } %>
+
             </table>
          
 
             <div> 
-                <script> if( <% user[i] %> == null || <% user[i] %> == undefined) { <% user[i].id %> = "---"; <% user[i].username %> = "---"; <% user[i].email %> = "---" </script>
-                <td><%= user.id %></td>
-                <td><%= user.username %></td>
-                <script>} else{</script>
-                    <td><%= user[i].id %></td>
-                <td><%= user[i].username %></td>
-                <script>}</script>
-                   
+                <td><%= user[1].id %></td>
+                <td><%= user[1].username %></td>
+                
                 <form id="tableForm" action="/userQueue" method="POST">
                     <select class="selectpicker" data-style="btn-info" name="selectpicker">
                         <optgroup label="Select Role">
