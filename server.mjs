@@ -242,10 +242,10 @@ app.get('/userQueue', async function (req, res) {
     
   
 
-    controller.QueueTable(res).then(info => {
-    //console.log(info)
+    await controller.QueueTable(res).then(info => {
+    console.log(info.id)
     if (info.id == null) {
-      res.render('userQueue.ejs', {user: "---"})
+     res.render('userQueue.ejs', {user: "---"})
 
     } 
     else{
