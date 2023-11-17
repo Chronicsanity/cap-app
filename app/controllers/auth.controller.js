@@ -146,16 +146,15 @@ exports.scheduleTable = async function (res) {
           QueuedUser.findAll().then(res => {
           
          const object = res
-          console.log(object, 1)
           if (object.length == 0) {
             object.id =  JSON.stringify(id).replace(/]|[[]/g, '')
             object.username =  JSON.stringify(username).replace(/]|[[]/g, '')
             object.email =  JSON.stringify(email).replace(/]|[[]/g, '')
-            console.log(object.id, 2)
+         
             return resolve (object)
           }
           else {
-            console.log("passed over")
+       
          return resolve (object);
           }
     
