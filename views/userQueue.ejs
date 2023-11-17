@@ -39,11 +39,19 @@
 
             </table>
          
-
-            <div> <script>if (user.id != 0) {</script>
-                <td><%= user[0].id %></td>
-                <td><%= user[0].username %></td>
-                <script>}</script>
+            <form action="/userQueue" method="POST" class="pt-3">
+                <select id="nameQueue" name="nameQueue">
+          
+                  
+                  <% for(var i=0; i < user.length; i++) { %>
+                    <%if(user[i] === user.length){%>
+        
+                    <% i++ }%>
+        
+                    <option value="<%= user[i].Assignments %>"><%= jobData[i].Assignments %></option>
+                    <% } %>
+                </select>
+                <br>
                 <form id="tableForm" action="/userQueue" method="POST">
                     <select class="selectpicker" data-style="btn-info" name="selectpicker">
                         <optgroup label="Select Role">
