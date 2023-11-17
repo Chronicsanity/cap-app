@@ -140,7 +140,7 @@ exports.scheduleTable = async function (res) {
         db.sequelize.sync().then(() => {
       
           
-        id.push("Empty")
+        id.push(0)
         username.push("Empty")
         email.push("Empty")
           QueuedUser.findAll().then(res => {
