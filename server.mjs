@@ -269,7 +269,7 @@ if (await req.body.hasOwnProperty("accept")){
       const addUser = info[i]
       const newRole = req.body.selectpicker
       if (newUser == null || newUser == undefined){
-        return res.render('userQueue', {user: info})
+        return res.render('userQueue', {user: addUser})
 
       }
       else{
