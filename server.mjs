@@ -695,6 +695,14 @@ if (await chosenDay != null)
 
 }
 })
+app.get('/shifSchedule', async function (req,res){ 
+  await controller.shiftSchedule(res).then(info => {
+  //console.log(info)
+  res.render('shiftSchedule', {info: info}
+  )
+
+})
+})
 
 app.get('/shiftassignment', async function (req,res){
 
@@ -705,6 +713,7 @@ app.get('/shiftassignment', async function (req,res){
 
 })
 })
+
 app.post('/shiftassignment', async function (req,res){
 const counter =  await req.body.countercheck
 

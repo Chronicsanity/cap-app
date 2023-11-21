@@ -4,6 +4,7 @@ const Sequelize = require("sequelize");
 const User = db.user;
 const Role = db.role;
 const Jobs = db.jobs;
+const Shift = db.shift;
 const Shift_Assignments = db.shift_assignments;
 const WeekofShifts = db.weekofshifts;
 const Op = db.Sequelize.Op;
@@ -130,6 +131,29 @@ exports.scheduleTable = async function (res) {
     console.error('Unable to create table : ', error);
     })
   })
+})
+}
+exports.shiftSchedule = async function (res){return  new Promise(function(resolve, reject){
+  db.sequelize.sync().then(() => {
+
+
+    Shift.findAll().then(res => {
+    
+   const object = res
+    //console.log(object)
+   return resolve (object);
+    
+
+    
+     }) .catch((error) => {
+  console.error('Failed to retrieve data : ', error);
+  
+  
+  
+  }).catch((error) => {
+  console.error('Unable to create table : ', error);
+  })
+})
 })
 }
   exports.QueueTable = async function (res) {
