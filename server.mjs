@@ -359,7 +359,7 @@ async function amOrPm(time1) {
     console.log(time1.indexOf("AM"), 1)
     return ("AM")
   }
-  elseif (time1.indexOf("PM") == -1)
+  else if (time1.indexOf("PM") == -1)
 {
   console.log(time1.indexOf("PM"), 2)
   return ("PM")
