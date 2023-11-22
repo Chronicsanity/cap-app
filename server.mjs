@@ -403,10 +403,10 @@ if (conValue > EmpValue) {
       date: datetime,
       
     })
-  
+    const test = amOrPm(req) 
+    console.log(test)
 }
-const test = amOrPm(req) 
-console.log(test)
+
  const employee_list = await Employee.findAll();
  const job_list = await Jobs.findAll();
  const data = employee_list;
