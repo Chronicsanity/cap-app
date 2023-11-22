@@ -354,8 +354,15 @@ const jobData = job_list;
 const fixedName = JSON.stringify(check).replace(/[\{\}\"]/g, "");
 const day = await controller.testing(req,res)
 
-
-
+async function amOrPm(req) {
+  if (time1.indexOf("AM")){
+    return ("AM")
+  }
+  if (time1.indexOf("PM"))
+{
+  return ("PM")
+}
+}
 
 
  
@@ -398,6 +405,8 @@ if (conValue > EmpValue) {
     })
   
 }
+const test = amOrPm(req) 
+console.log(test)
  const employee_list = await Employee.findAll();
  const job_list = await Jobs.findAll();
  const data = employee_list;
@@ -698,6 +707,7 @@ if (await chosenDay != null)
 app.get('/shiftSchedule', async function (req,res){ 
   await controller.shiftSchedule(res).then(info => {
   //console.log(info)
+
   res.render('shiftSchedule', {info: info}
   )
 
