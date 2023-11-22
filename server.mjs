@@ -355,11 +355,11 @@ const fixedName = JSON.stringify(check).replace(/[\{\}\"]/g, "");
 const day = await controller.testing(req,res)
 
 async function amOrPm(time1) {
-  if (time1.indexOf("AM") != -1){
+  if (time1.indexOf("AM") = -1){
     console.log(time1.indexOf("AM"), 1)
     return ("AM")
   }
-  else if (time1.indexOf("PM") != -1)
+  else if (time1.indexOf("PM") = -1)
 {
   console.log(time1.indexOf("PM"), 2)
   return ("PM")
