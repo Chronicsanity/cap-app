@@ -354,12 +354,12 @@ const jobData = job_list;
 const fixedName = JSON.stringify(check).replace(/[\{\}\"]/g, "");
 const day = await controller.testing(req,res)
 
-async function amOrPm(req) {
+async function amOrPm(time1) {
   if (time1.indexOf("AM") == -1){
     console.log(time1.indexOf("AM"), 1)
     return ("AM")
   }
-  else if (time1.indexOf("PM") == -1)
+  elseif (time1.indexOf("PM") == -1)
 {
   console.log(time1.indexOf("PM"), 2)
   return ("PM")
@@ -405,7 +405,7 @@ if (conValue > EmpValue) {
       date: datetime,
       
     })
-    const test = await amOrPm(req) 
+    const test = await amOrPm(time1) 
     console.log(test)
 }
 
