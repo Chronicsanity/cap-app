@@ -356,12 +356,12 @@ const day = await controller.testing(req,res)
 
 async function amOrPm(req) {
   if (time1.indexOf("AM") == -1){
-    console.log(time1.indexOf("AM"))
+    console.log(time1.indexOf("AM"), 1)
     return ("AM")
   }
   if (time1.indexOf("PM") == -1)
 {
-  console.log(time1.indexOf("PM"))
+  console.log(time1.indexOf("PM"), 2)
   return ("PM")
 }
 }
