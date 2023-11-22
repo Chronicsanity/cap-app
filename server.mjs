@@ -355,10 +355,10 @@ const fixedName = JSON.stringify(check).replace(/[\{\}\"]/g, "");
 const day = await controller.testing(req,res)
 
 async function amOrPm(req) {
-  if (time1.indexOf("AM")){
+  if (time1.indexOf("AM") == -1){
     return ("AM")
   }
-  if (time1.indexOf("PM"))
+  if (time1.indexOf("PM") == -1)
 {
   return ("PM")
 }
@@ -403,7 +403,7 @@ if (conValue > EmpValue) {
       date: datetime,
       
     })
-    const test = amOrPm(req) 
+    const test = await amOrPm(req) 
     console.log(test)
 }
 
