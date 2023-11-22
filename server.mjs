@@ -406,7 +406,7 @@ if (conValue > EmpValue) {
       
     })
     const test = await amOrPm(start) 
-    console.log(test, await amOrPm(start), start)
+    console.log(test, await amOrPm(start), start, start.indexOf("PM"))
 }
 
  const employee_list = await Employee.findAll();
