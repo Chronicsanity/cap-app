@@ -403,7 +403,7 @@ if (conValue > EmpValue) {
       jobs: job,
       time_start: start,
       time_end: end,
-      date: datetime + timefix(start),
+      date: datetime + amOrPm(start),
       
     })
    
