@@ -403,11 +403,10 @@ if (conValue > EmpValue) {
       jobs: job,
       time_start: start,
       time_end: end,
-      date: datetime,
+      date: datetime + timefix(start),
       
     })
-    const test = await amOrPm(start) 
-    console.log(test, await amOrPm(start), start, start.indexOf("PM"))
+   
 }
 
  const employee_list = await Employee.findAll();
