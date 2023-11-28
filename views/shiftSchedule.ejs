@@ -27,7 +27,7 @@
                 <% if (test != check) { %>
                     <tr>
                     <td> <%= check %> </td>
-                    <% test.push(check); console.log(check, test)%>
+                    <% test.push(JSON.stringify(check)); console.log(check, test)%>
                 <% } else if (check == test) { %>
                 
                    
