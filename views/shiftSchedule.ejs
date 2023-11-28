@@ -27,7 +27,7 @@
                 <% if (check == info[i].date) { %>
                     <tr>
                     <td> <%= check %> </td>
-                <% } else { %>
+                <% } else if (check != info[i].date) { %>
                 
                    
                         <td>Employee: <%= info[i].date %>  </td>
