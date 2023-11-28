@@ -24,11 +24,11 @@
               
                 <% for (var i = 0; i < info.length;) { %>
                 <% const check = JSON.stringify(info[i].date); const test = [] %>
-                <% if (test != check) { %>
+                <% if (test.indexOf(check) > -1) { %>
                     <tr>
                     <td> <%= check %> </td>
-                    <% test.push(JSON.stringify(info[i].date).replace(/]|[[]/g, '')); console.log(check, test)%>
-                <% } else if (check == test) { %>
+                    <% test.push(JSON.stringify(info[i].date)); console.log(test.indexOf(check)) %>
+                <% } else if (test.indexOf(check) > -1) { %>
                 
                    
                         <td>Employee: <%= info[i].date %>  </td>
