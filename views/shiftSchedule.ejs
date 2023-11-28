@@ -23,23 +23,22 @@
               
               
                 <% for (var i = 0; i < info.length;) { %>
-                <% const check = []; const test = info[i].date%>
-        
+                <% const check = info[i].date %>
+                <% if (check == info[i].date) { %>
                     <tr>
-                        <td><%= info[i].date %>  </td>
-                        <% check.push(info[i].date); i++ %>
-                <%  if (check == test) { %>
+                    <td> <%= check %> </td>
+                <% } else if (check != info[i].date) { %>
                 
                    
-                        <td><%= check %>  <%  } %></td>
-                  
+                        <td>Employee: <%= info[i].date %>  </td>
+                   <%  } %>
                       
 
                         <td> <br>Job Assigned:  <%- info[i].jobs %> </td>
                      
                     
                     </tr>
-                    <%  } %>
+                    <% ; i++ } %>
     
                 </table>
                 </tbody>
