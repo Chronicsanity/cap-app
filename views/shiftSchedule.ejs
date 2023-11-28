@@ -23,11 +23,12 @@
               
               
                 <% for (var i = 0; i < info.length;) { %>
-                <% const check = info[i].date %>
-                <% if (check == info[i].date) { %>
+                <% const check = info[i].date; const test = [] %>
+                <% if (test != check) { %>
                     <tr>
                     <td> <%= check %> </td>
-                <% } else if (check != info[i].date) { %>
+                    <% test.push(check) %>
+                <% } else if (check == test) { %>
                 
                    
                         <td>Employee: <%= info[i].date %>  </td>
