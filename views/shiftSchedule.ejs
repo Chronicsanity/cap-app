@@ -23,7 +23,7 @@
               
               
                 <% for (var i = 0; i < info.length;) { %>
-                <% const check = info[i].date; const test = [] %>
+                <% const check = JSON.stringify(info[i].date); const test = [] %>
                 <% if (test != check) { %>
                     <tr>
                     <td> <%= check %> </td>
