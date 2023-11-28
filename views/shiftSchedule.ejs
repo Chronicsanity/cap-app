@@ -24,9 +24,13 @@
               
                 <% for (var i = 0; i < info.length; i++) { %>
                 <% const check = info[i].date %>
+                <% if (check != info[i].date) { %>
                     <tr>
-                        <td>Employee: <%= check %>  </td>
-                        
+                        <td>Employee: <%= info[i].date %>  </td>
+                   <% } %>
+                        <% if (check == info[i].date) { %>
+                            <td> <%= check %> </td>
+                        <% } %>
 
                         <td> <br>Job Assigned:  <%- info[i].jobs %> </td>
                      
