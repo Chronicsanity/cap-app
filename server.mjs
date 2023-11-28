@@ -410,11 +410,11 @@ if (conValue > EmpValue) {
 }
 
  const employee_list = await Employee.findAll();
- const job_list = await Jobs.findAll();
+ 
  const data = employee_list;
- const jobData = await job_list;
+ const job_list = await Shift_Assignments.findAll();
  await controller.assignmentsTable(res).then(info => {
-  res.render ('shiftmaker',{data: data, jobData:jobData, week: info})
+  res.render ('shiftmaker',{data: data, jobData:job_list, week: info})
  })
 
 })
