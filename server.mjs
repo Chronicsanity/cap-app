@@ -712,17 +712,15 @@ app.get('/shiftSchedule', async function (req,res){
     const test = []
     for (var i = 0; i < info.length; i++) {
     const checking = info[i].date
-    if (test.indexOf(checking) == -1) {
-      test.push(checking)
-      return test
+   info.forEach(function (info){
+    if (!this[info.date]){
+      this[info.date] = {date: info.date}
+      test.push(this[info.date])
     }
-    else {
-      var item = test.indexOf(checking)
-      test.splice(item, 1)
-      var newItem = checking + checking
-      test[item] = newItem
-      return test
-    }}
+    this[info.date].jobs += info.jobs
+   }, Object.create(null))
+    
+    }
   
     }
     const final = Testing(info)
