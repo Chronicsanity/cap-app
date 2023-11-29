@@ -711,7 +711,7 @@ app.get('/shiftSchedule', async function (req,res){
      
     const test = []
     for (var i = 0; i < info.length; i++) {
-      const attempt = Object.assign(info)
+      const attempt = Object.assign(info.date)
    console.log(attempt === info.date)
     }
   res.render('shiftSchedule', {info: info}
