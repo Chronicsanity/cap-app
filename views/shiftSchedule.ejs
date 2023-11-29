@@ -22,23 +22,20 @@
                
               
               
-                <% for (var i = 0; i < info.length;) { %>
-                <% const check = JSON.stringify(info[i].date); const test = [] %>
-                <% if (test.indexOf(check) == 0) { %>
+                <% for (var i = 0; i < info.length; i++) { %>
+                <% const check = JSON.stringify(info[i].date); %>
                     <tr>
                     <td> <%= check %> </td>
-                    <% test.push(JSON.stringify(info[i].date)); console.log(test.indexOf(check)) %>
-                <% } else if (test.indexOf(check) == -1) { %>
+                    
                 
                        
-                   <%  console.log(test.indexOf(check)) } %>
                       
 
                         <td> <br>Job Assigned:  <%- info[i].jobs %> </td>
                      
                     
                     </tr>
-                    <% ; i++ } %>
+                    <%  } %>
     
                 </table>
                 </tbody>
