@@ -717,8 +717,8 @@ app.get('/shiftSchedule', async function (req,res){
       this[info.date] = {date: info.date}
       test.push(this[info.date])
     }
-    this[info.date].jobs += info.jobs
-   }, Object.create(null))
+    this[info.date].jobs += info.jobs; return test
+   }, Object.create(null)) 
     
     }
   
