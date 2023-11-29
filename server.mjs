@@ -714,14 +714,16 @@ app.get('/shiftSchedule', async function (req,res){
     const checking = info[i].date
     if (test.indexOf(checking) == -1) {
       test.push(checking)
+      return test
     }
     else {
       var item = test.indexOf(checking)
       test.splice(item, 1)
       var newItem = checking + checking
       test[item] = newItem
+      return test
     }}
- 
+  
     }
     const final = Testing(info)
     console.log(final)
