@@ -708,10 +708,23 @@ if (await chosenDay != null)
 })
 app.get('/shiftSchedule', async function (req,res){ 
   await controller.shiftSchedule(res).then(info => {
+     async function Testing(info) {
+    const test = []
     for (var i = 0; i < info.length; i++) {
     const checking = info[i].date
-  console.log(checking)
+    if (test.indexOf(checking) == -1) {
+      test.push(checking)
     }
+    else {
+      var item = test.indexOf(checking)
+      test.splice(item, 1)
+      var newItem = checking + checking
+      test[item] = newItem
+    }}
+ 
+    }
+    const final = Testing(info)
+    console.log(final)
   res.render('shiftSchedule', {info: info}
   )
 
