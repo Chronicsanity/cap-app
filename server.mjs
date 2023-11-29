@@ -712,7 +712,7 @@ app.get('/shiftSchedule', async function (req,res){
  
     for (var i = 0; i < info.length; i++) {
       const test = info[i].date
-      const attempt = info.reduce((accumulator, currentValue) => accumulator + currentValue, i,)
+      const attempt = info.reduce((test, currentValue) => test + currentValue, i,)
    console.log(attempt)
     }
   res.render('shiftSchedule', {info: info}
