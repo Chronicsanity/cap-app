@@ -713,11 +713,13 @@ app.get('/shiftSchedule', async function (req,res){
     for (var i = 0; i < info.length; i++) {
     const checking = info[i].date
    info.forEach(function (info){
-    if (!this[info.date]){
-      this[info.date] = {date: info.date}
-      test.push(this[info.date])
+    if (!this[checking]){
+      this[checking] = {date: checking}
+      test.push(this[checking])
+      return test
+
     }
-    this[info.date].jobs += info.jobs; return test
+    this[checking].jobs += info.jobs;
    }, Object.create(null)) 
     
     }
