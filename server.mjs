@@ -397,7 +397,7 @@ if (await conValue > await EmpValue) {
   return (res.status(404).send("They are not trained for this job yet!" ))
 }
 if (await time1 === await time2){
-  console.log(await EmpValue, await shiftCheck)
+  console.log(await EmpValue, await shiftCheck, check)
   return (res.status(404).send("Cannot set the same time!" ))
 }
 if (await confirmed_Employee === shiftEmp && date === shiftDate)
