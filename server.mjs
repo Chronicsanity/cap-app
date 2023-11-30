@@ -713,55 +713,6 @@ app.get('/shiftSchedule', async function (req,res){
       const test = JSON.stringify(info[i].date)
    console.log(test.indexOf("Monday PM"))
 
-   if (test.indexOf("Monday AM") >= 1){
-  
-  
-   }
-  
-  else if (test.indexOf("Tuesday AM") >= 1 ){
-    
-  }
-    else if (test.indexOf("Tuesday PM") >= 1 ){
-    
-  }
-
-  else if (test.indexOf("Wednesday AM") >= 1 ){
-    
-  }
-  
-  else if (test.indexOf("Wednesday PM") >= 1 ){
-    
-  }
-  else if (test.indexOf("Thursday AM") >= 1 ){
-    
-  }  
-  else if (test.indexOf("Thursday PM") >= 1 ){
-    
-  }    
-  
-  else if (test.indexOf("Friday AM") >= 1 ){
-    
-  }
-
-  else if (test.indexOf("Friday PM") >= 1 ){
-    
-  }
-
-  else if (test.indexOf("Saturday AM") >= 1 ){
-    
-  }
-
-  else if (test.indexOf("Saturday PM") >= 1 ){
-    
-  }
-
-  else if (test.indexOf("Sunday AM") >= 1 ){
-    
-  }
-
-  else if (test.indexOf("Sunday PM") >= 1 ){
-    
-  }
   
   res.render('shiftSchedule', {info: info}
   )
