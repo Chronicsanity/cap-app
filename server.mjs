@@ -353,7 +353,7 @@ if(Employee.findOne( {where: {user: check}})) {
 const jobData = job_list;
 const fixedName = JSON.stringify(check).replace(/[\{\}\"]/g, "");
 const day = await controller.testing(req,res)
-const shiftCheck = await Shift.findAll({where:{employee_name: check}})
+const shiftCheck = await Shift.findOne({where:{employee_name: check}})
 
 async function amOrPm(time1) {
   const timefix = JSON.stringify(time1)
@@ -397,7 +397,7 @@ if (await conValue > await EmpValue) {
   return (res.status(404).send("They are not trained for this job yet!" ))
 }
 if (await time1 === await time2){
-  console.log(await shiftEmp, await shiftCheck)
+  console.log(await EmpValue, await shiftCheck)
   return (res.status(404).send("Cannot set the same time!" ))
 }
 if (await confirmed_Employee === shiftEmp && date === shiftDate)
