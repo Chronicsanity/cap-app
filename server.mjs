@@ -387,7 +387,7 @@ async function amOrPm(time1) {
 const conValue = confirmed_job.job_value;
 const EmpValue = confirmed_Employee.job_value
 const shiftEmp = shiftCheck
-const shiftDate = shiftCheck.date
+const shiftDate = shiftCheck
 
 
 if (await conValue > await EmpValue) { 
