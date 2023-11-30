@@ -386,7 +386,7 @@ async function amOrPm(time1) {
  
 const conValue = confirmed_job.job_value;
 const EmpValue = confirmed_Employee.job_value
-const shiftEmp = shiftCheck.employee_name
+const shiftEmp = shiftCheck
 const shiftDate = shiftCheck.date
 
 
@@ -397,6 +397,7 @@ if (await conValue > await EmpValue) {
   return (res.status(404).send("They are not trained for this job yet!" ))
 }
 if (await time1 === await time2){
+  console.log(shiftEmp, shiftDate)
   return (res.status(404).send("Cannot set the same time!" ))
 }
 if (await confirmed_Employee === shiftEmp && date === shiftDate)
