@@ -400,10 +400,6 @@ if (await time1 === await time2){
   console.log(await EmpValue, await shiftCheck, check)
   return (res.status(404).send("Cannot set the same time!" ))
 }
-if (await confirmed_Employee === shiftEmp && date === shiftDate)
-{
-  return (res.status(404).send("Employee can't work the same shift twice!" ))
-}
 
 
 
