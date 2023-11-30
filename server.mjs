@@ -762,7 +762,7 @@ app.get('/shiftSchedule', async function (req,res){
   else if (test.indexOf("Sunday PM") >= 1 ){
     
   }
-  console.log(info.findAndCountAll({ where: {date: "Monday AM"}}))
+  console.log(info.findAll({ where: {date: "Monday AM"}}))
   res.render('shiftSchedule', {info: info}
   )
     }
