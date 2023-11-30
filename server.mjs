@@ -708,10 +708,13 @@ if (await chosenDay != null)
 })
 app.get('/shiftSchedule', async function (req,res){ 
   await controller.shiftSchedule(res).then(info => {
-     
-    info.forEach((info) =>{
-      console.log (info.date)
-    })
+    const test = []
+    for (var i = 0; i < info.length; i++) {
+   console.log(info[i].indexOf("Mon"))
+    }
+    
+
+    
    
         
     
