@@ -353,7 +353,7 @@ if(Employee.findOne( {where: {user: check}})) {
 const jobData = job_list;
 const fixedName = JSON.stringify(check).replace(/[\{\}\"]/g, "");
 const day = await controller.testing(req,res)
-const shiftCheck = await Shift.findOne({where:{employee_name: check}})
+const shiftCheck = await Shift.findOne({where:{employee_name: fixedName}})
 
 async function amOrPm(time1) {
   const timefix = JSON.stringify(time1)
