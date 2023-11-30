@@ -714,7 +714,7 @@ app.get('/shiftSchedule', async function (req,res){
    console.log(test.indexOf("Monday PM"))
 
    if (test.indexOf("Monday AM") >= 1){
-   console.log(test.forEach(test.indexOf("Monday AM")))
+  
   
    }
   
