@@ -709,12 +709,12 @@ if (await chosenDay != null)
 app.get('/shiftSchedule', async function (req,res){ 
   await controller.shiftSchedule(res).then(info => {
      
- 
-    for (var i = 0; i < info.length; i++) {
-      const test = info[i].date
-      const attempt = Object.fromEntries(info.map(info => [test, info]))
-   console.log(attempt)
-    }
+    info.forEach((info) =>{
+      console.log (info.date)
+    })
+   
+        
+    
   res.render('shiftSchedule', {info: info}
   )
 
