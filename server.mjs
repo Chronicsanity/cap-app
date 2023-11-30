@@ -711,7 +711,7 @@ app.get('/shiftSchedule', async function (req,res){
     
     for (var i = 0; i < info.length; i++) {
       const test = info[i]
-   console.log(info.indexOf("Monday"))
+   console.log(info.indexOf("Monday PM"))
     }
     
 
