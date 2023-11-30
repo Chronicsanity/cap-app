@@ -353,6 +353,7 @@ if(Employee.findOne( {where: {user: check}})) {
 const jobData = job_list;
 const fixedName = JSON.stringify(check).replace(/[\{\}\"]/g, "");
 const day = await controller.testing(req,res)
+const shiftCheck = await Shift.findOne({where:{employee_name: check}})
 
 async function amOrPm(time1) {
   const timefix = JSON.stringify(time1)
@@ -396,6 +397,10 @@ if (await conValue > await EmpValue) {
 }
 if (await time1 === await time2){
   return (res.status(404).send("Cannot set the same time!" ))
+}
+if (await confirmed_Employee === shiftCheck.employee_name && date === shiftCheck.date)
+{
+  return (res.status(404).send("Employee can't work the same shift twice!" ))
 }
 
 
