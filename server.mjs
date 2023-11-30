@@ -762,7 +762,7 @@ app.get('/shiftSchedule', async function (req,res){
   else if (test.indexOf("Sunday PM") >= 1 ){
     
   }
-  console.log(test.forEach(test.indexOf("Monday AM")))
+  console.log(test.forEach(test))
   res.render('shiftSchedule', {info: info}
   )
     }
