@@ -386,7 +386,8 @@ async function amOrPm(time1) {
  
 const conValue = confirmed_job.job_value;
 const EmpValue = confirmed_Employee.job_value
-
+const shiftEmp = shiftCheck.employee_name
+const shiftDate = shiftCheck.date
 
 
 if (await conValue > await EmpValue) { 
@@ -398,7 +399,7 @@ if (await conValue > await EmpValue) {
 if (await time1 === await time2){
   return (res.status(404).send("Cannot set the same time!" ))
 }
-if (await confirmed_Employee === shiftCheck.employee_name && date === shiftCheck.date)
+if (await confirmed_Employee === shiftEmp && date === shiftDate)
 {
   return (res.status(404).send("Employee can't work the same shift twice!" ))
 }
