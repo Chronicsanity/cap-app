@@ -377,7 +377,7 @@ async function amOrPm(time1) {
   const datetime = []
 
  
-  name.push(JSON.stringify(check).replace(/]|[[]/g, ''));
+  name.push(JSON.stringify(check));
   job.push(confirmedJob);
   start.push(req.body.time1);
   end.push(req.body.time2);
