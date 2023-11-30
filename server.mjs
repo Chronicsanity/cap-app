@@ -710,7 +710,7 @@ app.get('/shiftSchedule', async function (req,res){
   await controller.shiftSchedule(res).then(info => {
     
     for (var i = 0; i < info.length; i++) {
-      const test = info.date
+      const test = JSON.stringify(info)
    console.log(test.indexOf("Monday PM"))
     }
     
