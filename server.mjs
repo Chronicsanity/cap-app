@@ -388,11 +388,14 @@ const EmpValue = confirmed_Employee.job_value
 
 
 
-if (conValue > EmpValue) { 
+if (await conValue > await EmpValue) { 
   const data = employee_list
    const jobData = job_list;
  
   return (res.status(404).send("They are not trained for this job yet!" ))
+}
+if (await time1 === await time2){
+  return (res.status(404).send("Cannot set the same time!" ))
 }
 
 
