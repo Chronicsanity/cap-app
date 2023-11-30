@@ -370,7 +370,7 @@ async function amOrPm(time1) {
 
 
  
-  const name = [];
+  var name = "";
   const job = [];
   const start = [];
   const end = [];
